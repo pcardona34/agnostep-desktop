@@ -1,0 +1,12 @@
+{
+    TerminalServices = {
+	Updater = {
+	    AcceptTypes = 1;
+	    Commandline = "Updater --upgrade";
+	    Input = 2;
+	    Key = "";
+	    ReturnData = 1;
+	    Type = 1;
+	};
+    };
+}

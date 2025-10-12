@@ -184,7 +184,7 @@ do
 	if [ $? -eq 0 ];then
 		_COUNT=$(( $_COUNT + 1 ))
 	fi
-	grep -v " error: nil" $_LOG | grep -e " error: " &>/dev/null
+	grep -v -e " error: nil" $_LOG | grep -v -e " error: &" | grep -e " error: " &>/dev/null
 	if [ $? -eq 0 ];then
 		_COUNT=$(( $_COUNT + 1 ))
 	fi

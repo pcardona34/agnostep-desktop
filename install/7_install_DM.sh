@@ -13,6 +13,7 @@
 ### Install a Display Manager
 ####################################################
 
+RPI=1
 _PWD=`pwd`
 clear
 
@@ -26,12 +27,12 @@ TITLE="Installing the Display Manager"
 title "$TITLE"
 
 is_hw_rpi
-if [ $? -eq 0 ];then
+if [ $RPI -eq 0 ];then
 	BG=fond_agnostep_pi.png
-	cp lightdm-gtk-greeter.conf.pi lightdm-gtk-greeter.conf
+	cp RESOURCES/lightdm-gtk-greeter.conf.pi RESOURCES/lightdm-gtk-greeter.conf
 else
 	BG=fond_agnostep.png
-	cp lightdm-gtk-greeter.conf.std lightdm-gtk-greeter.conf
+	cp RESOURCES/lightdm-gtk-greeter.conf.std RESOURCES/lightdm-gtk-greeter.conf
 fi
 CONF=lightdm-gtk-greeter.conf
 DM=lightdm

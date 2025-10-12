@@ -14,28 +14,7 @@
 ### This set GNUstep Library, defaults, .xinitrc...
 ####################################################
 
-_PWD=`pwd`
-SPIN='\-/|'
-STOP=0 # Set to 0 to avoid stops; to 1 to make stops
-MSG_STOP="Stop: type <Enter> to continue."
-LOG=$HOME/AGNOSTEP_USER_SETTINGS.log
-GWDEF="org.gnustep.GWorkspace"
-DEFDIR=RESOURCES/DEFAULTS
-
-echo $PATH | grep -e "/System/Tools" &>/dev/null
-if [ $? -ne 0 ];then
-	export PATH=/System/Tools:$PATH
-fi
-LOCAL_INSTALL_DIR=$(gnustep-config --variable=GNUSTEP_LOCAL_APPS)
-
-####################################################
-### Include functions
-
-. SCRIPTS/colors.sh
-. SCRIPTS/spinner.sh
-. SCRIPTS/functions_misc_folders.sh
-. SCRIPTS/functions_inst_themes.sh
-. SCRIPTS/functions_misc_themes.sh
+clear
 
 function stop
 {
@@ -44,10 +23,47 @@ if [ $STOP -ne 0 ];then
 fi
 }
 
+_PWD=`pwd`
+SPIN='\-/|'
+STOP=0 # Set to 0 to avoid stops; to 1 to make stops
+#set -v
+MSG_STOP="Stop: type <Enter> to continue."
+LOG=$HOME/AGNOSTEP_USER_SETTINGS.log
+GWDEF="org.gnustep.GWorkspace"
+DEFDIR=RESOURCES/DEFAULTS
+DEPS="laptop-detect"
+RPI=1 # By default, we assume the hw is not a RPI one. If not, it will be detected.
+
+stop
+
+####################################################
+### Include functions
+
+. SCRIPTS/colors.sh
+. SCRIPTS/spinner.sh
+. SCRIPTS/functions_prep.sh
+. SCRIPTS/functions_misc_folders.sh
+. SCRIPTS/functions_inst_themes.sh
+. SCRIPTS/functions_misc_themes.sh
+
+stop
+
+###################################################
+### Dependencies
+sudo apt -y install "$DEPS"
+
+stop
+
+echo $PATH | grep -e "/System/Tools" &>/dev/null
+if [ $? -ne 0 ];then
+	export PATH=/System/Tools:$PATH
+fi
+LOCAL_INSTALL_DIR=$(gnustep-config --variable=GNUSTEP_LOCAL_APPS)
+
+stop
+
 ### End of functions
 ####################################################
-
-clear
 
 ####################################################
 ### FreeDesktop User filesystem
@@ -154,7 +170,7 @@ echo "$TITLE" >>$LOG
 title "$TITLE"
 
 is_hw_rpi
-if [ $? -eq 1 ];then
+if [ $RPI -eq 0 ];then
 	WP=fond_agnostep_pi.png
 else
 	WP=fond_agnostep.png
@@ -300,7 +316,7 @@ fi
 cd $DEFDIR || exit 1
 
 is_hw_rpi
-if [ $? -eq 0 ];then
+if [ $RPI -eq 0 ];then
 	GWD=${GWDEF}.TEMPLATE.RPI
 else
 	GWD=${GWDEF}.TEMPLATE

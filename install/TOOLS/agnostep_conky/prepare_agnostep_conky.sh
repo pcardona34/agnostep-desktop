@@ -16,18 +16,26 @@
 ### VARS
 
 TRANS=`echo ${LANG%.UTF-8} | awk -F_ '{print $1}'`
+. ../../SCRIPTS/functions_prep.sh
+RPI=1
+FOOT=foot.txt
 
 ###################################################
 function assemble
 {
 laptop-detect
 if [ $? -eq 0 ];then
-	cat head.txt battery.txt foot.txt >> conky.conf.$TRANS
+	cat head.txt battery.txt $FOOT >> conky.conf.$TRANS
 else
-	cat head.txt foot.txt >> conky.conf.$TRANS
+	cat head.txt $FOOT >> conky.conf.$TRANS
 fi
 }
 ###################################################
+
+is_hw_rpi
+if [ $RPI -eq 0 ];then
+	FOOT=foot.rpi.txt
+fi
 
 if [ -n $TRANS ];then
 	case $TRANS in

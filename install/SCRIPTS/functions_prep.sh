@@ -179,32 +179,26 @@ fi
 ### SPEC Raspberry Pi
 ### Is the current hardware a Raspberry Pi
 ### If yes, it has a specific Device Tree
+
 function is_hw_rpi
 {
-RES=1
+### By default global RPI has been set to 1: no RPI
 ### Arm architecture 64 bit?
 ARCH=`uname -m`
-echo "Architecture: $ARCH"
+printf "Architecture: ${ARCH}\n"
 
 if [ "$ARCH" == "aarch64" ];then
-	RES=0
-else
-	exit $RES
-fi
-
-if [ -f /sys/firmware/devicetree/base/model ];then
-	MODEL=`head --bytes=-1 /proc/device-tree/model`
-	echo "Model: $MODEL" | grep -e "Raspberry Pi" &>/dev/null
-	if [ $? -eq 0 ];then
-		echo "Your model is a RPI: $MODEL"
-		RES=0
+	if [ -f /sys/firmware/devicetree/base/model ];then
+		MODEL=`head --bytes=-1 /proc/device-tree/model`
+		echo "$MODEL" | grep -e "Raspberry Pi" &>/dev/null
+		if [ $? -eq 0 ];then
+			printf "Your model is a RPI: $MODEL\n"
+			RPI=0
+		else
+			printf "Not a Raspberry Pi.\n"
+		fi
 	else
-		echo "Not a Raspberry Pi."
-		RES=1
+		printf "Model: no Device Tree Model info\n"
 	fi
-else
-	echo "Model: no Device Tree Model info"
-	RES=1
 fi
-exit $RES
 }

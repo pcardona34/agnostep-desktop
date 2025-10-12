@@ -17,6 +17,7 @@
 ### Vars
 
 _PWD=`pwd`
+RPI=1
 
 ### End of vars
 ####################################################
@@ -37,7 +38,7 @@ function install_apps()
 {
 . SCRIPTS/inst_apps.sh
 is_hw_rpi
-if [ $? -eq 0 ];then
+if [ $RPI -eq 0 ];then
 	. SCRIPTS/inst_rpi_tools.sh
 fi
 }

@@ -70,7 +70,7 @@
 	<key>iconsize</key>
 	<integer>48</integer>
 	<key>imagepath</key>
-	<string>/usr/local/share/wallpapers/fond_pi_step_initiative.png</string>
+	<string>/usr/share/wallpapers/fond_agnostep_pi.png</string>
 	<key>imagestyle</key>
 	<integer>1</integer>
 	<key>indexes</key>

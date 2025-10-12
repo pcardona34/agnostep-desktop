@@ -56,7 +56,8 @@ ${font}${color}
 ${voffset -40}
 ${alignc}${color4}${font SansSerif:size=28}${exec date +"%H"}${color}:${color4}${exec date +"%M"}
 ${font}${color}
-${alignc}${font ConkySymbols:size=24}S${font}${voffset -10}${distribution} - Uptime: ${uptime}
+${alignc}${font ConkySymbols:size=24}S${voffset -10}${font}${font SansSerif:size=14}${color1}${distribution} ${execi 86400 lsb_release -r -s}${font}${color}
+${alignc}${voffset 12} Uptime: ${uptime}
 ${hr}
 ${alignc}${font ConkySymbols:size=24}H${voffset -10}${font}${font SansSerif:size=14}${color1} Weather ${font}${color}
 ${voffset 2}
