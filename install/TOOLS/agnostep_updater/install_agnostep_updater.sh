@@ -16,8 +16,16 @@
 ### VARS
 
 AUTO=$HOME/GNUstep/Library/WindowMaker/autostart
+ICON_DEST=/usr/local/share/icons
+BIN_DEST=/usr/local/bin
+DEPS="suckless-tools"
 
-sudo cp -u Updater.sh /usr/local/bin/
+sudo apt -y install ${DEPS}
+
+if [ ! -d $BIN_DEST ];then
+	sudo mkdir -p $BIN_DEST
+fi
+sudo cp -u Updater /usr/local/bin/
 
 ###  Copy of dunstrc
 DUNSTRC=$HOME/.config/dunst
@@ -26,11 +34,20 @@ if ! [ -d $DUNSTRC ];then
 fi
 cp _dunstrc $DUNSTRC/dunstrc
 
-grep -e "Updater.sh" $AUTO &>/dev/null
-if [ $? -eq 0 ];then
-	printf "\nAlready set in $AUTO\n"
-else
-	echo "sleep 60 && /usr/local/bin/Updater.sh -d &" >>$AUTO
+if [ ! -d $ICON_DEST ];then
+	mkdir -p $ICON_DEST
+fi
+sudo cp -u bell.tif $ICON_DEST/
+
+AUTO=$HOME/GNUstep/Library/WindowMaker/autostart
+if [ ! -f $AUTO ];then
+	printf "The file $AUTO was not found\n"
+	exit 1
+fi
+grep -e "Updater " $AUTO &>/dev/null
+if [ $? -ne 0 ];then
+	cat $AUTO autostart.txt > TMP && mv --force TMP $AUTO
+	chmod +x $AUTO
 fi
 
-printf "\nAGNOSTEP_Updater has been set.\n"
+printf "\nUpdater has been set.\n"

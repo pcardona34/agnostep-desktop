@@ -1,27 +1,31 @@
 AGNOSTEP - agnostic GNUstep Desktop
 ===================================
 
-INFO: We started from the release 0.8.3 of PiSiN to make it agnostic. Many changes in the meanwhile.
+INFO: We started from the release 0.8.3 and then 0.8.6 of PiSiN to make it agnostic. Many changes in the meanwhile.
 
-- **Release**: 0.8.5
-- **Status**: Beta
+- **Release**: 0.0.0
+- **Status**: Alpha
+
+This is the first release intended to run on all possible hardware, comprising all the Raspberry Pi's
+known to work previously on the PiSiN project.
 
 ### Tests protocol
 
 See HCL file to know already tested hardware.
 To report a successfull test, please report to us the foolowing steps:
 
-Passed: 18 / 18
+Tests: running today
+Passed: (to be completed, updated today) / 18
 
-- Installation: 1 prep: done | 2 wmaker: done | 3 GNUstep: done | 4 frameworks: done | 5 apps/extra/devel/games: done | 6 user settings: done | 7 Display manager: done | ok
-- Installation (BIS): enjoy script: successfully executed. Duration: 00:18:03 with a Core i5 and a fiber connection: ok
-- Window manager / Theming: ok
-- Workspace / Dock / Wallpaper: ok
+?- Installation: 1 prep: done | 2 wmaker: done | 3 GNUstep: done | 4 frameworks: done | 5 apps/extra/devel/games: done | 6 user settings: done | 7 Display manager: done | ok
+?- Installation (BIS): enjoy script: successfully executed. Duration: 00:18:03 with a Core i5 and a fiber connection: ok
+?- Window manager / Theming: ok
+?- Workspace / Dock / Wallpaper: ok
 - Home customized folders: ok
-- Applications Folder / TabbedShelf: ok
+?- Applications Folder / TabbedShelf: ok
 - Autostart: ok
 - Sysinfo Panel (if a laptop, battery monitoring is showing): ok 
-- Notify: ok
+?- Notify: Updater with action, BirthNotify and associated tools: ?
 - Open/save: ok
 - Web Browser: ok
 - Printing / set default printer using 'Setup_Printer' script: ok
@@ -49,7 +53,14 @@ All the apps below were built from sources and so are the latest.
 - Theme: AGNOSTEP mostly inspired by Papirus Icon theme and GNUstep Sleek Theme: finished.
 - Session: Display Manager (Lightdm) and DBus (but without DBUSKit).
 - Alsa compliant Audio Mixer: see VolumeControl below.
-- RPI tools: removed, so to be substituted: cf. how to set default printer within CUPS.
+- RPI tools: only on RPI when the hardware is detected, if not substituted: cf. how to set default printer within CUPS in the UG.
+- Password Manager: pass CLI.
+
+HELP
+====
+- AGNoStep User Guide
+- GWorkspace User Guide
+
 ===========================================
 
 ### Applications and Tools for the End-User and The Developer
@@ -128,6 +139,11 @@ The complete list:
 - VolumeControl: AlsaMixer compliant mixer
 - Writer (W): a wrapper for Focuswriter
 
+Tied to the RPI,s
+==================
+- Rpinters.app and Rpi-imager.app.
+
+
 Removed (R)
 =================
 
@@ -135,4 +151,3 @@ Some apps or frameworks won't build with the GNU Runtime: so we needed to remove
 
 - Cenon (ER): Desktop Publishing
 - DBusKit (R): DBus framework (to be checked again)
-- Rpinters.app ans Rpi-imager.app: tied to the Pi's.

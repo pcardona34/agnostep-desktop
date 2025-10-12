@@ -1,5 +1,6 @@
 # Dunst Notify Daemon
 [global]
+    dmenu = "/usr/bin/dmenu -p dunst"
     follow = none
     width = 300
     height = (0,300)
@@ -27,8 +28,8 @@
     ellipsize = end
     ignore_newline = no
     stack_duplicates = true
-    hide_duplicate_count = false
-    #show_indicators = yes
+    hide_duplicate_count = true
+    show_indicators = yes
     enable_recursive_icon_lookup = true
     sticky_history = yes
     history_length = 50
@@ -38,6 +39,8 @@
     #corner_radius = 9
     ignore_dbusclose = false
     mouse_left_click = close_current
+    mouse_right_click = context, close_current
+
 
 [urgency_low]
     background = "#8383BF"

@@ -10,17 +10,16 @@
 ####################################################
 
 #####################################
-### GNUstep-apps
+### RPI Tools
 #####################################
 
-### Install Applications: Preferences, GWorkspace, etc
-### See RELEASE for a complete list
-### N.B.: Developer apps are divided into inst_devel.sh
+### Install Wrappers of the RPI Tools
 
 ################################
 ### ENV
 
 _PWD=`pwd`
+#. SCRIPTS/environ.sh
 echo $PATH | grep -e "/System/Tools" &>/dev/null
 if [ $? -ne 0 ];then
 	export PATH=/System/Tools:$PATH
@@ -41,23 +40,13 @@ INSTALL_DIR=$(gnustep-config --variable=GNUSTEP_LOCAL_APPS)
 . SCRIPTS/check_app.sh
 . SCRIPTS/size.sh
 . SCRIPTS/spinner.sh
-. SCRIPTS/functions_inst_apps.sh
-. SCRIPTS/functions_prep.sh
 . SCRIPTS/functions_inst_wrappers.sh
-. SCRIPTS/std_build.sh
 
 ### End of Include functions
 ################################
 
 clear
-title "A G N o S t e p  -  Main applications and Tools"
-
-################################
-### Is there a Build Folder?
-
-if ! [ -d ../build ];then
-	mkdir -p ../build
-fi
+title "A G N o S t e p  -  RPI Tools"
 
 ################################
 ### Is there a USER APPS Folder?
@@ -68,9 +57,14 @@ if ! [ -d $INSTALL_DIR ];then
 fi
 
 #################################################
-### New LOG
+### LOG
 
-echo "$0" >$LOG
+echo "$0" >>$LOG
+
+title "Dependencies of the RPI Tools"
+
+DEPS="rpinters rpi-imager hplip printer-driver-hpcups printer-driver-cups-pdf"
+sudo apt -y install ${DEPS}
 
 ##############################################
 ## If you do not want any app to be installed
@@ -78,33 +72,7 @@ echo "$0" >$LOG
 ## save and run...
 ##############################################
 
-install_systempreferences
-install_gworkspace
-install_helpviewer
-install_textedit
-install_openup
-install_addressmanager
-install_gnumail
-install_grr
-install_agenda
-install_terminal
-install_gspdf
-install_imageviewer
-install_cynthiune
-install_player
-install_librarian
-install_innerspace
-install_scanimage
-install_screenshot
-install_volumecontrol
-install_ink
-install_wrappers
-
-##################
-### Removed
-#install_affiche
-#install_timemon
-##################
+install_rpi_tools
 
 sudo ldconfig
 make_services

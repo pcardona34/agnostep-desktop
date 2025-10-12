@@ -1,0 +1,72 @@
+#!/bin/bash
+
+####################################################
+### P i S i N    Desktop - by Patrick Cardona
+### pcardona34 @ Github
+###
+### Thanks for the GNUstep Developers Community
+### This is Free and Open Source software.
+### Read License in the root directory.
+####################################################
+
+################################
+### birth2vcf
+### Export bd lines to a vcard file
+### Useful to import in AddressManager
+### Then SimpleAgenda will retrieve them.
+################################
+
+################################
+### VARS
+TODAY=$(date +"%Y%m%d")
+OUT=bd${TODAY}.vcf
+if [ -f $OUT ];then
+	rm -f $OUT
+fi
+
+################################
+### function
+function writevcf
+{
+cat >> $OUT << ENDOF
+BEGIN:VCARD
+VERSION:2.1
+X-GENERATOR:Addresses for GNUstep pre-1.0
+N:${WHO};;;;
+BDAY:${DATE:6:4}-${DATE:0:2}-${DATE:3:2}
+END:VCARD
+ENDOF
+}
+
+if [ $# -eq 1 ];then
+	SRC=$1
+else
+	printf "Syntax:\n$0 <a birthday file>\n"
+	exit 1
+fi
+
+if [ ! -f $SRC ];then
+	printf "The Birthday file $SRC was not found.\n"
+	exit 1
+fi
+
+################################
+### VARS
+TEMPFILE=$(mktemp /tmp/pisi-XXXXX)
+trap "rm -f $TEMPFILE" EXIT
+#################################
+
+### Filter: we want only 'bd' event not commented
+grep -e "#" -v $SRC | grep -e " bd" >> $TEMPFILE
+
+### Reading the Birthday base fitered
+while read LIGNE
+do
+	echo $LIGNE
+	DATE=`echo $LIGNE | awk -F= '{print $2}' | awk '{print $1}'`
+	WHO=`echo $LIGNE | awk -F= '{print $1}'`
+	echo ${WHO}
+	echo $DATE
+	writevcf
+done < $TEMPFILE
+

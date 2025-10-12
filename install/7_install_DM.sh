@@ -17,6 +17,7 @@ _PWD=`pwd`
 clear
 
 . SCRIPTS/colors.sh
+. SCRIPTS/functions_prep.sh
 
 ####################################################
 ### Copy the template into the home directory
@@ -24,7 +25,14 @@ clear
 TITLE="Installing the Display Manager"
 title "$TITLE"
 
-BG=fond_agnostep.png
+is_hw_rpi
+if [ $? -eq 0 ];then
+	BG=fond_agnostep_pi.png
+	cp lightdm-gtk-greeter.conf.pi lightdm-gtk-greeter.conf
+else
+	BG=fond_agnostep.png
+	cp lightdm-gtk-greeter.conf.std lightdm-gtk-greeter.conf
+fi
 CONF=lightdm-gtk-greeter.conf
 DM=lightdm
 

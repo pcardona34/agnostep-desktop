@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 # WindowMaker will wait until this script finishes, so if you run any
-# commands that take long to execute (like a xterm), put a ``&'' in the
+# commands that take long to execute (like a xterm), put a '&' in the
 # end of the command line.
 #
 # This file must be executable.
@@ -9,8 +9,8 @@
 xset m 20/10 4
 
 ### This is to prevent DMPS and blanking issues on RPI machine
-#xset -dpms
-#xset s off
+xset -dpms
+xset s off
 
 ### gdnc
 gdomap -L GDNCServer || gdnc &
@@ -21,10 +21,7 @@ pgrep compton || compton -b
 ### Notifications
 systemctl --user import-environment DISPLAY
 pgrep dunst || dunst &
-dunstify "AGNoStep Desktop is loading..."
+sleep 2 && /usr/local/bin/loading.sh &
 
 ### conky
 pgrep conky || sleep 8 && conky -c ~/.config/agnostep/conky.conf &
-
-### Updater notification
-sleep 60 && /usr/local/bin/Updater.sh -d &

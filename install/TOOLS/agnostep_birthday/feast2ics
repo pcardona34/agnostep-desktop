@@ -1,0 +1,90 @@
+#!/bin/bash
+
+####################################################
+### P i S i N    Desktop - by Patrick Cardona
+### pcardona34 @ Github
+###
+### Thanks for the GNUstep Developers Community
+### This is Free and Open Source software.
+### Read License in the root directory.
+####################################################
+
+################################
+### feast2ics
+### Export st line to ics calendar file
+### Useful to import in SimpleAgenda
+################################
+
+################################
+### VARS
+YEAR=$(date +"%Y")
+ID=100
+TODAY=$(date +"%Y%m%d")
+OUT=st${TODAY}.ics
+if [ -f $OUT ];then
+	rm -f $OUT
+fi
+cat > $OUT << ENDOF
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Octets//NONSGML SimpleAgenda Calendar//EN
+ENDOF
+
+################################
+### function
+function writeics
+{
+ID=$(( ID + 1 ))
+local DAY=${DATE:0:2}
+echo "DAY: ${DAY}"
+local NEXTDAY=$(( 10#${DAY} + 1 ))
+LENGTH=${#NEXTDAY}
+if [ $LENGTH -eq 1 ];then
+	NEXTDAY="0${NEXTDAY}"
+fi
+echo "NEXTDAY: ${NEXTDAY}"
+cat >> $OUT << ENDOF
+BEGIN:VEVENT
+UID:${YEAR}${DATE:3:2}${DATE:0:2}-${ID}
+SUMMARY:${WHO}
+DESCRIPTION:
+CLASS:PUBLIC
+DTSTART;VALUE=DATE:${YEAR}${DATE:3:2}${DAY}
+DTEND;VALUE=DATE:${YEAR}${DATE:3:2}${NEXTDAY}
+END:VEVENT
+ENDOF
+}
+
+if [ $# -eq 1 ];then
+	SRC=$1
+else
+	printf "Syntax:\n$0 <a birthday file>\n"
+	exit 1
+fi
+
+if [ ! -f $SRC ];then
+	printf "The Birthday file $SRC was not found.\n"
+	exit 1
+fi
+
+################################
+### VARS
+TEMPFILE=$(mktemp /tmp/pisi-XXXXX)
+trap "rm -f $TEMPFILE" EXIT
+#################################
+
+### Filter: we want only 'st' event not commented
+grep -e "#" -v $SRC | grep -e " st" >> $TEMPFILE
+
+### Reading the Birthday base filtered
+while read LIGNE
+do
+	echo $LIGNE
+	DATE=`echo $LIGNE | awk -F= '{print $2}' | awk '{print $1}'`
+	WHO=`echo $LIGNE | awk -F= '{print $1}'`
+	echo ${WHO}
+	echo $DATE
+	writeics
+done < $TEMPFILE
+
+echo "END:VCALENDAR" >> $OUT

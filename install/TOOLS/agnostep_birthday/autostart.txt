@@ -1,0 +1,3 @@
+
+### Birthday Notifier
+sleep 10 && /usr/local/bin/BirthNotify &

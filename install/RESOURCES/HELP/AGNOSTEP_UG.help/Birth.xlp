@@ -1,0 +1,86 @@
+<section name="Introduction">
+
+Do not forget them!
+To help you, PiSiN provides several tools.
+
+</section>
+
+<section name="The Birthdays base">
+
+It is a text file: each line is an event with appropriate syntax:
+
+<ul>
+<li>Birthday syntax: key is 'bd':
+<note>Who=dd/mm/yyyy bd &nbsp;&nbsp;&nbsp;</note>
+</li>
+
+
+<li>Feast syntax: key is 'st':
+<note>Who=dd/mm st &nbsp;&nbsp;&nbsp;</note>
+</li>
+
+<li>To comment out a line, just add a sharp at the begining:
+<note>#A commented line &nbsp;&nbsp;&nbsp;</note>
+<li>
+</ul>
+
+This file must be renamed 'Birthdays' and copied to the 'Documents/Private' folder.
+
+<caution>Keep safe the original file in another place. &nbsp;&nbsp;&nbsp;</caution>
+
+Now, when you log in, the 'BirthNotify' tool checks if a birthday or a feast is today and it arises with a notification if it is.
+
+</section>
+
+<section name="Feed the Agenda calendar">
+
+You can export these infos from the Birthdays base into SimpleAgenda and into AddressManager.
+
+<section name="Birthdays">
+
+In a Terminal shell, execute:
+
+<listing>
+cd&nbsp;Documents/Private &nbsp;&nbsp;&nbsp;<br />
+birth2vcf&nbsp;Birthdays &nbsp;&nbsp;&nbsp;<br />
+&nbsp;
+</listing>
+
+It will produce a bdyyyymmdd.vcf file.
+
+To import this file in the Address base:
+
+<listing>
+openpapp&nbsp;AddressManager &nbsp;&nbsp;&nbsp;<br />
+menu:&nbsp;Database&nbsp;&gt;&nbsp;Import... &nbsp;&nbsp;&nbsp;<br />
+&nbsp;
+</listing>
+
+In the Open Panel, navigate to 'Documents/Private' and choose the 'vcf' file you have created. Thats done.
+
+Then open SimpleAgenda to verify it is able to retrieve the birthdays from the Address base: each birday will be shown with a violet background.
+
+</section>
+<section name="Feasts">
+
+In a Terminal shell, execute:
+
+<listing>
+cd&nbsp;Documents/Private &nbsp;&nbsp;&nbsp; <br />
+feast2ics&nbsp;Birthdays &nbsp;&nbsp;&nbsp; <br />
+&nbsp;
+</listing>
+
+It will produce a styyyymmdd.ics calendar file.
+
+To import in SimpleAgenda:
+
+<listing>
+openapp&nbsp;SimpleAgenda&nbsp;styyyymmdd.ics&nbsp;&nbsp;&nbsp; <br />
+&nbsp;
+</listing>
+
+That's done. The feasts will be shown now in the agenda with a yellow background.
+
+</section>
+</section>

@@ -25,6 +25,7 @@ _PWD=`pwd`
 ### Include functions
 
 . SCRIPTS/colors.sh
+. SCRIPTS/functions_prep.sh
 
 ### End of include functions
 ####################################################
@@ -35,7 +36,10 @@ _PWD=`pwd`
 function install_apps()
 {
 . SCRIPTS/inst_apps.sh
-#. SCRIPTS/inst_rpi_tools.sh
+is_hw_rpi
+if [ $? -eq 0 ];then
+	. SCRIPTS/inst_rpi_tools.sh
+fi
 }
 ### End of apps
 ####################################################

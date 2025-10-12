@@ -1,0 +1,3 @@
+
+### Updater
+sleep 10 && /usr/local/bin/Updater -d &

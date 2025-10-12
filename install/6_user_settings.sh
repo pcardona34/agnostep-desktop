@@ -153,12 +153,18 @@ TITLE="Wallpaper"
 echo "$TITLE" >>$LOG
 title "$TITLE"
 
-WP=fond_agnostep.png
-#WP_FOLDER=$HOME/GNUstep/Library/WindowMaker/Backgrounds
+is_hw_rpi
+if [ $? -eq 1 ];then
+	WP=fond_agnostep_pi.png
+else
+	WP=fond_agnostep.png
+fi
+
 WP_FOLDER=/usr/share/wallpapers
 if [ ! -d $WP_FOLDER ];then
 	sudo mkdir -p $WP_FOLDER
 fi
+
 cd RESOURCES/WALLPAPERS || exit 1
 sudo cp --remove-destination ${WP} ${WP_FOLDER}/${WP}
 cd $_PWD
@@ -223,6 +229,35 @@ ok "Done"
 
 stop
 
+### Loading
+sudo cp -u RESOURCES/SCRIPTS/loading.sh /usr/local/bin/
+
+stop
+
+### Installing Tools and confs... BirthNotify
+TITLE="BirthNotify tool"
+echo "$TITLE" >>$LOG
+title "$TITLE"
+
+cd TOOLS/agnostep_birthday || exit 1
+. ./install_birthday.sh
+cd $_PWD
+ok "Done"
+
+stop
+
+### Installing Tools and confs... Pass
+TITLE="Pass: the Unix Passwords Manager CLI"
+echo "$TITLE" >>$LOG
+title "$TITLE"
+
+cd TOOLS/agnostep_pass || exit 1
+. ./install_agnostep_pass.sh
+cd $_PWD
+ok "Done"
+
+stop
+
 ###########################################
 ### Installing the theme
 TITLE="AGNOSTEP Theme"
@@ -264,12 +299,15 @@ fi
 
 cd $DEFDIR || exit 1
 
-if [ "$USER" == "patrick" ];then
-	### Default user...
-	cp --force ${GWDEF}.TEMPLATE ${GWDEF}.plist
+is_hw_rpi
+if [ $? -eq 0 ];then
+	GWD=${GWDEF}.TEMPLATE.RPI
 else
-	cat ${GWDEF}.TEMPLATE | sed -e s/patrick/$USER/g > ${GWDEF}.plist
+	GWD=${GWDEF}.TEMPLATE
 fi
+
+cat ${GWD} | sed -e s/patrick/$USER/g > ${GWDEF}.plist
+
 cd $_PWD
 if [ ! -f $HOME_GNUSTEP_DEF/WindowMaker ];then
 	cd RESOURCES/DEFAULTS && cp WindowMaker $HOME_GNUSTEP_DEF/
@@ -338,17 +376,14 @@ echo "$TITLE" >>$LOG
 title "$TITLE"
 
 cd RESOURCES/SCRIPTS || exit 1
-#for TOOL in Setup_Printer.sh agnostep
 for TOOL in agnostep
 do
-	#cp -u $TOOL $HOME/.local/bin/
 	sudo cp -u $TOOL /usr/local/bin/
 done
 cd $_PWD
 stop
 
 cd SCRIPTS || exit 1
-#for TOOL in colors.sh spinner.sh
 for TOOL in colors.sh
 do
 	sudo cp -u $TOOL /usr/local/bin/
@@ -410,9 +445,11 @@ STATUS=$(grep -e "Status" RELEASE | awk '{print $3}')
 if [ ! -d $HOME/.local/etc ];then
 	mkdir -p $HOME/.local/etc
 fi
-echo "DESKTOP=AGNoStep" > $HOME/.local/etc/release.info
-echo "REL=$RELEASE" >> $HOME/.local/etc/release.info
-echo "STATUS=$STATUS" >> $HOME/.local/etc/release.info
+cat > $HOME/.local/etc/release.info << ENDOF
+DESKTOP=AGNoStep
+REL=$RELEASE
+STATUS=$STATUS
+ENDOF
 
 stop
 
@@ -440,7 +477,7 @@ MESSAGE="A G N o S t e p   Desktop is ready to use now."
 
 info "$MESSAGE"
 
-info "Login/Display Manager: after testing the Desktop, log out and execute:"
+info "To install the Login/Display Manager: after testing the Desktop, log out and execute:"
 cli "./7_install_DM.sh"
 
 sleep 5

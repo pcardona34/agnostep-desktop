@@ -2,13 +2,22 @@ Hardware Compatibility List
 ===========================
 
 Because I cannot test on every hardware, I put here a list of well tested hardwares:
+If you successflly tested your hardware, let me know.
 
----
+=== HCL: Laptop ===
 
-CAUTION! Do no test AGNoStep on Raspberry Pi's: use instead the ad hoc 'pi-step-initiative' repository.
+- Apple MacBookPro 6.2 Intel Core i5 (2010), amd64, Trixie 13.1: passed 100%. Date: Oct 2 2025; Release: AGNoStep 0.8.4
 
----
+=== HCL: SBC ===
 
-=== HCL ===
+- Raspberry Pi 3B, arm64, Bookworm 12.12: passed 100%. Date: Sep. 6 2025; Release: PiSiN 0.8.2
+- Raspberry Pi 400, arm64, Trixie 13.1; passed 100%. Date: Oct 10 2025; Release: PiSiN 0.8.6
+- Raspberry Pi 400, arm64, Trixie 13.1; passed ? %. Date: Oct 12 2025; Release: AGNoStep 0.9.0 Beta
 
-- Apple MacBookPro 6.2 Intel Core i5 (2010), amd64, Trixie 13.1: passed 18/18. Date: Oct 2 2025; Release: 0.8.4 - Beta
+=== HCL: Monitor ===
+
+- ACER 57e 17": 1080p mode (1920x1080)
+
+=== HCL: Printer/scanner compatible ===
+
+- HP All-in-One ENVY 5020: printing: yes; scanning: yes

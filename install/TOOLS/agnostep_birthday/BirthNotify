@@ -1,0 +1,84 @@
+#!/bin/bash
+
+####################################################
+### A G N o S t e p  -  Desktop - by Patrick Cardona
+### pcardona34 @ Github
+###
+### Thanks for the GNUstep Developers Community
+### This is Free and Open Source software.
+### Read License in the root directory.
+####################################################
+
+################################
+### BirthNotify
+### The Birthday notifier
+################################
+
+################################
+### VARS
+LOG=$HOME/BirthNotify.log
+CONFIG=$HOME/.config/agnostep/birthday.conf
+PREFIX=$(echo ${LANG%.UTF-8} | awk -F'_' '{print $1}')
+
+case "$PREFIX" in
+	"fr")
+		CELMSG="Nous fêtons"
+		BIRMSG="Anniversaire";;
+	"en" | *)
+		CELMSG="Today We celebrate"
+		BIRMSG="Birthday";;
+esac
+
+if [ -f $CONFIG ];then
+	. $CONFIG
+else
+	echo "The config file $CONFIG was not found." >> $LOG
+	exit 1
+fi
+
+if [ ! -f $BIRTH_FILE ];then
+	echo "The Birthday Base $BIRTH_FILE was not found." >> $LOG
+	exit 1
+fi
+
+### getting the current date
+### Today
+TODAY=$(date +"%d/%m")
+#echo $TODAY
+
+### Reading the Birthday base
+while read LIGNE
+do
+	#echo $LIGNE
+	if [ -z "$LIGNE" ];then
+		# Empty line
+		continue
+	fi
+	echo "$LIGNE" | grep -e "#" &>/dev/null
+	if [ $? -eq 0 ];then
+		# The line is commented out
+		continue
+	else
+		DATE=`echo $LIGNE | awk -F= '{print $2}' | awk '{print $1}'`
+		DM=${DATE:0:5}
+		EV=`echo $LIGNE | awk -F= '{print $2}' | awk '{print $2}'`
+		YEAR=${DATE:6:4} || YEAR=""
+		WHO=`echo $LIGNE | awk -F= '{print $1}'`
+		#echo ${WHO}
+		#echo $DM
+		case $DM in
+			"$TODAY")
+				if [ "$EV" == "ann" ] || [ "$EV" == "st" ];then
+					TITLE="$CELMSG"
+					ICON=${BEL}
+				else
+					TITLE="$BIRMSG"
+					ICON=${BIR}
+				fi
+				dunstify "$TITLE" "${WHO}: ${YEAR}" -u critical -i ${ICON}
+				continue;;
+			*)
+			continue;;
+		esac
+	fi
+done < $BIRTH_FILE

@@ -1,0 +1,86 @@
+<section name="Introduction">
+
+Until now, we do not have a GNUstep Password Manager. So we will use an efficient CLI program in the Terminal: pass, called the 'the standard unix password manager'.
+<br>&nbsp;<br>Site: <url>https://www.passwordstore.org/</url>
+
+</section>
+
+<section name="Setup -1- Main Encryption Key">
+
+The program and its dependencies have been already set.
+To use it, you need to create an encryption key. Open a new Shell in the Terminal and execute:<br>&nbsp;
+
+<listing>
+
+gpg&nbsp;--expert&nbsp;--pinentry-mode=loopback&nbsp;--full-gen-key&nbsp;&nbsp;&nbsp;
+
+</listing>
+
+<br>My first settings are as below:
+
+<note>
+&nbsp;<br>
+Type:&nbsp;1&nbsp;&nbsp;<br>
+Size:&nbsp;1024&nbsp;<br>
+Sub-key:&nbsp;1024&nbsp;<br>
+Never&nbsp;dies&nbsp;<br>
+Identity:&nbsp;patrick&nbsp;<br>
+Your&nbsp;passphrase:&hellip;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;<br>&nbsp;
+</note>
+
+</section>
+
+<section name="Setup -2- Secundary Secret Key">
+
+Execute now:
+
+<listing>
+gpg&nbsp;--edit-key&nbsp;"patrick" &nbsp;&nbsp;<br>&nbsp;
+</listing>
+
+Verify with:
+
+<listing>
+gpg&nbsp;--list-secret-keys&nbsp;&nbsp;&nbsp;
+</listing>
+
+<information>
+&nbsp;To get the Key-ID, copy the 16 last characters of the sub-key (end of the 'ssb' field): &nbsp;&nbsp;&nbsp;
+</information>
+
+<br>Fake example:
+<listing>
+59FEA9BF714DC50B &nbsp;&nbsp;&nbsp;
+</listing>
+
+</section>
+
+<section name="Setup -3- Create the Passwords Store">
+
+Execute substituing with your effective Key-ID:
+
+<listing>
+pass&nbsp;init&nbsp;59FEA9BF714DC50B&nbsp;&nbsp;&nbsp;&nbsp;
+</listing>
+
+<br>The message below must validate the initialization of the Password Store:
+<listing>
+<br>mkdir&nbsp;/home/patrick/.password-store/&nbsp<br>
+Password&nbsp;store&nbsp;initialized&nbsp;for&nbsp;59FEA9BF714DC50B &nbsp;&nbsp;&nbsp;<br>&nbsp;
+</listing>
+
+</section>
+
+<section name="Using Pass">
+
+Pass uses simple and intuitive commands like: <i>insert<i>, <i>edit</i>, <i>delete</i>, <i>find</i>...
+<br>To see all the commands and examples, use:
+
+<listing>
+man&nbsp;pass&nbsp;&nbsp;&nbsp;
+</listing>
+
+</section>
+
+
