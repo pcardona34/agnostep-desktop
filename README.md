@@ -38,3 +38,4 @@ Than logout the desktop if all is ok, and install the Display Manager:
 ## Screenshots
 
 ![AGNoStep Desktop on Debian Trixie](Screenshots/screenshot_agnostep_debian13.png)
+[More screenshots](Screenshots)
