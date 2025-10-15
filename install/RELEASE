@@ -3,7 +3,7 @@ AGNOSTEP - agnostic GNUstep Desktop
 
 INFO: We started from the release 0.8.3 and then 0.8.6 of PiSiN to make it agnostic. Many changes in the meanwhile.
 
-- **Release**: 0.9.0
+- **Release**: 0.9.1
 - **Status**: Stable
 
 This is the first release intended to run on all possible hardware, comprising all the Raspberry Pi's
@@ -12,9 +12,9 @@ known to work previously on the PiSiN project.
 ### Tests protocol
 
 See HCL file to know already tested hardware.
-To report a successfull test, please report to us the foolowing steps:
+To report a successfull test, please report to us the following steps:
 
-Tests: running today
+Tests: running: (the date)
 Passed: 18 / 18
 
 - Installation: 1 prep: done | 2 wmaker: done | 3 GNUstep: done | 4 frameworks: done | 5 apps/extra/devel/games: done | 6 user settings: done | 7 Display manager: done | ok
@@ -25,7 +25,7 @@ Passed: 18 / 18
 - Applications Folder / TabbedShelf: ok
 - Autostart: ok
 - Sysinfo Panel (if a laptop, battery monitoring is showing): ok 
-- Notify: Updater with action, BirthNotify and associated tools
+- Notify: Updater with action (automated upgrade not yet working), BirthNotify and associated tools: ok
 - Open/save: ok
 - Web Browser: ok
 - Printing / set default printer using 'Setup_Printer' script: ok
@@ -141,7 +141,7 @@ The complete list:
 
 Tied to the RPI,s
 ==================
-- Rpinters.app and Rpi-imager.app.
+- Rpi-imager.app.
 
 
 Removed (R)
@@ -151,3 +151,4 @@ Some apps or frameworks won't build with the GNU Runtime: so we needed to remove
 
 - Cenon (ER): Desktop Publishing
 - DBusKit (R): DBus framework (to be checked again)
+- Rpinters.app: obsolete
