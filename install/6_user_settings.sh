@@ -183,6 +183,7 @@ fi
 
 cd RESOURCES/WALLPAPERS || exit 1
 sudo cp --remove-destination ${WP} ${WP_FOLDER}/${WP}
+sudo cp fond_agnostep_fw.png ${WP_FOLDER}/
 cd $_PWD
 ok "Done"
 
@@ -274,6 +275,16 @@ ok "Done"
 
 stop
 
+### Theme for FocusWriter
+TITLE="Theme for FocusWriter"
+echo "$TITLE" >>$LOG
+title "$TITLE"
+
+cd TOOLS/agnostep_fw || exit 1
+. ./install_agnostep_fw.sh
+cd $_PWD
+ok "Done"
+
 ###########################################
 ### Installing the theme
 TITLE="AGNOSTEP Theme"
@@ -297,6 +308,8 @@ update_info
 cd $_PWD
 
 stop
+
+###
 
 ###########################################
 ### Setting the Defaults...
