@@ -1,5 +1,5 @@
 
-${image /usr/local/share/icons/conky/battery.png -p 70,510}
+${image /usr/local/share/icons/conky/battery.png -p 70,543}
 ${hr}
 ${voffset 1}
 ${alignc}${font SansSerif:size=14}${color1} Battery ${font}${color}
