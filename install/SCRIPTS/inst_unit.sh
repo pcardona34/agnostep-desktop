@@ -45,6 +45,7 @@ INSTALL_DIR=$(gnustep-config --variable=GNUSTEP_LOCAL_APPS)
 . SCRIPTS/functions_prep.sh
 . SCRIPTS/functions_inst_wrappers.sh
 . SCRIPTS/std_build.sh
+. SCRIPTS/functions_misc_themes.sh
 
 ### End of Include functions
 ################################
@@ -106,5 +107,6 @@ install_agenda
 #install_timemon
 ##################
 
+update_info
 sudo ldconfig
 make_services

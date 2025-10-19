@@ -15,13 +15,14 @@
 ################################
 ### VARS
 
-SPIN='/-\|'
-
 if [ $# -eq 1 ];then
 	ARG="$1"
 else
 	ARG="-h"
 fi
+
+PREFIX=$(echo ${LANG%.UTF-8} | awk -F'_' '{print $1}')
+BELL=/usr/local/share/icons/bell.tif
 
 ###############################################
 ### Functions
@@ -34,11 +35,7 @@ fi
 
 function update()
 {
-TMPFILE=$(mktemp /tmp/pisi-XXXXX)
-trap "rm -f $TMPFILE" EXIT
-PREFIX=$(echo ${LANG%.UTF-8} | awk -F'_' '{print $1}')
 DELAY=10 # seconds
-BELL=/usr/local/share/icons/bell.tif
 
 case $PREFIX in
 	"fr")
@@ -51,17 +48,22 @@ case $PREFIX in
 	TITLE="Debian System Updater"
 	MSG="new packages available."
 	OK="Your Operating System is up to date."
+	JOB="Installing new packages..."
 	ITEM1="Do Upgrade"
 	ITEM2="Do Nothing";;
 esac
 
 ### Get info from Debian apt update
 sleep $DELAY
-sudo apt update &>>$TMPFILE
+
+### Updating the package list
+sudo apt update &>/dev/null
 
 ### Search if upgradable packages exists
-NB=$(grep -e "upgradable" $TMPFILE | awk '{print $1}') || NB=0
-if [ $NB ];then
+### We must substract one line of warning emitted by apt within a script
+NB=$(($(apt list --upgradable &>/dev/null | wc -l) - 1))
+
+if [ $NB -gt 0 ];then
 	ANSWER=$(dunstify -u critical -i $BELL --action "UPGRADE","$ITEM1" --action "EXIT","$ITEM2" "$TITLE" "$NB $MSG")
 	case "$ANSWER" in
 		"2"|"EXIT") exit 0;;
@@ -81,9 +83,21 @@ fi
 #######################################
 function upgrade()
 {
-title "Upgrading the packages..."
-sudo apt -y upgrade
-ok "\rDone"
+
+case $PREFIX in
+        "fr")
+        TITLE="Mise à jour du Système Debian"
+        MSG="Installation de nouveaux paquets..."
+        OK="Votre système est à jour.";;
+        "en" | *)
+        TITLE="Debian System Updater"
+        MSG="Installing new packages..."
+        OK="Your Operating System is up to date.";;
+esac
+
+ID=$(dunstify "$TITLE" "$MSG" -t 0 -i $BELL -p)
+sudo apt -y upgrade &>/dev/null && dunstify -C $ID
+dunstify "$TITLE" "OK" -i $BELL
 }
 
 ### End of upgrade
