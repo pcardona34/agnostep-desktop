@@ -1,0 +1,12 @@
+{
+    "fsn_info_type" = <*I0>;
+    geometry = "874 317 450 350 0 0  1920 1080 ";
+    lastselection = (
+	"/home/patrick/SOURCES/agnostep/install/TOOLS/agnostep_helpviewer/BACK"
+    );
+    shelfdicts = (
+    );
+    shelfheight = <*R77>;
+    singlenode = <*BN>;
+    viewtype = Browser;
+}

@@ -24,6 +24,7 @@ conky-all
 sane-utils
 
 inkscape
+python3-tinycss2
 python3-willow
 chromium
 #rpi-chromium-mods

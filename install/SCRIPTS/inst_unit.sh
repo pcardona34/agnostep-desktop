@@ -61,7 +61,7 @@ if ! [ -d ../build ];then
 fi
 
 ################################
-### Is there a USER APPS Folder?
+### Is there a LOCAL APPS Folder?
 
 if ! [ -d $INSTALL_DIR ];then
 	alert "$INSTALL_DIR was not found!"
@@ -81,13 +81,13 @@ echo "$0" >$LOG
 
 #install_systempreferences
 #install_gworkspace
-#install_helpviewer
+install_helpviewer
 #install_textedit
 #install_openup
 #install_addressmanager
 #install_gnumail
 #install_grr
-install_agenda
+#install_agenda
 #install_terminal
 #install_gspdf
 #install_imageviewer

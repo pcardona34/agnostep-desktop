@@ -286,6 +286,18 @@ cd $_PWD
 ok "Done"
 
 ###########################################
+### Theming HelpViewer
+### Not yet finished
+#TITLE="Theming HelopViewer"
+#echo "$TITLE" >>$LOG
+#title "$TITLE"
+#
+#cd TOOLS/agnostep_helpviewer || exit 1
+#. ./install_agnostep_hv.sh
+#cd $_PWD
+#ok "Done"
+
+###########################################
 ### Installing the theme
 TITLE="AGNOSTEP Theme"
 echo "$TITLE" >>$LOG
