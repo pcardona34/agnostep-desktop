@@ -21,3 +21,31 @@ If you successflly tested your hardware, let me know.
 === Printer and scanner compatible ===
 
 - HP All-in-One ENVY 5020: printing: yes; scanning: yes
+
+### Tests protocol
+
+- To report a successfull test on a new hardware, please report to us the following steps:
+
+Date:
+Passed: (sum of the successful steps) / 19
+
+1) Installation step by step: 1 prep | 2 wmaker | 3 GNUstep | 4 Frameworks | 5 apps/extra/devel/games | 6 user settings | 7 Display manager
+2) Installation (BIS) with enjoy script: successfully executed from begining to end.
+3) Window manager / Theming
+4) Workspace / Dock / Wallpaper
+5) Home customized: Folders
+6) Applications Folder with a shortcut on the shelf / TabbedShelf
+7) Autostart: namely conky panel and notifications (see step 9).
+8) Sysinfo Panel (if a laptop, battery monitoring is showing)
+9) Notify: Updater with action, BirthNotify and associated tools
+10) Open/save with the home shortcut
+11) Web Browser
+12) Printing / set default printer using 'Setup_Printer' script
+13) Scanning (with ScanImage)
+14) Screensaver (InnerSpace)
+15) Display Manager: login, shutdown.
+16) Mount/Unmount a removable device: read User Guide.
+17) Listening to music (with Cynthiune) and setting the level (with VolumeControl)
+18) Watching a video (with Player)
+19) Theming FocusWriter
+
