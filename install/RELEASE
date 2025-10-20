@@ -7,41 +7,14 @@ INFO: We started from the release 0.8.3 and then 0.8.6 of PiSiN to make it agnos
 - **Status**: Stable
 
 This release should run on all possible hardware, comprising all the Raspberry Pi's
-known to work previously on the PiSiN project, mutatis mutandis.
+known to work previously on the PiSiN project, mutatis mutandis. 
+See the [HCL](HCL) file to know how to report a successful installation on your hardware.
 
 ### About the Status (see above)
 
 - Alpha: means earlier developement stage. You should not use nor try, better is waiting.
 - Beta: you may test to improve and help the project.
 - Stable: Yet well tested. You can use it for a daily use.
-
-### Tests protocol
-
-- See HCL file to know already tested hardware.
-- To report a successfull test, please report to us the following steps:
-
-Tests: running: (the date)
-Passed: (sum of the successful steps)
-
-1) Installation: 1 prep | 2 wmaker | 3 GNUstep | 4 Frameworks | 5 apps/extra/devel/games | 6 user settings | 7 Display manager
-- Installation (BIS): enjoy script: successfully executed from begining to end.
-- Window manager / Theming
-- Workspace / Dock / Wallpaper
-- Home customized folders: ok
-- Applications Folder / TabbedShelf: ok
-- Autostart: ok
-- Sysinfo Panel (if a laptop, battery monitoring is showing): ok 
-- Notify: Updater with action (automated upgrade not yet working), BirthNotify and associated tools: ok
-- Open/save: ok
-- Web Browser: ok
-- Printing / set default printer using 'Setup_Printer' script: ok
-- Scanning (ScanImage): ok
-- Screensaver (InnerSpace): ok
-- Display Manager: ok
-- Mount/Unmount a removable device: ok
-- Listening to music (Cynthiune) and setting the level (VolumeControl): ok
-- Watching a video (Player): ok
-- Theming FocusWriter: ok
 
 ### The Desktop Components
 
