@@ -6,21 +6,27 @@ INFO: We started from the release 0.8.3 and then 0.8.6 of PiSiN to make it agnos
 - **Release**: 0.9.1
 - **Status**: Stable
 
-This is the first release intended to run on all possible hardware, comprising all the Raspberry Pi's
-known to work previously on the PiSiN project.
+This release should run on all possible hardware, comprising all the Raspberry Pi's
+known to work previously on the PiSiN project, mutatis mutandis.
+
+### About the Status (see above)
+
+- Alpha: means earlier developement stage. You should not use nor try, better is waiting.
+- Beta: you may test to improve and help the project.
+- Stable: Yet well tested. You can use it for a daily use.
 
 ### Tests protocol
 
-See HCL file to know already tested hardware.
-To report a successfull test, please report to us the following steps:
+- See HCL file to know already tested hardware.
+- To report a successfull test, please report to us the following steps:
 
 Tests: running: (the date)
-Passed: 18 / 18
+Passed: (sum of the successful steps)
 
-- Installation: 1 prep: done | 2 wmaker: done | 3 GNUstep: done | 4 frameworks: done | 5 apps/extra/devel/games: done | 6 user settings: done | 7 Display manager: done | ok
-- Installation (BIS): enjoy script: successfully executed.
-- Window manager / Theming: ok
-- Workspace / Dock / Wallpaper: ok
+1) Installation: 1 prep | 2 wmaker | 3 GNUstep | 4 Frameworks | 5 apps/extra/devel/games | 6 user settings | 7 Display manager
+- Installation (BIS): enjoy script: successfully executed from begining to end.
+- Window manager / Theming
+- Workspace / Dock / Wallpaper
 - Home customized folders: ok
 - Applications Folder / TabbedShelf: ok
 - Autostart: ok
