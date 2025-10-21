@@ -579,10 +579,7 @@ function install_helpviewer()
 {
 
 APPNAME="HelpViewer"
-REPO="gs-desktop"
-OWNER="onflapp"
-HUB="https://github.com"
-BUILD_DIR="Applications" # "system-apps" | "ported-apps"
+HUB="svn://svn.savannah.nongnu.org/gap/trunk/system-apps"
 CONFIG_ARGS=""
 BUILD_ARGS=""
 INSTALL_ARGS=""
@@ -593,15 +590,13 @@ echo "$APPNAME $RELEASE" >> $LOG
 title "$APPNAME $RELEASE"
 
 printf "Fetching...\n"
-if [ -d $REPO ];then
-        cd $REPO
-        git pull &>/dev/null
+if [ -d $APPNAME ];then
+        cd $APPNAME
+        svn update &>/dev/null
 else
-	git clone ${HUB}/${OWNER}/${REPO}.git &>/dev/null
-	cd $REPO
+	svn co ${HUB}/${APPNAME} &>/dev/null
+	cd $APPNAME
 fi
-
-cd $BUILD_DIR/$APPNAME
 
 _build
 }

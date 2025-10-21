@@ -1,7 +1,7 @@
 <section name="Introduction">
 
 Do not forget them!
-To help you, PiSiN provides several tools.
+To help you, AGNoStep provides several tools.
 
 </section>
 
@@ -58,7 +58,7 @@ menu:&nbsp;Database&nbsp;&gt;&nbsp;Import... &nbsp;&nbsp;&nbsp;<br />
 
 In the Open Panel, navigate to 'Documents/Private' and choose the 'vcf' file you have created. Thats done.
 
-Then open SimpleAgenda to verify it is able to retrieve the birthdays from the Address base: each birday will be shown with a violet background.
+Then open SimpleAgenda to verify it is able to retrieve the birthdays from the Address base: each birthday will be shown with a violet background.
 
 </section>
 <section name="Feasts">

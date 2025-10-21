@@ -75,6 +75,8 @@ echo "$0" > $LOG
 #install_gs-webbrowser
 #install_Weather
 
+test_helpviewer
+
 ### Games
 #install_nextgo
 

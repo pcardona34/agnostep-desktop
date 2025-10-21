@@ -87,7 +87,7 @@ install_helpviewer
 #install_addressmanager
 #install_gnumail
 #install_grr
-#install_agenda
+install_agenda
 #install_terminal
 #install_gspdf
 #install_imageviewer
@@ -107,6 +107,6 @@ install_helpviewer
 #install_timemon
 ##################
 
-update_info
+#update_info
 sudo ldconfig
 make_services

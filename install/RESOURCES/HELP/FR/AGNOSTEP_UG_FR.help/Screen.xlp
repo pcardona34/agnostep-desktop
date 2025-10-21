@@ -1,0 +1,28 @@
+<section name="Introduction">
+
+L'économiseur d'écran de GNUstep s'appelle 'InnerSpace'. Par défaut, elle est configurée pour utiliser le module "Polyhèdre".
+
+</section>
+
+<section name="Démarrage">
+
+Clickez sur l'AppIcon (lune et étoiles) placée sur le Dock... 
+
+
+Dans ce premier mode, seul le fond d'écran est remplacé par l'animation.<br>
+Pour démarrer le mode économiseur complet, sélectionnez la commande démarrer via le menu&nbsp;:<br>
+
+<listing>
+Run &nbsp;&nbsp;&nbsp;
+</listing>
+
+<section name="Quitter">
+
+Il suffit de cliquer n'importe où sur le bureau. Le menu de 'InnerSpace' est affiché.<br>
+Pour l'arrêter, sélectionnez 'Quitter' dans le menu&nbsp;:<br>
+
+<listing>
+Quit &nbsp;&nbsp;&nbsp;
+</listing>
+
+</section>
