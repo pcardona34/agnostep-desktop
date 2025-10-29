@@ -3,7 +3,7 @@ AGNOSTEP - agnostic GNUstep Desktop
 
 INFO: We started from the release 0.8.3 and then 0.8.6 of PiSiN to make it agnostic. Many changes in the meanwhile.
 
-- **Release**: 0.9.1
+- **Release**: 0.9.2
 - **Status**: Stable
 
 This release should run on all possible hardware, comprising all the Raspberry Pi's
@@ -21,25 +21,26 @@ See the [HCL](HCL) file to know how to report a successful installation on your 
 - Operating System: Debian Trixie 13.1.
 - Window Manager: this is Window Maker 0.96.0 (debian default package version) with AGNOSTEP.themed and options: --no-dock  --no-clip --static. 
 	Some apps and tools are launched with the 'autostart' script of Window Maker.
-- Notifyer: dunst - SimpleAgenda won't use it because libDBUSKit is not installed.
+- Notifyer: dunst - With Release 9.2, DBusKit was back and so Desktop Notification from SimpleAgenda were successfully restored.
 - Compositing: compton.
-- Sys Infos: conky. Weather data is fetched from Wttr.in. The system monitoring is upon: date, time, uptime, CPU, Memory, Storage and Networking.
+- System Infos: conky. Weather data is fetched from Wttr.in. The system monitoring is upon: date, time, uptime, CPU, Memory, Storage and Networking. On Laptops, also Battery status is checked.
 	(Conky Panel is localized in French and in English)
 
-- GNUstep: latest built from sources with GNU Runtime (not OBJC2). Use: `agostep --info` for a more complete release info.
+- GNUstep: latest built from sources with GNU Runtime (not OBJC2). Use: `agnostep --info` for a more complete release info.
 All the apps below were built from sources and so are the latest.
 - Preferences Manager: SystemPreferences
-- Workspace: GWorkspace and Recycler: 1.1.0 (02 2025) - Its own Desktop layer and its Dock (modern flavour) are shown. The Wallpaper is shown on this layer. It is a mandatory set to manage mounted removable devices on the Desktop and to unmount those by DND on the Recycler Icon.
-- Theme: AGNOSTEP mostly inspired by Papirus Icon theme and GNUstep Sleek Theme: finished.
-- Session: Display Manager (Lightdm) and DBus (but without DBUSKit).
+- Workspace: GWorkspace and Recycler: 1.1.0 (02 2025) - Its own Desktop layer and its Dock (modern flavour) are shown. The Wallpaper is shown on this layer. It is a mandatory set to manage mounted removable devices on the Desktop and to unmount those by DND on the Recycler Icon. See AGNoStep User Guide to go in depth with removable disks.
+- Theme: AGNOSTEP (previously PISIN) mostly inspired by Papirus Icon theme and GNUstep Sleek Theme.
+- Session: Display Manager (Lightdm) and DBus (with DBUSKit support).
 - Alsa compliant Audio Mixer: see VolumeControl below.
-- RPI tools: only on RPI when the hardware is detected, if not substituted: cf. how to set default printer within CUPS in the UG.
+- RPI tools: only on RPI when the hardware is detected, if not substituted: cf. how to set default printer within CUPS in the AGNoStep User Guide.
 - Password Manager: pass CLI.
 
 HELP
 ====
-- AGNoStep User Guide
-- GWorkspace User Guide
+- AGNoStep User Guide: English and French in the 'Books' Folder. 
+- GWorkspace User Guide: English (default) from the menu command 'Info > Help...' - French version in the 'Books' Folder.
+Note: path of these guides might change in the future.
 
 ===========================================
 
@@ -130,5 +131,4 @@ Removed (R)
 Some apps or frameworks won't build with the GNU Runtime: so we needed to remove those until we do not use libobjc2.
 
 - Cenon (ER): Desktop Publishing
-- DBusKit (R): DBus framework (to be checked again)
 - Rpinters.app: obsolete

@@ -1,0 +1,60 @@
+<meta charset="utf-8" />
+<document>
+
+<header>
+
+<title>Guide Utilisateur de GWorkspace</title>
+</header>
+
+<plain name="Couverture">
+
+		<center>
+	    	<img src="banniere_UG_FR.png">
+		</center>
+
+<left>	
+	    <br><br>
+		<information>
+<br />&nbsp;
+	    GWorkspace est un Gestionnaire de l'Espace de travail pour GNUstep.
+		<br />C'est une réécriture du gestionnaire de l'espace de travail de NeXT, augmenté de nouvelles fonctionalités, d'une recherche avancée fondée sur une base de données système, etc. Inspiré aussi par le Workspace d'OpenStep, il ajoute un Fiend et une Étagère à onglets en guise de lanceur et de conteneur d'applications; enfin, inspiré par le Finder de MacOS, il offre aussi un Dock.&nbsp;<br />&nbsp;<br />&nbsp;
+	    </information>
+
+	    <caution>
+	    <br>&copy; projet GNUstep et &copy; 29 mars 2006 Dennis Leeuw pour le Guide Utilisateur de GWorkspace original &nbsp;
+		<br>&copy; 2025 Patrick Cardona pour ce Guide Utilisateur revisité pour le Bureau PiSiN d'abord, puis pour AGNoStep.<br>&nbsp;<br>&nbsp;
+	    </caution>
+	   
+
+<note>
+<br>
+Site: Guide Utilisateur original<br>
+<url>http://gnustep.made-it.com/Guides/GWorkspace.html</url> &nbsp;&nbsp;&nbsp;
+<br>
+Site: Projet AGNoStep
+<br>
+<url>https://github.com/pcardona34/agnostep</url> &nbsp;&nbsp;&nbsp;
+<br>&nbsp;<br>&nbsp;
+</note>
+
+</left>
+</plain>
+
+
+<chapter src="Legal.xlp" name="Permission"></chapter>
+
+<chapter src="Introduction.xlp" name="Introduction"></chapter>
+
+<chapter src="Workspace.xlp" name="Chapitre 1. Espace de travail"></chapter>
+
+<chapter src="FileSystem.xlp" name="Chapitre 2. Voir le Système de fichiers"></chapter>
+
+<chapter src="Managing.xlp" name="Chapitre 3. Gérer les fichiers et les dossiers"></chapter>
+
+<chapter src="Searching.xlp" name="Chapitre 4. Chercher des fichiers et des dossiers"></chapter>
+
+<chapter src="Applications.xlp" name="Chapitre 5. Gérer les Applications"></chapter>
+
+<chapter src="Shelfs.xlp" name="Chapitre 6. Rendre les choses plus faciles avec les étagères"></chapter>
+
+</document>

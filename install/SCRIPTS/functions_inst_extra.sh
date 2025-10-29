@@ -130,7 +130,7 @@ _build
 
 ############################################
 ## StepSync
-### Repo/Release: github/gnustep/gap: 0.1
+### Repo/Release: Savannah/gap: 1.1
 ############################################
 
 function install_stepsync()

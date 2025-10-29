@@ -79,15 +79,16 @@ echo "$0" >$LOG
 ## save and run...
 ##############################################
 
+#### Main Apps
 #install_systempreferences
 #install_gworkspace
-install_helpviewer
+#install_helpviewer
 #install_textedit
 #install_openup
-#install_addressmanager
+install_addressmanager
 #install_gnumail
 #install_grr
-install_agenda
+#install_agenda
 #install_terminal
 #install_gspdf
 #install_imageviewer
@@ -100,6 +101,31 @@ install_agenda
 #install_volumecontrol
 #install_ink
 #install_wrappers
+
+#### Extra
+#install_calculator
+#install_powerpaint
+#install_stepsync
+#install_graphos
+#install_dictionaryreader
+#install_flexisheet
+#install_pikopixel
+#install_price
+#install_fontmanager
+
+#### Devel
+#install_gorm
+#install_PC
+#install_easydiff
+#install_gemas
+#install_thematic
+
+#### Games
+#install_chess
+#install_gomoku
+#install_lapis
+#install_freecell
+#install_gshisen
 
 ##################
 ### Removed

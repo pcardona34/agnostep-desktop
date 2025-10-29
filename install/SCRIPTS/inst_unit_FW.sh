@@ -10,7 +10,11 @@
 ####################################################
 
 ################################
-### Frameworks
+### Install Frameworks one by one
+### For test or update purpose
+### To use:
+### From 'install' folder:
+### bash ./SCRIPTS/ins_unit_FW.sh
 ################################
 
 ################################
@@ -22,7 +26,7 @@ echo $PATH | grep -e "/System/Tools" &>/dev/null
 if [ $? -ne 0 ];then
 	export PATH=/System/Tools:$PATH
 fi
-LOG=$HOME/AGNOSTEP_BUILD_FW.log
+LOG=$HOME/AGNOSTEP_BUILD_UNIT_FW.log
 THERE=`pwd`
 _PWD=`pwd`
 SPIN='/-\|'
@@ -77,19 +81,23 @@ if ! [ -d ../build ];then
 	mkdir -p ../build
 fi
 
-install_pdfkit
+################################
+### To install the desired FW, uncomment below
+
+#install_pdfkit
 install_fw_addresses
 install_fw_addressview
-install_pantomime
-install_SWK
-install_rsskit
-install_hlkit
-install_hkthemes
-install_renaissance
-install_performance
-install_webservices
-install_steptalk
-install_dbuskit
+#install_pantomime
+#install_SWK
+#install_rsskit
+#install_hlkit
+#install_hkthemes
+#install_renaissance
+#install_performance
+#install_webservices
+#install_steptalk
+#install_dbuskit
+
 ####################################
 
 sudo ldconfig

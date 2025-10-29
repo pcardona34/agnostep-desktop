@@ -1,0 +1,32 @@
+Installation of libdbuskit 0.1.1
+
+### Dependencies
+### already there
+### sudo apt install -y libdbus-1-dev libdbus-1-3
+
+wget https://github.com/gnustep/libs-dbuskit/archive/refs/tags/0.1.1.tar.gz
+gunzip --force 0.1.1.tar.gz
+tar xvf 0.1.1.tar && rm 0.1.1.tar
+cd libs-dbuskit-0.1.1
+
+### To avoid the config.guess type error:
+### We must update config.guess... and  config.sub?
+
+wget -O config.guess 'https://git.savannah.gnu.org/gitweb/?p=config.git;a=blob_plain;f=config.guess;hb=HEAD'
+
+wget -O config.sub 'https://git.savannah.gnu.org/gitweb/?p=config.git;a=blob_plain;f=config.sub;hb=HEAD'
+
+./configure -disable-libclang
+
+### A patch must be applied (thanks to Yavor Doganov, Debian GNUstep maintainer)
+cd Source
+ wget https://sources.debian.org/data/main/d/dbuskit/0.1.1-14/debian/patches/no-gc-macros.patch
+
+patch --forward -u DKNotificationCenter.m --input=no-gc-macros.patch
+cd ..
+make nonstrict=yes
+sudo -E make install
+
+
+
+

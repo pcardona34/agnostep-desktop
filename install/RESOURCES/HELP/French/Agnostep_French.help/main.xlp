@@ -1,0 +1,61 @@
+<document>
+
+<header>
+<title>Guide Utilisateur du Bureau AGNoStep</title>
+</header>
+
+<plain name="Couverture">
+
+		<center><img src="banniere_UG.tiff"><br>&nbsp;</center>
+
+<left>	
+	    <br>&nbsp;<br>
+
+<meta charset="utf-8" />
+		<information>
+	    <br />AGNoStep est un acronyme pour: AGNostic GNUstep (Desktop). 
+		<br />Cela signifie un Environnement de Bureau sur un ordinateur bénéficiant du  cadre logiciel GNUstep.&nbsp;&nbsp;
+		<br />&nbsp;<br />&nbsp;
+	    </information>
+
+<meta charset="utf-8" />
+	    <caution>
+	    (c) 2025 Patrick Cardona. Ce projet est un Logiciel Libre fourni sous la licence publique générale GNU (GPL).
+	    </caution>
+	    
+	    <br>Site: <url>https://github.com/pcardona34/agnostep</url>&nbsp;
+	    <br>&nbsp;
+
+<meta charset="utf-8" />
+		<note>
+	    <br>Veuillez y reporter tout éventuel problème.&nbsp;&nbsp;<br>&nbsp;
+	    <br>&nbsp;
+	    </note>
+</left>
+</plain>
+
+<meta charset="utf-8" />
+<chapter src="Introduction.xlp" name="Bref Tour d'AGNoStep"></chapter>
+
+<meta charset="utf-8" />
+<chapter src="Devices.xlp" name="Disques amovibles"></chapter>
+
+<meta charset="utf-8" />
+<chapter src="Sound.xlp" name="Son"></chapter>
+
+<meta charset="utf-8" />
+<chapter src="Printing.xlp" name="Imprimer"></chapter>
+
+<meta charset="utf-8" />
+<chapter src="Screen.xlp" name="Économiseur d'écran"></chapter>
+
+<meta charset="utf-8" />
+<chapter src="Birth.xlp" name="Fêtes et Anniversaires"></chapter>
+
+<meta charset="utf-8" />
+<chapter src="Updater.xlp" name="Mise à jour du système"></chapter>
+
+<meta charset="utf-8" />
+<chapter src="Pass.xlp" name="Mots de passe"></chapter>
+
+</document>

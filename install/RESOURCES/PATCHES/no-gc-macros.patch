@@ -1,0 +1,36 @@
+Description: Remove GC macros as GC is gone from base
+Origin: upstream, commit:r39612
+Bug-Debian: https://bugs.debian.org/878051
+Forwarded: not-needed
+Last-Update: 2017-10-09
+---
+
+--- dbuskit.orig/Source/DKNotificationCenter.m
++++ dbuskit/Source/DKNotificationCenter.m
+@@ -514,7 +514,7 @@
+   {
+     return nil;
+   }
+-  observer = GS_GC_HIDE(anObserver);
++  observer = anObserver;
+   selector = aSelector;
+ 
+   // Make sure the necessary components are there and that the selector takes a
+@@ -530,7 +530,7 @@
+ 
+ - (id)observer
+ {
+-  return GS_GC_UNHIDE(observer);
++  return observer;
+ }
+ 
+ - (SEL)selector
+@@ -556,7 +556,7 @@
+   // callback and need to avoid the reentrancy. We do this by scheduling
+   // delivery of the notification on the run loop.
+   [[NSRunLoop currentRunLoop] performSelector: selector
+-                                      target: GS_GC_UNHIDE(observer)
++                                      target: observer
+ 				    argument: notification
+ 				       order: UINT_MAX
+ 				       modes: [NSArray arrayWithObject: NSDefaultRunLoopMode]];

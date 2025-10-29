@@ -145,19 +145,17 @@ _build
 
 #######################################
 ## Addresses
-### Repo/Release: savannah/gap: 0.5.0
+### Repo/Release: savannah/gap svn
 #######################################
 
 function install_addressmanager()
 {
 
 APPNAME=AddressManager
-RELEASE="0.5.0"
-# A better Icon from gs-desktop project
-#ICON_APP=$_PWD/RESOURCES/ICONES_PISI/AddressManager.tiff
+#RELEASE="0.5.0"
 
-echo "$APPNAME $RELEASE" >>$LOG
-title "$APPNAME $RELEASE"
+echo "$APPNAME" >>$LOG
+title "$APPNAME"
 CONFIG_ARGS=""
 BUILD_ARGS=""
 INSTALL_ARGS=""
@@ -165,20 +163,15 @@ INSTALL_ARGS=""
 cd ../build || exit 1
 
 printf "Fetching...\n"
-if [ -d Addresses-0.5.0 ];then
-	cd Addresses-0.5.0
-	cd AddressManager
+if [ -d Addresses ];then
+	cd Addresses
+	svn update
+	cd AddressManager || exit 1
 else
-	wget --quiet http://savannah.nongnu.org/download/gap/Addresses-0.5.0.tar.gz
-	gunzip --force Addresses-0.5.0.tar.gz
-	tar -xf Addresses-0.5.0.tar
-	cd Addresses-0.5.0
-	cd AddressManager
+	svn co svn://svn.savannah.nongnu.org/gap/trunk/system-apps/Addresses
+	cd Addresses
+	cd AddressManager || exit 1
 fi
-
-#if [ -f $ICON_APP ];then
-#	cp $ICON_APP ./
-#fi
 
 _build
 }

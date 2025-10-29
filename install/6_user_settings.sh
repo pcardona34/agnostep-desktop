@@ -25,7 +25,7 @@ fi
 
 _PWD=`pwd`
 SPIN='\-/|'
-STOP=0 # Set to 0 to avoid stops; to 1 to make stops
+STOP=1 # Set to 0 to avoid stops; to 1 to make stops
 #set -v
 MSG_STOP="Stop: type <Enter> to continue."
 LOG=$HOME/AGNOSTEP_USER_SETTINGS.log
@@ -183,7 +183,7 @@ fi
 
 cd RESOURCES/WALLPAPERS || exit 1
 sudo cp --remove-destination ${WP} ${WP_FOLDER}/${WP}
-sudo cp fond_agnostep_fw.png ${WP_FOLDER}/
+#sudo cp fond_agnostep_fw.png ${WP_FOLDER}/
 cd $_PWD
 ok "Done"
 
@@ -209,6 +209,18 @@ title "$TITLE"
 
 cd TOOLS || exit 1
 sudo cp Setup_Printer /usr/local/bin/
+cd $_PWD
+ok "Done"
+
+stop
+
+### Installing Tools and confs... Shooting CLI
+TITLE="Screenshot Shooting CLI"
+echo "$TITLE" >>$LOG
+title "$TITLE"
+
+cd TOOLS || exit 1
+sudo cp Shooting /usr/local/bin/
 cd $_PWD
 ok "Done"
 
@@ -302,6 +314,7 @@ cd $_PWD
 ### Some Apps known to not comply with Theme: workaround
 ### We need to update Info-gnustep.plist for these apps
 ### Adding 'CFBundleIdentifier' property in the Dictionary
+### Updating too Help path
 
 update_info
 
@@ -452,9 +465,19 @@ echo "$TITLE" >>$LOG
 title "$TITLE"
 
 cd RESOURCES/HELP
-for HLP in *.help
+for HLP in English/*.help French/*.help
 do
 	cp -ruf ${HLP} $HOME/Books/
+done
+
+### miscellaneous
+### Help of GWorkspace
+for LOCAL in English French
+do
+	if [ ! -d /Local/Applications/GWorkspace.app/Resources/${LOCAL}.lproj/Help ];then
+		sudo mkdir -p /Local/Applications/GWorkspace.app/Resources/${LOCAL}.lproj/Help
+		sudo cp -ruf ${LOCAL}/GWorkspace_${LOCAL}.help /Local/Applications/GWorkspace.app/Resources/${LOCAL}.lproj/Help/GWorkspace.help
+	fi
 done
 
 cd $_PWD
@@ -509,4 +532,3 @@ info "$MESSAGE"
 info "To install the Login/Display Manager: after testing the Desktop, log out and execute:"
 cli "./7_install_DM.sh"
 
-sleep 5

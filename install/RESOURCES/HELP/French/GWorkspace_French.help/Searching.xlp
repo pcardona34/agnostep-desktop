@@ -1,0 +1,138 @@
+<meta charset="utf-8" />
+
+<section  name="Introduction">
+
+Quand vous avez sélectionné le dossier "Démo" et saisi au clavier la combinaison <b>ALT-f</b>&nbsp; le dialogue de Recherche est démarré. La Recherche est aussi  disponible via le menu "Outils".
+
+<section name="Dialogue de Recherche">
+<legendfig src="Search_Panel.tiff">
+	<legend x="60" y="32">Racine de la recherche / Choix de l'utilisateur</legend>
+	<legend x="290" y="32">Ajouter / Retirer un emplacement spécifique</legend>
+	<legend x="260" y="100">Liste des emplacements ciblés par la recherche</legend>
+	<legend x="350" y="174">Ajouter / Retirer une option de recherche</legend>
+	<legend x="40" y="166">Liste de recherche par item</legend>
+	<legend x="5" y="202">Chercher aussi dans les sous-dossiers</legend>
+</legendfig>
+</section>
+
+<br><br>Si vous cherchez avec le critère "Nom" "contient" / "est" et que vous cliquez sur le bouton "Chercher", vous obtenez&nbsp;:
+
+<section name="Résultats de la recherche">
+<legendfig src="Results.tiff">
+	<legend x="316" y="30">Arrêter la recherche</legend>
+	<legend x="336" y="30">Relancer la recherche</legend>
+	<legend x="360" y="30">Créer un dossier de recherche (Life Search)</legend>
+	<legend x="160" y="94">Résultats de la recherche</legend>
+	<legend x="236" y="262">Chemin de l'item</legend>
+</legendfig>
+</section>
+
+<br><br>Au moyen des boutons plus (+) et moins (-) vous pouvez ajouter ou retirer des options supplémentaires de recherche. De cette manière, vous pouvez créer une équation de recherche complexe pour affiner vos résultats.
+
+</section>
+
+<section  name="L'Aire de recherche">
+
+Vous pouvez démarrer la recherche dans un dossier unique, ou bien vous pourriez constituer une liste de dossiers où exercer cette recherche. Sélectionnez l'item "Choix de l'utilisateur" et utilisez le bouton "Ajouter" pour constituer la liste des emplacements de la recherche.
+
+<section name="Choix de l'utilisateur">
+<legendfig src="Places.tiff">
+</legendfig>
+</section>
+
+<br><br>De cette façon, vous pouvez préciser où chercher.
+
+</section>
+
+section name="Définir une recherche">
+
+<section  name="Recherche par nom de fichier">
+
+L'option de recherche par "nom" vous offre la possibilité de chercher un fichier ou un dossier par son nom. Pour chercher la correspondance exacte, c'est l'option '"est". Si par contre vous ne connaissez qu'une partie du nom, l'option de recherche "contient" pourrait s'avérer plus efficace.
+
+<br><br>Pour affiner votre recherche, vous pourriez exclure certains items avec l'option "ne contient pas" ou encore l'option "commence par". Si vous connaissez l'extension du fichier, vous pourriez par exemple filtrer tous les fichiers ".txt" en employant l'option "finit par".
+
+<section name="Options de recherche sur le nom">
+<legendfig src="Filename_Search.tiff">
+</legendfig>
+</section>
+
+<br><br>le champ de saisie du texte est sensible à la casse. On distinguera ainsi bas de casse et capitales.
+
+</section>
+
+<section  name="Recherche par type de fichier">
+
+La recherche par type de fichier permet deux variantes: correspond ou ne correspond pas, à savoir&nbsp;: 'est' ou 'n'est pas'
+
+<br><br>Actuellement, la recherche permet de trouver des dossiers, des outils, des applications, des liens symboliques et bien sûr des fichiers normaux tels que des documents.
+
+<section name="Recherche par type de fichier">
+<legendfig src="Filetype_Search.tiff">
+</legendfig>
+</section>
+
+</section>
+
+<section  name="Recherche de contenus">
+
+En utilisant la recherche de contenus, on peut explorer le contenu des documents pour y trouver des correspondances. Notez que cela peut constituer une lourde tâche pour votre ordinateur étant donné que pour explorer tous les contenus, le programme doit ouvrir et refermer chaque fichier concerné.
+
+<br><br>Le texte saisi est sensible à la casse, donc une exacte correspondance avec majuscules et minscules doit être envisagée.
+</section>
+
+<section  name="Recherche par annotation">
+
+Grâce à l'Inspecteur des "Annotations", on peut associer des mots clés à des fichiers. Et grâce à l'option de recherche par "Annotations", vous pourrez rechercher de tels mots clés.
+<br>Il existe différents manières de rechercher au moyen des annotations.
+
+<section name="Recherche par annotation">
+<legendfig src="Annotations.tiff">
+</legendfig>
+</section>
+
+</section>
+
+<section  name="Recherche par la taille">
+
+Cette méthode de recherche est très simple. Vous pouvez chercher selon que la taille excède ou est comprise sous une valeur donnée: "plus grand que" ou "plus petit que".
+<br>En combinant les ajouts (+) vous pouvez affiner presque jusqu'à la taille exacte du document.
+
+<section name="Recherche par taille">
+<legendfig src="Size.tiff">
+</legendfig>
+</section>
+
+</section>
+
+<section  name="Recherche par date">
+
+<b>Créé ou modifié</b>
+
+<br><br>Il existe deux façons d'associer une date à un fichier. La permière est la date de création du fichier et la seconde est la date de dernière modification. Le dialogue de recherche vous offre le moyen de chercher sur ces deux dates&nbsp; "Modifié" ou "Créé".
+<br>Ces deux options fonctionnent de la même manière pour saisir les critères de date. Celles de gauche vous permettent de choisir, et selon le cas, celles de droite permettront de saisir plus précisément une date.
+
+<section name="Recherche par date">
+<legendfig src="Date.tiff">
+</legendfig>
+</section>
+
+</section>
+</section>
+
+
+<section name="Dossiers de recherche dynamique">
+
+En faisant glisser l'icône "Live Search Folder" (dossier de recherche dynamique) à partir de la fenêtre de résultats vers un autre dossier, par exemple le "Bureau", vous pouvez sauvegarder la recherche pour de futurs usages. Un dossier de recherche dynamique (Live Search Folder) est un dialogue de recherche conservé dans un fichier et susceptible de se mettre à jour de façon autonome.
+
+<br><br>Pour réutiliser cette recherche, cliquez sur un dossier "Live Search Folder". La fenêtre LSF qui s'ouvrira disposera de deux boutons et d'une liste d'actions&nbsp;; le  bouton "Éditer" ouvre l'édition de la recherche pour en ajuster les critères, la liste permet de définir la fréquence de la mise à jour des résultats&nbsp; enfin le bouton "Mettre à jour" actualise immédiatement le résultat de la recherche.
+
+<section name="Dossier de recherche dynamique (LiveSearch)">
+<legendfig src="LiveSearch.tiff">
+	<legend x="190" y="110">Ajuster les critères de la recherche</legend>
+	<legend x="310" y="110">Fréquence de la mise à jour des résultats</legend>
+</legendfig>
+</section>
+
+</section>
+

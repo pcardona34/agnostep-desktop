@@ -1,0 +1,62 @@
+{
+    ApplicationDescription = "GNUstep Workspace Manager";
+    ApplicationIcon = "FileManager.tiff";
+    ApplicationName = GWorkspace;
+    ApplicationRelease = "1.1.0";
+    Authors = (
+	"Riccardo Mottola",
+	"Enrico Sersale",
+	"Documentation and Help contents by:",
+	"Dennis Leeuw <dleeuw@made-it.com>"
+    );
+    CFBundleIdentifier = "org.gnustep.GWorkspace";
+    Copyright = "Copyright (C) 2003-2025 Free Software Foundation, Inc.";
+    CopyrightDescription = "Released under the GNU General Public License 2.0 or later";
+    GSHelpContentsFile = "GWorkspace.help";
+    GSMainMarkupFile = "";
+    NOTE = "Automatically generated, do not edit!";
+    NSBuildVersion = "02 2025";
+    NSExecutable = GWorkspace;
+    NSIcon = "FileManager.tiff";
+    NSMainNibFile = "";
+    NSMainStoryboardFile = "";
+    NSPrincipalClass = GWorkspace;
+    NSRole = Viewer;
+    NSServices = (
+	{
+	    NSMenuItem = {
+		English = "Open in GWorkspace";
+		French = "Ouvrir dans GWorkspace";
+		German = "In GWorkspace \U00F6ffnen";
+		Italian = "Aprire in GWorkspace";
+		default = "Open in GWorkspace";
+	    };
+	    NSMessage = openInWorkspace;
+	    NSPortName = GWorkspace;
+	    NSSendTypes = (
+		NSStringPboardType
+	    );
+	}
+    );
+    NSTypes = (
+	{
+	    NSIcon = "MagnifyGlas.tiff";
+	    NSUnixExtensions = (
+		inspector
+	    );
+	},
+	{
+	    NSIcon = "LiveSearchFolder.tiff";
+	    NSUnixExtensions = (
+		lsf
+	    );
+	},
+	{
+	    NSIcon = "FileIcon_WebLink.tiff";
+	    NSUnixExtensions = (
+		webloc
+	    );
+	}
+    );
+    URL = "http://www.gnustep.org/experience/GWorkspace.html";
+}

@@ -1,0 +1,92 @@
+<meta charset="utf-8" />
+<section name="Introduction">
+
+Jusqu'à présent, nous ne disposons pas d'application native GNUstep pour gérer les mots de passe. C'est pourquoi nou utiliserons un programle efficace en ligne de commande via le Terminal: pass, aussi appelé le "le gestionnaire de mots de passe standard d'UNIX".
+<br>&nbsp;<br>Site: <url>https://www.passwordstore.org/</url>
+
+</section>
+
+<meta charset="utf-8" />
+<section name="Configuration -1- Clé de chiffrement principale">
+
+Le programme et ses dépendances sont déjà installés.
+
+Pour l'utiliser, vous avez besoin de créer une clé de chiffrement. Ouvrez une invite de commande dans le Terminal et exécutez&nbsp;:<br>&nbsp;
+
+<listing>
+
+gpg&nbsp;--expert&nbsp;--pinentry-mode=loopback&nbsp;--full-gen-key&nbsp;&nbsp;&nbsp;
+
+</listing>
+
+<br>Mes paramètres sont les suivants:
+
+<meta charset="utf-8" />
+<note>
+&nbsp;<br>
+Type:&nbsp;1&nbsp;&nbsp;<br>
+Taille:&nbsp;1024&nbsp;<br>
+Clé secondaire:&nbsp;1024&nbsp;<br>
+N'expire&nbsp;jamais&nbsp;<br>
+Identité:&nbsp;patrick&nbsp;<br>
+Votre&nbsp;passphrase:&hellip;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;<br>&nbsp;
+</note>
+
+</section>
+
+<meta charset="utf-8" />
+<section name="Configuration -2- Clé secrète secondaire">
+
+Exécutez maintenant:
+
+<listing>
+gpg&nbsp;--edit-key&nbsp;"patrick" &nbsp;&nbsp;<br>&nbsp;
+</listing>
+
+Vérifiez avec:
+
+<listing>
+gpg&nbsp;--list-secret-keys&nbsp;&nbsp;&nbsp;
+</listing>
+
+<meta charset="utf-8" />
+<information>
+&nbsp;Pour obtenir l'ID de la clé, copiez les 16 derniers caractères de la clé secondaire (fin du champ 'ssb')&nbsp;: &nbsp;&nbsp;&nbsp;
+</information>
+
+<br>Exemple fictif:
+<listing>
+59FEA9BF714DC50B &nbsp;&nbsp;&nbsp;
+</listing>
+
+</section>
+
+<meta charset="utf-8" />
+<section name="Configuration -3- Création du coffre-fort des mots de passe">
+
+Exécutez ceci en utilisant votre identifiant de clé secondaire:
+
+<listing>
+pass&nbsp;init&nbsp;59FEA9BF714DC50B&nbsp;&nbsp;&nbsp;&nbsp;
+</listing>
+
+<br>Un message comme le suivant devrait confirmer la création du coffre-fort:
+<listing>
+<br>mkdir&nbsp;/home/patrick/.password-store/&nbsp<br>
+Password&nbsp;store&nbsp;initialized&nbsp;for&nbsp;59FEA9BF714DC50B &nbsp;&nbsp;&nbsp;<br>&nbsp;
+</listing>
+
+</section>
+
+<meta charset="utf-8" />
+<section name="Utilisation de Pass">
+
+Pass utilise une commande simple et intuitive avec des options telles que&nbsp;: <i>insert<i>, <i>edit</i>, <i>delete</i>, <i>find</i>...
+<br>Pour voir toutes les commandes et exemples, utilisez:
+
+<listing>
+man&nbsp;pass&nbsp;&nbsp;&nbsp;
+</listing>
+
+</section>

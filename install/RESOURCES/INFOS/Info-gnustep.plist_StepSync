@@ -1,15 +1,16 @@
 {
     ApplicationDescription = "File Synchronizer";
     ApplicationName = StepSync;
-    ApplicationRelease = "0.1";
+    ApplicationRelease = "1.1";
     Authors = (
 	"Riccardo Mottola"
     );
     CFBundleIdentifier = "org.gap.StepSync";
 	 NSIcon = "StepSync.tiff";
-    Copyright = "Copyright (C) 2017";
+    Copyright = "Copyright (C) 2017-2025";
     CopyrightDescription = "Released under GPL v2+";
-    FullVersionID = "0.1";
+    FullVersionID = "1.1";
+    GSHelpContentsFile = "StepSync.help";
     GSMainMarkupFile = "";
     NOTE = "Automatically generated, do not edit!";
     NSExecutable = StepSync;

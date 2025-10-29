@@ -1,0 +1,17 @@
+<meta charset="utf-8" />
+
+<section name="Un Gestionnaire de l'Espace de travail">
+
+GWorkspace est une application, fondée sur le cadre logiciel GNUstep, qui gère l'Espace de travail pour vous. Cet espace de travail comprend l'arrière-plan, un gestionnaire de fichiers et des emplacements pour les icônes des applications démarrées&nbsp;: un Dock qui fournit des raccourcis vers vos applications favorites, une étagère à onglets pour les organiser en catégories et des minifenêtres pour gérer les fenêtres réduites des documents.
+
+Ce guide vous aidera à maîtriser votre Espace de travail. Il vous expliquera tous les éléments que vous serez susceptible de rencontrer et même quelques fonctionalités cachées de GWorkspace.
+
+Ce document est rédigé au sein d'un système GNU/Linux avec GNUstep installé dans /System et les applications dans /Local/Applications.
+
+Ce guide mis à jour a été rédigé en tenant compte de la version 1.1.0 de GWorkspace, compilée à partir des dernières sources stables disponibles. Les illustrations fournies dans ce Guide furent tirées des projets PiSiN et AGNoStep Desktop.
+
+</section>
+
+
+
+

@@ -15,7 +15,7 @@
 
 ##################################
 ## PDFKit
-function install_pdfkit()
+function install_pdfkit
 {
 
 FWNAME="PDFKit"
@@ -43,7 +43,7 @@ _build_FW
 
 ################################
 ## Addresses FW
-function install_fw_addresses()
+function install_fw_addresses
 {
 
 cd ../build || exit 1
@@ -52,16 +52,15 @@ title "Addresses"
 echo "Addresses" >>$LOG
 printf "Fetching...\n"
 
-if [ -d Addresses-0.5.0 ];then
-	cd Addresses-0.5.0
+if [ -d Addresses ];then
+	cd Addresses
+	svn update
 else
-	wget --quiet http://savannah.nongnu.org/download/gap/Addresses-0.5.0.tar.gz
-	gunzip --force Addresses-0.5.0.tar.gz
-	tar xf Addresses-0.5.0.tar
-	cd Addresses-0.5.0
+	svn co svn://svn.savannah.nongnu.org/gap/trunk/system-apps/Addresses
+	cd Addresses
 fi
 
-cd Frameworks
+cd Frameworks || exit 1
 FWNAME="Addresses"
 cd Addresses
 
@@ -82,13 +81,12 @@ title "AddressView"
 echo "AddressView" >>$LOG
 printf "Fetching...\n"
 
-if [ -d Addresses-0.5.0 ];then
-	cd Addresses-0.5.0
+if [ -d Addresses ];then
+	cd Addresses
+	svn update
 else
-	wget --quiet http://savannah.nongnu.org/download/gap/Addresses-0.5.0.tar.gz
-	gunzip --force Addresses-0.5.0.tar.gz
-	tar xf Addresses-0.5.0.tar
-	cd Addresses-0.5.0
+	svn co svn://svn.savannah.nongnu.org/gap/trunk/system-apps/Addresses
+	cd Addresses
 fi
 
 cd Frameworks
@@ -337,154 +335,89 @@ _build_FW
 ### End of RSSKit
 ###############################
 
+##########################################################################
+## DBusKit
+function install_dbuskit
+{
+FWNAME="DbusKit"
+PATCH_DIR=$_PWD/RESOURCES/PATCHES
+PATCH=no-gc-macros.patch
+title "$FWNAME"
+echo "$FWNAME" >>$LOG
+
+######################################################
+### Dependencies
+title "Dependencies"
+sudo apt -y install libdbus-1-dev libdbus-1-3
+ok "Done"
+
+cd ../build || exit 1
+
+printf "Fetching...\n"
+if [ ! -d libs-dbuskit-0.1.1 ];then
+	wget --quiet https://github.com/gnustep/libs-dbuskit/archive/refs/tags/0.1.1.tar.gz
+	gunzip --force 0.1.1.tar.gz
+	tar xf 0.1.1.tar && rm 0.1.1.tar
+fi
+
+cd libs-dbuskit-0.1.1 || exit 1
+
+### To avoid the config.guess type error:
+### We must update config.guess... and  config.sub
+
+wget --quiet -O config.guess 'https://git.savannah.gnu.org/gitweb/?p=config.git;a=blob_plain;f=config.guess;hb=HEAD'
+
+wget --quiet -O config.sub 'https://git.savannah.gnu.org/gitweb/?p=config.git;a=blob_plain;f=config.sub;hb=HEAD'
+ok "Done"
+
+### Configuring
+printf "Configuring\n"
+./configure --disable-libclang &>>$LOG &
+PID=$!
+spinner
+ok "\rDone"
+
+### A patch must be applied (thanks to Yavor Doganov, Debian GNUstep maintainer)
+cd Source
+if [ -f $PATCH_DIR/$PATCH ];then
+	 wget --quiet https://sources.debian.org/data/main/d/dbuskit/0.1.1-14/debian/patches/no-gc-macros.patch
+else
+	cp $PATCH_DIR/$PATCH ./
+fi
+
+patch --forward -u DKNotificationCenter.m --input=no-gc-macros.patch
+cd ..
+ok "Done"
+
+### Building
+printf "Building\n"
+make nonstrict=yes &>>$LOG &
+PID=$!
+spinner
+ok "\rDone"
+
+### Installing
+printf "Installing\n"
+sudo -E make install &>>$LOG &
+PID=$!
+spinner
+ok "\rDone"
+
+if [ -f /Local/Library/Libraries/libDBusKit.so ];then
+	sudo ldconfig
+	info "The Framework DBusKit was successfully installed."
+else
+	alert "Please check the installation of DBusKit!"
+fi
+}
+
+### End of DbusKit
+###############################
 
 ##########################################################################
 ### ******************************************************************
 ### /!\ The following code is NOT functional
 ### ******************************************************************
-##########################################################################
-
-###############################
-## DBusKit_OLD
-function install_dbuskit_OLD()
-{
-
-######################################################
-### Dirty code to correct headers not found issues
-### within aarch64 system
-cd /usr/include
-sudo ln -s dbus-1.0/dbus
-cd dbus
-sudo ln -s /usr/lib/aarch64-linux-gnu/dbus-1.0/include/dbus/dbus-arch-deps.h
-sudo ldconfig
-
-cd $_PWD
-### End of dirty code
-######################################################
-
-cd ../build || exit 1
-
-FWNAME="libs-dbuskit"
-title "DBusKit"
-echo "DBusKit" >>$LOG
-
-printf "Fetching...\n"
-if [ -d libs-dbuskit ];then
-        cd libs-dbuskit
-        git pull origin master 
-##&>/dev/null
-else
-        git clone https://github.com/gnustep/libs-dbuskit.git 
-##&>/dev/null
-        cd libs-dbuskit
-fi
-
-##################################################
-### Dirty BIS...
-cd Source
-cp --force --update config.h.in config.h
-cd ..
-##################################################
-
-printf "Configuring...\n"
-
-##################################################
-### Corrects a permission issue
-chmod +x configure
-
-### Updating config.guess and config.sub
-rm --force config.guess
-rm --force config.sub
-if ! [ -d config ];then
-	git clone https://git.savannah.gnu.org/git/config.git 
-##&>/dev/null
-fi
-cp --force --update config/config.guess ./
-cp --force --update config/config.sub ./
-
-./configure
-#&>>$LOG &
-#PID=$!
-#spinner
-
-printf "\rBuilding...\n"
-make
-#&>>$LOG &
-#PID=$!
-#spinner
-
-#printf "\rInstalling...\n"
-###sudo -E make install
-# &>>$LOG &
-#PID=$!
-#spinner
-
-### Cleaning
-sudo make clean &>/dev/null
-
-ok "\rDone"
-cd $_PWD
-
-check_FW $FWNAME
-}
-### End of DbusKit_OLD
-###############################
-
-###############################
-### Another try...
-## DBusKit
-function install_dbuskit()
-{
-
-######################################################
-### Dirty code to correct headers not found issues
-### within aarch64 system
-cd /usr/include
-sudo ln -s dbus-1.0/dbus
-cd dbus
-sudo ln -s /usr/lib/aarch64-linux-gnu/dbus-1.0/include/dbus/dbus-arch-deps.h
-sudo ldconfig
-
-### End of dirty code
-######################################################
-
-######################################################
-### Dependencies
-#sudo apt install -y libdbus-1-dev libdbus-1-3 libclang1-19 libclang-19-dev
-
-cd $_PWD
-
-cd ../build
-git clone https://github.com/gnustep/libs-dbuskit/
-cd libs-dbuskit
-git checkout 5d69a35357f6e32fc2e1194194e176bf48588120
-
-### Fix config.guess and config.sub:
-
-curl -o config.guess "http://git.savannah.gnu.org/gitweb/?p=config.git;a=blob_plain;f=config.guess;hb=HEAD"
-curl -o config.sub "http://git.savannah.gnu.org/gitweb/?p=config.git;a=blob_plain;f=config.sub;hb=HEAD"
-
-##################################################
-### Dirty BIS...
-cd Source
-cp --force --update config.h.in config.h
-cd ..
-##################################################
-
-./configure
-make nonstrict=yes && sudo -E make install
-cd Bundles
-    cd ../DKUserNotification
-        make
-        sudo -E make install
-
-cd $_PWD
-}
-### End of DbusKit
-###############################
-
-
-
 ####################################################################
 
 ###############################

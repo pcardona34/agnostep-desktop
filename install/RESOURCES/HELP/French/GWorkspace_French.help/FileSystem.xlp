@@ -1,0 +1,79 @@
+<meta charset="utf-8" />
+
+<section name="Votre dossier personnel">
+
+<section name="L'icône maison">
+<legendfig src="common_HomeDirectory.tiff">
+</legendfig>
+</section>
+
+<br>Dans le coin supérieur gauche de la fenêtre du gestionnaire de fichiers, vous disposez d'une icône avec votre nom d'utilisateur souscrit&nbsp;: celui avec lequel vous vous êtes connecté. En cliquant dessus, vous serez amené au sein de votre dossier personnel, qui porte votre nom d'utilisateur. C'est l'emplacement où vous pouvez conserver vos documents et ajouter des dossiers.
+
+<br><br>Le chemin de cet emplacement dépend de votre système sous-jacent. La plupart des systèmes de type Unix utilisent "/home/&lt;username&gt;" en guise de dossier personnel. Pour faciliter les choses, le chemin complet "/home/&lt;username&gt;" peut être abrégé par "˜" (caractère tilde), ce qui épargne beaucoup de saisie dans une invite de commande.
+
+</section>
+
+<section name="A Filesystem">
+
+Un système de fichier est conçu comme une structure arborescente où dont la partie la plus haute est appelée la racine (<i>root</i> en anglais). Si vous observez l'image suivante en la retournant de haut en bas, vous comprenez l'analogie avec un arbre.
+
+<section name="File System">
+<legendfig src="filesystem.png">
+</legendfig>
+</section>
+
+<br><br>Dans le système de fichiers, tout est contenu dans des dossiers, et les dossiers eux-mêmes le sont (à l'exception de la racine, bien sûr). Des dossiers peuvent contenir d'autres dossiers, ou bien des fichiers ou encore des applications.
+
+Cette façon d'organiser vos données est très efficace. Mettons que vous ayez dans votre dossier personnel un dossier appelé "Documents", vous pouvez diviser celui-ci en un dossier 'Mémos' pour votre travail et en un dossier 'Privé' pour vos documents personnels. De cette manière, vous pouvez rapidement créer une structure hiérarchique pour ranger vos données.
+
+<br><br>Un autre exemple, probablement plus familier, concerne les fichiers audio tels que les MP3. Dans le dossier "Musique", organisez-le selon les artistes, puis selon leurs albums.
+
+<br><br>Si vous organisez votre travail de même, il sera aisé de retrouver vos données. Le dossier du système GNUstep est organisé de la même façon.
+
+<section name="L'arborescence de GNUstep">
+<legendfig src="GNUstep_FileSystem.png">
+</legendfig>	
+</section>
+
+</section>
+
+<section name="Différentes Vues">
+
+GWorkspace permet d'afficher avec souplesse et variété le système de fichiers. Si vous naviguez à travers une grande arborescence de dossiers, le mode Navigateur sera adapté à votre besoin. Mais si vous désirez plutôt trouver une application, la vue Icônes sera plus appropriée qu'une simple liste de noms.
+
+<br><br>C'est pour cette raison qu'il existe différents modes d'affichage:
+
+<section name="Commande du menu ">
+<legendfig src="menu_View.tiff">
+</legendfig>	
+</section>
+
+<br><br>Le mode Navigateur et le mode Icône que vous avez déjà vus, et maintenant vous savez comment y accéder. Autre mode: la vue en Liste. S'il vous arrive que les commandes du menu "Affichage" soient grisées, cela signifie que vous n'avez pas sélectionné de fenêtre pour visualiser les fichiers. Cliquez sur la fenêtre du visualisateur pour l'activer, de manière à rendre active la barre de titre, c-à-d plus foncée et vous verrez alors que les commandes du menu sont accessibles.
+
+<section name="Vue Icônes et vue Liste">
+<legendfig src="views.tiff">
+	<legend x="475" y="125">Maintenez la touche CTRL et faites un double click sur un dossier pour ouvrir une nouvelle fenêtre avec son contenu</legend>
+	<legend x="260" y="220">Vue Navigateur</legend>
+	<legend x="160" y="500">Vue Liste</legend>
+	<legend x="600" y="360">Vue Icône</legend>
+</legendfig>	
+</section>
+
+<br><br>Au moyen des touches de direction, vous pouvez vous déplacer d'objet en objet au sein de la vue courante. Parfois, c'est plus simple que d'utiliser la souris pour sélectionner des éléments. Une autre alternative à la souris, c'est la touche "Entrée" du clavier. En appuyant sur Entrée tandis qu'un objet est sélectionné équivaut à un double clic sur le même objet.
+
+<br><br>Au sein du mode Icône ou du mode Liste, vous pouvez utiliser la touche 'PgUp' pour faire défiler l'équivalent d'une page d'écran vers le haut ou 'PgDn' pour faire défiler de même vers le bas.
+
+<br><br>Enfin, la dernière façon de se déplacer au sein d'une liste, c'est de sélectionner au clavier la première lettre. Ce qui déplace immédiatement sur le premier item qui correspond. Par exemple, si vous voulez vous déplacer vers des objets dont le nom débute par la lettre "k", taper la lettre "k" sur votre clavier. Notez que cette saisie est sensible à la casse. Le 'k' et le 'K' sont deux emplacements différents.
+
+<br><br>Si vous maintenez enfoncée la touche <b>Maj.</b>&nbsp; tandis que vous sélectionnez des objets, la sélection comprendra les nouveaux objets. Ce qui vous permet de sélectionner divers objets avant de réaliser une certaine action. Bien sûr, au sein du mode Icône, cela peut aussi se faire avec la souris. Maintenez enfoncé le bouton de gauche de la souris et sélectionner une aire. Tous les objets compris dans cette aire seront mis en surbrillance.
+
+<br><br>Dans le mode Icône, vous pouvez aussi changer la taille des icônes, leur disposition et la place de l'étiquette.
+
+<br><br>Au moyen du sous-menu "Taille des icônes", vous pouvez changer cette taille de  48x48 pixels à 24x24.
+
+<br><br>Au lieu de disposer l'étiquette du nom de fichier au-dessous de l'icône, vous pourriez utiliser le sous-menu "Position des Icônes" pour disposer ce titre à gauche de l'icône.
+
+<br><br>Dernière option que vous pourriez changer, c'est la taille du nom de fichier. Ce qui accessible via le sous-menu "Taille du texte". Celle-ci peut être abaissée à 10&nbsp;points, ou agrandie jusqu'à 16&nbsp;points.
+
+</section>
+
