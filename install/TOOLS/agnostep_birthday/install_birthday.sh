@@ -23,7 +23,7 @@ fi
 if [ ! -f $DEST_SAMP/Birthdays ];then
 	cp Birthdays.sample $DEST_SAMP/Birthdays
 else
-	printf "We preserve already exiting Birthdays file.\n"
+	printf "We preserve already existing Birthdays file.\n"
 fi
 
 DEST_CONF=$HOME/.config/agnostep

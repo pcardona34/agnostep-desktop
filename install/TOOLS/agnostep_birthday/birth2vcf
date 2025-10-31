@@ -11,7 +11,7 @@
 
 ################################
 ### birth2vcf
-### Export bd lines to a vcard file
+### Export bd lines to a vcard file compliant virh 4.0
 ### Useful to import in AddressManager
 ### Then SimpleAgenda will retrieve them.
 ################################
@@ -30,10 +30,10 @@ function writevcf
 {
 cat >> $OUT << ENDOF
 BEGIN:VCARD
-VERSION:2.1
-X-GENERATOR:Addresses for GNUstep pre-1.0
-N:${WHO};;;;
-BDAY:${DATE:6:4}-${DATE:0:2}-${DATE:3:2}
+VERSION:4.0
+N:;${WHO};;;
+FN:${WHO}
+BDAY:${DATE:6:4}${DATE:3:2}${DATE:0:2}
 END:VCARD
 ENDOF
 }
@@ -59,7 +59,7 @@ trap "rm -f $TEMPFILE" EXIT
 ### Filter: we want only 'bd' event not commented
 grep -e "#" -v $SRC | grep -e " bd" >> $TEMPFILE
 
-### Reading the Birthday base fitered
+### Reading the Birthday base filtered
 while read LIGNE
 do
 	echo $LIGNE
