@@ -1,0 +1,93 @@
+<section name="Introduction">
+
+Comme nous l'avons vu précédemment, 'TextEdit' a été démarré quand nous avons fait un double click sur un fichier '.txt'. C'est de loin la manière la plus simple de démarrer une application et de vous replacer là où étiez en train de trailler.
+
+<br><br>Une alternative consiste à sélectionner le document et à utiliser le menu contextuel 'Ouvrir avec' (affiché par un click avec le bouton de droite de votre souris) puis à sélectionner l'application de votre choix dans la liste.<br>
+
+<section name="Menu 'Ouvrir avec'">
+<legendfig src="openwith.tiff">
+</legendfig>
+</section>
+
+<br><br>Toutefois il y a des cas où vous ne pouvez pas démarrer juste avec un fichier vide. Vous voulez  démarrer une application afin de créer un fichier ou vous ne voulez pas travailler avec un fichier, mais juste utiliser une certaine application comme un programme de messagerie instantanée.
+
+<br><br>Le système de fichiers de GNUstep a trois emplacements logiques où des applications sont rangées. <br>En premier lieu, c'est avant tout le dossier 'Local/Applications' où sont rangées les applications qui relèvent de l'installation initiale. Dans ce dossier, vous trouverez 'GWorkspace' (l'espace de travail est aussi une application).<br>
+
+<information>
+Au sein du bureau AGNoStep, un raccourci vers ce dossier 'Applications' a été ajouté à l'étagère de la fenêtre du gestionnaire de fichiers. &nbsp;&nbsp;&nbsp;&nbsp;
+</information>
+
+<br><br>Le  second emplacement est '˜/GNUstep/Applications' où vous pouvez ranger les applications que vous souhaitez.
+
+<br><br>En utilisant le gestionnaire de fichiers, vous pouvez naviguer vers ces emplacements et au moyen d'un double click sur l'icône de l'application, celle-ci sera démarrée. C'est aussi simple que cela. Et évidemment, il reste encore des choses à voir, ce dont traite la suite de ce chapitre.
+
+</section>
+
+<section name="5.1 Placer des applications sur le Dock">
+
+Le Dock est un emplacement où conserver les applications que voulez avoir à portée de main pour les démarrer instantanément. À partir du chemin d'icône, vous pouvez faire glisser et déposer des applications sur le Dock.<br>
+
+<section name="Figure 5.1: Le Dock">
+<legendfig src="Dock.tiff">
+	<legend x="1" y="95">Les points de suspension indiquent qu'une application n'est pas encore démarrée.</legend>
+</legendfig>
+</section>
+
+<br><br>Les applications que vous démarrez seront aussi visibles sur le Dock. Les applications démarrées n'auront plus les trois points souscrits '...', tandis que celles qui ne le pas encore auront cet indice '...'.
+
+</section>
+
+<section name="5.2 Utilisation de la commande Exécuter">
+
+Grâce à la commande "Exécuter..." à partir du menu "Outils", vous pouvez démarrer des applications si vous connaissez leur chemin, en particulier des programmes non GNUstep. Il suffit de saisir le chemin dans le dialogue et de cliquer sur 'Ok'.
+
+<note>
+&nbsp;<br>
+Vous pouvez aussi utiliser la touche TAB pour compléter automatiquement le chemin.<br>
+Par exemple: '/u' suivi de TAB donnera '/usr/'; puis 'b' suivi de TAB donnera 'bin'... Vous obtiendrez de la sorte le chemin complet: '/usr/bin/firefox'.
+</note>
+
+</section>
+
+<section name="5.3 Simplifiez-vous la vie avec les Étagères">
+
+Toutes sortes d'objets peuvent être déposés sur l'Étagère&nbsp;: applications, dossiers ou fichiers. Pour mieux le dire, des liens peuvent être créés sur l'Étagère. L'objet demeure où il est, tandis qu'un lien symbolique est placé sur l'Étagère pour vous permettre de le retrouver plus facilement.
+
+<br><br>Dans le mode Navigateur, l'Étagère principale est celle qui figure en haut de la fenêtre de votre Visualisateur. Comme l'espace en est limité, il en existe deux autres  mises à votre disposition&nbsp;: les Étagères (à onglets) (<i>TabbedShelf</i>&nbsp; en anglais) et le "Fiend" (mot anglais qui peut signifier démon et conservé tel quel dans l'interface de GWorkspace).
+
+</section>
+
+<section name="5.3.1 Le Démon">
+
+Le Démon (en anglais: <i>Fiend</i>) est un autre moyen d'organiser les applications, fichiers ou dossiers. À partir du menu "Outils &gt;  Fiend" vous pouvez choisir la commande "Montrer le Fiend". Ce qui vous affichera le Démon, lequel sera probablement vide dans votre système.
+
+<br><br>Grâce aux flèches vertes, vous pourrez passer d'un "espace de travail" à l'autre et par glisser-déposer, vous pourrez y ajouter des icônes.
+<br><br>En renommant chaque "espace de travail", vous pourrez créer des ensembles distincts en fonction de catégories d'usage, de type d'application, ou encore de projets.
+
+<section name="Figure 5.2: Le Démon et ses menus">
+<legendfig src="Fiend.tiff">
+	<legend x="67" y="127">Renommer l'espace de travail courant</legend>
+	<legend x="226" y="102">Masquer le Fiend</legend>
+	<legend x="226" y="149">Ajouter un espace de travail</legend>
+</legendfig>
+</section>
+
+</section>
+
+<section name="Les Étagères (à onglets)">
+
+Les Étagères (à onglets) sont comparables avec l'Étagère principale du Visualisateur de fichiers. On peut ainsi y coller des applications, des documents et des dossiers pour un usage futur. Pour activer les Étagères, dans le menu "Outils", sélectionnez "Étagères"... Ce qui affichera les Étagères en bas de votre écran.
+
+<section name="Figure 5.3: Les Étagères dans le bureau AGNoStep">
+<legendfig src="TabbedShelf.tiff">
+</legendfig>
+</section>
+
+<br>
+<information>
+Avec le bureau AGNoStep, les Étagères sont déjà configurées avec plusieurs onglets&nbsp;: 'Outils', 'Développement', 'Jeux'. Elles se masquent automatiquement quand vous en éloignez le pointeur de la souris. Et elles réapparaissent dès que vous descendez ce pointeur vers le bas de l'écran. &nbsp;&nbsp;&nbsp;&nbsp;
+</information>
+
+<br><br>Un double clic sur un dossier des Étagères ouvrira le contenu de ce dossier dans un visualisateur de fichiers. Si vous cliquez un dossier avec la touche CONTROLE maintenue, cela l'ouvrira dans le visualisateur courant.
+
+</section>

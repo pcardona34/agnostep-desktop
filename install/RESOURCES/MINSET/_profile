@@ -1,0 +1,5 @@
+### Sourcing GNUstep in profile
+
+### GNUstep env
+export GNUSTEP_MAKEFILES=/System/Library/Makefiles
+. $GNUSTEP_MAKEFILES/GNUstep.sh

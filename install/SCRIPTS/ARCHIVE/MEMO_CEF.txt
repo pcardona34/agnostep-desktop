@@ -1,6 +1,0 @@
-CEF Web Browser
-
-
-CEF: git clone https://bitbucket.org/chromiumembedded/cef.git
-LTS branch: 7204
-

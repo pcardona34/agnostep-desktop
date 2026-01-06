@@ -1,0 +1,19 @@
+<section name="Setting the Modifier Keys">
+
+As explained in the Introduction of the <i>GWorkspace User Guide<i>, section "A Special Keyboard Scheme", a GNUstep system needs the three modifier keys: COMMAND, CONTROL and ALTERNATE.
+
+To map those keys:
+
+<ol>
+<li>In the 'Applications' Folder, select the 'SystemPreferences' app and hit ENTER.</li>
+<li>Click on the 'Modifier Keys' icon to select this tab.</li>
+<li>Then select the mapping as shown in the figure below.</li>
+<li>Close the SystemPreferences panel.</li>
+</ol>
+
+<section name="Figure 0.1: Modifier Keys">
+<legendfig src="ModifierKeys.tiff"></legendfig>
+</section>
+
+</section>
+

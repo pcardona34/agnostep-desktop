@@ -1,0 +1,67 @@
+<section name="Introduction">
+
+'Updater' est un outil qui récupère des infos au sujet des Paquets du Système Debian susceptibles d'être mis à jour.
+
+</section>
+
+<section name="7.1 Comment ça marche&nbsp;?">
+
+Quand de nouvelles versions de paquets installés sont disponibles, une notification de niveau critique est affichée dans la partie supérieure de l'écran et celle-ci indique le nombre de paquets concernés.
+
+</section>
+
+Pour réaliser effectivement la mise à jour du système Debian, vous dsiposez de plusieurs méthodes...
+
+
+<section name="7.1.1 Au sein de la variante C5C">
+
+Le bandeau supérieur des infos système dispose d'une tuile de 'Mise à jour' système. Son statut et sa couleur changeront en même temps:
+
+<ul>
+<li>Rouge: de nouveaux paquets sont disponibles.</li>
+<li>Bleu-gris: le système est à jour.</li>
+</ul>
+
+<section name=""Figure 7.1: Tuile de mise à jour système">
+<legendfig src="UpdaterTile.tiff">
+<legend x="330" y="25">La tuile rouge: de nouveaux paquets sont disponibles</legend>
+</legendfig>
+</section>
+
+</section>
+
+
+<section name="7.2 Effectuer la mise à niveau">
+
+Pour réaliser cette mise à niveau du système Debian, vous disposez de plusieurs méthodes...
+
+<section name="7.2.1 Directement à partir de la notification">
+
+<br>Au sein de la variante 'Conky', quand la notification de mise à jour est affichée, le préfixe (A) indique qu'une commande est disponible. Cliquez sur le message avec bouton de droite de votre souris. un menu contextuel est alors affiché en haut de l'écran. Pour exécuter la mise à jour effective, appuyez sur la touche &lt;Entrée&gt;&nbsp; du clavier.
+
+Sinon, pour renoncer à cette exécution immédiate, sélectionnez l'autre item du menu avec la touche &lt;Tab&gt;&nbsp;...puis validez pour sortir du menu. 
+
+</section>
+
+<section name="7.2.2 Commandes">
+
+Vous pouvez aussi utiliser la commande 'apt' ou encore utiliser celle fournie par l'outil 'Updater' fourni par AGNoStep.
+
+<br>Dans une invite de commande du Terminal, exécutez la syntaxe courte ou son équivalent plus explicite&nbsp;:<br>&nbsp;
+
+<listing>
+&nbsp;<br />
+Updater&nbsp;-g &nbsp;&nbsp;&nbsp; <br />
+Updater&nbsp;--upgrade &nbsp;&nbsp;&nbsp; <br />
+&nbsp;
+</listing>
+
+</section>
+
+<section name="7.2.3 L'application Updater">
+
+Vous pouvez aussi utiliser l'application 'Updater' dans le dossier des 'Applications'. Il suffit de sélectionner son icône et de taper ENTRÉE, puis de suivre la progression affichée par les notifications. C'est la manière la plus simple d'accomplir cette tâche.
+
+</section>
+
+</section>

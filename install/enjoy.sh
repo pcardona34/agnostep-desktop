@@ -75,15 +75,15 @@ cd ${THERE}
 ./4_install_frameworks.sh || exit 1
 
 cd ${THERE}
-./5_install_AGNOSTEP.sh apps || exit 1
+./5_install_apps.sh apps || exit 1
 
 if [ ${LITE} -eq 0 ];then
 	cd ${THERE}
-	./5_install_AGNOSTEP.sh extra
+	./5_install_apps.sh extra
 	cd ${THERE}
-	./5_install_AGNOSTEP.sh devel
+	./5_install_apps.sh devel
 	cd ${THERE}
-	./5_install_AGNOSTEP.sh games
+	./5_install_apps.sh games
 fi
 cd ${THERE}
 ./6_user_settings.sh
@@ -96,10 +96,10 @@ echo "AGNOSTEP: End of script $0 at: $END" >> $LOGENJ
 cd
 
 ### Cleaner
-if [ -d $HOME/Documents ];then
-	mv --force *.log $HOME/Documents/
+if [ ! -d $HOME/Documents/LOGS ];then
+	mkdir -p $HOME/Documents/LOGS
 fi
+mv --force *.log $HOME/Documents/LOGS
 
-startx || exit 1
+#startx || exit 1
 
-exit

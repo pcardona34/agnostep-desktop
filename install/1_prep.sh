@@ -19,7 +19,7 @@ THERE=`pwd`
 LOG="$HOME/AGNOSTEP_DEPS.log"
 SPIN='/-\|'
 STATUS=0
-CONF=RESOURCES/AGNOSTEP.conf
+CONF=RESOURCES/CONF/AGNOSTEP.conf
 
 ### End of Vars
 ###############################################################

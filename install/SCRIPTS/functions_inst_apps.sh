@@ -212,14 +212,16 @@ _build
 ### With a patch from Savannah
 ###############################################
 
-function install_cynthiune()
+function install_cynthiune
 {
 APPNAME=Cynthiune
 RELEASE="1.0.0"
 CONFIG_ARGS="disable-audiofile=yes disable-flac=yes disable-flactags=yes \
         disable-mod=yes disable-windowsmedia=yes disable-musepack=yes \
-        disable-timidity=yes disable-asdtags=yes disable-waveout=yes \
+        disable-timidity=yes disable-asdtags=yes \
         disable-esound=yes disable-ao=yes"
+# added wav: 'disable-waveout=yes' was removed from the args above
+
 BUILD_ARGS="${CONFIG_ARGS}"
 INSTALL_ARGS="${BUILD_ARGS}"
 PATCH="Cynthiune-1.0.0_Bundles_ALSA_fails_to_build_due_to_memcheck_inclusion.patch"
@@ -341,20 +343,20 @@ _build
 }
 
 #################################################
-## GNUMail (current / stable)
+## GNUMail (current / stable tarball)
 ### Repo/Release: Savannah/gnustep-nonfsf: 1.4.0
 #################################################
 
 function install_gnumail()
 {
 APPNAME=GNUMail
-RELEASE="1.4.0"
+RELEASE="1.4.0 - stable release"
 CONFIG_ARGS=""
 BUILD_ARGS=""
 INSTALL_ARGS=""
 
-echo "$APPNAME $RELEASE" >>$LOG
-title "$APPNAME $RELEASE"
+STR="$APPNAME - $RELEASE"
+subtitulo
 
 cd ../build || exit 1
 
@@ -362,10 +364,45 @@ printf "Fetching...\n"
 if [ -d GNUMail-1.4.0 ];then
 	cd GNUMail-1.4.0
 else
-	wget --quiet http://download.savannah.nongnu.org/releases/gnustep-nonfsf/GNUMail-1.4.0.tar.gz
-	gunzip --force GNUMail-1.4.0.tar.gz
-	tar -xf GNUMail-1.4.0.tar
+    wget --silent http://download.savannah.nongnu.org/releases/gnustep-nonfsf/GNUMail-1.4.0.tar.gz
+    gunzip --force GNUMail-1.4.0.tar.gz
+    tar -xf GNUMail-1.4.0.tar && rm GNUMail-1.4.0.tar
 	cd GNUMail-1.4.0
+fi
+
+if [ -d /Local/Applications/GNUMail.app ];then
+	sudo rm -fR /Local/Applications/GNUMail.app
+	make_services
+fi
+
+_build
+}
+
+#################################################
+## GNUMail (current / svn)
+### Repo/Release: svn Savannah/gnustep-nonfsf
+#################################################
+
+function install_gnumail_svn()
+{
+APPNAME=GNUMail
+RELEASE="Last svn version"
+CONFIG_ARGS=""
+BUILD_ARGS=""
+INSTALL_ARGS=""
+
+STR="$APPNAME - $RELEASE"
+subtitulo
+
+cd ../build || exit 1
+
+printf "Fetching...\n"
+if [ -d gnumail ];then
+	cd gnumail
+        svn update
+else
+    svn co svn://svn.savannah.nongnu.org/gnustep-nonfsf/apps/gnumail
+	cd gnumail
 fi
 
 _build
@@ -788,13 +825,14 @@ _build
 
 ##########################################
 ## TimeMon
-### Repo/Release: github/gnustep/gap: 4.1
+### Repo/Release: Savannah/gap: 4.1
 ##########################################
 
 function install_timemon()
 {
 APPNAME=TimeMon
 RELEASE="4.1"
+HUB=
 
 echo "$APPNAME $RELEASE" >>$LOG
 title "$APPNAME $RELEASE"
@@ -802,15 +840,13 @@ title "$APPNAME $RELEASE"
 printf "Fetching...\n"
 cd ../build || exit 1
 
-if [ -d gap ];then
-        cd gap
-        git pull origin master &>/dev/null
+if [ -d $APPNAME ];then
+        cd $APPNAME
+        svn update
 else
-        git clone https://github.com/gnustep/gap.git &>/dev/null
-        cd gap
+        svn co svn://svn.savannah.nongnu.org/gap/trunk/ported-apps/Util/$APPNAME
+        cd $APPNAME || exit 1
 fi
-
-cd ported-apps/Util/TimeMon
 
 _build
 }

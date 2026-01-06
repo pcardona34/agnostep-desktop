@@ -1,0 +1,217 @@
+<section name="Composants de l'Espace de travail">
+
+Cet espace de travail vous est fourni afin de vous aider à accomplir vos tâches sur cet ordinateur. GWorkspace est le programme responsable de l'affichage de l'interface graphique du cadre logiciel GNUstep aussi appelé Espace de travail. C'est dans cet Espace de travail que toutes vos interactions avec GNUstep commencent et finissent.
+
+<br>Les fonctionalités les plus importantes de GWorkspace sont la gestion des fichiers, des dossiers et des applications. Vous pouvez renommer, supprimer ou copier des fichiers et des dossiers. Avec GWorkspace, vous pouvez aussi accéder aux disques, aux supports amovibles tels que les cartes SD, les disques ou les clés USB.
+
+Tout cela pourrait sembler complexe de prime abord, mais GWorkspace repose sur quelques  composants simples: le Visualisateur de fichiers qui permet de naviguer parmi les fichiers et de les manipuler, un menu contenant les commandes et un Dock pour démarrer les applications, lequel comporte aussi la Corbeille pour supprimer les fichiers.
+
+<section name="Figure 1.1: L'espace de travail">
+<legendfig src="workspace.tiff">
+	<legend x="1" y="50">Menu de commandes</legend>
+	<legend x="1" y="400">Dock</legend>
+	<legend x="25" y="330">Icônes d'applications</legend>
+	<legend x="450" y="480">Icônes</legend>
+	<legend x="500" y="50">Bureau</legend>
+	<legend x="530" y="130">Fenêtre</legend>
+	<legend x="500" y="400">Visualisateur de fichiers</legend>
+	<legend x="22" y="580">Corbeille</legend>
+</legendfig>
+</section>
+
+</section>
+
+<section name="1.1 Pointeurs">
+
+Le Pointeur suit les mouvements de votre souris. Si vous déplacez votre souris à gauche, le pointeur en fera de même. Le pointeur standard est en forme de Flèche. Si vous exécutez certaines opérations avec votre souris, ce pointeur changera d'aspect.
+
+<section name="Figure 1.2: Pointeur Flèche">
+<legendfig src="arrowCursor.png">
+<legend x="1" y="1">État du pointeur par défaut</legend>
+</legendfig>
+</section>
+
+<section name="Figure 1.3: Pointeur de copie">
+<legendfig src="copyCursor.tiff">
+<legend x="1" y="1">Pointeur en mode copie</legend>
+</legendfig>
+</section>
+
+<section name="Figure 1.4: Pointeur en mode sans issue">
+<legendfig src="noCursor.tiff">
+<legend x="1" y="1">Pointeur en mode sans issue</legend>
+</legendfig>
+</section>
+
+<section name="Figure 1.5: Pointeur en mode lien">
+<legendfig src="linkCursor.tiff">
+<legend x="1" y="1">Pointeur en mode lien</legend>
+</legendfig>
+</section>
+
+</section>
+
+<section name="1.2 Icônes">
+
+Les icônes procurent une représentation graphique de ce que vous pouvez trouver dans votre système. Elles vous montrent des objets auxquels vous pouvez accéder ou dont vous pouvez voir le contenu. Il y a des icônes par défaut pour représenter des fichiers ou des dossiers.
+
+<section name="Icônes de GNUstep (avec le thème AGNoStep)">
+
+<section name="Figure 1.6: Dossier">
+<legendfig src="common_Folder.tiff">
+<legend x="1" y="1">Dossier</legend>
+</legendfig>
+</section>
+
+<section name="Figure 1.7: Outil">
+<legendfig src="common_UnknownTool.tif">
+<legend x="1" y="1">Outil</legend>
+</legendfig>
+</section>
+
+<section name="Figure 1.8: Application inconnue">
+<legendfig src="common_UnknownApplication.tif">
+<legend x="1" y="1">Application sans icône propre</legend>
+</legendfig>
+</section>
+
+<section name="Figure 1.9: Fichier inconnu">
+<legendfig src="common_Unknown.tiff">
+<legend x="1" y="1">Fichier dont le type n'est pas reconnu</legend>
+</legendfig>
+</section>
+
+</section>
+
+<br>L'idée qui sous-tend le système GNUstep, c'est que tout ce qui existe dans votre système est représenté par une icône.
+
+<br>La première icône ci-dessus représente un dossier. Les dossiers sont des emplacements pour ranger d'autres objets tels que des fichiers ou des applications.
+
+<br>Et la suivante est celle d'un outil. Les outils sont des programmes qui s'exécutent en ligne de commande, ils ne peuvent pas s'exécuter dans un environnement graphique, et c'est pourquoi ils ont une icône générique pour les représenter.
+
+<br>Chaque application supportée par le système GNUstep possède une icône qui la représente. Dand de très rares cas, vous pourriez rencontrer l'icône d'application inconnue. Mais normalement vous ne devriez pas.
+
+<br>Les fichiers sont des objets pris en charge par les applications, tels que des textes ou des feuilles de calcul. Si le système ignore quelle application est associée à un type de fichier, c'est l'icône de fichier inconnu qui est alors montrée.
+
+</section>
+
+<section name="1.3 Fenêtres">
+
+Une fenêtre est une zone de l'écran où vous pouvez voir le résultat de vos actions. Elle peut contenir un  document, ou bien une feuille de calcul, ou bien encore, dans le cas de GWorkspace, le contenu du système de fichiers. C'est au sein d'une telle fenêtre que vous effectuez des actions.
+
+<br>Une fenêtre comporte une barre supérieure et une barre inférieure. La barre supérieure affiche le titre de la fenêtre et divers éléments de contrôle&nbsp;:
+
+<section name="Figure 1.10: Barre supérieure de la fenêtre">
+<legendfig src="window-top_bar.tiff">
+	<legend x="5" y="15">Bouton de réduction</legend>
+	<legend x="360" y="12">Bouton de fermeture</legend>
+	<legend x="180" y="16">Titre</legend>
+</legendfig>
+</section>
+
+<br>Cette barre est souvent appelée la barre de titre, car elle affiche aussi le nom de cette fenêtre.
+<br>Quand vous cliquez sur le bouton de réduction, une mini-fenêtre est placée au bas de l'écran. En double-cliquant (ou en cliquant simplement dans le cas du bureau AGNoStep) sur cette mini-fenêtre, vous restaurez la taille initiale de cette fenêtre.
+
+<br><br>Le bouton de droite ferme la fenêtre, mais il comporte aussi un <b>indicateur de statut</b>. Tant que la croix est pleine, vous pouvez clore cette fenêtre immédiatement ou utiliser le raccourci <b>COMMANDE-w</b>&nbsp;pour la refermer.
+
+<section name="Figure 1.11: Indicateur de document non enregistré">
+<legendfig src="unsaved.tiff">
+	<legend x="42" y="12">Croix brisée</legend>
+</legendfig>
+</section>
+
+<br>Si toutefois vous la croix se change en 'croix brisée', cela indique que quelque chose a été modifié au sein de la fenêtre et que vous voudriez sans doute en enregistrer d'abord le contenu. C'est pourquoi, 
+si vous avez modifié le document, mais que vous ayez omis de l'enregistrer, la croix nous alerte sur cet état non sauvegardé. En cliquant sur cette croix brisée, un dialogue sera affiché pour proposer d'enregistrer ou de renoncer aux modifications effectuées dans le contenu de cette fenêtre.
+
+<br><br>La barre inférieure est aussi appelée barre de redimensionnement&nbsp;:
+
+<section name="Figure 1.12: Barre inférieure">
+<legendfig src="window-bottom_bar.tiff">
+	<legend x="2" y="25">Redimensionner en largeur</legend>
+	<legend x="60" y="28">Redimensionner en hauteur</legend>
+	<legend x="450" y="25">Redimensionner en largeur</legend>
+</legendfig>
+</section>
+
+<br><br>La partie médiane de la barre de redimensionnement peut servir à augmenter ou à réduire la hauteur. La largeur demeure inchangée. Pour modifier aussi cette largeur, vous pouvez utiliser les deux poignées aux extrémités à gauche ou à droite. En cliquant sur une portion de la barre de redimensionnement et en maintenant le bouton de la souris enfoncé lorsqu'on déplace le pointeur, redimensionne cette fenêtre.
+
+</section>
+
+<section name="1.4 Le menu de commande">
+
+Le menu de commande, c'est un cas particulier de fenêtre. Il n'a pas de boutons de contrôle, mais toutefois il se comporte exactement comme les autres fenêtres.
+
+<br>Le menu de commande comporte les commandes à utiliser pour contrôler l'ordinateur. Certaines entrées au sein du menu sont des commandes accessibles immédiatement, comme 'Quitter' or 'Cacher', mais d'autres comportent également un triangle à leur droite pour indiquer que de telles entrées ouvriront un sous-menu, comme 'Information' et 'Éditer'.
+
+<section name="Figure 1.13: Menu principal">
+<legendfig src="main_menu.tiff">
+	<legend x="89" y="23">Sous-menu comportant d'autres commandes</legend>
+	<legend x="3" y="143">Commande immédiate</legend>
+</legendfig>
+</section>
+
+<br><br>En cliquant sur un triangle, on développera le sous-menu, lequel est une fenêtre à part entière, qui donnera accès aux commandes qu'elle contient.
+
+<br>Chaque application possède sa propre liste de commandes à exécuter. L'exemple présenté ici est tiré du menu de GWorkspace. Il est possible de déplacer les menus au moyen de la souris. Placez le pointeur de la souris sur la barre de titre du menu. Cliquez en maintenant le bouton enfoncé. Maintenant vous pouvez déplacer ce menu ailleurs. En relâchant le bouton, vous déposerez cette fenêtre de menu à l'endroit désiré.
+
+<br>Si vous cliquez sur la barre "Informations", son sous-menu apparaît.
+
+<section name="Figure 1.14: Sous-menu">
+<legendfig src="submenu.tiff">
+</legendfig>
+</section>
+
+<br><br>Le titre du sous-menu affiché hérite celui de l'entrée précédemment choisie.
+<br>Si vous essayez de déplacer le sous-menu "Informations", vous noterez que le menu principal demeure à sa position initiale, tandis que le sous-menu "Informations" s'est détaché. Celui-ci devient un menu autonome que l'on peut déplacer.
+
+<section name="Figure 1.15: Sous-menu détaché">
+<legendfig src="detached_submenu.tiff">
+</legendfig>
+</section>
+
+<br><br>Autre chose remarquable, ce menu détaché est désormais pourvu d'un bouton de fermeture dans son coin supérieur droit. En cliquant dessus, vous refermez ce menu.
+
+<br><br>Les menus sont des fenêtres qui appartiennent au menu principal, mais que l'on peut détacher à loisir. 
+
+<br><br>Le titre d'un menu détaché coïncide avec la barre de menu dont il est issu. Pas le chemin complet, juste le nom de l'entrée de menu qui a été cliquée.
+
+<br><br>Autre chose remarquable, c'est le fait que l'entrée de menu qui a été choisie, comme "Informations", demeure en surbrillance même quand le sous-menu a été détaché, afin d'indiquer encore d'où provient le sous-menu récemment détaché. Mais aussitôt que vous avez détaché le sous-menu, le chemin de menu en surbrillance s'arrête sur cette dernière entrée.
+
+</section>
+
+<section name="1.5 La fenêtre d'affichage des fichiers">
+
+La plus importante fonction de GWorkspace, c'est de donner accès au système de fichiers. Un ordinateur organise tout ce qu'il contient sur son disque de stockage en éléments logiques. Cette organisation fondamentale est constituée de fichiers et de dossiers, au sein de laquelle un dossier est un élément qui peut contenir des fichiers. Un dossier est aussi appelé un répertoire.
+
+<br><br>Les fichiers sont autant d'objets que des documents, des feuilles de calcul, des images, etc.
+
+<section name="Figure 1.16: Fenêtre d'affichage des fichiers">
+<legendfig src="FileViewer.tiff">
+	<legend x="24" y="64">Raccourci vers le dossier personnel</legend>
+	<legend x="390" y="50">L'étagère</legend>
+	<legend x="390" y="140">Item sélectionné</legend>
+	<legend x="140" y="143">Chemin d'icônes</legend>
+	<legend x="444" y="330">Aire d'affichage des fichiers</legend>
+</legendfig>
+</section>
+
+<br><br>L'étagère est un emplacement destiné aux raccourcis. Au départ, le seul raccourci présent est celui qui pointe vers le dossier personnel. (Dans la configuration d'AGNoStep, nous y avons également placé le raccourci vers le dossier des Applications).  Si vous cliquez sur l'icône d'un raccourci, vous serez immédiatement déplacé dans le dossier correspondant et son contenu sera alors affiché dans la fenêtre. En faisant glisser des fichiers, des dossiers ou des applications sur l'Étagère, vous pouvez créer vos propres raccourcis.
+
+<br><br>Le chemin d'icônes représente le chemin entre la racine du système de fichiers et l'emplacement courant. Il se termine toujours par le dossier ou le fichier sélectionné en surbrillance. C'est sur cet élément en évidence que vous pouvez effectuer des opérations comme glisser ou déposer.
+
+<br><br>Enfin, la dernière partie est l'aire d'affichage. C'est ici que les contenus du système de fichiers sont affichés. Ce contenu coïncide avec l'élément en surbrillance.
+
+</section>
+
+<section  name="1.6 Le Dock">
+
+le Dock est une barre où sont placées les icônes des applications le plus souvent utilisées.
+
+<section name="Figure 1.17: Le Dock">
+<legendfig src="Dock.tiff">
+	<legend x="15" y="120">Icône d'application</legend>
+	<legend x="22" y="310">Corbeille</legend>
+</legendfig>
+</section>
+
+</section>

@@ -23,18 +23,22 @@ if [ $STOP -ne 0 ];then
 fi
 }
 
-_PWD=`pwd`
+_HERE=`pwd`
 SPIN='\-/|'
-STOP=1 # Set to 0 to avoid stops; to 1 to make stops
+STOP=0 # Set to 0 to avoid stops; to 1 to make stops and debug
 #set -v
 MSG_STOP="Stop: type <Enter> to continue."
 LOG=$HOME/AGNOSTEP_USER_SETTINGS.log
-GWDEF="org.gnustep.GWorkspace"
-DEFDIR=RESOURCES/DEFAULTS
-DEPS="laptop-detect"
-RPI=1 # By default, we assume the hw is not a RPI one. If not, it will be detected.
+LG=${LANG:0:2}
 
-stop
+case "$LG" in
+"fr")
+	SAMPLE_FOLDER="Exemples"
+	HELP_FOLDER="Aide";;
+"en"|*)
+	SAMPLE_FOLDER="Samples"
+	HELP_FOLDER="Help";;
+esac
 
 ####################################################
 ### Include functions
@@ -42,454 +46,82 @@ stop
 . SCRIPTS/colors.sh
 . SCRIPTS/spinner.sh
 . SCRIPTS/functions_prep.sh
-. SCRIPTS/functions_misc_folders.sh
-. SCRIPTS/functions_inst_themes.sh
-. SCRIPTS/functions_misc_themes.sh
-
-stop
-
-###################################################
-### Dependencies
-sudo apt -y install "$DEPS"
-
-stop
-
-echo $PATH | grep -e "/System/Tools" &>/dev/null
-if [ $? -ne 0 ];then
-	export PATH=/System/Tools:$PATH
-fi
-LOCAL_INSTALL_DIR=$(gnustep-config --variable=GNUSTEP_LOCAL_APPS)
-
-stop
+. SCRIPTS/setup_misc_tools.sh
 
 ### End of functions
 ####################################################
 
 ####################################################
-### FreeDesktop User filesystem
-
-TITLE="Customizing the User Home folder"
-echo "$TITLE" >>$LOG
-title "$TITLE"
-
-### Set or restore standard $HOME filesystem
-### Do NOT use xdg-user-dirs-update!!!
-for FOLD in Books Desktop Documents Downloads Favorites GNUstep Images Mailboxes Music Samples Videos
-do
-	if ! [ -d $HOME/$FOLD ];then
-		mkdir -p $HOME/$FOLD
-	fi
-done
-
-################################
-### Miscellaneous for Home Folders
-################################
-
-################################
-### ENV
-
-TITLE="Miscellaneous for Home Folders"
-echo $"$TITLE" >>$LOG
-title "$TITLE"
-
-###############################################
-for FOLD in Books Favorites GNUstep Mailboxes Samples SOURCES
-do
-	printf "Setting Folder ${FOLD}\n"
-	icon_folder $FOLD
-	ok "Done"
-done
-
-stop
-
-###################################################
-### User WindowMaker profile
-TITLE="User's WindowMaker profile"
-echo "$TITLE" >>$LOG
-title "$TITLE"
-
-### We set standard first
-if [ -d $HOME/GNUstep/Library/WindowMaker ];then
-	printf "Already set.\n"
-else
-	cd
-	mkdir -p $HOME/GNUstep/Library/WindowMaker
-fi
-cd $_PWD
-ok "Done"
-
-stop
-
-###################################################
-### Autostart
-
-TITLE="Autostart"
-echo "$TITLE" >>$LOG
-title "$TITLE"
-DEST_AUTO=$HOME/GNUstep/Library/WindowMaker
-if [ -f ${DEST_AUTO}/autostart ];then
-	rm --force ${DEST_AUTO}/autostart
-fi
-cd RESOURCES/SCRIPTS
-cp autostart ${DEST_AUTO}/
-printf "Autostart for Window Maker has been updated.\n"
-cd $_PWD
-ok "Done"
-
-stop
-
-###################################################
-### .xinitrc
-TITLE="Xinit"
-echo "$TITLE" >>$LOG
-title "$TITLE"
-
-if ! [ -f $HOME/.xinitrc ];then
-	cd RESOURCES/SCRIPTS || exit 1
-	cp _xinitrc $HOME/.xinitrc
-else
-	warning "A xinit script is already in the user directory."
-	grep -e "wmaker" $HOME/.xinitrc &>/dev/null
-	if [ $? -eq 0 ];then
-		info "It seems correct and it will be unchanged."
-	else
-		info "It is not compliant, so we replace it."
-		cd RESOURCES/SCRIPTS || exit 1
-		cp --remove-destination _xinitrc $HOME/.xinitrc
-	fi
-fi
-cd $_PWD
-ok "Done"
-
-stop
-
-#################################################
-### Wallpaper
-TITLE="Wallpaper"
-echo "$TITLE" >>$LOG
-title "$TITLE"
-
-is_hw_rpi
-if [ $RPI -eq 0 ];then
-	WP=fond_agnostep_pi.png
-else
-	WP=fond_agnostep.png
-fi
-
-WP_FOLDER=/usr/share/wallpapers
-if [ ! -d $WP_FOLDER ];then
-	sudo mkdir -p $WP_FOLDER
-fi
-
-cd RESOURCES/WALLPAPERS || exit 1
-sudo cp --remove-destination ${WP} ${WP_FOLDER}/${WP}
-#sudo cp fond_agnostep_fw.png ${WP_FOLDER}/
-cd $_PWD
-ok "Done"
-
-stop
-
-#################################################
-### Installing Tools and confs... Updater
-TITLE="Updater tool"
-echo "$TITLE" >>$LOG
-title "$TITLE"
-
-cd TOOLS/agnostep_updater || exit 1
-. ./install_agnostep_updater.sh
-cd $_PWD
-ok "Done"
-
-stop
-
-### Installing Tools and confs... Setup_Printer
-TITLE="Setup_Printer"
-echo "$TITLE" >>$LOG
-title "$TITLE"
-
-cd TOOLS || exit 1
-sudo cp Setup_Printer /usr/local/bin/
-cd $_PWD
-ok "Done"
-
-stop
-
-### Installing Tools and confs... Shooting CLI
-TITLE="Screenshot Shooting CLI"
-echo "$TITLE" >>$LOG
-title "$TITLE"
-
-cd TOOLS || exit 1
-sudo cp Shooting /usr/local/bin/
-cd $_PWD
-ok "Done"
-
-stop
-
-### Installing Tools and confs... Conky
-TITLE="Conky Monitoring Board"
-echo "$TITLE" >>$LOG
-title "$TITLE"
-
-cd TOOLS/agnostep_conky || exit 1
-. ./prepare_agnostep_conky.sh || exit 1
-. ./install_agnostep_conky.sh || exit 1
-cd $_PWD
-### We must complete conky symbols: icon battery
-ICOBAT=RESOURCES/ICONS/battery.png
-if [ ! -d /usr/local/share/icons/conky ];then
-	sudo mkdir -p /usr/local/share/icons/conky
-fi
-sudo cp ${ICOBAT} /usr/local/share/icons/conky/
-cd $_PWD
-ok "Done"
-
-stop
-
-### Installing Tools and confs... Compton
-TITLE="Compton Compositing"
-echo "$TITLE" >>$LOG
-title "$TITLE"
-
-cd TOOLS/agnostep_compton || exit 1
-. ./install_agnostep_compton.sh
-cd $_PWD
-ok "Done"
-
-stop
-
-### Loading
-sudo cp -u RESOURCES/SCRIPTS/loading.sh /usr/local/bin/
-
-stop
-
-### Installing Tools and confs... BirthNotify
-TITLE="BirthNotify tool"
-echo "$TITLE" >>$LOG
-title "$TITLE"
-
-cd TOOLS/agnostep_birthday || exit 1
-. ./install_birthday.sh
-cd $_PWD
-ok "Done"
-
-stop
-
-### Installing Tools and confs... Pass
-TITLE="Pass: the Unix Passwords Manager CLI"
-echo "$TITLE" >>$LOG
-title "$TITLE"
-
-cd TOOLS/agnostep_pass || exit 1
-. ./install_agnostep_pass.sh
-cd $_PWD
-ok "Done"
-
-stop
-
-### Theme for FocusWriter
-TITLE="Theme for FocusWriter"
-echo "$TITLE" >>$LOG
-title "$TITLE"
-
-cd TOOLS/agnostep_fw || exit 1
-. ./install_agnostep_fw.sh
-cd $_PWD
-ok "Done"
-
-###########################################
-### Installing the theme
-TITLE="AGNOSTEP Theme"
-echo "$TITLE" >>$LOG
-title "$TITLE"
-
-printf "Window Maker Theme...\n"
-install_wm_theme
-cd $_PWD
-
-printf "GNUstep Theme..."
-install_gs_theme
-cd $_PWD
-
-### Some Apps known to not comply with Theme: workaround
-### We need to update Info-gnustep.plist for these apps
-### Adding 'CFBundleIdentifier' property in the Dictionary
-### Updating too Help path
-
-update_info
-
-cd $_PWD
-
-stop
-
-###
-
-###########################################
-### Setting the Defaults...
-TITLE="GNUstep Defaults Setting"
-echo "$TITLE" >>$LOG
-title "$TITLE"
-
-################################
-### Prep defaults...
-################################
-
-HOME_GNUSTEP_DEF=$HOME/GNUstep/Defaults
-if [ ! -d $HOME_GNUSTEP_DEF ];then
-	mkdir -p $HOME_GNUSTEP_DEF
-fi
-
-cd $DEFDIR || exit 1
-
-is_hw_rpi
-if [ $RPI -eq 0 ];then
-	GWD=${GWDEF}.TEMPLATE.RPI
-else
-	GWD=${GWDEF}.TEMPLATE
-fi
-
-cat ${GWD} | sed -e s/patrick/$USER/g > ${GWDEF}.plist
-
-cd $_PWD
-if [ ! -f $HOME_GNUSTEP_DEF/WindowMaker ];then
-	cd RESOURCES/DEFAULTS && cp WindowMaker $HOME_GNUSTEP_DEF/
-fi
-cd $_PWD
-
-################################
-### Set the defaults
-### for a AGNoStep Desktop
-################################
-
-############################################
-### Applying a theme for WMaker:
-printf "Applying a theme for WMaker...\n"
-#### Syntax: setstyle THEME-PACK
-#### (in our case: THEME-PACK is 'AGNOSTEP')
-
-WMSTYLE=$HOME/GNUstep/Library/WindowMaker/Themes/AGNOSTEP.themed
-if [ ! -d $WMSTYLE ];then
-	alert "$WMSTYLE was not found!\nThis is a major issue."
-	exit 1
-fi
-
-setstyle --no-cursors --no-fonts $WMSTYLE
-ok "Done"
-
-############################################
-#### Applying Defaults for GNUstep
-############################################
-
-DEST=$HOME/GNUstep/Defaults
-if ! [ -d $DEST ];then
-	alert "$DEST was not found!"
-	exit 1
-fi
-
-cd RESOURCES/DEFAULTS || exit 1
-
-for PLIST in "Addresses" "NSGlobalDomain" "org.gap.InnerSpace" "org.gap.Terminal" "org.gnustep.GNUMail" "org.gnustep.GWorkspace" "org.poroussel.SimpleAgenda"
-do
-	if [ -f ${PLIST}.plist ];then
-		printf "Setting Defaults for ${PLIST}\n"
-		if [ -f $DEST/${PLIST}.plist ] && [ "${PLIST}" == "org.gnustep.GNUMail" ];then
-			info "We preserve GNUMail settings."
-			continue;
-		else
-			cp --force ${PLIST}.plist $DEST/
-			if [ "$PLIST" == "org.gnustep.GWorkspace" ];then
-				rm -f ${PLIST}.plist
-			fi
-		fi
-		ok "Done"
-	else
-		warning "The File ${PLIST}.plist was not found."
-	fi
-done
-
-cd $_PWD
-
-stop
-
-###########################################
-### Installing Tools
-TITLE="User Tools"
-echo "$TITLE" >>$LOG
-title "$TITLE"
-
-cd RESOURCES/SCRIPTS || exit 1
-for TOOL in agnostep
-do
-	sudo cp -u $TOOL /usr/local/bin/
-done
-cd $_PWD
-stop
-
-cd SCRIPTS || exit 1
-for TOOL in colors.sh
-do
-	sudo cp -u $TOOL /usr/local/bin/
-done
-cd $_PWD
-ok "Done"
-
-stop
-
-###########################################
 ### Samples
-TITLE="Sample Files"
-echo "$TITLE" >>$LOG
-title "$TITLE"
+STR="Sample Files"
+subtitulo
+
+if [ ! -d $HOME/$SAMPLE_FOLDER ];then
+	mkdir -p $HOME/$SAMPLE_FOLDER
+fi
 
 cd RESOURCES || exit 1
-cp -u Samples.tar.gz $HOME/
-cd $HOME
+cp -u Samples.tar.gz $HOME/$SAMPLE_FOLDER/
+cd $HOME/$SAMPLE_FOLDER
 gunzip --force Samples.tar.gz
 tar -xf Samples.tar && rm Samples.tar
 
-cd Samples
-for FIC in *.mp3 *.ogg; do cp --force "$FIC" $HOME/Music/ ;done
-for FIC in *.mp4 *.mkv; do cp --force "$FIC" $HOME/Videos/ ;done
-for FIC in *.png *.jpg *.tiff; do cp --force "$FIC" $HOME/Images/ ;done
-for FIC in *.epub *.pdf; do cp --force "$FIC" $HOME/Books/ ;done
-
-cd $_PWD
+cd $_HERE
 ok "Done"
 
 stop
 
 ###########################################
 ### Help
-TITLE="Help Files"
-echo "$TITLE" >>$LOG
-title "$TITLE"
+### As the way the help is provided
+### within GNUstep is not yet clearly defined
+### we provide .help in a in purpose folder
+### $HELP_FOLDER
+STR="Help Files"
+subtitulo
+
+if [ ! -d $HOME/$HELP_FOLDER ];then
+	mkdir -p $HOME/$HELP_FOLDER
+fi
 
 cd RESOURCES/HELP
-for HLP in English/*.help French/*.help
+for HLP in ${LG}/*.help
 do
-	cp -ruf ${HLP} $HOME/Books/
+	cp -ruf ${HLP} $HOME/$HELP_FOLDER/
 done
 
 ### miscellaneous
 ### Help of GWorkspace
-for LOCAL in English French
-do
-	if [ ! -d /Local/Applications/GWorkspace.app/Resources/${LOCAL}.lproj/Help ];then
-		sudo mkdir -p /Local/Applications/GWorkspace.app/Resources/${LOCAL}.lproj/Help
-		sudo cp -ruf ${LOCAL}/GWorkspace_${LOCAL}.help /Local/Applications/GWorkspace.app/Resources/${LOCAL}.lproj/Help/GWorkspace.help
-	fi
-done
+#for LOCAL in English French
+#do
+#	if [ ! -d /Local/Applications/GWorkspace.app/Resources/${LOCAL}.lproj/Help ];then
+#		sudo mkdir -p /Local/Applications/GWorkspace.app/Resources/${LOCAL}.lproj/Help
+#		sudo cp -ruf ${LOCAL}/GWorkspace_${LOCAL}.help /Local/Applications/GWorkspace.app/Resources/${LOCAL}.lproj/Help/GWorkspace.help
+#	fi
+#done
 
-cd $_PWD
+cd $_HERE
 ok "Done"
 
 stop
 
 ###########################################
+### Miscellaneous Tools
+STR="Miscellaneous Tools"
+titulo
+
+###########################################
+### Installing Tools and confs...
+
+check_tools
+cd $_HERE
+
+stop
+
+#######################################################
 ### Info release
-TITLE="Info release"
-echo "$TITLE" >>$LOG
-title "$TITLE"
+STR="Info release"
+subtitulo
 
 RELEASE=$(grep -e "Release" RELEASE | awk '{print $3}')
 STATUS=$(grep -e "Status" RELEASE | awk '{print $3}')
@@ -503,13 +135,85 @@ REL=$RELEASE
 STATUS=$STATUS
 ENDOF
 
+ok "Done"
 stop
+
+######################################################
+### Set default profile sourcing GNUstep.sh
+STR="Home Bash profile"
+subtitulo
+
+cat $HOME/.bash_profile | grep -e "GNUstep.sh" &>/dev/null
+if [ $? -ne 0 ];then
+	cat RESOURCES/MINSET/_profile >> $HOME/.bash_profile
+fi
+ok "Done"
+stop
+
+####################################################
+### Install the theme
+####################################################
+
+clear
+
+function fetch_agnostep-theme
+{
+printf "Fetching the theme installer...\n"
+cd ../build || exit 1
+if [ -d agnostep-theme ];then
+	cd agnostep-theme
+	git pull origin main
+else
+	git clone https://github.com/pcardona34/agnostep-theme
+	cd agnostep-theme
+fi
+}
+
+function install_agnostep-theme
+{
+cd install
+./install_theme.sh
+}
+
+function gnustep-theme
+{
+cd install
+./uninstall_theme.sh
+}
+
+########################################
+function yesno_AGNOSTEP_theme
+{
+fetch_agnostep-theme
+
+dialog --backtitle "AGNoStep Setup" --title "Theme Choice" \
+--yesno "
+The recommended theme for AGNoStep Desktop
+ is AGNOSTEP-theme.
+
+Do you want to install the recommended theme?" 12 60
+
+if [ $? = 0 ];then
+	install_agnostep-theme
+else
+	info "The default GNUstep theme will apply.\n"
+	gnustep-theme
+fi
+}
+
+#######################################
+
+STR="Setting a theme..."
+titulo
+
+yesno_AGNOSTEP_theme
+
+cd "$PWD"
 
 ###########################################
 ### Installation LOGS
-TITLE="Installation Logs"
-echo "$TITLE" >>$LOG
-title "$TITLE"
+STR="Installation Logs"
+subtitulo
 
 cd
 for LOG in *.log
@@ -525,10 +229,12 @@ stop
 
 ###########################################
 
-MESSAGE="A G N o S t e p   Desktop is ready to use now."
+MESSAGE="A G N o S t e p Desktop is ready to use now."
 
 info "$MESSAGE"
 
-info "To install the Login/Display Manager: after testing the Desktop, log out and execute:"
-cli "./7_install_DM.sh"
+warning "You need to logout and login again to apply the changes.\nThen, after the new login, execute:"
+cli "cd\n\tstartx"
 
+info "To install the Graphic Login/Display Manager: after testing the Desktop, logout and execute:"
+cli "cd $_PWD\n\t./7_install_DM.sh"

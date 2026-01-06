@@ -1,0 +1,5 @@
+#!/bin/sh
+
+APP=/usr/local/bin/Updater
+
+/System/Tools/openapp Terminal -c "cd $HOME;$APP --upgrade"

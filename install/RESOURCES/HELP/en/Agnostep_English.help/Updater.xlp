@@ -1,0 +1,68 @@
+<section name="Introduction">
+
+Updater is a tool which retrieves infos about the debian Packages to be updated.
+
+</section>
+
+<section name="7.1 How it works?">
+
+When new packages are available, a critical notification is shown to indicate the number of new packages.
+
+<section name="Within the Conky flavour">
+
+It is a critical notification message displayed on the top of the screen.
+
+</section>
+
+<section name="7.1.1 Within the C5C flavour">
+
+The top sysinfo panel have a docked 'Updater' tile. Its status and its color will be changed accordingly:
+
+<ul>
+<li>Red: some new packages are available.</li>
+<li>Blue-grey: the system is up to date.</li>
+</ul>
+
+<section name=""Figure 7.1: The Updater Tile">
+<legendfig src="UpdaterTile.tiff">
+<legend x="330" y="25">The Red Tile: new packages are available</legend>
+</legendfig>
+</section>
+
+</section>
+
+
+<section name="7.2 Performing the upgrade">
+
+To perform the Debian System upgrade, you have several ways to accomplish...
+
+<section name="7.2.1 Performing from the notification itself">
+
+Within the Conky Flavour, when the 'Updater' notification is shown, the (A) prefix means an action is associated. Click on the notification message with the right button of the mouse. A dmenu is shown. To perform the upgrading action, just hit the &lt;Enter&gt;&nbsp;key: it will perform the updgrade. To abort, select the other item on the menu with the &lt;Tab&gt;&nbsp;key...
+
+</section>
+
+<section name="7.2.2 Commands">
+
+You can use 'apt' command or use the 'Updater' one provided by AGNoStep.
+
+<section name="CLI commands">
+
+In a Terminal shell, execute the short or the long syntax:<br>&nbsp;
+
+<listing>
+&nbsp;<br />
+Updater&nbsp;-g &nbsp;&nbsp;&nbsp; <br />
+Updater&nbsp;--upgrade &nbsp;&nbsp;&nbsp; <br />
+&nbsp;
+</listing>
+
+</section>
+
+<section name="7.2.3 The Updater application">
+
+You can also use the 'Updater' application from the 'Applications' folder. Just select the application icon, type ENTER and wait following the progress notification. It is the simplest way to accomplish this task.
+
+</section>
+
+</section>

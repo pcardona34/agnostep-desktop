@@ -1,0 +1,84 @@
+<section name="Introduction">
+
+Ne les oubliez pas!
+<br>Afin de vous y aider, AGNoStep met à votre disposition plusieurs outils.
+
+</section>
+
+<section name="6.1 Le Répertoire des Anniversaires">
+
+C'est un fichier texte&nbsp;: chaque lignee ligne constitue un évènement au moyen d'une syntaxe appropriée&nbsp;:
+
+<ul>
+<li>Syntaxe d'un anniversaire&nbsp;: le mot clé est 'bd':
+<note>Qui=jj/mm/aaaa bd &nbsp;&nbsp;&nbsp;</note>
+</li>
+<li>Syntaxe d'une fête&nbsp;: le mot clé est 'st':
+<note>Qui=jj/mm st &nbsp;&nbsp;&nbsp;</note>
+</li>
+<li>Pour retirer momentanément un événement ou commenter une ligne, ajoutez le symbole dièse au début de cette ligne&nbsp;:
+<note>#Une ligne commentée &nbsp;&nbsp;&nbsp;</note>
+<li>
+</ul>
+
+Ce fichier doit être renommé 'Birthdays', puis copié dans le dossier 'Documents/Private'.
+
+<caution>Conservez à l'abri le fichier original dans un autre dossier. &nbsp;&nbsp;&nbsp;</caution>
+
+Désormais, quand vous vous connectez, l'outil 'BirthNotify' vérifie si un anniversaire ou une fête coïncide avec la d	ate du jour et dans l'affirmative, il affiche une notification.
+
+</section>
+
+<section name="6.2 Informer le calendrier de l'agenda">
+
+Vous pouvez exporter les informations de votre répertoire 'Birthdays' vers 'SimpleAgenda' ainsi que dans le répertoire des adresses de l'application 'AddressManager'.
+
+<section name="6.2.1 Anniversaires">
+
+Dans une invite de commande du Terminal, exécutez:
+
+<listing>
+cd&nbsp;Documents/Private &nbsp;&nbsp;&nbsp;<br />
+birth2vcf&nbsp;Birthdays &nbsp;&nbsp;&nbsp;<br />
+&nbsp;
+</listing>
+
+Cela produira un fichier 'bdyyyymmdd.vcf'.
+
+Pour importer ce fichier dans le répertoire des adresses, faites ceci:
+
+<listing>
+openpapp&nbsp;AddressManager &nbsp;&nbsp;&nbsp;<br />
+menu:&nbsp;Database&nbsp;&gt;&nbsp;Import... &nbsp;&nbsp;&nbsp;<br />
+&nbsp;
+</listing>
+
+Dans le dialogue 'Ouvrir', naviguez vers 'Documents/Private' et sélectionnez le fichier 'vcf' que vous avez précédemment créé. Voilà qui est fait.
+
+Puis ouvrez 'SimpleAgenda' pour vérifier qu'il soit maintenant en mesure de retrouver les anniversaires à partir du répertoire des adresses&nbsp;: chaque anniversaire sera affiché avec un fond violet dans la vue Journée.
+
+</section>
+
+<section name="6.2.2 Fêtes">
+
+Dans une invite de commande du Terminal, executez&nbsp;:
+
+<listing>
+cd&nbsp;Documents/Private &nbsp;&nbsp;&nbsp; <br />
+feast2ics&nbsp;Birthdays &nbsp;&nbsp;&nbsp; <br />
+&nbsp;
+</listing>
+
+Cela produira un fichier de calendrier 'styyyymmdd.ics'.
+
+Pour l'importer dans 'SimpleAgenda'&nbsp;:
+
+<listing>
+openapp&nbsp;SimpleAgenda&nbsp;styyyymmdd.ics&nbsp;&nbsp;&nbsp; <br />
+&nbsp;
+</listing>
+
+C'est fait. Les fêtes seront affichées désormais dans l'agenda avec un fond jaune dans la vue Journée.
+
+</section>
+</section>

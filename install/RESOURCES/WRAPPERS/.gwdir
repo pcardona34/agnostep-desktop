@@ -1,0 +1,12 @@
+{
+    "fsn_info_type" = <*I0>;
+    geometry = "1336 160 450 350 0 0  1920 1080 ";
+    lastselection = (
+	"/home/patrick/SOURCES/agnostep/install/RESOURCES/WRAPPERS/Firefox.app"
+    );
+    shelfdicts = (
+    );
+    shelfheight = <*R77>;
+    singlenode = <*BN>;
+    viewtype = Browser;
+}

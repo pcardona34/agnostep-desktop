@@ -81,6 +81,38 @@ printf "This is "
 ok "good"
 }
 
+##########################
+### titulo (yellow bold)
+### you must set before:
+#### STR: the string to show
+#### LOG: the log path
+function titulo
+{
+clear
+TITLE="=== $STR ==="
+yellowb=`tput bold setaf 3`
+reset=`tput sgr 0`
+echo -e "\n${yellowb} $TITLE ${reset}\n"
+echo $TITLE >> $LOG
+sleep 3
+}
+
+##########################
+### subtitulo (cyan bold)
+### you must set before:
+#### STR: the string to show
+#### LOG: the log path
+function subtitulo
+{
+TITLE="*** $STR ***"
+cyanb=`tput bold setaf 6`
+reset=`tput sgr 0`
+echo -e "\n${cyanb} $TITLE ${reset}\n"
+echo $TITLE >> $LOG
+}
+
 #########################
 
 #testing
+
+

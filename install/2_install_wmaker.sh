@@ -20,7 +20,7 @@
 ### ENV
 
 LOG="$HOME/PISIN_BUILD_WM.log"
-PISIN=`pwd`
+_PWD=`pwd`
 SPIN='/-\|'
 . /etc/os-release
 
@@ -71,8 +71,10 @@ sudo apt -y install wmaker wmaker-utils
 ###############
 
 ###############################################
-### REMOVED: the Dock of wmaker is hidden!
-### Relevant services are done within Conky now.
-#install_wmifs
-#install_wmclock
-#install_alsamixer_dot_app
+### Relevant services are done within Conky or C5C flavour.
+
+cd TOOLS/dockapps || exit 1
+./install_dockapps.sh
+
+install_alsamixer_dot_app
+cd $_PWD

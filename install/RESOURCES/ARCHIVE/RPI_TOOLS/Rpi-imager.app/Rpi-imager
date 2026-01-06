@@ -1,6 +1,0 @@
-#!/bin/sh
-
-APP=rpi-imager
-
-sudo $APP &
-

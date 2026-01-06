@@ -1,0 +1,12 @@
+{
+    "fsn_info_type" = <*I0>;
+    geometry = "1283 191 450 350 0 0  1920 1080 ";
+    lastselection = (
+	"/home/patrick/SOURCES/agnostep/install/RESOURCES/WRAPPERS/Updater.app/Resources/Info-gnustep.plist"
+    );
+    shelfdicts = (
+    );
+    shelfheight = <*R77>;
+    singlenode = <*BN>;
+    viewtype = Browser;
+}

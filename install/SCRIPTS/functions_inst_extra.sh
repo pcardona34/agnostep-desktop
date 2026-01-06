@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ####################################################
-### P i S i N    Desktop - by Patrick Cardona
+### A G N o S t e p  -  Desktop - by Patrick Cardona
 ### pcardona34 @ Github
 ###
 ### Thanks for the GNUstep Developers Community
@@ -400,12 +400,396 @@ cd $BUILD_DIR/$APPNAME
 _build
 }
 
+############################################################################
+### New or Purgatory
+### This is replacing DRAFT...
+### To be tested or tested again...
+### with inst_unit.sh
+############################################################################
+
+function install_aclock()
+{
+cd ../build || exit 1
+
+APPNAME="AClock"
+REPO="user-apps"
+CONFIG_ARGS=""
+INSTALL_ARGS=""
+
+echo "$APPNAME" >> $LOG
+title "$APPNAME"
+
+printf "Fetching...\n"
+if [ -d $APPNAME ];then
+	cd $APPNAME
+	svn update
+else
+	svn co svn://svn.savannah.nongnu.org/gap/trunk/$REPO/$APPNAME
+	cd $APPNAME || exit 1
+fi
+ok "Done"
+
+_build
+}
+#######################################
+
+function install_weather
+{
+
+cd ../build || exit 1
+
+APPNAME="Weather.app"
+REPO="${APPNAME}"
+OWNER="paulodelgado"
+HUB="https://github.com"
+BRANCH="main"
+CONFIG_ARGS=""
+INSTALL_ARGS=""
+
+echo "$APPNAME" >> $LOG
+title "$APPNAME"
+
+printf "Fetching...\n"
+if [ -d $REPO ];then
+        cd $REPO
+        git pull origin $BRANCH &>/dev/null
+else
+	git clone ${HUB}/${OWNER}/${REPO}.git &>/dev/null
+	cd $REPO
+fi
+
+_build
+}
+##################################
+
+######################################
+## NetSurf-GNUstep
+### 3.11
+#
+### Dependency: duktape and duktape-dev
+######################################
+
+function install_netsurf
+{
+
+APPNAME=NetSurf
+RELEASE="3.11"
+
+### Dependencies
+printf "Installing the dependencies...\n"
+sudo apt -y install duktape-dev duktape
+clear
+
+echo "$APPNAME $RELEASE" >> $LOG
+title "$APPNAME $RELEASE"
+
+cd ../build || exit 1
+
+printf "Fetching NetSurf Workspace...\n"
+wget --quiet https://github.com/netsurf-browser/netsurf/raw/refs/heads/master/docs/env.sh || exit 1
+unset HOST
+. env.sh
+printf "Installing the packages...\n"
+ns-package-install
+ok "Done"
+sleep 2;clear
+
+unset HOST
+. env.sh
+
+printf "Fetching Netsurf...\n"
+ns-clone &>>$LOG &
+PID=$!
+spinner
+ok "\rDone"
+
+printf "Building...\n"
+ns-pull-install &>>$LOG &
+PID=$!
+spinner
+ok "\rDone"
+
+rm env.sh
+cd ~/dev-netsurf/workspace
+rm -fR netsurf
+printf "Fetching gnustep-netsurf...\n"
+wget --quiet https://github.com/anthonyc-r/netsurf-gnustep/archive/refs/tags/3.11-gnustep.tar.gz
+gunzip --force 3.11-gnustep.tar.gz
+tar xvf 3.11-gnustep.tar
+mv netsurf-gnustep-3.11-gnustep netsurf
+cd netsurf || exit 1
+
+printf "Building GNUstep-NetSurf app...\n"
+make TARGET=gnustep NETSURF_USE_DUKTAPE=YES build/Linux-gnustep/duktape/polyfill.js.inc &>>$LOG &
+PID=$!
+spinner
+
+make TARGET=gnustep NETSURF_USE_DUKTAPE=YES build/Linux-gnustep/duktape/generics.js.inc &>>$LOG &
+PID=$!
+printf "\r"
+spinner
+
+make TARGET=gnustep &>>$LOG &
+PID=$!
+printf "\r"
+spinner
+ok "\rDone"
+
+printf "Installing...\n"
+export LOCAL_INSTALL_DIR=$(gnustep-config --variable=GNUSTEP_LOCAL_APPS)
+sudo cp -r NetSurf.app $LOCAL_INSTALL_DIR/
+
+### Cleaning
+make clean &>/dev/null
+rm -fR $HOME/dev-netsurf
+
+ok "Done"
+
+cd $_PWD
+
+check "$APPNAME"
+}
+### End of NetSurf
+##############################################
+
+function install_batmon
+{
+
+APPNAME="batmon"
+STR="Batmon";subtitulo
+
+cd ../build || exit 1
+
+printf "Fetching...\n"
+if [ -d batmon ];then
+	cd batmon
+	svn update
+else
+	svn co svn://svn.savannah.nongnu.org/gap/trunk/system-apps/batmon
+	cd batmon || exit 1
+fi
+
+_build
+
+}
+
+###############################################
+### Installer
+function install_installer
+{
+
+APPNAME="Installer"
+STR="$APPNAME";subtitulo
+
+cd ../build || exit 1
+
+printf "Fetching...\n"
+if [ -d $APPNAME ];then
+        cd $APPNAME
+        svn update
+else
+        svn co svn://svn.savannah.nongnu.org/gap/trunk/system-apps/$APPNAME
+        cd $APPNAME || exit 1
+fi
+
+_build
+
+}
+
+#########################################
 
 
+#########################################
+### FTP
+#########################################
 
+function install_ftp()
+{
+cd ../build || exit 1
+
+APPNAME="FTP"
+REPO="user-apps"
+CONFIG_ARGS=""
+INSTALL_ARGS=""
+
+echo "$APPNAME" >> $LOG
+title "$APPNAME"
+
+printf "Fetching...\n"
+if [ -d $APPNAME ];then
+        cd $APPNAME
+        svn update
+else
+        svn co svn://svn.savannah.nongnu.org/gap/trunk/$REPO/$APPNAME
+        cd $APPNAME || exit 1
+fi
+ok "Done"
+
+_build
+}
+
+#########################################
+### Talksoup
+#########################################
+
+function install_talksoup()
+{
+cd ../build || exit 1
+
+APPNAME="TalkSoup"
+REPO="user-apps"
+CONFIG_ARGS=""
+INSTALL_ARGS=""
+
+echo "$APPNAME" >> $LOG
+title "$APPNAME"
+
+printf "Fetching...\n"
+if [ -d $APPNAME ];then
+        cd $APPNAME
+        svn update
+else
+        svn co svn://svn.savannah.nongnu.org/gap/trunk/$REPO/$APPNAME
+        cd $APPNAME || exit 1
+fi
+ok "Done"
+
+_build
+}
+
+#########################################
+### LaternaMagica
+#########################################
+
+function install_laternamagica()
+{
+cd ../build || exit 1
+
+APPNAME="LaternaMagica"
+REPO="user-apps"
+CONFIG_ARGS=""
+INSTALL_ARGS=""
+
+echo "$APPNAME" >> $LOG
+title "$APPNAME"
+
+printf "Fetching...\n"
+if [ -d $APPNAME ];then
+        cd $APPNAME
+        svn update
+else
+        svn co svn://svn.savannah.nongnu.org/gap/trunk/$REPO/$APPNAME
+        cd $APPNAME || exit 1
+fi
+ok "Done"
+
+_build
+}
+
+
+#########################################
+### PPC
+#########################################
+
+function install_ppc()
+{
+cd ../build || exit 1
+
+APPNAME="PPC"
+REPO="user-apps"
+CONFIG_ARGS=""
+INSTALL_ARGS=""
+
+echo "$APPNAME" >> $LOG
+title "$APPNAME"
+
+printf "Fetching...\n"
+if [ -d $APPNAME ];then
+        cd $APPNAME
+        svn update
+else
+        svn co svn://svn.savannah.nongnu.org/gap/trunk/$REPO/$APPNAME
+        cd $APPNAME || exit 1
+fi
+ok "Done"
+
+_build
+}
+
+###########################################################################
+### Experimental
+###########################################################################
+### Memory app
+
+function install_memory
+{
+cd ../build || exit 1
+
+APPNAME="Memory"
+REPO="memory"
+SITE="https://github.com/pcardona34"
+CONFIG_ARGS=""
+INSTALL_ARGS=""
+
+STR="$APPNAME";titulo
+
+printf "Fetching...\n"
+if [ -d $REPO ];then
+        cd $REPO
+        git pull origin main
+else
+        git clone $SITE/${REPO}.git
+        cd $REPO || exit 1
+fi
+ok "Done"
+
+_build
+}
 
 ############################################################################
-### REMOVED
+############################################################################
+### REMOVED from Extra
+############################################################################
+
+###############################################
+### gs-webbrowser
+function install_gs-webbrowser()
+{
+APPNAME=WebBrowser
+REL="0.1"
+
+cd ../build || exit 1
+
+title "$APPNAME" | tee -a $LOG
+
+printf "Fetching...\n"
+if [ -d gs-webbrowser ];then
+	cd gs-webbrowser
+	git pull origin main &>/dev/null
+else
+	git clone https://github.com/onflapp/gs-webbrowser.git &>/dev/null
+	cd gs-webbrowser
+fi
+
+printf "Building...\n"
+make
+
+printf "Installing...\n"
+sudo make install
+
+### Cleaning
+make clean &>/dev/null
+
+ok "Done"
+
+cd $_PWD
+
+check ${APPNAME}
+}
+### End of gs-webbrowser
+################################################
+
+
 
 ###########################################################
 ## NoteBook
@@ -444,84 +828,31 @@ _build
 }
 ######################################
 
-######################################
-## NetSurf-GNUstep
-### 3.10
-#
-### Dependency: duktape and duktape-dev
-######################################
+#########################################
+### Bean
+#########################################
 
-function install_netsurf
+function install_bean()
 {
-
-APPNAME=NetSurf
-RELEASE="3.11"
-
-echo "$APPNAME $RELEASE" >> $LOG
-title "$APPNAME $RELEASE"
-
 cd ../build || exit 1
 
-printf "Fetching NetSurf Workspace...\n"
-wget --quiet https://git.netsurf-browser.org/netsurf.git/plain/docs/env.sh
-unset HOST
-source env.sh &>/dev/null
-printf "Installing the packages...\n"
-ns-package-install &>>$LOG &
-PID=$!
-spinner
+APPNAME="Bean"
+REPO="ported-apps/Util"
+CONFIG_ARGS=""
+INSTALL_ARGS=""
 
-unset HOST
-source env.sh &>/dev/null
-ns-clone &>>$LOG &
-PID=$!
-printf "\r"
-spinner
+echo "$APPNAME" >> $LOG
+title "$APPNAME"
 
-ns-pull-install &>>$LOG &
-PID=$!
-printf "\r"
-spinner
+printf "Fetching...\n"
+if [ -d $APPNAME ];then
+        cd $APPNAME
+        svn update
+else
+        svn co svn://svn.savannah.nongnu.org/gap/trunk/$REPO/$APPNAME
+        cd $APPNAME || exit 1
+fi
+ok "Done"
 
-rm env.sh
-cd ~/dev-netsurf/workspace
-rm -fR netsurf
-printf "\rFetching gnustep-netsurf...\n"
-wget --quiet https://github.com/anthonyc-r/netsurf-gnustep/archive/refs/tags/3.11-gnustep.tar.gz
-gunzip --force 3.11-gnustep.tar.gz
-tar xf 3.11-gnustep.tar
-mv netsurf-gnustep-3.11-gnustep netsurf
-cd netsurf || exit 1
-
-printf "\rBuilding...\n"
-make TARGET=gnustep NETSURF_USE_DUKTAPE=YES build/Linux-gnustep/duktape/polyfill.js.inc &>>$LOG &
-PID=$!
-spinner
-
-make TARGET=gnustep NETSURF_USE_DUKTAPE=YES build/Linux-gnustep/duktape/generics.js.inc &>>$LOG &
-PID=$!
-printf "\r"
-spinner
-
-make TARGET=gnustep &>>$LOG &
-PID=$!
-printf "\r"
-spinner
-
-printf "\rInstalling...\n"
-export LOCAL_INSTALL_DIR=$(gnustep-config --variable=GNUSTEP_LOCAL_APPS)
-sudo cp -r NetSurf.app $LOCAL_INSTALL_DIR/
-
-### Cleaning
-make clean &>/dev/null
-rm -fR $HOME/dev-netsurf
-
-ok "\rDone"
-
-cd $_PWD
-
-check "$APPNAME"
+_build
 }
-### End of NetSurf
-##############################################
-

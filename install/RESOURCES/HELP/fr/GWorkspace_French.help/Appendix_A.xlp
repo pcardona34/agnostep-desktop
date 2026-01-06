@@ -1,0 +1,25 @@
+
+<section name="Daemons and Tools">
+
+		GWorkspace installs a couple of daemons to manage various pieces. The daemons you will find on your system are: 'lsfupdater', 'fswatcher' and 'ddbd'.
+
+<ul>
+<li>'fswatcher' and 'lsfupdater' monitor your filesystem and make sure the Fileviewer gets updated with the changes on your filesystem.</li>
+<li>'ddbd' is the GWorkspace database system.</li>
+</ul>
+
+These daemons are automatically started the first time you start GWorkspace. Note however that when you end your GWorkspace session, they are not automatically killed.
+<br>The GWorkspace database used by the 'ddbd' daemon can be found in the user's home directory:
+
+<listing>
+&nbsp;<br>
+$GNUSTEP_USER_ROOT/Library/ddbd
+&nbsp;<br>
+</listing>
+
+
+</section>
+
+
+
+

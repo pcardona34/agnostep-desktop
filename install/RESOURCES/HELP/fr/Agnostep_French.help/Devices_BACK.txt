@@ -1,0 +1,22 @@
+<section name="tape 4 - Configurer l'espace de travail">
+
+		Ouvrez l'application 'SystemPreferences' et sÝlectionnez l'onglet 'Volumes'...
+
+		<br>Puis dans la colonne 'mount points for removable media' (points de montage des disques amovibles), ajoutez le nouveau chemin: '/mnt/CLEPAT' et clickez sur le bouton 'set' (dÝfinir) pour le confirmer. Puis fermez l'application 'SystemPreferences'.
+
+<section name="Configuration des Volumes">
+		<legendfig src="volumes.tiff">
+			<legend x="320" y="130">Le nouveau chemin ajoutÝ</legend>
+		</legendfig>
+		</section>
+
+		<br>Il est temps de vÝrifier et d'utiliser ce disque au sein de l'espace de travail...
+
+</section>
+
+------------------
+
+<ol>
+<li>Sélectionnez la fenêtre du gestionnaire de fichier ou cliquez n'importe où sur le bureau pour rendre active l'application 'GWorkspace'.</li>
+<li>Dans le menu, sélectionnez: 'Outils &gt;&nbsp;Vérifier les lecteurs' ou bien utilisez le raccourci clavier: '#E'.
+</ol>

@@ -1,0 +1,51 @@
+<section name="Un Gestionnaire de l'Espace de travail">
+
+GWorkspace est une application, fondée sur le cadre logiciel GNUstep, qui gère l'Espace de travail pour vous. Cet espace de travail comprend l'arrière-plan, un gestionnaire de fichiers et des emplacements pour les icônes des applications démarrées&nbsp;: un Dock qui fournit des raccourcis vers vos applications favorites, une étagère à onglets pour les organiser en catégories et des minifenêtres pour gérer les fenêtres réduites des documents.
+
+Ce guide vous aidera à maîtriser votre Espace de travail. Il vous expliquera tous les éléments que vous serez susceptible de rencontrer et même quelques fonctionalités cachées de GWorkspace.
+
+Ce document est rédigé au sein d'un système GNU/Linux avec GNUstep installé dans '/System' et les applications dans '/Local/Applications'.
+
+Ce guide mis à jour a été rédigé en tenant compte de la version 1.1.0 de GWorkspace, compilée à partir des dernières sources stables disponibles. Les illustrations fournies dans ce Guide furent tirées des thèmes PiSiN et AGNoStep.
+
+</section>
+
+<section name="Un schéma clavier spécifique">
+
+GNUstep utilise un schéma clavier spécifique afin de contrôler l'environnement graphique. Pour des raisons historiques (le standard OpenStep) il comporte trois touches de modification: CONTROLE, COMMANDE et ALTERNATIVE.
+
+Si vous utilisez une installation standard de GNUstep, la correspondance entre le clavier et ces fonctions est la suivante&nbsp;:
+
+La touche COMMANDE est utilisée pour accéder aux commandes du menu. La touche CONTROLE et la touche ALTERNATIVE sont utilisées avec différentes significations selon le contexte.
+
+Sur un ordinateur personnel, voici comment ces fonctions sont associées aux touches&nbsp;:
+
+<ul>
+<li>COMMANDE: Alt-gauche</li>
+<li>CONTROLE: Ctrl-gauche et Ctrl-droite</li>
+<li>ALTERNATIVE: Alt-droite</li>
+</ul>
+
+<br>Attendu que cette association peut être modifiée, au sein du présent document nous emploierons de préférences les noms complets de ces fonctions pour indiquer les touches à utiliser.
+
+</section>
+
+<section name="Premier contact">
+
+Avant de commencer à travailler avec 'GWorkspace', assurons-nous d'avoir affiché son bureau. Pour ce faire, démarrez 'GWorkspace' si ce n'est pas encore fait. Cliquez dans le menu 'Outils' sur l'item "Montrer le bureau" (cf. figure 1).
+<br>
+
+<section name="Figure 1: Montrer le bureau">
+<legendfig src="ToolsShowDesktop.tiff">
+	<legend x="180" y="140">Cliquez sur: montrer le bureau</legend>
+</legendfig>
+</section>
+
+<br>
+<note><br>Au sein du bureau AGNoStep, le bureau de GWorkspace est déjà affiché.&nbsp;&nbsp;&nbsp;<br>;&nbsp;<br></note>
+
+<br>
+
+</section>
+
+

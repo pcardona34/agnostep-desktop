@@ -106,17 +106,17 @@ function install_pantomime()
 cd ../build || exit 1
 
 FWNAME="Pantomime"
-title "Pantomime"
-echo "Pantomime" >>$LOG
+STR="$FWNAME"
+subtitulo
+
 printf "Fetching...\n"
 
-if [ -d Pantomime-1.4.0 ];then
-	cd Pantomime-1.4.0
+if [ -d pantomime ];then
+	cd pantomime
+        svn update
 else
-	wget --quiet http://download.savannah.nongnu.org/releases/gnustep-nonfsf/Pantomime-1.4.0.tar.gz
-	gunzip --force Pantomime-1.4.0.tar.gz
-	tar -xf Pantomime-1.4.0.tar
-	cd Pantomime-1.4.0
+	svn co svn://svn.savannah.nongnu.org/gnustep-nonfsf/frameworks/pantomime
+	cd pantomime
 fi
 
 _build_FW
@@ -287,7 +287,7 @@ _build_FW
 
 ##############################################
 ### libs-steptalk
-function install_steptalk()
+function install_steptalk
 {
 FWNAME="StepTalk"
 title "$FWNAME"
@@ -305,6 +305,29 @@ else
 fi
 
 _build_FW
+
+STR="Installing StShell";subtitulo
+
+cd ../build || exit 1
+cd libs-steptalk
+cd Examples/Shell || exit 1
+printf "Building...\n"
+make &>>$LOG &
+PID=$!
+spinner
+ok "\rDone"
+
+printf "Installing...\n"
+sudo -E make install &>>$LOG &
+PID=$!
+spinner
+ok "\rDone"
+if [ -f /Local/Tools/stshell ];then
+	info "The tool stshell has been found."
+else
+	alert "The tool stshell was not found."
+	exit 1
+fi
 
 }
 ### End of StepTalk
@@ -412,6 +435,31 @@ fi
 }
 
 ### End of DbusKit
+###############################
+
+###############################
+## NetClasses
+function install_netclasses()
+{
+FWNAME="netclasses"
+title "$FWNAME"
+echo "$FWNAME" >>$LOG
+
+cd ../build || exit 1
+
+printf "Fetching...\n"
+if [ -d $FWNAME ];then
+	cd $FWNAME
+	svn update &>/dev/null
+else
+	svn co svn://svn.savannah.nongnu.org/gap/trunk/libs/$FWNAME &>/dev/null
+	cd $FWNAME
+fi
+
+_build_FW
+
+}
+### End of NetClasses
 ###############################
 
 ##########################################################################

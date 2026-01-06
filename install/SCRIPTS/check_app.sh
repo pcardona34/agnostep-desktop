@@ -27,7 +27,7 @@ if [ -z "$INSTALL_DIR" ];then
 	INSTALL_DIR=$(gnustep-config --variable=GNUSTEP_LOCAL_APPS)
 fi
 GNUSTEP_APPS_DIR=$INSTALL_DIR
-ISSUES=https://github.com/pcardona34/pi-step-initiative/issues
+ISSUES=https://github.com/pcardona34/agnostep/issues
 
 if ! [ -d $GNUSTEP_APPS_DIR ];then
 	alert "$GNUSTEP_APPS_DIR was not found!"

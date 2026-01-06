@@ -1,0 +1,8 @@
+  NSServices = (
+  { 
+     NSSendTypes = ( "NSStringPboardType", "NSURLPboardType" );
+     NSMenuItem = { default = "Open URL"; }; 
+     NSMessage = "openURL";
+     NSPortName = "openURLService";
+   }
+  ); 

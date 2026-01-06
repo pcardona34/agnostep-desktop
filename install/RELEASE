@@ -1,12 +1,25 @@
 AGNOSTEP - agnostic GNUstep Desktop
 ===================================
 
-INFO: We started from the release 0.8.3 and then 0.8.6 of PiSiN to make it agnostic. Many changes in the meanwhile.
+- **Release**: 0.9.5
+- **Status**: Beta
 
-- **Release**: 0.9.2
-- **Status**: Stable
+### Changes of the 0.9.5 release
 
-This release should run on all possible hardware, comprising all the Raspberry Pi's
+Some issues fixed: better integration of agnostep-theme: dockapp 'wminfo' will install now within 'c5c' flavour of the theme.
+
+### Changes of the 0.9.4 release
+
+The new 0.9.4 release introduces a major change: now the theme will be available on its own at [agnostep-theme](https://github.com/pcardona/agnostep-theme).
+The new theme will also provide two flavours: 'conky' and 'c5c': see the them site to know more about this.
+Of course, AGNoStep Desktop will provide an integrated way of smoothly install it within the Desktop.
+The User may also choose to not install the theme: so the default theme would be GNUstep, not AGNOSTEP.
+
+Also new apps are available. See below the detailed list.
+
+### Changes of the 0.9.3 release
+
+Since 0.9.3 release, AGNoStep should run on all possible hardware, comprising all the Raspberry Pi's
 known to work previously on the PiSiN project, mutatis mutandis. 
 See the [HCL](HCL) file to know how to report a successful installation on your hardware.
 
@@ -18,13 +31,22 @@ See the [HCL](HCL) file to know how to report a successful installation on your 
 
 ### The Desktop Components
 
-- Operating System: Debian Trixie 13.1.
+- Operating System: Debian Trixie 13.2.
 - Window Manager: this is Window Maker 0.96.0 (debian default package version) with AGNOSTEP.themed and options: --no-dock  --no-clip --static. 
 	Some apps and tools are launched with the 'autostart' script of Window Maker.
 - Notifyer: dunst - With Release 9.2, DBusKit was back and so Desktop Notification from SimpleAgenda were successfully restored.
-- Compositing: compton.
-- System Infos: conky. Weather data is fetched from Wttr.in. The system monitoring is upon: date, time, uptime, CPU, Memory, Storage and Networking. On Laptops, also Battery status is checked.
+- Compositing: picom.
+- System Infos: conky panel or dockapps wether you chose 'conky' or 'c5c' flavour of the AGNOSTEP theme. 
+- Weather data is fetched from Wttr.in. 
+- The system monitoring is upon: date, time, uptime, CPU, Memory, Storage and Networking. On Laptops, also Battery status is checked. 
 	(Conky Panel is localized in French and in English)
+
+Starting from 0.9.3 release, we try to add apps alternatives to all the sysinfos provided by conky.
+-- Time: AClock (done)
+-- Weather: Weather.app (done)
+-- CPU / Mém.: TimeMon (todo)
+-- Storage: provided by wmudmount
+-- Network: wmnd
 
 - GNUstep: latest built from sources with GNU Runtime (not OBJC2). Use: `agnostep --info` for a more complete release info.
 All the apps below were built from sources and so are the latest.
@@ -38,8 +60,9 @@ All the apps below were built from sources and so are the latest.
 
 HELP
 ====
-- AGNoStep User Guide: English and French in the 'Books' Folder. 
-- GWorkspace User Guide: English (default) from the menu command 'Info > Help...' - French version in the 'Books' Folder.
+- AGNoStep User Guide: English and French in the 'Help' Folder. 
+- GWorkspace User Guide: same location.
+
 Note: path of these guides might change in the future.
 
 ===========================================
@@ -51,7 +74,6 @@ Note: path of these guides might change in the future.
 - See INSTALL to understand the steps.
 
 ===========================================
-
 
 For the End-User: 
 - Main installation option is 'apps'.
@@ -71,18 +93,23 @@ Note-4: Devel GNUstep Applications have a "(D)" mention in the list below.
 
 The complete list:
 
+- AClock: a digital clock (within c5C flavour of the theme.
 - AddressManager: contacts
+- Batmon: Battery monitor (on laptop)
 - Calculator (E)
 - Chess (G)
-- Chromium (W): a wrapper for the Chromium Web Browser
 - Cynthiune: Music Player
 - Dictionary (E): Dictionary Lookup for the English User
 - EasyDiff (D): graphical Diff Tool
 - EBookReader.app (W): a wrapper for FBReader
+- Firefox (W): wrapper for the firefox web browser
 - FlexiSheet (E): a Spreadsheet inspired by Quantrix
 - FontManager (E)
 - Freecell (G): a card game
+- FTP (E): a FTP client
 - Gemas (D): a specialized editor for objectiveC, plist, GSmarkup...
+- GMastermind (G): a mastermind game
+- GMines (G): a mine swipper game
 - GNUMail: Mail User Agent
 - Gomoku (G): a TicTacToe game
 - Gorm (D): Interface Builder for GNUstep
@@ -97,27 +124,41 @@ The complete list:
 - HelpViewer: .help reader (Help Files have a .help extension).
 - ImageViewer
 - InnerSpace: screen saver
-- Ink: Rich text (rtf and rtfd) editor.
+- Ink (E): Rich text (rtf and rtfd) editor. Alternative to TextEdit.
 - Inkscape (W): a wrapper for inkscape SVG editor.
+- Installer (E): an experimental app to install GNUstep apps as package. 
+- Jigsaw (G): a puzzle game.
 - LapisPuzzle (G): a Tetris like game
-- Librarian: Books and Documents Organizing
+- Ladder (G): a Go game: to be removed in favour of NeXTGo: see below.
+- LaternaMagica: Image collection Viewer: will integrate main apps.
+- Librarian (?): Books and Documents Organizing (from GSDE): to be removed/Adapted?
 - MDFinder: within GWorkspace indexing
-- OpenUp: archive manager
+- Memory (experimental): a memory usage monitor
+- NetSurf: Web Browser: poor javascript engine. To be removed?
+- NeXTGo (G): the Go game ported from OPENSTEP. Uses the GNUGo backend. With a nicer background from Ladder.
+- OpenUp (?): archive manager: to be removed/replaced by Zipper?
 - PikoPixel (E): Pixel Art Editor
 - Player: a wrapper for VLC video player
 - PowerPaint (E): Bitmap Drawing
+- PPC (D): Power PC emulator? To be removed.
 - PRICE (E): Image Manipulation program
 - ProjectCenter (D): Project Builder for GNUstep
 - Recycler: see GWorkspace.
+- RPI-imager (W): only on Pi's SBC.
 - ScanImage: Scanner (sane) client
-- ScreenShot: screen recorder
+- ScreenShot: screen recorder: to be removed. We should better use the tool provided by WindowMaker.
 - SimpleAgenda: agenda
 - StepSync (E): Syncing Folders
+- Sudoku (G): a sudoku game
 - SystemPreferences
+- TalkSoup (E): the IRC client
 - Terminal: a Terminal emulator
 - TextEdit: text editor and note taking
 - Thematic (D): a Theme Editor for GNUstep
+- TimeMon: a CPU monitoring (within c5c flavour)
+- Updater (W): a helper to run Debian upgrade. Related to Updater monitor deamon
 - VolumeControl: AlsaMixer compliant mixer
+- Wheather (E) : a Weather app
 - Writer (W): a wrapper for Focuswriter with an AGNOSTEP theme
 
 Tied to the RPI,s
@@ -132,3 +173,6 @@ Some apps or frameworks won't build with the GNU Runtime: so we needed to remove
 
 - Cenon (ER): Desktop Publishing
 - Rpinters.app: obsolete
+
+================
+INFO: We started from the release 0.8.3 and then 0.8.6 of PiSiN to make it agnostic. Many changes in the meanwhile.

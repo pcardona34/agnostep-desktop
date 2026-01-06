@@ -1,0 +1,28 @@
+<section name="Introduction">
+
+The GNUstep screensaver application is InnerSpace. By default, it is set to use the Polyhedra module.
+
+</section>
+
+<section name="5.1 Launching">
+
+Click on the AppIcon on the Dock... 
+
+
+In this first mode, only the background is replaced by the animation.<br>
+To launch the full screensaver mode, select the menu item:<br>
+
+<listing>
+Run &nbsp;&nbsp;&nbsp;
+</listing>
+
+<section name="5.2 Quitting">
+
+Just click somewhere on the desktop. The menu of 'InnerSpace' arises.<br>
+To stop it, select on the menu:<br>
+
+<listing>
+Quit &nbsp;&nbsp;&nbsp;
+</listing>
+
+</section>

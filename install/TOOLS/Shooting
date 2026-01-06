@@ -33,5 +33,5 @@ else
 	EXT=${3:-tiff}
 fi
 
-scrot -c -d ${DELAY} -F ${NAME}.${EXT}
+scrot -c -p -d ${DELAY} -F ${NAME}.${EXT}
 mv -fv ${NAME}.${EXT} $HOME/Images/

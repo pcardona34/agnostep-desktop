@@ -1,0 +1,19 @@
+<section name="Définir les touches de modification">
+
+Comme cela est expliqué dans le <i>Guide Utilisateur de GWorkspace</i>, dans la section "Configuration spéciale du clavier", un système GNUstep a besoin des trois touches de modification suivantes: COMMANDE, CONTROLE et ALTERNATIVE.
+
+Pour associer au clavier ces trois fonctions:
+
+<ol>
+<li>Dans le dossier des 'Applications', sélectionnez l'application 'SystemPreferences' (Préférences du Système) et appuyez sur ENTRÉE.</li>
+<li>Cliquez sur l'icône 'Modifier Keys' pour sélectionner cet onglet.</li>
+<li>Puis sélectionnez chaque association comme montré sur la figure suivante.</li>
+<li>Fermez l'application 'SystemPreference'.</li>
+</ol>
+
+<section name="Figure 0.1: Touches de modification">
+<legendfig src="ModifierKeys.tiff"></legendfig>
+</section>
+
+</section>
+

@@ -75,64 +75,11 @@ echo "$0" >$LOG
 
 ##############################################
 ## If you want some app to be installed
-## Just uncomment the relevant line, below,
+## Just write the function below...
 ## save and run...
 ##############################################
 
-#### Main Apps
-#install_systempreferences
-#install_gworkspace
-#install_helpviewer
-#install_textedit
-#install_openup
-install_addressmanager
-#install_gnumail
-#install_grr
-#install_agenda
-#install_terminal
-#install_gspdf
-#install_imageviewer
-#install_cynthiune
-#install_player
-#install_librarian
-#install_innerspace
-#install_scanimage
-#install_screenshot
-#install_volumecontrol
-#install_ink
-#install_wrappers
+install_gnumail_svn
 
-#### Extra
-#install_calculator
-#install_powerpaint
-#install_stepsync
-#install_graphos
-#install_dictionaryreader
-#install_flexisheet
-#install_pikopixel
-#install_price
-#install_fontmanager
-
-#### Devel
-#install_gorm
-#install_PC
-#install_easydiff
-#install_gemas
-#install_thematic
-
-#### Games
-#install_chess
-#install_gomoku
-#install_lapis
-#install_freecell
-#install_gshisen
-
-##################
-### Removed
-#install_affiche
-#install_timemon
-##################
-
-#update_info
 sudo ldconfig
 make_services

@@ -1,0 +1,11 @@
+{
+  NOTE = "Automatically generated, do not edit!";
+  NSExecutable = "openURLService";
+  NSServices = (
+  { 
+     NSSendTypes = ( "NSStringPboardType", "NSURLPboardType" );
+     NSMenuItem = { default = "Open URL"; }; 
+     NSMessage = "openURL";
+     NSPortName = "openURLService";
+   }
+  ); }

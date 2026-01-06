@@ -77,6 +77,7 @@ git clone $HUB/gnustep/$GUI &>>$LOG &
 PID=$!
 spinner
 ok "\rDone"
+
 printf "\nGNUstep Back\n"
 git clone $HUB/gnustep/$BACK &>>$LOG &
 PID=$!
@@ -121,6 +122,8 @@ echo "$TITLE" >>$LOG
 title "$TITLE"
 
 cd gui || exit 1
+printf "\nSwitching to service-fixes branch"
+git switch service-fixes
 
 printf "Configuring...\n"
 ./configure &>>$LOG &

@@ -16,6 +16,7 @@
 RPI=1
 _PWD=`pwd`
 clear
+LOG="$HOME/DISPLAY_MGR.log"
 
 . SCRIPTS/colors.sh
 . SCRIPTS/functions_prep.sh
@@ -23,31 +24,27 @@ clear
 ####################################################
 ### Copy the template into the home directory
 
-TITLE="Installing the Display Manager"
-title "$TITLE"
+STR="Installing the Display Manager"
+titulo
 
-is_hw_rpi
-if [ $RPI -eq 0 ];then
-	BG=fond_agnostep_pi.png
-	cp RESOURCES/lightdm-gtk-greeter.conf.pi RESOURCES/lightdm-gtk-greeter.conf
-else
-	BG=fond_agnostep.png
-	cp RESOURCES/lightdm-gtk-greeter.conf.std RESOURCES/lightdm-gtk-greeter.conf
-fi
+BG=fond_agnostep.png
 CONF=lightdm-gtk-greeter.conf
 DM=lightdm
 
 sudo apt -y install ${DM}
 
-cd RESOURCES
 ### Wallpaper
-cd WALLPAPERS || exit 1
-sudo cp ${BG} /usr/share/wallpapers/
-cd ..
+if [ ! -f /usr/share/wallpapers/${BG} ];then
+	sudo cp RESOURCES/WALLPAPERS/fond_agnostep_waves.png /usr/share/wallpapers/${BG}
+fi
+
+cd RESOURCES/CONF || exit 1
 ### Config
 sudo cp ${CONF} /etc/lightdm/
 
 cp $HOME/.xinitrc $HOME/.xsession
+
+cd
 
 sudo systemctl set-default graphical.target
 info "The Display Manager ${DM} has been set."

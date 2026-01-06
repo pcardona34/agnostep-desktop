@@ -1,0 +1,12 @@
+{
+    TerminalServices = {
+	Nano = {
+	    AcceptTypes = 2;
+	    Commandline = "/usr/bin/nano %s";
+	    Input = 1;
+	    Key = "";
+	    ReturnData = 1;
+	    Type = 1;
+	};
+    };
+}

@@ -78,7 +78,7 @@ title "Installing Dependencies"
 prefix="#"
 local STATUS=0
 
-FILE="${THERE}/RESOURCES/dep_${REF}_debian_${VERSION_ID}.txt"
+FILE="${THERE}/RESOURCES/DEPS/dep_${REF}_debian_${VERSION_ID}.txt"
 if ! [ -f $FILE ];then
 	alert "The file ${FILE} was not found."
 	exit 1
