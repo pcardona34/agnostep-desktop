@@ -1,8 +1,12 @@
 AGNOSTEP - agnostic GNUstep Desktop
 ===================================
 
-- **Release**: 0.9.5
+- **Release**: 0.9.6
 - **Status**: Beta
+
+### Changes of the 0.9.6 release
+
+- Cleaning obsolete things.
 
 ### Changes of the 0.9.5 release
 
