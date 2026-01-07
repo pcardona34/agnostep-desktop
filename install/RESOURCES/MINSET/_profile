@@ -1,5 +1,5 @@
-### Sourcing GNUstep in profile
-
 ### GNUstep env
-export GNUSTEP_MAKEFILES=/System/Library/Makefiles
-. $GNUSTEP_MAKEFILES/GNUstep.sh
+if [ -f /etc/GNUstep/GNUstep.conf ];then
+	export GNUSTEP_MAKEFILES=$(grep "MAKEFILES" /etc/GNUstep/GNUstep.conf | awk -F= '{print $2}')
+	. $GNUSTEP_MAKEFILES/GNUstep.sh
+fi
