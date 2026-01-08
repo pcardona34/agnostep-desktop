@@ -1,8 +1,13 @@
 AGNOSTEP - agnostic GNUstep Desktop
 ===================================
 
-- **Release**: 0.9.6
+- **Release**: 0.9.7
 - **Status**: Beta
+
+### Changes of the 0.9.7 release
+
+- Using 'gnustep-config' and 'GNUstep.conf' to retrieve GNUstep env.
+- AGNOSTEP theme now reached 0.5 stable release.
 
 ### Changes of the 0.9.6 release
 

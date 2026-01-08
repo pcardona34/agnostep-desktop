@@ -159,6 +159,9 @@ clear
 function fetch_agnostep-theme
 {
 printf "Fetching the theme installer...\n"
+if [ ! -d ../build ];then
+	mkdir -p ../build
+fi
 cd ../build || exit 1
 if [ -d agnostep-theme ];then
 	cd agnostep-theme

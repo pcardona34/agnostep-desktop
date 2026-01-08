@@ -79,7 +79,7 @@ echo "$0" >$LOG
 ## save and run...
 ##############################################
 
-install_gnumail_svn
+install_timemon
 
 sudo ldconfig
 make_services
