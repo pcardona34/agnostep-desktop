@@ -554,19 +554,30 @@ check "$APPNAME"
 
 function install_batmon
 {
-
+PATCH=batmon_AGNOSTEP.patch
+THEME=`defaults read NSGlobalDomain GSTheme | awk '{print $3}'`
 APPNAME="batmon"
 STR="Batmon";subtitulo
 
 cd ../build || exit 1
 
-printf "Fetching...\n"
+### We must start from a clean repo
 if [ -d batmon ];then
-	cd batmon
-	svn update
-else
-	svn co svn://svn.savannah.nongnu.org/gap/trunk/system-apps/batmon
-	cd batmon || exit 1
+	rm -fR batmon
+fi
+
+printf "Fetching...\n"
+svn co svn://svn.savannah.nongnu.org/gap/trunk/system-apps/batmon
+cd batmon || exit 1
+
+if [ "$THEME" == "AGNOSTEP" ];then
+	### PATCH begins...
+	cp $_PWD/RESOURCES/PATCHES/$PATCH ./
+	printf "A patch must be applied... "
+	TARGET=./AppController.m
+	patch --forward -u ${TARGET} -i ./${PATCH}
+	ok "Done"
+	### End of Patch
 fi
 
 _build

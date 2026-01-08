@@ -1,0 +1,20 @@
+--- AppController.origin.m	2026-01-08 12:43:51.228316414 +0100
++++ AppController.m	2026-01-08 12:45:21.791501735 +0100
+@@ -62,7 +62,7 @@
+ 	font = [NSFont systemFontOfSize:9.0];
+ 	stateStrAttributes = [[NSDictionary dictionaryWithObjectsAndKeys:
+         font, NSFontAttributeName,
+-	[NSColor blueColor], NSForegroundColorAttributeName,
++	[NSColor whiteColor], NSForegroundColorAttributeName,
+         style, NSParagraphStyleAttributeName, nil] retain];
+         iconPlug = [[NSImage imageNamed:@"small_plug.tif"] retain];
+         iconBattery = [[NSImage imageNamed:@"small_battery.tif"] retain];
+@@ -166,7 +166,7 @@
+     else if ([batModel isCritical] == YES)
+        [[NSColor redColor] set];
+     else
+-       [[NSColor greenColor] set];
++       [[NSColor knobColor] set];
+     [NSBezierPath fillRect: NSMakeRect(0+1, 1, WIDTH-1, (chargePercentToDraw/100) * HEIGHT -2)];
+ 
+     str = [NSString stringWithFormat:@"%2.0f%%", [batModel chargePercent]];

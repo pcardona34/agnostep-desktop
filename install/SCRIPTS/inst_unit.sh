@@ -14,24 +14,6 @@
 ### Usefull to update the project
 #####################################
 
-################################
-### ENV
-
-_PWD=`pwd`
-echo $PATH | grep -e "/System/Tools" &>/dev/null
-if [ $? -ne 0 ];then
-	export PATH=/System/Tools:$PATH
-fi
-GSMAKE=$(gnustep-config --variable=GNUSTEP_MAKEFILES)
-. ${GSMAKE}/GNUstep.sh
-LOG="$HOME/AGNOSTEP_BUILD_UNIT.log"
-SPIN='/-\|'
-INSTALL_DIR=$(gnustep-config --variable=GNUSTEP_LOCAL_APPS)
-#INSTALL_ARGS="GNUSTEP_INSTALLATION_DOMAIN=LOCAL"
-### End of VARS
-################################
-
-################################
 ### Include functions
 
 . SCRIPTS/colors.sh
@@ -45,9 +27,36 @@ INSTALL_DIR=$(gnustep-config --variable=GNUSTEP_LOCAL_APPS)
 . SCRIPTS/functions_prep.sh
 . SCRIPTS/functions_inst_wrappers.sh
 . SCRIPTS/std_build.sh
-. SCRIPTS/functions_misc_themes.sh
 
 ### End of Include functions
+################################
+
+
+################################
+### ENV
+
+clear
+if [ -n "$1" ];then
+	APPTOINST="$1"
+	printf "$APPTOINST\n"
+else
+	info "You must give the name app (only small caps) as argument."
+	cli "$0 <app_name>"
+	exit 1
+fi
+
+_PWD=`pwd`
+echo $PATH | grep -e "/System/Tools" &>/dev/null
+if [ $? -ne 0 ];then
+	export PATH=/System/Tools:$PATH
+fi
+GSMAKE=$(gnustep-config --variable=GNUSTEP_MAKEFILES)
+. ${GSMAKE}/GNUstep.sh
+LOG="$HOME/AGNOSTEP_BUILD_UNIT.log"
+SPIN='/-\|'
+INSTALL_DIR=$(gnustep-config --variable=GNUSTEP_LOCAL_APPS)
+#INSTALL_ARGS="GNUSTEP_INSTALLATION_DOMAIN=LOCAL"
+### End of VARS
 ################################
 
 clear
@@ -79,7 +88,7 @@ echo "$0" >$LOG
 ## save and run...
 ##############################################
 
-install_timemon
+install_${APPTOINST}
 
 sudo ldconfig
 make_services
