@@ -1,0 +1,5 @@
+#!/bin/bash
+
+APP=/usr/local/bin/Upgrade
+
+xterm -title "Upgrade" -e "$APP" "$date_today"

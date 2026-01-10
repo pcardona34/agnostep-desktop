@@ -1,8 +1,15 @@
 AGNOSTEP - agnostic GNUstep Desktop
 ===================================
 
-- **Release**: 0.9.7
+- **Release**: 0.9.8
 - **Status**: Beta
+
+### Changes of the 0.9.8 release
+
+- Updater: fixing sudo issues with Updater notifications witin 5c5 flavour. New wrapper: Upgrade.app.
+- GWorkspace: Patch to fix L18N issue of 'Downloads' folder in Franch context.
+- New way to install wrappers (first stage. To be continued) 
+- Misc: updating deps list.
 
 ### Changes of the 0.9.7 release
 

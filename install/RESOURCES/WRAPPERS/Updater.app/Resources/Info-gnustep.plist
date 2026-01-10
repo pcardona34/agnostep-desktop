@@ -1,7 +1,0 @@
-{
-  NSExecutable = "Updater";
-  NSRole = "Application";
-  NSIcon = "Updater.tiff";
-  CFBundleIdentifier = "org.agnostep.Updater";
-	XAppWrapper = YES;
-}

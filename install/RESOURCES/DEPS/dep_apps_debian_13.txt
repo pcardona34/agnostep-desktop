@@ -23,18 +23,17 @@ conky-all
 ### cups already done
 sane-utils
 
-inkscape
+#inkscape #See install of Wrappers
 python3-tinycss2
 python3-willow
-#chromium #removed in favour of firefox
+#chromium #removed in favour of firefox #see install of wrappers
 #rpi-chromium-mods
 dict
 dict-freedict-eng-fra
 dict-jargon
 dict-wn
-fbreader
-firefox
-focuswriter
+#fbreader #managed by the wrappers installer
+#focuswriter #idem
 
 #### Audio and Video - Player & Cynthiune
 ffmpeg
@@ -65,7 +64,7 @@ vlc-plugin-video-output
 ### Games
 # Chess
 gnuchess
-# NeXTGo ?
+# NeXTGo:
 gnugo
 ###########################################
 

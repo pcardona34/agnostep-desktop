@@ -122,8 +122,9 @@ echo "$TITLE" >>$LOG
 title "$TITLE"
 
 cd gui || exit 1
-printf "\nSwitching to service-fixes branch"
-git switch service-fixes
+### This branch was merged
+### printf "\nSwitching to service-fixes branch"
+### git switch service-fixes
 
 printf "Configuring...\n"
 ./configure &>>$LOG &

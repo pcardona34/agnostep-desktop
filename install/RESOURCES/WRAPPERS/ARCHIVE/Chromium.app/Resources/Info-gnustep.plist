@@ -3,7 +3,7 @@
   NSRole = "Viewer";
   NSIcon = "Web-Browser.tiff";
   CFBundleIdentifier = "org.gnustep.Chromium";
-	XAppWrapper = YES;
+  XAppWrapper = YES;
   CFBundleURLTypes = (
   	{
 		CFBundleURLName = "Web site URL";

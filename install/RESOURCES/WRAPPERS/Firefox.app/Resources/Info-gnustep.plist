@@ -2,6 +2,7 @@
   NSExecutable = "Firefox";
   NSRole = "Viewer";
   NSIcon = "Firefox.tiff";
+  CFBundleIdentifier = "org.gnustep.Firefox";
   XAppWrapper = YES;
   CFBundleURLTypes = (
   	{

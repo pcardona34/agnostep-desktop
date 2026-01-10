@@ -1,4 +1,4 @@
- #!/bin/bash
+#!/bin/bash
 
 ####################################################
 ### A G N o S t e p  -  Desktop - by Patrick Cardona
@@ -10,12 +10,8 @@
 ####################################################
 
 #####################################
-### GNUstep-apps
+### Wrappers
 #####################################
-
-### Install Applications: Preferences, GWorkspace, etc
-### See RELEASE for a complete list
-### N.B.: Developer apps are divided into inst_devel.sh
 
 ################################
 ### ENV
@@ -27,7 +23,7 @@ if [ $? -ne 0 ];then
 fi
 GSMAKE=$(gnustep-config --variable=GNUSTEP_MAKEFILES)
 . ${GSMAKE}/GNUstep.sh
-LOG="$HOME/AGNOSTEP_BUILD_APPS.log"
+LOG="$HOME/AGNOSTEP_BUILD_WRAPPERS.log"
 SPIN='/-\|'
 INSTALL_DIR=$(gnustep-config --variable=GNUSTEP_LOCAL_APPS)
 #INSTALL_ARGS="GNUSTEP_INSTALLATION_DOMAIN=LOCAL"
@@ -41,22 +37,24 @@ INSTALL_DIR=$(gnustep-config --variable=GNUSTEP_LOCAL_APPS)
 . SCRIPTS/check_app.sh
 . SCRIPTS/size.sh
 . SCRIPTS/spinner.sh
-. SCRIPTS/functions_inst_apps.sh
-. SCRIPTS/functions_prep.sh
-. SCRIPTS/std_build.sh
+. SCRIPTS/functions_inst_wrappers.sh
 
 ### End of Include functions
 ################################
 
 clear
-title "A G N o S t e p  -  Main applications and Tools"
+title "A G N o S t e p  -  Wrappers"
 
 ################################
-### Is there a Build Folder?
 
-if ! [ -d ../build ];then
-	mkdir -p ../build
-fi
+### Declare_deps_wrappers
+### Name after DEP_ must follow the wrapper name.
+LG=${LANG:0:2}
+DEP_Firefox="firefox-esr-l10n-${LG}"
+DEP_EBookReader="fbreader"
+DEP_Inkscape="inkscape"
+DEP_Writer="focuswriter"
+DEP_Upgrade="xterm"
 
 ################################
 ### Is there a USER APPS Folder?
@@ -71,38 +69,13 @@ fi
 
 echo "$0" >$LOG
 
-##############################################
-## If you do not want any app to be installed
-## Just comment the relevant line, below,
-## save and run...
-##############################################
+sudo apt -y update && sudo apt -y upgrade && sudo apt -y autoremove
 
-install_systempreferences
-install_gworkspace
-install_helpviewer
-install_textedit
-install_openup
-install_addressmanager
-install_gnumail
-install_grr
-install_agenda
-install_terminal
-install_gspdf
-install_imageviewer
-install_cynthiune
-install_player
-install_librarian
-install_innerspace
-install_scanimage
-install_screenshot
-install_volumecontrol
-install_ink
-
-##################
-### Removed
-#install_affiche
-#install_timemon
-##################
+install_wrapper Firefox "$DEP_Firefox"
+install_wrapper EBookReader "$DEP_EBookReader"
+install_wrapper Inkscape "$DEP_Inkscape"
+install_wrapper Writer "$DEP_Writer"
+install_wrapper Upgrade "$DEP_Upgrade"
 
 sudo ldconfig
 make_services

@@ -85,6 +85,10 @@ if [ ${LITE} -eq 0 ];then
 	cd ${THERE}
 	./5_install_apps.sh games
 fi
+
+### Wrappers
+. SCRIPTS/inst_wrappers.sh
+
 cd ${THERE}
 ./6_user_settings.sh
 

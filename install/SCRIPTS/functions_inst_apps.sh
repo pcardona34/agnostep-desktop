@@ -72,6 +72,13 @@ else
 	cd apps-gworkspace
 fi
 
+### Patch: fix 'Downloads' L18N in FSNode
+printf "Applying a L18N patch...\n"
+PATCH=$_PWD/RESOURCES/PATCHES/GWorkspace_FSNode_L18n.patch
+TARGET=FSNode/Resources/French.lproj/Localizable.strings
+patch --forward -u $TARGET -i $PATCH
+ok "Done"
+
 #####################################
 ### GWmetadata submodule
 

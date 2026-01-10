@@ -14,11 +14,42 @@
 ### For test or update purpose
 ### To use:
 ### From 'install' folder:
-### bash ./SCRIPTS/ins_unit_FW.sh
+### bash ./SCRIPTS/ins_unit_FW.sh <FW_name>
+################################
+
+################################
+### Include functions
+
+. SCRIPTS/colors.sh
+. SCRIPTS/spinner.sh
+. SCRIPTS/functions_prep.sh
+
+#echo ".."
+. SCRIPTS/std_build.sh
+
+#echo "..."
+
+. SCRIPTS/check_app.sh
+#echo "...."
+. SCRIPTS/functions_inst_frameworks.sh
+#echo "....."
+
+### End of Include functions
 ################################
 
 ################################
 ### VARS
+
+clear
+if [ -n "$1" ];then
+        FWTOINST="$1"
+        printf "$FWTOINST\n"
+else
+        info "You must give the name of the frameworks (only small caps) as argument."
+        cli "$0 <fw_name>"
+        exit 1
+fi
+
 
 #echo "PATH (0) is: $PATH";sleep 5
 
@@ -42,25 +73,6 @@ if [ ! -d $INSTALL_DIR ];then
 fi
 
 ################################
-### Include functions
-
-. SCRIPTS/colors.sh
-. SCRIPTS/spinner.sh
-. SCRIPTS/functions_prep.sh
-
-#echo ".."
-. SCRIPTS/std_build.sh
-
-#echo "..."
-
-. SCRIPTS/check_app.sh
-#echo "...."
-. SCRIPTS/functions_inst_frameworks.sh
-#echo "....."
-
-### End of Include functions
-################################
-################################
 ### Deps
 ################################
 
@@ -76,12 +88,11 @@ if ! [ -d ../build ];then
 fi
 
 ################################
-### To install the desired FW, uncomment below
-
+### This is the list of available FW: do not uncomment!
 #install_pdfkit
 #install_fw_addresses
 #install_fw_addressview
-install_pantomime
+#install_pantomime
 #install_SWK
 #install_rsskit
 #install_hlkit
@@ -95,10 +106,10 @@ install_pantomime
 
 ####################################
 
+install_${FWTOINST}
 sudo ldconfig
 
-MSG="All is done for the Frameworks."
+MSG="All is done for the Frameworks ${FWTOINST}."
 echo "$MSG" >>$LOG
 info "$MSG"
-sleep 2
-
+sleep 1

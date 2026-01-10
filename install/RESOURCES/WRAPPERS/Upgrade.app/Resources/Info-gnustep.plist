@@ -1,0 +1,7 @@
+{
+  NSExecutable = "Upgrade";
+  NSRole = "Application";
+  NSIcon = "Upgrade.tiff";
+  CFBundleIdentifier = "org.agnostep.Upgrade";
+	XAppWrapper = YES;
+}

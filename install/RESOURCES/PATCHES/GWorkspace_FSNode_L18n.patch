@@ -1,0 +1,17 @@
+--- apps-gworkspace/FSNode/Resources/French.lproj/Localizable.origin.strings	2026-01-08 23:09:06.610566881 +0100
++++ apps-gworkspace/FSNode/Resources/French.lproj/Localizable.strings	2026-01-08 23:11:34.538166875 +0100
+@@ -1,5 +1,6 @@
+ ﻿/***
+ French.lproj/Localizable.strings
++Fix 'Downloads' issue
+ updated by make_strings 2016-01-22 00:30:18 +0100
+ add comments above this one
+ ***/
+@@ -176,6 +177,6 @@
+ "Music"="Musique";
+ "Images"="Images";
+ "Documents"="Documents";
+-"Downloads"="Téléchargement";
++"Downloads"="Téléchargements";
+ "Applications"="Applications";
+ "Tools"="Outils";
