@@ -1,8 +1,13 @@
-AGNOSTEP - agnostic GNUstep Desktop
+# AGNoStep - agnostic GNUstep Desktop
 ===================================
 
-- **Release**: 0.9.8.1
+- **Release**: 0.9.8.2
 - **Status**: Beta
+
+### Changes of the 0.9.8.2 release
+
+- New: main `agnostep.sh` script at the top level to provide a general menu for install core, apps, and so on.
+- New: `remove.sh` script to handle removing of a selected app: to be continued.
 
 ### Changes of the 0.9.8.1 release
 

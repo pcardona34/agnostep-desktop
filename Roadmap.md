@@ -6,9 +6,10 @@
 - [x] 3) Installing the Core GNUstep (until now with GNU runtime);
 - [x] 4) Installing the Frameworks;
 - [x] 5) Installing the apps, the extra apps, the devel apps and the games;
-    - [ ] Subtask: a better Web Browser wrapper to handle openURL service. Or just add this service?
+    - [x] Subtask: a better Web Browser wrapper to handle openURL service. Or just add this service?
 - [x] 6) Installing the wrappers for non-GNUstep applications
-    - [x] Subtask: Testing/substituing specific tools like *rpinters* (setting the default printer) - *rpi-imager* (creating bootable image) - Now a test permit to install those only on RPI SBC.
+    - [x] Subtask: Testing/substituing specific tools like default printer settings. 
+    - [x] *rpi-imager* (creating bootable image) - Now a test permit to install those only on RPI SBC.
 - [x] 7) Installing the Desktop tools like *conky*, *dunst*, *Updater*, *BirthNotify* for all the users; the resources like the wallpaper;
     - [x] Subtask: changing the path of some tools to `/usr/local/bin` (no more `~/.local/bin`)
     - [x] AGNoStep-Art: a new wallpaper (without Pi ref) and new bannieres for the Help documents.
@@ -26,6 +27,9 @@
 - [x] Review all the above to permit a single project (AGNoStep, of course) to handle all the case, comprising RPI machines.
 
 ---
+
+- [x] Separate main Core Desktop and AGNOSTEP Theme.
+
 
 Translation
 ===========

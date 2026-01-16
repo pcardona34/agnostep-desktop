@@ -23,8 +23,9 @@ function install_wrapper
 WRAP=$1
 DEP=${2}
 APPNAME=${WRAP}
-echo "$APPNAME" >> $LOG
-title "Installing the wrapper for $APPNAME"
+
+STR="Installing the wrapper for $APPNAME"
+subtitulo
 
 if [ -n "$DEP" ];then
 	STR="Dependencies";subtitulo
@@ -54,6 +55,42 @@ do
 done
 
 cd $_PWD
+}
+##############################################
+
+##############################################
+function install_openURLService
+{
+### With Firefox in mind
+
+SRC=RESOURCES/SERVICES/openURLService
+LIB=$(gnustep-config --variable=GNUSTEP_LOCAL_LIBRARY)
+TARGET=$LIB/Services/openURLService.service
+
+STR="Installing openURLService"
+subtitulo
+
+cd ${SRC} || exit 1
+printf "Building service...\n"
+make clean &>/dev/null
+make &>>$LOG &
+PID=$!
+spinner
+ok "\rDone"
+printf "Installing the service...\n"
+sudo -E make install &>>$LOG &
+PID=$!
+spinner
+ok "\rDone"
+
+printf "Checking...\n"
+if [ -d $TARGET ];then
+	info "Service found.";sleep 3
+else
+	alert "Service not found: please, report this issue.";sleep 3
+	exit 1
+fi
+make_services
 }
 
 ##############################################

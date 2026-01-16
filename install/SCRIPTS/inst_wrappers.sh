@@ -116,7 +116,8 @@ case $i in
 	if [ -d $INSTALL_DIR/Chromium.app ];then
 		sudo rm -fR $INSTALL_DIR/Chromium.app
 	fi
-	install_wrapper Firefox "$DEP_Firefox";;
+	install_wrapper Firefox "$DEP_Firefox"
+	install_openURLService;;
 esac
 done
 fi

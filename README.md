@@ -1,7 +1,7 @@
 # agnostep
 A GNUstep Desktop for All
 
-Read [RELEASE](install/RELEASE) to know the current status.
+Read [RELEASE](install/RELEASE.md) to know the current status.
 - Alpha: means earlier developement stage. You should not use nor try, better is waiting.
 - Beta: you may test to improve and help the project.
 - Stable: Yet well tested. You can use it for a daily use. 
@@ -26,23 +26,19 @@ As AGNoStep was forked from the deprecated [PiSiN](https://github.com/pcardona34
 I cannot promise AGNoStep will install and function on your hardware.
 So we shall establish a real working list.
 
-But if you can run Debian Trixie on your computer, we can say with optimism that AGNoStep should run on too. See [HCL](install/HCL) for a real hardware tested list.
+But if you can run Debian Trixie on your computer, we can say with optimism that AGNoStep should run on too. See [HCL](install/HCL.md) for a real hardware tested list.
 
 ## How to install
 
-Read [INSTALL](install/INSTALL) first.
+Read [INSTALL](install/INSTALL.md) first.
 
 Quick way: on a fresh minimal Debian Trixie (13.x) on a computer wired to Internet, execute:
+
 ````	
-	cd install
-	./enjoy.sh
+	./agnostep.sh
 ````
 
-Than logout the desktop if all is ok, and install the Display Manager:
-
-````
-	./7_install_DM.sh
-````
+Than logout the desktop if all is ok, and install the Display Manager from the above menu.
 
 ## Screenshots
 

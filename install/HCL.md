@@ -1,26 +1,28 @@
-Hardware Compatibility List
-===========================
+# Hardware Compatibility List
 
 Because I cannot test on every hardware, I put here a list of well tested hardwares:
 If you successflly tested your hardware, let me know.
 
-=== Laptop ===
+## Laptop
 
-- Apple MacBookPro 6.2 Intel Core i5 (2010), amd64, Trixie 13.1: passed 100%. Date: Oct 2 2025; Release: AGNoStep 0.8.4
+- Apple MacBookPro 6.2 Intel Core i5 (2010), amd64, Trixie 13.3: passed 100%. Date: Oct 2 2025; Release: AGNoStep 0.8.4
 
-=== SBC ===
+## SBC
 
 - Raspberry Pi 3B, arm64, Bookworm 12.12: passed 100 %. Date: Sep. 6 2025; Release: PiSiN 0.8.2
 - Raspberry Pi 400, arm64, Trixie 13.1; passed 100 %. Date: Oct 10 2025; Release: PiSiN 0.8.6
-- Raspberry Pi 400, arm64, Trixie 13.1; passed 100 %. Date: Oct 13 2025; Release: AGNoStep 0.9.0
+- Raspberry Pi 400, arm64, Trixie 13.2; passed 100 %. Date: Oct 13 2025; Release: AGNoStep 0.9.0
+- Raspberry Pi 400, arm64, Trixie 13.3; passed 100 %. Date: Jan15 2026; Release: AGNoStep 0.9.8.1
+- Raspberry Pi 500, arm64, Trixie 13.3: soon
 
-=== Monitor ===
+## Monitor
 
 - ACER 57e 17": 1080p mode (1920x1080)
+- Apple 15": see Laptop above.
 
-=== Printer and scanner compatible ===
+## Printer and scanner
 
-- HP All-in-One ENVY 5020: printing: yes; scanning: yes
+- HP All-in-One ENVY 5020: printing a RTF document: yes; scanning: yes
 
 ### Tests protocol
 
@@ -30,21 +32,27 @@ Date:
 Passed: (sum of the successful steps) / 19
 
 1) Installation step by step: 1 prep | 2 wmaker | 3 GNUstep | 4 Frameworks | 5 apps/extra/devel/games | 6 user settings | 7 Display manager
-2) Installation (BIS) with enjoy script: successfully executed from begining to end.
+2) Installation (BIS) with Core script: successfully executed from begining to end.
 3) Window manager / Theming
 4) Workspace / Dock / Wallpaper
 5) Home customized: Folders
 6) Applications Folder with a shortcut on the shelf / TabbedShelf
 7) Autostart: namely conky panel and notifications (see step 9).
+7BIS) Autostart: namely Classic flavour with Clip and Dock
 8) Sysinfo Panel (if a laptop, battery monitoring is showing)
+8-BIS) Dockapps (if a laptop, batmon) 
 9) Notify: Updater with action, BirthNotify and associated tools
+9-BIS) Colors changing within wmtext: orange for birthday, crimson for upgradable packages.
+9-TER) Run successfully Upgrade wrapper to update the Debian system
 10) Open/save with the home shortcut
 11) Web Browser
+11-BIS) OpenURL service: text link selected, link clicked from a message within GNUMail
 12) Printing / set default printer using 'Setup_Printer' script
 13) Scanning (with ScanImage)
 14) Screensaver (InnerSpace)
 15) Display Manager: login, shutdown.
-16) Mount/Unmount a removable device: read User Guide.
+16) Mount a removable device: with wmudmount in the classic flavour.read User Guide.
+16-BIS) Unmount with DND on the Recycler desktop icon (classic) or on the docked icon (conky)
 17) Listening to music (with Cynthiune) and setting the level (with VolumeControl)
 18) Watching a video (with Player)
 19) Theming FocusWriter

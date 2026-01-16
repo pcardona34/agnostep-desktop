@@ -12,13 +12,13 @@
 ### Banniere
 clear
 cat RESOURCES/logo.txt
-printf "\n\t\t\tW e l c o m e   t o   a n    A G N o S t e p    W o r l d!\n\n\t\t\tE N J O Y   installer   script   will   start   soon..."
+printf "\n\t\t\tW e l c o m e   t o   a n    A G N o S t e p    W o r l d!\n\n\t\t\tC O R E   installer   script   will   start   soon..."
 sleep 4
 
 
 ####################################################
 ### VARS
-LOGENJ="$HOME/ENJOY.log"
+LOGENJ="$HOME/CORE.log"
 IS_OK=0
 ### LITE=0 means full install - LITE=1 means lite install: only basic apps
 LITE=0
@@ -49,7 +49,7 @@ if [ -f $HOME/.xinitrc ];then
 	printf "\nDo you want to force AGNoStep (re-)install?\n"
 	read -p "(y/n): " -s REPONSE
 	case $REPONSE in
-		"y"|"Y") printf "\nStarting AGNoStep All-in-One install script...\n" && sleep 2;;
+		"y"|"Y") printf "\nStarting AGNoStep Core install script...\n" && sleep 2;;
 		"n"|"N"|*) printf "\nAborting...\n" && exit 1
 	esac
 fi
@@ -77,8 +77,8 @@ cd ${THERE}
 cd ${THERE}
 ./5_install_core_apps.sh || exit 1
 
-cd ${THERE}
-./6_user_settings.sh
+warning "Do not forget to install User settings and Theme now."
+
 
 ##################################################
 ### Timer (2)
@@ -92,6 +92,4 @@ if [ ! -d $HOME/Documents/LOGS ];then
 	mkdir -p $HOME/Documents/LOGS
 fi
 mv --force *.log $HOME/Documents/LOGS
-
-#startx || exit 1
 

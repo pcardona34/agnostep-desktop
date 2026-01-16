@@ -10,10 +10,13 @@
 ####################################################
 
 ################################
-### Manager
-### To handle post-install
-### and applications installation
+### Remove
+### Allow to select and remove
+### an installed app
 ################################
 
-### TO BE DONE ###
+### To be done
 
+. SCRIPTS/colors.sh
+
+warning "Not yet ready!"
