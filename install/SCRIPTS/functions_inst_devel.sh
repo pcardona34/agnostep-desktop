@@ -14,6 +14,75 @@
 ####################################################
 
 
+########################## - E - ##########################
+
+#############################################
+## Emacs built with NS menus
+#############################################
+
+function install_emacs()
+{
+
+APPNAME="Emacs"
+HUB="https://git.savannah.gnu.org/git/emacs.git"
+DIR="emacs"
+CONFIG_ARGS="--with-ns"
+INSTALL_DIR=$(gnustep-config --variable=GNUSTEP_LOCAL_APPS)
+
+cd ../build || exit 1
+
+printf "Fetching...\n"
+if [ ! -d emacs ];then
+	git clone $HUB &>>$LOG &
+	PID=$?
+	spinner
+	ok "\rDone"
+	cd $DIR || exit 1
+else
+	cd $DIR
+	git pull
+	ok "Done"
+fi
+
+
+WD=`pwd`
+printf "Configuring...\n"
+make clean
+./autogen.sh
+./configure ${CONFIG_ARGS} &>>$LOG
+PID=$?
+spinner
+ok "\rDone"
+
+printf "Building...\n"
+make &>>$LOG &
+PID=$?
+spinner
+ok "\rDone"
+
+if [ ! -d nextstep/Emacs.app ];then
+	alert "The Bundle Emacs.app was not found."
+	exit 1
+fi
+
+printf "Packaging the Bundle\n"
+cp -r lisp nextstep/Emacs.app/Resources/
+mkdir -p nextstep/Emacs.app/libexec
+for FIC in exec/loader*.s
+do cp ${FIC} nextstep/Emacs.app/libexec/
+done
+
+printf "Installing...\n"
+cd nextstep || exit 1
+sudo -E cp -r Emacs.app ${INSTALL_DIR}/
+# Checking
+if [ -d ${INSTALL_DIR}/${APPNAME}.app ];then
+	info "The Application ${APPNAME} was found."
+else
+	alert "The Application ${APPNAME} was NOT found."
+fi
+}
+
 ########################################
 ## Gorm
 ### Repo/Release: github/gnustep: 1.5.0
@@ -146,13 +215,13 @@ APPNAME="Thematic"
 CONFIG_ARGS=""
 INSTALL_ARGS="GNUSTEP_INSTALLATION_DOMAIN=LOCAL"
 
-echo "$APPNAME - $RELEASE" >> $LOG
-title "$APPNAME $RELEASE"
+STR="$APPNAME"
+subtitulo
 
 printf "Fetching...\n"
 if [ -d apps-thematic ];then
 	cd apps-thematic
-	git pull origin master
+	git pull
 else
 	git clone https://github.com/gnustep/apps-thematic.git &>/dev/null
 	cd apps-thematic

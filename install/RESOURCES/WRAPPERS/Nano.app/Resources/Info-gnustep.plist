@@ -1,0 +1,17 @@
+{
+  NSExecutable = "Nano";
+  NSRole = "Application";
+  NSIcon = "Gnu-nano.tiff";
+   CFBundleIdentifier = "org.gnu.Nano";
+	XAppWrapper = YES;
+  NSTypes = (
+    {
+      NSUnixExtensions = ( "sh" );
+      NSIcon = "File_script.tiff";
+    },
+   {
+      NSUnixExtensions = ( "md" );
+      NSIcon = "File_markdown.tiff";
+    }
+  );
+}

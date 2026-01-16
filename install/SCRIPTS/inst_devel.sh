@@ -27,7 +27,10 @@ GSMAKE=$(gnustep-config --variable=GNUSTEP_MAKEFILES)
 LOG="$HOME/AGNOSTEP_BUILD_DEVEL.log"
 SPIN='/-\|'
 INSTALL_DIR=$(gnustep-config --variable=GNUSTEP_LOCAL_APPS)
-INSTALL_ARGS="GNUSTEP_INSTALLATION_DOMAIN=LOCAL"
+TEMPFILE=$(mktemp /tmp/agno-XXXXX)
+trap "rm -f $TEMPFILE" EXIT
+
+#INSTALL_ARGS="GNUSTEP_INSTALLATION_DOMAIN=LOCAL"
 
 ### End of VARS
 ################################
@@ -46,7 +49,8 @@ INSTALL_ARGS="GNUSTEP_INSTALLATION_DOMAIN=LOCAL"
 ################################
 
 clear
-title "A G N o S t e p  -  Devel applications and Tools"
+STR="A G N o S t e p  -  Devel applications and Tools"
+titulo
 
 ################################
 ### Is there a Build Folder?
@@ -56,32 +60,98 @@ if ! [ -d ../build ];then
 fi
 
 ################################
-### Is there an APPS Folder?
+### Is there a LOCAL APPS Folder?
 
 if ! [ -d $INSTALL_DIR ];then
 	mkdir -p $INSTALL_DIR
 fi
 
 #################################################
-### New LOG
 
-echo "$0" >$LOG
+function remove_if_present
+{
+APP="$1"
+if [ -d $INSTALL_DIR/${APP}.app ];then
+	sudo rm -fR $INSTALL_DIR/${APP}.app
+fi
+printf "The previous installation of ${APP} has been removed.\n"
+}
 
-##############################################
-## If you do not want any app to be installed
-## Just comment the relevant line, below,
-## save and run...
-##############################################
+##################################################
+function info_renaissance
+{
+dialog --no-shadow --backtitle "Devel applications" --title "Renaissance Framework" \
+--sleep 6 --infobox "
+The tools associated with the Framework Renaissance has been already installed:
+- GSMarkupBrowser.app
+- GSMarkupLocalizableStrings.app" 8 60
+}
 
-install_gorm
-install_PC
-install_easydiff
-install_gemas
-install_thematic
+###############
+
+info_renaissance
+
+####################################################
+function devel_apps_menu
+{
+dialog --no-shadow --backtitle "${STR:0:15}" --title "${STR:20:28}" \
+--ok-label "OK"  \
+--checklist "
+The list below contains the devel apps.
+
+Check (space bar) the Applications you want to (re)install." 15 70 8 \
+"EasyDiff" "A Diff application" off \
+"Emacs" "The GNU Editor" off \
+"Gemas" "GNUstep Devel Editor" off \
+"Gorm" "GNUstep Interface Builder" off \
+"ProjectCenter" "GNUstep Project Builder" off \
+"Thematic" "A Theme Editor for GNUstep" off 2> $TEMPFILE
+
+# 0 if [OK] button was pushed;
+# otherwise, exit the script.
+if [ $? = 0 ];then
+for i in `cat $TEMPFILE`
+do
+case "$i" in
+"EasyDiff")
+	printf "You chose EasyDiff\n"
+	remove_if_present "EasyDiff"
+	install_easydiff;;
+"Emacs")
+	printf "You chose Emacs\n"
+	remove_if_present "Emacs"
+	install_emacs;;
+"Gemas")
+	printf "You chose Gemas\n"
+	remove_if_present "Gemas"
+	install_gemas;;
+"Gorm")
+	printf "You chose Gorm\n"
+	remove_if_present "Gorm"
+	install_gorm;;
+"ProjectCenter")
+	printf "You chose ProjectCenter\n"
+	remove_if_present "ProjectCenter"
+install_pc;;
+"Thematic")
+	printf "You chose Thematic\n"
+	remove_if_present "Thematic"
+install_thematic;;
+esac
+done
+else exit 0
+fi
+}
+#################################################
+
+
+devel_apps_menu
+
+printf "Linking and making services: wait please...\n"
 
 sudo ldconfig
 make_services
 
-#print_size
+print_size
 
-###############
+sleep 2

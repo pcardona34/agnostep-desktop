@@ -10,13 +10,13 @@
 ####################################################
 
 ####################################################
-### Desktop Main installation Script
+### Install core apps and wrappers
 ####################################################
 
 ####################################################
 ### Vars
 
-OPTION="${1:-help}"
+RPI=1
 
 ### End of vars
 ####################################################
@@ -24,27 +24,20 @@ OPTION="${1:-help}"
 ####################################################
 ### Include functions
 
-. SCRIPTS/functions_install_AGNOSTEP.sh
+. SCRIPTS/colors.sh
+. SCRIPTS/functions_prep.sh
 . SCRIPTS/size.sh
 
-### End of include functions
-####################################################
 
-case "$OPTION" in
-	"APPS" | "Apps" | "apps")
-		install_apps;;
-	"DEVEL" | "Devel" | "devel")
-		install_devel;;
-	"EXTRA" | "Extra" | "extra")
-		install_extra;;
-	"GAMES" | "Games" | "games")
-		install_games;;
-	"help" | "*")
-		help;;
-esac
+is_hw_rpi
+if [ $RPI -eq 0 ];then
+	. SCRIPTS/inst_rpi_tools.sh
+fi
+
+. SCRIPTS/first_inst_core_apps.sh
+. SCRIPTS/inst_wrappers.sh
+
 
 ### Space available ?
 print_size
 
-### Info about 4th step
-warning "Do not forget to run again './6_user_settings.sh' after each new installation of applications."

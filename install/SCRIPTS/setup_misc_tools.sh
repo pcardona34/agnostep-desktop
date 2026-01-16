@@ -13,6 +13,8 @@
 ### Setup Miscellaneous Tools...
 ################################
 
+_PWD=`pwd`
+
 DEPS="dialog"
 STR="Dependencies..."
 subtitulo
@@ -96,4 +98,7 @@ esac
 done
 else exit 0
 fi
+
+echo "END OF MISC TOOLS"
+sleep 5
 }

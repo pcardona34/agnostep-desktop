@@ -1,0 +1,18 @@
+  NSServices = (
+    {
+      NSPortName = openURLService;
+      NSMessage = openURLSelected;
+      NSSendTypes = (
+	NSStringPboardType
+      );
+      NSMenuItem = {
+	default = "Open URL";
+	English = "Open URL";
+	French = "Ouvrir URL";
+      };
+      NSKeyEquivalent = {
+	default = O;
+	English = O;
+      };
+    },
+  );

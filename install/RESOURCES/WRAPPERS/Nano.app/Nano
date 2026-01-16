@@ -1,0 +1,21 @@
+#!/bin/bash
+
+APP=nano
+
+if [ $# -eq 2 ] ; then
+	ARG="$2"
+	TITLE="$APP - $ARG"
+else
+	ARG=""
+   TITLE="$APP"
+fi
+
+PID=$(pgrep nano)
+if [ $? -eq 0 ];then
+	stexec Resources/alert.st
+	exit 1
+else
+	xterm -name "${TITLE}" -e $APP $ARG $date_today
+fi
+
+

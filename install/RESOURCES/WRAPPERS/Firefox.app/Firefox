@@ -1,9 +1,9 @@
 #!/bin/sh
 
-APP=firefox
+APP=/usr/bin/firefox
 
 if [ $# -eq 2 ] ; then
-  $APP "$2" &
+  $APP --new-window "$2" &
 else
   $APP &
 fi

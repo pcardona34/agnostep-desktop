@@ -1,0 +1,11 @@
+--- configure.ac.a	2026-01-13 11:10:33.379783835 +0100
++++ configure.ac.b	2026-01-13 11:11:57.426651682 +0100
+@@ -2115,7 +2115,7 @@
+ if test "$MAKEINFO" = "no"; then
+   MAKEINFO=makeinfo
+   if test ! -e "$srcdir/info/emacs" && test ! -e "$srcdir/info/emacs.info"; then
+-    AC_MSG_ERROR( [You do not seem to have makeinfo >= 4.13, and your
++    AC_MSG_WARN( [You do not seem to have makeinfo >= 4.13, and your
+ source tree does not seem to have pre-built manuals in the 'info' directory.
+ Please install a suitable version of makeinfo.] )
+   else

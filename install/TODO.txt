@@ -1,0 +1,4 @@
+- Manager.sh: main menu...
+
+- inst_wrappers.sh:
+In Firefox Wrapper: add openURLService installation.

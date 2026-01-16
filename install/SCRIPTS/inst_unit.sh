@@ -20,7 +20,7 @@
 . SCRIPTS/check_app.sh
 . SCRIPTS/size.sh
 . SCRIPTS/spinner.sh
-. SCRIPTS/functions_inst_apps.sh
+. SCRIPTS/functions_inst_core_apps.sh
 . SCRIPTS/functions_inst_extra.sh
 . SCRIPTS/functions_inst_devel.sh
 . SCRIPTS/functions_inst_games.sh

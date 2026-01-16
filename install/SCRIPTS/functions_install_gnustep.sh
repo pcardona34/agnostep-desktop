@@ -122,23 +122,27 @@ echo "$TITLE" >>$LOG
 title "$TITLE"
 
 cd gui || exit 1
-### This branch was merged
-### printf "\nSwitching to service-fixes branch"
-### git switch service-fixes
+### Try to fix 'open URL' issue
+printf "\nSwitching to app-wrapper-open-url branch"
+git switch app-wrapper-open-url
 
 printf "Configuring...\n"
-./configure &>>$LOG &
-PID=$!
-spinner
+./configure 
+#&>>$LOG &
+#PID=$!
+#spinner
 printf "\rBuilding...\n"
-make -j8 &>>$LOG &
-PID=$!
-spinner
+make -j8 
+#&>>$LOG &
+#PID=$!
+#spinner
 printf "\rInstalling...\n"
-sudo -E make install &>>$LOG &
-PID=$!
-spinner
-ok "\rDone"
+sudo -E make install 
+#&>>$LOG &
+#PID=$!
+#spinner
+#ok "\rDone"
+ok "Done"
 
 sudo ldconfig
 }

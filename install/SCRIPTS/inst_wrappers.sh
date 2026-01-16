@@ -27,6 +27,11 @@ LOG="$HOME/AGNOSTEP_BUILD_WRAPPERS.log"
 SPIN='/-\|'
 INSTALL_DIR=$(gnustep-config --variable=GNUSTEP_LOCAL_APPS)
 #INSTALL_ARGS="GNUSTEP_INSTALLATION_DOMAIN=LOCAL"
+WEBB=""
+RPI=1 # by default, we guess the computer is not a RPI one
+FICHTEMP=$(mktemp /tmp/agno-XXXXX)
+trap "rm -f $FICHTEMP" EXIT
+
 ### End of VARS
 ################################
 
@@ -38,12 +43,14 @@ INSTALL_DIR=$(gnustep-config --variable=GNUSTEP_LOCAL_APPS)
 . SCRIPTS/size.sh
 . SCRIPTS/spinner.sh
 . SCRIPTS/functions_inst_wrappers.sh
+. SCRIPTS/functions_prep.sh
 
 ### End of Include functions
 ################################
 
 clear
-title "A G N o S t e p  -  Wrappers"
+STR="A G N o S t e p  -  Wrappers"
+titulo
 
 ################################
 
@@ -51,13 +58,30 @@ title "A G N o S t e p  -  Wrappers"
 ### Name after DEP_ must follow the wrapper name.
 LG=${LANG:0:2}
 DEP_Firefox="firefox-esr-l10n-${LG}"
+DEP_Chromium="chromium-l10n"
+
+### RPI case?
+is_hw_rpi
+if [ $RPI -eq 0 ];then
+	DEP_Firefox="${DEP_Firefox} rpi-firefox-mods"
+	DEP_Chromium="${DEP_Chromium} rpi-chromium-mods"
+fi
+
+### Pass installed?
+whereis pass &>/dev/null
+if [ $? -eq 0 ];then
+	DEP_Firefox="${DEP_Firefox} webext-browserpass"
+	DEP_Chromium="${DEP_Chromium} webext-browserpass"
+fi
+
 DEP_EBookReader="fbreader"
 DEP_Inkscape="inkscape"
+DEP_Nano="nano"
 DEP_Writer="focuswriter"
 DEP_Upgrade="xterm"
 
 ################################
-### Is there a USER APPS Folder?
+### Is there a LOCAL APPS Folder?
 
 if ! [ -d $INSTALL_DIR ];then
 	alert "$INSTALL_DIR was not found!"
@@ -65,17 +89,88 @@ if ! [ -d $INSTALL_DIR ];then
 fi
 
 #################################################
-### New LOG
 
-echo "$0" >$LOG
+function webb_menu
+{
+# Menu box
+dialog --backtitle "$STR" --title "Web Browser" \
+--menu "
+
+Choose one Web Browser Wrapper:" 18 66 2 \
+"Chromium" "The free Chrome Web Browser" \
+"Firefox" "The Mozilla Foundation Web Browser" 2> $FICHTEMP
+# traitement de la réponse
+if [ $? = 0 ]
+then
+for i in `cat $FICHTEMP`
+do
+case $i in
+"Chromium")
+	printf "You chose: Chromium\n"
+	if [ -d $INSTALL_DIR/Firefox.app ];then
+		sudo rm -fR $INSTALL_DIR/Firefox.app
+	fi
+	install_wrapper Chromium "$DEP_Chromium";;
+"Firefox")
+	printf "You chose: Firefox\n"
+	if [ -d $INSTALL_DIR/Chromium.app ];then
+		sudo rm -fR $INSTALL_DIR/Chromium.app
+	fi
+	install_wrapper Firefox "$DEP_Firefox";;
+esac
+done
+fi
+}
+
+function other_menu
+{
+# checkbox dialog
+dialog --backtitle "$STR" --title "Other Wrappers" \
+--ok-label "OK"  \
+--checklist "
+Check the Tools you want to install." 18 60 10 \
+"EBookReader" "A wrapper for FBReader" on \
+"Inkscape" "A wrapper for Inkscape Vectorial Draw" on \
+"Nano" "The GNU Nano editor" on \
+"Upgrade" "A useful wrapper for Debian upgrade" on \
+"Writer" "A wrapper for FocusWriter" off 2> $FICHTEMP
+# traitement de la réponse
+# 0 est le code retour du bouton Valider
+# ici seul le bouton Valider permet de continuer
+# tout autre action (Quitter, Esc, Ctrl-C) arrête le script.
+if [ $? = 0 ]
+then
+for i in `cat $FICHTEMP`
+do
+case "$i" in
+"EBookReader")
+	printf "You chose EBookReader.\n"
+	install_wrapper EBookReader "$DEP_EBookReader";;
+"Inkscape")
+	printf "You chose Inkscape"
+	install_wrapper Inkscape "$DEP_Inkscape";;
+"Nano")
+	printf "You chose Nano"
+	install_wrapper Nano "$DEP_Nano";;
+"Upgrade")
+	printf "You chose Upgrade"
+	install_wrapper Upgrade "$DEP_Upgrade";;
+"Writer")
+	printf "You chose Writer"
+	install_wrapper Writer "$DEP_Writer";;
+esac
+done
+else exit 0
+fi
+}
+
+#############################################
 
 sudo apt -y update && sudo apt -y upgrade && sudo apt -y autoremove
 
-install_wrapper Firefox "$DEP_Firefox"
-install_wrapper EBookReader "$DEP_EBookReader"
-install_wrapper Inkscape "$DEP_Inkscape"
-install_wrapper Writer "$DEP_Writer"
-install_wrapper Upgrade "$DEP_Upgrade"
+webb_menu
+other_menu
 
+printf "Linking and making services: wait, please...\n"
 sudo ldconfig
 make_services

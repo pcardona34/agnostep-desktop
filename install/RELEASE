@@ -1,9 +1,18 @@
 AGNOSTEP - agnostic GNUstep Desktop
 ===================================
 
-- **Release**: 0.9.8
+- **Release**: 0.9.8.1
 - **Status**: Beta
 
+### Changes of the 0.9.8.1 release
+
+- Fix Service openURL: (to be installed after Firefox wrapper: TODO)
+- New Wrapper: Nano to handle .sh and .md
+- Complete reorganization of stage 5: see 5_install_core_apps.sh
+- Bash Dialog menus to handle installation of extra apps, devel, games, wrappers...
+- In Wrappers: choice between Chromium.app and Firefox.app
+- New app in devel: Emacs built '--with-ns' build arg.
+- New apps in Extra: Affiche, Cenon, Zipper. DictionaryReader (from etoile) replaces Dictionary (from GSDE). Preview replaces ImageViewer.
 ### Changes of the 0.9.8 release
 
 - Updater: fixing sudo issues with Updater notifications witin 5c5 flavour. New wrapper: Upgrade.app.
@@ -111,13 +120,17 @@ The complete list:
 
 - AClock: a digital clock (within c5C flavour of the theme.
 - AddressManager: contacts
+- Affiche (E): Sticky Notes
 - Batmon: Battery monitor (on laptop)
 - Calculator (E)
+- Cenon (E): Vector Drawing and Desktop Publishing
 - Chess (G)
+- Chromium (W): wrapper for the Chromium Web Browser
 - Cynthiune: Music Player
-- Dictionary (E): Dictionary Lookup for the English User
+- DictionaryReader (E): Dictionary Lookup for the English Users
 - EasyDiff (D): graphical Diff Tool
 - EBookReader.app (W): a wrapper for FBReader
+- Emacs (D): built with GNUstep menus 
 - Firefox (W): wrapper for the firefox web browser
 - FlexiSheet (E): a Spreadsheet inspired by Quantrix
 - FontManager (E)
@@ -150,13 +163,15 @@ The complete list:
 - Librarian (?): Books and Documents Organizing (from GSDE): to be removed/Adapted?
 - MDFinder: within GWorkspace indexing
 - Memory (experimental): a memory usage monitor
-- NetSurf: Web Browser: poor javascript engine. To be removed?
+- Nano (W): a Wrapper for the GNU Nano Editor
+- NetSurf: Web Browser: poor javascript renderinf engine. To be removed?
 - NeXTGo (G): the Go game ported from OPENSTEP. Uses the GNUGo backend. With a nicer background from Ladder.
 - OpenUp (?): archive manager: to be removed/replaced by Zipper?
 - PikoPixel (E): Pixel Art Editor
 - Player: a wrapper for VLC video player
 - PowerPaint (E): Bitmap Drawing
 - PPC (D): Power PC emulator? To be removed.
+- Peview (E): Image Viewer
 - PRICE (E): Image Manipulation program
 - ProjectCenter (D): Project Builder for GNUstep
 - Recycler: see GWorkspace.
@@ -172,10 +187,11 @@ The complete list:
 - TextEdit: text editor and note taking
 - Thematic (D): a Theme Editor for GNUstep
 - TimeMon: a CPU monitoring (within c5c flavour)
-- Updater (W): a helper to run Debian upgrade. Related to Updater monitor deamon
+- Upgrade (W): a helper to run Debian upgrade. Related to Updater monitor deamon
 - VolumeControl: AlsaMixer compliant mixer
 - Wheather (E) : a Weather app
 - Writer (W): a wrapper for Focuswriter with an AGNOSTEP theme
+- Zipper (E): an archives handler (zip, tar.gz, ...)
 
 Tied to the RPI,s
 ==================
@@ -185,9 +201,6 @@ Tied to the RPI,s
 Removed (R)
 =================
 
-Some apps or frameworks won't build with the GNU Runtime: so we needed to remove those until we do not use libobjc2.
-
-- Cenon (ER): Desktop Publishing
 - Rpinters.app: obsolete
 
 ================

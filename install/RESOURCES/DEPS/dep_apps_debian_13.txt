@@ -35,6 +35,9 @@ dict-wn
 #fbreader #managed by the wrappers installer
 #focuswriter #idem
 
+### Emacs doc
+texinfo
+
 #### Audio and Video - Player & Cynthiune
 ffmpeg
 libao4

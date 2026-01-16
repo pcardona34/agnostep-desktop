@@ -164,12 +164,11 @@ if [ ! -d ../build ];then
 fi
 cd ../build || exit 1
 if [ -d agnostep-theme ];then
-	cd agnostep-theme
-	git pull origin main
-else
-	git clone https://github.com/pcardona34/agnostep-theme
-	cd agnostep-theme
+	rm -fR agnostep-theme
 fi
+
+git clone https://github.com/pcardona34/agnostep-theme
+cd agnostep-theme
 }
 
 function install_agnostep-theme
