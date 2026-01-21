@@ -56,7 +56,7 @@ If a RPI is detected, some settings will be adapted to it. Of course, you must u
 
 ## How to install
 
-Read [INSTALL](install/INSTALL.md) first to understand all the stages.
+Read [INSTALL](Documentation/INSTALL.md) first to understand all the stages.
 
 Quick way: on a fresh minimal Debian Trixie (13.x) on a computer wired to Internet, execute:
 
