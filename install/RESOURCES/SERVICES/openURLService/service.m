@@ -57,7 +57,7 @@
   browser = [defs objectForKey:@"NSWebBrowser"];
   if(!browser || [browser isEqualToString:@""])
   {
-    browser = @"/usr/bin/firefox --new-window";
+    browser = @"sensible-browser";
   }
 
   path = @"/bin/bash";

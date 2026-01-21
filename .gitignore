@@ -2,3 +2,6 @@ build
 build/**
 **/.gwdir
 **~
+**/obj
+**/obj/**
+

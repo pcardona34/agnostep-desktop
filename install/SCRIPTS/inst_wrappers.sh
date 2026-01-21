@@ -71,7 +71,9 @@ fi
 whereis pass &>/dev/null
 if [ $? -eq 0 ];then
 	DEP_Firefox="${DEP_Firefox} webext-browserpass"
-	DEP_Chromium="${DEP_Chromium} webext-browserpass"
+	# Pass ext is not more allowed from now
+	#DEP_Chromium="${DEP_Chromium} webext-browserpass"
+	REMOVE="webext-browserpass"
 fi
 
 DEP_EBookReader="fbreader"
@@ -110,16 +112,19 @@ case $i in
 	if [ -d $INSTALL_DIR/Firefox.app ];then
 		sudo rm -fR $INSTALL_DIR/Firefox.app
 	fi
-	install_wrapper Chromium "$DEP_Chromium";;
+	install_wrapper Chromium "$DEP_Chromium"
+	sudo apt -y remove ${REMOVE}
+	sudo update-alternatives --set x-www-browser $(whereis -b chromium | awk '{print $2}');;
 "Firefox")
 	printf "You chose: Firefox\n"
 	if [ -d $INSTALL_DIR/Chromium.app ];then
 		sudo rm -fR $INSTALL_DIR/Chromium.app
 	fi
 	install_wrapper Firefox "$DEP_Firefox"
-	install_openURLService;;
+	sudo update-alternatives --set x-www-browser $(whereis -b firefox-esr | awk '{print $2}');;
 esac
 done
+	install_openURLService
 fi
 }
 
