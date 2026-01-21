@@ -17,7 +17,6 @@
 ### ENV
 
 _PWD=`pwd`
-#. SCRIPTS/environ.sh
 echo $PATH | grep -e "/System/Tools" &>/dev/null
 if [ $? -ne 0 ];then
 	export PATH=/System/Tools:$PATH

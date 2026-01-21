@@ -76,16 +76,16 @@ case $i in
 	./7_install_DM.sh;;
 "Devel") printf "You chose: Devel\n"
 	cd install || exit 1
-	./SCRIPTS/inst_devel.sh;;
+	bash ./SCRIPTS/inst_devel.sh;;
 "Extra") printf "You chose Extra\n"
 	cd install || exit 1
-	./SCRIPTS/inst_extra.sh;;
+	bash ./SCRIPTS/inst_extra.sh;;
 "Games") printf "You chose Games\n"
 	cd install || exit 1
-	./SCRIPTS/inst_games.sh;;
+	bash ./SCRIPTS/inst_games.sh;;
 "Wrappers") printf "You chose Wrappers\n"
 	cd install || exit 1
-	./SCRIPTS/inst_wrappers.sh;;
+	bash ./SCRIPTS/inst_wrappers.sh;;
 "Remove") printf "You chose Remove\n"
 	cd install || exit 1
 	./remove.sh;;

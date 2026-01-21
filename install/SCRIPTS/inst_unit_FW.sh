@@ -23,16 +23,11 @@
 . SCRIPTS/colors.sh
 . SCRIPTS/spinner.sh
 . SCRIPTS/functions_prep.sh
-
-#echo ".."
 . SCRIPTS/std_build.sh
-
-#echo "..."
-
 . SCRIPTS/check_app.sh
-#echo "...."
+. SCRIPTS/patch_with_quilt.sh
 . SCRIPTS/functions_inst_frameworks.sh
-#echo "....."
+
 
 ### End of Include functions
 ################################
@@ -89,20 +84,20 @@ fi
 
 ################################
 ### This is the list of available FW: do not uncomment!
-#install_pdfkit
-#install_fw_addresses
-#install_fw_addressview
-#install_pantomime
-#install_SWK
-#install_rsskit
-#install_hlkit
-#install_hkthemes
-#install_renaissance
-#install_performance
-#install_webservices
-#install_steptalk
-#install_dbuskit
-#install_netclasses
+# pdfkit
+# addresses
+# addressview
+# pantomime
+# SWK
+# rsskit
+# hlkit
+# hkthemes
+# renaissance
+# performance
+# webservices
+# steptalk
+# dbuskit
+# netclasses
 
 ####################################
 

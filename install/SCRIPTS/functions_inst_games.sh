@@ -24,13 +24,13 @@ function install_chess()
 APPNAME="Chess"
 REL="2.7"
 
-echo "$APPNAME $REL" >>$LOG
-title "$APPNAME $REL"
+STR="$APPNAME $REL"
+subtitulo
 
-printf "Fetching...\n"
 
 cd ../build || exit 1
 
+printf "Fetching...\n"
 if [ -d $APPNAME ];then
 	cd $APPNAME
 	svn update &>/dev/null
@@ -53,8 +53,8 @@ function install_gomoku(){
 APPNAME="Gomoku"
 REL="1.2.9"
 
-echo "$APPNAME $REL" >>$LOG
-title "$APPNAME $REL"
+STR="$APPNAME $REL"
+subtitulo
 
 cd ../build || exit 1
 
@@ -74,6 +74,7 @@ _build
 ##################################################
 ## GHack
 ### Repo/Release: github/
+### ???
 ##################################################
 
 function install_ghack
@@ -83,8 +84,8 @@ APPNAME="Ghack"
 SITE=https://github.com/enrytheermit
 REPO=gnustep
 
-echo "$APPNAME" >>$LOG
-title "$APPNAME"
+STR="$APPNAME"
+subtitulo
 
 ### Deps
 sudo apt -y install nethack-common nethack-spoilers
@@ -116,8 +117,8 @@ function install_lapis()
 APPNAME="LapisPuzzle"
 REL="1.2"
 
-echo "$APPNAME $REL" >>$LOG
-title "$APPNAME $REL"
+STR="$APPNAME $REL"
+subtitulo
 
 cd ../build || exit 1
 
@@ -145,8 +146,8 @@ function install_freecell()
 APPNAME="Freecell"
 REL="0.1"
 
-echo "$APPNAME $REL" >>$LOG
-title "$APPNAME $REL"
+STR="$APPNAME $REL"
+subtitulo
 
 cd ../build || exit 1
 
@@ -172,8 +173,8 @@ function install_gshisen(){
 APPNAME="GShisen"
 REL="1.3.0"
 
-echo "$APPNAME $REL" >>$LOG
-title "$APPNAME $REL"
+STR="$APPNAME $REL"
+subtitulo
 
 cd ../build || exit 1
 
@@ -183,9 +184,6 @@ if [ -d GShisen ];then
 	svn update
 else
 	svn co svn://svn.savannah.nongnu.org/gap/trunk/user-apps/Games/GShisen &>/dev/null
-#	wget --quiet http://mirror.netcologne.de/savannah/gap/GShisen-1.3.0.tar.gz
-#	gunzip --force GShisen-1.3.0.tar.gz
-#	tar -xf GShisen-1.3.0.tar
 	cd GShisen
 fi
 
@@ -203,13 +201,18 @@ function install_ladder
 APPNAME="Ladder"
 #REL="1.3.0"
 
-echo "$APPNAME" >>$LOG
-title "$APPNAME"
-
 cd ../build || exit 1
 
-### Dependency
-sudo apt -y install gnugo 
+STR="Dependency: GNUGo"
+subtitulo
+
+sudo apt -y install gnugo
+ok "Done"
+sleep 2
+clear
+
+STR="$APPNAME"
+subtitulo
 
 printf "Fetching...\n"
 if [ -d Ladder ];then
@@ -234,8 +237,8 @@ function install_jigsaw
 APPNAME="Jigsaw"
 #REL=""
 
-echo "$APPNAME" >>$LOG
-title "$APPNAME"
+STR="$APPNAME"
+subtitulo
 
 cd ../build || exit 1
 
@@ -265,8 +268,8 @@ function install_gmines
 APPNAME="GMines"
 #REL=""
 
-echo "$APPNAME" >>$LOG
-title "$APPNAME"
+STR="$APPNAME"
+subtitulo
 
 cd ../build || exit 1
 
@@ -296,8 +299,8 @@ function install_sudoku
 APPNAME="Sudoku"
 #REL=""
 
-echo "$APPNAME" >>$LOG
-title "$APPNAME"
+STR="$APPNAME"
+subtitulo
 
 cd ../build || exit 1
 
@@ -327,8 +330,8 @@ function install_gmastermind
 APPNAME="GMastermind"
 #REL=""
 
-echo "$APPNAME" >>$LOG
-title "$APPNAME"
+STR="$APPNAME"
+subtitulo
 
 cd ../build || exit 1
 
@@ -360,8 +363,8 @@ APPNAME="NeXTGo"
 REL="3.0"
 BG=RESOURCES/WALLPAPERS/Background_GO.tiff
 
-echo "$APPNAME $REL" >>$LOG
-title "$APPNAME $REL"
+STR="$APPNAME $REL"
+subtitulo
 
 cd ../build || exit 1
 

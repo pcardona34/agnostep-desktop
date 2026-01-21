@@ -19,7 +19,7 @@
 ################################
 ### ENV
 
-LOG="$HOME/PISIN_BUILD_WM.log"
+LOG="$HOME/AGNOSTEP_BUILD_WM.log"
 _PWD=`pwd`
 SPIN='/-\|'
 . /etc/os-release
@@ -54,9 +54,8 @@ echo "$0" >$LOG
 
 ### The DockApps must be built after wmaker and Wings libs.
 clear
-TITLE="Window Maker"
-echo "$TITLE" >> $LOG
-title "$TITLE"
+STR="Window Maker"
+titulo
 
 ########### !!! We do not build ############
 #LIST="wmaker" && install_deps
@@ -66,15 +65,4 @@ title "$TITLE"
 
 ### We install regular deb #################
 sudo apt -y install wmaker wmaker-utils
-#sudo ldconfig
-
-###############
-
-###############################################
-### Relevant services are done within Conky or C5C flavour.
-
-cd TOOLS/dockapps || exit 1
-./install_dockapps.sh
-
-install_alsamixer_dot_app
-cd $_PWD
+ok "Done"

@@ -50,16 +50,10 @@ fi
 . SCRIPTS/colors.sh
 . SCRIPTS/spinner.sh
 . SCRIPTS/functions_prep.sh
-
-#echo ".."
 . SCRIPTS/std_build.sh
-
-#echo "..."
-
 . SCRIPTS/check_app.sh
-#echo "...."
+. SCRIPTS/patch_with_quilt
 . SCRIPTS/functions_inst_frameworks.sh
-#echo "....."
 
 ### End of Include functions
 ################################
@@ -68,8 +62,8 @@ fi
 ################################
 
 clear
-title "Frameworks"
-echo "Frameworks" > $LOG
+STR="Frameworks"
+titulo
 
 LIST="apps" && install_deps || exit 1
 
@@ -90,6 +84,8 @@ install_performance
 install_webservices
 install_steptalk
 install_dbuskit
+install_popplerkit
+
 ####################################
 
 sudo ldconfig

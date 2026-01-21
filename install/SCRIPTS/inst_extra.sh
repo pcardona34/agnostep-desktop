@@ -16,7 +16,6 @@
 ####################################################
 ### ENV
 _PWD=`pwd`
-#. ./SCRIPTS/environ.sh
 echo $PATH | grep -e "/System/Tools" &>/dev/null
 if [ $? -ne 0 ];then
 	export PATH=/System/Tools:$PATH
@@ -39,9 +38,10 @@ trap "rm -f $TEMPFILE" EXIT
 . SCRIPTS/check_app.sh
 . SCRIPTS/size.sh
 . SCRIPTS/spinner.sh
-. SCRIPTS/functions_inst_extra.sh
 . SCRIPTS/std_build.sh
 . SCRIPTS/misc_info.sh
+. SCRIPTS/patch_with_quilt.sh
+. SCRIPTS/functions_inst_extra.sh
 
 ### End of Include functions
 #################################################
@@ -111,6 +111,7 @@ Check (space bar) the Applications you want to (re)install." 20 70 13 \
 "ScreenShot" "Screen Grabber from GSDE" off \
 "StepSync" "File Synchronizer" off \
 "TalkSoup" "IRC Client" off \
+"Vindaloo" "PDF Viewer" off \
 "Weather" "A Weather app" off \
 "Zipper" "An Archive Manager" off 2> $TEMPFILE
 
@@ -253,6 +254,10 @@ case "$i" in
 	printf "You chose TalkSoup\n"
 	remove_if_present "TalkSoup"
 	install_talksoup;;
+"Vindaloo")
+	printf "You chose Vindaloo\n"
+	remove_if_present "ViewPDF"
+	install_vindaloo;;
 "Weather")
 	printf "You chose Weather\n"
 	remove_if_present "Weather"

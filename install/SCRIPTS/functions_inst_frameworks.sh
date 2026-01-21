@@ -23,17 +23,16 @@ FWNAME="PDFKit"
 
 cd ../build || exit 1
 
-title "PDFKit"
-echo "PDFKit" >>$LOG
-printf "Fetching...\n"
+STR="$FWNAME"
+subtitulo
 
-if [ -d PDFKit-1.2.0 ];then
-	cd PDFKit-1.2.0
+printf "Fetching...\n"
+if [ -d PDFKit ];then
+	cd PDFKit
+	svn update
 else
-	wget --quiet http://savannah.nongnu.org/download/gap/PDFKit-1.2.0.tar.gz
-	gunzip --force PDFKit-1.2.0.tar.gz
-	tar -xf PDFKit-1.2.0.tar
-	cd PDFKit-1.2.0
+	svn co svn://svn.savannah.nongnu.org/gap/trunk/libs/PDFKit
+	cd PDFKit || exit 1
 fi
 
 _build_FW
@@ -48,10 +47,10 @@ function install_fw_addresses
 
 cd ../build || exit 1
 
-title "Addresses"
-echo "Addresses" >>$LOG
-printf "Fetching...\n"
+STR="Addresses"
+subtitulo
 
+printf "Fetching...\n"
 if [ -d Addresses ];then
 	cd Addresses
 	svn update
@@ -77,10 +76,10 @@ function install_fw_addressview()
 
 cd ../build || exit 1
 
-title "AddressView"
-echo "AddressView" >>$LOG
-printf "Fetching...\n"
+STR="AddressView"
+subtitulo
 
+printf "Fetching...\n"
 if [ -d Addresses ];then
 	cd Addresses
 	svn update
@@ -106,6 +105,7 @@ function install_pantomime()
 cd ../build || exit 1
 
 FWNAME="Pantomime"
+
 STR="$FWNAME"
 subtitulo
 
@@ -132,15 +132,17 @@ function install_SWK()
 cd ../build || exit 1
 
 FWNAME="SimpleWebKit"
-title "SimpleWebKit"
-echo "SimpleWebKit" >>$LOG
+
+STR="$FWNAME"
+subtitulo
+
 printf "Fetching...\n"
 if [ -d libs-simplewebkit ];then
 	cd libs-simplewebkit
-	git pull origin master &>/dev/null
+	git pull
 else
-	git clone https://github.com/gnustep/libs-simplewebkit.git &>/dev/null
-	cd libs-simplewebkit
+	git clone https://github.com/gnustep/libs-simplewebkit.git
+	cd libs-simplewebkit || exit 1
 fi
 
 _build_FW
@@ -158,17 +160,17 @@ function install_hlkit()
 cd ../build || exit 1
 
 FWNAME="HighlighterKit"
-title "HighlighterKit"
-echo "HighlighterKit" >>$LOG
+STR="£FWNAME"
+subtitulo
 
 printf "Fetching...\n"
 if [ -d HighlighterKit-0.1.3 ];then
 	cd HighlighterKit-0.1.3
 else
-	wget --quiet http://download.savannah.nongnu.org/releases/gnustep-nonfsf/HighlighterKit-0.1.3.tar.gz
+	wget http://download.savannah.nongnu.org/releases/gnustep-nonfsf/HighlighterKit-0.1.3.tar.gz
 	gunzip --force HighlighterKit-0.1.3.tar.gz
 	tar -xf HighlighterKit-0.1.3.tar
-	cd HighlighterKit-0.1.3
+	cd HighlighterKit-0.1.3 || exit 1
 fi
 
 _build_FW
@@ -183,17 +185,17 @@ function install_hkthemes()
 
 cd ../build || exit 1
 
-title "Themes for HLKit"
-echo "Themes for HLKit" >>$LOG
+STR="Themes for HLKit"
+subtitulo
 
 printf "Fetching...\n"
 if [ -d HKThemes ];then
 	cd HKThemes
 else
-	wget --quiet http://download.savannah.nongnu.org/releases/gnustep-nonfsf/HKThemes-1.0.tar.gz
+	wget http://download.savannah.nongnu.org/releases/gnustep-nonfsf/HKThemes-1.0.tar.gz
 	gunzip --force HKThemes-1.0.tar.gz
 	tar -xf HKThemes-1.0.tar
-	cd HKThemes
+	cd HKThemes || exit 1
 fi
 
 printf "Installing..."
@@ -217,16 +219,16 @@ function install_renaissance()
 cd ../build || exit 1
 
 FWNAME="Renaissance"
-title "Renaissance"
-echo "Renaissance" >>$LOG
+STR="Renaissance"
+subtitulo
 
 printf "Fetching...\n"
 if [ -d libs-renaissance ];then
 	cd libs-renaissance
-	git pull origin master &>/dev/null
+	git pull origin master
 else
-	git clone https://github.com/gnustep/libs-renaissance.git &>/dev/null
-	cd libs-renaissance
+	git clone https://github.com/gnustep/libs-renaissance.git
+	cd libs-renaissance || exit 1
 fi
 
 _build_FW
@@ -242,16 +244,16 @@ function install_performance()
 cd ../build || exit 1
 
 FWNAME="Performance"
-title "Performance"
-echo "Performance" >>$LOG
+STR="Performance"
+subtitulo
 
 printf "Fetching...\n"
 if [ -d libs-performance ];then
         cd libs-performance
-        git pull origin master &>/dev/null
+        git pull origin master
 else
-        git clone https://github.com/gnustep/libs-performance.git &>/dev/null
-        cd libs-performance
+        git clone https://github.com/gnustep/libs-performance.git
+        cd libs-performance || exit 1
 fi
 
 _build_FW
@@ -267,17 +269,17 @@ function install_webservices()
 cd ../build || exit 1
 
 FWNAME="WebServices"
-title "WebServices"
-echo "WebServices" >>$LOG
+STR="$FWNAME"
+subtitulo
 
 printf "Fetching...\n"
 if [ -d WebServices-0.9.0.tar ];then
 	cd WebServices-0.9.0
 else
-	wget --quiet ftp://ftp.gnustep.org/pub/gnustep/libs/WebServices-0.9.0.tar.gz
+	wget ftp://ftp.gnustep.org/pub/gnustep/libs/WebServices-0.9.0.tar.gz
 	gunzip --force WebServices-0.9.0.tar.gz
 	tar -xf WebServices-0.9.0.tar
-	cd WebServices-0.9.0
+	cd WebServices-0.9.0 || exit 1
 fi
 
 _build_FW
@@ -290,18 +292,18 @@ _build_FW
 function install_steptalk
 {
 FWNAME="StepTalk"
-title "$FWNAME"
-echo "$FWNAME" >>$LOG
+STR="$FWNAME"
+subtitulo
 
 cd ../build || exit 1
 
 printf "Fetching...\n"
 if [ -d libs-steptalk ];then
 	cd libs-steptalk
-	git pull origin master &>/dev/null
+	git pull
 else
-	git clone https://github.com/gnustep/libs-steptalk &>/dev/null
-	cd libs-steptalk
+	git clone https://github.com/gnustep/libs-steptalk
+	cd libs-steptalk || exit 1
 fi
 
 _build_FW
@@ -322,12 +324,15 @@ sudo -E make install &>>$LOG &
 PID=$!
 spinner
 ok "\rDone"
+
 if [ -f /Local/Tools/stshell ];then
 	info "The tool stshell has been found."
 else
 	alert "The tool stshell was not found."
 	exit 1
 fi
+
+cd $_PWD
 
 }
 ### End of StepTalk
@@ -338,18 +343,18 @@ fi
 function install_rsskit()
 {
 FWNAME="RSSKit"
-title "$FWNAME"
-echo "$FWNAME" >>$LOG
+STR="$FWNAME"
+subtitulo
 
 cd ../build || exit 1
 
 printf "Fetching...\n"
 if [ -d RSSKit ];then
 	cd RSSKit
-	svn update &>/dev/null
+	svn update
 else
-	svn co svn://svn.savannah.nongnu.org/gap/trunk/libs/RSSKit &>/dev/null
-	cd RSSKit
+	svn co svn://svn.savannah.nongnu.org/gap/trunk/libs/RSSKit
+	cd RSSKit || exit 1
 fi
 
 _build_FW
@@ -365,20 +370,24 @@ function install_dbuskit
 FWNAME="DbusKit"
 PATCH_DIR=$_PWD/RESOURCES/PATCHES
 PATCH=no-gc-macros.patch
-title "$FWNAME"
-echo "$FWNAME" >>$LOG
+STR="$FWNAME"
+subtitulo
 
 ######################################################
 ### Dependencies
-title "Dependencies"
+STR="Dependencies"
+subtitulo
+
 sudo apt -y install libdbus-1-dev libdbus-1-3
 ok "Done"
+sleep 2
+clear
 
 cd ../build || exit 1
 
 printf "Fetching...\n"
 if [ ! -d libs-dbuskit-0.1.1 ];then
-	wget --quiet https://github.com/gnustep/libs-dbuskit/archive/refs/tags/0.1.1.tar.gz
+	wget https://github.com/gnustep/libs-dbuskit/archive/refs/tags/0.1.1.tar.gz
 	gunzip --force 0.1.1.tar.gz
 	tar xf 0.1.1.tar && rm 0.1.1.tar
 fi
@@ -403,7 +412,7 @@ ok "\rDone"
 ### A patch must be applied (thanks to Yavor Doganov, Debian GNUstep maintainer)
 cd Source
 if [ -f $PATCH_DIR/$PATCH ];then
-	 wget --quiet https://sources.debian.org/data/main/d/dbuskit/0.1.1-14/debian/patches/no-gc-macros.patch
+	 wget https://sources.debian.org/data/main/d/dbuskit/0.1.1-14/debian/patches/no-gc-macros.patch
 else
 	cp $PATCH_DIR/$PATCH ./
 fi
@@ -442,18 +451,18 @@ fi
 function install_netclasses()
 {
 FWNAME="netclasses"
-title "$FWNAME"
-echo "$FWNAME" >>$LOG
+STR="$FWNAME"
+subtitulo
 
 cd ../build || exit 1
 
 printf "Fetching...\n"
 if [ -d $FWNAME ];then
 	cd $FWNAME
-	svn update &>/dev/null
+	svn update
 else
-	svn co svn://svn.savannah.nongnu.org/gap/trunk/libs/$FWNAME &>/dev/null
-	cd $FWNAME
+	svn co svn://svn.savannah.nongnu.org/gap/trunk/libs/$FWNAME
+	cd $FWNAME || exit 1
 fi
 
 _build_FW
@@ -462,40 +471,31 @@ _build_FW
 ### End of NetClasses
 ###############################
 
-##########################################################################
-### ******************************************************************
-### /!\ The following code is NOT functional
-### ******************************************************************
-####################################################################
-
 ###############################
-### OBSOLETE !!!
-#### The AGNOSTEP Theme is now  provided
-#### within the folder RESOURCES
-###############################
+### PopplerKit
 
-## Themes
-function install_themes()
+function install_popplerkit
 {
+FWNAME=PopplerKit
+STR="$FWNAME";subtitulo
+DIR=popplerkit
+HUB=https://salsa.debian.org/gnustep-team/popplerkit.git
 
 cd ../build || exit 1
 
-APPNAME="Sombre"
-
-title "Theme $APPNAME for GNUstep"
-echo "Theme $APPNAME for GNUstep" >>$LOG
 printf "Fetching...\n"
-
-if [ -d plugins-themes-sombre ];then
-	cd plugins-themes-sombre
-	git pull origin master &>/dev/null
+if [ -d $DIR ];then
+	cd $DIR
+	git pull
 else
-	git clone https://github.com/gnustep/plugins-themes-sombre &>/dev/null
-	cd plugins-themes-sombre
+	git clone $HUB
+	cd $DIR || exit 1
 fi
 
-_build_THEME
-}
-### End of Theme Sombre
-###############################
+printf "Patching...\n"
+is_quilt
+set_quilt
+quilt push -a
 
+_build_FW
+}

@@ -13,43 +13,16 @@
 ### Functions for inst_extra_extra...
 ####################################################
 
-
-################################################
-## GNUstep Examples: Ink, Calculator,PowerPaint
-### Repo/Release: github/gnustep/tests-examples
-################################################
-
-###################################################
-## Affiche
-### Repo/Release: github/onflapp/gs-desktop: 0.6.0
-###################################################
-
 if [ ! -d ../build ];then
 	mkdir ../build
 fi
 
-DEP="quilt"
-STR="Dependencies"
-subtitulo
-
-sudo apt -y install ${DEP}
-ok "Done";sleep 2
-clear
-
-############################################################
-### Setting quilt patching tool
-function set_quilt
-{
-cat << ENDOFQUILT > $HOME/.quilt
-QUILT_DIFF_ARGS="--no-timestamps --no-index"
-QUILT_REFRESH_ARGS="--no-timestamps --no-index"
-QUILT_PATCHES="debian/patches"
-ENDOFQUILT
-
-}
-
-
 ########################## - A - ##########################
+
+###################################################
+## Affiche
+### Repo/Release: Debian Salsa GNUstep Team
+###################################################
 
 function install_affiche()
 {
@@ -62,6 +35,9 @@ DIR="affiche.app"
 STR="$APPNAME $RELEASE" >>$LOG
 subtitulo
 
+is_quilt
+set_quilt
+
 cd ../build || exit 1
 
 printf "Fetching...\n"
@@ -72,6 +48,11 @@ else
 	cd $DIR
 	git pull
 fi
+
+### Patching
+is_quilt
+set_quilt
+quilt push -a
 
 _build
 }
@@ -97,8 +78,8 @@ CONFIG_ARGS=""
 INSTALL_DIR="/Local/Applications"
 INSTALL_ARGS="GNUSTEP_INSTALLATION_DOMAIN=LOCAL"
 
-echo "$APPNAME - $RELEASE" >> $LOG
-title "$APPNAME $RELEASE"
+STR="$APPNAME $RELEASE"
+subtitulo
 
 printf "Fetching...\n"
 if [ -d $REPO ];then
@@ -117,6 +98,7 @@ _build
 ################################
 ## Cenon
 ### Repo/Release: Debian Salsa
+### Not used with Cenon install from Debian
 ################################
 
 function install_cenon_lib
@@ -126,6 +108,7 @@ LIB=CenonLibrary
 RELEASE=""
 BUILD=../build/lib
 TARGET=/usr/lib/GNUstep/Library
+
 STR="Cenon Libray"
 subtitulo
 
@@ -160,7 +143,7 @@ cd ../build || exit 1
 APPNAME="Cenon"
 RELEASE="4.0.3"
 DIR="cenon.app"
-### Hub from Debian: Yavor Doganov
+### Hub from Debian: GNUstep Team
 HUB=https://salsa.debian.org/gnustep-team/cenon.app.git
 #TARGET="${APPLICATIONS}"
 CONFIG_ARGS=""
@@ -185,6 +168,7 @@ else
 fi
 
 printf "Patching...\n"
+is_quilt
 set_quilt
 quilt push -a
 
@@ -213,7 +197,8 @@ BUILD_ARGS="${CONFIG_ARGS}"
 INSTALL_ARGS="${BUILD_ARGS}"
 PATCH="Cynthiune-1.0.0_Bundles_ALSA_fails_to_build_due_to_memcheck_inclusion.patch"
 
-title "$APPNAME $RELEASE"
+STR="$APPNAME $RELEASE"
+subtitulo
 
 cd ../build || exit 1
 
@@ -269,6 +254,11 @@ else
 	cd $DIR
 fi
 
+### Patching
+is_quilt
+set_quilt
+quilt push -a
+
 cd "$BUILD_DIR"
 
 _build
@@ -296,8 +286,8 @@ BUILD_DIR="user-apps" # "system-apps" | "ported-apps"
 CONFIG_ARGS=""
 INSTALL_ARGS=""
 
-echo "$APPNAME - $RELEASE" >> $LOG
-title "$APPNAME $RELEASE"
+STR="$APPNAME $RELEASE"
+subtitulo
 
 printf "Fetching...\n"
 if [ -d $APPNAME ];then
@@ -340,6 +330,11 @@ else
 	cd $DIR
 fi
 
+### Patching
+is_quilt
+set_quilt
+quilt push -a
+
 _build
 }
 
@@ -356,8 +351,8 @@ REPO="user-apps"
 CONFIG_ARGS=""
 INSTALL_ARGS=""
 
-echo "$APPNAME" >> $LOG
-title "$APPNAME"
+STR="$APPNAME"
+subtitulo
 
 printf "Fetching...\n"
 if [ -d $APPNAME ];then
@@ -388,8 +383,8 @@ APPNAME="Graphos"
 CONFIG_ARGS=""
 INSTALL_ARGS=""
 
-echo "$APPNAME" >> $LOG
-title "$APPNAME"
+STR="$APPNAME"
+subtitulo
 
 printf "Fetching...\n"
 if [ -d $APPNAME ];then
@@ -417,8 +412,8 @@ CONFIG_ARGS=""
 BUILD_ARGS=""
 INSTALL_ARGS=""
 
-echo "$APPNAME $RELEASE" >>$LOG
-title "$APPNAME $RELEASE"
+STR="$APPNAME $RELEASE"
+subtitulo
 
 cd ../build || exit 1
 
@@ -448,8 +443,8 @@ CONFIG_ARGS=""
 BUILD_ARGS=""
 INSTALL_ARGS=""
 
-echo "$APPNAME $RELEASE" >>$LOG
-title "$APPNAME $RELEASE"
+STR="$APPNAME $RELEASE"
+subtitulo
 
 cd ../build || exit 1
 
@@ -482,8 +477,8 @@ INSTALL_ARGS=""
 
 cd ../build || exit 1
 
-echo "$APPNAME $RELEASE" >> $LOG
-title "$APPNAME $RELEASE"
+STR="$APPNAME $RELEASE"
+subtitulo
 
 printf "Fetching...\n"
 if [ -d $APPNAME ];then
@@ -520,8 +515,8 @@ CONFIG_ARGS=""
 INSTALL_ARGS=""
 BUILD_ARGS=""
 
-echo "$APPNAME - $RELEASE" >> $LOG
-title "$APPNAME $RELEASE"
+STR="$APPNAME $RELEASE"
+subtitulo
 
 printf "Fetching...\n"
 if [ -d $REPO ];then
@@ -577,8 +572,8 @@ REPO="user-apps"
 CONFIG_ARGS=""
 INSTALL_ARGS=""
 
-echo "$APPNAME" >> $LOG
-title "$APPNAME"
+STR="$APPNAME"
+subtitulo
 
 printf "Fetching...\n"
 if [ -d $APPNAME ];then
@@ -615,8 +610,8 @@ CONFIG_ARGS=""
 BUILD_ARGS=""
 INSTALL_ARGS=""
 
-echo "$APPNAME - $RELEASE" >> $LOG
-title "$APPNAME $RELEASE"
+STR="$APPNAME $RELEASE"
+subtitulo
 
 printf "Fetching...\n"
 if [ -d $REPO ];then
@@ -650,7 +645,7 @@ SITE="https://github.com/pcardona34"
 CONFIG_ARGS=""
 INSTALL_ARGS=""
 
-STR="$APPNAME";titulo
+STR="$APPNAME";subtitulo
 
 printf "Fetching...\n"
 if [ -d $REPO ];then
@@ -686,8 +681,8 @@ printf "Installing the dependencies...\n"
 sudo apt -y install duktape-dev duktape
 clear
 
-echo "$APPNAME $RELEASE" >> $LOG
-title "$APPNAME $RELEASE"
+STR="$APPNAME $RELEASE"
+subtitulo
 
 cd ../build || exit 1
 
@@ -774,8 +769,8 @@ CONFIG_ARGS=""
 BUILD_ARGS=""
 INSTALL_ARGS=""
 
-echo "$APPNAME $RELEASE" >>$LOG
-title "$APPNAME $RELEASE"
+STR="$APPNAME $RELEASE"
+subtitulo
 
 cd ../build || exit 1
 
@@ -815,8 +810,8 @@ BUILD_DIR="." # "system-apps" | "ported-apps"
 CONFIG_ARGS=""
 INSTALL_ARGS=""
 
-echo "$APPNAME - $RELEASE" >> $LOG
-title "$APPNAME $RELEASE"
+STR="$APPNAME $RELEASE"
+subtitulo
 
 printf "Fetching...\n"
 if [ -d $REPO ];then
@@ -845,8 +840,8 @@ CONFIG_ARGS=""
 BUILD_ARGS=""
 INSTALL_ARGS=""
 
-echo "$APPNAME $RELEASE" >>$LOG
-title "$APPNAME $RELEASE"
+STR="$APPNAME $RELEASE"
+subtitulo
 
 cd ../build || exit 1
 
@@ -882,8 +877,8 @@ BUILD_DIR="gui" # "system-apps" | "ported-apps"
 CONFIG_ARGS=""
 INSTALL_DIR="/Local/Applications"
 
-echo "$APPNAME - $RELEASE" >> $LOG
-title "$APPNAME $RELEASE"
+STR="$APPNAME $RELEASE"
+subtitulo
 
 printf "Fetching...\n"
 if [ -d $REPO ];then
@@ -913,8 +908,8 @@ REPO="user-apps"
 CONFIG_ARGS=""
 INSTALL_ARGS=""
 
-echo "$APPNAME" >> $LOG
-title "$APPNAME"
+STR="$APPNAME"
+subtitulo
 
 printf "Fetching...\n"
 if [ -d $APPNAME ];then
@@ -959,6 +954,7 @@ else
 	git pull
 fi
 printf "Patching...\n"
+is_quilt
 set_quilt
 quilt push -a
 
@@ -985,8 +981,8 @@ TARGET="${APPLICATIONS}"
 CONFIG_ARGS=""
 INSTALL_ARGS=""
 
-echo "$APPNAME - $RELEASE" >> $LOG
-title "$APPNAME $RELEASE"
+STR="$APPNAME $RELEASE"
+subtitulo
 
 printf "Fetching...\n"
 if [ -d ${APPNAME}-${RELEASE} ];then
@@ -1017,8 +1013,8 @@ CONFIG_ARGS=""
 BUILD_ARGS=""
 INSTALL_ARGS=""
 
-echo "$APPNAME $RELEASE" >>$LOG
-title "$APPNAME $RELEASE"
+STR="$APPNAME $RELEASE"
+subtitulo
 
 cd ../build || exit 1
 
@@ -1050,8 +1046,8 @@ CONFIG_ARGS=""
 BUILD_ARGS=""
 INSTALL_ARGS=""
 
-echo "$APPNAME $RELEASE" >>$LOG
-title "$APPNAME $RELEASE"
+STR="$APPNAME $RELEASE"
+subtitulo
 
 cd ../build || exit 1
 
@@ -1085,8 +1081,8 @@ APPNAME="StepSync"
 CONFIG_ARGS=""
 INSTALL_ARGS=""
 
-echo "$APPNAME" >> $LOG
-title "$APPNAME"
+STR="$APPNAME"
+subtitulo
 
 printf "Fetching...\n"
 if [ -d $APPNAME ];then
@@ -1116,8 +1112,8 @@ REPO="user-apps"
 CONFIG_ARGS=""
 INSTALL_ARGS=""
 
-echo "$APPNAME" >> $LOG
-title "$APPNAME"
+STR="$APPNAME"
+subtitulo
 
 printf "Fetching...\n"
 if [ -d $APPNAME ];then
@@ -1154,8 +1150,8 @@ BUILD_DIR="user-apps"
 CONFIG_ARGS=""
 INSTALL_ARGS=""
 
-echo "$APPNAME - $RELEASE" >> $LOG
-title "$APPNAME $RELEASE"
+STR="$APPNAME $RELEASE"
+subtitulo
 
 printf "Fetching...\n"
 if [ -d $REPO ];then
@@ -1169,8 +1165,74 @@ fi
 cd $BUILD_DIR/$APPNAME
 
 _build
+
 }
 #######################################
+
+#################################################
+## Vindaloo: PDF Viewer
+### Repo: Debian Salsa GNUstep Team
+#################################################
+
+function install_vindaloo
+{
+APPNAME="Vindaloo"
+DIR=vindaloo.app
+HUB="https://salsa.debian.org/gnustep-team/vindaloo.app.git"
+CONFIG_ARGS=""
+INSTALL_ARGS=""
+
+STR="$APPNAME"
+subtitulo
+
+cd ../build || exit 1
+
+printf "Fetching...\n"
+if [ -d $DIR ];then
+        cd $DIR
+        git pull &>/dev/null
+else
+	git clone ${HUB} &>/dev/null
+	cd $DIR
+fi
+
+printf "Patching..."
+is_quilt
+set_quilt
+quilt push -a
+
+#_build
+printf "Building...\n"
+make clean &>/dev/null
+make &>>$LOG &
+PID=$!
+spinner
+ok "\rDone"
+
+printf "Installing...\n"
+sudo -E make install &>>$LOG &
+PID=$!
+spinner
+ok "\rDone"
+
+if [ -d ${INSTALL_DIR}/ViewPDF.app ];then
+	info "Vindaloo's ViewPDF.app has been found."
+else
+	alert "Vindaloo's ViewPDF.app was not found! Please, report this issue."
+	exit 1
+fi
+
+cd $_PWD
+printf "Adding the missing icon...\n"
+ICON=RESOURCES/ICONS/ViewPDF.tiff
+TARGET=${INSTALL_DIR}/ViewPDF.app/Resources
+sudo cp $ICON ${TARGET}/
+printf "Fixing Info-gnustep.plist...\n"
+PATCH=RESOURCES/PATCHES/ViewPDF_plist.patch
+patch --forward -u ${TARGET}/Info-gnustep.plist -i $PATCH
+ok "Done"
+}
+
 
 
 ########################## - W - ########################## 
@@ -1191,8 +1253,8 @@ BRANCH="main"
 CONFIG_ARGS=""
 INSTALL_ARGS=""
 
-echo "$APPNAME" >> $LOG
-title "$APPNAME"
+STR="$APPNAME"
+subtitulo
 
 printf "Fetching...\n"
 if [ -d $REPO ];then
@@ -1204,11 +1266,17 @@ else
 fi
 
 _build
+
+printf "Adding the missing icon...\n"
+ICON=RESOURCES/ICONS/weather.tiff
+TARGET=${INSTALL_DIR}/Weather.app/Resources
+sudo cp $ICON ${TARGET}/
+ok "Done"
 }
 ##################################
 
 
-########################## - Z - ########################## 
+########################## - Z - ##########################
 
 #######################################
 ## Zipper

@@ -12,6 +12,10 @@
    {
       NSUnixExtensions = ( "md" );
       NSIcon = "File_markdown.tiff";
+    },
+     {
+      NSUnixExtensions = ( "patch" );
+      NSIcon = "File_patch.tiff";
     }
   );
 }

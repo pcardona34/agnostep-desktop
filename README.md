@@ -1,36 +1,62 @@
-# agnostep
-A GNUstep Desktop for All
+# AGNoStep: an Agnostic GNUstep Desktop for All
 
-Read [RELEASE](install/RELEASE.md) to know the current status.
-- Alpha: means earlier developement stage. You should not use nor try, better is waiting.
-- Beta: you may test to improve and help the project.
-- Stable: Yet well tested. You can use it for a daily use. 
+Read [RELEASE](Documentation/RELEASE.md) to know the current status.
 
 ## The Goal
-While announcing [PisiN Desktop](https://github.com/pcardona34/pi-step-initiative) at the GNUstep Discuss List, it happened that some people expressed the wish that the project was available too for other architectures, i.e. not only tied to the Raspberry Pi hardware.
 
-So there is the attempt to accomplish the wish: an Agnostic GNUstep Desktop, named AGNoStep.
+AGNoStep project tries to provide a way to install a GNUstep compliant Desktop with ease.
+It provides also a **new** in purpose **Theme** mainly inspired by the [Papirus](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme) iconset: see [AGNOSTEP-theme](https://github.com/pcardona34/agnostep-theme).
 
-Now, AGNoStep is a GNUstep Desktop with a separate theme: [AGNOSTEP-theme](https://github.com/pcardona34/agnostep-theme).
+It is provided under the [GNU Public License](LICENSE.txt).
 
-So you can install the base desktop with a theme of your choice, or apply the in purpose theme above.
+## What is a GNUstep compliant Desktop
 
-But also, you can try to apply this theme on other GNUstep compliant desktops. Of course, this new feature is in earlier stage and it may be buggy. Do not hesitate to create [issues](https://github.com/pcardona34/agnostep-theme/issues) to improve it.
+- GNUstep is a free, open-source development environment that provides a **framework** for building cross-platform applications using the **Objective-C** programming language: see [GNUstep.org](https://www.gnustep.org). 
+- So a compliant GNUstep system must be set on the top of a **complete GNUstep System**.  
+Thanks to this framework, we can build all the pieces of software together to provide the User experience. 
+
+Namely, the Core Desktop provides:
+
+- A complete [Workspace](http://toastytech.com/guis/openstep.html) inherited from the famous NeXT/OPENSTEP specifications.
+- A set of useful **applications**: contacts, agenda, mail user agent, Text editor, Terminal...  
+See [CORE_DESKTOP](CORE_DESKTOP.md) for details and technical notes.
+
+## What does mean an Agnostic GNUstep Desktop?
+
+- **Agnostic**: means it can be installed on many hardwares because it is built from sources.  
+It is like the [Ports Collections](https://www.lpthe.jussieu.fr/~talon/freebsdports.html) method on a BSD System.
+- As **Debian** is the underlying operating system, where you can install Debian, you are able to install then AGNoStep.
+- See the [HARDWARE COMPATIBILY LIST](Documentation/HCL.md) for my hardware testing list.
+
+## An expandable collection of applications
+
+When the Core Desktop is installed, you can expand it with the ports collections: AGNoStep provides a useful tool, the **"Applications Manager"**.  
+It allows to select some ports and to build them easily:
+
+- **Extra** Applications collection: see [EXTRA List](Documentation/EXTRA_APPS.md).
+- **Devel** Environment: see [DEVEL List](Documentation/DEVEL_ENV.md).
+- GNUstep **Games** collection: see [GAMES List](Documentation/GAMES.md).
+- **Wrappers** to include non native GNUstep to work within the Workspace: see [WRAPPERS List](Documentation/WRAPPERS.md).
+
+## At the Edge and with consistency
+
+- AGNoStep tries to follow the most recent fixes and patches provided by the GNUstep community. 
+- So most of the applications are built from the latest subversion or git repos.
+- All known issues are discussed with the community, so Agnostep contributes to make the ecosystem better. Its purpose is to be consistent with all the work done by the community.
+
+## About Theming
+
+You can install the Core Desktop with a theme of your choice, or apply the in purpose theme above.
+AGNOSTEP-theme provides two flavours: *classic* and *conky*.
 
 ## Available for Raspberry Pi's too
 
-As AGNoStep was forked from the deprecated [PiSiN](https://github.com/pcardona34/pi-step-initiative) project, you can still install it on a Rasbberry Pi.
-
-## Hardware compatibility list
-
-I cannot promise AGNoStep will install and function on your hardware.
-So we shall establish a real working list.
-
-But if you can run Debian Trixie on your computer, we can say with optimism that AGNoStep should run on too. See [HCL](install/HCL.md) for a real hardware tested list.
+Following the Agnostic principle, as AGNoStep was forked from the deprecated [PiSiN](https://github.com/pcardona34/pi-step-initiative) project, you can still install it on a Rasbberry Pi.
+If a RPI is detected, some settings will be adapted to it. Of course, you must use a specific SD Card with the RPI OS Lite: see INSTALL section below. 
 
 ## How to install
 
-Read [INSTALL](install/INSTALL.md) first.
+Read [INSTALL](install/INSTALL.md) first to understand all the stages.
 
 Quick way: on a fresh minimal Debian Trixie (13.x) on a computer wired to Internet, execute:
 
@@ -38,8 +64,33 @@ Quick way: on a fresh minimal Debian Trixie (13.x) on a computer wired to Intern
 	./agnostep.sh
 ````
 
-Than logout the desktop if all is ok, and install the Display Manager from the above menu.
+From the main menu:
+
+1) Install the Core Desktop.
+2) Set the User settings, theme...
+3) Try it with:
+
+````
+	cd && startx
+````
+
+4) Logout the desktop.
+5) Run again "Applications Manager":
+
+````	
+	./agnostep.sh
+````
+
+From the main menu, choose "DM" item to install the Display Manager.
 
 ## Screenshots
 
-See [AGNOSTEP-theme screenshots](https://github.com/pcardona34/agnostep-theme/blob/main/Screenshots)...
+See [AGNOSTEP-theme screenshots](https://github.com/pcardona34/agnostep-theme/blob/main/Screenshots) to see the different flavours of the theme.
+
+## User guides
+
+- Where to find Help when the desktop is installed? See [HELP](Documentation/HELP.md).
+
+## Roadmap
+
+What next? See [Roadmap](Documentation/Roadmap.md)...

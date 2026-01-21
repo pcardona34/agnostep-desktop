@@ -41,9 +41,8 @@ echo "AGNoStep Desktop: init log" >>$LOG
 
 clear
 
-title "A G N o S t e p    D e s k t o p"
-
-sleep 1
+STR="A G N o S t e p    D e s k t o p"
+titulo
 
 #########################
 
@@ -57,7 +56,7 @@ sudo ldconfig
 
 ########################
 
-info "The System is up to date.\nYou may go on with step 2."
+info "The System is up to date.\nYou may go on with stage 2."
 print_size
 sleep 3
 

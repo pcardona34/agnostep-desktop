@@ -19,7 +19,6 @@
 ### ENV
 
 _PWD=`pwd`
-#. SCRIPTS/environ.sh
 echo $PATH | grep -e "/System/Tools" &>/dev/null
 if [ $? -ne 0 ];then
 	export PATH=/System/Tools:$PATH
@@ -46,7 +45,8 @@ INSTALL_DIR=$(gnustep-config --variable=GNUSTEP_LOCAL_APPS)
 ################################
 
 clear
-title "A G N o S t e p  -  RPI Tools"
+STR="A G N o S t e p  -  RPI Tools"
+subtitulo
 
 ################################
 ### Is there a USER APPS Folder?
@@ -61,10 +61,14 @@ fi
 
 echo "$0" >>$LOG
 
-title "Dependencies of the RPI Tools"
+STR="Dependencies of the RPI Tools"
+subtitulo
 
 DEPS="rpinters rpi-imager hplip printer-driver-hpcups printer-driver-cups-pdf"
 sudo apt -y install ${DEPS}
+ok "Done"
+sleep 2
+clear
 
 ##############################################
 ## If you do not want any app to be installed

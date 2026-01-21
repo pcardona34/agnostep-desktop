@@ -1,4 +1,4 @@
-# The way to do it
+## Porting PISIN to AGNoStep Desktop
 
 - [x] Porting PiSiN Desktop to an agnostic installation process means to better clarify and dispatch the steps:
 - [x] 1) Setting the tools and the environment to build. Make them agnostic: no test about arch nor model.
@@ -24,14 +24,34 @@
 
 ---
 
-- [x] Review all the above to permit a single project (AGNoStep, of course) to handle all the case, comprising RPI machines.
+- [x] Review all the above to allow a single project (AGNoStep, of course) to handle all the case, comprising RPI machines.
 
 ---
 
 - [x] Separate main Core Desktop and AGNOSTEP Theme.
 
 
-Translation
-===========
+## Translation
+
 The whole desktop and apps mut be localized:
-[ ] See I18N file to follow this work in progress.
+[ ] See [L18N](L18N.md) file to follow this work in progress.
+
+## Help
+
+[x] AGNostep User Guide
+[x] GWorkspace User Guide
+[x] Rework all git repo documentation
+[ ] Other apps...: wait until HelpViewer specs will be finalized.
+
+## Porting on a pi500
+
+[ ] All tests todo...
+
+
+## Porting Application Manager and AGNOSTEP-theme
+
+[ ] Other projects to target? (NeXTSpace? GSDE? Gershwin-Desktop...)
+
+## Universal Package for Installer
+
+[ ] Ports to Binaries...

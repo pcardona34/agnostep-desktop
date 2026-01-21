@@ -47,8 +47,8 @@ for WRAP in *.app
 do
         APPNAME=${WRAP%.app}
 
-        echo "$APPNAME" >> $LOG
-        title "Installing the wrapper for $APPNAME"
+        STR="Installing the wrapper for $APPNAME"
+	subtitulo
 
         sudo cp -a ${APPNAME}.app $INSTALL_DIR/
         check $APPNAME

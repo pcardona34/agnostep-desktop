@@ -37,7 +37,6 @@ GSBUILD="../build/GNUstep_Build"
 
 . SCRIPTS/colors.sh
 . SCRIPTS/spinner.sh
-#. SCRIPTS/environ.sh
 . SCRIPTS/functions_prep.sh
 . SCRIPTS/functions_install_gnustep.sh
 
@@ -50,8 +49,8 @@ GSBUILD="../build/GNUstep_Build"
 LOG="$HOME/AGNOSTEP_PREP_GNUSTEP.log"
 
 clear
-title "Prepare the GNUstep installation"
-echo "Prepare the GNUstep installation" > $LOG
+STR="Prepare the GNUstep installation"
+titulo
 
 ##########################################
 ### DEPENDENCIES
@@ -67,8 +66,8 @@ GS_SCRIPT=/System/Library/Makefiles/GNUstep.sh
 
 ################################
 
-title "Installing all GNUstep libs and Tools"
-echo "Installing all GNUstep libs and Tools" > $LOG
+STR="Installing all GNUstep libs and Tools"
+titulo
 
 # Create build directory
 

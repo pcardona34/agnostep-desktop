@@ -58,8 +58,8 @@ DIR="${APP}-${RELEASE}"
 ARCHIVE="${DIR}${EXT}"
 #LINGUAS="fr uk"
 
-title "$APPNAME $RELEASE"
-echo "$APPNAME $RELEASE" >>$LOG
+STR="$APPNAME $RELEASE"
+subtitulo
 
 cd ../build || exit 1
 
@@ -72,10 +72,6 @@ else
 	tar -xf ${DIR}.tar
 	cd $DIR || exit 1
 fi
-
-#if ! [ -d /usr/GNUstep/System/Applications ];then
-#	sudo mkdir -p /usr/GNUstep/System/Applications
-#fi
 
 printf "Configuring...\n"
 ./autogen.sh ${CONFIG_ARGS} &>>$LOG
@@ -131,7 +127,8 @@ PATCH=AlsaMixer.patch
 RES_DIR=RESOURCES/PATCHES
 TARGET=Makefile
 
-title "${APPNAME} - ${REL}" | tee -a $LOG
+STR="${APPNAME} - ${REL}" | tee -a $LOG
+subtitulo
 
 cd ../build || exit 1
 
@@ -197,7 +194,8 @@ APPNAME=WMClock
 RELEASE="1.0.16"
 CONFIG_ARGS="--with-lang=french"
 
-title "$APPNAME $RELEASE" | tee -a $LOG
+STR="$APPNAME $RELEASE"
+subtitulo
 
 cd ../build || exit 1
 
@@ -251,8 +249,8 @@ function install_wmifs()
 APPNAME="wmifs"
 REL="1.9"
 
-echo "$APPNAME $REL" >> $LOG
-title "$APPNAME $REL"
+STR="$APPNAME $REL"
+subtitulo
 
 cd ../build || exit 1
 

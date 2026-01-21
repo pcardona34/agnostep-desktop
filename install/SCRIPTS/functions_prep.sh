@@ -18,7 +18,8 @@
 function sanity_check
 {
 
-title "Checking your environment"
+STR="Checking your environment"
+subtitulo
 
 ARCHI=`uname -a | awk '{print $10}'`
 MSG="On $ID - $DEBIAN_VERSION_FULL - ${ARCHI}\nYou are welcome!\n\n"
@@ -52,7 +53,8 @@ function debian_update
 
 info "It is time to have a cup of tea or coffee. ;-)"
 
-title "Updating Debian Lite OS"
+STR="Updating Debian Lite OS"
+subtitulo
 
 printf "Updating...\n"
 
@@ -60,6 +62,8 @@ sudo apt update
 sudo apt -y upgrade
 
 ok "Done"
+sleep 2
+clear
 }
 ### End of Debian update
 #############################################
@@ -73,7 +77,9 @@ function install_deps
 {
 REF="${LIST:-build}"
 OPTIONS="--no-show-upgraded --no-upgrade --yes"
-title "Installing Dependencies"
+STR="Installing Dependencies"
+subtitulo
+
 . /etc/os-release
 prefix="#"
 local STATUS=0

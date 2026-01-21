@@ -29,6 +29,9 @@ DIR="emacs"
 CONFIG_ARGS="--with-ns"
 INSTALL_DIR=$(gnustep-config --variable=GNUSTEP_LOCAL_APPS)
 
+STR="$APPNAME"
+subtitulo
+
 cd ../build || exit 1
 
 printf "Fetching...\n"
@@ -94,8 +97,8 @@ function install_gorm()
 APPNAME=Gorm
 RELEASE="1.5.0"
 
-echo "$APPNAME $RELEASE" >>$LOG
-title "$APPNAME $RELEASE"
+STR="$APPNAME $RELEASE"
+subtitulo
 
 cd ../build || exit 1
 
@@ -122,8 +125,8 @@ function install_PC()
 APPNAME=ProjectCenter
 RELEASE="0.7.0"
 
-echo "$APPNAME $RELEASE" >>$LOG
-title "$APPNAME $RELEASE"
+STR="$APPNAME $RELEASE"
+subtitulo
 
 cd ../build || exit 1
 
@@ -150,8 +153,8 @@ function install_easydiff()
 APPNAME=EasyDiff
 RELEASE="0.4.1"
 
-echo "$APPNAME $RELEASE" >>$LOG
-title "$APPNAME $RELEASE"
+STR="$APPNAME $RELEASE"
+subtitulo
 
 cd ../build || exit 1
 
@@ -185,8 +188,8 @@ HUB=http://download.savannah.nongnu.org/releases/gnustep-nonfsf
 CONFIG_ARGS=""
 INSTALL_ARGS=""
 
-echo "$APPNAME - $RELEASE" >> $LOG
-title "$APPNAME $RELEASE"
+STR="$APPNAME $RELEASE"
+subtitulo
 
 printf "Fetching...\n"
 if [ -d ${APPNAME}-${RELEASE} ];then

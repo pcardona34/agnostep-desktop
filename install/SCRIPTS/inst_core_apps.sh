@@ -44,9 +44,10 @@ trap "rm -f $TEMPFILE" EXIT
 . SCRIPTS/check_app.sh
 . SCRIPTS/size.sh
 . SCRIPTS/spinner.sh
-. SCRIPTS/functions_inst_core_apps.sh
 . SCRIPTS/functions_prep.sh
 . SCRIPTS/std_build.sh
+. SCRIPTS/patch_with_quilt.sh
+. SCRIPTS/functions_inst_core_apps.sh
 
 ### End of Include functions
 ################################

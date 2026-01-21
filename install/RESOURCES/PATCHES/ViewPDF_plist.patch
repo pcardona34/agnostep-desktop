@@ -1,0 +1,11 @@
+--- ./Info-gnustep_ViewPDF_a.plist	2026-01-20 11:09:51.656141974 +0100
++++ ./Info-gnustep_ViewPDF_b.plist	2026-01-20 11:12:57.445593533 +0100
+@@ -1,6 +1,7 @@
+ {
+     ApplicationDescription = "A spicy PDF Reader.";
+-    ApplicationIcon = ViewPDF;
++    ApplicationIcon = "ViewPDF.tiff";
++    NSIcon = "ViewPDF.tiff";
+     ApplicationName = ViewPDF;
+     ApplicationRelease = "0.2";
+     ApplicationURL = "http://home.gna.org/gsimageapps/";

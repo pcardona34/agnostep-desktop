@@ -16,7 +16,7 @@
 #############################################
 ### AClock: analogic clock for the C5C flavour
 ### of the desktop
-############################################# 
+#############################################
 function install_aclock
 {
 cd ../build || exit 1
@@ -26,8 +26,8 @@ REPO="user-apps"
 CONFIG_ARGS=""
 INSTALL_ARGS=""
 
-echo "$APPNAME" >> $LOG
-title "$APPNAME"
+STR="$APPNAME"
+subtitulo
 
 printf "Fetching...\n"
 if [ -d $APPNAME ];then
@@ -53,8 +53,8 @@ function install_addressmanager()
 APPNAME=AddressManager
 #RELEASE="0.5.0"
 
-echo "$APPNAME" >>$LOG
-title "$APPNAME"
+STR="$APPNAME"
+subtitulo
 CONFIG_ARGS=""
 BUILD_ARGS=""
 INSTALL_ARGS=""
@@ -110,42 +110,6 @@ _build
 }
 
 #################################################
-## GNUMail (current / stable tarball)
-### Repo/Release: Savannah/gnustep-nonfsf: 1.4.0
-#################################################
-
-function install_gnumail()
-{
-APPNAME=GNUMail
-RELEASE="1.4.0 - stable release"
-CONFIG_ARGS=""
-BUILD_ARGS=""
-INSTALL_ARGS=""
-
-STR="$APPNAME - $RELEASE"
-subtitulo
-
-cd ../build || exit 1
-
-printf "Fetching...\n"
-if [ -d GNUMail-1.4.0 ];then
-	cd GNUMail-1.4.0
-else
-    wget --silent http://download.savannah.nongnu.org/releases/gnustep-nonfsf/GNUMail-1.4.0.tar.gz
-    gunzip --force GNUMail-1.4.0.tar.gz
-    tar -xf GNUMail-1.4.0.tar && rm GNUMail-1.4.0.tar
-	cd GNUMail-1.4.0
-fi
-
-if [ -d /Local/Applications/GNUMail.app ];then
-	sudo rm -fR /Local/Applications/GNUMail.app
-	make_services
-fi
-
-_build
-}
-
-#################################################
 ## GNUMail (current / svn)
 ### Repo/Release: svn Savannah/gnustep-nonfsf
 #################################################
@@ -169,7 +133,7 @@ if [ -d gnumail ];then
         svn update
 else
     svn co svn://svn.savannah.nongnu.org/gnustep-nonfsf/apps/gnumail
-	cd gnumail
+	cd gnumail || exit 1
 fi
 
 _build
@@ -189,18 +153,17 @@ CONFIG_ARGS="--with-inotify --enable-gwmetadata"
 BUILD_ARGS=""
 INSTALL_ARGS=""
 
-
-echo "$APPNAME $RELEASE" >> $LOG
-title "$APPNAME $RELEASE"
+STR="$APPNAME $RELEASE"
+subtitulo
 
 cd ../build || exit 1
 
 printf "Fetching...\n"
 if [ -d apps-gworkspace ];then
 	cd apps-gworkspace
-	git pull &> /dev/null
+	git pull
 else
-	git clone --branch=master "https://github.com/gnustep/apps-gworkspace" &> /dev/null
+	git clone --branch=master "https://github.com/gnustep/apps-gworkspace"
 	cd apps-gworkspace
 fi
 
@@ -235,16 +198,17 @@ TARGET="spordefs.m"
 PROJ="SporView.bproj"
 PATCH2="InnerSpace_GNUMakefile.patch"
 TARGET2="GNUMakefile"
-title "$APPNAME $RELEASE" | tee -a $LOG
+STR="$APPNAME $RELEASE"
+subtitulo
 
 cd ../build || exit 1
 
 printf "Fetching...\n"
 if [ -d InnerSpace ];then
         cd InnerSpace
-        svn update &>/dev/null
+        svn update
 else
-        svn co svn://svn.savannah.nongnu.org/gap/trunk/user-apps/InnerSpace &>/dev/null
+        svn co svn://svn.savannah.nongnu.org/gap/trunk/user-apps/InnerSpace
         cd InnerSpace
 fi
 
@@ -260,7 +224,7 @@ do
 		### PATCH
 		cp $_PWD/RESOURCES/PATCHES/$PATCH ./
 		printf "\tA patch must be applied...\n"
-		patch --forward -u ${TARGET} -i ${PATCH} &>>$LOG
+		patch --forward -u ${TARGET} -i ${PATCH} | tee -a $LOG
 		ok "\tPatch applied"
 	fi
 	make &>>$LOG
@@ -273,7 +237,7 @@ printf "Building Main InnerSpace...\n"
 ### PATCH
 cp $_PWD/RESOURCES/PATCHES/$PATCH2 ./
 printf "\tA patch must be applied...\n"
-patch --forward -u ${TARGET2} -i ${PATCH2} &>>$LOG
+patch --forward -u ${TARGET2} -i ${PATCH2} | tee -a $LOG
 ok "\tPatch applied"
 
 _build
@@ -294,17 +258,17 @@ CONFIG_ARGS=""
 BUILD_ARGS=""
 INSTALL_ARGS=""
 
-echo "$APPNAME $RELEASE" >>$LOG
-title "$APPNAME $RELEASE"
+STR="$APPNAME $RELEASE"
+subtitulo
 
 cd ../build || exit 1
 
 printf "Fetching...\n"
 if [ -d simpleagenda ];then
 	cd simpleagenda
-	git pull &>/dev/null
+	git pull
 else
-	git clone https://github.com/poroussel/simpleagenda.git &>/dev/null
+	git clone https://github.com/poroussel/simpleagenda.git
 	cd simpleagenda
 fi
 
@@ -325,18 +289,18 @@ CONFIG_ARGS=""
 BUILD_ARGS=""
 INSTALL_ARGS=""
 
-echo "$APPNAME $RELEASE" >> $LOG
-title "$APPNAME $RELEASE"
+STR="$APPNAME $RELEASE"
+subtitulo
 
 cd ../build || exit 1
 
 printf "Fetching...\n"
 if [ -d apps-systempreferences ];then
 	cd apps-systempreferences
-	git pull &>/dev/null
+	git pull
 else
-	git clone --branch=master https://github.com/gnustep/apps-systempreferences &>/dev/null
-	cd apps-systempreferences
+	git clone --branch=master https://github.com/gnustep/apps-systempreferences
+	cd apps-systempreferences || exit 1
 fi
 
 _build
@@ -358,8 +322,8 @@ CONFIG_ARGS=""
 BUILD_ARGS=""
 INSTALL_ARGS=""
 
-echo "$APPNAME $RELEASE" >>$LOG
-title "$APPNAME $RELEASE"
+STR="$APPNAME $RELEASE"
+subtitulo
 
 cd ../build || exit 1
 
@@ -368,10 +332,10 @@ printf "Fetching...\n"
 
 if [ -d Terminal ];then
 	cd Terminal
-	svn update &>/dev/null
+	svn update
 else
-	svn co svn://svn.savannah.nongnu.org/gap/trunk/system-apps/Terminal &>/dev/null
-	cd Terminal
+	svn co svn://svn.savannah.nongnu.org/gap/trunk/system-apps/Terminal
+	cd Terminal || exit 1
 fi
 
 _build
@@ -386,24 +350,32 @@ _build
 function install_textedit()
 {
 APPNAME=TextEdit
-RELEASE="4.0"
+RELEASE="5.0"
+HUB=https://salsa.debian.org/gnustep-team/textedit.app.git
+DIR=textedit.app
 CONFIG_ARGS=""
 BUILD_ARGS=""
 INSTALL_ARGS=""
 
-echo "$APPNAME $RELEASE" >>$LOG
-title "$APPNAME $RELEASE"
+
+STR="$APPNAME $RELEASE"
+subtitulo
 
 cd ../build || exit 1
 
 printf "Fetching...\n"
-if [ -d gs-textedit ];then
-	cd gs-textedit
-	git pull &>/dev/null
+if [ -d $DIR ];then
+	cd $DIR
+	git pull
 else
-	git clone https://github.com/onflapp/gs-textedit.git &>/dev/null
-	cd gs-textedit
+	git clone $HUB
+	cd $DIR || exit 1
 fi
+
+printf "Patching...\n"
+is_quilt
+set_quilt
+quilt push -a
 
 _build
 }
@@ -420,8 +392,8 @@ APPNAME=TimeMon
 RELEASE="4.1"
 HUB=
 
-echo "$APPNAME $RELEASE" >>$LOG
-title "$APPNAME $RELEASE"
+STR="$APPNAME $RELEASE"
+subtitulo
 
 printf "Fetching...\n"
 cd ../build || exit 1
@@ -438,8 +410,6 @@ _build
 }
 
 
-
-
 ###################################################
 ## VolumeControl
 ### Repo/Release: Github/Alexmyczko
@@ -454,21 +424,60 @@ CONFIG_ARGS=""
 BUILD_ARGS=""
 INSTALL_ARGS=""
 
-echo "$APPNAME $RELEASE" >>$LOG
-title "$APPNAME $RELEASE"
+STR="$APPNAME $RELEASE"
+subtitulo
 
 cd ../build || exit 1
 
 printf "Fetching...\n"
 if [ -d ${APPNAME}.app ];then
 	cd ${APPNAME}.app
-	git pull &>/dev/null
+	git pull
 else
-	git clone https://github.com/alexmyczko/VolumeControl.app.git &>/dev/null
-	cd ${APPNAME}.app
+	git clone https://github.com/alexmyczko/VolumeControl.app.git
+	cd ${APPNAME}.app || exit 1
 fi
 
 _build
 }
 
+#################################################
+########## OBSOLETE #############################
+
+#################################################
+## GNUMail (current / stable tarball)
+### Repo/Release: Savannah/gnustep-nonfsf: 1.4.0
+### Obsolete
+#################################################
+
+function install_gnumail()
+{
+APPNAME=GNUMail
+RELEASE="1.4.0 - stable release"
+CONFIG_ARGS=""
+BUILD_ARGS=""
+INSTALL_ARGS=""
+
+STR="$APPNAME - $RELEASE"
+subtitulo
+
+cd ../build || exit 1
+
+printf "Fetching...\n"
+if [ -d GNUMail-1.4.0 ];then
+	cd GNUMail-1.4.0
+else
+    wget http://download.savannah.nongnu.org/releases/gnustep-nonfsf/GNUMail-1.4.0.tar.gz
+    gunzip --force GNUMail-1.4.0.tar.gz
+    tar -xf GNUMail-1.4.0.tar && rm GNUMail-1.4.0.tar
+	cd GNUMail-1.4.0 
+fi
+
+if [ -d /Local/Applications/GNUMail.app ];then
+	sudo rm -fR /Local/Applications/GNUMail.app
+	make_services
+fi
+
+_build
+}
 

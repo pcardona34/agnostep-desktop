@@ -20,6 +20,7 @@
 . SCRIPTS/check_app.sh
 . SCRIPTS/size.sh
 . SCRIPTS/spinner.sh
+. SCRIPTS/patch_with_quilt.sh
 . SCRIPTS/functions_inst_core_apps.sh
 . SCRIPTS/functions_inst_extra.sh
 . SCRIPTS/functions_inst_devel.sh
@@ -60,7 +61,8 @@ INSTALL_DIR=$(gnustep-config --variable=GNUSTEP_LOCAL_APPS)
 ################################
 
 clear
-title "A G N o S t e p  -  Install apps one by one"
+STR="A G N o S t e p  -  Install apps one by one"
+titulo
 
 ################################
 ### Is there a Build Folder?

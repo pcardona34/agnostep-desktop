@@ -16,6 +16,12 @@
 ################################
 ### VARS
 
+. ../../SCRIPTS/colors.sh 
+
 DEPS="pass"
 
-sudo apt -y install pass
+sudo apt -y install ${DEPS}
+
+ok "Done"
+sleep 2
+clear

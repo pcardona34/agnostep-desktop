@@ -21,9 +21,8 @@
 
 function install_make
 {
-TITLE="Building GNUstep-make..."
-echo "$TITLE" >>$LOG
-title "$TITLE"
+STR="Building GNUstep-make..."
+subtitulo
 
 cd make || exit 1
 
@@ -52,9 +51,8 @@ sudo ldconfig
 # Checkout sources
 function fetch_sources
 {
-TITLE="Checking out Sources..."
-echo "$TITLE" >>$LOG
-title "$TITLE"
+STR="Checking out Sources..."
+subtitulo
 
 HUB=https://github.com/
 GSMAKE=make
@@ -63,35 +61,28 @@ GUI=gui
 BACK=back
 
 printf "\nGNUstep Tools Make\n"
-git clone $HUB/gnustep/$GSMAKE &>>$LOG &
-PID=$!
-spinner
-ok "\rDone"
+git clone $HUB/gnustep/$GSMAKE | tee -a $LOG
+ok "Done"
+
 printf "\nGNUstep Base\n"
-git clone $HUB/gnustep/$BASE &>>$LOG &
-PID=$!
-spinner
-ok "\rDone"
+git clone $HUB/gnustep/$BASE | tee -a $LOG
+ok "Done"
+
 printf "\nGNUstep Gui\n"
-git clone $HUB/gnustep/$GUI &>>$LOG &
-PID=$!
-spinner
-ok "\rDone"
+git clone $HUB/gnustep/$GUI | tee -a $LOG
+ok "Done"
 
 printf "\nGNUstep Back\n"
-git clone $HUB/gnustep/$BACK &>>$LOG &
-PID=$!
-spinner
-ok "\rDone"
+git clone $HUB/gnustep/$BACK | tee -a $LOG
+ok "Done"
 }
 
 #################################################
 ## Build GNUstep base
 function install_base
 {
-TITLE="Building Fundation: GNUstep Base..."
-echo "$TITLE" >>$LOG
-title "$TITLE"
+STR="Building Fundation: GNUstep Base..."
+subtitulo
 
 cd base || exit 1
 
@@ -117,32 +108,39 @@ sudo ldconfig
 ## Build GNUstep GUI
 function install_gui
 {
-TITLE="Building AppKit: GNUstep Gui"
-echo "$TITLE" >>$LOG
-title "$TITLE"
+STR="Building AppKit: GNUstep Gui"
+subtitulo
 
 cd gui || exit 1
-### Try to fix 'open URL' issue
-printf "\nSwitching to app-wrapper-open-url branch"
-git switch app-wrapper-open-url
+dialog --no-shadow --backtitle "Building GNUstep" --title "GUNstep Gui" \
+ --yesno "
+Experimental branch allow to fix some issue with
+openURL Service.
+
+Do you want to include experimental branch
+app-wrapper-open-url?" 14 50
+
+if [ $? -eq 0 ];then
+	### Try to fix 'open URL' issue
+	printf "\nSwitching to app-wrapper-open-url branch"
+	git switch app-wrapper-open-url
+fi
 
 printf "Configuring...\n"
-./configure 
-#&>>$LOG &
-#PID=$!
-#spinner
+./configure &>>$LOG &
+PID=$!
+spinner
+
 printf "\rBuilding...\n"
-make -j8 
-#&>>$LOG &
-#PID=$!
-#spinner
+make -j8 &>>$LOG &
+PID=$!
+spinner
+
 printf "\rInstalling...\n"
-sudo -E make install 
-#&>>$LOG &
-#PID=$!
-#spinner
-#ok "\rDone"
-ok "Done"
+sudo -E make install &>>$LOG &
+PID=$!
+spinner
+ok "\rDone"
 
 sudo ldconfig
 }
@@ -152,9 +150,8 @@ sudo ldconfig
 ## Build GNUstep back
 function install_back
 {
-TITLE="Building the Backend: GNUstep Back..."
-echo "$TITLE" >>$LOG
-title "$TITLE"
+STR="Building the Backend: GNUstep Back..."
+subtitulo
 
 cd back || exit 1
 printf "Configuring...\n"
@@ -180,8 +177,8 @@ sudo ldconfig
 
 function is_gnustep_ok
 {
-TITLE="Checking GNUstep installation..."
-title "$TITLE"
+STR="Checking GNUstep installation..."
+subtitulo
 
 local _COUNT=0
 

@@ -11,10 +11,12 @@
 
 ### Banniere
 clear
-cat RESOURCES/logo.txt
-printf "\n\t\t\tW e l c o m e   t o   a n    A G N o S t e p    W o r l d!\n\n\t\t\tC O R E   installer   script   will   start   soon..."
-sleep 4
+#cat RESOURCES/logo.txt
+dialog --backtitle "AGNoStep Desktop" --title "Core Installer" \
+--sleep 5 --infobox "
+Welcome to an  AGNoStep World!
 
+CORE installer script will start soon..." 8 50
 
 ####################################################
 ### VARS
@@ -40,20 +42,8 @@ set -e
 ### Builds and launches A G N o S t e p
 ####################################################
 
-clear
-
-if [ -f $HOME/.xinitrc ];then
-	warning "A script to start the X session (.xinitrc) was found in your home directory."
-	info "To launch the desktop, better use:"
-	cli "cd && startx"
-	printf "\nDo you want to force AGNoStep (re-)install?\n"
-	read -p "(y/n): " -s REPONSE
-	case $REPONSE in
-		"y"|"Y") printf "\nStarting AGNoStep Core install script...\n" && sleep 2;;
-		"n"|"N"|*) printf "\nAborting...\n" && exit 1
-	esac
-fi
-
+function core_install
+{
 ####################################################
 ### Timer (1)
 BEG=`date`
@@ -92,4 +82,30 @@ if [ ! -d $HOME/Documents/LOGS ];then
 	mkdir -p $HOME/Documents/LOGS
 fi
 mv --force *.log $HOME/Documents/LOGS
+
+}
+### End of function core_install
+
+##################################################################
+### Main part of the script
+##################################################################
+clear
+
+if [ -f $HOME/.xinitrc ] || [ -f $HOME/.xsession ];then
+
+	dialog --backtitle "AGNoStep Desktop" --title "Core Installation" \
+	--yesno "
+	A script to start the X session was found in your home directory.
+
+	Do you want to reinstall AGNoStep Core Desktop?" 10 50
+
+	if [ $? -eq 0 ];then
+		printf "Starting AGNoStep Core install script...\n";sleep 2
+		core_install
+	else
+		printf "Aborting...\n"
+		exit 1
+	fi
+
+fi
 
