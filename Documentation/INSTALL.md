@@ -73,7 +73,7 @@ L18N of AGNoStep depends of the state of the respective translations of the apps
 - Clone this repository:
 
 ````
-	git clone https://github.com/pcardona34/agnostep
+	git clone https://github.com/pcardona34/agnostep-desktop
 ````
 	
 ### Start Main AGNoStep menu
