@@ -57,7 +57,7 @@ titulo
 ### Declare_deps_wrappers
 ### Name after DEP_ must follow the wrapper name.
 LG=${LANG:0:2}
-DEP_Firefox="firefox-esr-l10n-${LG}"
+DEP_Firefox="firefox-esr firefox-esr-l10n-${LG}"
 DEP_Chromium="chromium-l10n"
 
 ### RPI case?
