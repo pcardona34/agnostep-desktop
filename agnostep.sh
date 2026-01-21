@@ -29,6 +29,16 @@ FICHTEMP=$(mktemp /tmp/agno-XXXXX)
 trap "rm -f $FICHTEMP" EXIT
 
 ###############################
+### Current User must be a member of sudoers
+
+sudo -v
+
+if [ $? -ne 0 ];then
+	alert "User $USER is not allowed to execute this script. Aborting."
+	exit 1
+fi
+
+###############################
 function is_dialog
 {
 whereis dialog

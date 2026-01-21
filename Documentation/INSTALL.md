@@ -14,14 +14,21 @@ Then, boot from the USB and follow the installation prompts to set up your syste
 
 See: <https://www.debian.org/distrib/netinst>
 
-#### On a Raspberry Pi
-
-1-BIS) Use instead `RPI Imager` to copy the Raspberry Pi Lite OS image on your SD card.
-
+1-BIS) **On a Raspberry Pi**, use instead `RPI Imager` to copy the Raspberry Pi Lite OS image on your SD card.
 
 2) Boot with your USB key or SD card to load the lite Debian System.
 
-3) Update the Debian System. Your User account must belongs to the group 'sudo'. If not, do it first. Then:
+3) Update the Debian System. Your User account must belongs to the group 'sudo'.
+
+- You must have root privileges:
+
+````
+	sudo -v
+````
+
+Otherwise, add the current user to the 'sudo' group.
+
+Then:
 
 ````
 	sudo apt update && sudo apt upgrade
@@ -75,10 +82,15 @@ L18N of AGNoStep depends of the state of the respective translations of the apps
 ````
 	git clone https://github.com/pcardona34/agnostep-desktop
 ````
+
+
 	
 ### Start Main AGNoStep menu
 
+````
+	cd agnostep-desktop
 	./agnostep.sh
+````
 
 The first time, you should run from the above menu these three items in this order:
 
@@ -100,60 +112,62 @@ try the following alternative manual stages to note the issue concerned.
 
 ## Manual Alernative Install Way
 
-### Prepare the installation (mainly build tools on debian dependencies):
+### A-1) Prepare the installation (mainly build tools on debian dependencies):
 	
 - **(i) Tip:** the point './' below means to search and execute the script in the current directory:
 
 ````
+	cd install
 	./1_prep.sh
 ````
 
-### Install Window Maker:
+### A-2) Install Window Maker:
 
 ````
 	./2_install_wmaker.sh
 ````
 
-### Install the Core GNUstep:
+### A-3) Install the Core GNUstep:
 
 ````
 	./3_install_gnustep.sh	
 ````
 
-### Install the Frameworks:
+### A-4) Install the Frameworks:
 
 ````
 	./4_install_frameworks.sh
 ````
 
-### Install Core apps and Wrappers:
+### A-5) Install Core apps and Wrappers:
 
 ````
 	./5_install_core_apps.sh
 ````
-### Set the current user's environment and AGNOSTEP-theme:
+### A-6) Set the current user's environment and AGNOSTEP-theme:
 
 ````
 	./6_user_settings.sh
 ````
 
-### Start the X server and AGNoStep Desktop:
+#### Testing: start the X server and AGNoStep Desktop:
 	
 ````
 	cd && startx
 ````
 
-## Notes
+#### Notes
 
 - If you want to regenerate your default user's setting or change the theme, log out the Desktop, log in a tty console and do that:
 
 ````
+	cd ~/SOURCES/agnostep-desktop
 	./agnostep.sh
 ````
 
 - Choose item "Settings" of the menu.
 
-### If all is right, logout again and install the Display Manager from a tty console:
+### A-7) If all is right, logout again and install the Display Manager from a tty console:
 
 ````
 	./7_install_DM.sh
@@ -162,7 +176,7 @@ try the following alternative manual stages to note the issue concerned.
 ## II. How to install more apps?
 
 - Logout the Desktop if you want to Change Core Desktop components. Otherwise, you can open a Terminal window.
-- cd ~/SOURCES/agnostep
+- cd ~/SOURCES/agnostep-desktop
 - Run the Anostep Manager tool:
 
 ````
@@ -183,3 +197,16 @@ try the following alternative manual stages to note the issue concerned.
 ````
 
 - Then choose the item 'Remove' and follow the Assistant to select and remove the App.
+
+## IV. How to reinstall/update Core Desktop after an udpate of the project repo
+
+````
+	cd ~SOURCES/agnostep-desktop
+	git pull
+	./agnostep.sh
+````
+
+From the main menu, execute these tasks:
+
+1) Core
+2) Settings
