@@ -19,13 +19,15 @@ See: <https://www.debian.org/distrib/netinst>
 1-BIS) Use instead `RPI Imager` to copy the Raspberry Pi Lite OS image on your SD card.
 
 
-2) Update the Debian System
+2) Boot with your USB key or SD card to load the lite Debian System.
+
+3) Update the Debian System. Your User account must belongs to the group 'sudo'. If not, do it first. Then:
 
 ````
 	sudo apt update && sudo apt upgrade
 ````
 
-You should get the latest Trixie release: 13.x as shown by:
+You should get the latest Debian Trixie release: 13.x as shown by:
 
 ````	
 	cat /etc/debian_version
@@ -33,16 +35,9 @@ You should get the latest Trixie release: 13.x as shown by:
 
 3) Enable and install your desired locale:
 
-- Uncomment your locale in '/etc/locale.gen':
-
 ````
-	sudo nano /etc/locale.gen
-````
-
-- Generate your locale:
-
-````
-	sudo locale-gen
+	sudo dpkg-reconfigure locales
+	
 ````
 
 - Set your locale (adapt the command below to your locale):
@@ -50,6 +45,7 @@ You should get the latest Trixie release: 13.x as shown by:
 ````
 	sudo localectl set-locale fr_FR.UTF-8
 ````
+
 - Log out and Log in again to apply the new locale in your context.
 - Verify the locale is correctly set:
 
@@ -84,7 +80,7 @@ L18N of AGNoStep depends of the state of the respective translations of the apps
 
 	./agnostep.sh
 
-The first time, you should run these three items in this order:
+The first time, you should run from the above menu these three items in this order:
 
 1) Core
 2) Settings
@@ -95,14 +91,14 @@ After several minutes, you should be able to start the AGNoStep Desktop:
 - With `startx` (after stage 2) 
 - From 'Lightdm' graphical Login (after stage 3). 
 
-**TIP:** If you need to use CLI again, use TTY2 to login to the console: CTRL-ALT-F2.
+**TIP:** If you need to use CLI again, use TTY2 to login to the console: `CTRL-ALT-F2`.
 	
 ---
 
 If the above 'Core' stage failed for some reason,  
-try the following alternative manual steps to note the issue concerned.
+try the following alternative manual stages to note the issue concerned.
 
-## Alernative Install Way
+## Manual Alernative Install Way
 
 ### Prepare the installation (mainly build tools on debian dependencies):
 	
@@ -165,7 +161,7 @@ try the following alternative manual steps to note the issue concerned.
 
 ## II. How to install more apps?
 
-- Logout the Desktop.
+- Logout the Desktop if you want to Change Core Desktop components. Otherwise, you can open a Terminal window.
 - cd ~/SOURCES/agnostep
 - Run the Anostep Manager tool:
 
@@ -173,9 +169,10 @@ try the following alternative manual steps to note the issue concerned.
 	./agnostep.sh
 ````
 
-- From the menu shown, choose the software category: core, extra apps, developper, games...
-- Update the User settings to apply the theme to newly installed apps: choose item 'Settings'.
+1) From the menu shown, choose the software category: core, extra apps, developper, games...
+2) Update the User settings to apply the theme to newly installed apps: choose item 'Settings'.
 
+**Tip!** DO NOT forget the 'settings' stage to apply correctly the theme to the app just installed.
 
 ## III. How to remove some app?
 
