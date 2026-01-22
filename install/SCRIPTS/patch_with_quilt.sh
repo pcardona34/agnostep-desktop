@@ -20,8 +20,8 @@
 ### Quilt deps
 function is_quilt
 {
-STATUS_QUILT=$(dpkg -l quilt | grep quilt | awk '{print $1}')
-if [ "$STATUS_QUILT" == "ii" ];then
+which -s quilt
+if [ $? -eq 0 ];then
 	printf "Quilt is already installed.\n"
 else
 	DEP="quilt"

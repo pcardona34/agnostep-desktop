@@ -1,4 +1,4 @@
- #!/bin/bash
+#!/bin/bash
 
 ####################################################
 ### A G N o S t e p  -  Desktop - by Patrick Cardona
@@ -64,7 +64,7 @@ echo "$0" >>$LOG
 STR="Dependencies of the RPI Tools"
 subtitulo
 
-DEPS="rpinters rpi-imager hplip printer-driver-hpcups printer-driver-cups-pdf"
+DEPS="rpi-imager"
 sudo apt -y install ${DEPS}
 ok "Done"
 sleep 2

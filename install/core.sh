@@ -107,5 +107,7 @@ if [ -f $HOME/.xinitrc ] || [ -f $HOME/.xsession ];then
 		exit 1
 	fi
 
+else
+	core_install
 fi
 

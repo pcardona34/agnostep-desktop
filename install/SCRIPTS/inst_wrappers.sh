@@ -57,8 +57,14 @@ titulo
 ### Declare_deps_wrappers
 ### Name after DEP_ must follow the wrapper name.
 LG=${LANG:0:2}
-DEP_Firefox="firefox-esr firefox-esr-l10n-${LG}"
-DEP_Chromium="chromium-l10n"
+case "$LG" in
+"en")
+	DEP_Firefox="firefox-esr"
+	DEP_Chromium="chromium";;
+*)
+	DEP_Firefox="firefox-esr firefox-esr-l10n-${LG}"
+	DEP_Chromium="chromium chromium-l10n";;
+esac
 
 ### RPI case?
 is_hw_rpi
@@ -68,7 +74,7 @@ if [ $RPI -eq 0 ];then
 fi
 
 ### Pass installed?
-whereis pass &>/dev/null
+which -s pass
 if [ $? -eq 0 ];then
 	DEP_Firefox="${DEP_Firefox} webext-browserpass"
 	# Pass ext is not more allowed from now

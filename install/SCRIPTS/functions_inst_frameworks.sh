@@ -441,6 +441,8 @@ if [ -f /Local/Library/Libraries/libDBusKit.so ];then
 else
 	alert "Please check the installation of DBusKit!"
 fi
+
+cd $_PWD
 }
 
 ### End of DbusKit
@@ -497,5 +499,8 @@ is_quilt
 set_quilt
 quilt push -a
 
-_build_FW
+make clean
+make
+
+#_build_FW
 }

@@ -2,6 +2,5 @@ build
 build/**
 **/.gwdir
 **~
-**/obj
-**/obj/**
-
+**.save
+**obj/**

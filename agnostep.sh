@@ -27,6 +27,7 @@
 DEPS="dialog"
 FICHTEMP=$(mktemp /tmp/agno-XXXXX)
 trap "rm -f $FICHTEMP" EXIT
+LOG=$HOME/AGNOSTEP.log
 
 ###############################
 ### Current User must be a member of sudoers
@@ -41,7 +42,7 @@ fi
 ###############################
 function is_dialog
 {
-whereis dialog
+which -s dialog
 if [ $? -ne 0 ];then
 	STR="Dependencies"
 	subtitulo

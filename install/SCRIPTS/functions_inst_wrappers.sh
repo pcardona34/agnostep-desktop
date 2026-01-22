@@ -41,7 +41,7 @@ cd $_PWD
 #########################################################
 function install_rpi_tools
 {
-cd $_PWD/RESOURCES/RPI_TOOLS || exit 1
+cd $_PWD/RESOURCES/WRAPPERS/RPI_TOOLS || exit 1
 
 for WRAP in *.app
 do

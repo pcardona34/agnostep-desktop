@@ -81,10 +81,10 @@ install_hlkit
 install_hkthemes
 install_renaissance
 install_performance
-install_webservices
+#install_webservices # removed: connection timed out on 10.18.0.6 port 10091
 install_steptalk
 install_dbuskit
-install_popplerkit
+#install_popplerkit # removed due to poppler-splash dep issue
 
 ####################################
 
