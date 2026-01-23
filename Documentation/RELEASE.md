@@ -3,7 +3,7 @@
 
 ## Release
 
-- **Release**: 0.9.8.3
+- **Release**: 0.9.8.4
 - **Status**: Beta
 - **Operating System**: Debian Trixie 13.x
 

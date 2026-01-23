@@ -273,12 +273,12 @@ STR="$FWNAME"
 subtitulo
 
 printf "Fetching...\n"
-if [ -d WebServices-0.9.0.tar ];then
+if [ -d WebServices-0.9.0 ];then
 	cd WebServices-0.9.0
 else
-	wget ftp://ftp.gnustep.org/pub/gnustep/libs/WebServices-0.9.0.tar.gz
+	ftp ftp://ftp.gnustep.org/pub/gnustep/libs/WebServices-0.9.0.tar.gz
 	gunzip --force WebServices-0.9.0.tar.gz
-	tar -xf WebServices-0.9.0.tar
+	tar -xf WebServices-0.9.0.tar && rm WebServices-0.9.0.tar
 	cd WebServices-0.9.0 || exit 1
 fi
 

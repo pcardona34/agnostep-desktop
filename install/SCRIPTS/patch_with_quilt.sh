@@ -39,7 +39,7 @@ if [ -f $HOME/.quilt ] && grep -e "debian/patches" $HOME/.quilt &>/dev/null;then
 	printf "Quilt is already set.\n"
 else
 
-cat << ENDOFQUILT > $HOME/.quilt
+cat << ENDOFQUILT > $HOME/.quiltrc
 QUILT_DIFF_ARGS="--no-timestamps --no-index"
 QUILT_REFRESH_ARGS="--no-timestamps --no-index"
 QUILT_PATCHES="debian/patches"
