@@ -21,43 +21,7 @@ It provides a Desktop layer, a FileViewer, a Finder panel, a Recycler, and, weth
 
 ### Some apps provided with the Core Desktop
 
-- AClock: a digital clock (with the Classic flavour only).
-- AddressManager: contacts
-- Batmon: Battery monitor (with the Classic flavour on laptop only)
-- GNUMail: Mail User Agent
-- GWorkspace: the Workspace manager: see above.
-- InnerSpace: screen saver
-- MDFinder: within GWorkspace indexing
-- Recycler: see GWorkspace.
-- SimpleAgenda: agenda
-- SystemPreferences
-- Terminal: a Terminal emulator
-- TextEdit: text editor and note taking
-- TimeMon: a CPU monitoring (with the Classic flavour)
-- VolumeControl: an ALSA compliant Mixer
-
-### Dockapps
-
-With the Classic flavour only:
-
-- wmnd: Network monitoring
-- wmtext: it provides date, weather health, uptime, memory usage, Birthday notification, Debian System Update.
-- wmudmount: it helps managing removable medias. 
-
-### Conky Panel
-
-If you choose the Conky flavour, a System infos Panel will provide most of the above monitoring tasks.
-
-### More apps?
-
-Of course, you can add more apps with the main `agnostep.sh` script: from the menu, choose the category of apps to add.
-
-See respective documents for each category: 
-
-- [EXTRA APPS](./EXTRA_APPS.md)
-- [DEVEL ENV](./DEVEL_ENV.md)
-- [GAMES](./GAMES.md)
-- [WRAPPERS](./WRAPPERS/md)
+See [CORE_APPS.md]
 
 ### Under the ground
 

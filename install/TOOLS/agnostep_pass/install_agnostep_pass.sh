@@ -16,6 +16,7 @@
 ################################
 ### VARS
 
+. ../../SCRIPTS/log.sh
 . ../../SCRIPTS/colors.sh 
 
 DEPS="pass"

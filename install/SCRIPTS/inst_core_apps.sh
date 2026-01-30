@@ -21,13 +21,13 @@
 ### ENV
 
 _PWD=`pwd`
+CHECK=YES
 echo $PATH | grep -e "/System/Tools" &>/dev/null
 if [ $? -ne 0 ];then
 	export PATH=/System/Tools:$PATH
 fi
 GSMAKE=$(gnustep-config --variable=GNUSTEP_MAKEFILES)
 . ${GSMAKE}/GNUstep.sh
-LOG="$HOME/AGNOSTEP_BUILD_CORE_APPS.log"
 SPIN='/-\|'
 INSTALL_DIR=$(gnustep-config --variable=GNUSTEP_LOCAL_APPS)
 TEMPFILE=$(mktemp /tmp/agno-XXXXX)
@@ -40,6 +40,7 @@ trap "rm -f $TEMPFILE" EXIT
 ################################
 ### Include functions
 
+. SCRIPTS/log.sh
 . SCRIPTS/colors.sh
 . SCRIPTS/check_app.sh
 . SCRIPTS/size.sh
@@ -47,6 +48,8 @@ trap "rm -f $TEMPFILE" EXIT
 . SCRIPTS/functions_prep.sh
 . SCRIPTS/std_build.sh
 . SCRIPTS/patch_with_quilt.sh
+. SCRIPTS/misc_info.sh
+. SCRIPTS/functions_remove_app.sh
 . SCRIPTS/functions_inst_core_apps.sh
 
 ### End of Include functions
@@ -71,15 +74,6 @@ if ! [ -d $INSTALL_DIR ];then
 	exit 1
 fi
 
-function remove_if_present
-{
-APP="$1"
-if [ -d $INSTALL_DIR/${APP}.app ];then
-	sudo rm -fR $INSTALL_DIR/${APP}.app
-fi
-printf "The previous installation of ${APP} has been removed.\n"
-}
-
 ###########################################
 function core_apps_menu
 {
@@ -94,72 +88,87 @@ Check (space bar) the Applications you want to reinstall." 22 70 14 \
 "BatMon" "Monitoring the Battery on Laptops" off \
 "GNUMail" "The GNUstep Mail User Agent" off \
 "GWorkspace" "The NeXT like Workspace Manager" off \
+"Ink" "Plain text and Rich Text Format Editor" off \
 "InnerSpace" "The GNUstep Screensaver" off \
 "SimpleAgenda" "A Simple Agenda to manage Events and Tasks" off \
 "SystemPreferences" "Preferences of the GNUstep System" off \
 "Terminal" "The GNUstep Terminal Emulator" off \
-"TextEdit" "The Raw and Rich Text Editor" off \
 "TimeMon" "The CPU Load Monitor ported from OPENSTEP" off \
 "VolumeControl" "The Sound Level Controller" off 2> $TEMPFILE
 
 # 0 if [OK] button was pushed;
 # otherwise, exit the script.
+
+clear
+
 if [ $? = 0 ];then
 for i in `cat $TEMPFILE`
 do
 case "$i" in
 "AClock")
 	printf "You chose AClock\n"
-	remove_if_present "AClock"
-	install_aclock;;
+	remove_ifx_app "AClock"
+	install_aclock
+	update_info_plist "AClock";;
 "AddressManager")
 	printf "You chose AddressManager\n"
-	remove_if_present "AddressManager"
-install_addressmanager;;
+	remove_ifx_app "AddressManager"
+	install_addressmanager
+	update_info_plist "AddressManager";;
 "BatMon")
 	printf "You chose BatMon\n"
-	remove_if_present "batmon"
-	install_batmon;;
+	remove_ifx_app "batmon"
+	install_batmon
+	update_info_plist "batmon";;
 "GNUMail")
 	printf "You chose GNUMail\n"
-	remove_if_present "GNUMail"
-	install_gnumail_svn;;
+	remove_ifx_app "GNUMail"
+	install_gnumail_svn
+	update_info_plist "GNUMail";;
 "GWorkspace")
 	printf "You chose GWorkspace\n"
 	if [ $DISPLAY ];then
-		alert "You must logout and update GWorkspace within a TTY env.";exit
+		alert "You must logout and update GWorkspace within a TTY console.";exit
 	fi
-	remove_if_present "GWorkspace"
-	remove_if_present "MDFinder"
-	install_gworkspace;;
+	remove_ifx_app "GWorkspace"
+	remove_ifx_app "MDFinder"
+	install_gworkspace
+	update_info_plist "GWorkspace";;
+"Ink")
+	printf "You chose Ink\n"
+	remove_ifx_app "Ink"
+	install_ink
+	update_info_plist "Ink";;
 "InnerSpace")
 	printf "You chose InnerSpace\n"
-	remove_if_present "InnerSpace"
-	install_innerspace;;
+	remove_ifx_app "InnerSpace"
+	install_innerspace
+	update_info_plist "InnerSpace";;
 "SimpleAgenda")
 	printf "You chose SimpleAgenda\n"
-	remove_if_present "SimpleAgenda"
-	install_simpleagenda;;
+	remove_ifx_app "SimpleAgenda"
+	install_simpleagenda
+	update_info_plist "SimpleAgenda";;
 "SystemPreferences")
 	printf "You chose SystemPreferences\n"
-	remove_if_present "SystemPreferences"
-	install_systempreferences;;
+	remove_ifx_app "SystemPreferences"
+	install_systempreferences
+	update_info_plist "SystemPreferences";;
 "Terminal")
 	printf "The GNUstep Terminal Emulator\n"
-	remove_if_present "Terminal"
-	install_terminal;;
-"TextEdit")
-	printf "You chose TextEdit\n"
-	remove_if_present "TextEdit"
-	install_textedit;;
+	remove_ifx_app "Terminal"
+	install_terminal
+	update_info_plist "Terminal";;
 "TimeMon")
 	printf "You chose TimeMon\n"
-	remove_if_present "TimeMon"
-	install_timemon;;
+	remove_ifx_app "TimeMon"
+	install_timemon
+	update_info_plist "TimeMon";;
 "VolumeControl")
 	printf "You chose VolumeControl\n"
-	remove_if_present "VolumeControl"
-	install_volumecontrol;;
+	remove_ifx_app "VolumeControl"
+	install_volumecontrol
+	update_info_plist "VolumeControl";;
 esac
 done
 else exit 0
@@ -169,9 +178,23 @@ fi
 
 core_apps_menu
 
-printf "Linking and making services: please wait...\n"
+#########################################
 
-sudo ldconfig
-make_services
+printf "Linking: wait please...\n"
+sudo ldconfig &>/dev/null &
+PID=$!
+spinner
+ok "\rDone"
+
+printf "\nUpdating Services: wait please...\n"
+make_services &>/dev/null &
+PID=$!
+spinner
+ok "\rDone"
 
 print_size
+
+sleep 2
+
+
+

@@ -17,6 +17,7 @@
 ### AClock: analogic clock for the C5C flavour
 ### of the desktop
 #############################################
+
 function install_aclock
 {
 cd ../build || exit 1
@@ -178,6 +179,41 @@ _build
 
 #check "Recycler"
 #check "MDFinder"
+}
+
+##########################
+## Ink
+##########################
+
+function install_ink()
+{
+
+cd ../build || exit 1
+
+APPNAME="Ink"
+REPO="tests-examples"
+OWNER="gnustep"
+HUB="https://github.com"
+BUILD_DIR="gui"
+CONFIG_ARGS=""
+INSTALL_ARGS=""
+BUILD_ARGS=""
+
+STR="$APPNAME $RELEASE"
+subtitulo
+
+printf "Fetching...\n"
+if [ -d $REPO ];then
+        cd $REPO
+        git pull &>/dev/null
+else
+	git clone ${HUB}/${OWNER}/${REPO}.git &>/dev/null
+	cd $REPO
+fi
+
+cd $BUILD_DIR/$APPNAME
+
+_build
 }
 
 ###################################################
@@ -342,44 +378,6 @@ _build
 }
 
 
-###################################################
-## TextEdit
-### Repo/Release: github/onflapp/gs-textedit: 4.0
-###################################################
-
-function install_textedit()
-{
-APPNAME=TextEdit
-RELEASE="5.0"
-HUB=https://salsa.debian.org/gnustep-team/textedit.app.git
-DIR=textedit.app
-CONFIG_ARGS=""
-BUILD_ARGS=""
-INSTALL_ARGS=""
-
-
-STR="$APPNAME $RELEASE"
-subtitulo
-
-cd ../build || exit 1
-
-printf "Fetching...\n"
-if [ -d $DIR ];then
-	cd $DIR
-	git pull
-else
-	git clone $HUB
-	cd $DIR || exit 1
-fi
-
-printf "Patching...\n"
-is_quilt
-set_quilt
-quilt push -a
-
-_build
-}
-
 
 ##########################################
 ## TimeMon
@@ -481,3 +479,46 @@ fi
 _build
 }
 
+##################################
+
+###################################################
+## TextEdit
+### Repo/Release: Debian Salsa GNUstep-Team
+###
+### Caution! This app was very unstable and
+### often froze the System
+### I guess some memory leak
+###################################################
+
+function install_textedit()
+{
+APPNAME=TextEdit
+RELEASE="5.0"
+HUB=https://salsa.debian.org/gnustep-team/textedit.app.git
+DIR=textedit.app
+CONFIG_ARGS=""
+BUILD_ARGS=""
+INSTALL_ARGS=""
+
+
+STR="$APPNAME $RELEASE"
+subtitulo
+
+cd ../build || exit 1
+
+printf "Fetching...\n"
+if [ -d $DIR ];then
+	cd $DIR
+	git pull
+else
+	git clone $HUB
+	cd $DIR || exit 1
+fi
+
+printf "Patching...\n"
+is_quilt
+set_quilt
+quilt push -a
+
+_build
+}

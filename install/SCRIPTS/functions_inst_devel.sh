@@ -13,6 +13,38 @@
 ### Functions for Desktop Devel - GNUstep apps
 ####################################################
 
+function move_to_devel
+{
+APPNAME="$1"
+if [ -z "$APPNAME" ];then
+	exit 1
+fi
+
+APP_DIR=$(gnustep-config --variable=GNUSTEP_LOCAL_APPS)
+if [ -z "$APP_DIR" ];then
+        alert "Your GNUstep System seems misconfigured."
+        exit 1
+fi
+
+LG=${LANG:0:2}
+case "$LG" in
+"fr") DEVEL=Prog;;
+"en"|*) DEVEL=Dev;;
+esac
+
+DEVEL_DIR=${APP_DIR}/${DEVEL}
+
+if [ ! -d ${DEVEL_DIR} ];then
+        sudo mkdir -p ${DEVEL_DIR}
+fi
+
+sudo mv ${APP_DIR}/${APPNAME}.app ${DEVEL_DIR}/
+cd ${APP_DIR}
+cd ../Tools
+sudo ln --force --symbolic ${DEVEL_DIR}/${APPNAME}.app
+sudo ln --force --symbolic ${DEVEL_DIR}/${APPNAME}.app/${APPNAME}
+cd $_PWD
+}
 
 ########################## - E - ##########################
 
@@ -34,12 +66,14 @@ subtitulo
 
 cd ../build || exit 1
 
+warning "Emacs is a very big piece of software: be patient.."
+
 printf "Fetching...\n"
 if [ ! -d emacs ];then
-	git clone $HUB &>>$LOG &
-	PID=$?
-	spinner
-	ok "\rDone"
+	git clone $HUB
+	ok "Done"
+	sleep 2
+	clear
 	cd $DIR || exit 1
 else
 	cd $DIR
@@ -47,19 +81,17 @@ else
 	ok "Done"
 fi
 
-
 WD=`pwd`
 printf "Configuring...\n"
 make clean
 ./autogen.sh
-./configure ${CONFIG_ARGS} &>>$LOG
-PID=$?
-spinner
-ok "\rDone"
+./configure ${CONFIG_ARGS}
+ok "Done"
+sleep 2
 
 printf "Building...\n"
 make &>>$LOG &
-PID=$?
+PID=$!
 spinner
 ok "\rDone"
 
@@ -77,13 +109,10 @@ done
 
 printf "Installing...\n"
 cd nextstep || exit 1
-sudo -E cp -r Emacs.app ${INSTALL_DIR}/
-# Checking
-if [ -d ${INSTALL_DIR}/${APPNAME}.app ];then
-	info "The Application ${APPNAME} was found."
-else
-	alert "The Application ${APPNAME} was NOT found."
-fi
+sudo -E cp -a Emacs.app ${INSTALL_DIR}/
+move_to_devel ${APPNAME}
+check $APPNAME
+
 }
 
 ########################################
@@ -111,7 +140,11 @@ else
         cd apps-gorm
 fi
 
+CHECK=""
 _build
+move_to_devel ${APPNAME}
+check $APPNAME
+
 }
 
 ########################################
@@ -139,7 +172,11 @@ else
         cd apps-projectcenter
 fi
 
+CHECK=""
 _build
+move_to_devel ${APPNAME}
+check $APPNAME
+
 }
 
 ########################################
@@ -168,7 +205,11 @@ else
         cd apps-easydiff
 fi
 
+CHECK=""
 _build
+move_to_devel ${APPNAME}
+check $APPNAME
+
 }
 
 
@@ -201,7 +242,11 @@ else
 	cd ${APPNAME}-${RELEASE} || exit 1
 fi
 
+CHECK=""
 _build
+move_to_devel ${APPNAME}
+check $APPNAME
+
 }
 
 
@@ -230,5 +275,9 @@ else
 	cd apps-thematic
 fi
 
+CHECK=""
 _build
+move_to_devel ${APPNAME}
+check $APPNAME
+
 }

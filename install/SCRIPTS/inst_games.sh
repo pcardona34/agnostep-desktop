@@ -23,32 +23,34 @@ if [ $? -ne 0 ];then
 fi
 GSMAKE=$(gnustep-config --variable=GNUSTEP_MAKEFILES)
 . ${GSMAKE}/GNUstep.sh
-LOG="$HOME/AGNOSTEP_BUILD_GAMES.log"
 SPIN='/-\|'
 INSTALL_DIR=$(gnustep-config --variable=GNUSTEP_LOCAL_APPS)
 TEMPFILE=$(mktemp /tmp/agno-XXXXX)
 trap "rm -f $TEMPFILE" EXIT
 
-#INSTALL_ARGS="GNUSTEP_INSTALLATION_DOMAIN=LOCAL"
 ### End of VARS
 ################################################
 
 ################################################
 ### Include functions
 
+. SCRIPTS/log.sh
 . SCRIPTS/colors.sh
 . SCRIPTS/check_app.sh
 . SCRIPTS/size.sh
 . SCRIPTS/spinner.sh
+. SCRIPTS/find_app.sh
+. SCRIPTS/misc_info.sh
+. SCRIPTS/functions_remove_app.sh
 . SCRIPTS/functions_inst_games.sh
 . SCRIPTS/std_build.sh
 
 ### End of Include functions
 #################################################
 
-clear
-STR="A G N o S t e p  -  Games"
-titulo
+#clear
+#STR="A G N o S t e p  -  Games"
+#titulo
 
 #################################################
 ### Is there a Build Folder?
@@ -66,19 +68,9 @@ fi
 
 #################################################
 
-function remove_if_present
-{
-APP="$1"
-if [ -d $INSTALL_DIR/${APP}.app ];then
-	sudo rm -fR $INSTALL_DIR/${APP}.app
-fi
-printf "The previous installation of ${APP} has been removed.\n"
-}
-
-####################################################
 function games_menu
 {
-dialog --no-shadow --backtitle "${STR:0:15}" --title "${STR:20:26}" \
+dialog --no-shadow --clear --backtitle "${STR:0:15}" --title "${STR:20:26}" \
 --ok-label "OK"  \
 --checklist "
 The list below contains the games.
@@ -95,6 +87,8 @@ Check (space bar) the Games you want to (re)install." 20 70 13 \
 "NeXTGo" "The Go game ported from OPENSTEP" off \
 "Sudoku" "Sudoku game" off 2> $TEMPFILE
 
+clear
+
 # 0 if [OK] button was pushed;
 # otherwise, exit the script.
 if [ $? = 0 ];then
@@ -103,44 +97,54 @@ do
 case "$i" in
 "Chess")
 	printf "You chose Chess\n"
-	remove_if_present "Chess"
-	install_chess;;
+	remove_ifx_app "Chess"
+	install_chess
+	update_info_plist "Chess";;
 "Freecell")
 	printf "You chose Freecell\n"
-	remove_if_present "Freecell"
-	install_freecell;;
+	remove_ifx_app "Freecell"
+	install_freecell
+	update_info_plist "Freecell";;
 "GMastermind")
 	printf "You chose GMastermind\n"
-	remove_if_present "GMastermind"
-	install_gmastermind;;
+	remove_ifx_app "GMastermind"
+	install_gmastermind
+	update_info_plist "GMastermind";;
 "GMines")
 	printf "You chose GMines\n"
-	remove_if_present "GMines"
-	install_gmines;;
+	remove_ifx_app "GMines"
+	install_gmines
+	update_info_plist "GMines";;
 "GShisen")
 	printf "You chose GShisen\n"
-	remove_if_present "GShisen"
-	install_gshisen;;
+	remove_ifx_app "GShisen"
+	install_gshisen
+	update_info_plist "GShisen";;
 "Gomoku")
 	printf "You chose Gomoku\n"
-	remove_if_present "Gomoku"
-	install_gomoku;;
+	remove_ifx_app "Gomoku"
+	install_gomoku
+	update_info_plist "Gomoku";;
 "Jigsaw")
 	printf "You chose Jigsaw\n"
-	remove_if_present "Jigsaw"
-	install_jigsaw;;
+	remove_ifx_app "Jigsaw"
+	install_jigsaw
+	update_info_plist "Jigsaw";;
 "LapisPuzzle")
 	printf "You chose LapisPuzzle\n"
-	remove_if_present "LapisPuzzle"
-	install_lapis;;
+	remove_ifx_app "LapisPuzzle"
+	install_lapis
+	update_info_plist "LapisPuzzle";;
 "NeXTGo")
 	printf "You chose NeXTGo\n"
-	remove_if_present "NeXTGo"
-	install_nextgo;;
+	remove_ifx_app "NeXTGo"
+	install_nextgo
+	update_info_plist "NeXTGo";;
 "Sudoku")
 	printf "You chose Sudoku\n"
-	remove_if_present "Sudoku"
-install_sudoku
+	remove_ifx_app "Sudoku"
+	install_sudoku
+	update_info_plist "Sudoku";;
 esac
 done
 else exit 0
@@ -152,12 +156,21 @@ games_menu
 
 ###################################
 
-printf "Linking and making services: please wait...\n"
+printf "Linking: wait please...\n"
+sudo ldconfig &>/dev/null &
+PID=$!
+spinner
+ok "\rDone"
 
-sudo ldconfig
-make_services
+printf "\nUpdating Services: wait please...\n"
+make_services &>/dev/null &
+PID=$!
+spinner
+ok "\rDone"
 
 print_size
 
 sleep 2
+
+
 

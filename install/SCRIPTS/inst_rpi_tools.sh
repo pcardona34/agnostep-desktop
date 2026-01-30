@@ -25,20 +25,27 @@ if [ $? -ne 0 ];then
 fi
 GSMAKE=$(gnustep-config --variable=GNUSTEP_MAKEFILES)
 . ${GSMAKE}/GNUstep.sh
-LOG="$HOME/AGNOSTEP_BUILD_APPS.log"
 SPIN='/-\|'
 INSTALL_DIR=$(gnustep-config --variable=GNUSTEP_LOCAL_APPS)
-#INSTALL_ARGS="GNUSTEP_INSTALLATION_DOMAIN=LOCAL"
+LG={LANG:0:2}
+case "$LG" in
+"fr") TOOLS=Utilitaires;;
+"en"|*) TOOLS=Utilities;;
+esac
+
 ### End of VARS
 ################################
 
 ################################
 ### Include functions
 
+. SCRIPTS/log.sh
 . SCRIPTS/colors.sh
 . SCRIPTS/check_app.sh
 . SCRIPTS/size.sh
 . SCRIPTS/spinner.sh
+. SCRIPTS/functions_remove_app.sh
+. SCRIPTS/functions_inst_tools.sh
 . SCRIPTS/functions_inst_wrappers.sh
 
 ### End of Include functions
@@ -64,7 +71,7 @@ echo "$0" >>$LOG
 STR="Dependencies of the RPI Tools"
 subtitulo
 
-DEPS="rpi-imager"
+DEPS="rpi-imager rp-bookshelf"
 sudo apt -y install ${DEPS}
 ok "Done"
 sleep 2
@@ -78,5 +85,17 @@ clear
 
 install_rpi_tools
 
-sudo ldconfig
-make_services
+cd $_PWD
+
+printf "Linking... Wait please.\n"
+sudo ldconfig &>/dev/null &
+PID=$!
+spinner
+ok "\rDone"
+
+
+printf "Updating Services... Wait please.\n"
+make_services &>/dev/null &
+PID=$!
+spinner
+ok "\rDone"

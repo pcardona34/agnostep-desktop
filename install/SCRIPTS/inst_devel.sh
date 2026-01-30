@@ -23,13 +23,10 @@ if [ $? -ne 0 ];then
 fi
 GSMAKE=$(gnustep-config --variable=GNUSTEP_MAKEFILES)
 . ${GSMAKE}/GNUstep.sh
-LOG="$HOME/AGNOSTEP_BUILD_DEVEL.log"
 SPIN='/-\|'
 INSTALL_DIR=$(gnustep-config --variable=GNUSTEP_LOCAL_APPS)
 TEMPFILE=$(mktemp /tmp/agno-XXXXX)
 trap "rm -f $TEMPFILE" EXIT
-
-#INSTALL_ARGS="GNUSTEP_INSTALLATION_DOMAIN=LOCAL"
 
 ### End of VARS
 ################################
@@ -37,10 +34,13 @@ trap "rm -f $TEMPFILE" EXIT
 ################################
 ### Include functions
 
+. SCRIPTS/log.sh
 . SCRIPTS/colors.sh
 . SCRIPTS/check_app.sh
 . SCRIPTS/size.sh
 . SCRIPTS/spinner.sh
+. SCRIPTS/misc_info.sh
+. SCRIPTS/functions_remove_app.sh
 . SCRIPTS/functions_inst_devel.sh
 . SCRIPTS/std_build.sh
 
@@ -49,7 +49,8 @@ trap "rm -f $TEMPFILE" EXIT
 
 clear
 STR="A G N o S t e p  -  Devel applications and Tools"
-titulo
+echo "$STR" >> $LOG
+date >> $LOG
 
 ################################
 ### Is there a Build Folder?
@@ -62,49 +63,27 @@ fi
 ### Is there a LOCAL APPS Folder?
 
 if ! [ -d $INSTALL_DIR ];then
-	mkdir -p $INSTALL_DIR
+	sudo mkdir -p $INSTALL_DIR
 fi
 
 #################################################
 
-function remove_if_present
-{
-APP="$1"
-if [ -d $INSTALL_DIR/${APP}.app ];then
-	sudo rm -fR $INSTALL_DIR/${APP}.app
-fi
-printf "The previous installation of ${APP} has been removed.\n"
-}
-
-##################################################
-function info_renaissance
-{
-dialog --no-shadow --backtitle "Devel applications" --title "Renaissance Framework" \
---sleep 6 --infobox "
-The tools associated with the Framework Renaissance has been already installed:
-- GSMarkupBrowser.app
-- GSMarkupLocalizableStrings.app" 8 60
-}
-
-###############
-
-info_renaissance
-
-####################################################
 function devel_apps_menu
 {
-dialog --no-shadow --backtitle "${STR:0:15}" --title "${STR:20:28}" \
+dialog --clear --no-shadow --backtitle "${STR:0:15}" --title "${STR:20:28}" \
 --ok-label "OK"  \
 --checklist "
 The list below contains the devel apps.
 
-Check (space bar) the Applications you want to (re)install." 15 70 8 \
+Check (space bar) the Applications you want to (re)install." 16 70 6 \
 "EasyDiff" "A Diff application" off \
 "Emacs" "The GNU Editor" off \
 "Gemas" "GNUstep Devel Editor" off \
 "Gorm" "GNUstep Interface Builder" off \
 "ProjectCenter" "GNUstep Project Builder" off \
 "Thematic" "A Theme Editor for GNUstep" off 2> $TEMPFILE
+
+clear
 
 # 0 if [OK] button was pushed;
 # otherwise, exit the script.
@@ -113,29 +92,36 @@ for i in `cat $TEMPFILE`
 do
 case "$i" in
 "EasyDiff")
-	printf "You chose EasyDiff\n"
-	remove_if_present "EasyDiff"
-	install_easydiff;;
+	APP=EasyDiff
+	printf "You chose ${APP}\n"
+	remove_ifx_app "${APP}"
+	install_easydiff
+	update_info_plist "${APP}";;
 "Emacs")
 	printf "You chose Emacs\n"
-	remove_if_present "Emacs"
-	install_emacs;;
+	remove_ifx_app "Emacs"
+	install_emacs
+	update_info_plist "Emacs";;
 "Gemas")
 	printf "You chose Gemas\n"
-	remove_if_present "Gemas"
-	install_gemas;;
+	remove_ifx_app "Gemas"
+	install_gemas
+	update_info_plist "Gemas";;
 "Gorm")
 	printf "You chose Gorm\n"
-	remove_if_present "Gorm"
-	install_gorm;;
+	remove_ifx_app "Gorm"
+	install_gorm
+	update_info_plist "Gorm";;
 "ProjectCenter")
 	printf "You chose ProjectCenter\n"
-	remove_if_present "ProjectCenter"
-install_pc;;
+	remove_ifx_app "ProjectCenter"
+	install_pc
+	update_info_plist "ProjectCenter";;
 "Thematic")
 	printf "You chose Thematic\n"
-	remove_if_present "Thematic"
-install_thematic;;
+	remove_ifx_app "Thematic"
+	install_thematic
+	update_info_plist "Thematic";;
 esac
 done
 else exit 0
@@ -143,14 +129,25 @@ fi
 }
 #################################################
 
-
 devel_apps_menu
 
-printf "Linking and making services: wait please...\n"
+#################################################
 
-sudo ldconfig
-make_services
+printf "Linking: wait please...\n"
+sudo ldconfig &>/dev/null &
+PID=$!
+spinner
+ok "\rDone"
+
+printf "\nUpdating Services: wait please...\n"
+make_services &>/dev/null &
+PID=$!
+spinner
+ok "\rDone"
 
 print_size
 
 sleep 2
+
+
+

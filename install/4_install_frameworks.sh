@@ -16,29 +16,20 @@
 ################################
 ### VARS
 
-#echo "PATH (0) is: $PATH";sleep 5
-
 echo $PATH | grep -e "/System/Tools" &>/dev/null
 if [ $? -ne 0 ];then
 	export PATH=/System/Tools:$PATH
 fi
-LOG=$HOME/AGNOSTEP_BUILD_FW.log
+
 THERE=`pwd`
 _PWD=`pwd`
 SPIN='/-\|'
 . /etc/os-release
-#. SCRIPTS/environ.sh
 GSMAKE=$(gnustep-config --variable=GNUSTEP_MAKEFILES)
-#echo "GSMAKE is: $GSMAKE";sleep 5
-. ${GSMAKE}/GNUstep.sh
-#|| alert "No $GSMAKE found";exit 1
-
-#echo "PATH (1) is: $PATH";sleep 5
+${GSMAKE}/GNUstep.sh
 
 INSTALL_DIR=$(gnustep-config --variable=GNUSTEP_LOCAL_LIBRARY)
 INSTALL_DIR=${INSTALL_DIR}/Frameworks
-
-#echo "INSTALL_DIR is: $INSTALL_DIR";sleep 5
 
 if [ ! -d $INSTALL_DIR ];then
 	sudo mkdir -p $INSTALL_DIR
@@ -47,6 +38,7 @@ fi
 ################################
 ### Include functions
 
+. SCRIPTS/log.sh
 . SCRIPTS/colors.sh
 . SCRIPTS/spinner.sh
 . SCRIPTS/functions_prep.sh

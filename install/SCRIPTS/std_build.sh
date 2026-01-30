@@ -46,10 +46,11 @@ sudo chown -fR $USER:$USER . &>/dev/null
 make clean &>/dev/null
 
 ok "\rDone"
-
 cd $_PWD
 
-check ${APPNAME}
+if [ "$CHECK" == "YES" ];then
+	check ${APPNAME}
+fi
 
 }
 

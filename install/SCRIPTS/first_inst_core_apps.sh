@@ -1,4 +1,4 @@
- #!/bin/bash
+#!/bin/bash
 
 ####################################################
 ### A G N o S t e p  -  Desktop - by Patrick Cardona
@@ -26,7 +26,6 @@ if [ $? -ne 0 ];then
 fi
 GSMAKE=$(gnustep-config --variable=GNUSTEP_MAKEFILES)
 . ${GSMAKE}/GNUstep.sh
-LOG="$HOME/AGNOSTEP_BUILD_CORE_APPS.log"
 SPIN='/-\|'
 INSTALL_DIR=$(gnustep-config --variable=GNUSTEP_LOCAL_APPS)
 TEMPFILE=$(mktemp /tmp/agno-XXXXX)
@@ -38,6 +37,7 @@ trap "rm -f $TEMPFILE" EXIT
 ################################
 ### Include functions
 
+. SCRIPTS/log.sh
 . SCRIPTS/colors.sh
 . SCRIPTS/check_app.sh
 . SCRIPTS/size.sh
@@ -70,6 +70,8 @@ if ! [ -d $INSTALL_DIR ];then
 	exit 1
 fi
 
+function the_apps
+{
 install_systempreferences
 install_gworkspace
 
@@ -77,15 +79,45 @@ install_aclock
 install_addressmanager
 install_batmon
 install_gnumail_svn
+install_ink
 install_innerspace
 install_simpleagenda
 install_terminal
 install_textedit
 install_timemon
 install_volumecontrol
+}
+the_apps
+
+#############################
+### Wrapper for Agnostep_Manager
+
+function install_AM
+{
+. SCRIPTS/functions_inst_wrappers.sh
+. SCRIPTS/functions_inst_tools.sh
+. SCRIPTS/functions_remove_app.sh
+
+DEP_AM="dialog xterm"
+APPNAME="AgnostepManager"
+CHECK="YES"
+remove_ifx_app "AgnostepManager"
+install_wrapper "AgnostepManager" "${DEP_AM}"
+move_to_tools "AgnostepManager"
+set_conf "xterm"
+}
+install_AM
 
 #############################
 
-printf "Linking and making services: please wait...\n"
-sudo ldconfig
-make_services
+printf "Linking... please wait...\n"
+sudo ldconfig &>/dev/null &
+PID=$!
+spinner
+ok "\rDone"
+
+printf "Updating services: please wait...\n"
+make_services &>/dev/null &
+PID=$!
+spinner
+ok "\rDone"

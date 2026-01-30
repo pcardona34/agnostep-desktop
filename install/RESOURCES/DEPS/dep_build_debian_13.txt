@@ -38,3 +38,6 @@ git
 subversion
 wget
 ftp
+
+### Find: find, xargs
+findutils

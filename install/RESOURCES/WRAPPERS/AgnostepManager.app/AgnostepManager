@@ -1,0 +1,13 @@
+#!/bin/bash
+
+if [ ! -d $HOME/SOURCES/agnostep-desktop ];then
+	stexec Resources/alert_missing.st
+	TITLE="Recovering"
+	APP=./Recover
+	xterm -T "${TITLE}" -e $APP $date_today
+else
+	cd $HOME/SOURCES/agnostep-desktop
+	APP=./agnostep.sh
+	TITLE="AGNoStep Manager"
+	xterm -T "${TITLE}" -e $APP $date_today
+fi

@@ -18,7 +18,42 @@
 ### Repo/release: svn savannah gap ported-apps Games
 ######################################
 
-function install_chess()
+function move_to_games
+{
+APPNAME="$1"
+if [ -z "$APPNAME" ];then
+	exit 1
+fi
+
+LG=${LANG:0:2}
+case "$LG" in
+"fr")
+	GAMES=Jeux;;
+"en"|*)
+	GAMES=Games;;
+esac
+
+APP_DIR=$(gnustep-config --variable=GNUSTEP_LOCAL_APPS)
+if [ -z "$APP_DIR" ];then
+	alert "Your GNUstep System seems misconfigured."
+	exit 1
+fi
+
+GAME_DIR=${APP_DIR}/${GAMES}
+
+if [ ! -d ${GAME_DIR} ];then
+	sudo mkdir -p ${GAME_DIR}
+fi
+
+sudo mv ${APP_DIR}/${APPNAME}.app ${GAME_DIR}/
+cd ${APP_DIR}
+cd ../Tools
+sudo ln --force --symbolic ${GAME_DIR}/${APPNAME}.app
+sudo ln --force --symbolic ${GAME_DIR}/${APPNAME}.app/${APPNAME}
+cd $_PWD
+}
+
+function install_chess
 {
 
 APPNAME="Chess"
@@ -39,16 +74,19 @@ else
 	cd $APPNAME
 fi
 
+CHECK=""
 _build
+move_to_games $APPNAME
+check $APPNAME
 }
-
 
 ##################################################
 ## Gomoku
 ### Repo/Release: github/pcardona34/Gomoku: 1.2.9
 ##################################################
 
-function install_gomoku(){
+function install_gomoku
+{
 
 APPNAME="Gomoku"
 REL="1.2.9"
@@ -67,7 +105,10 @@ else
 	cd Gomoku
 fi
 
+CHECK=""
 _build
+move_to_games $APPNAME
+check $APPNAME
 }
 
 
@@ -104,7 +145,10 @@ fi
 cd ghack/$APPNAME || exit 1
 cp $_PWD/RESOURCES/ICONS/Ghack.tiff ./Resources/
 
+CHECK=""
 _build
+move_to_games $APPNAME
+check $APPNAME
 }
 
 
@@ -112,7 +156,7 @@ _build
 ## LapisPuzzle
 ### Repo/Release:
 
-function install_lapis()
+function install_lapis
 {
 APPNAME="LapisPuzzle"
 REL="1.2"
@@ -132,7 +176,10 @@ else
 	cd LapisPuzzle-1.2
 fi
 
+CHECK=""
 _build
+move_to_games $APPNAME
+check $APPNAME
 }
 
 ##################################################
@@ -140,7 +187,7 @@ _build
 ### Repo/Release: github/alexmyczko/Freecell.app: 0.1
 ##################################################
 
-function install_freecell()
+function install_freecell
 {
 
 APPNAME="Freecell"
@@ -160,7 +207,10 @@ else
 	cd Freecell.app
 fi
 
+CHECK=""
 _build
+move_to_games $APPNAME
+check ${APPNAME}
 }
 
 ######################################
@@ -168,7 +218,8 @@ _build
 ### Repo/Release: savannah/gap: 1.3.0
 ######################################
 
-function install_gshisen(){
+function install_gshisen
+{
 
 APPNAME="GShisen"
 REL="1.3.0"
@@ -187,7 +238,10 @@ else
 	cd GShisen
 fi
 
+CHECK=""
 _build
+move_to_games $APPNAME
+check $APPNAME
 }
 
 #######################################
@@ -223,7 +277,10 @@ else
 	cd Ladder
 fi
 
+CHECK=""
 _build
+move_to_games $APPNAME
+check $APPNAME
 }
 
 #######################################
@@ -254,7 +311,10 @@ else
         cd Jigsaw
 fi
 
+CHECK=""
 _build
+move_to_games $APPNAME
+check $APPNAME
 }
 
 #######################################
@@ -285,7 +345,10 @@ else
         cd GMines
 fi
 
+CHECK=""
 _build
+move_to_games $APPNAME
+check $APPNAME
 }
 
 #######################################
@@ -316,7 +379,10 @@ else
         cd Sudoku
 fi
 
+CHECK=""
 _build
+move_to_games $APPNAME
+check $APPNAME
 }
 
 #######################################
@@ -347,7 +413,10 @@ else
         cd GMastermind
 fi
 
+CHECK=""
 _build
+move_to_games $APPNAME
+check $APPNAME
 }
 
 
@@ -361,7 +430,7 @@ function install_nextgo
 
 APPNAME="NeXTGo"
 REL="3.0"
-BG=RESOURCES/WALLPAPERS/Background_GO.tiff
+BG=RESOURCES/BG/Background_GO.tiff
 
 STR="$APPNAME $REL"
 subtitulo
@@ -378,9 +447,12 @@ else
 fi
 
 ### Updating the GoBan background
-cp -f ../../install/${BG} ./Source/Background.tiff
+cp -f ${_PWD}/${BG} ./Source/Background.tiff
 
+CHECK=""
 _build
+move_to_games $APPNAME
+check $APPNAME
 }
 
 #############################################

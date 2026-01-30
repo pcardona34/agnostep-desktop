@@ -1,0 +1,8 @@
+! xdefaults
+
+XTerm*foreground: white
+XTerm*background: #4F4F74
+XTerm*scrollBar: false
+XTerm*faceName: DejaVuSansMono 
+XTerm*faceSize: 10
+XTerm*geometry: 70x30+200+200

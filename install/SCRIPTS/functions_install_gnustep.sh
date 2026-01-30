@@ -120,6 +120,8 @@ openURL Service.
 Do you want to include experimental branch
 app-wrapper-open-url?" 14 50
 
+clear
+
 if [ $? -eq 0 ];then
 	### Try to fix 'open URL' issue
 	printf "\nSwitching to app-wrapper-open-url branch"

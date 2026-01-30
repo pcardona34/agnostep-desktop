@@ -22,9 +22,9 @@ if [ $? -ne 0 ];then
 fi
 GSMAKE=$(gnustep-config --variable=GNUSTEP_MAKEFILES)
 . ${GSMAKE}/GNUstep.sh
-LOG="$HOME/AGNOSTEP_BUILD_EXTRA.log"
 SPIN='/-\|'
 INSTALL_DIR=$(gnustep-config --variable=GNUSTEP_LOCAL_APPS)
+CHECK="YES"
 TEMPFILE=$(mktemp /tmp/agno-XXXXX)
 trap "rm -f $TEMPFILE" EXIT
 
@@ -34,6 +34,7 @@ trap "rm -f $TEMPFILE" EXIT
 ################################################
 ### Include functions
 
+. SCRIPTS/log.sh
 . SCRIPTS/colors.sh
 . SCRIPTS/check_app.sh
 . SCRIPTS/size.sh
@@ -41,6 +42,7 @@ trap "rm -f $TEMPFILE" EXIT
 . SCRIPTS/std_build.sh
 . SCRIPTS/misc_info.sh
 . SCRIPTS/patch_with_quilt.sh
+. SCRIPTS/functions_remove_app.sh
 . SCRIPTS/functions_inst_extra.sh
 
 ### End of Include functions
@@ -48,6 +50,8 @@ trap "rm -f $TEMPFILE" EXIT
 
 clear
 STR="A G N o S t e p  -  Extra applications"
+echo "$STR" >> $LOG
+date >> $LOG
 
 #################################################
 ### Is there a Build Folder?
@@ -64,56 +68,33 @@ if ! [ -d $INSTALL_DIR ];then
 fi
 
 #################################################
-function remove_if_present
-{
-APP="$1"
-if [ -d $INSTALL_DIR/${APP}.app ];then
-	sudo rm -fR $INSTALL_DIR/${APP}.app
-fi
-printf "The previous installation of ${APP} has been removed.\n"
-}
 
-####################################################
 function extra_apps_menu
 {
-dialog --no-shadow --backtitle "${STR:0:15}" --title "${STR:20:37}" \
---ok-label "OK"  \
---checklist "
+dialog --no-shadow --backtitle "AGNoStep Desktop" \
+ --title "Extra Applications" \
+ --ok-label "OK"  \
+ --checklist "
 The list below contains the extra apps.
 
-Check (space bar) the Applications you want to (re)install." 20 70 13 \
-"Affiche" "Sticky Notes" off \
-"Calculator" "Calculator from GNUstep Examples" off \
+Check with space bar the Applications you want to install." 20 70 13 \
 "Cenon" "Vetorial Drawing" off \
 "Cynthiune" "Romantic Music Player" off \
-"Dictionary" "Dict client" off \
 "FlexiSheet" "Quantrix like Spreadsheet" off \
-"FontManager" "Font Previewer and Installer" off \
-"FTP" "FTP Client" off \
 "Graphos" "Vector Drawing" off \
 "Grr" "Günters Reliable RSS Reader" off \
-"GSPdf" "PDF Reader" off \
-"HelpViewer" "Help Viewer" off \
-"Ink" "An alternative to TextEdit from GNUstep Examples" off \
-"Installer" "Applications installer not yet finished" off \
 "LaternaMagica" "Image Collection Viewer" off \
-"Librarian" "A clone of NeXT Librarian from GSDE" off \
-"Memory" "A yet not finished Memory Monitor" off \
 "NetSurf" "NetSurf Web Browser ported to GNUstep" off \
-"OpenUp" "An Archive Manager from GSDE" off \
 "PikoPixel" "Pixel Art Editor" off \
 "Player" "A Video Player from GSDE" off \
 "PowerPaint" "Bitmap Drawing from GNUstep Examples" off \
 "PPC" "PowerPC Emulator" off \
 "Preview" "Image Viewer" off \
 "PRICE" "Image Manipulation" off \
-"ScanImage" "Scan Client from GSDE" off \
-"ScreenShot" "Screen Grabber from GSDE" off \
-"StepSync" "File Synchronizer" off \
 "TalkSoup" "IRC Client" off \
-"Vindaloo" "PDF Viewer" off \
-"Weather" "A Weather app" off \
-"Zipper" "An Archive Manager" off 2> $TEMPFILE
+"Weather" "A Weather app" off 2> $TEMPFILE
+
+clear
 
 # 0 if [OK] button was pushed;
 # otherwise, exit the script.
@@ -121,152 +102,81 @@ if [ $? = 0 ];then
 for i in `cat $TEMPFILE`
 do
 case "$i" in
-"Affiche")
-	printf "You chose Affiche\n"
-	remove_if_present "Affiche"
-	install_affiche
-	update_info_unit;;
-"Calculator")
-	printf "You chose Calculator\n"
-	remove_if_present "Calculator"
-	install_calculator
-	update_info_unit;;
 "Cenon")
 	printf "You chose Cenon\n"
-	remove_if_present "Cenon"
+	remove_ifx_app "Cenon"
 	install_cenon
-	update_info_unit;;
+	update_info_plist Cenon;;
 "Cynthiune")
 	printf "You chose Cynthiune\n"
-	remove_if_present "Cynthiune"
+	remove_ifx_app "Cynthiune"
 	install_cynthiune
-	update_info_unit;;
-"Dictionary")
-	printf "You chose Dictionary\n"
-	remove_if_present "DictionaryReader"
-	install_dictionaryreader
-	update_info_unit;;
+	update_info_plist Cynthiune;;
 "FlexiSheet")
 	printf "You chose FlexiSheet\n"
-	remove_if_present "FlexiSheet"
+	remove_ifx_app "FlexiSheet"
 	install_flexisheet
-	update_info_unit;;
-"FontManager")
-	printf "You chose FontManager\n"
-	remove_if_present "FontManager"
-	install_fontmanager
-	update_info_unit;;
-"FTP")
-	printf "You chose FTP\n"
-	remove_if_present "FTP"
-	install_ftp;;
+	update_info_plist FlexiSheet;;
 "Graphos")
 	printf "You chose Graphos\n"
-	remove_if_present "Graphos"
-	install_graphos;;
+	remove_ifx_app "Graphos"
+	install_graphos
+	update_info_plist Graphos;;
 "Grr")
 	printf "You chose Grr\n"
-	remove_if_present "Grr"
-	install_grr;;
-"GSPdf")
-	printf "You chose GSPdf\n"
-	remove_if_present "GSPdf"
-	install_gspdf;;
-"HelpViewer")
-	printf "You chose HelpViewer\n"
-	remove_if_present "HelpViewer"
-	install_helpviewer;;
-"Ink")
-	printf "You chose Ink\n"
-	remove_if_present "Ink"
-	install_ink;;
-"Installer")
-	printf "You chose Installer\n"
-	remove_if_present "Installer"
-	install_installer;;
+	remove_ifx_app "Grr"
+	install_grr
+	update_info_plist Grr;;
 "LaternaMagica")
 	printf "You chose LaternaMagica\n"
-	remove_if_present "LaternaMagica"
-	install_laternamagica;;
-"Librarian")
-	printf "You chose Librarian\n"
-	remove_if_present "Librarian"
-	install_librarian
-	update_info_unit;;
-"Memory")
-	printf "You chose Memory\n"
-	remove_if_present "Memory"
-	install_memory;;
+	remove_ifx_app "LaternaMagica"
+	install_laternamagica
+	update_info_plist LaternaMagica;;
 "NetSurf")
 	printf "You chose NetSurf\n"
-	remove_if_present "NetSurf"
-	install_netsurf;;
-"OpenUp")
-	printf "You chose OpenUp\n"
-	remove_if_present "OpenUp"
-	install_openup
-	update_info_unit;;
+	remove_ifx_app "NetSurf"
+	install_netsurf
+	update_info_plist NetSurf;;
 "PikoPixel")
 	printf "You chose PikoPixel\n"
-	remove_if_present "PikoPixel"
+	remove_ifx_app "PikoPixel"
 	install_pikopixel
-	update_info_unit;;
+	update_info_plist PikoPixel;;
 "Player")
 	printf "You chose Player\n"
-	remove_if_present "Player"
+	remove_ifx_app "Player"
 	install_player
-	update_info_unit;;
+	update_info_plist Player;;
 "PowerPaint")
 	printf "You chose PowerPaint\n"
-	remove_if_present "PowerPaint"
+	remove_ifx_app "PowerPaint"
 	install_powerpaint
-	update_info_unit;;
+	update_info_plist PowerPaint;;
 "PPC")
 	printf "You chose PPC\n"
-	remove_if_present "PPC"
-	install_ppc;;
+	remove_ifx_app "PPC"
+	install_ppc
+	update_info_plist PPC;;
 "Preview")
 	printf "You chose Preview\n"
-	remove_if_present "Preview"
+	remove_ifx_app "Preview"
 	install_preview
-	update_info_unit;;
+	update_info_plist Preview;;
 "PRICE")
 	printf "You chose PRICE\n"
-	remove_if_present "PRICE"
+	remove_ifx_app "PRICE"
 	install_price
-	update_info_unit;;
-"ScanImage")
-	printf "You chose ScanImage\n"
-	remove_if_present "ScanImage"
-	install_scanimage
-	update_info_unit;;
-"ScreenShot")
-	printf "You chose ScreenShot\n"
-	remove_if_present "ScreenShot"
-	install_screenshot
-	update_info_unit;;
-"StepSync")
-	printf "You chose StepSync\n"
-	remove_if_present "StepSync"
-	install_stepsync
-	update_info_unit;;
+	update_info_plist PRICE;;
 "TalkSoup")
 	printf "You chose TalkSoup\n"
-	remove_if_present "TalkSoup"
-	install_talksoup;;
-"Vindaloo")
-	printf "You chose Vindaloo\n"
-	remove_if_present "ViewPDF"
-	install_vindaloo;;
+	remove_ifx_app "TalkSoup"
+	install_talksoup
+	update_info_plist TalkSoup;;
 "Weather")
 	printf "You chose Weather\n"
-	remove_if_present "Weather"
+	remove_ifx_app "Weather"
 	install_weather
-	update_info_unit;;
-"Zipper")
-	printf "You chose Zipper\n"
-	remove_if_present "Zipper"
-	install_zipper;;
+	update_info_plist Weather;;
 esac
 done
 else exit 0
@@ -284,11 +194,21 @@ extra_apps_menu
 
 ################################################
 
-printf "Linking and making services: wait please...\n"
+printf "Linking: wait please...\n"
+sudo ldconfig &>/dev/null &
+PID=$!
+spinner
+ok "\rDone"
 
-sudo ldconfig
-make_services
+printf "\nUpdating Services: wait please...\n"
+make_services &>/dev/null &
+PID=$!
+spinner
+ok "\rDone"
 
 print_size
 
 sleep 2
+
+
+

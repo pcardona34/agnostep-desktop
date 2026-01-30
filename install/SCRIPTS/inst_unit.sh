@@ -16,6 +16,7 @@
 
 ### Include functions
 
+. SCRIPTS/log.sh
 . SCRIPTS/colors.sh
 . SCRIPTS/check_app.sh
 . SCRIPTS/size.sh
@@ -47,16 +48,16 @@ else
 fi
 
 _PWD=`pwd`
+
 echo $PATH | grep -e "/System/Tools" &>/dev/null
 if [ $? -ne 0 ];then
 	export PATH=/System/Tools:$PATH
 fi
 GSMAKE=$(gnustep-config --variable=GNUSTEP_MAKEFILES)
 . ${GSMAKE}/GNUstep.sh
-LOG="$HOME/AGNOSTEP_BUILD_UNIT.log"
 SPIN='/-\|'
 INSTALL_DIR=$(gnustep-config --variable=GNUSTEP_LOCAL_APPS)
-#INSTALL_ARGS="GNUSTEP_INSTALLATION_DOMAIN=LOCAL"
+
 ### End of VARS
 ################################
 
@@ -67,7 +68,7 @@ titulo
 ################################
 ### Is there a Build Folder?
 
-if ! [ -d ../build ];then
+if [ ! -d ../build ];then
 	mkdir -p ../build
 fi
 
@@ -78,11 +79,6 @@ if ! [ -d $INSTALL_DIR ];then
 	alert "$INSTALL_DIR was not found!"
 	exit 1
 fi
-
-#################################################
-### New LOG
-
-echo "$0" >$LOG
 
 ##############################################
 ## If you want some app to be installed

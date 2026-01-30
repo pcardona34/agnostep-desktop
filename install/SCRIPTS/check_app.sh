@@ -10,6 +10,7 @@
 ####################################################
 
 . SCRIPTS/colors.sh
+. SCRIPTS/find_app.sh
 
 #########################################
 ### Check if the app is ok
@@ -43,8 +44,9 @@ else
 	exit 1
 fi
 
-cd $GNUSTEP_APPS_DIR || exit 1
-if [ -d "${APP}" ] || [ -d "${APP}.app" ];then
+CHEMAPP=""
+findapp ${APP}
+if [ $? -eq 0 ] && [ -n "$CHEMAPP" ];then
 	info "The application ${APP} has been found: ok."
 else
 	alert "ERROR! The application ${APP} was not found in ${GNUSTEP_APPS_DIR}.\nPlease, report this issue at:\n${ISSUES}"

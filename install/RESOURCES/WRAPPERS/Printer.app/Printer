@@ -1,0 +1,5 @@
+#!/bin/bash
+
+APP=/usr/local/bin/Setup_Printer
+
+xterm -title "Printer Setup" -e "$APP" "$date_today"

@@ -45,8 +45,12 @@ The whole desktop and apps mut be localized:
 
 ## Porting on a pi500
 
-[ ] All tests todo...
+[ ] All tests to do again...
 
+## Better wrappers with GNUstep menus
+
+[ ] Use NSTask to handle UNIX commands within GNUstep apps...
+[ ] Target: see Xapps Wrappers.
 
 ## Porting Application Manager and AGNOSTEP-theme
 

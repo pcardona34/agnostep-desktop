@@ -28,7 +28,6 @@ SPIN='\-/|'
 STOP=0 # Set to 0 to avoid stops; to 1 to make stops and debug
 #set -v
 MSG_STOP="Stop: type <Enter> to continue."
-LOG=$HOME/AGNOSTEP_USER_SETTINGS.log
 LG=${LANG:0:2}
 
 case "$LG" in
@@ -43,6 +42,7 @@ esac
 ####################################################
 ### Include functions
 
+. SCRIPTS/log.sh
 . SCRIPTS/colors.sh
 . SCRIPTS/spinner.sh
 . SCRIPTS/functions_prep.sh

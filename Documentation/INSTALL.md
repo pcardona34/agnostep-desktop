@@ -42,6 +42,11 @@ You should get the latest Debian Trixie release: 13.x as shown by:
 
 3) Enable and install your desired locale:
 
+Until now, AGNoStep Desktop is localized in English (default) and in French.
+
+If you choose default, you may skip the following step. Otherwise, it is mandatory to get a well localized French Desktop.
+
+
 ````
 	sudo dpkg-reconfigure locales
 	
@@ -60,7 +65,7 @@ You should get the latest Debian Trixie release: 13.x as shown by:
 	locale
 ````
 
-- **Nota**: until now, installation scripts are only in English.  
+- **Nota**: until now, most of the installation scripts are only in English.  
 L18N of AGNoStep depends of the state of the respective translations of the apps in the GNUstep project. For the Conky Panel or the dockapps of the Classic flavour (see agnostep-theme) French and English are available.
 
 ### Prerequisites
@@ -82,28 +87,39 @@ L18N of AGNoStep depends of the state of the respective translations of the apps
 ````
 	git clone https://github.com/pcardona34/agnostep-desktop
 ````
-
-
 	
 ### Start Main AGNoStep menu
 
 ````
 	cd agnostep-desktop
+````
+
+- If you already installed a previous version, udpdate with:
+
+````
+	git pull
+````
+
+- Now you are ready to execute the main script:
+
+````
 	./agnostep.sh
 ````
 
 The first time, you should run from the above menu these three items in this order:
 
-1) Core
-2) Settings
-3) DM
+1) Core: will install the Core Desktop.
+2) Apps: will install all the Core Apps.
+3) Settings: will set the theme...
+4) DM: will install the display manager.
 
-You can see progress and info messages while AGNoStep is installing.
+You can view progress and info messages while AGNoStep is installing.
 After several minutes, you should be able to start the AGNoStep Desktop:
-- With `startx` (after stage 2) 
-- From 'Lightdm' graphical Login (after stage 3). 
+- With `startx` (after stage 3) 
+- From 'Lightdm' graphical Login (after stage 4). 
 
-**TIP:** If you need to use CLI again, use TTY2 to login to the console: `CTRL-ALT-F2`.
+**TIP:** If you need to use CLI again, use TTY2 to login to the console: `CTRL-ALT-F2`.  
+Then go back the graphical environment with: `CTRL-ALT-F7`.
 	
 ---
 
@@ -209,4 +225,5 @@ try the following alternative manual stages to note the issue concerned.
 From the main menu, execute these tasks:
 
 1) Core
-2) Settings
+2) Apps
+3) Settings

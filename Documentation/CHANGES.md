@@ -8,6 +8,21 @@ Do not try nor report issue until a release is tagged Stable.
 
 ## Changes
 
+### Changes of the dev release 0.9.9.0 - beta
+
+This is a main dev release with many changes and improvements:
+
+- Changes to allow new AGNOSTEP-theme feature: wallpaper rotate.
+- Changes to comply with the subcategories in the 'Applications' folder.
+- Testing and improvements with AgnostepManager, the menu of installation tasks.
+- Mostly all the scripts and functions were improved due to heavy testing and to the changes above. Better way to find installed apps, even in subfolders, and cleaner removing too.
+- Documentation updated to reflect Applications subcategories, namely new 'Core Apps' and 'Utilities' folder.
+- New wrappers: AgnostepManager, Printer, RPI_TOOLS/Rpi-Bookshelf.
+- New Resources to handle the case of pi500 and vc4 driver (still to be tested and validated).
+- Updating Xresources (XTerm) with no conflict with AGNOSTEP-theme.
+- New way to log all the scripts in a single consistent journal in /var/log : see log.sh.
+- Better nano config within Nano wrapper to handle more common shortkeys.
+
 ### Changes of the dev release 0.9.8.4 - Beta
 
 - Added ftp (fixed webservices fetching issue); fixed conf issue with quilt (solved popplerkit install).

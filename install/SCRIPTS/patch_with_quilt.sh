@@ -27,7 +27,7 @@ else
 	DEP="quilt"
 	STR="Dependencies: ${DEP}";subtitulo
 	sudo apt -y install ${DEP}
-	ok "Done";sleep 2;clear
+	ok "Done";sleep 1;clear
 fi
 }
 
@@ -44,6 +44,5 @@ QUILT_DIFF_ARGS="--no-timestamps --no-index"
 QUILT_REFRESH_ARGS="--no-timestamps --no-index"
 QUILT_PATCHES="debian/patches"
 ENDOFQUILT
-
 fi
 }

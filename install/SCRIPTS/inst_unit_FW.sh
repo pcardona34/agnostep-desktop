@@ -20,6 +20,7 @@
 ################################
 ### Include functions
 
+. SCRIPTS/log.sh
 . SCRIPTS/colors.sh
 . SCRIPTS/spinner.sh
 . SCRIPTS/functions_prep.sh
@@ -52,7 +53,6 @@ echo $PATH | grep -e "/System/Tools" &>/dev/null
 if [ $? -ne 0 ];then
 	export PATH=/System/Tools:$PATH
 fi
-LOG=$HOME/AGNOSTEP_BUILD_UNIT_FW.log
 THERE=`pwd`
 _PWD=`pwd`
 SPIN='/-\|'
@@ -83,7 +83,9 @@ if ! [ -d ../build ];then
 fi
 
 ################################
-### This is the list of available FW: do not uncomment!
+### This is for info
+### the list of available FW: 
+### do not uncomment!
 # pdfkit
 # addresses
 # addressview

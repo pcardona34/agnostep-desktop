@@ -30,62 +30,84 @@ It is like the [Ports Collections](https://www.lpthe.jussieu.fr/~talon/freebsdpo
 
 ## An expandable collection of applications
 
-When the Core Desktop is installed, you can expand it with the ports collections: AGNoStep provides a useful tool, the **"Applications Manager"**.  
+When the Core Desktop is installed, you can expand it with the ports collections: AGNoStep provides a useful tool, the **AgnostepManager** which will simplify all the installation tasks.  
 It allows to select some ports and to build them easily:
+
+![AgnostepManager](Screenshots/screenshot_2026-01-30_AgnostepManager.png)
 
 - **Extra** Applications collection: see [EXTRA List](Documentation/EXTRA_APPS.md).
 - **Devel** Environment: see [DEVEL List](Documentation/DEVEL_ENV.md).
+- **Utilities**: see [UTILITIES](Documentation/UTIL.md)
 - GNUstep **Games** collection: see [GAMES List](Documentation/GAMES.md).
-- **Wrappers** to include non native GNUstep to work within the Workspace: see [WRAPPERS List](Documentation/WRAPPERS.md).
-
+- **Wrappers** to include non native GNUstep to work within the Workspace: see [WRAPPERS List](Documentation/WRAPPERS.md). Among these wrappers, you will find *utilities*:
+  - **AgnostepMananger** (see above).
+  - **Printer**: to setup your printer or scanner;
+  - **Upgrade**: a wizard to upgrade the Debian installed software.
+ 
 ## At the Edge and with consistency
 
 - AGNoStep tries to follow the most recent fixes and patches provided by the GNUstep community. 
-- So most of the applications are built from the latest subversion or git repos.
+- So most of the applications are built from the latest *subversion* or *git* repos.
 - All known issues are discussed with the community, so Agnostep contributes to make the ecosystem better. Its purpose is to be consistent with all the work done by the community.
 
 ## About Theming
 
 You can install the Core Desktop with a theme of your choice, or apply the in purpose theme above.
-AGNOSTEP-theme provides two flavours: *classic* and *conky*.
+[AGNOSTEP-theme](https://github.com/pcardona34/agnostep-theme) provides two flavours: *classic* and *conky*, and two menus styles: *NexT* or *MacStyle*.
+Also AGNOSTEP-theme provides a wallpaper rotate service with beautiful collections of pictures.
 
 ## Available for Raspberry Pi's too
 
-Following the Agnostic principle, as AGNoStep was forked from the deprecated [PiSiN](https://github.com/pcardona34/pi-step-initiative) project, you can still install it on a Rasbberry Pi.
+- Following the Agnostic principle, as AGNoStep was forked from the deprecated [PiSiN](https://github.com/pcardona34/pi-step-initiative) project, you can still install it on a Rasbberry Pi.
 If a RPI is detected, some settings will be adapted to it. Of course, you must use a specific SD Card with the RPI OS Lite: see INSTALL section below. 
+
+When a Raspberry Pi is detected, more apps are installed:
+
+- **Rpi-imager**
+- **Rpi-Bookshelf**
 
 ## How to install
 
 Read [INSTALL](Documentation/INSTALL.md) first to understand all the stages.
 
-Quick way: on a fresh minimal Debian Trixie (13.x) on a computer wired to Internet, execute:
+Quick way: on a fresh minimal Debian Trixie (13.x) on a computer wired to Internet, clone the this repo and then execute:
 
 ````	
 	./agnostep.sh
 ````
 
+It will show up **AgnostepManager**.
+
 From the main menu:
 
 1) Install the Core Desktop.
-2) Set the User settings, theme...
-3) Try it with:
+2) Install the Core apps.
+3) Set the User settings, theme: you will choose a flavour of AGNOSTEP-theme, a menu style...
+
+**Tip**: if you want the GNUstep default theme, execute `./uninstall_theme.sh` in `build/agnostep-theme/install` folder.
+ 
+4) Try it with:
 
 ````
 	cd && startx
 ````
 
-4) Logout the desktop.
-5) Run again "Applications Manager":
+5) Logout the desktop.
+6) Run again "AgnostepManager":
 
 ````	
 	./agnostep.sh
 ````
 
-From the main menu, choose "DM" item to install the Display Manager.
+From the main menu, choose **"DM"** item to install the Display Manager.
 
 ## Screenshots
 
-See [AGNOSTEP-theme screenshots](https://github.com/pcardona34/agnostep-theme/blob/main/Screenshots) to see the different flavours of the theme.
+AGNostep-desktop with AGNOSTEP-theme: Classic flavour, Next style menu and WORLD wallpapers collection: SimpleAgenda and GWorkspace at launch time.
+
+![AGNoStep-Desktop](Screenshots/screenshot_2026-01-30_AGNOSTEP_Classic_with_WORLD_WP.png)
+
+See also [AGNOSTEP-theme screenshots](https://github.com/pcardona34/agnostep-theme/blob/main/Screenshots) to see the different flavours of the theme.
 
 ## User guides
 

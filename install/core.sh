@@ -12,7 +12,8 @@
 ### Banniere
 clear
 #cat RESOURCES/logo.txt
-dialog --backtitle "AGNoStep Desktop" --title "Core Installer" \
+dialog --no-shadow --backtitle "AGNoStep Desktop" \
+--title "Core Installer" \
 --sleep 5 --infobox "
 Welcome to an  AGNoStep World!
 
@@ -20,16 +21,15 @@ CORE installer script will start soon..." 8 50
 
 ####################################################
 ### VARS
-LOGENJ="$HOME/CORE.log"
+
 IS_OK=0
-### LITE=0 means full install - LITE=1 means lite install: only basic apps
-LITE=0
-#LITE=1
 _PWD=`pwd`
 THERE=${_PWD}
+
 ####################################################
 ### Functions
 
+. SCRIPTS/log.sh
 . SCRIPTS/colors.sh
 . SCRIPTS/functions_prep.sh
 
@@ -47,7 +47,7 @@ function core_install
 ####################################################
 ### Timer (1)
 BEG=`date`
-echo "AGNOSTEP: Begining of script $0 at: $BEG" > $LOGENJ
+echo "AGNOSTEP: Begining of script $0 at: $BEG" > $LOG
 
 ####################################################
 ### Install steps
@@ -64,27 +64,16 @@ cd ${THERE}
 cd ${THERE}
 ./4_install_frameworks.sh || exit 1
 
-cd ${THERE}
-./5_install_core_apps.sh || exit 1
-
-warning "Do not forget to install User settings and Theme now."
-
-
 ##################################################
 ### Timer (2)
 END=`date`
-echo "AGNOSTEP: End of script $0 at: $END" >> $LOGENJ
+echo "AGNOSTEP: end of script $0 at: $END" >> $LOG
 
-cd
-
-### Cleaner
-if [ ! -d $HOME/Documents/LOGS ];then
-	mkdir -p $HOME/Documents/LOGS
-fi
-mv --force *.log $HOME/Documents/LOGS
+cd ${THERE}
 
 }
 ### End of function core_install
+
 
 ##################################################################
 ### Main part of the script
@@ -93,7 +82,8 @@ clear
 
 if [ -f $HOME/.xinitrc ] || [ -f $HOME/.xsession ];then
 
-	dialog --backtitle "AGNoStep Desktop" --title "Core Installation" \
+	dialog --no-shadow --clear --backtitle "AGNoStep Desktop" \
+	--title "Core Installation" \
 	--yesno "
 	A script to start the X session was found in your home directory.
 
@@ -110,4 +100,3 @@ if [ -f $HOME/.xinitrc ] || [ -f $HOME/.xsession ];then
 else
 	core_install
 fi
-

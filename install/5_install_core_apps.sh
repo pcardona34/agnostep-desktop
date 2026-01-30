@@ -16,7 +16,9 @@
 ####################################################
 ### Vars
 
+_PWD=`pwd`
 RPI=1
+CHECK=YES
 
 ### End of vars
 ####################################################
@@ -28,16 +30,17 @@ RPI=1
 . SCRIPTS/functions_prep.sh
 . SCRIPTS/size.sh
 
+clear
 
 is_hw_rpi
 if [ $RPI -eq 0 ];then
 	. SCRIPTS/inst_rpi_tools.sh
 fi
 
-. SCRIPTS/first_inst_core_apps.sh
-. SCRIPTS/inst_wrappers.sh
-
-
-### Space available ?
-print_size
-
+which -s GWorkspace
+if [ $? -ne 0 ];then
+	. SCRIPTS/first_inst_core_apps.sh
+	. SCRIPTS/inst_wrappers.sh
+else
+	. SCRIPTS/inst_core_apps.sh
+fi

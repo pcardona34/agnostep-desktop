@@ -13,13 +13,13 @@
 ### Loading...
 ################################
 
-PREFIX=`echo ${LANG%.UTF-8} | awk -F_ '{print $1}'`
+LG=${LANG:0:2}
 TITLE="A G N o S t e p"
 
-case "$PREFIX" in
-	"fr")
+case "$LG" in
+"fr")
 	MSG="Démarrage du bureau...";;
-	"en")
+"en"|*)
 	MSG="Desktop is loading...";;
 esac
 

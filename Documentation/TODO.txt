@@ -1,0 +1,77 @@
+
+agnostep-theme
+=================
+RELEASE 8.0 - Beta: tested wallpaper rotate. Finished and pushed.
+
+agnostep-desktop:
+==================
+
++ extension agnostep binaire
++ wrapper 'agnostep'
+
+[x] git push depuis build/agnostep-theme
+
+--------------------------------------
+
+[ ] Nouveaux tests sdcard vierge sur pi500
+
+==========================
+
+Future version
+
+Profil firefox => page accueil: liens vers RPI, GNUstep, Agnostep...
+Referentiel Prog objC/GNUstep
+Terminal service / Wterm VS xterm?
+General Wrapper avec menus GS
+Service: French Lookup (Dico.app / Littre.app)
+md => make a book... => pdf
+--------------------------------------
+Surf Web Browser: à travailler => Surf.app ?
+--------------------------------------
+HLKit: cf. Mail
+HighlighterKit and Gemas
+
+Hello German,
+Hello All,
+
+I wonder if we could add more syntax regognition to extend Gemas to handle these type of files:
+- Bash script (.sh);
+- Markdown (.md).
+-----------------------------------
+Portage de Cocotron vers GNUstep:
+- Comics reader
+- Bookshelf... vs Librarian?
+
+------------------------------------
+
+===========================================
+[-] Installer: pkg format?
+Flat Package Format - The missing documentation
+http://s.sudre.free.fr/Stuff/Ivanhoe/FLAT.html
+===========================================
+[ ] Badge on an AppIcon
+=> permettrait une amélioration de:
+- Upadater.app
+- MEMO (Birthday)
+see: http://multixden.blogspot.com/2023/08/gnustep-now-has-badges.html
+===========================================
+
+??? Gershwin Desktop?
+
+===========================================
+
+[x] bargraph pour memory... / Voir aussi projet app GNUstep Memory [-] comme DockApp
+
+([ ] Tester ajout AlsaMixer.app)
+[ ] wmpasman
+?[ ] Issue? Brian Nennigan: GridLock (see deb package)
+
+? [ ] TeXShop? cf. https://github.com/TeXShop/TeXShop
+??? [ ] CocoaDialog: https://github.com/cocoadialog/cocoadialog
+??? [ ] https://github.com/MaddTheSane/NeXTRisk
+
+_____________________________
+
+Minor issues:
+[ ] Finder: traduction incomplète --> Titre de fenêtre: "Search Results"
+? loginpanel

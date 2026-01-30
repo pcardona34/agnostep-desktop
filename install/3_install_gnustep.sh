@@ -35,6 +35,7 @@ GSBUILD="../build/GNUstep_Build"
 ####################################################
 ### Include functions
 
+. SCRIPTS/log.sh
 . SCRIPTS/colors.sh
 . SCRIPTS/spinner.sh
 . SCRIPTS/functions_prep.sh
@@ -44,9 +45,6 @@ GSBUILD="../build/GNUstep_Build"
 ####################################################
 
 #not_again || exit 1
-
-
-LOG="$HOME/AGNOSTEP_PREP_GNUSTEP.log"
 
 clear
 STR="Prepare the GNUstep installation"
@@ -60,8 +58,6 @@ LIST="gnustep" && install_deps
 
 ################################
 ### VARS
-# Log
-LOG=$HOME/GNUSTEP_BUILD.log
 GS_SCRIPT=/System/Library/Makefiles/GNUstep.sh
 
 ################################

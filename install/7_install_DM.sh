@@ -16,8 +16,8 @@
 RPI=1
 _PWD=`pwd`
 clear
-LOG="$HOME/DISPLAY_MGR.log"
 
+. SCRIPTS/log.sh
 . SCRIPTS/colors.sh
 . SCRIPTS/functions_prep.sh
 

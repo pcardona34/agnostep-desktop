@@ -19,7 +19,6 @@
 ################################
 ### ENV
 
-LOG="$HOME/AGNOSTEP_BUILD_WM.log"
 _PWD=`pwd`
 SPIN='/-\|'
 . /etc/os-release
@@ -30,6 +29,7 @@ SPIN='/-\|'
 ################################
 ### Include functions
 
+. SCRIPTS/log.sh
 . SCRIPTS/colors.sh
 . SCRIPTS/spinner.sh
 . SCRIPTS/functions_prep.sh

@@ -16,16 +16,17 @@
 ###############################################################
 ### Vars
 THERE=`pwd`
-LOG="$HOME/AGNOSTEP_DEPS.log"
 SPIN='/-\|'
 STATUS=0
 CONF=RESOURCES/CONF/AGNOSTEP.conf
+RPI=1
 
 ### End of Vars
 ###############################################################
 
 ###############################################################
 ### include functions
+. SCRIPTS/log.sh
 . /etc/os-release
 . ${CONF}
 . SCRIPTS/colors.sh
@@ -37,7 +38,8 @@ CONF=RESOURCES/CONF/AGNOSTEP.conf
 
 ### Here it really begins...
 
-echo "AGNoStep Desktop: init log" >>$LOG
+echo "AGNoStep Desktop: init log" >> $LOG
+date >> $LOG
 
 clear
 
@@ -51,6 +53,21 @@ debian_update || exit 1
 sudo apt autoremove -y &>/dev/null
 
 LIST="build" && install_deps
+
+is_hw_rpi
+if [ $RPI -eq 0 ];then
+	NUMBER=`echo $MODEL | awk '{print $3}'`
+	if [ "$NUMBER" == "500" ] || [ "${NUMBER:0:1}" == "5" ];then
+		printf "Xorg Hacking is necessary for this model on RPI OS Lite...\n";sleep 2
+		sudo cp --verbose --force RESOURCES/99-vc4.conf /etc/X11/Xorg.conf.d/
+		sleep 2
+		DEP="gldriver-test"
+		sudo apt -y install ${DEP}
+		ok "Done"
+		sleep 2
+		clear
+	fi
+fi
 
 sudo ldconfig
 

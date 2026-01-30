@@ -19,6 +19,7 @@
 ### Include functions
 
 . install/SCRIPTS/colors.sh
+
 ################################
 
 ################################
@@ -55,20 +56,29 @@ fi
 # Main menu
 function main_menu
 {
-# boîte de menu
-dialog --no-shadow --backtitle "A G N o S t e p" --title "Applications Manager" \
---menu "
-First time: install Core, Settings and DM.
+if [ -z "$DISPLAY" ];then
+	BACK="AGNoStep Manager"
+else
+	BACK=""
+fi
 
-What to do now?" 18 66 13 \
-"Core" "Install Core Desktop and Apps" \
+dialog --no-shadow --backtitle "${BACK}" \
+ --title "Applications Manager" \
+ --menu "
+First time: install Core, Apps, Settings and DM.
+
+What to do now?" 21 66 16 \
+"Core" "Install Core Desktop" \
+"Apps" "Install Core Apps" \
 "Settings" "User Settings and Theme" \
 "DM" "Install Display Manager" \
 "Devel" "Install Developer Apps" \
 "Extra" "Install more User Apps" \
+"Util" "Utilities" \
 "Games" "Install Games" \
 "Wrappers" "Install Wrappers" \
-"Remove" "Remove some App" 2>> $FICHTEMP
+"Remove" "Remove some App" \
+"Logs" "Desktop and Theme Logs" 2>> $FICHTEMP
 
 # traitement de la réponse
 if [ $? = 0 ]
@@ -79,6 +89,9 @@ case $i in
 "Core") printf "You chose: Core\n"
 	cd install || exit 1
 	./core.sh;;
+"Apps") printf "You chose: Apps\n"
+	cd install || exit 1
+	./5_install_core_apps.sh;;
 "Settings") printf "You chose: Settings\n"
 	cd install || exit 1
 	./6_user_settings.sh;;
@@ -91,6 +104,9 @@ case $i in
 "Extra") printf "You chose Extra\n"
 	cd install || exit 1
 	bash ./SCRIPTS/inst_extra.sh;;
+"Util") printf "You chose Util\n"
+	cd install || exit 1
+	bash ./SCRIPTS/inst_tools.sh;;
 "Games") printf "You chose Games\n"
 	cd install || exit 1
 	bash ./SCRIPTS/inst_games.sh;;
@@ -99,12 +115,18 @@ case $i in
 	bash ./SCRIPTS/inst_wrappers.sh;;
 "Remove") printf "You chose Remove\n"
 	cd install || exit 1
-	./remove.sh;;
+	./remove_app.sh;;
+"Logs") printf "You chose Logs\n"
+	cd install || exit
+	./view_logs.sh;;
 esac
 done
 fi
 }
 ################################################
+
+################################################
+### Main section
 
 is_dialog
 main_menu

@@ -1,0 +1,7 @@
+{
+  NSExecutable = "Rpi-Bookshelf";
+  NSRole = "Application";
+  NSIcon = "Rpi-Bookshelf.tiff";
+  CFBundleIdentifier = "com.raspberrypi.Rpi-Bookshelf";
+  XAppWrapper = YES;
+}

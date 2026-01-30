@@ -23,10 +23,8 @@ if [ $? -ne 0 ];then
 fi
 GSMAKE=$(gnustep-config --variable=GNUSTEP_MAKEFILES)
 . ${GSMAKE}/GNUstep.sh
-LOG="$HOME/AGNOSTEP_BUILD_WRAPPERS.log"
 SPIN='/-\|'
 INSTALL_DIR=$(gnustep-config --variable=GNUSTEP_LOCAL_APPS)
-#INSTALL_ARGS="GNUSTEP_INSTALLATION_DOMAIN=LOCAL"
 WEBB=""
 RPI=1 # by default, we guess the computer is not a RPI one
 FICHTEMP=$(mktemp /tmp/agno-XXXXX)
@@ -38,10 +36,13 @@ trap "rm -f $FICHTEMP" EXIT
 ################################
 ### Include functions
 
+. SCRIPTS/log.sh
 . SCRIPTS/colors.sh
 . SCRIPTS/check_app.sh
 . SCRIPTS/size.sh
 . SCRIPTS/spinner.sh
+. SCRIPTS/functions_inst_tools.sh
+. SCRIPTS/functions_remove_app.sh
 . SCRIPTS/functions_inst_wrappers.sh
 . SCRIPTS/functions_prep.sh
 
@@ -84,10 +85,11 @@ fi
 
 DEP_EBookReader="fbreader"
 DEP_Inkscape="inkscape"
-DEP_Nano="nano"
+DEP_Nano="nano xterm"
 DEP_Writer="focuswriter"
 DEP_Upgrade="xterm"
-
+DEP_Printer="xterm cups cups-client cups-filters hplip printer-driver-hpijs libsane-hpaio"
+DEP_AgnostepManager="dialog xterm"
 ################################
 ### Is there a LOCAL APPS Folder?
 
@@ -95,6 +97,11 @@ if ! [ -d $INSTALL_DIR ];then
 	alert "$INSTALL_DIR was not found!"
 	exit 1
 fi
+LG=${LANG:0:2}
+case "$LG" in
+"fr") TOOLS=Utilitaires;;
+"en"|*) TOOLS=Utilities;;
+esac
 
 #################################################
 
@@ -107,6 +114,9 @@ dialog --backtitle "$STR" --title "Web Browser" \
 Choose one Web Browser Wrapper:" 18 66 2 \
 "Chromium" "The free Chrome Web Browser" \
 "Firefox" "The Mozilla Foundation Web Browser" 2> $FICHTEMP
+
+clear
+
 # traitement de la réponse
 if [ $? = 0 ]
 then
@@ -141,11 +151,16 @@ dialog --backtitle "$STR" --title "Other Wrappers" \
 --ok-label "OK"  \
 --checklist "
 Check the Tools you want to install." 18 60 10 \
-"EBookReader" "A wrapper for FBReader" on \
-"Inkscape" "A wrapper for Inkscape Vectorial Draw" on \
+"AgnostepManager" "A menu to manage installation" off \
+"EBookReader" "A wrapper for FBReader" off \
+"Inkscape" "A wrapper for Inkscape Vectorial Draw" off \
 "Nano" "The GNU Nano editor" on \
+"Printer" "Printer Setup" on \
 "Upgrade" "A useful wrapper for Debian upgrade" on \
 "Writer" "A wrapper for FocusWriter" off 2> $FICHTEMP
+
+clear
+
 # traitement de la réponse
 # 0 est le code retour du bouton Valider
 # ici seul le bouton Valider permet de continuer
@@ -155,20 +170,58 @@ then
 for i in `cat $FICHTEMP`
 do
 case "$i" in
+"AgnostepManager")
+	WRAP="AgnostepManager"
+	printf "You chose $WRAP"
+	remove_ifx_app "$WRAP"
+	CHECK=""
+	install_wrapper "$WRAP" "$DEP_${WRAP}"
+	move_to_tools "$WRAP"
+	check "$WRAP"
+	set_conf "xterm";;
 "EBookReader")
 	printf "You chose EBookReader.\n"
+	remove_ifx_app "EBookReader"
+	CHECK="YES"
 	install_wrapper EBookReader "$DEP_EBookReader";;
 "Inkscape")
-	printf "You chose Inkscape"
+	printf "You chose Inkscape.\n"
+	remove_ifx_app "Inkscape"
+	CHECK="YES"
 	install_wrapper Inkscape "$DEP_Inkscape";;
 "Nano")
 	printf "You chose Nano"
-	install_wrapper Nano "$DEP_Nano";;
+	remove_ifx_app Nano
+	CHECK=""
+	install_wrapper Nano "$DEP_Nano"
+	move_to_tools Nano
+	check Nano
+	set_conf "nano"
+	set_conf "xterm";;
+"Printer")
+	printf "You chose Printer"
+	groups | grep -e "lpadmin" &>/dev/null
+	if [ $? -ne 0 ];then
+        	sudo usermod -aG lpadmin $USER
+	fi
+	remove_ifx_app Printer
+	CHECK=""
+	install_wrapper Printer "${DEP_Printer}"
+	move_to_tools Printer
+	check Printer
+	set_conf "xterm";;
 "Upgrade")
 	printf "You chose Upgrade"
-	install_wrapper Upgrade "$DEP_Upgrade";;
+	remove_ifx_app Upgrade
+	CHECK=""
+	install_wrapper Upgrade "$DEP_Upgrade"
+	move_to_tools Upgrade
+	check Upgrade
+	set_conf "xterm";;
 "Writer")
 	printf "You chose Writer"
+	remove_ifx_app "Writer"
+	CHECK="YES"
 	install_wrapper Writer "$DEP_Writer";;
 esac
 done
@@ -178,11 +231,25 @@ fi
 
 #############################################
 
-sudo apt -y update && sudo apt -y upgrade && sudo apt -y autoremove
+sudo apt -y update && sudo apt -y upgrade
 
 webb_menu
 other_menu
 
-printf "Linking and making services: wait, please...\n"
-sudo ldconfig
-make_services
+#############################################
+
+printf "Linking: wait please...\n"
+sudo ldconfig &>/dev/null &
+PID=$!
+spinner
+ok "\rDone"
+
+printf "\nUpdating Services: wait please...\n"
+make_services &>/dev/null &
+PID=$!
+spinner
+ok "\rDone"
+
+print_size
+
+sleep 2

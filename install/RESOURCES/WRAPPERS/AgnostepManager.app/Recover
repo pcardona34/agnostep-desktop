@@ -1,0 +1,17 @@
+#!/bin/bash
+
+_PWD=`pwd`
+
+function recovering
+{
+if [ ! -d $HOME/SOURCES ];then
+	mkdir -p $HOME/SOURCES
+	cd $HOME/SOURCES || exit 1
+	git clone https://github.com/pcardona34/agnostep-desktop
+fi
+}
+
+recovering
+cd $_PWD
+stexec Resources/alert_end.st
+exit
