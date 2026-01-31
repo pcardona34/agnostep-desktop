@@ -29,7 +29,7 @@ If you successflly tested your hardware, let me know.
 - To report a successfull test on a new hardware, please report to us the following steps:
 
 Date:
-Hardware Model, CPU arch, OS release: passed percent (success / 19 \* 100). Date: ...; Release of AGNoStep-desktop
+Hardware Model, CPU arch, OS release: passed percent (total of success / 42 \* 100). Date: ...; Release of AGNoStep-desktop
 
 See Detailed [TESTS](TESTS.md) protocol.
 
