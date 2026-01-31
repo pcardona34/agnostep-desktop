@@ -19,7 +19,9 @@ These apps are provided with the Core Desktop and installed the first time.
 - TimeMon: a CPU monitoring (with the Classic flavour)
 - VolumeControl: an ALSA compliant Mixer
 
-### Why Ink and not the classic expected TextEdit? TextEdit 4 has been modified to fit on GSDE. TextEdit 5 (namely from Debian/Salsa sources) was unstable, crashing or frozing the system: we do not want such an app. Instead, Ink revealed to be a good and consistent alternative, with history management available.
+### Why Ink and not the classic expected TextEdit?
+
+TextEdit 4 has been modified to fit on GSDE. TextEdit 5 (namely from Debian/Salsa sources) was unstable, crashing or frozing the system: we do not want such an app. Instead, Ink revealed to be a good and consistent alternative, with history management available, which was also broken with TextEdit.
  
 ## Dockapps
 
@@ -35,17 +37,17 @@ If you choose the Conky flavour, a System infos Panel will provide most of the a
 
 ### More apps?
 
-Of course, you can add more apps with **AgnostepManager** later. execute:
+Of course, you can add more apps with **AgnostepManager** later. Execute:
 
 - Within a TTY console:
 
 ````agnostep.sh````
 
-- In the FileViewer Panel, click on the Icon Applications on the Shelf. Open then the **Utilities** folder, select and open **AgnostepManager.app**.
+- In the FileViewer Panel, click on the **Applications** Icon on the Shelf. Open then the **Utilities** folder, select and open **AgnostepManager.app**.
 
-From the menu, choose the category of apps to add.
+From the menu, choose the category of the apps to add.
 
-See respective documents for each category: 
+See respective documentations for each category: 
 
 - [EXTRA APPS](./EXTRA_APPS.md)
 - [DEVEL ENV](./DEVEL_ENV.md)
