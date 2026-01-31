@@ -6,17 +6,17 @@
 
 - We use **Window Maker**: 0.96.0. (debian default package version) with AGNOSTEP.themed.
 
-Otions depend on the Theme flavour chosen: 
+Options depend on the Theme flavour chosen: 
 
 - Classic flavour: `--static`: it is to prevent mistakes. ;-)
 - Conky Flavour: `--no-dock  --no-clip --static`. In this case, the provided Dock belongs to GWorspace: see below. 
 
-Some apps and tools are launched with the 'autostart' script of Window Maker, others form the Dock. Again, it depends on the flavour chosen.
+Some apps and tools are launched with the 'autostart' script of Window Maker, others from the Dock. Again, it depends on the flavour chosen.
 
 
 ### The Workspace
 
-- In the NeXT/OPENSTEP world, the *Workspace* is the main component: we use **GWorkspace** (1.1.0), the GNUstep implementation of the Workspace.  
+- In the NeXT/OPENSTEP world, the *Workspace* is the main component: we use **GWorkspace** (release 1.1.0): the GNUstep implementation of the Workspace.  
 It provides a Desktop layer, a FileViewer, a Finder panel, a Recycler, and, wether you choose the Conky flavour, its own Dock.
 
 ### Some apps provided with the Core Desktop
@@ -36,7 +36,7 @@ This section provides more technical infos. Components are used within Desktop o
 - All the apps are built from sources and so are the latest.
 - Theme: see [AGNOSTEP-theme](https://github.com/pcardona34/agnostep-theme) (previously PISIN) mostly inspired by Papirus Icon theme and GNUstep Sleek Theme.
 - Session Display Manager: [Lightdm](https://github.com/canonical/lightdm) and DBus (with DBUSKit support).
-- Sound is handled by [Alsa](https://www.alsa-project.org/wiki/Main_Page) (not pulse-audio) and a compliant Audio Mixer: see VolumeControl in the Extra apps.
+- Sound is handled by [Alsa](https://www.alsa-project.org/wiki/Main_Page) (not pulse-audio) and a compliant Audio Mixer: VolumeControl.
 - RPI tools: only on RPI when the hardware is detected, if not substituted: cf. how to set default printer within CUPS in the AGNoStep User Guide.
 - Password Manager: [pass](https://www.passwordstore.org/)
 - Installation scripts: [Bash](https://manpages.debian.org/trixie/bash/bash.1.en.html) and [Dialog](https://manpages.debian.org/stretch/dialog/dialog.1.en.html)
