@@ -9,6 +9,14 @@ It provides also a **new** in purpose **Theme** mainly inspired by the [Papirus]
 
 It is provided under the [GNU Public License](LICENSE.txt).
 
+## Screenshots
+
+AGNostep-desktop with AGNOSTEP-theme: Classic flavour, Next style menu and WORLD wallpapers collection: SimpleAgenda and GWorkspace at launch time.
+
+![AGNoStep-Desktop](Screenshots/screenshot_2026-01-30_AGNOSTEP_Classic_with_WORLD_WP.png)
+
+See also [AGNOSTEP-theme screenshots](https://github.com/pcardona34/agnostep-theme/blob/main/Screenshots) to see the different flavours of the theme.
+
 ## What is a GNUstep compliant Desktop
 
 - GNUstep is a free, open-source development environment that provides a **framework** for building cross-platform applications using the **Objective-C** programming language: see [GNUstep.org](https://www.gnustep.org). 
@@ -100,14 +108,6 @@ From the main menu:
 ````
 
 From the main menu, choose **"DM"** item to install the Display Manager.
-
-## Screenshots
-
-AGNostep-desktop with AGNOSTEP-theme: Classic flavour, Next style menu and WORLD wallpapers collection: SimpleAgenda and GWorkspace at launch time.
-
-![AGNoStep-Desktop](Screenshots/screenshot_2026-01-30_AGNOSTEP_Classic_with_WORLD_WP.png)
-
-See also [AGNOSTEP-theme screenshots](https://github.com/pcardona34/agnostep-theme/blob/main/Screenshots) to see the different flavours of the theme.
 
 ## User guides
 
