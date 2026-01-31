@@ -21,7 +21,7 @@ It provides a Desktop layer, a FileViewer, a Finder panel, a Recycler, and, weth
 
 ### Some apps provided with the Core Desktop
 
-See [CORE_APPS.md]
+See [Core Apps](CORE_APPS.md)...
 
 ### Under the ground
 
