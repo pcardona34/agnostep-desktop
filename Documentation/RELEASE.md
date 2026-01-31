@@ -7,4 +7,4 @@
 - **Status**: Beta
 - **Operating System**: Debian Trixie 13.x
 
-See [CHANGES](Documentation/CHANGES.md) to read the details of the latest changes.
+See [CHANGES](CHANGES.md) to read the details of the latest changes.
