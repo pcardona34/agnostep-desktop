@@ -19,7 +19,7 @@ Namely, the Core Desktop provides:
 
 - A complete [Workspace](http://toastytech.com/guis/openstep.html) inherited from the famous NeXT/OPENSTEP specifications.
 - A set of useful **applications**: contacts, agenda, mail user agent, Text editor, Terminal...  
-See [CORE_DESKTOP](CORE_DESKTOP.md) for details and technical notes.
+See [CORE_DESKTOP](Documentation/CORE_DESKTOP.md) for details and technical notes.
 
 ## What does mean an Agnostic GNUstep Desktop?
 
