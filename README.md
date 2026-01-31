@@ -116,3 +116,7 @@ From the main menu, choose **"DM"** item to install the Display Manager.
 ## Roadmap
 
 What next? See [Roadmap](Documentation/Roadmap.md)...
+
+## Thanks and tributes
+
+See [Thanks and tributes](Documentation/THANKS.md)
