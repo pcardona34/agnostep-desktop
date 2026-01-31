@@ -1,4 +1,4 @@
-#AGNoStep - agnostic GNUstep Desktop
+# AGNoStep - agnostic GNUstep Desktop
 
 ## Developer environment
 
