@@ -28,34 +28,52 @@
 
 ---
 
-- [x] Separate main Core Desktop and AGNOSTEP Theme.
+- [x] Separate main Core Desktop and AGNOSTEP Theme: done
+  - [x] AGNoStep became AGNosStep-desktop (this repo).
+  - [x] [AGNOSTEP-theme](https://github.com/pcardona34/agnostep-theme) (name capitalized) became the new Theme project manager. 
 
 
 ## Translation
 
 The whole desktop and apps mut be localized:
-[ ] See [L18N](L18N.md) file to follow this work in progress.
+- [ ] See [L18N](L18N.md) file to follow this work in progress.
 
 ## Help
 
-[x] AGNostep User Guide
-[x] GWorkspace User Guide
-[x] Rework all git repo documentation
-[ ] Other apps...: wait until HelpViewer specs will be finalized.
+- [x] AGNostep User Guide
+- [x] GWorkspace User Guide
+- [x] Rework all git repo documentation
+- [ ] Other apps...: wait until HelpViewer specs will be finalized.
 
-## Porting on a pi500
+## Testing
 
-[ ] All tests to do again...
+- [ ] All tests with a fresh install on a Pi 400.
+- [ ] All tests with a fresh install on a Pi 500.
+- [ ] All tests with a new amd-64 Debian iso.
+- [ ] All tests with an Intel MacBook.
+
+## Create and publish RC-1.0.0 Release ISOs
+
+- [ ] SD-Card for pi400
+- [ ] SD-Card for pi500
+- [ ] Live-Debian ISO for the other computers 
 
 ## Better wrappers with GNUstep menus
 
-[ ] Use NSTask to handle UNIX commands within GNUstep apps...
-[ ] Target: see Xapps Wrappers.
+- [ ] Use NSTask to handle UNIX commands within GNUstep apps...
+- [ ] Provide all the XApp wrappers a GNUstep menu.
+- [ ] Target: see Xapps Wrappers.
+- [ ] Handle scaling privileges (Xsudo?)
 
 ## Porting Application Manager and AGNOSTEP-theme
 
-[ ] Other projects to target? (NeXTSpace? GSDE? Gershwin-Desktop...)
+- [ ] Other projects to target? (NeXTSpace? GSDE? Gershwin-Desktop? ...)
 
 ## Universal Package for Installer
 
-[ ] Ports to Binaries...
+The idea is to propose an Universal way of installing a GNUstep app...
+
+- [ ] Exchange with GNUstep community (all the projects to be concerned)
+- [ ] Specs
+- [ ] First Universal Package
+- [ ] Adapt Installer.app to handle those UPs.
