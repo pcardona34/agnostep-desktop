@@ -23,13 +23,12 @@ if [ $? -ne 0 ];then
 	export PATH=/System/Tools:$PATH
 fi
 LIB_DIR=$(gnustep-config --variable=GNUSTEP_LOCAL_LIBRARY)
-
 . /usr/local/bin/colors.sh
 . $HOME/.local/etc/release.info
 
 #######################################################""
 ### System Infos
-function info()
+function myinfo()
 {
 OS=$(cat /etc/os-release | grep -e "^ID" | awk -F= '{print $2}')
 RELEASE=$(cat /etc/debian_version)
@@ -65,18 +64,30 @@ printf "\tGNUstep: Base: $GSBASE - Gui: $GSGUI\n"
 printf "\t${THE}: $THEME\n\n"
 }
 
+###################################################
+function am
+{
+if [ -z "$DISPLAY" ];then
+	cd $HOME/SOURCES/agnostep-desktop || exit 1
+	./agnostep.sh
+else
+	openapp AgnostepManager &
+fi
+}
+
 ##################################################
 ### Help
 function myhelp()
 {
 clear
 printf "Syntax:\n"
-cli "$0 <OPTION>\n\nOptions:\n\t--help\n\t--info"
+cli "$0 <OPTION>\n\nOptions:\n\t--help\n\t--info\n\t--am\topen AgnostepManager\n"
 }
 
 ##################################################
 
 case "$ARG" in
-	"--info" | "--Info" | "--INFO" | "info") info;;
+	"--info" | "--Info" | "--INFO" | "info") myinfo;;
+	"--am" | "--Am" | "--AM") am;;
 	*) myhelp;;
 esac

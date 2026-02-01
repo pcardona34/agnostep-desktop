@@ -60,10 +60,10 @@ titulo
 LG=${LANG:0:2}
 case "$LG" in
 "en")
-	DEP_Firefox="firefox-esr"
+	DEP_Firefox="firefox"
 	DEP_Chromium="chromium";;
 *)
-	DEP_Firefox="firefox-esr firefox-esr-l10n-${LG}"
+	DEP_Firefox="firefox firefox-l10n-${LG}"
 	DEP_Chromium="chromium chromium-l10n";;
 esac
 
@@ -137,7 +137,19 @@ case $i in
 		sudo rm -fR $INSTALL_DIR/Chromium.app
 	fi
 	install_wrapper Firefox "$DEP_Firefox"
-	sudo update-alternatives --set x-www-browser $(whereis -b firefox-esr | awk '{print $2}');;
+	sudo update-alternatives --set x-www-browser $(whereis -b firefox-esr | awk '{print $2}')
+	if [ ! -d $HOME/.mozilla ];then
+		printf "Firefox profile...\n"
+		cp RESOURCES/CONF/firefox_profile.tar.gz $HOME/
+		cd $HOME
+		gunzip firefox_profile.tar.gz
+		tar -xf firefox_profile.tar &
+		PID=$!
+		spinner
+		ok "\rDone"
+		rm firefox_profile.tar
+		cd $_PWD
+	fi;;
 esac
 done
 	install_openURLService

@@ -1,6 +1,6 @@
 #!/bin/sh
 
-APP=/usr/bin/firefox-esr
+APP=/usr/bin/firefox
 
 if [ $# -eq 2 ] ; then
   $APP "$2" &

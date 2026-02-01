@@ -1,6 +1,7 @@
 # AGNoStep: an Agnostic GNUstep Desktop for All
 
-Read [RELEASE](Documentation/RELEASE.md) to know the current status.
+- Read [RELEASE](Documentation/RELEASE.md) to know the current status.
+- See [CHANGES](Documentation/CHANGES.md) to read the details of the latest changes.
 
 ## The Goal
 

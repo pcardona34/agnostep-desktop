@@ -123,8 +123,8 @@ stop
 STR="Info release"
 subtitulo
 
-RELEASE=$(grep -e "Release" RELEASE | awk '{print $3}')
-STATUS=$(grep -e "Status" RELEASE | awk '{print $3}')
+RELEASE=$(grep -e "Release" ../Documentation/RELEASE.md | awk '{print $3}')
+STATUS=$(grep -e "Status" ../Documentation/RELEASE.md | awk '{print $3}')
 
 if [ ! -d $HOME/.local/etc ];then
 	mkdir -p $HOME/.local/etc

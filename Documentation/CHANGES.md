@@ -8,6 +8,12 @@ Do not try nor report issue until a release is tagged Stable.
 
 ## Changes
 
+### Changes of the dev release 0.9.9.1 - beta
+
+- Set Firefox profile. Remove -esr.
+- Fix path issue reading release from `agnostep` cli tool.
+- Add option `--am` to launch 'AgnosteManager' from `agnostep` cli tool.
+
 ### Changes of the dev release 0.9.9.0 - beta
 
 This is a main dev release with many changes and improvements:
