@@ -28,7 +28,7 @@ if [ -z "$INSTALL_DIR" ];then
 	INSTALL_DIR=$(gnustep-config --variable=GNUSTEP_LOCAL_APPS)
 fi
 GNUSTEP_APPS_DIR=$INSTALL_DIR
-ISSUES=https://github.com/pcardona34/agnostep/issues
+ISSUES=https://github.com/pcardona34/agnostep-desktop/issues
 
 if ! [ -d $GNUSTEP_APPS_DIR ];then
 	alert "$GNUSTEP_APPS_DIR was not found!"
@@ -69,7 +69,7 @@ if [ -z "$INSTALL_DIR" ];then
 	INSTALL_DIR=$(gnustep-config --variable=GNUSTEP_LOCAL_LIBRARY)
 	INSTALL_DIR=${INSTALL_DIR}/Frameworks
 fi
-ISSUES=https://github.com/pcardona34/pi-step-initiative/issues
+ISSUES=https://github.com/pcardona34/agnostep-desktop/issues
 
 if ! [ -d ${INSTALL_DIR} ];then
 	printf "\nError: ${INSTALL_DIR} was not found.\n";exit 1
@@ -102,7 +102,7 @@ function check_LIB()
 ### VARS ENV
 LIB="$1"
 __PWD=`pwd`
-ISSUES=https://github.com/pcardona34/pi-step-initiative/issues
+ISSUES=https://github.com/pcardona34/agnostep-desktop/issues
 
 
 if [ -z "$LIB_DIR" ];then
@@ -135,7 +135,7 @@ if [ -z "$INSTALL_DIR" ];then
 	INSTALL_DIR=$(gnustep-config --variable=GNUSTEP_USER_LIBRARY)
 fi
 GNUSTEP_THEMES_DIR=$INSTALL_DIR/Themes
-ISSUES=https://github.com/pcardona34/pi-step-initiative/issues
+ISSUES=https://github.com/pcardona34/agnostep-desktop/issues
 
 if ! [ -d $GNUSTEP_THEMES_DIR ];then
 	sudo mkdir -p $GNUSTEP_THEMES_DIR

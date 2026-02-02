@@ -103,6 +103,8 @@ make_services &>/dev/null &
 PID=$!
 spinner
 ok "\rDone"
+
+make clean
 cd $_PWD
 }
 

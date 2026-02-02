@@ -502,5 +502,5 @@ quilt push -a
 make clean
 make
 
-#_build_FW
+_build_FW
 }

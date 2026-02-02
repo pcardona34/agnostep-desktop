@@ -232,7 +232,7 @@ INSTALL_ARGS=""
 PATCH="spordefs.patch"
 TARGET="spordefs.m"
 PROJ="SporView.bproj"
-PATCH2="InnerSpace_GNUMakefile.patch"
+#PATCH2="InnerSpace_GNUMakefile.patch"
 TARGET2="GNUMakefile"
 STR="$APPNAME $RELEASE"
 subtitulo
@@ -271,10 +271,10 @@ done
 
 printf "Building Main InnerSpace...\n"
 ### PATCH
-cp $_PWD/RESOURCES/PATCHES/$PATCH2 ./
-printf "\tA patch must be applied...\n"
-patch --forward -u ${TARGET2} -i ${PATCH2} | tee -a $LOG
-ok "\tPatch applied"
+#cp $_PWD/RESOURCES/PATCHES/$PATCH2 ./
+#printf "\tA patch must be applied...\n"
+#patch --forward -u ${TARGET2} -i ${PATCH2} | tee -a $LOG
+#ok "\tPatch applied"
 
 _build
 }

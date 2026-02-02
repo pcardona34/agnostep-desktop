@@ -83,7 +83,6 @@ install_ink
 install_innerspace
 install_simpleagenda
 install_terminal
-install_textedit
 install_timemon
 install_volumecontrol
 }

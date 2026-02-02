@@ -26,7 +26,7 @@ _PWD=`pwd`
 SPIN='/-\|'
 . /etc/os-release
 GSMAKE=$(gnustep-config --variable=GNUSTEP_MAKEFILES)
-${GSMAKE}/GNUstep.sh
+. ${GSMAKE}/GNUstep.sh
 
 INSTALL_DIR=$(gnustep-config --variable=GNUSTEP_LOCAL_LIBRARY)
 INSTALL_DIR=${INSTALL_DIR}/Frameworks
@@ -44,7 +44,7 @@ fi
 . SCRIPTS/functions_prep.sh
 . SCRIPTS/std_build.sh
 . SCRIPTS/check_app.sh
-. SCRIPTS/patch_with_quilt
+. SCRIPTS/patch_with_quilt.sh
 . SCRIPTS/functions_inst_frameworks.sh
 
 ### End of Include functions

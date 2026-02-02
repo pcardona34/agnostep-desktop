@@ -163,7 +163,7 @@ dialog --backtitle "$STR" --title "Other Wrappers" \
 --ok-label "OK"  \
 --checklist "
 Check the Tools you want to install." 18 60 10 \
-"AgnostepManager" "A menu to manage installation" off \
+"AgnostepManager" "A menu to manage installation" on \
 "EBookReader" "A wrapper for FBReader" off \
 "Inkscape" "A wrapper for Inkscape Vectorial Draw" off \
 "Nano" "The GNU Nano editor" on \

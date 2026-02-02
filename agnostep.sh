@@ -19,6 +19,7 @@
 ### Include functions
 
 . install/SCRIPTS/colors.sh
+. install/SCRIPTS/log.sh
 
 ################################
 
@@ -28,7 +29,6 @@
 DEPS="dialog"
 FICHTEMP=$(mktemp /tmp/agno-XXXXX)
 trap "rm -f $FICHTEMP" EXIT
-LOG=$HOME/AGNOSTEP.log
 
 ###############################
 ### Current User must be a member of sudoers
