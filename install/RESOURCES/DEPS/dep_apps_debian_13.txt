@@ -22,6 +22,7 @@ conky-all
 ### Printer & scanner: see also Setup_Printer script
 ### cups already done
 sane-utils
+gv
 
 #inkscape #See install of Wrappers
 python3-tinycss2

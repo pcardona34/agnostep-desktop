@@ -83,6 +83,7 @@ if [ $? -eq 0 ];then
 	REMOVE="webext-browserpass"
 fi
 
+DEP_Abiword="abiword"
 DEP_EBookReader="fbreader"
 DEP_Inkscape="inkscape"
 DEP_Nano="nano xterm"
@@ -162,7 +163,8 @@ function other_menu
 dialog --backtitle "$STR" --title "Other Wrappers" \
 --ok-label "OK"  \
 --checklist "
-Check the Tools you want to install." 18 60 10 \
+Check the Tools you want to install." 19 60 11 \
+"Abiword" "Gnome Office Writer" off \
 "AgnostepManager" "A menu to manage installation" on \
 "EBookReader" "A wrapper for FBReader" off \
 "Inkscape" "A wrapper for Inkscape Vectorial Draw" off \
@@ -182,12 +184,18 @@ then
 for i in `cat $FICHTEMP`
 do
 case "$i" in
+"Abiword")
+	WRAP="Abiword"
+	printf "You chose ${WRAP}\n"
+	remove_ifx_app "$WRAP"
+	CHECK="YES"
+	install_wrapper "$WRAP" "$DEP_Abiword";;
 "AgnostepManager")
 	WRAP="AgnostepManager"
-	printf "You chose $WRAP"
+	printf "You chose ${WRAP}\n"
 	remove_ifx_app "$WRAP"
 	CHECK=""
-	install_wrapper "$WRAP" "$DEP_${WRAP}"
+	install_wrapper "$WRAP" "$DEP_AgnostepManager"
 	move_to_tools "$WRAP"
 	check "$WRAP"
 	set_conf "xterm";;
@@ -202,7 +210,7 @@ case "$i" in
 	CHECK="YES"
 	install_wrapper Inkscape "$DEP_Inkscape";;
 "Nano")
-	printf "You chose Nano"
+	printf "You chose Nano\n"
 	remove_ifx_app Nano
 	CHECK=""
 	install_wrapper Nano "$DEP_Nano"
@@ -211,7 +219,7 @@ case "$i" in
 	set_conf "nano"
 	set_conf "xterm";;
 "Printer")
-	printf "You chose Printer"
+	printf "You chose Printer\n"
 	groups | grep -e "lpadmin" &>/dev/null
 	if [ $? -ne 0 ];then
         	sudo usermod -aG lpadmin $USER
@@ -223,7 +231,7 @@ case "$i" in
 	check Printer
 	set_conf "xterm";;
 "Upgrade")
-	printf "You chose Upgrade"
+	printf "You chose Upgrade\n"
 	remove_ifx_app Upgrade
 	CHECK=""
 	install_wrapper Upgrade "$DEP_Upgrade"
@@ -231,7 +239,7 @@ case "$i" in
 	check Upgrade
 	set_conf "xterm";;
 "Writer")
-	printf "You chose Writer"
+	printf "You chose Writer\n"
 	remove_ifx_app "Writer"
 	CHECK="YES"
 	install_wrapper Writer "$DEP_Writer";;

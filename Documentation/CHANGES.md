@@ -8,6 +8,14 @@ Do not try nor report issue until a release is tagged Stable.
 
 ## Changes
 
+### Changes of the dev release 0.9.9.2 - beta
+
+This should be the last Dev release on pi 400 as 100 % of the tests were successful.
+
+- Added wrapper Abiword.app
+- More grained tests protocol in Documentation/TESTS.md
+- Fixed missing dep: 'gv' needed for printing and preview. 
+
 ### Changes of the dev release 0.9.9.1 - beta
 
 - Set Firefox profile. Remove -esr.

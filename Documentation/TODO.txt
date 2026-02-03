@@ -1,25 +1,16 @@
+New tests on fresh sd-cards:
+- [ ] pi 400
+- [ ] pi 500
 
-agnostep-theme
-=================
-RELEASE 8.0 - Beta: tested wallpaper rotate. Finished and pushed.
+On:
+- [ ] MacBookPro Intel
+---
 
-agnostep-desktop:
-==================
+Publish: SD-cards...
+Publish: VM / Live-ISO
 
-+ extension agnostep binaire
-+ wrapper 'agnostep'
+---
 
-[x] git push depuis build/agnostep-theme
-
---------------------------------------
-
-[ ] Nouveaux tests sdcard vierge sur pi500
-
-==========================
-
-Future version
-
-Profil firefox => page accueil: liens vers RPI, GNUstep, Agnostep...
 Referentiel Prog objC/GNUstep
 Terminal service / Wterm VS xterm?
 General Wrapper avec menus GS
@@ -29,19 +20,12 @@ md => make a book... => pdf
 Surf Web Browser: à travailler => Surf.app ?
 --------------------------------------
 HLKit: cf. Mail
-HighlighterKit and Gemas
+HighlighterKit and Gemas: cf dossier local GNUstep/Library...
 
-Hello German,
-Hello All,
-
-I wonder if we could add more syntax regognition to extend Gemas to handle these type of files:
-- Bash script (.sh);
-- Markdown (.md).
 -----------------------------------
 Portage de Cocotron vers GNUstep:
 - Comics reader
 - Bookshelf... vs Librarian?
-
 ------------------------------------
 
 ===========================================
@@ -56,7 +40,7 @@ http://s.sudre.free.fr/Stuff/Ivanhoe/FLAT.html
 see: http://multixden.blogspot.com/2023/08/gnustep-now-has-badges.html
 ===========================================
 
-??? Gershwin Desktop?
+??? ANOSTEP-theme on Gershwin Desktop?
 
 ===========================================
 
