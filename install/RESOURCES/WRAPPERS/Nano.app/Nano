@@ -15,7 +15,7 @@ if [ $? -eq 0 ];then
 	stexec Resources/alert.st
 	exit 1
 else
-	xterm -name "${TITLE}" -e $APP $ARG $date_today
+	xterm -T "${TITLE}" -e "transset -a --dec 0.05 && $APP $ARG $date_today"
 fi
 
 

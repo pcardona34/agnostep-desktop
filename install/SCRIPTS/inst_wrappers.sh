@@ -130,7 +130,7 @@ case $i in
 		sudo rm -fR $INSTALL_DIR/Firefox.app
 	fi
 	install_wrapper Chromium "$DEP_Chromium"
-	sudo apt -y remove ${REMOVE}
+	sudo apt -y remove firefox ${REMOVE} && sudo apt -y autoremove
 	sudo update-alternatives --set x-www-browser $(whereis -b chromium | awk '{print $2}');;
 "Firefox")
 	printf "You chose: Firefox\n"
@@ -150,7 +150,8 @@ case $i in
 		ok "\rDone"
 		rm firefox_profile.tar
 		cd $_PWD
-	fi;;
+	fi
+	sudo apt -y remove chromium && sudo apt -y autoremove;;
 esac
 done
 	install_openURLService
