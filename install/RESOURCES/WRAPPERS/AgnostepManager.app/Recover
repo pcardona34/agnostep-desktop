@@ -1,6 +1,16 @@
 #!/bin/bash
 
 _PWD=`pwd`
+APPNAME=AgnostepManager
+APPS_DIR=$(gnustep-config --variable=GNUSTEP_LOCAL_APPS)
+LG=${LANG:0:2}
+case "$LG" in
+"fr")
+TOOLS=Utilitaires;;
+"en"|*)
+TOOLS=Utilities;;
+esac
+RES=$APPS_DIR/$TOOLS/${APPNAME}.app/Resources
 
 function recovering
 {
@@ -13,5 +23,5 @@ fi
 
 recovering
 cd $_PWD
-stexec Resources/alert_end.st
+stexec $RES/alert_end.st
 exit

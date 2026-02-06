@@ -10,6 +10,10 @@ Do not try nor report issue until a release is tagged Stable.
 
 ### Changes of the dev release 0.9.9.3 - beta
 
+- AgnostepManager.app: Fixed a path issue in AgnostepManager and in Recover: auto-repair was successfully tested then.
+
+### Changes of the dev release 0.9.9.3 - beta
+
 - Added more tests items: unsetting the theme; listening to cuckoo.
 - Added Locales and Timezone settings.
 - Added a timer and logout even in a shell script.

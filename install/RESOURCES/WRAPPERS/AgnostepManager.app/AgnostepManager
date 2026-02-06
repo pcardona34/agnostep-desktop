@@ -1,9 +1,20 @@
 #!/bin/bash
 
+APPNAME=AgnostepManager
+APPS_DIR=$(gnustep-config --variable=GNUSTEP_LOCAL_APPS)
+LG=${LANG:0:2}
+case "$LG" in
+"fr")
+TOOLS=Utilitaires;;
+"en"|*)
+TOOLS=Utilities;;
+esac
+RES=$APPS_DIR/$TOOLS/${APPNAME}.app/Resources
+
 if [ ! -d $HOME/SOURCES/agnostep-desktop ];then
-	stexec Resources/alert_missing.st
+	stexec $RES/alert_missing.st
 	TITLE="Recovering"
-	APP=./Recover
+	APP=$APPS_DIR/$TOOLS/${APPNAME}.app/Recover
 	xterm -T "${TITLE}" -e $APP $date_today
 else
 	cd $HOME/SOURCES/agnostep-desktop

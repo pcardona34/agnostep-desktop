@@ -287,3 +287,26 @@ If not a laptop, ignore this item in the final count.
 
 1. You should see the main menu of **AgnostepManager**.
 
+### AgnostepManager auto-repair
+
+1. Remove the `SOURCES` folder:
+
+      ```
+      cd
+      rm -fr SOURCES
+      ```
+
+1. Try to run `Applications / Utilities / AgnostepManager.app`:
+
+      ```
+      openapp AgnostepManager
+      ```
+
+1. An Alert Panel will inform you that `AgnostepManager` will try to recover itself. Close the panel.
+1. A second Alert will invite you to try again.
+1. Run again `AgnostepManager`:
+
+      ```
+      openapp AgnostepManager
+      ```
+1. The main menu should be available now.
