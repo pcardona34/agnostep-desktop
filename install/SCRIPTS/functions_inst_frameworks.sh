@@ -17,6 +17,7 @@
 ## PDFKit
 function install_pdfkit
 {
+clear
 
 FWNAME="PDFKit"
 #CONFIG_ARGS="--enable-a4-paper"
@@ -35,7 +36,11 @@ else
 	cd PDFKit || exit 1
 fi
 
+clear;subtitulo
+ok "${FWNAME}: fetched"
+
 _build_FW
+sleep $SLEEP
 }
 ### End of PDFKit
 ################################
@@ -44,10 +49,11 @@ _build_FW
 ## Addresses FW
 function install_fw_addresses
 {
-
+clear
 cd ../build || exit 1
 
-STR="Addresses"
+FWNAME="Addresses"
+STR="$FWNAME"
 subtitulo
 
 printf "Fetching...\n"
@@ -59,11 +65,15 @@ else
 	cd Addresses
 fi
 
+clear;subtitulo
+ok "${FWNAME}: fetched"
+
 cd Frameworks || exit 1
 FWNAME="Addresses"
 cd Addresses
 
 _build_FW
+sleep $SLEEP
 }
 ### End of Addresses
 ################################
@@ -73,7 +83,7 @@ _build_FW
 ## Addresses and AddressView FW
 function install_fw_addressview()
 {
-
+clear
 cd ../build || exit 1
 
 STR="AddressView"
@@ -92,7 +102,11 @@ cd Frameworks
 FWNAME="AddressView"
 cd AddressView
 
+clear;subtitulo
+ok "${FWNAME}: fetched"
+
 _build_FW
+sleep $SLEEP
 }
 ### End of Addresses
 ################################
@@ -101,7 +115,7 @@ _build_FW
 ## Pantomime
 function install_pantomime()
 {
-
+clear
 cd ../build || exit 1
 
 FWNAME="Pantomime"
@@ -119,7 +133,11 @@ else
 	cd pantomime
 fi
 
+clear;subtitulo
+ok "${FWNAME}: fetched"
+
 _build_FW
+sleep $SLEEP
 }
 ### End of Pantomime
 ###############################
@@ -128,7 +146,7 @@ _build_FW
 ## SimpleWebKit
 function install_SWK()
 {
-
+clear
 cd ../build || exit 1
 
 FWNAME="SimpleWebKit"
@@ -145,7 +163,12 @@ else
 	cd libs-simplewebkit || exit 1
 fi
 
+clear;subtitulo
+ok "${FWNAME}: fetched"
+
 _build_FW
+sleep $SLEEP
+
 }
 ### End of SWK
 ###############################
@@ -156,11 +179,11 @@ _build_FW
 ## HighLighterKit
 function install_hlkit()
 {
-
+clear
 cd ../build || exit 1
 
 FWNAME="HighlighterKit"
-STR="£FWNAME"
+STR="$FWNAME"
 subtitulo
 
 printf "Fetching...\n"
@@ -173,7 +196,12 @@ else
 	cd HighlighterKit-0.1.3 || exit 1
 fi
 
+clear;subtitulo
+ok "${FWNAME}: fetched"
+
 _build_FW
+sleep $SLEEP
+
 }
 ### End of HighLighterKit
 ###############################
@@ -182,7 +210,7 @@ _build_FW
 ## Themes for HLKit
 function install_hkthemes()
 {
-
+clear
 cd ../build || exit 1
 
 STR="Themes for HLKit"
@@ -198,6 +226,9 @@ else
 	cd HKThemes || exit 1
 fi
 
+clear;subtitulo
+ok "${FWNAME}: fetched"
+
 printf "Installing..."
 if [ ! -d  ${HOME}/GNUstep/Library/HKThemes ];then
         mkdir -p ${HOME}/GNUstep/Library/HKThemes
@@ -208,6 +239,8 @@ cp --recursive "Glow.definition" ${HOME}/GNUstep/Library/HKThemes/
 
 ok "Done"
 cd $_PWD
+sleep $SLEEP
+
 }
 ### End of Themes for HLKit
 ###############################
@@ -216,6 +249,7 @@ cd $_PWD
 ## Renaissance
 function install_renaissance()
 {
+clear
 cd ../build || exit 1
 
 FWNAME="Renaissance"
@@ -231,7 +265,12 @@ else
 	cd libs-renaissance || exit 1
 fi
 
+clear;subtitulo
+ok "${FWNAME}: fetched"
+
 _build_FW
+sleep $SLEEP
+
 }
 ### End of Renaissance
 ##############################
@@ -240,7 +279,7 @@ _build_FW
 ## Performance
 function install_performance()
 {
-
+clear
 cd ../build || exit 1
 
 FWNAME="Performance"
@@ -256,7 +295,12 @@ else
         cd libs-performance || exit 1
 fi
 
+clear;subtitulo
+ok "${FWNAME}: fetched"
+
 _build_FW
+sleep $SLEEP
+
 }
 ### End of Performances
 ###############################
@@ -265,7 +309,7 @@ _build_FW
 ## WebServices
 function install_webservices()
 {
-
+clear
 cd ../build || exit 1
 
 FWNAME="WebServices"
@@ -282,7 +326,12 @@ else
 	cd WebServices-0.9.0 || exit 1
 fi
 
+clear;subtitulo
+ok "${FWNAME}: fetched"
+
 _build_FW
+sleep $SLEEP
+
 }
 ### End of WebServices
 ###############################
@@ -291,6 +340,7 @@ _build_FW
 ### libs-steptalk
 function install_steptalk
 {
+clear
 FWNAME="StepTalk"
 STR="$FWNAME"
 subtitulo
@@ -306,7 +356,11 @@ else
 	cd libs-steptalk || exit 1
 fi
 
+clear;subtitulo
+ok "${FWNAME}: fetched"
+
 _build_FW
+sleep $SLEEP
 
 STR="Installing StShell";subtitulo
 
@@ -333,6 +387,7 @@ else
 fi
 
 cd $_PWD
+sleep $SLEEP
 
 }
 ### End of StepTalk
@@ -342,6 +397,7 @@ cd $_PWD
 ## RSSKit
 function install_rsskit()
 {
+clear
 FWNAME="RSSKit"
 STR="$FWNAME"
 subtitulo
@@ -357,7 +413,11 @@ else
 	cd RSSKit || exit 1
 fi
 
+clear;subtitulo
+ok "${FWNAME}: fetched"
+
 _build_FW
+sleep $SLEEP
 
 }
 ### End of RSSKit
@@ -367,6 +427,7 @@ _build_FW
 ## DBusKit
 function install_dbuskit
 {
+clear
 FWNAME="DbusKit"
 PATCH_DIR=$_PWD/RESOURCES/PATCHES
 PATCH=no-gc-macros.patch
@@ -385,6 +446,7 @@ clear
 
 cd ../build || exit 1
 
+subtitulo
 printf "Fetching...\n"
 if [ ! -d libs-dbuskit-0.1.1 ];then
 	wget https://github.com/gnustep/libs-dbuskit/archive/refs/tags/0.1.1.tar.gz
@@ -400,7 +462,10 @@ cd libs-dbuskit-0.1.1 || exit 1
 wget --quiet -O config.guess 'https://git.savannah.gnu.org/gitweb/?p=config.git;a=blob_plain;f=config.guess;hb=HEAD'
 
 wget --quiet -O config.sub 'https://git.savannah.gnu.org/gitweb/?p=config.git;a=blob_plain;f=config.sub;hb=HEAD'
-ok "Done"
+
+STR="$FWNAME"
+clear;subtitulo
+ok "${FWNAME}: fetched"
 
 ### Configuring
 printf "Configuring\n"
@@ -441,6 +506,7 @@ if [ -f /Local/Library/Libraries/libDBusKit.so ];then
 else
 	alert "Please check the installation of DBusKit!"
 fi
+sleep $SLEEP
 
 cd $_PWD
 }
@@ -452,6 +518,7 @@ cd $_PWD
 ## NetClasses
 function install_netclasses()
 {
+clear
 FWNAME="netclasses"
 STR="$FWNAME"
 subtitulo
@@ -467,7 +534,11 @@ else
 	cd $FWNAME || exit 1
 fi
 
+clear;subtitulo
+ok "${FWNAME}: fetched"
+
 _build_FW
+sleep $SLEEP
 
 }
 ### End of NetClasses
@@ -478,6 +549,7 @@ _build_FW
 
 function install_popplerkit
 {
+clear
 FWNAME=PopplerKit
 STR="$FWNAME";subtitulo
 DIR=popplerkit
@@ -494,13 +566,15 @@ else
 	cd $DIR || exit 1
 fi
 
+clear;subtitulo
+ok "${FWNAME}: fetched"
+
 printf "Patching...\n"
 is_quilt
 set_quilt
 quilt push -a
 
-make clean
-make
-
 _build_FW
+sleep $SLEEP
+
 }

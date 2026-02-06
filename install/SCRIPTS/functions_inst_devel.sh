@@ -54,7 +54,7 @@ cd $_PWD
 
 function install_emacs()
 {
-
+clear
 APPNAME="Emacs"
 HUB="https://git.savannah.gnu.org/git/emacs.git"
 DIR="emacs"
@@ -80,6 +80,9 @@ else
 	git pull
 	ok "Done"
 fi
+clear
+subtitulo
+ok "$APPNAME fetched"
 
 WD=`pwd`
 printf "Configuring...\n"
@@ -112,7 +115,7 @@ cd nextstep || exit 1
 sudo -E cp -a Emacs.app ${INSTALL_DIR}/
 move_to_devel ${APPNAME}
 check $APPNAME
-
+sleep $SLEEP
 }
 
 ########################################
@@ -122,7 +125,7 @@ check $APPNAME
 
 function install_gorm()
 {
-
+clear
 APPNAME=Gorm
 RELEASE="1.5.0"
 
@@ -139,11 +142,16 @@ else
         git clone --branch=master "https://github.com/gnustep/apps-gorm" &>/dev/null
         cd apps-gorm
 fi
+clear
+subtitulo
+ok "$APPNAME fetched"
+
 
 CHECK=""
 _build
 move_to_devel ${APPNAME}
 check $APPNAME
+sleep $SLEEP
 
 }
 
@@ -154,7 +162,7 @@ check $APPNAME
 
 function install_PC()
 {
-
+clear
 APPNAME=ProjectCenter
 RELEASE="0.7.0"
 
@@ -166,16 +174,20 @@ cd ../build || exit 1
 printf "Fetching...\n"
 if [ -d apps-projectcenter ];then
         cd apps-projectcenter
-        git pull origin master &>/dev/null
+        git pull origin master
 else
-        git clone --branch=master "https://github.com/gnustep/apps-projectcenter" &>/dev/null
+        git clone --branch=master "https://github.com/gnustep/apps-projectcenter"
         cd apps-projectcenter
 fi
+clear
+subtitulo
+ok "$APPNAME fetched"
 
 CHECK=""
 _build
 move_to_devel ${APPNAME}
 check $APPNAME
+sleep $SLEEP
 
 }
 
@@ -186,7 +198,7 @@ check $APPNAME
 
 function install_easydiff()
 {
-
+clear
 APPNAME=EasyDiff
 RELEASE="0.4.1"
 
@@ -198,17 +210,21 @@ cd ../build || exit 1
 printf "Fetching...\n"
 if [ -d apps-easydiff ];then
         cd apps-easydiff
-        git pull origin master &>/dev/null
+        git pull origin master
 	make clean &>/dev/null
 else
-        git clone --branch=master "https://github.com/gnustep/apps-easydiff.git" &>/dev/null
+        git clone --branch=master "https://github.com/gnustep/apps-easydiff.git"
         cd apps-easydiff
 fi
+clear
+subtitulo
+ok "$APPNAME fetched"
 
 CHECK=""
 _build
 move_to_devel ${APPNAME}
 check $APPNAME
+sleep $SLEEP
 
 }
 
@@ -220,6 +236,7 @@ check $APPNAME
 
 function install_gemas()
 {
+clear
 cd ../build || exit 1
 
 APPNAME="Gemas"
@@ -241,11 +258,15 @@ else
 	tar -xf ${APPNAME}-${RELEASE}.tar
 	cd ${APPNAME}-${RELEASE} || exit 1
 fi
+clear
+subtitulo
+ok "$APPNAME fetched"
 
 CHECK=""
 _build
 move_to_devel ${APPNAME}
 check $APPNAME
+sleep $SLEEP
 
 }
 
@@ -257,6 +278,7 @@ check $APPNAME
 
 function install_thematic()
 {
+clear
 cd ../build || exit 1
 
 APPNAME="Thematic"
@@ -271,13 +293,17 @@ if [ -d apps-thematic ];then
 	cd apps-thematic
 	git pull
 else
-	git clone https://github.com/gnustep/apps-thematic.git &>/dev/null
+	git clone https://github.com/gnustep/apps-thematic.git
 	cd apps-thematic
 fi
+clear
+subtitulo
+ok "$APPNAME fetched"
 
 CHECK=""
 _build
 move_to_devel ${APPNAME}
 check $APPNAME
+sleep $SLEEP
 
 }

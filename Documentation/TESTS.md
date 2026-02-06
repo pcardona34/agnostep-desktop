@@ -228,10 +228,11 @@ If not a laptop, ignore this item in the final count.
 
 ### Multimedia
 
-1. Fix Alsa Mixer issue as explained in *Agnotep-Help*: chap. 3 Sound.
+1. On RPI: fix Alsa Mixer issue as explained in *Agnotep-Help*: chap. 3 Sound.
 1. Install `Cynthiune` from **Extra** apps.
 1. Listen to music with `Cynthiune`: 'mp3' and 'ogg' samples (see `~/Samples` folder)
 1. Set the sound level with `VolumeControl`: using **PCM** chanel.
+1. Open AClock preferences and test the Cuckoo.wav.
 1. Install `Player` from **Extra** apps.
 1. Watch a video with `Player`: see again in `~/Samples` folder 'mp4' and 'mkv' files.
 
@@ -241,6 +242,14 @@ If not a laptop, ignore this item in the final count.
 1. Logout to a tty and run `Settings` from `AgnostepManager`.
 1. Log in again. Open `Writer.app`: check if the Theme was applied.
 1. Open `Nano.app` in `Utilities`: the XTerm must be themed.
+
+### Unset the theme
+
+1. Log out and log in a TTY. There run `agnostep --am`.
+1. Choose **Settings** item.
+1. When asked to apply the default theme, answer 'No'.
+1. When **Seetings** has finished, log out, switch to TTY 7: `CTRL+ALT+7` and log in with the Display Manager.
+1. The default GNUstep theme should apply: check it for the Home folders and in the `Applications` folder.
 
 ### Managing Persons and Events
 

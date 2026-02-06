@@ -64,6 +64,7 @@ cd $_PWD
 
 function install_affiche()
 {
+clear
 cd ../build || exit 1
 
 APPNAME=Affiche
@@ -80,6 +81,9 @@ else
 	cd $DIR
 	git pull
 fi
+clear
+subtitulo
+ok "$APPNAME fetched"
 
 ### Patching
 is_quilt
@@ -90,6 +94,7 @@ CHECK=""
 _build
 move_to_tools ${APPNAME}
 check ${APPNAME}
+sleep $SLEEP
 }
 
 ########################## - C - ########################## 
@@ -119,11 +124,14 @@ subtitulo
 printf "Fetching...\n"
 if [ -d $REPO ];then
         cd $REPO
-        git pull origin $BRANCH &>/dev/null
+        git pull origin $BRANCH
 else
-	git clone ${HUB}/${OWNER}/${REPO}.git &>/dev/null
-	cd $REPO
+	git clone ${HUB}/${OWNER}/${REPO}.git
+	cd $REPO || exit 1
 fi
+clear
+subtitulo
+ok "$APPNAME fetched"
 
 cd $BUILD_DIR/$APPNAME || exit 1
 
@@ -131,6 +139,7 @@ CHECK=""
 _build
 move_to_tools ${APPNAME}
 check ${APPNAME}
+sleep $SLEEP
 }
 
 ########################## - D - ########################## 
@@ -142,7 +151,7 @@ check ${APPNAME}
 
 function install_dictionaryreader()
 {
-
+clear
 cd ../build || exit 1
 
 APPNAME="DictionaryReader"
@@ -162,8 +171,11 @@ if [ -d $DIR ];then
         git pull
 else
 	git clone ${HUB}
-	cd $DIR
+	cd $DIR || exit 1
 fi
+clear
+subtitulo
+ok "$APPNAME fetched"
 
 ### Patching
 is_quilt
@@ -176,9 +188,8 @@ CHECK=""
 _build
 move_to_tools ${APPNAME}
 check ${APPNAME}
+sleep $SLEEP
 }
-
-
 
 ########################## - F - ##########################
 
@@ -189,7 +200,7 @@ check ${APPNAME}
 
 function install_fontmanager()
 {
-
+clear
 cd ../build || exit 1
 
 APPNAME="FontManager"
@@ -207,8 +218,11 @@ if [ -d $DIR ];then
         git pull
 else
 	git clone ${HUB}
-	cd $DIR
+	cd $DIR || exit 1
 fi
+clear
+subtitulo
+ok "$APPNAME fetched"
 
 ### Patching
 is_quilt
@@ -219,6 +233,7 @@ CHECK=""
 _build
 move_to_tools ${APPNAME}
 check ${APPNAME}
+sleep $SLEEP
 }
 
 #########################################
@@ -227,6 +242,7 @@ check ${APPNAME}
 
 function install_ftp()
 {
+clear
 cd ../build || exit 1
 
 APPNAME="FTP"
@@ -245,12 +261,15 @@ else
         svn co svn://svn.savannah.nongnu.org/gap/trunk/$REPO/$APPNAME
         cd $APPNAME || exit 1
 fi
-ok "Done"
+clear
+subtitulo
+ok "$APPNAME fetched"
 
 CHECK=""
 _build
 move_to_tools ${APPNAME}
 check ${APPNAME}
+sleep $SLEEP
 }
 
 ########################## - G - ########################## 
@@ -262,6 +281,7 @@ check ${APPNAME}
 
 function install_gspdf()
 {
+clear
 APPNAME=GSPdf
 RELEASE="0.5"
 CONFIG_ARGS=""
@@ -276,16 +296,20 @@ cd ../build || exit 1
 printf "Fetching...\n"
 if [ -d GSPdf ];then
         cd GSPdf
-        svn update &>/dev/null
+        svn update
 else
-        svn co svn://svn.savannah.nongnu.org/gap/trunk/user-apps/GSPdf &>/dev/null
+        svn co svn://svn.savannah.nongnu.org/gap/trunk/user-apps/GSPdf
         cd GSPdf
 fi
+clear
+subtitulo
+ok "$APPNAME fetched"
 
 CHECK=""
 _build
 move_to_tools ${APPNAME}
 check ${APPNAME}
+sleep $SLEEP
 }
 
 ########################## - H - ########################## 
@@ -296,7 +320,7 @@ check ${APPNAME}
 
 function install_helpviewer()
 {
-
+clear
 APPNAME="HelpViewer"
 HUB="svn://svn.savannah.nongnu.org/gap/trunk/system-apps"
 CONFIG_ARGS=""
@@ -311,16 +335,20 @@ subtitulo
 printf "Fetching...\n"
 if [ -d $APPNAME ];then
         cd $APPNAME
-        svn update &>/dev/null
+        svn update
 else
-	svn co ${HUB}/${APPNAME} &>/dev/null
-	cd $APPNAME
+	svn co ${HUB}/${APPNAME}
+	cd $APPNAME || exit 1
 fi
+clear
+subtitulo
+ok "$APPNAME fetched"
 
 CHECK=""
 _build
 move_to_tools ${APPNAME}
 check ${APPNAME}
+sleep $SLEEP
 }
 ### End of HelpViewer
 ##############################################
@@ -333,7 +361,7 @@ check ${APPNAME}
 ### Installer
 function install_installer
 {
-
+clear
 APPNAME="Installer"
 STR="$APPNAME";subtitulo
 
@@ -347,12 +375,15 @@ else
         svn co svn://svn.savannah.nongnu.org/gap/trunk/system-apps/$APPNAME
         cd $APPNAME || exit 1
 fi
+clear
+subtitulo
+ok "$APPNAME fetched"
 
 CHECK=""
 _build
 move_to_tools ${APPNAME}
 check ${APPNAME}
-
+sleep $SLEEP
 }
 #########################################
 
@@ -365,7 +396,7 @@ check ${APPNAME}
 
 function install_librarian()
 {
-
+clear
 cd ../build || exit 1
 
 APPNAME="Librarian"
@@ -385,11 +416,14 @@ subtitulo
 printf "Fetching...\n"
 if [ -d $REPO ];then
         cd $REPO
-        git pull origin $BRANCH &>/dev/null
+        git pull origin $BRANCH
 else
-	git clone ${HUB}/${OWNER}/${REPO}.git &>/dev/null
+	git clone ${HUB}/${OWNER}/${REPO}.git 
 	cd $REPO
 fi
+clear
+subtitulo
+ok "$APPNAME fetched"
 
 cd $BUILD_DIR/$APPNAME
 
@@ -397,6 +431,7 @@ CHECK=""
 _build
 move_to_tools ${APPNAME}
 check ${APPNAME}
+sleep $SLEEP
 }
 
 
@@ -409,6 +444,7 @@ check ${APPNAME}
 
 function install_memory
 {
+clear
 cd ../build || exit 1
 
 APPNAME="Memory"
@@ -427,12 +463,15 @@ else
         git clone $SITE/${REPO}.git
         cd $REPO || exit 1
 fi
-ok "Done"
+clear
+subtitulo
+ok "$APPNAME fetched"
 
 CHECK=""
 _build
 move_to_tools ${APPNAME}
 check ${APPNAME}
+sleep $SLEEP
 }
 
 
@@ -447,6 +486,7 @@ check ${APPNAME}
 
 function install_openup()
 {
+clear
 APPNAME=OpenUp
 RELEASE="0.1"
 CONFIG_ARGS=""
@@ -461,18 +501,22 @@ cd ../build || exit 1
 printf "Fetching...\n"
 if [ -d gs-desktop ];then
         cd gs-desktop
-        git pull &>/dev/null
+        git pull
 else
-        git clone https://github.com/onflapp/gs-desktop.git &>/dev/null
+        git clone https://github.com/onflapp/gs-desktop.git
         cd gs-desktop
 fi
 
-cd Applications/OpenUp
+cd Applications/OpenUp || exit 1
+clear
+subtitulo
+ok "$APPNAME fetched"
 
 CHECK=""
 _build
 move_to_tools ${APPNAME}
 check ${APPNAME}
+sleep $SLEEP
 }
 
 
@@ -499,18 +543,23 @@ cd ../build || exit 1
 printf "Fetching...\n"
 if [ -d gs-desktop ];then
         cd gs-desktop
-        git pull &>/dev/null
+        git pull
 else
-        git clone https://github.com/onflapp/gs-desktop.git &>/dev/null
-        cd gs-desktop
+        git clone https://github.com/onflapp/gs-desktop.git
+        cd gs-desktop || exit 1
 fi
 
-cd Applications/ScanImage
+cd Applications/ScanImage || exit 1
+clear
+subtitulo
+ok "$APPNAME fetched"
+
 
 CHECK=""
 _build
 move_to_tools ${APPNAME}
 check ${APPNAME}
+sleep $SLEEP
 }
 
 
@@ -521,6 +570,7 @@ check ${APPNAME}
 
 function install_screenshot()
 {
+clear
 APPNAME=ScreenShot
 RELEASE="0.1"
 CONFIG_ARGS=""
@@ -535,20 +585,22 @@ cd ../build || exit 1
 printf "Fetching...\n"
 if [ -d gs-desktop ];then
         cd gs-desktop
-        git pull &>/dev/null
+        git pull
 else
-        git clone https://github.com/onflapp/gs-desktop.git &>/dev/null
-        cd gs-desktop
+        git clone https://github.com/onflapp/gs-desktop.git
+        cd gs-desktop || exit 1
 fi
-
-cd Applications/ScreenShot
+cd Applications/ScreenShot || exit 1
+clear
+subtitulo
+ok "$APPNAME fetched"
 
 CHECK=""
 _build
 move_to_tools ${APPNAME}
 check ${APPNAME}
+sleep $SLEEP
 }
-
 
 ############################################
 ## StepSync
@@ -557,6 +609,7 @@ check ${APPNAME}
 
 function install_stepsync()
 {
+clear
 cd ../build || exit 1
 
 APPNAME="StepSync"
@@ -569,16 +622,20 @@ subtitulo
 printf "Fetching...\n"
 if [ -d $APPNAME ];then
         cd $APPNAME
-        svn update &>/dev/null
+        svn update
 else
-	svn co svn://svn.savannah.nongnu.org/gap/trunk/system-apps/StepSync &>/dev/null
+	svn co svn://svn.savannah.nongnu.org/gap/trunk/system-apps/StepSync
 	cd $APPNAME
 fi
+clear
+subtitulo
+ok "$APPNAME fetched"
 
 CHECK=""
 _build
 move_to_tools ${APPNAME}
 check ${APPNAME}
+sleep $SLEEP
 }
 
 
@@ -589,6 +646,7 @@ check ${APPNAME}
 
 function install_vindaloo
 {
+clear
 APPNAME="Vindaloo"
 DIR=vindaloo.app
 HUB="https://salsa.debian.org/gnustep-team/vindaloo.app.git"
@@ -603,11 +661,14 @@ cd ../build || exit 1
 printf "Fetching...\n"
 if [ -d $DIR ];then
         cd $DIR
-        git pull &>/dev/null
+        git pull
 else
-	git clone ${HUB} &>/dev/null
-	cd $DIR
+	git clone ${HUB}
+	cd $DIR || exit 1
 fi
+clear
+subtitulo
+ok "$APPNAME fetched"
 
 printf "Patching..."
 is_quilt
@@ -640,6 +701,7 @@ ok "\rDone"
 APPNAME=ViewPDF
 move_to_tools $APPNAME
 check $APPNAME
+sleep $SLEEP
 }
 
 
@@ -651,7 +713,7 @@ check $APPNAME
 #######################################
 function install_zipper
 {
-
+clear
 cd ../build || exit 1
 
 APPNAME="Zipper"
@@ -669,12 +731,15 @@ if [ -d $DIR ];then
         svn update
 else
 	svn co ${HUB}
-	cd $DIR
+	cd $DIR || exit 1
 fi
+clear
+subtitulo
+ok "$APPNAME fetched"
 
 CHECK=""
 _build
 move_to_tools ${APPNAME}
 check ${APPNAME}
+sleep $SLEEP
 }
-

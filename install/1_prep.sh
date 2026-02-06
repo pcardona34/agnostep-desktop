@@ -33,6 +33,7 @@ RPI=1
 . SCRIPTS/spinner.sh
 . SCRIPTS/size.sh
 . SCRIPTS/functions_prep.sh
+
 ### end of include functions
 ###############################################################
 
@@ -53,6 +54,34 @@ debian_update || exit 1
 sudo apt autoremove -y &>/dev/null
 
 LIST="build" && install_deps
+
+#######################
+
+### Getting infos
+# Timezone
+TZ=$(cat /etc/timezone)
+
+dialog --no-shadow --backtitle "Localization" \
+ --title "Locale and Timezone" \
+ --yesno "
+Your system is set with:
+
+Timezone: $TZ
+Lang: ${LANG}
+
+Do you want to change these settings? " 12 50
+
+if [ $? -eq 0 ];then
+	. SCRIPTS/set_the_locale.sh
+	set_the_locale
+	MSG="Seconds before logout: "
+	DELAY=9
+	timer
+	exec SCRIPTS/lo.sh
+	exit
+fi
+
+#######################
 
 is_hw_rpi
 if [ $RPI -eq 0 ];then
@@ -77,4 +106,4 @@ info "The System is up to date.\nYou may go on with stage 2."
 print_size
 sleep 3
 
-cd
+cd $THERE

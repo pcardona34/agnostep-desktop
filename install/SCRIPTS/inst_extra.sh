@@ -27,6 +27,7 @@ INSTALL_DIR=$(gnustep-config --variable=GNUSTEP_LOCAL_APPS)
 CHECK="YES"
 TEMPFILE=$(mktemp /tmp/agno-XXXXX)
 trap "rm -f $TEMPFILE" EXIT
+SLEEP=2
 
 #INSTALL_ARGS="GNUSTEP_INSTALLATION_DOMAIN=LOCAL"
 #################################################

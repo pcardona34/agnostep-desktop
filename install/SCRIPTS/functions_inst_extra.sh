@@ -19,49 +19,10 @@ fi
 
 ########################## - C - ##########################
 
-################################
-## Cenon
-### Repo/Release: Debian Salsa
-### Not used with Cenon install from Debian
-################################
-
-function install_cenon_lib
-{
-ICI=`pwd`
-LIB=CenonLibrary
-RELEASE=""
-BUILD=../build/lib
-TARGET=/usr/lib/GNUstep/Library
-
-STR="Cenon Libray"
-subtitulo
-
-if [ ! -d $BUILD ];then
-	mkdir -p ${BUILD}
-fi
-cd ${BUILD}
-
-printf "Fetching...\n"
-if [ ! -d Cenon ];then
-	wget https://cenon.download/source/${LIB}-${RELEASE}${EXT}
-	bunzip2 --force ${LIB}-${RELEASE}${EXT}
-	tar -xf ${LIB}-${RELEASE}.tar && rm ${LIB}-${RELEASE}.tar
-fi
-ok "Done"
-
-printf "Installing the Library...\n"
-if [ ! -d $TARGET ];then
-	sudo mkdir -p ${TARGET}
-fi
-sudo rm -fR ${TARGET}/Cenon
-sudo cp -r Cenon ${TARGET} 
-ok "Done"
-}
-
 #########################################
 function install_cenon()
 {
-
+clear
 cd ../build || exit 1
 
 APPNAME="Cenon"
@@ -90,6 +51,9 @@ else
 	cd $DIR
 	git pull
 fi
+clear
+subtitulo
+ok "$APPNAME fetched"
 
 printf "Patching...\n"
 is_quilt
@@ -99,6 +63,7 @@ quilt push -a
 #make clean
 #make
 _build
+sleep $SLEEP
 }
 
 ###############################################
@@ -109,6 +74,7 @@ _build
 
 function install_cynthiune
 {
+clear
 APPNAME=Cynthiune
 RELEASE="1.0.0"
 CONFIG_ARGS="disable-audiofile=yes disable-flac=yes disable-flactags=yes \
@@ -129,11 +95,14 @@ cd ../build || exit 1
 printf "Fetching...\n"
 if [ -d Cynthiune ];then
         cd Cynthiune
-        svn update &>/dev/null
+        svn update
 else
-        svn co svn://svn.savannah.nongnu.org/gap/trunk/user-apps/Cynthiune &>/dev/null
+        svn co svn://svn.savannah.nongnu.org/gap/trunk/user-apps/Cynthiune
         cd Cynthiune
 fi
+clear
+subtitulo
+ok "$APPNAME fetched"
 
 ### PATCH
 cp $_PWD/RESOURCES/PATCHES/$PATCH ./
@@ -144,6 +113,7 @@ patch --forward -u ${TARGET} -i ./${PATCH}
 ok "Done"
 
 _build
+sleep $SLEEP
 }
 
 ########################## - F - ##########################
@@ -155,6 +125,7 @@ _build
 
 function install_flexisheet()
 {
+clear
 cd ../build || exit 1
 
 APPNAME="FlexiSheet"
@@ -172,13 +143,17 @@ subtitulo
 printf "Fetching...\n"
 if [ -d $APPNAME ];then
         cd $APPNAME
-        svn update &>/dev/null
+        svn update
 else
-	svn co svn://svn.savannah.nongnu.org/gap/trunk/user-apps/FlexiSheet &>/dev/null
+	svn co svn://svn.savannah.nongnu.org/gap/trunk/user-apps/FlexiSheet
 	cd $APPNAME
 fi
+clear
+subtitulo
+ok "$APPNAME fetched"
 
 _build
+sleep $SLEEP
 }
 
 ########################## - G - ########################## 
@@ -190,7 +165,7 @@ _build
 
 function install_graphos()
 {
-
+clear
 cd ../build || exit 1
 
 APPNAME="Graphos"
@@ -203,13 +178,17 @@ subtitulo
 printf "Fetching...\n"
 if [ -d $APPNAME ];then
         cd $APPNAME
-        svn update &>/dev/null
+        svn update
 else
-	svn co svn://svn.savannah.nongnu.org/gap/trunk/user-apps/Graphos &>/dev/null
+	svn co svn://svn.savannah.nongnu.org/gap/trunk/user-apps/Graphos
 	cd $APPNAME
 fi
+clear
+subtitulo
+ok "$APPNAME fetched"
 
 _build
+sleep $SLEEP
 }
 
 ###################################################
@@ -219,7 +198,7 @@ _build
 
 function install_grr()
 {
-
+clear
 APPNAME=Grr
 RELEASE="1.1"
 CONFIG_ARGS=""
@@ -234,13 +213,17 @@ cd ../build || exit 1
 printf "Fetching...\n"
 if [ -d $APPNAME ];then
 	cd $APPNAME
-	svn update &>/dev/null
+	svn update
 else
-	svn co svn://svn.savannah.nongnu.org/gap/trunk/user-apps/Grr &>/dev/null
+	svn co svn://svn.savannah.nongnu.org/gap/trunk/user-apps/Grr
 	cd $APPNAME
 fi
+clear
+subtitulo
+ok "$APPNAME fetched"
 
 _build
+sleep $SLEEP
 }
 
 ########################## - L - ########################## 
@@ -251,6 +234,7 @@ _build
 
 function install_laternamagica()
 {
+clear
 cd ../build || exit 1
 
 APPNAME="LaternaMagica"
@@ -269,9 +253,12 @@ else
         svn co svn://svn.savannah.nongnu.org/gap/trunk/$REPO/$APPNAME
         cd $APPNAME || exit 1
 fi
-ok "Done"
+clear
+subtitulo
+ok "$APPNAME fetched"
 
 _build
+sleep $SLEEP
 }
 
 
@@ -286,13 +273,14 @@ _build
 
 function install_netsurf
 {
-
+clear
 APPNAME=NetSurf
 RELEASE="3.11"
 
 ### Dependencies
 printf "Installing the dependencies...\n"
 sudo apt -y install duktape-dev duktape
+ok "Done";sleep $SLEEP
 clear
 
 STR="$APPNAME $RELEASE"
@@ -313,10 +301,10 @@ unset HOST
 . env.sh
 
 printf "Fetching Netsurf...\n"
-ns-clone &>>$LOG &
-PID=$!
-spinner
-ok "\rDone"
+ns-clone
+clear
+subtitulo
+ok "$APPNAME fetched"
 
 printf "Building...\n"
 ns-pull-install &>>$LOG &
@@ -327,26 +315,37 @@ ok "\rDone"
 rm env.sh
 cd ~/dev-netsurf/workspace
 rm -fR netsurf
+
+clear
+APPNAME="GNStep-Netsurf"
+STR="$APPNAME"
+subtitulo
+
 printf "Fetching gnustep-netsurf...\n"
 wget --quiet https://github.com/anthonyc-r/netsurf-gnustep/archive/refs/tags/3.11-gnustep.tar.gz
 gunzip --force 3.11-gnustep.tar.gz
-tar xvf 3.11-gnustep.tar
+tar xvf 3.11-gnustep.tar && rm 3.11-gnustep.tar
 mv netsurf-gnustep-3.11-gnustep netsurf
 cd netsurf || exit 1
+clear
+subtitulo
+ok "$APPNAME fetched"
 
-printf "Building GNUstep-NetSurf app...\n"
+printf "Building GNUstep-NetSurf: Polyfill\n"
 make TARGET=gnustep NETSURF_USE_DUKTAPE=YES build/Linux-gnustep/duktape/polyfill.js.inc &>>$LOG &
 PID=$!
 spinner
+ok "\rDone"
 
+printf "Building GNUstep-NetSurf: Generic\n"
 make TARGET=gnustep NETSURF_USE_DUKTAPE=YES build/Linux-gnustep/duktape/generics.js.inc &>>$LOG &
 PID=$!
-printf "\r"
 spinner
+ok "\rDone"
 
+printf "Building GNUstep-NetSurf: core app\n"
 make TARGET=gnustep &>>$LOG &
 PID=$!
-printf "\r"
 spinner
 ok "\rDone"
 
@@ -357,12 +356,12 @@ sudo cp -r NetSurf.app $LOCAL_INSTALL_DIR/
 ### Cleaning
 make clean &>/dev/null
 rm -fR $HOME/dev-netsurf
-
 ok "Done"
 
 cd $_PWD
 
 check "$APPNAME"
+sleep $SLEEP
 }
 ### End of NetSurf
 ############################################"
@@ -377,7 +376,7 @@ check "$APPNAME"
 
 function install_pikopixel()
 {
-
+clear
 cd ../build || exit 1
 
 APPNAME="PikoPixel"
@@ -395,15 +394,19 @@ subtitulo
 printf "Fetching...\n"
 if [ -d $REPO ];then
         cd $REPO
-        git pull origin $BRANCH &>/dev/null
+        git pull origin $BRANCH
 else
-	git clone ${HUB}/${OWNER}/${REPO}.git &>/dev/null
+	git clone ${HUB}/${OWNER}/${REPO}.git
 	cd $REPO
 fi
+clear
+subtitulo
+ok "$APPNAME fetched"
 
 cd $BUILD_DIR/$APPNAME
 
 _build
+sleep $SLEEP
 }
 
 ###################################################
@@ -413,6 +416,7 @@ _build
 
 function install_player()
 {
+clear
 APPNAME=Player
 RELEASE="0.1"
 CONFIG_ARGS=""
@@ -427,15 +431,19 @@ cd ../build || exit 1
 printf "Fetching...\n"
 if [ -d gs-desktop ];then
         cd gs-desktop
-        git pull &>/dev/null
+        git pull
 else
-        git clone https://github.com/onflapp/gs-desktop.git &>/dev/null
-        cd gs-desktop
+        git clone https://github.com/onflapp/gs-desktop.git
+        cd gs-desktop || exit 1
 fi
+clear
+subtitulo
+ok "$APPNAME fetched"
 
 cd Applications/Player
 
 _build
+sleep $SLEEP
 }
 
 ##########################
@@ -444,7 +452,7 @@ _build
 
 function install_powerpaint()
 {
-
+clear
 cd ../build || exit 1
 
 APPNAME="PowerPaint"
@@ -462,17 +470,20 @@ subtitulo
 printf "Fetching...\n"
 if [ -d $REPO ];then
         cd $REPO
-        git pull origin $BRANCH &>/dev/null
+        git pull origin $BRANCH
 else
-	git clone ${HUB}/${OWNER}/${REPO}.git &>/dev/null
-	cd $REPO
+	git clone ${HUB}/${OWNER}/${REPO}.git
+	cd $REPO || exit 1
 fi
+clear
+subtitulo
+ok "$APPNAME fetched"
 
 cd $BUILD_DIR/$APPNAME
 
 _build
+sleep $SLEEP
 }
-
 
 #########################################
 ### PPC
@@ -480,6 +491,7 @@ _build
 
 function install_ppc()
 {
+clear
 cd ../build || exit 1
 
 APPNAME="PPC"
@@ -498,9 +510,12 @@ else
         svn co svn://svn.savannah.nongnu.org/gap/trunk/$REPO/$APPNAME
         cd $APPNAME || exit 1
 fi
-ok "Done"
+clear
+subtitulo
+ok "$APPNAME fetched"
 
 _build
+sleep $SLEEP
 }
 
 ##################################################
@@ -510,6 +525,7 @@ _build
 
 function install_preview
 {
+clear
 APPNAME=Preview
 RELEASE="0.8.5"
 HUB="https://salsa.debian.org/gnustep-team/preview.app"
@@ -532,14 +548,18 @@ else
 	cd $DIR
 	git pull
 fi
+clear
+subtitulo
+ok "$APPNAME fetched"
+
+
 printf "Patching...\n"
 is_quilt
 set_quilt
 quilt push -a
 
-make clean
 _build
-
+sleep $SLEEP
 }
 
 #####################################
@@ -549,7 +569,7 @@ _build
 
 function install_price()
 {
-
+clear
 cd ../build || exit 1
 
 APPNAME="PRICE"
@@ -570,10 +590,14 @@ else
 	wget --quiet ${HUB}/${APPNAME}-${RELEASE}${EXT}
 	gunzip ${APPNAME}-${RELEASE}${EXT}
 	tar -xf ${APPNAME}-${RELEASE}.tar
-	cd ${APPNAME}-${RELEASE}
+	cd ${APPNAME}-${RELEASE} || exit 1
 fi
+clear
+subtitulo
+ok "$APPNAME fetched"
 
 _build
+sleep $SLEEP
 }
 
 
@@ -585,6 +609,7 @@ _build
 
 function install_talksoup()
 {
+clear
 cd ../build || exit 1
 
 APPNAME="TalkSoup"
@@ -603,9 +628,12 @@ else
         svn co svn://svn.savannah.nongnu.org/gap/trunk/$REPO/$APPNAME
         cd $APPNAME || exit 1
 fi
-ok "Done"
+clear
+subtitulo
+ok "$APPNAME fetched"
 
 _build
+sleep $SLEEP
 }
 
 
@@ -618,7 +646,7 @@ _build
 
 function install_vespucci()
 {
-
+clear
 cd ../build || exit 1
 
 APPNAME="Vespucci"
@@ -636,15 +664,19 @@ subtitulo
 printf "Fetching...\n"
 if [ -d $REPO ];then
         cd $REPO
-        git pull origin $BRANCH &>/dev/null
+        git pull origin $BRANCH
 else
-	git clone ${HUB}/${OWNER}/${REPO}.git &>/dev/null
-	cd $REPO
+	git clone ${HUB}/${OWNER}/${REPO}.git
+	cd $REPO || exit 1
 fi
+clear
+subtitulo
+ok "$APPNAME fetched"
 
 cd $BUILD_DIR/$APPNAME
 
 _build
+sleep $SLEEP
 
 }
 
@@ -657,7 +689,7 @@ _build
 #######################################
 function install_weather
 {
-
+clear
 cd ../build || exit 1
 
 APPNAME="Weather.app"
@@ -674,11 +706,14 @@ subtitulo
 printf "Fetching...\n"
 if [ -d $REPO ];then
         cd $REPO
-        git pull origin $BRANCH &>/dev/null
+        git pull origin $BRANCH
 else
-	git clone ${HUB}/${OWNER}/${REPO}.git &>/dev/null
-	cd $REPO
+	git clone ${HUB}/${OWNER}/${REPO}.git
+	cd $REPO || exit 1
 fi
+clear
+subtitulo
+ok "$APPNAME fetched"
 
 _build
 
@@ -687,5 +722,6 @@ ICON=RESOURCES/ICONS/weather.tiff
 TARGET=${INSTALL_DIR}/Weather.app/Resources
 sudo cp $ICON ${TARGET}/
 ok "Done"
+sleep $SLEEP
 }
 ##################################

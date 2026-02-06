@@ -55,7 +55,7 @@ cd $_PWD
 
 function install_chess
 {
-
+clear
 APPNAME="Chess"
 REL="2.7"
 
@@ -68,16 +68,20 @@ cd ../build || exit 1
 printf "Fetching...\n"
 if [ -d $APPNAME ];then
 	cd $APPNAME
-	svn update &>/dev/null
+	svn update
 else
-	svn co svn://svn.savannah.nongnu.org/gap/trunk/ported-apps/Games/Chess &>/dev/null
-	cd $APPNAME
+	svn co svn://svn.savannah.nongnu.org/gap/trunk/ported-apps/Games/Chess
+	cd $APPNAME || exit 1
 fi
+clear
+subtitulo
+ok "$APPNAME fetched"
 
 CHECK=""
 _build
 move_to_games $APPNAME
 check $APPNAME
+sleep $SLEEP
 }
 
 ##################################################
@@ -87,7 +91,7 @@ check $APPNAME
 
 function install_gomoku
 {
-
+clear
 APPNAME="Gomoku"
 REL="1.2.9"
 
@@ -99,16 +103,20 @@ cd ../build || exit 1
 printf "Fetching...\n"
 if [ -d Gomoku ];then
 	cd Gomoku
-	git pull origin master &>/dev/null
+	git pull origin master
 else
-	git clone https://github.com/pcardona34/Gomoku.git &>/dev/null
+	git clone https://github.com/pcardona34/Gomoku.git
 	cd Gomoku
 fi
+clear
+subtitulo
+ok "$APPNAME fetched"
 
 CHECK=""
 _build
 move_to_games $APPNAME
 check $APPNAME
+sleep $SLEEP
 }
 
 
@@ -120,7 +128,7 @@ check $APPNAME
 
 function install_ghack
 {
-
+clear
 APPNAME="Ghack"
 SITE=https://github.com/enrytheermit
 REPO=gnustep
@@ -136,11 +144,14 @@ cd ../build || exit 1
 printf "Fetching...\n"
 if [ -d $REPO ];then
 	cd $REPO
-	git pull origin master &>/dev/null
+	git pull origin master
 else
-	git clone $SITE/$REPO &>/dev/null
+	git clone $SITE/$REPO
 	cd $REPO || exit 1
 fi
+clear
+subtitulo
+ok "$APPNAME fetched"
 
 cd ghack/$APPNAME || exit 1
 cp $_PWD/RESOURCES/ICONS/Ghack.tiff ./Resources/
@@ -149,6 +160,7 @@ CHECK=""
 _build
 move_to_games $APPNAME
 check $APPNAME
+sleep $SLEEP
 }
 
 
@@ -158,6 +170,7 @@ check $APPNAME
 
 function install_lapis
 {
+clear
 APPNAME="LapisPuzzle"
 REL="1.2"
 
@@ -173,13 +186,17 @@ else
 	wget --quiet http://mirror.easyname.at/nongnu/gap/LapisPuzzle-1.2.tar.gz
 	gunzip --force LapisPuzzle-1.2.tar.gz
 	tar -xf LapisPuzzle-1.2.tar
-	cd LapisPuzzle-1.2
+	cd LapisPuzzle-1.2 || exit 1
 fi
+clear
+subtitulo
+ok "$APPNAME fetched"
 
 CHECK=""
 _build
 move_to_games $APPNAME
 check $APPNAME
+sleep $SLEEP
 }
 
 ##################################################
@@ -189,7 +206,7 @@ check $APPNAME
 
 function install_freecell
 {
-
+clear
 APPNAME="Freecell"
 REL="0.1"
 
@@ -201,16 +218,20 @@ cd ../build || exit 1
 printf "Fetching...\n"
 if [ -d Freecell.app ];then
 	cd Freecell.app
-	git pull origin master &>/dev/null
+	git pull origin master
 else
-	git clone https://github.com/alexmyczko/Freecell.app.git &>/dev/null
+	git clone https://github.com/alexmyczko/Freecell.app.git
 	cd Freecell.app
 fi
+clear
+subtitulo
+ok "$APPNAME fetched"
 
 CHECK=""
 _build
 move_to_games $APPNAME
 check ${APPNAME}
+sleep $SLEEP
 }
 
 ######################################
@@ -234,14 +255,18 @@ if [ -d GShisen ];then
 	cd GShisen
 	svn update
 else
-	svn co svn://svn.savannah.nongnu.org/gap/trunk/user-apps/Games/GShisen &>/dev/null
+	svn co svn://svn.savannah.nongnu.org/gap/trunk/user-apps/Games/GShisen
 	cd GShisen
 fi
+clear
+subtitulo
+ok "$APPNAME fetched"
 
 CHECK=""
 _build
 move_to_games $APPNAME
 check $APPNAME
+sleep $SLEEP
 }
 
 #######################################
@@ -251,7 +276,7 @@ check $APPNAME
 
 function install_ladder
 {
-
+clear
 APPNAME="Ladder"
 #REL="1.3.0"
 
@@ -276,11 +301,15 @@ else
 	svn co svn://svn.savannah.nongnu.org/gap/trunk/user-apps/Games/Ladder
 	cd Ladder
 fi
+clear
+subtitulo
+ok "$APPNAME fetched"
 
 CHECK=""
 _build
 move_to_games $APPNAME
 check $APPNAME
+sleep $SLEEP
 }
 
 #######################################
@@ -290,7 +319,7 @@ check $APPNAME
 
 function install_jigsaw
 {
-
+clear
 APPNAME="Jigsaw"
 #REL=""
 
@@ -308,13 +337,17 @@ if [ -d Jigsaw ];then
         svn update
 else
         svn co svn://svn.savannah.nongnu.org/gap/trunk/user-apps/Games/Jigsaw
-        cd Jigsaw
+        cd Jigsaw || exit 1
 fi
+clear
+subtitulo
+ok "$APPNAME fetched"
 
 CHECK=""
 _build
 move_to_games $APPNAME
 check $APPNAME
+sleep $SLEEP
 }
 
 #######################################
@@ -324,7 +357,7 @@ check $APPNAME
 
 function install_gmines
 {
-
+clear
 APPNAME="GMines"
 #REL=""
 
@@ -342,13 +375,17 @@ if [ -d GMines ];then
         svn update
 else
         svn co svn://svn.savannah.nongnu.org/gap/trunk/user-apps/Games/GMines
-        cd GMines
+        cd GMines || exit 1
 fi
+clear
+subtitulo
+ok "$APPNAME fetched"
 
 CHECK=""
 _build
 move_to_games $APPNAME
 check $APPNAME
+sleep $SLEEP
 }
 
 #######################################
@@ -358,7 +395,7 @@ check $APPNAME
 
 function install_sudoku
 {
-
+clear
 APPNAME="Sudoku"
 #REL=""
 
@@ -378,11 +415,15 @@ else
         svn co svn://svn.savannah.nongnu.org/gap/trunk/user-apps/Games/Sudoku
         cd Sudoku
 fi
+clear
+subtitulo
+ok "$APPNAME fetched"
 
 CHECK=""
 _build
 move_to_games $APPNAME
 check $APPNAME
+sleep $SLEEP
 }
 
 #######################################
@@ -392,7 +433,7 @@ check $APPNAME
 
 function install_gmastermind
 {
-
+clear
 APPNAME="GMastermind"
 #REL=""
 
@@ -412,11 +453,15 @@ else
         svn co svn://svn.savannah.nongnu.org/gap/trunk/user-apps/Games/GMastermind
         cd GMastermind
 fi
+clear
+subtitulo
+ok "$APPNAME fetched"
 
 CHECK=""
 _build
 move_to_games $APPNAME
 check $APPNAME
+sleep $SLEEP
 }
 
 
@@ -427,7 +472,7 @@ check $APPNAME
 
 function install_nextgo
 {
-
+clear
 APPNAME="NeXTGo"
 REL="3.0"
 BG=RESOURCES/BG/Background_GO.tiff
@@ -445,6 +490,9 @@ else
 	svn co svn://svn.savannah.nongnu.org/gap/trunk/ported-apps/Games/NeXTGo
 	cd NeXTGo || exit 1
 fi
+clear
+subtitulo
+ok "$APPNAME fetched"
 
 ### Updating the GoBan background
 cp -f ${_PWD}/${BG} ./Source/Background.tiff
@@ -453,6 +501,7 @@ CHECK=""
 _build
 move_to_games $APPNAME
 check $APPNAME
+sleep $SLEEP
 }
 
 #############################################

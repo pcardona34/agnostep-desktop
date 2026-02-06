@@ -19,6 +19,7 @@
 _PWD=`pwd`
 RPI=1
 CHECK=YES
+SLEEP=2
 
 ### End of vars
 ####################################################
@@ -30,15 +31,29 @@ CHECK=YES
 . SCRIPTS/functions_prep.sh
 . SCRIPTS/size.sh
 
+echo $PATH | grep -e "/System/Tools" &>/dev/null
+if [ $? -ne 0 ];then
+	export PATH=/System/Tools:$PATH
+fi
+
+GSMAKE=$(gnustep-config --variable=GNUSTEP_MAKEFILES)
+. ${GSMAKE}/GNUstep.sh
+
+APPS_DIR=$(gnustep-config --variable=GNUSTEP_LOCAL_APPS)
+
 clear
 
+###############################
+### RPI case?
 is_hw_rpi
 if [ $RPI -eq 0 ];then
 	. SCRIPTS/inst_rpi_tools.sh
 fi
 
-which -s GWorkspace
-if [ $? -ne 0 ];then
+###############################
+### First time?
+
+if [ ! -d $APPS_DIR/GWorkspace.app ];then
 	. SCRIPTS/first_inst_core_apps.sh
 	. SCRIPTS/inst_wrappers.sh
 else

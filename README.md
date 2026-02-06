@@ -81,32 +81,33 @@ Read [INSTALL](Documentation/INSTALL.md) first to understand all the stages.
 
 Quick way: on a fresh minimal Debian Trixie (13.x) on a computer wired to Internet, clone the this repo and then execute:
 
-````	
+```	
 	./agnostep.sh
-````
+```
 
 It will show up **AgnostepManager**.
 
 From the main menu:
 
-1) Install the Core Desktop.
-2) Install the Core apps.
-3) Set the User settings, theme: you will choose a flavour of AGNOSTEP-theme, a menu style...
+1. Install the **Core Desktop**.
+1. Install the **Core apps**.
+1. Set the User **Settings**: you will choose a flavour of AGNOSTEP-theme, a menu style...
 
-**Tip**: if you want the GNUstep default theme, execute `./uninstall_theme.sh` in `build/agnostep-theme/install` folder.
+> [!TIP]
+> If you want the GNUstep default theme, execute `./uninstall_theme.sh` in `build/agnostep-theme/install` folder.
+> You can also run `AgnostepManager`, choose **Settings**: when the question about the default Theme will be asked, answer 'No'.
  
-4) Try it with:
+Then try it with:
 
-````
+```
 	cd && startx
-````
+```
 
-5) Logout the desktop.
-6) Run again "AgnostepManager":
+If all is right and expected, logout the desktop and run again `AgnostepManager`:
 
-````	
+```	
 	./agnostep.sh
-````
+```
 
 From the main menu, choose **"DM"** item to install the Display Manager.
 

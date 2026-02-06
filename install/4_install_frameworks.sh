@@ -27,7 +27,7 @@ SPIN='/-\|'
 . /etc/os-release
 GSMAKE=$(gnustep-config --variable=GNUSTEP_MAKEFILES)
 . ${GSMAKE}/GNUstep.sh
-
+SLEEP=2
 INSTALL_DIR=$(gnustep-config --variable=GNUSTEP_LOCAL_LIBRARY)
 INSTALL_DIR=${INSTALL_DIR}/Frameworks
 
@@ -58,6 +58,9 @@ STR="Frameworks"
 titulo
 
 LIST="apps" && install_deps || exit 1
+ok "$STR Dependencies: done"
+sleep $SLEEP;clear
+
 
 if ! [ -d ../build ];then
 	mkdir -p ../build
@@ -82,7 +85,7 @@ install_popplerkit
 
 sudo ldconfig
 
-MSG="All is done for the Frameworks."
+MSG="All was done for the Frameworks. \nThe Core Desktop has been set. \n\nIt is time to install Core Apps..."
 echo "$MSG" >>$LOG
 info "$MSG"
 sleep 2

@@ -8,9 +8,15 @@ Do not try nor report issue until a release is tagged Stable.
 
 ## Changes
 
-### Changes of the dev release 0.9.9.2 - beta
+### Changes of the dev release 0.9.9.3 - beta
 
-This should be the last Dev release on pi 400 as 100 % of the tests were successful.
+- Added more tests items: unsetting the theme; listening to cuckoo.
+- Added Locales and Timezone settings.
+- Added a timer and logout even in a shell script.
+- Tweaked better installation presentation with Frameworks and apps.
+- Fixed some issues within Frameworks building.
+
+### Changes of the dev release 0.9.9.2 - beta
 
 - Added wrapper Abiword.app
 - More grained tests protocol in Documentation/TESTS.md

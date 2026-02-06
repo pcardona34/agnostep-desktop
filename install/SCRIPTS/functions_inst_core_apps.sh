@@ -20,6 +20,7 @@
 
 function install_aclock
 {
+clear
 cd ../build || exit 1
 
 APPNAME="AClock"
@@ -38,9 +39,13 @@ else
 	svn co svn://svn.savannah.nongnu.org/gap/trunk/$REPO/$APPNAME
 	cd $APPNAME || exit 1
 fi
-ok "Done"
+
+clear
+subtitulo
+ok "$APPNAME: Fetched"
 
 _build
+sleep $SLEEP
 }
 
 #######################################
@@ -50,7 +55,7 @@ _build
 
 function install_addressmanager()
 {
-
+clear
 APPNAME=AddressManager
 #RELEASE="0.5.0"
 
@@ -72,14 +77,19 @@ else
 	cd Addresses
 	cd AddressManager || exit 1
 fi
+clear
+subtitulo
+ok "$APPNAME: Fetched"
 
 _build
+sleep $SLEEP
 }
 
 
 ##############################################
 function install_batmon
 {
+clear
 PATCH=batmon_AGNOSTEP.patch
 THEME=`defaults read NSGlobalDomain GSTheme | awk '{print $3}'`
 APPNAME="batmon"
@@ -105,9 +115,13 @@ if [ "$THEME" == "AGNOSTEP" ];then
 	ok "Done"
 	### End of Patch
 fi
+clear
+subtitulo
+ok "$APPNAME: Fetched"
 
 _build
 
+sleep $SLEEP
 }
 
 #################################################
@@ -117,6 +131,7 @@ _build
 
 function install_gnumail_svn()
 {
+clear
 APPNAME=GNUMail
 RELEASE="Last svn version"
 CONFIG_ARGS=""
@@ -136,8 +151,12 @@ else
     svn co svn://svn.savannah.nongnu.org/gnustep-nonfsf/apps/gnumail
 	cd gnumail || exit 1
 fi
+clear
+subtitulo
+ok "$APPNAME: Fetched"
 
 _build
+sleep $SLEEP
 }
 
 ########################################
@@ -147,7 +166,7 @@ _build
 
 function install_gworkspace()
 {
-
+clear
 APPNAME=GWorkspace
 RELEASE="1.1.0"
 CONFIG_ARGS="--with-inotify --enable-gwmetadata"
@@ -167,6 +186,9 @@ else
 	git clone --branch=master "https://github.com/gnustep/apps-gworkspace"
 	cd apps-gworkspace
 fi
+clear
+subtitulo
+ok "$APPNAME: Fetched"
 
 ### Patch: fix 'Downloads' L18N in FSNode
 printf "Applying a L18N patch...\n"
@@ -179,6 +201,8 @@ _build
 
 #check "Recycler"
 #check "MDFinder"
+
+sleep $SLEEP
 }
 
 ##########################
@@ -187,7 +211,7 @@ _build
 
 function install_ink()
 {
-
+clear
 cd ../build || exit 1
 
 APPNAME="Ink"
@@ -210,10 +234,15 @@ else
 	git clone ${HUB}/${OWNER}/${REPO}.git &>/dev/null
 	cd $REPO
 fi
+clear
+subtitulo
+ok "$APPNAME: Fetched"
 
 cd $BUILD_DIR/$APPNAME
 
 _build
+
+sleep $SLEEP
 }
 
 ###################################################
@@ -223,6 +252,7 @@ _build
 
 function install_innerspace()
 {
+clear
 APPNAME=InnerSpace
 RELEASE="0.1"
 CONFIG_ARGS=""
@@ -247,6 +277,9 @@ else
         svn co svn://svn.savannah.nongnu.org/gap/trunk/user-apps/InnerSpace
         cd InnerSpace
 fi
+clear
+subtitulo
+ok "$APPNAME: Fetched"
 
 if ! [ -d $HOME/GNUstep/Library/InnerSpace ];then
 	mkdir -p $HOME/GNUstep/Library/InnerSpace
@@ -277,6 +310,8 @@ printf "Building Main InnerSpace...\n"
 #ok "\tPatch applied"
 
 _build
+
+sleep $SLEEP
 }
 ### End of InnerSpace
 ##############################################
@@ -288,6 +323,7 @@ _build
 
 function install_simpleagenda()
 {
+clear
 APPNAME=SimpleAgenda
 RELEASE="0.4.7"
 CONFIG_ARGS=""
@@ -307,8 +343,13 @@ else
 	git clone https://github.com/poroussel/simpleagenda.git
 	cd simpleagenda
 fi
+clear
+subtitulo
+ok "$APPNAME: Fetched"
 
 _build
+
+sleep $SLEEP
 }
 
 
@@ -319,6 +360,7 @@ _build
 
 function install_systempreferences()
 {
+clear
 APPNAME="SystemPreferences"
 RELEASE="1.2.0"
 CONFIG_ARGS=""
@@ -338,8 +380,13 @@ else
 	git clone --branch=master https://github.com/gnustep/apps-systempreferences
 	cd apps-systempreferences || exit 1
 fi
+clear
+subtitulo
+ok "$APPNAME: Fetched"
 
 _build
+
+sleep $SLEEP
 }
 
 
@@ -351,7 +398,7 @@ _build
 
 function install_terminal()
 {
-
+clear
 APPNAME=Terminal
 RELEASE="0.9.8"
 CONFIG_ARGS=""
@@ -373,8 +420,13 @@ else
 	svn co svn://svn.savannah.nongnu.org/gap/trunk/system-apps/Terminal
 	cd Terminal || exit 1
 fi
+clear
+subtitulo
+ok "$APPNAME: Fetched"
 
 _build
+
+sleep $SLEEP
 }
 
 
@@ -386,6 +438,7 @@ _build
 
 function install_timemon()
 {
+clear
 APPNAME=TimeMon
 RELEASE="4.1"
 HUB=
@@ -403,8 +456,13 @@ else
         svn co svn://svn.savannah.nongnu.org/gap/trunk/ported-apps/Util/$APPNAME
         cd $APPNAME || exit 1
 fi
+clear
+subtitulo
+ok "$APPNAME: Fetched"
 
 _build
+
+sleep $SLEEP
 }
 
 
@@ -415,7 +473,7 @@ _build
 
 function install_volumecontrol()
 {
-
+clear
 APPNAME=VolumeControl
 RELEASE=""
 CONFIG_ARGS=""
@@ -435,8 +493,13 @@ else
 	git clone https://github.com/alexmyczko/VolumeControl.app.git
 	cd ${APPNAME}.app || exit 1
 fi
+clear
+subtitulo
+ok "$APPNAME: Fetched"
 
 _build
+
+sleep $SLEEP
 }
 
 #################################################
@@ -450,6 +513,7 @@ _build
 
 function install_gnumail()
 {
+clear
 APPNAME=GNUMail
 RELEASE="1.4.0 - stable release"
 CONFIG_ARGS=""
@@ -470,6 +534,9 @@ else
     tar -xf GNUMail-1.4.0.tar && rm GNUMail-1.4.0.tar
 	cd GNUMail-1.4.0 
 fi
+clear
+subtitulo
+ok "$APPNAME: Fetched"
 
 if [ -d /Local/Applications/GNUMail.app ];then
 	sudo rm -fR /Local/Applications/GNUMail.app
@@ -477,6 +544,8 @@ if [ -d /Local/Applications/GNUMail.app ];then
 fi
 
 _build
+
+sleep $SLEEP
 }
 
 ##################################
@@ -492,6 +561,7 @@ _build
 
 function install_textedit()
 {
+clear
 APPNAME=TextEdit
 RELEASE="5.0"
 HUB=https://salsa.debian.org/gnustep-team/textedit.app.git
@@ -499,7 +569,6 @@ DIR=textedit.app
 CONFIG_ARGS=""
 BUILD_ARGS=""
 INSTALL_ARGS=""
-
 
 STR="$APPNAME $RELEASE"
 subtitulo
@@ -514,6 +583,9 @@ else
 	git clone $HUB
 	cd $DIR || exit 1
 fi
+clear
+subtitulo
+ok "$APPNAME: Fetched"
 
 printf "Patching...\n"
 is_quilt
@@ -521,4 +593,6 @@ set_quilt
 quilt push -a
 
 _build
+
+sleep $SLEEP
 }
