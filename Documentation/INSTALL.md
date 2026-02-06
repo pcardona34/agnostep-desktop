@@ -99,7 +99,7 @@ After several minutes, you should be able to start the AGNoStep Desktop:
 - From `Lightdm` graphical Login (after stage 4). 
 
 > [!TIP]
-> After the Display Manager has been set, you need to use CLI again, use TTY2 to login to the console: `CTRL-ALT-F2`.  
+> After the Display Manager has been set, if you need to use CLI again, use TTY2 to log into the console: `CTRL-ALT-F2`.  
 > Then go back to the graphical environment with: `CTRL-ALT-F7`.
 	
 ---
@@ -188,10 +188,10 @@ Logout the Desktop if you want to Change **Core Desktop** or **Settings** compon
 
 Then:
 
-1. From the menu shown, choose the software category: core, extra apps, developper, games...
+1. From the menu shown, choose the software category: Core, Extra Apps, Developper, Games, Utilities...
 1. Update the User settings to apply the theme to newly installed apps: choose item 'Settings'.
 
-> [!TIPT]
+> [!TIP]
 > DO NOT forget the 'settings' stage to apply correctly the theme to the app just installed if you note if was not applied.
 
 ## III. How to remove some app?
