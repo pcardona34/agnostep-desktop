@@ -38,12 +38,12 @@ sudo dpkg-reconfigure tzdata
 # Setting the Locale
 sudo dpkg-reconfigure locales
 clear
-sudo locale-gen
+#sudo locale-gen
 
 ### The teat the case the user will not log out...
-NEWLG=$(cat /etc/locale.conf | grep -e LANG | awk -F= '{print }')
-unset LANG
-export LANG="$NEWLG"
+#NEWLG=$(cat /etc/locale.conf | grep -e LANG | awk -F= '{print }')
+#unset LANG
+#export LANG="$NEWLG"
 ok "All done."
 warning "You should log out and back in again to apply the locale changes.\nThen, come back here and run again:"
 cli "./agnostep.sh"
