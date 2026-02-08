@@ -8,7 +8,20 @@ Do not try nor report issue until a release is tagged Stable.
 
 ## Changes
 
+### Changes of the Release Candidate 1.0.0 - RC 1
+
+This release begins the serie of tests on a pi 500 and achieve RPI's tests before RC final.
+
+- Fixed a path issue in Xorg Hack and moved it to 6_user_settings.sh.
+- Removed obsolete code about logs in 6_user_settings.sh.
+- Fixed an ambiguous grep on release info. Now right info is written in release.info.
+- Updated messages info at the end of user settings.
+- Auto-reboot if a pi 500 to apply Xorg Hack.
+- Install agnostep CLI: before was done by agnostep-theme, which was inconsistent.
+
 ### Changes of the dev release 0.9.9.3 - beta
+
+This release ends the serie of tests on a pi 400.
 
 - AgnostepManager.app: Fixed a path issue in AgnostepManager and in Recover: auto-repair was successfully tested then.
 

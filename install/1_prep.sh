@@ -83,21 +83,6 @@ fi
 
 #######################
 
-is_hw_rpi
-if [ $RPI -eq 0 ];then
-	NUMBER=`echo $MODEL | awk '{print $3}'`
-	if [ "$NUMBER" == "500" ] || [ "${NUMBER:0:1}" == "5" ];then
-		printf "Xorg Hacking is necessary for this model on RPI OS Lite...\n";sleep 2
-		sudo cp --verbose --force RESOURCES/99-vc4.conf /etc/X11/Xorg.conf.d/
-		sleep 2
-		DEP="gldriver-test"
-		sudo apt -y install ${DEP}
-		ok "Done"
-		sleep 2
-		clear
-	fi
-fi
-
 sudo ldconfig
 
 ########################

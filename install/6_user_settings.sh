@@ -113,6 +113,8 @@ titulo
 ###########################################
 ### Installing Tools and confs...
 
+install_agnostep_cli
+sleep 2
 check_tools
 cd $_HERE
 
@@ -123,7 +125,7 @@ stop
 STR="Info release"
 subtitulo
 
-RELEASE=$(grep -e "Release" ../Documentation/RELEASE.md | awk '{print $3}')
+RELEASE=$(grep -e "Release:" ../Documentation/RELEASE.md | awk '{print $3}')
 STATUS=$(grep -e "Status" ../Documentation/RELEASE.md | awk '{print $3}')
 
 if [ ! -d $HOME/.local/etc ];then
@@ -212,31 +214,53 @@ yesno_AGNOSTEP_theme
 
 cd "$PWD"
 
-###########################################
-### Installation LOGS
-STR="Installation Logs"
-subtitulo
-
-cd
-for LOG in *.log
-do
-	if [ "$LOG" == "ENJOY.log" ];then
-		continue;
-	else
-		mv $LOG Documents/
-	fi
-done
-
 stop
 
 ###########################################
+
+cd $_HERE
+clear
 
 MESSAGE="A G N o S t e p Desktop is ready to use now."
 
 info "$MESSAGE"
 
-warning "You need to logout and login again to apply the changes.\nThen, after the new login, execute:"
-cli "cd\n\tstartx"
+info "To install the Graphic Login/Display Manager: after testing the Desktop, log out, back in, execute AgnostepManager and select DM item:"
+cli "./agnostep.sh"
 
-info "To install the Graphic Login/Display Manager: after testing the Desktop, logout and execute:"
-cli "cd $_PWD\n\t./7_install_DM.sh"
+sleep 6
+
+### If a pi 500: we must reboot the first time to apply Xorg Hack.
+is_hw_rpi
+if [ $RPI -eq 0 ];then
+	NUMBER=`echo $MODEL | awk '{print $3}'`
+	if [ "$NUMBER" == "500" ] || [ "${NUMBER:0:1}" == "5" ];then
+		clear
+		STR="Xorg Hacking on pi500"
+		subtitulo
+		info "Xorg Hacking is necessary for this model on RPI OS Lite...\n";sleep 2
+		DESTX=/etc/X11/Xorg.conf.d
+		if [ ! -d $DESTX ];then
+			sudo mkdir -p $DESTX
+		fi
+		sudo cp --verbose --force RESOURCES/CONF/99-vc4.conf ${DESTX}/
+		sleep 2
+		DEP="gldriver-test"
+		sudo apt -y install ${DEP}
+		ok "Done"
+		warning "The pi 500 will reboot to apply the Xorg hack... Back in, to test the Desktop,  execute:"
+		cli "startx"
+		MSG="Seconds before reboot: "
+		DELAY=9
+		timer
+		sudo reboot;exit
+	fi
+fi
+
+warning "You need to logout and login again to apply the changes.\nThen, after the new login, execute:"
+cli "startx"
+sleep 3
+MSG="Seconds before logout: "
+DELAY=9
+timer
+exec SCRIPTS/lo.sh

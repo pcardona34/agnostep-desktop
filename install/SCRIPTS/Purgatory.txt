@@ -111,40 +111,6 @@ _build
 }
 ######################################
 
-##################################################
-## Preview
-### Repo/Release: Salsa debian
-##################################################
-
-function install_preview_salsa()
-{
-APPNAME=Preview
-HUB="https://salsa.debian.org/gnustep-team/preview.app.git"
-DIR="preview.app"
-CONFIG_ARGS=""
-BUILD_ARGS=""
-INSTALL_ARGS=""
-
-STR="$APPNAME"
-subtitulo
-
-cd ../build || exit 1
-
-printf "Fetching...\n"
-if [ -d $DIR ];then
-        cd $DIR
-        git pull
-else
-        git clone ${HUB}
-        cd $DIR
-fi
-
-make clean
-_build
-
-}
-
-
 #############################################
 ## TopBar
 ### Repo/Release: github/gnustep/topbar
@@ -175,27 +141,3 @@ _build
 
 ### End of TopBar
 #############################################
-
-
-##############################################
-### /etc/skel: copy ressources (obsolete)
-
-function cp_to_skel()
-{
-
-title "User Home Template"
-
-printf "Copy of the User Home Template in /etc/skel/PISI..."
-
-cd RESOURCES/SKEL
-if ! [ -d /etc/skel/PISI ];then
-	sudo mkdir -p /etc/skel/PISI
-fi
-sudo cp -r GNUstep /etc/skel/PISI/
-sudo chmod --recursive 0755 /etc/skel
-
-cd $_PWD
-ok "Done"
-}
-### End of copy of ressources to /etc/skel
-##############################################

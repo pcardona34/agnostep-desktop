@@ -27,6 +27,19 @@ TEMPFILE=$(mktemp /tmp/agno-XXXXX)
 trap "rm -f $TEMPFILE" EXIT
 
 ###########################################
+### agnostep cli
+function install_agnostep_cli
+{
+STR="Agnostep CLI"
+subtitulo
+
+cd RESOURCES/SCRIPTS || exit 1
+sudo cp agnostep /usr/local/bin/
+cd $_PWD
+ok "Done"
+}
+
+###########################################
 ### Installing Tools and confs... Pass
 function install_pass
 {
