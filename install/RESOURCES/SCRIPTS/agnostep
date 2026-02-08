@@ -25,9 +25,11 @@ fi
 LIB_DIR=$(gnustep-config --variable=GNUSTEP_LOCAL_LIBRARY)
 . /usr/local/bin/colors.sh
 . $HOME/.local/etc/release.info
+MODEL=unknwon
 
 #######################################################""
 ### System Infos
+
 function myinfo()
 {
 OS=$(cat /etc/os-release | grep -e "^ID" | awk -F= '{print $2}')
@@ -38,24 +40,33 @@ WS=$(defaults read org.gnustep.GWorkspace GSWorkspaceApplication | awk '{print $
 GSBASE=$(ls ${LIB_DIR}/Libraries/gnustep-base/Versions)
 GSGUI=$(ls ${LIB_DIR}/Libraries/gnustep-gui/Versions)
 THEME=$(defaults read NSGlobalDomain GSTheme | awk '{print $3}')
+ARCH=`uname -m`
+if [ "$ARCH" == "aarch64" ];then
+	if [ -f /sys/firmware/devicetree/base/model ];then
+		MODEL=`head --bytes=-1 /proc/device-tree/model`
+	fi
+fi
 
-TRANS=`echo ${LANG%.UTF-8} | awk -F_ '{print $1}'`
+TRANS=${LANG:0:2}
 
 title "${DESKTOP}: ${REL} - ${STATUS}"
 
 case "$TRANS" in
 	"fr")
+		MOD="Modèle"
                 KER="Noyau"
                 WIN="Gestionnaire de fenêtre"
                 WOR="Espace de travail"
                 THE="Thème";;
 	"en"|*)
+		MOD="Model"
 		KER="Kernel"
 		WIN="Window Manager"
 		WOR="Workspace"
 		THE="Theme";;
 esac
 
+printf "\t${MOD}: $MODEL\n"
 printf "\tOS: $OS $RELEASE\n"
 printf "\t${KER}: ${KERNEL}\n"
 printf "\t${WIN}: $WM\n"

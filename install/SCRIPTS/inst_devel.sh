@@ -42,8 +42,9 @@ SLEEP=2
 . SCRIPTS/spinner.sh
 . SCRIPTS/misc_info.sh
 . SCRIPTS/functions_remove_app.sh
-. SCRIPTS/functions_inst_devel.sh
+. SCRIPTS/fetcher.sh
 . SCRIPTS/std_build.sh
+. SCRIPTS/functions_inst_devel.sh
 
 ### End of Include functions
 ################################
@@ -66,6 +67,10 @@ fi
 if ! [ -d $INSTALL_DIR ];then
 	sudo mkdir -p $INSTALL_DIR
 fi
+
+#################################################
+
+move_renaissance_tools
 
 #################################################
 

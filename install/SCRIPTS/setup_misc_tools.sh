@@ -36,6 +36,9 @@ subtitulo
 cd RESOURCES/SCRIPTS || exit 1
 sudo cp agnostep /usr/local/bin/
 cd $_PWD
+cd SCRIPTS
+sudo cp colors.sh /usr/local/bin/
+cd $_PWD
 ok "Done"
 }
 

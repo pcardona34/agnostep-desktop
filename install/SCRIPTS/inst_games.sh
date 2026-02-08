@@ -43,8 +43,9 @@ SLEEP=2
 . SCRIPTS/find_app.sh
 . SCRIPTS/misc_info.sh
 . SCRIPTS/functions_remove_app.sh
-. SCRIPTS/functions_inst_games.sh
 . SCRIPTS/std_build.sh
+. SCRIPTS/fetcher.sh
+. SCRIPTS/functions_inst_games.sh
 
 ### End of Include functions
 #################################################

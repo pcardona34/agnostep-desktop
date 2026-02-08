@@ -33,6 +33,7 @@ SPIN='/-\|'
 . SCRIPTS/colors.sh
 . SCRIPTS/spinner.sh
 . SCRIPTS/functions_prep.sh
+. SCRIPTS/fetcher.sh
 . SCRIPTS/functions_inst_wmaker.sh
 
 ### End of Include functions

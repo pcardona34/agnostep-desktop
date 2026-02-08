@@ -50,6 +50,7 @@ trap "rm -f $TEMPFILE" EXIT
 . SCRIPTS/patch_with_quilt.sh
 . SCRIPTS/misc_info.sh
 . SCRIPTS/functions_remove_app.sh
+. SCRIPTS/fetcher.sh
 . SCRIPTS/functions_inst_core_apps.sh
 
 ### End of Include functions

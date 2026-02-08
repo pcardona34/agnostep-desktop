@@ -45,6 +45,7 @@ fi
 . SCRIPTS/std_build.sh
 . SCRIPTS/check_app.sh
 . SCRIPTS/patch_with_quilt.sh
+. SCRIPTS/fetcher.sh
 . SCRIPTS/functions_inst_frameworks.sh
 
 ### End of Include functions

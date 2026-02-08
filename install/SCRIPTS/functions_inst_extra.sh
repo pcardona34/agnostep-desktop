@@ -289,7 +289,10 @@ subtitulo
 cd ../build || exit 1
 
 printf "Fetching NetSurf Workspace...\n"
-wget --quiet https://github.com/netsurf-browser/netsurf/raw/refs/heads/master/docs/env.sh || exit 1
+fetch https://github.com/netsurf-browser/netsurf/raw/refs/heads/master/docs/env.sh
+if  [ ! -f env.sh ];then
+	exit 1
+fi
 unset HOST
 . env.sh
 printf "Installing the packages...\n"
@@ -322,7 +325,7 @@ STR="$APPNAME"
 subtitulo
 
 printf "Fetching gnustep-netsurf...\n"
-wget --quiet https://github.com/anthonyc-r/netsurf-gnustep/archive/refs/tags/3.11-gnustep.tar.gz
+fetch https://github.com/anthonyc-r/netsurf-gnustep/archive/refs/tags/3.11-gnustep.tar.gz
 gunzip --force 3.11-gnustep.tar.gz
 tar xvf 3.11-gnustep.tar && rm 3.11-gnustep.tar
 mv netsurf-gnustep-3.11-gnustep netsurf
@@ -587,7 +590,7 @@ printf "Fetching...\n"
 if [ -d ${APPNAME}-${RELEASE} ];then
 	cd ${APPNAME}-${RELEASE}
 else
-	wget --quiet ${HUB}/${APPNAME}-${RELEASE}${EXT}
+	fetch ${HUB}/${APPNAME}-${RELEASE}${EXT}
 	gunzip ${APPNAME}-${RELEASE}${EXT}
 	tar -xf ${APPNAME}-${RELEASE}.tar
 	cd ${APPNAME}-${RELEASE} || exit 1

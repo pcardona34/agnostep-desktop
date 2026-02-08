@@ -190,7 +190,7 @@ printf "Fetching...\n"
 if [ -d HighlighterKit-0.1.3 ];then
 	cd HighlighterKit-0.1.3
 else
-	wget http://download.savannah.nongnu.org/releases/gnustep-nonfsf/HighlighterKit-0.1.3.tar.gz
+	fetch http://download.savannah.nongnu.org/releases/gnustep-nonfsf/HighlighterKit-0.1.3.tar.gz
 	gunzip --force HighlighterKit-0.1.3.tar.gz
 	tar -xf HighlighterKit-0.1.3.tar
 	cd HighlighterKit-0.1.3 || exit 1
@@ -220,7 +220,7 @@ printf "Fetching...\n"
 if [ -d HKThemes ];then
 	cd HKThemes
 else
-	wget http://download.savannah.nongnu.org/releases/gnustep-nonfsf/HKThemes-1.0.tar.gz
+	fetch http://download.savannah.nongnu.org/releases/gnustep-nonfsf/HKThemes-1.0.tar.gz
 	gunzip --force HKThemes-1.0.tar.gz
 	tar -xf HKThemes-1.0.tar
 	cd HKThemes || exit 1
@@ -449,7 +449,7 @@ cd ../build || exit 1
 subtitulo
 printf "Fetching...\n"
 if [ ! -d libs-dbuskit-0.1.1 ];then
-	wget https://github.com/gnustep/libs-dbuskit/archive/refs/tags/0.1.1.tar.gz
+	fetch https://github.com/gnustep/libs-dbuskit/archive/refs/tags/0.1.1.tar.gz
 	gunzip --force 0.1.1.tar.gz
 	tar xf 0.1.1.tar && rm 0.1.1.tar
 fi
@@ -460,7 +460,6 @@ cd libs-dbuskit-0.1.1 || exit 1
 ### We must update config.guess... and  config.sub
 
 wget --quiet -O config.guess 'https://git.savannah.gnu.org/gitweb/?p=config.git;a=blob_plain;f=config.guess;hb=HEAD'
-
 wget --quiet -O config.sub 'https://git.savannah.gnu.org/gitweb/?p=config.git;a=blob_plain;f=config.sub;hb=HEAD'
 
 STR="$FWNAME"
@@ -477,7 +476,7 @@ ok "\rDone"
 ### A patch must be applied (thanks to Yavor Doganov, Debian GNUstep maintainer)
 cd Source
 if [ -f $PATCH_DIR/$PATCH ];then
-	 wget https://sources.debian.org/data/main/d/dbuskit/0.1.1-14/debian/patches/no-gc-macros.patch
+	 fetch https://sources.debian.org/data/main/d/dbuskit/0.1.1-14/debian/patches/no-gc-macros.patch
 else
 	cp $PATCH_DIR/$PATCH ./
 fi

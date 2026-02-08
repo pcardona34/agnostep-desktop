@@ -2,5 +2,5 @@
 
 ## Release
 
-- Release: 0.9.9.5
-- Status: RC
+- Release: 1.0.0
+- Status: RC 2

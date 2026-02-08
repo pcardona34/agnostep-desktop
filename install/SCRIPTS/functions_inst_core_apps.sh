@@ -529,10 +529,10 @@ printf "Fetching...\n"
 if [ -d GNUMail-1.4.0 ];then
 	cd GNUMail-1.4.0
 else
-    wget http://download.savannah.nongnu.org/releases/gnustep-nonfsf/GNUMail-1.4.0.tar.gz
+    fetch http://download.savannah.nongnu.org/releases/gnustep-nonfsf/GNUMail-1.4.0.tar.gz
     gunzip --force GNUMail-1.4.0.tar.gz
     tar -xf GNUMail-1.4.0.tar && rm GNUMail-1.4.0.tar
-	cd GNUMail-1.4.0 
+	cd GNUMail-1.4.0 || exit 1
 fi
 clear
 subtitulo

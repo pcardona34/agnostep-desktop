@@ -44,6 +44,7 @@ SLEEP=2
 . SCRIPTS/misc_info.sh
 . SCRIPTS/patch_with_quilt.sh
 . SCRIPTS/functions_remove_app.sh
+. SCRIPTS/fetcher.sh
 . SCRIPTS/functions_inst_extra.sh
 
 ### End of Include functions

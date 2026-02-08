@@ -46,6 +46,28 @@ sudo ln --force --symbolic ${DEVEL_DIR}/${APPNAME}.app/${APPNAME}
 cd $_PWD
 }
 
+function move_renaissance_tools
+{
+APP_DIR=$(gnustep-config --variable=GNUSTEP_LOCAL_APPS)
+if [ -z "$APP_DIR" ];then
+        alert "Your GNUstep System seems misconfigured."
+        exit 1
+fi
+
+cd $APP_DIR || exit 1
+
+for RENTOOL in GSMarkup*.app
+do
+	if [ -d $RENTOOL ];then
+		APPNAME=${RENTOOL%.app}
+		move_to_devel $APPNAME
+		cd $APP_DIR
+	fi
+done
+
+cd $_PWD
+}
+
 ########################## - E - ##########################
 
 #############################################
@@ -160,7 +182,7 @@ sleep $SLEEP
 ### Repo/Release: github/gnustep: 0.7.0
 ########################################
 
-function install_PC()
+function install_pc()
 {
 clear
 APPNAME=ProjectCenter
@@ -253,7 +275,7 @@ printf "Fetching...\n"
 if [ -d ${APPNAME}-${RELEASE} ];then
 	cd ${APPNAME}-${RELEASE}
 else
-	wget --quiet ${HUB}/${APPNAME}-${RELEASE}${EXT}
+	fetch ${HUB}/${APPNAME}-${RELEASE}${EXT}
 	gunzip --force ${APPNAME}-${RELEASE}${EXT}
 	tar -xf ${APPNAME}-${RELEASE}.tar
 	cd ${APPNAME}-${RELEASE} || exit 1

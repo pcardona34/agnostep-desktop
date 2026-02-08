@@ -67,7 +67,7 @@ printf "Fetching...\n"
 if [ -d $DIR ];then
 	cd $DIR
 else
-	wget --quiet "${REPO}${ARCHIVE}"
+	fetch "${REPO}${ARCHIVE}"
 	gunzip --force ${ARCHIVE}
 	tar -xf ${DIR}.tar
 	cd $DIR || exit 1
@@ -203,10 +203,10 @@ printf "Fetching...\n"
 if [ -d dockapps-daaf3aa ];then
 	cd dockapps-daaf3aa
 else
-	wget --quiet https://www.dockapps.net/download/wmclock-1.0.16.tar.gz
+	fetch https://www.dockapps.net/download/wmclock-1.0.16.tar.gz
 	gunzip --force wmclock-1.0.16.tar.gz
 	tar -xf wmclock-1.0.16.tar
-	cd dockapps-daaf3aa
+	cd dockapps-daaf3aa || exit 1
 fi
 
 printf "Configuring...\n"
@@ -258,10 +258,10 @@ printf "Fetching...\n"
 if [ -d ${APPNAME}-${REL} ];then
 	cd ${APPNAME}-${REL}
 else
-	wget --quiet https://www.dockapps.net/download/${APPNAME}-${REL}.tar.gz
+	fetch https://www.dockapps.net/download/${APPNAME}-${REL}.tar.gz
 	gunzip --force ${APPNAME}-${REL}.tar.gz
 	tar -xf ${APPNAME}-${REL}.tar
-	cd ${APPNAME}-${REL}
+	cd ${APPNAME}-${REL} || exit 1
 fi
 
 printf "Configuring...\n"

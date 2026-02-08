@@ -183,7 +183,7 @@ printf "Fetching...\n"
 if [ -d LapisPuzzle-1.2 ];then
 	cd LapisPuzzle-1.2
 else
-	wget --quiet http://mirror.easyname.at/nongnu/gap/LapisPuzzle-1.2.tar.gz
+	fetch http://mirror.easyname.at/nongnu/gap/LapisPuzzle-1.2.tar.gz
 	gunzip --force LapisPuzzle-1.2.tar.gz
 	tar -xf LapisPuzzle-1.2.tar
 	cd LapisPuzzle-1.2 || exit 1

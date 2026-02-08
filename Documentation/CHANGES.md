@@ -4,13 +4,18 @@
 
 All dev release are for my convenience.
 Do not use them if you are not a developer understanding the code used.
-Do not try nor report issue until a release is tagged Stable.
+Do not try nor report any issue until a release is tagged Stable.
 
 ## Changes
 
+### Changes of the Release Candidate 1.0.0 - RC 2
+
+- Enhanced fetching to avoid a wget fail issue with a more strong fetch function: see install/SCRIPTS/fetcher.sh.
+- Propagate the use of fetch there were simple wget use: many scripts concerned.
+
 ### Changes of the Release Candidate 1.0.0 - RC 1
 
-This release begins the serie of tests on a pi 500 and achieve RPI's tests before RC final.
+This release begins the serie of tests on a pi 500.
 
 - Fixed a path issue in Xorg Hack and moved it to 6_user_settings.sh.
 - Removed obsolete code about logs in 6_user_settings.sh.

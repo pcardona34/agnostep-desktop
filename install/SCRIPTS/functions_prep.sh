@@ -141,7 +141,10 @@ cd ../build || exit 1
 
 if ! [ -f cmake-4.0.2-linux-aarch64.sh ];then
 	printf "\nfetching: CMake-4.0.2...\n"
-	wget --quiet https://github.com/Kitware/CMake/releases/download/v4.0.2/cmake-4.0.2-linux-aarch64.sh
+	fetch https://github.com/Kitware/CMake/releases/download/v4.0.2/cmake-4.0.2-linux-aarch64.sh
+	if [ ! -f cmake-4.0.2-linux-aarch64.sh ];then
+		exit 1
+	fi
 fi
 
 printf "Installing...\n"

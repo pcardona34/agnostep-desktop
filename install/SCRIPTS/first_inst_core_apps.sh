@@ -45,6 +45,7 @@ trap "rm -f $TEMPFILE" EXIT
 . SCRIPTS/functions_prep.sh
 . SCRIPTS/std_build.sh
 . SCRIPTS/patch_with_quilt.sh
+. SCRIPTS/fetcher.sh
 . SCRIPTS/functions_inst_core_apps.sh
 
 
