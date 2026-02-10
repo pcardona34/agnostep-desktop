@@ -57,19 +57,32 @@ LIST="build" && install_deps
 
 #######################
 
+sudo dpkg-reconfigure console-setup
+
+clear
+
+titulo
+
 ### Getting infos
 # Timezone
-TZ=$(cat /etc/timezone)
+if [ -f /etc/timezone ];then
+	TZ=$(cat /etc/timezone)
+else
+	ZONE=$(ls -l /etc/localtime | awk '{print $11}' | awk -F/ '{print $5}')
+	COUNTRY=$(ls -l /etc/localtime | awk '{print $11}' | awk -F/ '{print $6}')
+	TZ="$ZONE/$COUNTRY"
+fi
+KB=$(tail -n 6 /etc/vconsole.conf | head -n 3)
 
 dialog --no-shadow --backtitle "Localization" \
  --title "Locale and Timezone" \
  --yesno "
 Your system is set with:
-
 Timezone: $TZ
 Lang: ${LANG}
+$KB
 
-Do you want to change these settings? " 12 50
+Do you want to change these settings? " 15 50
 
 if [ $? -eq 0 ];then
 	. SCRIPTS/set_the_locale.sh

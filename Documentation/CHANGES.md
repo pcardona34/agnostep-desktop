@@ -8,6 +8,18 @@ Do not try nor report any issue until a release is tagged Stable.
 
 ## Changes
 
+### Changes of the Release Candidate 1.0.0 - RC 3
+
+This release begins the serie of tests on a x86_64 architecture.
+First tests with Qemu/Kvm: bad graphic rendering.
+We will move the future tests to virtualbox?
+
+- Dispatched prep and core because prep needs often to log out to apply the new settings.
+- Fixed an issue with `lo.sh`: substituted `pkill` to `killall`.
+- Added console-setup into prep stage.
+- Removed X keyboard hack from 6_user_settings.sh
+- Fixed an issue in Firefox wrapper installer: we must use 'esr' release now.
+
 ### Changes of the Release Candidate 1.0.0 - RC 2
 
 - Enhanced fetching to avoid a wget fail issue with a more strong fetch function: see install/SCRIPTS/fetcher.sh.
@@ -24,7 +36,7 @@ This release begins the serie of tests on a pi 500.
 - Auto-reboot if a pi 500 to apply Xorg Hack.
 - Install agnostep CLI: before was done by agnostep-theme, which was inconsistent.
 
-### Changes of the dev release 0.9.9.3 - beta
+### Changes of the dev release 0.9.9.4 - beta
 
 This release ends the serie of tests on a pi 400.
 

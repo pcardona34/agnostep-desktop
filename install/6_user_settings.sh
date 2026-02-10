@@ -23,6 +23,7 @@ if [ $STOP -ne 0 ];then
 fi
 }
 
+RPI=1 # We assume not a rpi by default
 _HERE=`pwd`
 SPIN='\-/|'
 STOP=0 # Set to 0 to avoid stops; to 1 to make stops and debug
@@ -231,6 +232,7 @@ cli "./agnostep.sh"
 sleep 6
 
 ### If a pi 500: we must reboot the first time to apply Xorg Hack.
+
 is_hw_rpi
 if [ $RPI -eq 0 ];then
 	NUMBER=`echo $MODEL | awk '{print $3}'`

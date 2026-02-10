@@ -53,9 +53,6 @@ echo "AGNOSTEP: Begining of script $0 at: $BEG" > $LOG
 ### Install steps
 ####################################################
 
-./1_prep.sh || exit 1
-
-cd ${THERE}
 ./2_install_wmaker.sh || exit 1
 
 cd ${THERE}

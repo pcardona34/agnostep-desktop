@@ -3,4 +3,4 @@
 ## Release
 
 - Release: 1.0.0
-- Status: RC 2
+- Status: RC 3

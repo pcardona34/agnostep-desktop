@@ -65,9 +65,10 @@ fi
 dialog --no-shadow --backtitle "${BACK}" \
  --title "Applications Manager" \
  --menu "
-First time: install Core, Apps, Settings and DM.
+First time: prepare, then install Core, Apps, Settings and DM.
 
-What to do now?" 21 66 16 \
+What to do now?" 23 66 18 \
+"Prep" "Prepare the installation" \
 "Core" "Install Core Desktop" \
 "Apps" "Install Core Apps" \
 "Settings" "User Settings and Theme" \
@@ -78,6 +79,7 @@ What to do now?" 21 66 16 \
 "Games" "Install Games" \
 "Wrappers" "Install Wrappers" \
 "Remove" "Remove some App" \
+"Update" "Update AGNoStep" \
 "Logs" "Desktop and Theme Logs" 2>> $FICHTEMP
 
 # traitement de la réponse
@@ -86,6 +88,9 @@ then
 for i in `cat $FICHTEMP`
 do
 case $i in
+"Prep") printf "You chose Prep\n"
+	cd install || exit 1
+	./1_prep.sh;;
 "Core") printf "You chose: Core\n"
 	cd install || exit 1
 	./core.sh;;
@@ -116,6 +121,8 @@ case $i in
 "Remove") printf "You chose Remove\n"
 	cd install || exit 1
 	./remove_app.sh;;
+"Update") printf "You chose Update"
+	git pull;;
 "Logs") printf "You chose Logs\n"
 	cd install || exit
 	./view_logs.sh;;

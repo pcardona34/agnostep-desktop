@@ -1,3 +1,3 @@
 #!/bin/bash
 
-sudo killall login
+sudo pkill login

@@ -60,18 +60,18 @@ titulo
 LG=${LANG:0:2}
 case "$LG" in
 "en")
-	DEP_Firefox="firefox"
+	DEP_Firefox="firefox-esr"
 	DEP_Chromium="chromium";;
 *)
-	DEP_Firefox="firefox firefox-l10n-${LG}"
+	DEP_Firefox="firefox-esr firefox-esr-l10n-${LG}"
 	DEP_Chromium="chromium chromium-l10n";;
 esac
 
 ### RPI case?
 is_hw_rpi
 if [ $RPI -eq 0 ];then
-	DEP_Firefox="${DEP_Firefox} rpi-firefox-mods"
-	DEP_Chromium="${DEP_Chromium} rpi-chromium-mods"
+	DEP_Firefox="rpi-firefox-mods"
+	DEP_Chromium="rpi-chromium-mods"
 fi
 
 ### Pass installed?
