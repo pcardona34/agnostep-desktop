@@ -67,16 +67,18 @@ dialog --no-shadow --backtitle "${BACK}" \
  --menu "
 First time: prepare, then install Core, Apps, Settings and DM.
 
-What to do now?" 23 66 18 \
+What to do now?" 25 66 20 \
 "Prep" "Prepare the installation" \
 "Core" "Install Core Desktop" \
 "Apps" "Install Core Apps" \
 "Settings" "User Settings and Theme" \
 "DM" "Install Display Manager" \
+"Help" "Install localized Help" \
 "Devel" "Install Developer Apps" \
 "Extra" "Install more User Apps" \
 "Util" "Utilities" \
 "Games" "Install Games" \
+"Meteo" "Reset Weather Station" \
 "Wrappers" "Install Wrappers" \
 "Remove" "Remove some App" \
 "Update" "Update AGNoStep" \
@@ -103,6 +105,9 @@ case $i in
 "DM") printf "You chose: DM\n"
 	cd install || exit 1
 	./7_install_DM.sh;;
+"Help") printf "You chose help"
+	cd install || exit 1
+	./install_help.sh;;
 "Devel") printf "You chose: Devel\n"
 	cd install || exit 1
 	bash ./SCRIPTS/inst_devel.sh;;
@@ -115,14 +120,31 @@ case $i in
 "Games") printf "You chose Games\n"
 	cd install || exit 1
 	bash ./SCRIPTS/inst_games.sh;;
+"Meteo") printf "You chose Meteo\n"
+	METEO_TOOLS=/usr/local/bin/functions_meteo.sh
+	if [ ! -f $METEO_TOOLS ];then
+		alert "Meteo Tools badly set. Did you run Settings first?"
+		sleep 4
+		exit 1
+	else
+		. $METEO_TOOLS
+		write_meteo_conf
+	fi
+	ok "Meteo has been reset";sleep 2;;
 "Wrappers") printf "You chose Wrappers\n"
 	cd install || exit 1
 	bash ./SCRIPTS/inst_wrappers.sh;;
 "Remove") printf "You chose Remove\n"
 	cd install || exit 1
 	./remove_app.sh;;
-"Update") printf "You chose Update"
-	git pull;;
+"Update") printf "You chose Update\n"
+	dialog --title "Updating AGNoStep" \
+	--yesno "
+	If you modified this repository by yourself, you should not try to update. \
+	Do you want to update the whole agnostep-desktop repository?" 12 50
+	if [ $? -eq 0 ];then
+		git pull
+	fi;;
 "Logs") printf "You chose Logs\n"
 	cd install || exit
 	./view_logs.sh;;

@@ -74,37 +74,8 @@ stop
 
 ###########################################
 ### Help
-### As the way the help is provided
-### within GNUstep is not yet clearly defined
-### we provide .help in a in purpose folder
-### $HELP_FOLDER
-STR="Help Files"
-subtitulo
-
-if [ ! -d $HOME/$HELP_FOLDER ];then
-	mkdir -p $HOME/$HELP_FOLDER
-fi
-
-cd RESOURCES/HELP
-for HLP in ${LG}/*.help
-do
-	cp -ruf ${HLP} $HOME/$HELP_FOLDER/
-done
-
-### miscellaneous
-### Help of GWorkspace
-#for LOCAL in English French
-#do
-#	if [ ! -d /Local/Applications/GWorkspace.app/Resources/${LOCAL}.lproj/Help ];then
-#		sudo mkdir -p /Local/Applications/GWorkspace.app/Resources/${LOCAL}.lproj/Help
-#		sudo cp -ruf ${LOCAL}/GWorkspace_${LOCAL}.help /Local/Applications/GWorkspace.app/Resources/${LOCAL}.lproj/Help/GWorkspace.help
-#	fi
-#done
-
-cd $_HERE
-ok "Done"
-
-stop
+### Has been moved to install_help.sh
+###########################################
 
 ###########################################
 ### Miscellaneous Tools

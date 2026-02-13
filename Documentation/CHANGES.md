@@ -8,11 +8,24 @@ Do not try nor report any issue until a release is tagged Stable.
 
 ## Changes
 
+### Changes of the Release Candidate 1.0.0 - RC 4
+
+This release follox the serie of tests on a x86_64 architecture.
+Namely on a VM within Virtualbox.
+
+- Dispatched the Help resources on a new separate repo: [agnostep-help](../../../../agnostep-help)
+- Fixed an issue with Firefox-esr default profile.
+- Added new items to `AgnostepManager`:
+  - Meteo: allow to reset the coordinates (dep: agnostep-theme)
+  - Help: fetch and install the localized .help bundles.
+  - Update: perform a pull from origin main.
+- Many other changes were done on the [agnostep-theme](../../../../agnostep-theme) repo.
+
 ### Changes of the Release Candidate 1.0.0 - RC 3
 
 This release begins the serie of tests on a x86_64 architecture.
 First tests with Qemu/Kvm: bad graphic rendering.
-We will move the future tests to virtualbox?
+We will move the future tests to virtualbox.
 
 - Dispatched prep and core because prep needs often to log out to apply the new settings.
 - Fixed an issue with `lo.sh`: substituted `pkill` to `killall`.
