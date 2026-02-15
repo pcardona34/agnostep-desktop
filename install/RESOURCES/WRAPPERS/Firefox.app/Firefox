@@ -1,6 +1,14 @@
-#!/bin/sh
+#!/bin/bash
 
-APP=/usr/bin/firefox
+APPNAME=Firefox
+RES=$APPS_DIR/${APPNAME}.app/Resources
+BIN=/usr/bin
+if [ -f $BIN/firefox-esr ];then
+	APP=$BIN/firefox-esr
+else
+	stexec $RES/alert_missing.st
+	exit 1
+fi
 
 if [ $# -eq 2 ] ; then
   $APP "$2" &

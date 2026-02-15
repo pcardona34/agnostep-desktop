@@ -70,8 +70,8 @@ esac
 ### RPI case?
 is_hw_rpi
 if [ $RPI -eq 0 ];then
-	DEP_Firefox="rpi-firefox-mods"
-	DEP_Chromium="rpi-chromium-mods"
+	DEP_Firefox="${DEP_Firefox} rpi-firefox-mods"
+	DEP_Chromium="${DEP_Chromium} rpi-chromium-mods"
 fi
 
 ### Pass installed?

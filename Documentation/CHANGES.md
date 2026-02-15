@@ -8,9 +8,13 @@ Do not try nor report any issue until a release is tagged Stable.
 
 ## Changes
 
+### Changes of the Release Candidate 1.0.0 - RC 4.1
+
+- Fixed an issue in Firefox-esr Wrapper installation.
+
 ### Changes of the Release Candidate 1.0.0 - RC 4
 
-This release follox the serie of tests on a x86_64 architecture.
+This release follows the serie of tests on a x86_64 architecture.
 Namely on a VM within Virtualbox.
 
 - Dispatched the Help resources on a new separate repo: [agnostep-help](../../../../agnostep-help)
