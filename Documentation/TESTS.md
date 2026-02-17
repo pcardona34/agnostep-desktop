@@ -12,7 +12,7 @@
 
 1. Run AGNostepManager to get the main menu:
 
-        ```console
+        ```bash
 	cd ~/SOURCES/agnostep-desktop
         ./agnostep.sh
         ```
@@ -30,7 +30,7 @@
 
 1. Load the the Desktop within the default graphic session:
 
-        ```console
+        ```bash
         cd
 	startx
         ```
@@ -43,14 +43,14 @@
 1. Check customized **Clip icon**.
 1. Infos are provided by dockapps attached to the **Clip**, at the **top center**, namely:
 1. Detailed Sysinfo: Date
-1. Detailed Sysinfo: City (of the next Weather Station) and Heat
+1. Detailed Sysinfo: Weather temperature
 1. Detailed Sysinfo: Time (AClock)
 1. Detailed Sysinfo: Uptime
-1. Detailed Sysinfo: Memory usage (bar and percent)
+1. Detailed Sysinfo: Memory usage (bar if greater than 20% and percent)
 1. Detailed Sysinfo: CPU usage (TimeMon)
 1. Detailed Sysinfo: Network monitoring (wmnd)
 1. Detailed Sysinfo: Updater status
-1. Detailed Sysinfo: Birthday/Feast status (Remember:)
+1. Detailed Sysinfo: Birthday/Feast status (under the date)
 1. Detailed Sysinfo: Storage bar (provided by wmudmount)
 
 ---
@@ -66,12 +66,12 @@
 If not a laptop, ignore this item in the final count.
 1. Birthday or Feast: change the date of Glinglin's Feast to create this event today:
 
-        ```console
+        ```bash
 	nano ~/Documents/Private/Birthdays
 	```
 
 1. Menu of GWorkspace: choose command `Logout` the whole X session is closed: you return to 'tty1' console.
-1. Start X again: `startx`: content must change below 'Remember': a memo about Glinglin feast must be shown.
+1. Start X again: `startx`: content must change under the date : a memo about Glinglin feast must be shown.
 
 ### Serie CONMACDEF
 
@@ -91,7 +91,7 @@ If not a laptop, ignore this item in the final count.
 1. Detailed Sysinfo: Date, Time.
 1. Detailed Sysinfo: Debian main release info.
 1. Detailed Sysinfo: Uptime
-1. Detailed Sysinfo: City (of the next Weather Station) and Heat
+1. Detailed Sysinfo: Weathers infos: temperature, wind, rain, snow.
 1. Detailed Sysinfo: CPU usage: freq. and percent.
 1. Detailed Sysinfo: Memory usage (bar and percent)
 1. Detailed Sysinfo: Storage: bar and percent)
@@ -193,7 +193,7 @@ If not a laptop, ignore this item in the final count.
 1. Adding some new apps from **Utilities**: these apps must be in this subfolder.
 1. Adding some wrappers: choose a different Web Browser... Check it has replaced the previous choice.
 1. Log out and log in again to test if the theme applied to the freshly installed applications.
-1. Log out and select **Settings** form **AgnostepManager**. Log in again: check the subfolders of `Applications` have been themed with their customized icon.
+1. Log out and select **Settings** from **AgnostepManager**. Log in again: check the subfolders of `Applications` have been themed with their customized icon.
 1. Open the **TabbedShelf**: click on the desktop, then `CMD+s`: check **categories** tabs: Devel, Utilities, Games.
 1. The content of each tab will depend on the applications you have installed. DND some app. Close the TabbedShelf (CMD+s). Open it again. See if things were saved.
 1. If upgradables packages are available: run `Utilities/Upgrade.app` wrapper to upgrade the packages of the Debian system. If not, try another day...
@@ -210,7 +210,7 @@ If not a laptop, ignore this item in the final count.
 
 ### Firefox theming / OpenURL Service
 
-1. Theming and profile of **Firefox** with a pinned tab (agnostep-desktop) and favorites: agnostep-desktop, GNUstep, Debian, Raspberry PI...; DuckDuckGo as default Search Engine.
+1. Theming and profile of **Firefox**; DuckDuckGo as default Search Engine. The favorites (bookmarks) will be available in the Favorite Folder (to be done).
 1. OpenURL service: try open a web browser window from a text link selected (from Ink); the same with a link clicked from a message within GNUMail (to done when GNUMail will be set up). If the test fails the first attempt, try again. It should work then.
 1. Scanning (with ScanImage): install `ScanImage` from the **Utilities**. Detect hardware, perform scan, open and save the Document.
 1. Screensaver (InnerSpace): open, then run and quit the app from its menu.
@@ -221,10 +221,12 @@ If not a laptop, ignore this item in the final count.
 > Unlike what I wrote about editing `/etc/fstab`, you DO NOT need anymore to do that because we use
 > now `libudisks2`. Help must be updated about this.
 
-1. Removable devices: plug an USB thumb and mount it with `wmudmount`. The device icon must show on the desktop.
+1. Removable devices: plug an USB thumb and mount it with `wmudmount`[^1]. The device icon must show on the desktop.
 1. Open the mounted device with its icon and browse its content.
 1. Close the FileViewer window and DND the removable device on the Recycler desktop icon: it should be unmounted.
 1. Eject using `wmudmount`, then unplug it. 
+
+[^1]: If you are using the Conky flavour of the theme,open a Terminal and execute `wmudmount &` to use this dockapp.
 
 ### Multimedia
 
@@ -248,7 +250,7 @@ If not a laptop, ignore this item in the final count.
 1. Log out and log in a TTY. There run `agnostep --am`.
 1. Choose **Settings** item.
 1. When asked to apply the default theme, answer 'No'.
-1. When **Seetings** has finished, log out, switch to TTY 7: `CTRL+ALT+7` and log in with the Display Manager.
+1. When **Settings** has finished, log out, back in and execute: `startx`.
 1. The default GNUstep theme should apply: check it for the Home folders and in the `Applications` folder.
 
 ### Managing Persons and Events

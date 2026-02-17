@@ -9,7 +9,7 @@
 > In the console: `./agnostep.sh` or `agnostep --am` (after first install).
 > Within the Desktop: `Applications / Utilities / AgnostepManager.app`.
 
-### Base OS and Locale
+### Lite OS expected
 
 1) Install Minimal Debian: you can download the minimal installation image from the Debian website and create a bootable USB drive.
 
@@ -22,25 +22,13 @@ See: <https://www.debian.org/distrib/netinst>
 
 2) Boot with your USB key or SD-card to load the Lite Debian System.
 
-3) Update the Debian System. Your User account must belongs to the group 'sudo': you must have root privileges:
+3) Your User account must belongs to the group 'sudo': You must have root privileges:
 
 ```
 	sudo -v
 ```
 
 Otherwise, add the current user to the 'sudo' group.
-
-Then:
-
-```
-	sudo apt -y update && sudo apt -y full-upgrade
-```
-
-You should get the latest Debian Trixie release: 13.x as shown by:
-
-```	
-	cat /etc/debian_version
-```
 
 > [!NOTE]
 > Until now, most of the installation scripts are only in English.  
@@ -87,16 +75,17 @@ You should get the latest Debian Trixie release: 13.x as shown by:
 
 The first time, you should run from the above menu these four items in this order:
 
+1. Prep: set the locale,update the system, install needed tools.
 1. Core: will install the Core Desktop.
-1. Apps: will install all the Core Apps.
-1. Settings: will set the theme...
-1. DM: will install the display manager.
+1. Apps: will install all the Core Apps: the first time, il will install some wrappers too.
+1. Settings: will set the theme and prepare the X session...
+1. DM: will install the Display Manager.
 
 You can view progress and info messages while AGNoStep is installing.
 After several minutes, you should be able to start the AGNoStep Desktop:
 
-- With `startx` (after stage 3) 
-- From `Lightdm` graphical Login (after stage 4). 
+- With `startx` (after stage 4) 
+- From `Lightdm` graphical Login (after stage 5). 
 
 > [!TIP]
 > After the Display Manager has been set, if you need to use CLI again, use TTY2 to log into the console: `CTRL-ALT-F2`.  
@@ -176,11 +165,10 @@ try the following alternative manual stages to be able to note the issue concern
 
 Logout the Desktop if you want to Change **Core Desktop** or **Settings** components. Otherwise, you can open a Terminal window.
 
-1. cd ~/SOURCES/agnostep-desktop
-1. Run the AnostepManager:
+- Run the AnostepManager:
 
 ```
-	./agnostep.sh
+	agnostep --am
 ```
 
 > [!TIP]
@@ -202,10 +190,10 @@ Then:
 ## IV. How to reinstall/update Core Desktop after an udpate of the project repo
 
 ```
-	cd ~SOURCES/agnostep-desktop
-	git pull
-	./agnostep.sh
+	agnostep --am
 ```
+- Then, choose item: **Update**.
+
 > [!TIP]
 > Once installed, `AgnostepManager.app` has an auto-repair feature. If you accidently removed the `~/SOURCES` folder or the repo `agnostep-desktop`, it will fetch it again for you.
 

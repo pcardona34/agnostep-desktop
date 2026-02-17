@@ -184,18 +184,14 @@ subtitulo
 
 local _COUNT=0
 
-cd $HOME
-for _LOG in *.log
-do
-	grep -e " Error " $_LOG &>/dev/null
-	if [ $? -eq 0 ];then
-		_COUNT=$(( $_COUNT + 1 ))
-	fi
-	grep -v -e " error: nil" $_LOG | grep -v -e " error: &" | grep -e " error: " &>/dev/null
-	if [ $? -eq 0 ];then
-		_COUNT=$(( $_COUNT + 1 ))
-	fi
-done
+grep -e " Error " $LOG &>/dev/null
+if [ $? -eq 0 ];then
+	_COUNT=$(( $_COUNT + 1 ))
+fi
+grep -v -e " error: nil" $LOG | grep -v -e " error: &" | grep -e " error: " &>/dev/null
+if [ $? -eq 0 ];then
+	_COUNT=$(( $_COUNT + 1 ))
+fi
 
 if [ ${_COUNT} -ne 0 ];then
 	alert "GNUstep installation has generated ${_COUNT} errors: check the logs in your home directory."

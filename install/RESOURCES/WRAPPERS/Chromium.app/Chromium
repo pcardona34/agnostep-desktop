@@ -1,9 +1,56 @@
-#!/bin/sh
+#!/bin/bash
 
-APP=$(which chromium)
+PARAMS=$#
+if [ $PARAMS -eq 2 ];then
+	PATHNAME="$2"
+fi
 
-if [ $# -eq 2 ] ; then
-  $APP "$2" &
+APPNAME=Chromium
+RES=$APPS_DIR/${APPNAME}.app/Resources
+BIN=/usr/bin
+
+############################
+### openIS
+### open an URLfrom an Internet Shortcut
+### i.e.: .url
+############################
+function openIS
+{
+IS=$1
+if [ -z "$IS" ];then
+	printf "Error: No file provided.\n"
+	exit 1
+fi
+
+grep -e "^URL" $IS
+if [ $? -eq 0 ];then
+	URL=$(grep -e "URL" $IS | awk -F= '{print $2}')
+	if [ -z "$URL" ];then
+		printf "The URL was empty.\n"
+	else
+		xdg-open $URL &
+	fi
+else
+	printf "No URL found. Bad Internet Shortcut.\n"
+fi
+}
+
+if [ -f $BIN/chromium ];then
+	APP=$BIN/chromium
+else
+	stexec $RES/alert_missing.st
+	exit 1
+fi
+
+if [ $PARAMS -eq 2 ];then
+  filename=$(basename $PATHNAME)
+  echo $filename
+  ext=${filename##*.}
+  if [ "$ext" == "url" ];then
+	openIS "$PATHNAME" &
+  else
+	$APP "$PATHNAME" &
+  fi
 else
   $APP &
 fi

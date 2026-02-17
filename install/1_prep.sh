@@ -33,6 +33,7 @@ RPI=1
 . SCRIPTS/spinner.sh
 . SCRIPTS/size.sh
 . SCRIPTS/functions_prep.sh
+. SCRIPTS/functions_alsa.sh
 
 ### end of include functions
 ###############################################################
@@ -93,6 +94,10 @@ if [ $? -eq 0 ];then
 	exec SCRIPTS/lo.sh
 	exit
 fi
+
+#######################
+### Sound
+test_sound
 
 #######################
 

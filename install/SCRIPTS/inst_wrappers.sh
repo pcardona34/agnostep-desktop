@@ -164,14 +164,15 @@ function other_menu
 dialog --backtitle "$STR" --title "Other Wrappers" \
 --ok-label "OK"  \
 --checklist "
-Check the Tools you want to install." 19 60 11 \
+Check the Tools you want to install." 20 60 12 \
 "Abiword" "Gnome Office Writer" off \
-"AgnostepManager" "A menu to manage installation" on \
+"AgnostepManager" "A menu to manage installation" off \
 "EBookReader" "A wrapper for FBReader" off \
 "Inkscape" "A wrapper for Inkscape Vectorial Draw" off \
-"Nano" "The GNU Nano editor" on \
-"Printer" "Printer Setup" on \
-"Upgrade" "A useful wrapper for Debian upgrade" on \
+"Nano" "The GNU Nano editor" off \
+"Printer" "Printer Setup" off \
+"Upgrade" "A useful wrapper for Debian upgrade" off \
+"Web" "Web Browser Wrapper" off \
 "Writer" "A wrapper for FocusWriter" off 2> $FICHTEMP
 
 clear
@@ -239,6 +240,9 @@ case "$i" in
 	move_to_tools Upgrade
 	check Upgrade
 	set_conf "xterm";;
+"Web")
+	printf "You chose Web\n"
+	menu_webb;;
 "Writer")
 	printf "You chose Writer\n"
 	remove_ifx_app "Writer"
@@ -254,7 +258,6 @@ fi
 
 sudo apt -y update && sudo apt -y upgrade
 
-webb_menu
 other_menu
 
 #############################################

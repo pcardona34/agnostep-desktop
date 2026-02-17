@@ -8,6 +8,20 @@ Do not try nor report any issue until a release is tagged Stable.
 
 ## Changes
 
+### Changes of the Release Candidate 1.0.0 - RC 4.2
+
+Back to pi 500 test platform.
+
+- Simplified pre-install stage.
+- Updated Tests protocol.
+- Added Alsa test within 1_prep.sh: fixed the 'Cuckoo' issue - i.e. the need to rebuild libs-gnustep-gui to handle wav sounds with NSSound.
+- Fixed - I hope so - Firefox ever recreating Downloads folder in French l10n.
+- Fixed the omitted sanity check after gnustep-libs build.
+- Added a Helper within Web browsers wrappers (Firefox and Chromium) to handle Internet Shortcuts (.url).
+- Populated Favorites folder with some Internet Shortcuts.
+- Extended types to be edited by Nano.app.
+- Added item "Web" in the Wrappers menu from AgnostepManager.
+
 ### Changes of the Release Candidate 1.0.0 - RC 4.1
 
 - Fixed an issue in Firefox-esr Wrapper installation.

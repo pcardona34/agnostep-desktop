@@ -1,21 +1,28 @@
 #!/bin/bash
 
 APP=nano
+APPNAME=Nano
 
 if [ $# -eq 2 ] ; then
 	ARG="$2"
-	TITLE="$APP - $ARG"
+	TITLE="$APPNAME - $ARG"
 else
 	ARG=""
-   TITLE="$APP"
+   	TITLE="$APPNAME"
 fi
 
-PID=$(pgrep nano)
-if [ $? -eq 0 ];then
-	stexec Resources/alert.st
+APPDIR=$(gnustep-config --variable=GNUSTEP_LOCAL_APPS)
+LG=${LANG:0:2}
+case "$LG" in
+"fr") TOOLS=Utilitaires;;
+"en") TOOLS=Utilities;;
+esac
+RES=$APPDIR/$TOOLS/${APPNAME}.app/Resources
+
+pgrep --count Nano
+if [ $? -gt 1 ];then
+	stexec $RES/alert.st
 	exit 1
 else
-	xterm -T "${TITLE}" -e "transset -a --dec 0.05 && $APP $ARG $date_today"
+	xterm -name "$TITLE" -e "transset -a --dec 0.05 && $APP $ARG $date_today"
 fi
-
-

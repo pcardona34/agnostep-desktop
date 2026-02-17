@@ -5,7 +5,7 @@
   CFBundleIdentifier = "org.gnustep.Chromium";
   XAppWrapper = YES;
   CFBundleURLTypes = (
-  	{
+	{
 		CFBundleURLName = "Web site URL";
 		CFBundleURLSchemes = (
 		    http,
@@ -22,6 +22,10 @@
       NSUnixExtensions = ( "htm" );
       NSIcon = "FileIcon_.html.tiff";
     },
+    {
+     NSUnixExtensions = ( "url" );
+     NSIcon = "FileIcon_url.tiff";
+    },  
     {
       NSUnixExtensions = ( "webp" );
       NSIcon = "FileIcon_.webp.tiff";

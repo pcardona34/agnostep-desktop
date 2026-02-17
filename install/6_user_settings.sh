@@ -34,10 +34,12 @@ LG=${LANG:0:2}
 case "$LG" in
 "fr")
 	SAMPLE_FOLDER="Exemples"
-	HELP_FOLDER="Aide";;
+	HELP_FOLDER="Aide"
+	FAVORITE_FOLDER="Favoris";;
 "en"|*)
 	SAMPLE_FOLDER="Samples"
-	HELP_FOLDER="Help";;
+	HELP_FOLDER="Help"
+	FAVORITE_FOLDER="Favorites";;
 esac
 
 ####################################################
@@ -66,6 +68,26 @@ cp -u Samples.tar.gz $HOME/$SAMPLE_FOLDER/
 cd $HOME/$SAMPLE_FOLDER
 gunzip --force Samples.tar.gz
 tar -xf Samples.tar && rm Samples.tar
+
+cd $_HERE
+ok "Done"
+
+stop
+
+####################################################
+### Favorites
+STR="Favorites"
+subtitulo
+
+if [ ! -d $HOME/$FAVORITE_FOLDER ];then
+	mkdir -p $HOME/$FAVORITE_FOLDER
+fi
+
+cd RESOURCES/FAVORITES || exit 1
+for FAV in *.url
+do
+cp --verbose $FAV $HOME/$FAVORITE_FOLDER/
+done
 
 cd $_HERE
 ok "Done"
@@ -216,17 +238,21 @@ if [ $RPI -eq 0 ];then
 		if [ ! -d $DESTX ];then
 			sudo mkdir -p $DESTX
 		fi
-		sudo cp --verbose --force RESOURCES/CONF/99-vc4.conf ${DESTX}/
-		sleep 2
-		DEP="gldriver-test"
-		sudo apt -y install ${DEP}
-		ok "Done"
-		warning "The pi 500 will reboot to apply the Xorg hack... Back in, to test the Desktop,  execute:"
-		cli "startx"
-		MSG="Seconds before reboot: "
-		DELAY=9
-		timer
-		sudo reboot;exit
+		if [ -f $DESTX/99-vc4.conf ];then
+			info "Xorg Hack already applied."
+		else
+			sudo cp --verbose --force RESOURCES/CONF/99-vc4.conf ${DESTX}/
+			sleep 2
+			DEP="gldriver-test"
+			sudo apt -y install ${DEP}
+			ok "Done"
+			warning "The pi 500 will reboot to apply the Xorg hack... Back in, to test the Desktop,  execute:"
+			cli "startx"
+			MSG="Seconds before reboot: "
+			DELAY=9
+			timer
+			sudo reboot;exit
+		fi
 	fi
 fi
 

@@ -1,6 +1,6 @@
 {
   NSExecutable = "Nano";
-  NSRole = "Application";
+  NSRole = "Editor";
   NSIcon = "Gnu-nano.tiff";
    CFBundleIdentifier = "org.gnu.Nano";
 	XAppWrapper = YES;
@@ -16,6 +16,14 @@
      {
       NSUnixExtensions = ( "patch" );
       NSIcon = "File_patch.tiff";
-    }
+    },
+    {
+      NSUnixExtensions = ( "url" );
+      NSIcon = "File_url.tiff";      
+    },
+    {
+      NSUnixExtensions = ( "st" );
+      NSIcon = "File_script.tiff";      
+    }   
   );
 }
