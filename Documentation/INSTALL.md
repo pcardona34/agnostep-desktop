@@ -24,7 +24,7 @@ See: <https://www.debian.org/distrib/netinst>
 
 3) Your User account must belongs to the group 'sudo': You must have root privileges:
 
-```
+```console
 	sudo -v
 ```
 
@@ -39,37 +39,37 @@ Otherwise, add the current user to the 'sudo' group.
 
 - Install 'git':
 
-```
+```console
 	sudo apt install git
 ```
 
 - Create a 'SOURCES' directory to build all is needed:
 
-```
+```console
 	mkdir SOURCES && cd SOURCES
 ```
 
 - Clone this repository:
 
-```
+```console
 	git clone https://github.com/pcardona34/agnostep-desktop
 ```
 	
 ### Start Main AGNoStep menu
 
-```
+```console
 	cd agnostep-desktop
 ```
 
 - If you already installed a previous version, udpdate with:
 
-```
+```console
 	git pull
 ```
 
 - Now you are ready to execute the main AgnostepManager script:
 
-```
+```console
 	./agnostep.sh
 ```
 
@@ -105,50 +105,50 @@ try the following alternative manual stages to be able to note the issue concern
 > [!TIP]
 > The point './' before a command means to search and execute the script in the current directory:
 
-```
+```console
 	cd install
 	./1_prep.sh
 ```
 
 #### A-2) Install Window Maker:
 
-```
+```console
 	./2_install_wmaker.sh
 ```
 
 #### A-3) Install the Core GNUstep:
 
-```
+```console
 	./3_install_gnustep.sh	
 ```
 
 #### A-4) Install the Frameworks:
 
-```
+```console
 	./4_install_frameworks.sh
 ```
 
 #### A-5) Install Core apps and Wrappers:
 
-```
+```console
 	./5_install_core_apps.sh
 ```
 #### A-6) Set the current user's environment and AGNOSTEP-theme:
 
-```
+```console
 	./6_user_settings.sh
 ```
 
 ##### Testing: start the X server and AGNoStep Desktop:
 	
-```
+```console
 	cd && startx
 ```
 
 > [!Note]
 > If you want to regenerate your default user's setting or change the theme, log out the Desktop, log in a tty console and do the following:
 
-```
+```console
 	cd ~/SOURCES/agnostep-desktop
 	./agnostep.sh
 ```
@@ -157,7 +157,7 @@ try the following alternative manual stages to be able to note the issue concern
 
 #### A-7) If all is right, logout again and install the Display Manager from a tty console:
 
-```
+```console
 	./7_install_DM.sh
 ```
 
@@ -167,7 +167,7 @@ Logout the Desktop if you want to Change **Core Desktop** or **Settings** compon
 
 - Run the AnostepManager:
 
-```
+```console
 	agnostep --am
 ```
 
@@ -189,7 +189,7 @@ Then:
 
 ## IV. How to reinstall/update Core Desktop after an udpate of the project repo
 
-```
+```console
 	agnostep --am
 ```
 - Then, choose item: **Update**.
