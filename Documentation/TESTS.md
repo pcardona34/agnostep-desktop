@@ -12,10 +12,10 @@
 
 1. Run AGNostepManager to get the main menu:
 
-        ```bash
-	cd ~/SOURCES/agnostep-desktop
-        ./agnostep.sh
-        ```
+      ```console
+	  cd ~/SOURCES/agnostep-desktop
+      ./agnostep.sh
+      ```
 
 1. Execute item: **Core Desktop** (i.e.: prep - wmaker - GNUstep - Frameworks)
 1. Execute item: **Core Apps** (i.e.: first install of Core Apps)
@@ -30,10 +30,10 @@
 
 1. Load the the Desktop within the default graphic session:
 
-        ```bash
-        cd
-	startx
-        ```
+      ```console
+      cd
+	  startx
+      ```
 
 1. Check **Dunst notifications**: you shall see at last:
    >  Desktop is launching...
@@ -42,18 +42,16 @@
 1. Theming: check expected menu and windows **colors**: see Screenshots...
 1. Check customized **Clip icon**.
 1. Infos are provided by dockapps attached to the **Clip**, at the **top center**, namely:
-1. Detailed Sysinfo: Date
-1. Detailed Sysinfo: Weather temperature
-1. Detailed Sysinfo: Time (AClock)
-1. Detailed Sysinfo: Uptime
-1. Detailed Sysinfo: Memory usage (bar if greater than 20% and percent)
-1. Detailed Sysinfo: CPU usage (TimeMon)
-1. Detailed Sysinfo: Network monitoring (wmnd)
-1. Detailed Sysinfo: Updater status
-1. Detailed Sysinfo: Birthday/Feast status (under the date)
-1. Detailed Sysinfo: Storage bar (provided by wmudmount)
-
----
+  1. Detailed Sysinfo: Date
+  1. Detailed Sysinfo: Weather temperature
+  1. Detailed Sysinfo: Time (AClock)
+  1. Detailed Sysinfo: Uptime
+  1. Detailed Sysinfo: Memory usage (bar if greater than 20% and percent)
+  1. Detailed Sysinfo: CPU usage (TimeMon)
+  1. Detailed Sysinfo: Network monitoring (wmnd)
+  1. Detailed Sysinfo: Updater status
+  1. Detailed Sysinfo: Birthday/Feast status (under the date)
+  1. Detailed Sysinfo: Storage bar (provided by wmudmount)
 
 1. **Dock** position: WMDock at the **top-right border**.
 1. Dock appicons: WPrefs (GNUstep icon), SimpleAgenda, Terminal, Ink, GNUMail, InnerSpace, Recycler.
@@ -66,9 +64,9 @@
 If not a laptop, ignore this item in the final count.
 1. Birthday or Feast: change the date of Glinglin's Feast to create this event today:
 
-        ```bash
-	nano ~/Documents/Private/Birthdays
-	```
+      ```console
+	  nano ~/Documents/Private/Birthdays
+      ```
 
 1. Menu of GWorkspace: choose command `Logout` the whole X session is closed: you return to 'tty1' console.
 1. Start X again: `startx`: content must change under the date : a memo about Glinglin feast must be shown.
@@ -221,12 +219,12 @@ If not a laptop, ignore this item in the final count.
 > Unlike what I wrote about editing `/etc/fstab`, you DO NOT need anymore to do that because we use
 > now `libudisks2`. Help must be updated about this.
 
-1. Removable devices: plug an USB thumb and mount it with `wmudmount`[^1]. The device icon must show on the desktop.
+1. Removable devices: plug an USB thumb and mount it with `wmudmount`[^2]. The device icon must show on the desktop.
 1. Open the mounted device with its icon and browse its content.
 1. Close the FileViewer window and DND the removable device on the Recycler desktop icon: it should be unmounted.
 1. Eject using `wmudmount`, then unplug it. 
 
-[^1]: If you are using the Conky flavour of the theme,open a Terminal and execute `wmudmount &` to use this dockapp.
+[^2]: Since agnostep-theme 0.9.6, the Conky flavour will also provide wmudmount. If you accidently closedit, open a Terminal and execute `wmudmount &` to open it again.
 
 ### Multimedia
 
@@ -276,16 +274,16 @@ If not a laptop, ignore this item in the final count.
 1. Open a new shell in `Terminal`.
 1. Execute:
 
-        ```console
-	agnostep --info
-        ```
+      ```console
+	  agnostep --info
+      ```
 	
 1. You should see infos on the Agnostep release.
 1. Execute:
 
-        ```console
-	agnostep --am
-	```
+      ```console
+	  agnostep --am
+	  ```
 
 1. You should see the main menu of **AgnostepManager**.
 
@@ -293,14 +291,14 @@ If not a laptop, ignore this item in the final count.
 
 1. Remove the `SOURCES` folder:
 
-      ```
+      ```console
       cd
       rm -fr SOURCES
       ```
 
 1. Try to run `Applications / Utilities / AgnostepManager.app`:
 
-      ```
+      ```console
       openapp AgnostepManager
       ```
 
@@ -308,7 +306,7 @@ If not a laptop, ignore this item in the final count.
 1. A second Alert will invite you to try again.
 1. Run again `AgnostepManager`:
 
-      ```
+      ```console
       openapp AgnostepManager
       ```
 1. The main menu should be available now.
