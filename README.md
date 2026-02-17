@@ -81,7 +81,7 @@ Read [INSTALL](Documentation/INSTALL.md) first to understand all the stages.
 
 Quick way: on a fresh minimal Debian Trixie (13.x) on a computer wired to Internet, clone the this repo and then execute:
 
-```	
+```console	
 	./agnostep.sh
 ```
 
@@ -99,13 +99,13 @@ From the main menu:
  
 Then try it with:
 
-```
+```console
 	cd && startx
 ```
 
 If all is right and expected, logout the desktop and run again `AgnostepManager`:
 
-```	
+```console	
 	./agnostep.sh
 ```
 
