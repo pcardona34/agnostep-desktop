@@ -6,7 +6,7 @@
   XAppWrapper = YES;
   CFBundleURLTypes = (
   	{
-		CFBundleURLName = "Web site URL";
+		CFBundleTypeRole = "Viewer";
 		CFBundleURLSchemes = (
 		    http,
 		   https

@@ -242,7 +242,7 @@ case "$i" in
 	set_conf "xterm";;
 "Web")
 	printf "You chose Web\n"
-	menu_webb;;
+	webb_menu;;
 "Writer")
 	printf "You chose Writer\n"
 	remove_ifx_app "Writer"

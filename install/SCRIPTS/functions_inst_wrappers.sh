@@ -80,7 +80,6 @@ subtitulo
 
 cd ${SRC} || exit 1
 printf "Building service...\n"
-make clean &>/dev/null
 make &>>$LOG &
 PID=$!
 spinner
@@ -104,7 +103,7 @@ PID=$!
 spinner
 ok "\rDone"
 
-make clean
+make clean &>/dev/null
 cd $_PWD
 }
 
