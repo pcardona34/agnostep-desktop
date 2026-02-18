@@ -2,4 +2,6 @@
 
 APP=/usr/local/bin/Setup_Printer
 
-xterm -title "Printer Setup" -e "$APP" "$date_today"
+xterm -T "Printer Setup" -e "$APP" &
+PID=$!
+pidwait $PID

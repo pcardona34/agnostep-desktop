@@ -8,6 +8,13 @@ Do not try nor report any issue until a release is tagged Stable.
 
 ## Changes
 
+### Changes of the Release Candidate 1.0.0 - RC 4.3
+
+- Added ScreenLock wrapper for xtrlock.
+- Fixed the issue "Nano seems to have hung": now, we can edit several files simultaneously with Nano.app.
+- Improved all wrappers using an xterm call with pidwait.
+- Improved .nanorc.
+
 ### Changes of the Release Candidate 1.0.0 - RC 4.2
 
 Back to pi 500 test platform.

@@ -15,10 +15,13 @@ if [ ! -d $HOME/SOURCES/agnostep-desktop ];then
 	stexec $RES/alert_missing.st
 	TITLE="Recovering"
 	APP=$APPS_DIR/$TOOLS/${APPNAME}.app/Recover
-	xterm -T "${TITLE}" -e $APP $date_today
+	xterm -T "${TITLE}" -e "$APP" &
 else
 	cd $HOME/SOURCES/agnostep-desktop
 	APP=./agnostep.sh
 	TITLE="AGNoStep Manager"
-	xterm -T "${TITLE}" -e $APP $date_today
+	xterm -T "${TITLE}" -e "$APP" &
 fi
+
+PID=$!
+pidwait $PID

@@ -91,6 +91,7 @@ DEP_Writer="focuswriter"
 DEP_Upgrade="xterm"
 DEP_Printer="xterm cups cups-client cups-filters hplip printer-driver-hpijs libsane-hpaio"
 DEP_AgnostepManager="dialog xterm"
+DEP_ScreenLock="xtrlock"
 ################################
 ### Is there a LOCAL APPS Folder?
 
@@ -164,13 +165,14 @@ function other_menu
 dialog --backtitle "$STR" --title "Other Wrappers" \
 --ok-label "OK"  \
 --checklist "
-Check the Tools you want to install." 20 60 12 \
+Check the Tools you want to install." 21 60 13 \
 "Abiword" "Gnome Office Writer" off \
 "AgnostepManager" "A menu to manage installation" off \
 "EBookReader" "A wrapper for FBReader" off \
 "Inkscape" "A wrapper for Inkscape Vectorial Draw" off \
 "Nano" "The GNU Nano editor" off \
 "Printer" "Printer Setup" off \
+"Lock" "Screen Locker" off \
 "Upgrade" "A useful wrapper for Debian upgrade" off \
 "Web" "Web Browser Wrapper" off \
 "Writer" "A wrapper for FocusWriter" off 2> $FICHTEMP
@@ -232,6 +234,13 @@ case "$i" in
 	move_to_tools Printer
 	check Printer
 	set_conf "xterm";;
+"Lock")
+	printf "You chose Lock\n"
+	remove_ifx_app ScreenLock
+	CHECK=""
+	install_wrapper ScreenLock "${DEP_ScreenLock}"
+	move_to_tools ScreenLock
+	check ScreenLock;;
 "Upgrade")
 	printf "You chose Upgrade\n"
 	remove_ifx_app Upgrade

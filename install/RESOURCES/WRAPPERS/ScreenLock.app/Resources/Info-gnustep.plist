@@ -1,0 +1,5 @@
+{
+  NSExecutable = "ScreenLock";
+  NSIcon = "lock-screen.tiff";
+	XAppWrapper = YES;
+}
