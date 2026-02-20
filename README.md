@@ -79,7 +79,7 @@ When a Raspberry Pi is detected, more apps are installed:
 
 Read [INSTALL](Documentation/INSTALL.md) first to understand all the stages.
 
-Quick way: on a fresh minimal Debian Trixie (13.x) on a computer wired to Internet, clone the this repo and then execute:
+Quick way: on a fresh minimal Debian Trixie (13.x) on a computer wired to Internet, clone this repo and then execute:
 
 ```console	
 	./agnostep.sh
