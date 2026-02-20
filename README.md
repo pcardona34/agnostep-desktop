@@ -89,13 +89,13 @@ It will show up **AgnostepManager**.
 
 From the main menu:
 
-1. Install the **Core Desktop**.
-1. Install the **Core apps**.
-1. Set the User **Settings**: you will choose a flavour of AGNOSTEP-theme, a menu style...
+1. Prepare the environment: item 'Prep'.
+2. Install the **Core Desktop**: item  'Core'.
+1. Install the **Core apps**: item 'Apps'.
+1. Set the User **Settings**: you will choose a flavour of AGNOSTEP-theme, a menu style...: item 'Settings'.
 
 > [!TIP]
-> If you want the GNUstep default theme, execute `./uninstall_theme.sh` in `build/agnostep-theme/install` folder.
-> You can also run `AgnostepManager`, choose **Settings**: when the question about the default Theme will be asked, answer 'No'.
+> If you want the GNUstep default theme, when the question about the default Theme will be asked, answer 'No'.
  
 Then try it with:
 
