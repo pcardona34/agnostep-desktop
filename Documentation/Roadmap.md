@@ -47,23 +47,24 @@ The whole desktop and apps mut be localized:
 
 ## Testing
 
-- [ ] All tests with a fresh install on a Pi 400.
-- [ ] All tests with a fresh install on a Pi 500.
-- [ ] All tests with a new amd-64 Debian iso.
-- [ ] All tests with an Intel MacBook.
+- [x] All tests with a fresh install on a Pi 400.
+- [x] All tests with a fresh install on a Pi 500.
+- [x] All tests with a new amd-64 Debian iso.
+- [x] All tests with an Intel MacBook.
 
-## Create and publish RC-1.0.0 Release ISOs
+## Create and publish a Release
 
-- [ ] SD-Card for pi400
-- [ ] SD-Card for pi500
-- [ ] Live-Debian ISO for the other computers 
+- [x] SOURCE stable release: 1.0.0 RC 4.3
+
+> [!WARNING]
+> Due to limitation size, I cannot publish ISOs nor SD-Card images on Github.
 
 ## Better wrappers with GNUstep menus
 
-- [ ] Use NSTask to handle UNIX commands within GNUstep apps...
-- [ ] Provide all the XApp wrappers a GNUstep menu.
+- [ ] Use NSTask to handle UNIX commands within GNUstep apps: until now, I failed to accomplish this.
+- [ ] Provide all the XApp wrappers a GNUstep menu: same  as above.
 - [ ] Target: see Xapps Wrappers.
-- [ ] Handle scaling privileges (Xsudo?)
+- [ ] Handle scaling privileges (Xsudo?): until now, using `xterm -e command` and type password in the Xterm.
 
 ## Porting Application Manager and AGNOSTEP-theme
 
@@ -77,3 +78,11 @@ The idea is to propose an Universal way of installing a GNUstep app...
 - [ ] Specs
 - [ ] First Universal Package
 - [ ] Adapt Installer.app to handle those UPs.
+
+## A new Web Browser integrated within GNUstep
+
+> [!NOTE]
+> The community seems to wait for the [Laybug](https://ladybird.org/) project to accomplish: Alpha tagetted in 2026.
+
+In the meanwhile, maybe using [Surf](https://surf.suckless.org/) with Xembed?
+- [ ] Try to adapt existing projects (NetSurf, GS-WebBrowser...) with Surf as Web Engine?
