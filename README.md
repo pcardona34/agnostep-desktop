@@ -5,7 +5,7 @@
 
 ## The Goal
 
-AGNoStep project tries to provide a way to install a GNUstep compliant Desktop with ease.
+AGNoStep project tries to provide a way to install a GNUstep compliant Desktop from sources but with ease.
 It provides also a **new** in purpose **Theme** mainly inspired by the [Papirus](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme) iconset: see [AGNOSTEP-theme](https://github.com/pcardona34/agnostep-theme).
 
 It is provided under the [GNU Public License](LICENSE.txt).
