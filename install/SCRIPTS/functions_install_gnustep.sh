@@ -112,21 +112,21 @@ STR="Building AppKit: GNUstep Gui"
 subtitulo
 
 cd gui || exit 1
-dialog --no-shadow --backtitle "Building GNUstep" --title "GUNstep Gui" \
- --yesno "
-Experimental branch allow to fix some issue with
-openURL Service.
+#dialog --no-shadow --backtitle "Building GNUstep" --title "GUNstep Gui" \
+# --yesno "
+#Experimental branch allow to fix some issue with
+#openURL Service.
 
-Do you want to include experimental branch
-app-wrapper-open-url?" 14 50
+#Do you want to include experimental branch
+#app-wrapper-open-url?" 14 50
 
-clear
+#clear
 
-if [ $? -eq 0 ];then
+#if [ $? -eq 0 ];then
 	### Try to fix 'open URL' issue
-	printf "\nSwitching to app-wrapper-open-url branch"
-	git switch app-wrapper-open-url
-fi
+#	printf "\nSwitching to app-wrapper-open-url branch"
+#	git switch app-wrapper-open-url
+#fi
 
 printf "Configuring...\n"
 ./configure &>>$LOG &

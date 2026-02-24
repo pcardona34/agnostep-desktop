@@ -24,6 +24,10 @@
     {
       NSUnixExtensions = ( "st" );
       NSIcon = "File_script.tiff";      
-    }   
+    },
+    {
+      NSUnixExtensions = ( "xlp" );
+      NSIcon = "Icon-hlpd.tiff";      
+    }      
   );
 }
