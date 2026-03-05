@@ -1,30 +1,35 @@
+- [ ]  French Agnostep Help...
+- [ ] Wallpapers: add a third collection
+- [x] Search in PDF document <=> Xpdf wrapper 
+
+
 New tests on fresh sd-cards:
-- [ ] pi 400
-- [ ] pi 500
+- [x] pi 400
+- [x] pi 500
 
 On:
-- [ ] MacBookPro Intel
+- [x] MacBookPro Intel
 ---
 
-Publish: SD-cards...
-Publish: VM / Live-ISO
+- [ ] a better alsa compliant mixer
 
 ---
 
 Referentiel Prog objC/GNUstep
-Terminal service / Wterm VS xterm?
+
 General Wrapper avec menus GS
-Service: French Lookup (Dico.app / Littre.app)
+
+- [ ] Service: French Lookup (Dico.app / Littre.app)
 md => make a book... => pdf
 --------------------------------------
-Surf Web Browser: à travailler => Surf.app ?
+- [ ] Surf Web Browser: cd. sucklesstools => Surf.app ?
 --------------------------------------
 HLKit: cf. Mail
-HighlighterKit and Gemas: cf dossier local GNUstep/Library...
+- [ ] HighlighterKit and Gemas: cf dossier local GNUstep/Library...
 
 -----------------------------------
-Portage de Cocotron vers GNUstep:
-- Comics reader
+Portage de Cocotron vers GNUstep?
+- Comics reader?
 - Bookshelf... vs Librarian?
 ------------------------------------
 
@@ -51,11 +56,15 @@ see: http://multixden.blogspot.com/2023/08/gnustep-now-has-badges.html
 ?[ ] Issue? Brian Nennigan: GridLock (see deb package)
 
 ? [ ] TeXShop? cf. https://github.com/TeXShop/TeXShop
-??? [ ] CocoaDialog: https://github.com/cocoadialog/cocoadialog
 ??? [ ] https://github.com/MaddTheSane/NeXTRisk
 
 _____________________________
 
 Minor issues:
 [ ] Finder: traduction incomplète --> Titre de fenêtre: "Search Results"
-? loginpanel
+
+--------------------------------------------
+
+Publish: SD-cards...
+Publish: VM / Live-ISO
+--> Where?

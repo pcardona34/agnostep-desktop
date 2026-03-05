@@ -1,0 +1,34 @@
+{
+    "## Comment" = "Do NOT change this file, Gorm maintains it";
+    AppController = {
+	Actions = (
+	    "showPrefPanel:"
+	);
+	Outlets = (
+	    "_window"
+	);
+	Super = NSObject;
+    };
+    FirstResponder = {
+	Actions = (
+	    "orderFrontFontPanel:",
+	    "reset:",
+	    "save:",
+	    "showPrefPanel:"
+	);
+	Super = NSObject;
+    };
+    SaveLink = {
+	Actions = (
+	    "save:",
+	    "reset:",
+	    "open:"
+	);
+	Outlets = (
+	    name,
+	    link,
+	    savebutton
+	);
+	Super = NSObject;
+    };
+}

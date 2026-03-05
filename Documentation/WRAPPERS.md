@@ -10,16 +10,20 @@ Not only App-wrappers make easy to find and launch an application from the 'Appl
 
 Use **AgnostepManager** (see `Applications/Utilities` subfolder) and choose **Wrappers** item in the menu.
 
+- Abiword
+- AgnostepManager
 - Chromium: a wrapper for the Chromium Web Browser: extend with an openURLService.
 - EBookReader: a wrapper for FBReader.
 - Firefox: a wrapper for the firefox web browser: extend with an openURLService.
 - Inkscape: a wrapper for inkscape SVG editor.
+- Lock: launch the screen locker `xtrlock`.
 - Nano: a Wrapper for the GNU Nano Editor. It handles bash script (\*.sh) patches (\*.patch)
+- Printer: printer setup
 - RPI-imager: only on Pi's SBC.
-- ScreenLock: launch the screen locker `xtrlock`.
+- Scribus
 - Upgrade: an helper to run Debian upgrade. Related to Updater monitor deamon.
 - Writer: a wrapper for Focuswriter with an AGNOSTEP theme.
-
+- Xpdf
 > [!NOTE]
 > You will choose Firefox or Chromium. You can ever change it from the same menu of AgnostepManager: **Wrappers**...
 

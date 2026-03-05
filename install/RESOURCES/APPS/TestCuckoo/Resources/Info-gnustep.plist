@@ -1,0 +1,17 @@
+{
+  NSExecutable = "TestCuckoo";
+  NSMainNibFile = "";
+  NSMainStoryboardFile = "";
+  GSMainMarkupFile = "";
+  NSIcon = "TestCuckoo.tiff";
+  NSPrincipalClass = "NSApplication";
+  ApplicationName = "TestCuckoo";
+  ApplicationDescription = "Agnostep Testing: test a cuckoo Wav sound.";
+  ApplicationRelease = "0.1";
+  Authors = ("Patrick Cardona");
+  Site = "https://github.com/pcardona34/agnostep-desktop";
+  Copyright = 
+    "Copyright (c) 2026 Patrick Cardona - Part of AGNoStep-Desktop Project";
+  CopyrightDescription = 
+    "This program is released under the GNU GPL 3";
+}

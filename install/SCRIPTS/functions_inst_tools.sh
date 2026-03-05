@@ -523,11 +523,42 @@ sleep $SLEEP
 ########################## - S - ########################## 
 
 #################################################
+## SaveLink
+### Provided by AGNoStep Project
+#################################################
+
+function install_savelink
+{
+APPNAME=SaveLink
+RELEASE="0.1"
+CONFIG_ARGS=""
+BUILD_ARGS=""
+INSTALL_ARGS=""
+
+STR="$APPNAME $RELEASE"
+subtitulo
+printf "Fetching ${APPNAME}...\n"
+SRC_DIR=RESOURCES/APPS/$APPNAME
+BUILD_DIR=../build
+cp -a ${SRC_DIR} ${BUILD_DIR}/
+cd ${BUILD_DIR}/${APPNAME} || exit 1
+
+ok "$APPNAME fetched"
+
+CHECK=""
+_build
+move_to_tools ${APPNAME}
+check ${APPNAME}
+make clean &>/dev/null
+sleep $SLEEP
+}
+
+#################################################
 ## ScanImage
 ### Repo/Release: github/onflapp/gs-desktop: 0.1
 #################################################
 
-function install_scanimage()
+function install_scanimage
 {
 APPNAME=ScanImage
 RELEASE="0.1"
@@ -568,7 +599,7 @@ sleep $SLEEP
 ### Repo/Release: github/onflapp/gs-desktop: 0.1
 ##################################################
 
-function install_screenshot()
+function install_screenshot
 {
 clear
 APPNAME=ScreenShot
@@ -607,7 +638,7 @@ sleep $SLEEP
 ### Repo/Release: Savannah/gap: 1.1
 ############################################
 
-function install_stepsync()
+function install_stepsync
 {
 clear
 cd ../build || exit 1
@@ -638,6 +669,36 @@ check ${APPNAME}
 sleep $SLEEP
 }
 
+#################################################
+## TestCuckoo
+### Provided by AGNoStep Project
+#################################################
+
+function install_testcuckoo
+{
+APPNAME=TestCuckoo
+RELEASE="0.1"
+CONFIG_ARGS=""
+BUILD_ARGS=""
+INSTALL_ARGS=""
+
+STR="$APPNAME $RELEASE"
+subtitulo
+printf "Fetching ${APPNAME}...\n"
+SRC_DIR=RESOURCES/APPS/$APPNAME
+BUILD_DIR=../build
+cp -a ${SRC_DIR} ${BUILD_DIR}/
+cd ${BUILD_DIR}/${APPNAME} || exit 1
+
+ok "$APPNAME fetched"
+
+CHECK=""
+_build
+move_to_tools ${APPNAME}
+check ${APPNAME}
+make clean &>/dev/null
+sleep $SLEEP
+}
 
 #################################################
 ## Vindaloo: PDF Viewer

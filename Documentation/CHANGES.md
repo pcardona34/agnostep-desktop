@@ -8,6 +8,11 @@ Do not try nor report any issue until a release is tagged Stable.
 
 ## Changes
 
+### Changes of the Release Candidate 1.0.0 - RC 5.0
+
+- Added new Utilities applications: SaveLink (Internet Shortcuts Manger) and TestCuckoo (a simple test of sound).
+- Added new Wrappers: Scribus, Xpdf.
+
 ### Changes of the Release Candidate 1.0.0 - RC 4.4
 
 - Removed the branch 'app-wrapper-open-url'. It was need to fix an issue with NSSound, fixed within master of libs-gui. The openURLService is still working as expected.

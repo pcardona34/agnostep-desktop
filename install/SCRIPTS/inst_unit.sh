@@ -23,9 +23,10 @@
 . SCRIPTS/spinner.sh
 . SCRIPTS/patch_with_quilt.sh
 . SCRIPTS/functions_inst_core_apps.sh
-. SCRIPTS/functions_inst_extra.sh
 . SCRIPTS/functions_inst_devel.sh
+. SCRIPTS/functions_inst_extra.sh
 . SCRIPTS/functions_inst_games.sh
+. SCRIPTS/functions_inst_tools.sh
 . SCRIPTS/functions_prep.sh
 . SCRIPTS/functions_inst_wrappers.sh
 . SCRIPTS/std_build.sh
@@ -57,6 +58,7 @@ GSMAKE=$(gnustep-config --variable=GNUSTEP_MAKEFILES)
 . ${GSMAKE}/GNUstep.sh
 SPIN='/-\|'
 INSTALL_DIR=$(gnustep-config --variable=GNUSTEP_LOCAL_APPS)
+SLEEP=2
 
 ### End of VARS
 ################################

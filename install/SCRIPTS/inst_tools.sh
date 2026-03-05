@@ -85,9 +85,11 @@ Check (space bar) the Applications you want to (re)install." 20 70 10 \
 "Librarian" "A clone of NeXT Librarian from GSDE" off \
 "Memory" "A yet not finished Memory Monitor" off \
 "OpenUp" "An Archive Manager from GSDE" off \
+"SaveLink" "An Internet Shortcuts Manager" off \
 "ScanImage" "Scan Client from GSDE" off \
 "ScreenShot" "Screen Grabber from GSDE" off \
 "StepSync" "File Synchronizer" off \
+"TestCuckoo" "A little app to test sound" off \
 "Vindaloo" "PDF Viewer" off \
 "Zipper" "An Archive Manager" off 2> $TEMPFILE
 
@@ -154,6 +156,10 @@ case "$i" in
 	remove_ifx_app "OpenUp"
 	install_openup
 	update_info_plist "OpenUp";;
+"SaveLink")
+    printf "You chose SaveLink\n"
+    remove_ifx_app "SaveLink"
+    install_savelink;;
 "ScanImage")
 	printf "You chose ScanImage\n"
 	remove_ifx_app "ScanImage"
@@ -169,6 +175,10 @@ case "$i" in
 	remove_ifx_app "StepSync"
 	install_stepsync
 	update_info_plist "StepSync";;
+"TestCuckoo")
+    printf "You chose TestCuckoo\n"
+    remove_ifx_app "TestCuckoo"
+    install_testcuckoo;;
 "Vindaloo")
 	printf "You chose Vindaloo\n"
 	remove_ifx_app "ViewPDF"

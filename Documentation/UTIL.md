@@ -30,9 +30,10 @@ Within a TTY console:
 - Installer: an experimental app to install GNUstep apps as package
 - Librarian: Books and Documents Organizing (from GSDE)
 - Memory (experimental): a memory usage monitor
-- NetSurf: Web Browser: poor javascript renderinf engine until now
 - OpenUp: archive manager from GSDE (see Zipper alternative)
+- SaveLink: Internet Shortcut Manager
 - ScanImage: Scanner (sane) client (from GSDE)
 - ScreenShot: screen recorder: We should better use the tool provided by WindowMaker.
 - StepSync: Syncing Folders
+- TestCuckoo: a sound test
 - Zipper: an archives handler (zip, tar.gz, ...)

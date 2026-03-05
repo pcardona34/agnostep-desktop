@@ -89,7 +89,7 @@ It will show up **AgnostepManager**.
 
 From the main menu:
 
-1. Prepare the environment: item 'Prep'.
+1. **Prepare** the environment: item 'Prep'.
 2. Install the **Core Desktop**: item  'Core'.
 1. Install the **Core apps**: item 'Apps'.
 1. Set the User **Settings**: you will choose a flavour of AGNOSTEP-theme, a menu style...: item 'Settings'.

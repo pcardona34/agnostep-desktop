@@ -1,0 +1,12 @@
+{
+  NSExecutable = "Scribus";
+  NSIcon = "Scribus.tiff";
+  XAppWrapper = YES;
+  CFBundleIdentifier = "org.agnostep.Scribus";
+  NSTypes = (
+    {
+      NSUnixExtensions = ( "sla" );
+      NSIcon = "File_sla.tiff";
+    }
+  );
+}

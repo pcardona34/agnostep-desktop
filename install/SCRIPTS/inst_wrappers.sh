@@ -84,14 +84,16 @@ if [ $? -eq 0 ];then
 fi
 
 DEP_Abiword="abiword"
+DEP_AgnostepManager="dialog xterm"
 DEP_EBookReader="fbreader"
 DEP_Inkscape="inkscape"
 DEP_Nano="nano xterm"
-DEP_Writer="focuswriter"
-DEP_Upgrade="xterm"
 DEP_Printer="xterm cups cups-client cups-filters hplip printer-driver-hpijs libsane-hpaio"
-DEP_AgnostepManager="dialog xterm"
 DEP_ScreenLock="xtrlock"
+DEP_Scribus="scribus"
+DEP_Upgrade="xterm"
+DEP_Writer="focuswriter"
+DEP_Xpdf="xpdf"
 ################################
 ### Is there a LOCAL APPS Folder?
 
@@ -165,17 +167,19 @@ function other_menu
 dialog --backtitle "$STR" --title "Other Wrappers" \
 --ok-label "OK"  \
 --checklist "
-Check the Tools you want to install." 21 60 13 \
+Check the Tools you want to install." 20 60 10 \
 "Abiword" "Gnome Office Writer" off \
 "AgnostepManager" "A menu to manage installation" off \
 "EBookReader" "A wrapper for FBReader" off \
 "Inkscape" "A wrapper for Inkscape Vectorial Draw" off \
+"Lock" "Screen Locker" off \
 "Nano" "The GNU Nano editor" off \
 "Printer" "Printer Setup" off \
-"Lock" "Screen Locker" off \
+"Scribus" "Desktop Publishing Scribus" off \
 "Upgrade" "A useful wrapper for Debian upgrade" off \
 "Web" "Web Browser Wrapper" off \
-"Writer" "A wrapper for FocusWriter" off 2> $FICHTEMP
+"Writer" "A wrapper for FocusWriter" off \
+"Xpdf" "A wrapper for Xpdf" off 2> $FICHTEMP
 
 clear
 
@@ -213,6 +217,13 @@ case "$i" in
 	remove_ifx_app "Inkscape"
 	CHECK="YES"
 	install_wrapper Inkscape "$DEP_Inkscape";;
+"Lock")
+	printf "You chose Lock\n"
+	remove_ifx_app ScreenLock
+	CHECK=""
+	install_wrapper ScreenLock "${DEP_ScreenLock}"
+	move_to_tools ScreenLock
+	check ScreenLock;;
 "Nano")
 	printf "You chose Nano\n"
 	remove_ifx_app Nano
@@ -234,13 +245,11 @@ case "$i" in
 	move_to_tools Printer
 	check Printer
 	set_conf "xterm";;
-"Lock")
-	printf "You chose Lock\n"
-	remove_ifx_app ScreenLock
-	CHECK=""
-	install_wrapper ScreenLock "${DEP_ScreenLock}"
-	move_to_tools ScreenLock
-	check ScreenLock;;
+"Scribus")
+    printf "You chose Scribus\n"
+    remove_ifx_app Scribus
+    CHECK="YES"
+    install_wrapper Scribus "$DEP_Scribus";;
 "Upgrade")
 	printf "You chose Upgrade\n"
 	remove_ifx_app Upgrade
@@ -257,6 +266,13 @@ case "$i" in
 	remove_ifx_app "Writer"
 	CHECK="YES"
 	install_wrapper Writer "$DEP_Writer";;
+"Xpdf")
+    printf "You chose Xpdf\n"
+    remove_ifx_app "Xpdf"
+    CHECK=""
+    install_wrapper Xpdf "$DEP_Xpdf"
+    move_to_tools Xpdf
+    check Xpdf;;
 esac
 done
 else exit 0
