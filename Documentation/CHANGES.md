@@ -8,6 +8,11 @@ Do not try nor report any issue until a release is tagged Stable.
 
 ## Changes
 
+### Changes of the Release Candidate 1.0.0 - RC 6.0
+
+- Added ExitSession app.
+- See also important changes within agnostep-theme 0.9.7 and the way the session is managed.
+
 ### Changes of the Release Candidate 1.0.0 - RC 5.0
 
 - Added new Utilities applications: SaveLink (Internet Shortcuts Manger) and TestCuckoo (a simple test of sound).

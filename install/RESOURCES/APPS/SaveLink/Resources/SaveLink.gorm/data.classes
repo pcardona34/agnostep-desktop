@@ -11,6 +11,7 @@
     };
     FirstResponder = {
 	Actions = (
+	    "newAction:",
 	    "orderFrontFontPanel:",
 	    "reset:",
 	    "save:",
@@ -22,7 +23,8 @@
 	Actions = (
 	    "save:",
 	    "reset:",
-	    "open:"
+	    "open:",
+	    "showHelp:"
 	);
 	Outlets = (
 	    name,

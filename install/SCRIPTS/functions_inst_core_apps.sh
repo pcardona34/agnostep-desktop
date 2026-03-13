@@ -125,6 +125,41 @@ sleep $SLEEP
 }
 
 #################################################
+## SaveLink
+### Provided by AGNoStep Project
+#################################################
+
+function install_exitsession
+{
+APPNAME=ExitSession
+RELEASE="0.1"
+CONFIG_ARGS=""
+BUILD_ARGS=""
+INSTALL_ARGS=""
+
+STR="$APPNAME $RELEASE"
+subtitulo
+printf "Fetching ${APPNAME}...\n"
+SRC_DIR=RESOURCES/APPS/$APPNAME
+
+echo "Source: $SRC_DIR"
+echo "Ici: `pwd`"
+
+BUILD_DIR=../build
+cp -a ${SRC_DIR} ${BUILD_DIR}/
+cd ${BUILD_DIR}/${APPNAME} || exit 1
+
+ok "$APPNAME fetched"
+
+CHECK=""
+_build
+move_to_tools ${APPNAME}
+check ${APPNAME}
+make clean &>/dev/null
+sleep $SLEEP
+}
+
+#################################################
 ## GNUMail (current / svn)
 ### Repo/Release: svn Savannah/gnustep-nonfsf
 #################################################

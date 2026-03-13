@@ -80,6 +80,7 @@ install_aclock
 install_addressmanager
 install_batmon
 install_gnumail_svn
+install_exitsession
 install_ink
 install_innerspace
 install_simpleagenda

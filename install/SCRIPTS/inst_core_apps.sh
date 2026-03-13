@@ -87,6 +87,7 @@ Check (space bar) the Applications you want to reinstall." 22 70 14 \
 "AClock" "Analogic Clock for the Classic Flavour" off \
 "AddressManager" "Manage the Persons: email, birthdate..." off \
 "BatMon" "Monitoring the Battery on Laptops" off \
+"Exit" "Exit Session Shortcut" off \
 "GNUMail" "The GNUstep Mail User Agent" off \
 "GWorkspace" "The NeXT like Workspace Manager" off \
 "Ink" "Plain text and Rich Text Format Editor" off \
@@ -121,6 +122,10 @@ case "$i" in
 	remove_ifx_app "batmon"
 	install_batmon
 	update_info_plist "batmon";;
+"Exit")
+    printf "You chose Exit"
+    remove_ifx_app "ExitSession"
+    install_exitsession;;
 "GNUMail")
 	printf "You chose GNUMail\n"
 	remove_ifx_app "GNUMail"

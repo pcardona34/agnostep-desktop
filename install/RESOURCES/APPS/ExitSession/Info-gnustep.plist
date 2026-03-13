@@ -1,0 +1,6 @@
+{
+    CFBundleIdentifier = "org.agnostep.ExitSession";
+    CFBundleName = ExitSession;
+    CFBundleVersion = "0.1";
+    NSIcon = "Exit.tiff";
+}

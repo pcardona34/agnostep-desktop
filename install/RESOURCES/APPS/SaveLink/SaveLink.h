@@ -26,17 +26,20 @@
 int isDirectoryExists (const char *path);
 id getFavPath();
 
+
 @interface SaveLink : NSObject
 {
   IBOutlet id name;
   IBOutlet id link;
   IBOutlet id savebutton;
+  
 }
 
 - (void) applicationDidFinishLaunching: (NSNotification *)aNotif;
 - (void) awakeFromNib;
 - (void) textDidChange: (NSNotification *)notification;
 - (void) openWithPath: (NSString *)pathFile;
+- (IBAction) showHelp: (id)sender;
 - (IBAction) save: (id)sender;
 - (IBAction) reset: (id)sender;
 - (IBAction) open: (id)sender;

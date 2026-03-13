@@ -36,6 +36,7 @@ Resources/SaveLink.gorm \
 Resources/SaveLink.tiff \
 Resources/FileIcon_url.tiff
 
+
 #
 # Header files
 #
@@ -54,10 +55,18 @@ SaveLink.m
 # Other sources
 #
 SaveLink_OBJC_FILES += \
-SaveLink_main.m
+SaveLink_main.m 
+
+#
+# Localisation
+#
+SaveLink_LANGUAGES = English French
+SavelLink_LOCALIZED_RESOURCES_FILES = SaveLink.help
 
 #
 # Makefiles
 #
+-include GNUmakefile.preamble
 include $(GNUSTEP_MAKEFILES)/aggregate.make
 include $(GNUSTEP_MAKEFILES)/application.make
+-include GNUmakefile.postamble
