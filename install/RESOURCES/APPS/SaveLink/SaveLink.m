@@ -62,11 +62,6 @@ id getFavPath()
 
 @implementation SaveLink
 
-- (IBAction) showHelp:(id)sender 
-{
-    [NSHelpPanel orderFrontHelpPanel:self];
-}
-
 - (void) awakeFromNib
 {
   // Register for notifications

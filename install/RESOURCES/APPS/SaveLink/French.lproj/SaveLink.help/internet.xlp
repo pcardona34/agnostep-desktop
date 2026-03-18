@@ -1,0 +1,14 @@
+<p>Les Raccourcis Internet sont de simples fichiers texte comportant deux  lignes&nbsp;:</p>
+
+<listing>
+[InternetShortcut] 
+<br>URL=http://exemple.com
+</listing>
+
+<information>L'extension d'un Raccourci Internet est <code>.url</code>.</information>
+
+<p>Grâce au service <b>ouvrir URL</b> on peut ouvrir le lien associé (c-à-d à partir du fichier <code>.url</code>) dans le navigateur Internet par défaut pour y afficher le résultat de l'URL demandée.</p>  
+
+<information>
+Avec le Bureau Agnostep, les Raccourcis Internet <code>.url</code> sont rangés dans le dossier <b>Favoris</b> de votre répertoire personnel.
+</information>

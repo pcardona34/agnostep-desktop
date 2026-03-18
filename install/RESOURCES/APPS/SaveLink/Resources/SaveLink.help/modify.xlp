@@ -1,0 +1,13 @@
+<p>To modify an existent link:</p>
+
+<ol>
+<li>Open your Home Favorites folder.</li>
+<li>Select the desired ".url" file.</li>
+<li>On the selected Icon (at the end of the PathFile) click with the right button of your mouse to select "Open with..." menu and select "SaveLink" editor to perform the action.</li>
+<li>Modify the needed fields: <i>name</i>, <i>link</i>.</li>
+<li>Click on the "Save Link" button to apply the changes made.</li>
+</ol>
+
+<note>
+If you changed the name field, you will save a new Internet Shortcut under this name file. The previous one will not be deleted.
+</note>

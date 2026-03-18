@@ -1,0 +1,14 @@
+<p>Internet Shortcuts are simple text files with two lines:</p>
+
+<listing>
+[InternetShortcut] 
+<br>URL=http://example.com
+</listing>
+
+<information>The file extension of Internet Shortcut is <code>.url</code>.</information>
+
+<p>Thanks to <b>openURLService</b> somebody can open the related link (i.e. <code>.url</code>  file) within the default Internet Browser to get the related URL displayed.</p>  
+
+<information>
+With Agnostep Desktop, <code>.url</code> Internet Shortcuts are saved into your Home Favorites folder.
+</information>

@@ -22,42 +22,38 @@ include $(GNUSTEP_MAKEFILES)/common.make
 #
 # Application
 #
-VERSION = 0.2
-PACKAGE_NAME = SaveLink
-APP_NAME = SaveLink
-SaveLink_APPLICATION_ICON = SaveLink.tiff
+VERSION = 0.1
+PACKAGE_NAME = Dico
+APP_NAME = Dico
+Dico_APPLICATION_ICON = Dico.tiff
 
 
 #
 # Resource files
 #
-SaveLink_RESOURCE_FILES = \
-Resources/SaveLink.gorm \
-Resources/SaveLink.tiff \
-Resources/FileIcon_url.tiff \
-Resources/SaveLink.help \
-French.lproj/SaveLink.gorm \
-French.lproj/SaveLink.help
+Dico_RESOURCE_FILES = \
+Resources/Dico.gorm \
+Resources/Dico.tiff
 
 #
 # Header files
 #
-SaveLink_HEADER_FILES = \
+Dico_HEADER_FILES = \
 AppController.h \
-SaveLink.h
+Dico.h
 
 #
 # Objective-C Class files
 #
-SaveLink_OBJC_FILES = \
+Dico_OBJC_FILES = \
 AppController.m \
-SaveLink.m
+Dico.m
 
 #
 # Other sources
 #
-SaveLink_OBJC_FILES += \
-SaveLink_main.m 
+Dico_OBJC_FILES += \
+Dico_main.m 
 
 #
 # Makefiles

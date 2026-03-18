@@ -3,19 +3,20 @@
     ApplicationDescription = "Internet Shortcuts Manager";
     ApplicationIcon = "SaveLink.tiff";
     ApplicationName = SaveLink;
-    ApplicationRelease = "0.1";
+    ApplicationRelease = "0.2";
     Authors = (
 	"Patrick Cardona"
     );
     Copyright = "Copyright (C) 2026";
     CopyrightDescription = "Released under GPL3";
-    FullVersionID = "0.1";
+    FullVersionID = "0.2";
     NSBuildVersion = "02 2026";
     NSExecutable = SaveLink;
     NSIcon = "SaveLink.tiff";
     NSMainNibFile = "SaveLink.gorm";
     NSPrincipalClass = NSApplication;
     NSRole = Application;
+    GSHelpContentsFile = "SaveLink.help";
     NSTypes = (
 	{
 	    NSHumanReadableName = InternetShorcut;

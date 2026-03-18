@@ -1,0 +1,13 @@
+<p>Pour modifier une lien existant&nbsp;:</p>
+
+<ol>
+<li>Affichez le contenu du dossier Favoris de votre dossier personnel.</li>
+<li>Sélectionnez le raccourci Internet (fichier .url) désiré.</li>
+<li>Cliquez sur l'icône du fichier sélectionné (à l'extrémité du chemin de fichiers) avec le bouton de droite de la souris afin d'afficher le menu "Ouvrir avec..." et d'y sélectionner l'action "SaveLink" qui ouvrira lelien dans cet éditeur.</li>
+<li>Modifiez les champs nécessaires: <i>nom</i>, <i>lien</i>.</li>
+<li>Cliquez sur le bouton "Enregistrer le lien" afin d'appliquer ces changements.</li>
+</ol>
+
+<note>
+Si vous modifiez le nom, un nouveau raccourci sera créé avec ce nom, sans supprimer l'ancien.
+</note>

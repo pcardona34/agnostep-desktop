@@ -39,7 +39,6 @@ id getFavPath();
 - (void) awakeFromNib;
 - (void) textDidChange: (NSNotification *)notification;
 - (void) openWithPath: (NSString *)pathFile;
-- (IBAction) showHelp: (id)sender;
 - (IBAction) save: (id)sender;
 - (IBAction) reset: (id)sender;
 - (IBAction) open: (id)sender;

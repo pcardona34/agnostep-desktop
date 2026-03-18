@@ -1,0 +1,12 @@
+<p>
+Pour créer un nouveau lien (c-à-d un Raccourci Internet) il suffit de compléter ainsi le formulaire&nbsp;:</p>
+
+<ol>
+<li>Saisissez le nom du lien;
+<li>Saisissez une URL valide commençant par le protocole "http://" ou "https://" suivi par le nom canonique du site.
+<li>Cliquez sur le bouton "Enregistrer le lien".
+</ol>
+
+<note>
+Ce nouveau lien sera enregistré sous le nom de fichier saisi "nom.url" dans votre dossier des Favoris à la racine de votre dossier personnel. 
+</note>

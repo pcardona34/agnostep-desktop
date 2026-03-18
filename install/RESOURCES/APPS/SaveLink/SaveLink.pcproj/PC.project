@@ -19,7 +19,6 @@
     CPPOPTIONS = "";
     "CREATION_DATE" = "2026-02-24 16:14:34 +0100";
     "DOCU_FILES" = (
-	"SaveLink.help"
     );
     FRAMEWORKS = (
     );
@@ -47,6 +46,7 @@
     MAKEFILEDIR = "$(GNUSTEP_MAKEFILES)";
     "OBJC_COMPILEROPTIONS" = "";
     "OTHER_RESOURCES" = (
+	"SaveLink.help"
     );
     "OTHER_SOURCES" = (
 	"SaveLink_main.m"
@@ -72,7 +72,7 @@
     "PROJECT_GROUP" = "No group avaliable!";
     "PROJECT_MAINTAINER" = patrick;
     "PROJECT_NAME" = SaveLink;
-    "PROJECT_RELEASE" = "0.1";
+    "PROJECT_RELEASE" = "0.2";
     "PROJECT_SUMMARY" = "No summary avaliable!";
     "PROJECT_TYPE" = Application;
     "PROJECT_URL" = "https://github.com/pcardona34/agnostep-desktop";

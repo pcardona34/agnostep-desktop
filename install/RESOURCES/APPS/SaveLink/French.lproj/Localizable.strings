@@ -1,0 +1,23 @@
+/* TRANSLATORS: Make sure to quote all translated strings if
+   they contain spaces or non-ASCII characters.  */
+
+"Nouveau Lien" = "Nouveau Lien";
+Fermer = Fermer;
+Info = Info;
+Ouvrir = Ouvrir;
+Services = Services;
+"Placer devant" = "Placer devant";
+"Aide..." = "Aide...";
+"Pr\U00E9f\U00E9rences..." = "Pr\U00E9f\U00E9rences...";
+"Information..." = "Information...";
+SaveLink = SaveLink;
+"Nom :" = "Nom :";
+"Fen\U00EAtre" = "Fen\U00EAtre";
+Quitter = Quitter;
+"Raccourci Internet" = "Raccourci Internet";
+Miniaturiser = Miniaturiser;
+"";
+"R\U00E9initialiser" = "R\U00E9initialiser";
+"Enregistrer le lien" = "Enregistrer le lien";
+Cacher = Cacher;
+"Lien :" = "Lien :";

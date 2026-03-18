@@ -1,4 +1,4 @@
-- [ ]  French Agnostep Help...
+- [x]  French Agnostep Help...
 - [ ] Wallpapers: add a third collection
 - [x] Search in PDF document <=> Xpdf wrapper 
 
@@ -15,20 +15,21 @@ On:
 
 ---
 
-Referentiel Prog objC/GNUstep
+- [ ] Ref. Prog objC/GNUstep
 
-General Wrapper avec menus GS
+-[ ] General Wrapper avec menus GS
 
-- [ ] Service: French Lookup (Dico.app / Littre.app)
+- [x] Service: French Dictionary Lookup (Dico.app): from DVLF of the University of Chicago.
 md => make a book... => pdf
 --------------------------------------
 - [ ] Surf Web Browser: cd. sucklesstools => Surf.app ?
+  - [x] Yet used within Dico.app
 --------------------------------------
 HLKit: cf. Mail
 - [ ] HighlighterKit and Gemas: cf dossier local GNUstep/Library...
 
 -----------------------------------
-Portage de Cocotron vers GNUstep?
+Cocotron 2 GNUstep?
 - Comics reader?
 - Bookshelf... vs Librarian?
 ------------------------------------
@@ -39,9 +40,8 @@ Flat Package Format - The missing documentation
 http://s.sudre.free.fr/Stuff/Ivanhoe/FLAT.html
 ===========================================
 [ ] Badge on an AppIcon
-=> permettrait une amélioration de:
-- Upadater.app
-- MEMO (Birthday)
+- with Upadater.app
+- with MEMO (Birthday)
 see: http://multixden.blogspot.com/2023/08/gnustep-now-has-badges.html
 ===========================================
 
@@ -61,7 +61,7 @@ see: http://multixden.blogspot.com/2023/08/gnustep-now-has-badges.html
 _____________________________
 
 Minor issues:
-[ ] Finder: traduction incomplète --> Titre de fenêtre: "Search Results"
+[ ] Finder: incomplete translation --> see: "Search Results"
 
 --------------------------------------------
 

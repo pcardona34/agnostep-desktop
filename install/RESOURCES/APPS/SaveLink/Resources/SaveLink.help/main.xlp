@@ -1,0 +1,27 @@
+<document>
+
+<header>
+<title>SaveLink Help</title>
+</header>
+
+
+<plain name="Root">
+
+<section name="Introduction">
+<p>This is <b>SaveLink</b> Help.</p>
+
+<information>
+This program is part of Agnostep Desktop project.
+<br>&copy; 2026 Patrick Cardona
+<br><url>https://github.com/pcardona34/agnostep-desktop</url>
+</information>
+</section>
+
+</plain>
+
+<chapter src="whatis.xlp" name="What is SaveLink?"></chapter>
+<chapter src="internet.xlp" name="What are Internet Shortcuts?"></chapter>
+<chapter src="creating.xlp" name="Creating a New Link"></chapter>
+<chapter src="modify.xlp" name="Modifying an existent Link"></chapter>
+<chapter src="delete.xlp" name="Deleting a Link"></chapter>
+</document>

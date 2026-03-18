@@ -8,6 +8,12 @@ Do not try nor report any issue until a release is tagged Stable.
 
 ## Changes
 
+### Changes of the Release Candidate 1.0.0 - RC 7.0
+
+- Completed SaveLink with Help and French translation (Help too and interface).
+- Added Dico: a Lookup French Dictionary app and service from the DVLF of the University of Chicago.
+- Focus issues with Window Maker are not yet fixed.
+
 ### Changes of the Release Candidate 1.0.0 - RC 6.0
 
 - Added ExitSession app.

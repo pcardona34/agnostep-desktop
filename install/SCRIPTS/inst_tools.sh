@@ -76,6 +76,7 @@ The list below contains the utilities.
 Check (space bar) the Applications you want to (re)install." 20 70 10 \
 "Affiche" "Sticky Notes" off \
 "Calculator" "Calculator from GNUstep Examples" off \
+"Dico" "A French Lookup Dictionary" off \
 "Dictionary" "Dict client" off \
 "FontManager" "Font Previewer and Installer" off \
 "FTP" "FTP Client" off \
@@ -111,6 +112,10 @@ case "$i" in
 	remove_ifx_app "Calculator"
 	install_calculator
 	update_info_plist "Calculator";;
+"Dico")
+    printf "You chose Dico\n"
+    remove_ifx_app "Dico"
+    install_dico;;
 "Dictionary")
 	printf "You chose Dictionary\n"
 	remove_ifx_app "DictionaryReader"

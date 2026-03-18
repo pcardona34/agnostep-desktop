@@ -144,6 +144,78 @@ sleep $SLEEP
 
 ########################## - D - ########################## 
 
+#################################################
+## Dico
+## a French Dictionary Lookup
+### Provided by AGNoStep Project
+#################################################
+
+function install_dico
+{
+APPNAME=Dico
+RELEASE="0.1"
+CONFIG_ARGS=""
+BUILD_ARGS=""
+INSTALL_ARGS=""
+DEP="surf"
+
+### Dependencies
+STR="Dependencies..."
+subtitulo
+sudo apt -y install ${DEP}
+sleep $SLEEP
+clear
+
+### Application
+STR="$APPNAME $RELEASE"
+subtitulo
+printf "Fetching ${APPNAME}...\n"
+SRC_DIR=RESOURCES/APPS/$APPNAME
+BUILD_DIR=../build
+cp -a ${SRC_DIR} ${BUILD_DIR}/
+cd ${BUILD_DIR}/${APPNAME} || exit 1
+
+ok "$APPNAME fetched"
+
+CHECK=""
+_build
+move_to_tools ${APPNAME}
+check ${APPNAME}
+make clean &>/dev/null
+sleep $SLEEP
+
+### Service
+cd $_PWD
+SERVICE="openWithDico"
+STR="Service: $SERVICE"
+subtitulo
+printf "Fetching ${SERVICE}...\n"
+SRC_DIR=RESOURCES/SERVICES/${SERVICE}
+cp -a ${SRC_DIR} ${BUILD_DIR}/
+cd ${BUILD_DIR}/${SERVICE} || exit 1
+
+ok "$SERVICE fetched"
+printf "Building...\n"
+make
+sudo -E make install
+ok "Done"
+make clean &>/dev/null
+sleep $SLEEP
+
+### Default CSS
+cd $_PWD
+STR="Default Style Sheet"
+subtitulo
+
+SRC_CSS=RESOURCES/CONF/surf_default.css
+DIR_DEST=$HOME/.surf/styles
+if [ ! -d $DIR_DEST ];then
+    mkdir -p $DIR_DEST
+fi
+cp --verbose --update ${SRC_CSS} ${DIR_DEST}/default.css
+ok "Done"
+}
+
 #####################################################
 ## DictionaryReader
 ### Repo/Release: Debian Salsa
