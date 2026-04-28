@@ -1,0 +1,31 @@
+<document>
+
+<header>
+<title>Birthday User Guide</title>
+</header>
+
+<plain name="Cover">
+
+<center><img src="Banniere_Birthday.tiff"></center>
+
+<left>	
+
+<information>
+Birthday is part of AGNoStep Desktop project. 
+</information>
+
+<caution>
+(c) 2026 Patrick Cardona. This project is a Free Software provided under the GNU Public Licence (GPL).
+</caution>
+
+<note>
+Site: <url>https://github.com/pcardona34/agnostep-desktop</url>
+<br>Please, post there any issue.
+</note>
+</left>
+
+</plain>
+
+<chapter src="Birth.xlp" name="Birthdays and Feasts"></chapter>
+
+</document>

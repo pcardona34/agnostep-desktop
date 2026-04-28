@@ -1,7 +1,0 @@
-#!/bin/bash
-
-APP=/usr/local/bin/Upgrade
-
-xterm -T "Upgrade" -e "$APP" &
-PID=$!
-pidwait $PID

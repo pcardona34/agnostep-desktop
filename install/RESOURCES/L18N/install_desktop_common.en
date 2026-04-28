@@ -1,0 +1,23 @@
+### Strings: en
+### for user_conf_gen.sh
+
+### FLAVOUR
+FLAVOUR_TITLE="Flavour Choice"
+FLAVOUR_INFO="AGNoStep Desktop provides two flavours"
+FLAVOUR_ONE="with the Conky panel"
+FLAVOUR_TWO="with the Clip of Window Maker"
+INFO_BOTH="Both of them provide useful system infos"
+CHOICE_PROMPT="Please, make your choice"
+ENTER="Enter"
+YOUR_CHOICE="Your choice was"
+
+### METEO
+METEO_TITLE="Weather Station"
+INFO_FILE_EXISTS="A Weather config file already exists."
+EDIT_FILE="Edit"
+ERASE_FILE="Erase"
+COUNTRY_TAG="Country"
+STATE_TAG="State"
+CITY_TAG="City"
+INFO_METEO_END="Weather config has been written in ${METEO_CONF}".
+

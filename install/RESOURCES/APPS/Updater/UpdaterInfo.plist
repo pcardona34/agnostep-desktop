@@ -1,0 +1,16 @@
+{
+    ApplicationDescription = "Debian Packages Updater";
+    ApplicationName = Updater;
+    ApplicationRelease = "0.1";
+    Authors = (
+	"Patrick CARDONA"
+    );
+    Copyright = "Copyright (C) 2026 - Part of Agnostep Project";
+    CopyrightDescription = "Released under GNU General Public License 3.0";
+    FullVersionID = "0.1";
+    NSExecutable = Updater;
+    NSMainNibFile = ;
+    NSIcon = "Upgrade.tiff";
+    NSPrincipalClass = NSApplication;
+    NSRole = Application;
+}

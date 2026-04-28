@@ -1,0 +1,99 @@
+<part name="Introduction">
+
+AGNoStep uses udisks2 utility and wmudmount dockapp to auto-detect plugged devices and mount them.
+
+<caution>
+As we do not use anymore the desktop background of GWorkspace, you do not need to set anything within SystemPreferences nor /etc/fstab.
+<br>Things are easy. Follow this help guide.
+</caution>  
+
+</part>
+
+<part name="Step by step">
+
+<section name="STEP 1 - Identify and mount the device">
+			
+<ol>
+<li>Let's plug the new device...</li>
+<li>Click on the right arrow of wmudmount: last icon of the Clip.</li>
+<li>When the new device icon is shown, click on the circle to mount it (i.e., to attach the device to your filesystem).</li>
+<li>Note the label of that newly mounted device.</li> 
+</ol>
+
+<br />
+<information>
+The path is something like:<br />
+<code>/media/patrick/LABELNAME</code>
+</information>
+		
+Where:
+
+<ul>
+<li><i>patrick</i> should be your username.</li>
+<li><i>LABELNAME</i> should be the label name of your device.</li>
+</ul>
+
+</section>
+
+<section name="STEP 2 - Open the device folder">
+
+<ol>
+<li>Open the <b>DiskOpen</b> app.</li>
+<li>Select menu item: <b>Open Media Folder...</b></li>
+<li>In the opened File Viewer, select the folder of your Disk LABELNAME to browse its content...</li>
+</ol>
+
+</section>
+
+<section name="Removing a mounted disk">
+		
+<ol>
+<li>In the shelf of the media folder FileViewer, select the folder icon of the disk (by example LABELNAME), drag it onto the Recycler icon of the Dock...</li>
+<li>Release the mouse button when the pointer is green. If not, just make a little move to get it green.
+<br>Note that wmudmount will change the disk status to "unmounted" and also the folder will not be displayed in the content of  the  File Viewer.</li>
+<li>Close the File Viewer of media.</li>
+<li>On wmudmount, click on the triangle to eject (i.e., disconnect completely the disk).</li>
+<li>Now you can safely unplug it.</li>
+</ol> 
+
+<information>
+You could also use only wmudmount to unmount instead of the dragging method.
+</information>
+
+</section>
+</part>
+
+<part name="Particular cases">
+
+<section name="UASP known issues">
+
+<caution>
+Some SATA/USB3.0 removable disks are known to not work with the UASP norm on Raspberry Pi's.
+</caution>
+
+To avoid loss of data, be sure to identifiy such controllers: their ID (got with <b>lsusb</b> command) begins with '152d' which identifies a 'JMicron' controller.
+
+To use safely those disks, you must modify the boot kernel with quirks like this:
+
+<ol>
+<li>Edit the 'cmdline.txt' as a superuser:
+<listing>
+sudo nano /boot/firmware/cmdline.txt
+</listing>
+</li>
+<li>Add this at the begining of the line, mutatis mutandis, with the ID (xxxx:xxxx) of your disk:
+<note>usb-storage.quirks=xxxx:xxxx:u</note>
+</li>
+<li>Save (F3), close (F2), logout the Workspace, and reboot the Pi:
+<listing>sudo reboot</listing>
+</li>
+<li>Login and follow the <ref id="Prerequisite">Prerequisite</ref> steps to add your disk and make it available for your workspace.</li>
+</ol>
+
+<br />
+<caution>
+You must distinguish ID (xxxx:xxxx) and UUID (XXXX-XXXX). ID is hardware info (vendor...) while UUID is used to identify the device in your system.
+</caution>
+ 
+</section>
+</part>

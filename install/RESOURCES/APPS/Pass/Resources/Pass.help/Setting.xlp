@@ -1,0 +1,70 @@
+<section name="Introduction">
+
+Until now, we do not have a native GNUstep Password Manager. So we will use an efficient CLI program in the Terminal: pass, called the 'the standard unix password manager'.
+<br>Site: <url>https://www.passwordstore.org/</url>
+<br>But <b>Pass.app</b> will also provide a kind of User Interface to use it with more ease.
+<br>We need firstly to create the Passwords Store... 
+</section>
+
+<section name="1. Setup -1- Main Encryption Key">
+
+The program and its dependencies have been already set.
+To use it, you need to create an encryption key. Open a new Shell in the Terminal and execute:
+
+<listing>
+gpg --expert --pinentry-mode=loopback --full-gen-key
+</listing>
+
+My first settings are as below:
+
+<note>
+Type: 1
+<br />Size: 1024
+<br />Sub-key: 1024
+<br />Never dies
+<br />Identity: patrick
+<br />Your passphrase: &hellip;
+</note>
+
+</section>
+
+<section name="2. Setup -2- Secundary Secret Key">
+
+Execute now:
+
+<listing>
+gpg --edit-key "patrick"
+</listing>
+
+Verify with:
+
+<listing>
+gpg --list-secret-keys
+</listing>
+
+<information>
+To get the Key-ID, copy the 16 last characters of the sub-key (end of the 'ssb' field)
+</information>
+
+Fake example:
+<listing>
+59FEA9BF714DC50B
+</listing>
+
+</section>
+
+<section name="3. Setup -3- Create the Passwords Store">
+
+Execute substituing with your effective Key-ID:
+
+<listing>
+pass init 59FEA9BF714DC50B
+</listing>
+
+The message below must validate the initialization of the Password Store:
+<listing>
+mkdir /home/patrick/.password-store/
+<br />Password store initialized for 59FEA9BF714DC50B
+</listing>
+
+</section>

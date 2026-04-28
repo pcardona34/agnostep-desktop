@@ -1,0 +1,87 @@
+<section name="Migrating a Passwords Store">
+
+<information>
+Thanks to:<br>
+<site>https://www.planetroast.com/migrating-linux-pass-to-new-machine</site>
+</information>
+
+<p>When you change from one computer to another, a critical 
+task is to preserve personal data, and namely your Passwords 
+Store.</p>
+
+<section name="Step 1: Clone the Password Store">
+
+<p>Copy the entire <code>.password-store</code> directory onto your new machine. 
+The expected default path is:
+
+<listing>
+$HOME/.password-store
+</listing>
+
+</section>
+
+<section name="Step 2: Export your GPG keys">
+
+<p>On your old machine run the following to commands to create an 
+<i>'ascii armored version'</i> of the key.</p>
+
+<listing>
+gpg --output your_private_key.pgp --armor --export-secret-key username@example
+</listing>
+
+<p>Then copy it on your new computer.</p>
+
+</section>
+
+<section name="Step 3: Import the keys onto your new machine">
+
+<listing>
+gpg --import your_private_key.pgp
+</listing>
+
+<p>Verify and display it:</p>
+
+<listing>
+patrick@pi500:~ $ gpg --list-secret-keys<br>
+</listing>
+
+<p>You will get:</p>
+
+<listing>
+/home/patrick/.gnupg/pubring.kbx<br>
+--------------------------------<br>
+sec   rsa1024 2025-10-06 [SC]<br>
+      70FAC54E...<br>
+uid          [  ultime ] patrick (Clé Pass) &lt;patrick.cardona@...&gt;<br>
+ssb   rsa1024 2025-10-06 [E]
+</listing>
+
+<caution>
+The ID of the key is the long string on the fourth line
+</caution>
+
+<p>(In my case: <code>70FAC5...</code>)</p>
+
+</section>
+
+<section name="Step 4: Setup Pass">
+
+<listing>
+pass init 70FAC54E...
+</listing>
+
+</section>
+
+<section name="Step 5: elevate the trust level">
+
+<listing>
+gpg --edit-key &lt;your-key-id-here&gt;<br>
+gpg&gt; trust
+</listing>
+
+<p>Choose level 5 (i.e.: ultimate) than type <code>'quit'</code> 
+from gpg prompt.</p>
+
+</section>
+</section>
+

@@ -1,0 +1,19 @@
+{
+  NSExecutable = "LibreOffice";
+  NSIcon = "Libreoffice.tiff";
+	XAppWrapper = YES;
+  NSTypes = (
+    {
+      NSUnixExtensions = ( "odt", "doc", "docx" );
+      NSIcon = "File_text.tiff";
+    },
+    {
+      NSUnixExtensions = ( "ods", "xls", "xslx" );
+      NSIcon = "File_spreadsheet.tiff";
+    },
+    {
+      NSUnixExtensions = ( "odp", "ppt", "pptx" );
+      NSIcon = "File_presentation.tiff";
+    }
+  );
+}

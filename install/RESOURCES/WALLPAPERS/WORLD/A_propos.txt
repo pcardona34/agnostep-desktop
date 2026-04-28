@@ -1,0 +1,15 @@
+World Wallpapers
+==================
+
+Wallpapers From Wikimedia
+=================
+
+All the pictures in this folder are from Wikimedia Common.
+This note must remain in the MORE folder.
+
+Size
+===
+
+All these wallpapers were sized or croped to fit the HD size: 1920x1080
+
+They serve in the wprotate script.

@@ -28,9 +28,9 @@
 
 ---
 
-- [x] Separate main Core Desktop and AGNOSTEP Theme: done
+- [x] ~~Separate main Core Desktop and AGNOSTEP Theme~~: **canceled**
   - [x] AGNoStep became AGNosStep-desktop (this repo).
-  - [x] [AGNOSTEP-theme](https://github.com/pcardona34/agnostep-theme) (name capitalized) became the new Theme project manager. 
+  - [x] [AGNOSTEP-theme](https://github.com/pcardona34/agnostep-theme) (name capitalized) became the new Theme project manager: only for ARTS backup since release 2.0.0.
 
 
 ## Translation
@@ -43,7 +43,7 @@ The whole desktop and apps mut be localized:
 - [x] AGNostep User Guide
 - [x] GWorkspace User Guide
 - [x] Rework all git repo documentation
-- [ ] Other apps...: wait until HelpViewer specs will be finalized.
+- [x] Other apps...: see Native collection.
 
 ## Testing
 
@@ -54,17 +54,17 @@ The whole desktop and apps mut be localized:
 
 ## Create and publish a Release
 
-- [x] SOURCE stable release: 1.0.0 RC 4.3
+- [x] SOURCE Beta release: 2.0.0 begins a new cycle.
 
 > [!WARNING]
 > Due to limitation size, I cannot publish ISOs nor SD-Card images on Github.
 
 ## Better wrappers with GNUstep menus
 
-- [ ] Use NSTask to handle UNIX commands within GNUstep apps: until now, I failed to accomplish this.
-- [ ] Provide all the XApp wrappers a GNUstep menu: same  as above.
-- [ ] Target: see Xapps Wrappers.
-- [ ] Handle scaling privileges (Xsudo?): until now, using `xterm -e command` and type password in the Xterm.
+- [x] Use NSTask to handle UNIX commands within GNUstep apps: ... See Native apps collection.
+- [x] Provide all the XApp wrappers a GNUstep menu: same  as above.
+- [x] Target: see Native GNUstep apps collection.
+- [x] Sudo: until now, using `xterm -e command` and type password in the Xterm.
 
 ## Porting Application Manager and AGNOSTEP-theme
 
@@ -82,7 +82,7 @@ The idea is to propose an Universal way of installing a GNUstep app...
 ## A new Web Browser integrated within GNUstep
 
 > [!NOTE]
-> The community seems to wait for the [Laybug](https://ladybird.org/) project to accomplish: Alpha tagetted in 2026.
+> The community seems to wait for the [Ladybug](https://ladybird.org/) project to accomplish: Alpha tagetted in 2026.
 
 In the meanwhile, maybe using [Surf](https://surf.suckless.org/) with Xembed?
 - [ ] Try to adapt existing projects (NetSurf, GS-WebBrowser...) with Surf as Web Engine?

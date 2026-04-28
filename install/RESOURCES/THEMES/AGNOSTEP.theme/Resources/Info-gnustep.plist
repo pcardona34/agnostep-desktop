@@ -1,0 +1,15 @@
+{
+    GSThemeAuthors = (
+	"Patrick Cardona"
+    );
+    GSThemeDetails = "AGNOSTEP is a sleek flavour of PISIN theme with little contrast and few shadows inspired by Sleek (Riccardo Mottola)\000.";
+    GSThemeDomain = {
+	GSBackHandlesWindowDecorations = YES;
+    };
+    GSThemeIcon = "AGNOSTEP_48.tiff";
+    GSThemeLicense = "GPL v3\000";
+    GSThemePreview = "theme_preview.tiff";
+    GSThemeTiles = {
+    };
+    GSThemeVersion = "1.0";
+}

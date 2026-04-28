@@ -87,16 +87,15 @@ Check (space bar) the Applications you want to reinstall." 22 70 14 \
 "AClock" "Analogic Clock for the Classic Flavour" off \
 "AddressManager" "Manage the Persons: email, birthdate..." off \
 "BatMon" "Monitoring the Battery on Laptops" off \
-"Exit" "Exit Session Shortcut" off \
 "GNUMail" "The GNUstep Mail User Agent" off \
 "GWorkspace" "The NeXT like Workspace Manager" off \
+"HelpViewer" "Help Viewer" off \
 "Ink" "Plain text and Rich Text Format Editor" off \
 "InnerSpace" "The GNUstep Screensaver" off \
 "SimpleAgenda" "A Simple Agenda to manage Events and Tasks" off \
 "SystemPreferences" "Preferences of the GNUstep System" off \
 "Terminal" "The GNUstep Terminal Emulator" off \
-"TimeMon" "The CPU Load Monitor ported from OPENSTEP" off \
-"VolumeControl" "The Sound Level Controller" off 2> $TEMPFILE
+"TimeMon" "The CPU Load Monitor ported from OPENSTEP" off 2> $TEMPFILE
 
 # 0 if [OK] button was pushed;
 # otherwise, exit the script.
@@ -122,10 +121,6 @@ case "$i" in
 	remove_ifx_app "batmon"
 	install_batmon
 	update_info_plist "batmon";;
-"Exit")
-    printf "You chose Exit"
-    remove_ifx_app "ExitSession"
-    install_exitsession;;
 "GNUMail")
 	printf "You chose GNUMail\n"
 	remove_ifx_app "GNUMail"
@@ -140,6 +135,11 @@ case "$i" in
 	remove_ifx_app "MDFinder"
 	install_gworkspace
 	update_info_plist "GWorkspace";;
+"HelpViewer")
+    printf "You chose HelpViewer\n"
+    remove_ifx_app "HelpViewer"
+    install_helpviewer
+    update_info_plist "HelpViewer";;
 "Ink")
 	printf "You chose Ink\n"
 	remove_ifx_app "Ink"
@@ -170,11 +170,6 @@ case "$i" in
 	remove_ifx_app "TimeMon"
 	install_timemon
 	update_info_plist "TimeMon";;
-"VolumeControl")
-	printf "You chose VolumeControl\n"
-	remove_ifx_app "VolumeControl"
-	install_volumecontrol
-	update_info_plist "VolumeControl";;
 esac
 done
 else exit 0

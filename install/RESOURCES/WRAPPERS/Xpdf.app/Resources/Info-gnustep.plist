@@ -1,5 +1,5 @@
 {
-    NSExecutable = xpdf;
+    NSExecutable = Xpdf;
     NSIcon = "xpdf.tiff";
     NSRole = "Editor";
 		XAppWrapper = YES;

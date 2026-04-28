@@ -1,0 +1,32 @@
+<document>
+
+<header>
+<title>AGNOSTEP Desktop User Guide</title>
+</header>
+
+<plain name="Cover">
+
+<img src="banniere_UG.tiff">
+
+	
+<information>
+AGNoStep stands for: AGNostic GNUstep Desktop. 
+<br />It means a Desktop Environment on a computer powered by the Framework GNUstep.
+</information>
+
+<caution>
+(c) 2025-2026 Patrick Cardona. This project is a Free Software provided under the GNU Public Licence (GPL).
+</caution>
+
+<note>
+Site: <url>https://github.com/pcardona34/agnostep</url>&nbsp;
+<br />Please, post there any issue.
+</note>
+
+</plain>
+
+<chapter src="Keyboard.xlp" name="Setting the Keyboard"></chapter>
+<chapter src="Compo.xlp" name="A Brief Tour of Agnostep Desktop"></chapter>
+<chapter src="Manager.xlp" name="Agnostep Manager"></chapter>
+
+</document>

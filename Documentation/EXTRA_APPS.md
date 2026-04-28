@@ -10,7 +10,7 @@
 	./agnostep.sh
 ````
 
-1-BIS) In the FileViewer Panel, click on the **Applications** icon on the Shelf, then open the **Utilities** folder. Select and open **AgnostepManager.app**.
+1-BIS) In the **Applications Folder**,  select and open **AgnostepManager.app**.
 
 2) Then, from the main menu , choose the item: **Extra**.
 
@@ -32,4 +32,6 @@
 - Preview: Image Viewer
 - PRICE: Image Manipulation program
 - TalkSoup: the IRC client
-- Wheather: a Weather app
+
+> [!NOTE]
+> **Weather.app** has been removed in favour of native **Meteo.app**.

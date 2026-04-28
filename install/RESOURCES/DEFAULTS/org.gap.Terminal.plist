@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>AltIsNotMeta</key>
+    <true/>
+    <key>BoldTerminalFont</key>
+    <string>DejaVuSansMono</string>
+    <key>BoldTerminalFontSize</key>
+    <real>12</real>
+    <key>CommandAsMeta</key>
+    <false/>
+    <key>CursorColorA</key>
+    <real>1</real>
+    <key>CursorColorB</key>
+    <real>1</real>
+    <key>CursorColorG</key>
+    <real>1</real>
+    <key>CursorColorR</key>
+    <real>1</real>
+    <key>CursorStyle</key>
+    <integer>0</integer>
+    <key>DoubleEscape</key>
+    <false/>
+    <key>Linux_CharacterSet</key>
+    <string>utf-8</string>
+    <key>LoginShell</key>
+    <false/>
+    <key>NSMenuLocations</key>
+    <dict>
+	<key>\U001B</key>
+	<string>0 898 134 182 0 0  1920 1080 </string>
+    </dict>
+    <key>NSWindow Frame Preferences</key>
+    <string>888 403 410 433 0 0  1920 1080 </string>
+    <key>ScrollBackLines</key>
+    <integer>256</integer>
+    <key>Shell</key>
+    <string>/bin/bash</string>
+    <key>TerminalFont</key>
+    <string>DejaVuSansMono</string>
+    <key>TerminalFontSize</key>
+    <real>12</real>
+    <key>UseMultiCellGlyphs</key>
+    <false/>
+</dict>
+</plist>

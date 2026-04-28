@@ -1,0 +1,18 @@
+{
+    ApplicationDescription = "Screen locker for the Agnostep Desktop Project";
+    ApplicationName = ScreenLock;
+    ApplicationRelease = "0.1";
+    Authors = (
+	"Patrick CARDONA"
+    );
+    Copyright = "Copyright (C) 2026";
+    CopyrightDescription = "Released under GNU General Public License 3.0";
+    FullVersionID = "0.1";
+    NSExecutable = ScreenLock;
+    NSMainNibFile = ;
+    NSPrincipalClass = NSApplication;
+    NSRole = Application;
+    NSIcon = "ScreenLock.tiff";
+    GSHelpContentsFile = "ScreenLock.help";
+    URL = "https://github.com/pcardona34/agnostep-desktop";
+}

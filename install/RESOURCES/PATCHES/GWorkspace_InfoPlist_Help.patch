@@ -1,0 +1,10 @@
+--- GWorkspaceInfo.plist.a	2026-04-22 15:05:40.349919651 +0200
++++ GWorkspaceInfo.plist.b	2026-04-22 15:06:08.421964190 +0200
+@@ -16,6 +16,7 @@
+     CopyrightDescription = "Released under the GNU General Public License 2.0 or later";
+     NSIcon = "FileManager.tiff";
+     NSRole = "Viewer";
++    GSHelpContentsFile = "GWorkspaceInfo.plist";
+     NSServices = (
+       {
+         NSMenuItem = {

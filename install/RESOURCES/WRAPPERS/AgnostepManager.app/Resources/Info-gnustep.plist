@@ -1,7 +1,0 @@
-{
-  NSExecutable = "AgnostepManager";
-  NSRole = "Application";
-  NSIcon = "AgnostepManager.tiff";
-  CFBundleIdentifier = "org.gnu.AgnostepManager";
-  XAppWrapper = YES;
-}

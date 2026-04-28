@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>IdleColor</key>
+    <string>0.843137 0.843137 1.000000 1.000000</string>
+    <key>NiceColor</key>
+    <string>0.525490 0.525490 0.745098 1.000000</string>
+    <key>SystemColor</key>
+    <string>0.227451 0.227451 0.329412 1.000000</string>
+    <key>UserColor</key>
+    <string>0.349020 0.349020 0.498039 1.000000</string>
+</dict>
+</plist>

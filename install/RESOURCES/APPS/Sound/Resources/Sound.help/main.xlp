@@ -1,0 +1,30 @@
+<document>
+
+<header>
+<title>Test and set sound within AGNOSTEP Desktop</title>
+</header>
+
+<plain name="Cover">
+
+<center><img src="banniere_Sound.tiff"></center>
+
+<left>	
+<information>
+Sound.app allows the user to set and to test the basic system sound.
+</information>
+
+<caution>
+(c) 2025-2026 Patrick Cardona. This project is a Free Software provided under the GNU Public Licence (GPL).
+<br>It is part of Agnostep Desktop Project.
+</caution>
+
+<note>
+Site: <url>https://github.com/pcardona34/agnostep</url>
+<br />Please, post there any issue.
+</note>
+</left>
+</plain>
+
+<chapter src="Sound.xlp" name="Sound"></chapter>
+
+</document>

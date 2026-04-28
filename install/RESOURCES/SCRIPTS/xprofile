@@ -1,0 +1,4 @@
+#!/bin/bash
+
+### To have got good path within X session from LightDM
+[ -f ~/.bash_profile ] && . ~/.bash_profile

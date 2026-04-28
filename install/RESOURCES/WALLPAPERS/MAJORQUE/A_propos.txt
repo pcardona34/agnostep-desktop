@@ -1,0 +1,10 @@
+Wallpapers
+==================
+
+Mallorca Serie
+========
+
+The MAJORQUE_*.jpg serie are my own, which are original pictures of a trip, placed under CC-By-NC.
+This note must remain within this folder.
+
+They serve in the wprotate script.

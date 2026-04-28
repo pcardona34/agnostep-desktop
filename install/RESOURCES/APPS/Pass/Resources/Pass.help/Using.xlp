@@ -1,0 +1,44 @@
+<section name="4. Using Pass">
+
+<section name="4.1. GNUstep interface">
+
+Open <b>Pass.app</b> from the Applications folder.
+<ol>
+<li>Select <b>Search...</b> from the menu item.</li>
+<li>In the "Search a key" panel, type the key word to look for and click on the <b>Search</b> button.</li>
+<li>In the "Available Keys" panel, select with your mouse (or double click on) the desired key and then click on the <b>Password...</b> button.</li>
+<li>In the Password panel, type your secret sentence associated to your passwords store.</li>
+<li>When the password  is dipslayed, double click to select it.</li>
+<li>Where you need it, paste the the password with your mouse middle button.</li>
+</ol>
+
+</section>
+
+<section name="4.2. Using the CLI">  
+
+Within a Terminal shell, Cli Pass uses simple and intuitive commands like: <i>insert<i>, <i>edit</i>, <i>delete</i>, <i>find</i>...
+To see all the commands and examples, use:
+
+<listing>
+man pass
+</listing>
+
+</section>
+
+<section name="4.3. Using with a Web Browser">
+
+If you chose <code>Firefox</code> wrapper, a <code>pass</code> extension has been installed too.
+
+Otherwise:
+<ul>
+<li>With the GNUstep interface: see section above.</li>
+<li>With the Terminal CLI: just select and copy from the Terminal using <code>ALT+c<:code>.</li>
+<li>Then paste in the Web Browser field with <code>CTRL+v</code></li>
+</ul>
+
+<caution>
+Be aware of Firefox nor Chromium are not GNUstep native apps. So they use Xorg shortcuts (with prefix CTRL) while Terminal, which is GNUstep app, use the GNUstep shortcuts which prefix is <code>CMD</code> (i.e.: <i>command</i>, that is mapped to left ALT key on a GNU/Linux system.)
+<br>In either case, click with mouse middle button should work too.
+</caution>
+
+</section>

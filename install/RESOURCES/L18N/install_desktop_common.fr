@@ -1,0 +1,23 @@
+### Strings: en
+### for user_conf_gen.sh
+
+### FLAVOUR
+FLAVOUR_TITLE="Choix de la variante"
+FLAVOUR_INFO="Le bureau AGNoStep propose deux variantes"
+FLAVOUR_ONE="Avec le panneau Conky"
+FLAVOUR_TWO="Avec le Démon (Clip) de Window Maker"
+INFO_BOTH="Les deux fournissent des infos utiles sur votre système."
+CHOICE_PROMPT="Faites votre choix"
+ENTER="Entrée"
+YOUR_CHOICE="Votre choix est"
+
+### METEO
+METEO_TITLE="Station Météo"
+INFO_FILE_EXISTS="Un fichier de configuration météo existe déjà."
+EDIT_FILE="Editer"
+ERASE_FILE="Supprimer"
+COUNTRY_TAG="Pays"
+STATE_TAG="Département"
+CITY_TAG="Commune"
+INFO_METEO_END="Les paramètres de la météo ont été écrits dans ${METEO_CONF}".
+

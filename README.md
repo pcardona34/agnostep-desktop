@@ -6,17 +6,15 @@
 ## The Goal
 
 AGNoStep project tries to provide a way to install a GNUstep compliant Desktop from sources but with ease.
-It provides also a **new** in purpose **Theme** mainly inspired by the [Papirus](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme) iconset: see [AGNOSTEP-theme](https://github.com/pcardona34/agnostep-theme).
+It provides also a **new** in purpose **Theme** mainly inspired by the [Papirus](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme) iconset: it is **AGNOSTEP-theme**.
 
 It is provided under the [GNU Public License](LICENSE.txt).
 
 ## Screenshots
 
-AGNostep-desktop with AGNOSTEP-theme: Classic flavour, Next style menu and WORLD wallpapers collection: SimpleAgenda and GWorkspace at launch time.
+AGNostep-desktop with AGNOSTEP-theme: Next style menu and WORLD wallpapers collection: SimpleAgenda and GWorkspace at launch time.
 
-![AGNoStep-Desktop](Screenshots/screenshot_2026-01-30_AGNOSTEP_Classic_with_WORLD_WP.png)
-
-See also [AGNOSTEP-theme screenshots](https://github.com/pcardona34/agnostep-theme/blob/main/Screenshots) to see the different flavours of the theme.
+![AGNoStep-Desktop](Screenshots/Agnostep_2.jpg)
 
 ## What is a GNUstep compliant Desktop
 
@@ -27,7 +25,7 @@ Thanks to this framework, we can build all the pieces of software together to pr
 Namely, the Core Desktop provides:
 
 - A complete [Workspace](http://toastytech.com/guis/openstep.html) inherited from the famous NeXT/OPENSTEP specifications.
-- A set of useful **applications**: contacts, agenda, mail user agent, Text editor, Terminal...  
+- A set of useful **applications**: contacts, agenda, mail user agent, Text editor, Terminal... and a collection of native Apps and Tools.  
 See [CORE_DESKTOP](Documentation/CORE_DESKTOP.md) for details and technical notes.
 
 ## What does mean an Agnostic GNUstep Desktop?
@@ -35,23 +33,20 @@ See [CORE_DESKTOP](Documentation/CORE_DESKTOP.md) for details and technical note
 - **Agnostic**: means it can be installed on many hardwares because it is built from sources.  
 It is like the [Ports Collections](https://www.lpthe.jussieu.fr/~talon/freebsdports.html) method on a BSD System.
 - As **Debian** is the underlying operating system, where you can install Debian, you are able to install then AGNoStep.
-- See the [HARDWARE COMPATIBILY LIST](Documentation/HCL.md) for my hardware testing list.
+- See the [HARDWARE COMPATIBILY LIST](Documentation/HCL.md) for my hardware testing list. Of course, it is not exhaustive.
 
 ## An expandable collection of applications
 
 When the Core Desktop is installed, you can expand it with the ports collections: AGNoStep provides a useful tool, the **AgnostepManager** which will simplify all the installation tasks.  
 It allows to select some ports and to build them easily:
 
-![AgnostepManager](Screenshots/screenshot_2026-01-30_AgnostepManager.png)
+![AgnostepManager](Screenshots/AgnostepManager.jpg)
 
 - **Extra** Applications collection: see [EXTRA List](Documentation/EXTRA_APPS.md).
 - **Devel** Environment: see [DEVEL List](Documentation/DEVEL_ENV.md).
 - **Utilities**: see [UTILITIES](Documentation/UTIL.md)
 - GNUstep **Games** collection: see [GAMES List](Documentation/GAMES.md).
 - **Wrappers** to include non native GNUstep to work within the Workspace: see [WRAPPERS List](Documentation/WRAPPERS.md). Among these wrappers, you will find *utilities*:
-  - **AgnostepMananger** (see above).
-  - **Printer**: to setup your printer or scanner;
-  - **Upgrade**: a wizard to upgrade the Debian installed software.
  
 ## At the Edge and with consistency
 
@@ -61,13 +56,13 @@ It allows to select some ports and to build them easily:
 
 ## About Theming
 
-You can install the Core Desktop with a theme of your choice, or apply the in purpose theme above.
-[AGNOSTEP-theme](https://github.com/pcardona34/agnostep-theme) provides two flavours: *classic* and *conky*, and two menus styles: *NexT* or *MacStyle*.
-Also AGNOSTEP-theme provides a wallpaper rotate service with beautiful collections of pictures.
+You can install the Core Desktop with the default GNUstep theme or choose the in purpose AGNOSTEP theme, namely a collection of Icons forked from the famous Papirus iconset.
+Since release 2.0.0 AGNOSTEP theme provides a single flavour: with the *NexT style menus*, the *Clip* and the *Dock*  provided by Window Maker.
+Also AGNOSTEP theme provides a wallpaper rotate service with beautiful collections of pictures.
 
 ## Available for Raspberry Pi's too
 
-- Following the Agnostic principle, as AGNoStep was forked from the deprecated [PiSiN](https://github.com/pcardona34/pi-step-initiative) project, you can still install it on a Rasbberry Pi.
+- Following the Agnostic principle, as AGNoStep was forked from the deprecated [PiSiN](https://github.com/pcardona34/pi-step-initiative) project, you can still install it on a Rasbberry Pi. Moreover, the release 1.0.0 was firstly developed on a pi 400 and the latest release, 2.0.0, was developed on a pi 500.
 If a RPI is detected, some settings will be adapted to it. Of course, you must use a specific SD Card with the RPI OS Lite: see INSTALL section below. 
 
 When a Raspberry Pi is detected, more apps are installed:
@@ -92,10 +87,11 @@ From the main menu:
 1. **Prepare** the environment: item 'Prep'.
 2. Install the **Core Desktop**: item  'Core'.
 1. Install the **Core apps**: item 'Apps'.
-1. Set the User **Settings**: you will choose a flavour of AGNOSTEP-theme, a menu style...: item 'Settings'.
+1. Set the X session for the user with **Settings**.
+1. Choose **Theming**if you want to apply another theme that the default GNUstep: until now, only AGNOSTEP theme is available.
 
 > [!TIP]
-> If you want the GNUstep default theme, when the question about the default Theme will be asked, answer 'No'.
+> If you want to get back the GNUstep default theme, when the question about the default Theme will be asked, answer 'No'.
  
 Then try it with:
 

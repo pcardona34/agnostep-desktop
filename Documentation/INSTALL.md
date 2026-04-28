@@ -5,9 +5,9 @@
 ### CAUTION!
 
 > [!CAUTION]
-> NEVER install any related GNUstep debian package: this would conflict with the GNUstep built by AGNoStep and break your System. To install something, use ever AgnostepManager.
+> NEVER install any related GNUstep debian package: this would conflict with the GNUstep System built by AGNoStep and break your System. To install something, use ever AgnostepManager.
 > In the console: `./agnostep.sh` or `agnostep --am` (after first install).
-> Within the Desktop: `Applications / Utilities / AgnostepManager.app`.
+> Within the Desktop: `Applications / AgnostepManager.app`.
 
 ### Lite OS expected
 
@@ -20,7 +20,7 @@ See: <https://www.debian.org/distrib/netinst>
 > [!TIP]
 > **On a Raspberry Pi**, use instead `RPI Imager` to copy the Raspberry Pi 64-Bit Lite OS image on your SD card.
 
-2) Boot with your USB key or SD-card to load the Lite Debian System.
+2) Boot with your USB key or SD-card to load the Debian Lite System.
 
 3) Your User account must belongs to the group 'sudo': You must have root privileges:
 
@@ -32,7 +32,7 @@ Otherwise, add the current user to the 'sudo' group.
 
 > [!NOTE]
 > Until now, most of the installation scripts are only in English.  
-> L18N of AGNoStep depends of the state of the respective translations of the apps in the GNUstep project. For the Conky Panel or the dockapps of the Classic flavour (see agnostep-theme) French and English are available.
+> L18N of AGNoStep depends of the state of the respective translations of the apps in the GNUstep project.
 > The installer script will let you choose the most accurate locale.
 
 ### Prerequisites
@@ -78,7 +78,7 @@ The first time, you should run from the above menu these four items in this orde
 1. Prep: set the locale,update the system, install needed tools.
 1. Core: will install the Core Desktop.
 1. Apps: will install all the Core Apps: the first time, il will install some wrappers too.
-1. Settings: will set the theme and prepare the X session...
+1. Settings: will set and prepare the X session...
 1. DM: will install the Display Manager.
 
 You can view progress and info messages while AGNoStep is installing.
@@ -91,6 +91,12 @@ After several minutes, you should be able to start the AGNoStep Desktop:
 > After the Display Manager has been set, if you need to use CLI again, use TTY2 to log into the console: `CTRL-ALT-F2`.  
 > Then go back to the graphical environment with: `CTRL-ALT-F7`.
 	
+---
+
+## Theming your Desktop
+
+By default, Agnostep Desktop has been installed with default GNUstep theme. To use the in purpose AGNOSTEP theme, run `AgnostepManager` and select **Theming** item.
+
 ---
 
 ## If something inexpected happens
@@ -133,10 +139,10 @@ try the following alternative manual stages to be able to note the issue concern
 ```console
 	./5_install_core_apps.sh
 ```
-#### A-6) Set the current user's environment and AGNOSTEP-theme:
+#### A-6) Set the X session:
 
 ```console
-	./6_user_settings.sh
+	./6_desktop_settings.sh
 ```
 
 ##### Testing: start the X server and AGNoStep Desktop:
@@ -161,6 +167,12 @@ try the following alternative manual stages to be able to note the issue concern
 	./7_install_DM.sh
 ```
 
+#### A-8) Choose a theme
+
+```console
+	./theming.sh
+```
+
 ## II. How to install more apps?
 
 Logout the Desktop if you want to Change **Core Desktop** or **Settings** components. Otherwise, you can open a Terminal window.
@@ -172,20 +184,30 @@ Logout the Desktop if you want to Change **Core Desktop** or **Settings** compon
 ```
 
 > [!TIP]
-> Within the Desktop, use `Applications / Utilities / AgnostepManager.app`.
+> Within the Desktop, use `Applications / AgnostepManager.app`.
 
 Then:
 
-1. From the menu shown, choose the software category: Core, Extra Apps, Developper, Games, Utilities...
-1. Update the User settings to apply the theme to newly installed apps: choose item 'Settings'.
+1. From the menu, choose the software category: Core, Extra Apps, Developer, Games, Utilities...
+1. Use then item **theming** to apply the theme to newly installed apps.
 
 > [!TIP]
-> DO NOT forget the 'settings' stage to apply correctly the theme to the app just installed if you note if was not applied.
+> DO NOT forget the 'theming' stage to apply correctly the theme to the app just installed if you note if was not applied.
 
 ## III. How to remove some app?
 
 1. Run the `AnostepManager` tool...
-1. Then choose the item 'Remove' and follow the Assistant to select and remove the App.
+1. Then choose the item **Remove** and follow the Assistant to select and remove the App.
+
+> [!TIP]
+> Alternative method: open a new shell in `Terminal.app`.
+> Then execute, *mutatis mutandis*:
+
+```console
+   cd /Local/Applications
+   sudo rm -R MyApp.app
+   make_services
+```
 
 ## IV. How to reinstall/update Core Desktop after an udpate of the project repo
 

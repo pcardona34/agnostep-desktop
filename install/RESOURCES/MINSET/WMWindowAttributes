@@ -1,0 +1,74 @@
+{
+  firefox.Firefox = {
+    Icon = firefox.Firefox.xpm;
+  };
+  Meteo.GNUstep = {
+    Icon = weather.tiff;
+  };
+  InnerSpace.GNUstep = {
+    Icon = InnerSpace.GNUstep.xpm;
+  };
+  SimpleAgenda.GNUstep = {
+    Icon = SimpleAgenda.GNUstep.xpm;
+  };
+  ExitSession.GNUstep = {
+    Icon = ExitSession.GNUstep.xpm;
+  };
+  Ink.GNUstep = {
+    Icon = Ink.GNUstep.xpm;
+  };
+  WMDrawer = {
+    Icon = Drawer.tiff;
+  };
+  TimeMon.GNUstep = {
+    Icon = TimeMon.GNUstep.xpm;
+  };
+  Mixer.GNUstep = {
+    Icon = Mixer.GNUstep.xpm;
+  };
+  Terminal.GNUstep = {
+    Icon = Terminal.GNUstep.xpm;
+  };
+  Updater.GNUstep = {
+    Icon = Updater.GNUstep.xpm;
+  };
+  "*" = {
+    SharedAppIcon = Yes;
+  };
+  Recycler.GNUstep = {
+    Icon = Recycler.GNUstep.xpm;
+  };
+  Logo.WMClip = {
+    Icon = "/usr/share/WindowMaker/Icons/clip.tiff";
+  };
+  ScreenLock.GNUstep = {
+    Icon = ScreenLock.GNUstep.xpm;
+  };
+  OpenDisk.GNUstep = {
+    Icon = OpenDisk.GNUstep.xpm;
+  };
+  AClock.GNUstep = {
+    Icon = AClock.GNUstep.xpm;
+  };
+  Launcher.GNUstep = {
+    Icon = Launcher.GNUstep.xpm;
+  };
+  Weather.GNUstep = {
+    Icon = Weather.GNUstep.xpm;
+  };
+  UpMem.GNUstep = {
+    Icon = Memory.tiff;
+  };
+  GNUMail.GNUstep = {
+    Icon = GNUMail.GNUstep.xpm;
+  };
+  Pass.GNUstep = {
+    Icon = Pass.GNUstep.xpm;
+  };
+  Birthday.GNUstep = {
+    Icon = Birthday.tiff;
+  };
+  GWorkspace.GNUstep = {
+    Icon = GWorkspace.GNUstep.xpm;
+  };
+}

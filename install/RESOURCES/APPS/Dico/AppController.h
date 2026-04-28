@@ -1,42 +1,30 @@
 /* 
-   Project: Dico
+####################################################
+### A G N o S t e p  -  Desktop - by Patrick Cardona
+### (c) 2026 - pcardona34 @ Github
+### Author: Patrick Cardona
+###
+### Thanks for the GNUstep Developers Community.
+### This application is free software.
+### Read complete License in the root directory.
+####################################################
 
-   Author: patrick
-
-   Created: 2026-03-10 20:19:31 +0100 by patrick
-   
-   Application Controller
+####################################################
+### Dico.app
+### A French Dictionary Lookup App and Service
+### Application Controller interface: AppController.h
+####################################################
 */
- 
+   
 #ifndef _PCAPPPROJ_APPCONTROLLER_H
 #define _PCAPPPROJ_APPCONTROLLER_H
 
 #import <AppKit/AppKit.h>
-// Uncomment if your application is Renaissance-based
-//#import <Renaissance/Renaissance.h>
 
 @interface AppController : NSObject
 {
   IBOutlet NSWindow *_window;
 }
-
-// Class methods...
-+ (void)  initialize;
-
-// Initialization
-- (id) init;
-- (void) dealloc;
-
-// Notification methods...
-- (void) applicationDidFinishLaunching: (NSNotification *)aNotif;
-- (BOOL) applicationShouldTerminate: (id)sender;
-- (void) applicationWillTerminate: (NSNotification *)aNotif;
-- (BOOL) application: (NSApplication *)application
-	    openFile: (NSString *)fileName;
-
-// Actions...
-- (IBAction) showPrefPanel: (id)sender;
-
 @end
 
 #endif

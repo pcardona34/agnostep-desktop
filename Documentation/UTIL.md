@@ -12,7 +12,7 @@ Within a TTY console:
 	./agnostep.sh
 ````
 
-1-BIS)
+1-BIS) From the Applications folder...
 
 2) Then, from the main menu , choose the item: **Utilities**.
 
@@ -26,14 +26,11 @@ Within a TTY console:
 - FontManager
 - FTP: a FTP client
 - GSPdf: PS and PDF reader/viewer
-- HelpViewer: '.help' reader (Help Files have a .help extension).
 - Installer: an experimental app to install GNUstep apps as package
 - Librarian: Books and Documents Organizing (from GSDE)
-- Memory (experimental): a memory usage monitor
 - OpenUp: archive manager from GSDE (see Zipper alternative)
-- SaveLink: Internet Shortcut Manager
 - ScanImage: Scanner (sane) client (from GSDE)
 - ScreenShot: screen recorder: We should better use the tool provided by WindowMaker.
 - StepSync: Syncing Folders
-- TestCuckoo: a sound test
 - Zipper: an archives handler (zip, tar.gz, ...)
+

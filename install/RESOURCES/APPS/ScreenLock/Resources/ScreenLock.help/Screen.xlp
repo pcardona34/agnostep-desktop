@@ -1,0 +1,49 @@
+<section name="Introduction">
+
+The GNUstep screensaver application is InnerSpace. By default, it is set to use the Polyhedra module.
+
+</section>
+
+<section name="5.1 Launching">
+
+Click on the AppIcon on the Dock... 
+
+
+In this first mode, only the background is replaced by the animation.
+<br />To launch the full screensaver mode, select the menu item:
+
+<listing>
+Run
+</listing>
+
+</section>
+<section name="5.2 Quitting">
+
+Just click somewhere on the desktop. The menu of 'InnerSpace' arises.
+<br />To stop it, select on the menu:
+
+<listing>
+Quit
+</listing>
+
+</section>
+
+<section name="5.3. Locking the screen">
+
+<caution>
+Be aware of InnerSpace is not a screen Locker.
+</caution>
+
+To lock your screen, use instead <code>Applications / ScreenLock.app</code>.
+
+</section>
+<section name="5.4. Unlocking the screen">
+
+To unlock your locked screen, just type your password and hit <code>Enter</code>.
+
+<br />
+<information>
+You will not see a textField: when you see the black screen and the lock pointer, just type as explained above.
+</information>
+
+</section>

@@ -9,8 +9,12 @@
 ### Read License in the root directory.
 ####################################################
 
-. SCRIPTS/colors.sh
-. SCRIPTS/find_app.sh
+if [ -z "$COLORS" ];then
+    . SCRIPTS/colors.sh
+fi
+if [ -z "$FIND" ];then
+    . SCRIPTS/find_app.sh
+fi
 
 #########################################
 ### Check if the app is ok
@@ -22,16 +26,15 @@ function check()
 __PWD=`pwd`
 echo $PATH | grep -e "/System/Tools" &>/dev/null
 if [ $? -ne 0 ];then
-	export PATH=/System/Tools:$PATH
+	export PATH=$PATH:/System/Tools
 fi
 if [ -z "$INSTALL_DIR" ];then
 	INSTALL_DIR=$(gnustep-config --variable=GNUSTEP_LOCAL_APPS)
 fi
-GNUSTEP_APPS_DIR=$INSTALL_DIR
 ISSUES=https://github.com/pcardona34/agnostep-desktop/issues
 
-if ! [ -d $GNUSTEP_APPS_DIR ];then
-	alert "$GNUSTEP_APPS_DIR was not found!"
+if ! [ -d $INSTALL_DIR ];then
+	alert "$INSTALL_DIR was not found!"
 	exit 1
 fi
 
@@ -49,7 +52,7 @@ findapp ${APP}
 if [ $? -eq 0 ] && [ -n "$CHEMAPP" ];then
 	info "The application ${APP} has been found: ok."
 else
-	alert "ERROR! The application ${APP} was not found in ${GNUSTEP_APPS_DIR}.\nPlease, report this issue at:\n${ISSUES}"
+	alert "ERROR! The application ${APP} was not found in ${INSTALL_DIR}.\nPlease, report this issue at:\n${ISSUES}"
 	exit 1
 fi
 
@@ -131,9 +134,7 @@ function check_THEME()
 {
 ### VARS ENV
 __PWD=`pwd`
-if [ -z "$INSTALL_DIR" ];then
-	INSTALL_DIR=$(gnustep-config --variable=GNUSTEP_USER_LIBRARY)
-fi
+INSTALL_DIR=$(gnustep-config --variable=GNUSTEP_USER_LIBRARY)
 GNUSTEP_THEMES_DIR=$INSTALL_DIR/Themes
 ISSUES=https://github.com/pcardona34/agnostep-desktop/issues
 
@@ -150,7 +151,7 @@ else
 	exit 1
 fi
 
-cd $GNUSTEP_FW_DIR || exit 1
+cd $GNUSTEP_THEMES_DIR || exit 1
 if [ -d "${APP}" ] || [ -d "${APP}.theme" ];then
 	info "The Theme ${APP} has been found: ok."
 else
@@ -165,4 +166,5 @@ cd $__PWD
 ############################################"
 
 ### Test
-### check "Terminal"
+#check "Terminal"
+#check "Xpdf"

@@ -4,15 +4,39 @@
 
 ### Window Manager
 
-- We use **Window Maker**: 0.96.0. (debian default package version) with AGNOSTEP.themed.
+- We use **Window Maker**: 0.96.0. (debian default package version) with AGNOSTEP.themed when the AGNOSTEP theme is set.
+- Since release 2.0.0, we removed `--static` option to permit again customisation.
+- Since release 2.0.0, the wallpaper (background) is handled by Window Maker.
+- By default, we use the **Clip** and the **Dock** of WindowMaker.
 
-Options depend on the Theme flavour chosen: 
+Some apps and tools are launched with the 'autostart' script of Window Maker, others from the Dock or the Clip with `autolaunch`.
 
-- Classic flavour: `--static`: it is to prevent mistakes. ;-)
-- Conky Flavour: `--no-dock  --no-clip --static`. In this case, the provided Dock belongs to GWorspace: see below. 
+#### AutoLaunched apps
 
-Some apps and tools are launched with the 'autostart' script of Window Maker, others from the Dock. Again, it depends on the flavour chosen.
+- Meteo
+- AClock
+- UpMem
+- TimeMon
+- wmnd
+- Updater
+- Birthday
+- wmudmount
+- SimpleAgenda
 
+> [!CAUTION]
+> GWorkspace is launched a main xinit process form the `.xinitrc`/`.xsession` script. So the **logout** command is more consistent because GWorkspace send a Terminate message to all the running GNUsstep applications, and then it terminates itself, which ends the X session.
+
+#### Auto-started commands
+
+`autostart` script has been simplified.
+
+> [!NOTE]
+> Namely, all `xset` commands have been removed.
+
+It only starts:
+
+- dunst (notification daemon)
+- `loading.sh` script.
 
 ### The Workspace
 
@@ -25,18 +49,21 @@ See [Core Apps](CORE_APPS.md)...
 
 ### Under the ground
 
-This section provides more technical infos. Components are used within Desktop or AGNOSTEP-theme.
+This section provides more technical infos.
  
-- Notifyer: [dunst](https://dunst-project.org/)
+- Notifyer: [dunst](https://dunst-project.org/) is less used since release 2.0.0 because we prefred to use badges within GNUstep apps. 
 - [DBusKit](https://github.com/gnustep/libs-dbuskit) provides also Desktop Notification from SimpleAgenda.
-- Compositing: [picom](https://github.com/yshui/picom).
-- System Infos: [conky](https://github.com/brndnmtthws/conky) panel or dockapps wether you chose 'conky' or 'classic' flavour of the AGNOSTEP-theme.
+- Compositing: picom has been removed. We do not use any since release 2.0.0.
+- System Infos: [conky](https://github.com/brndnmtthws/conky) panel has been removed in favour of dockapps or native in purpose GNUstep apps.
 - Weather data is fetched from [Wttr.in API](https://github.com/chubin/wttr.in). 
-- [GNUstep](https://github.com/gnustep/): latest built from sources with GNU Runtime (not OBJC2). Use: `agnostep --info` for a more complete release info.
-- All the apps are built from sources and so are the latest.
-- Theme: see [AGNOSTEP-theme](https://github.com/pcardona34/agnostep-theme) (previously PISIN) mostly inspired by Papirus Icon theme and GNUstep Sleek Theme.
+- [GNUstep](https://github.com/gnustep/): latest built from sources with GNU Runtime (not OBJC2). 
+- All the apps are built from sources and so benefit from the latest official patches.
+- AGNOSTEP in purpose Theme: mostly inspired by Papirus Icon theme and GNUstep Sleek Theme.
 - Session Display Manager: [Lightdm](https://github.com/canonical/lightdm) and DBus (with DBUSKit support).
-- Sound is handled by [Alsa](https://www.alsa-project.org/wiki/Main_Page) (not pulse-audio) and a compliant Audio Mixer: VolumeControl.
-- RPI tools: only on RPI when the hardware is detected, if not substituted: cf. how to set default printer within CUPS in the AGNoStep User Guide.
-- Password Manager: [pass](https://www.passwordstore.org/)
-- Installation scripts: [Bash](https://manpages.debian.org/trixie/bash/bash.1.en.html) and [Dialog](https://manpages.debian.org/stretch/dialog/dialog.1.en.html)
+- Sound is handled by [Alsa](https://www.alsa-project.org/wiki/Main_Page) (not pulse-audio) and a compliant Audio Mixer: Mixer.app (forked from VolumeControl).
+- RPI tools: only on RPI when the hardware is detected, if not substituted: cf. how to set default printer within CUPS in the Printer Help.
+- Password Manager: [pass](https://www.passwordstore.org/) has a GNUstep interface since release 2.0.0.
+- Installation scripts: they use [Bash](https://manpages.debian.org/trixie/bash/bash.1.en.html) and [Dialog](https://manpages.debian.org/stretch/dialog/dialog.1.en.html)
+
+> [!TIP]
+> Use: `agnostep --info` for a more complete release info.

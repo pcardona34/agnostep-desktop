@@ -1,0 +1,39 @@
+<section name="What is the Manager?">
+
+With Agnostep Manager, you are able to install more applications and Resources.
+
+<br>These applications and resources are splitted in categories: the top ones are useful when 
+you install Agnostep Desktop the first time:<br>
+
+<ul>
+<li>Prep</li>
+<li>Core (Desktop)</li>
+<li>(Core) Apps</li>
+<li>(User) Settings</li>
+<li>DM (i.e. the Display Manager)</li>
+</ul>
+
+<br><br>The <b>Help</b> item is only useful to provide Help translations for 
+non English users when they do not  already exist within the program.<br>
+
+<section name="Figure: Agnostep Manager">
+<legendfig src="Manager.tiff"></legendfig>
+</section>
+
+<br>Then come GNUstep Applications categories:<br>
+
+<ul>
+<li>Devel: Developers applications like Gemas Editor,  Emacs, Gorm and ProjectCenter...</li>
+<li>Extra: More current applications to complete the Core apps already installed</li>
+<li>Util: Utilities like Affiche (sticky Notes) Calculator and do on...</li>
+<li>Games: great gameslike Chess, NeXTGo and so on.</li>
+</ul>
+
+<br><br>Finally, <b>Wrappers</b> tend to provide launchers for non GNUstep native applications
+ like Inkscape, LibreOffice, Scribus... 
+
+<br><b>Update Agnostep</b> allows to fetch the latest code from the Git repository.
+
+<br><b>Logs</b> supply a way to read all Agnostep installation logs.
+
+</section>

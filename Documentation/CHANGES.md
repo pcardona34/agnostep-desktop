@@ -8,6 +8,25 @@ Do not try nor report any issue until a release is tagged Stable.
 
 ## Changes
 
+### Changes of the Release Beta 2.0.0
+
+This is a **major release** with many changes and improvements.
+
+- Introduced new Native Agnostep in purpose Applications collection for a better Desktop and GNUstep experience: see [CORE_APPS](CORE_APPS.md) for the details: read section "Native GNUstep in purpose apps". 
+- Some dockapps like `wmtext` were removed in favour of the new equivalent GNUstep applications: see *Meteo.app*, *UpMem.app*, *Updater.app* and *Birthday.app*. 
+- Simplified desktop flavours to retain a single one, with Clip and Dock of WindowMaker: so the *Conky* flavour is deprecated since 2.0.0 release.
+- Now, the Desktop can be installed without a theme (i.e. the default theme will be GNUstep). You can choose AGNOSTEP theme from the main menu of AgnostepManager then.
+- **Settings** stage is more consistent: by example, the *laptop* test has been removed from theming to be executed while setting the X session...
+- Thanks to the enhancements of *HelpViewer*, Help Folder has been removed because now all the help bundles will be installed at compile time for each relevant application: read [HELP](HELP.md) to search a particular help topic. This closes issue #9.
+- Deprecated Subcategories in the Applications folder have been removed. We get back a flat organization which is more efficient with built-in first-letter filter. **Launcher** app is a shortcut to open the Applications folder.
+- Theming has been provided again with the core repo of the project: [agnostep-theme](../agnostep-theme) has been simplifed to collect only ARTS backup.
+- A new collection of wallpapers for the rotate utility has been added: *Mallorca*.
+- Now, the wallpaper will be handled by the Window Manager instead of GWorkspace. This choice permitted namely to fix issue #14, also thanks to the latest code of GWorkspace updated by Riccardo Mottola. 
+
+> [!TIP]
+> Agnostep Desktop will provide help within GWorkspace, Birthday, Launcher, OpenDisk, Pass, Printer, ScreenLock, SaveLink, Sound, Updater... Read [HELP](HELP.md).
+
+
 ### Changes of the Release Candidate 1.0.0 - RC 7.0
 
 - Completed SaveLink with Help and French translation (Help too and interface).

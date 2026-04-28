@@ -1,0 +1,17 @@
+<section name="Selecting an application">
+
+While the Applications Folder is displayed, just type the first letter of the app to move the selection to the groups of apps which begin by this letter.
+
+<caution>
+This built-in filter provided by GWorkspace is case sensitive. 
+</caution>
+
+<information>
+Most of the applications begin with an uppercase letter, so you must press down the Shift modifier key to obtain the expected first uppercase letter.
+</information>
+
+<caution>
+Only a very few applications like <i>batmon</i> begin by a lowercase letter.
+</caution>
+  
+</section>

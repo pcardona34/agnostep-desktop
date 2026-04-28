@@ -1,0 +1,131 @@
+{
+    ApplicationDescription = "Image viewer";
+    ApplicationIcon = Preview;
+    ApplicationName = Preview;
+    ApplicationRelease = "0.8.5";
+    ApplicationURL = "http://gna.org/projects/gsimageapps";
+    Authors = (
+	"Fabien VALLON <fabien@sonapart.net>"
+    );
+    Copyright = "Copyright \U00A9 2003,2004 Fabien VALLON,
+   Alcove:http://www.alcove.com
+";
+    CopyrightDescription = "Released under the GNU GPL.";
+    FullVersionID = "0.8.5";
+    GSMainMarkupFile = "";
+    NOTE = "Automatically generated, do not edit!";
+    NSExecutable = Preview;
+    NSIcon = "Preview.tiff";
+	 CFBundleIdentifier = "com.alcove.preview";
+    NSMainNibFile = Main;
+    NSMainStoryboardFile = "";
+    NSPrincipalClass = NSApplication;
+    NSTypes = (
+	{
+	    NSDOSExtensions = (
+		jpg
+	    );
+	    NSDocumentClass = Document;
+	    NSHumanReadableName = "JPEG Image";
+	    NSIcon = "FileIcon.tiff";
+	    NSMIMETypes = (
+		"image/jpeg"
+	    );
+	    NSName = jpg;
+	    NSRole = Viewer;
+	    NSUnixExtensions = (
+		jpg,
+		jpeg,
+		JPG,
+		JPEG
+	    );
+	},
+	{
+	    NSDOSExtensions = (
+		png
+	    );
+	    NSDocumentClass = Document;
+	    NSHumanReadableName = "PNG Image";
+	    NSIcon = "FileIcon.tiff";
+	    NSMIMETypes = (
+		"image/png"
+	    );
+	    NSName = png;
+	    NSRole = Viewer;
+	    NSUnixExtensions = (
+		png,
+		PNG
+	    );
+	},
+	{
+	    NSDOSExtensions = (
+		gif
+	    );
+	    NSDocumentClass = Document;
+	    NSHumanReadableName = "GIF Image";
+	    NSIcon = "FileIcon.tiff";
+	    NSMIMETypes = (
+		"image/gif"
+	    );
+	    NSName = gif;
+	    NSRole = Viewer;
+	    NSUnixExtensions = (
+		gif,
+		GIF
+	    );
+	},
+	{
+	    NSDOSExtensions = (
+		xpm
+	    );
+	    NSDocumentClass = Document;
+	    NSHumanReadableName = "XPM Image";
+	    NSIcon = "FileIcon.tiff";
+	    NSMIMETypes = (
+		"image/xpm"
+	    );
+	    NSName = xpm;
+	    NSRole = Viewer;
+	    NSUnixExtensions = (
+		xpm,
+		XPM
+	    );
+	},
+	{
+	    NSDOSExtensions = (
+		tiff
+	    );
+	    NSDocumentClass = Document;
+	    NSHumanReadableName = "TIFF Image";
+	    NSIcon = "FileIcon.tiff";
+	    NSMIMETypes = (
+		"image/tiff"
+	    );
+	    NSName = tiff;
+	    NSRole = Editor;
+	    NSUnixExtensions = (
+		tiff,
+		TIFF,
+		tif,
+		TIF
+	    );
+	},
+	{
+	    NSDOSExtensions = (
+		pnm
+	    );
+	    NSDocumentClass = Document;
+	    NSHumanReadableName = "PNM Image";
+	    NSIcon = "FileIcon.tiff";
+	    NSMIMETypes = (
+		"image/pnm"
+	    );
+	    NSName = pnm;
+	    NSRole = Viewer;
+	    NSUnixExtensions = (
+		pnm,
+		PNM
+	    );
+	}
+    );
+}

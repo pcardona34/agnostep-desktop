@@ -1,0 +1,340 @@
+{
+  Dock = {
+    AutoRaiseLower = No;
+    Applications = (
+      {
+        Forced = No;
+        Name = Logo.WMDock;
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,0";
+        Lock = Yes;
+        Command = "/usr/bin/WPrefs";
+      },
+      {
+        Forced = No;
+        Name = GWorkspace.GNUstep;
+        DropCommand = "/System/Tools/openapp GWorkspace %d";
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,1";
+        Lock = Yes;
+        PasteCommand = "/System/Tools/openapp GWorkspace %s";
+        Command = "/System/Tools/openapp GWorkspace";
+      },
+      {
+        Forced = No;
+        Name = SimpleAgenda.GNUstep;
+        BuggyApplication = No;
+        AutoLaunch = Yes;
+        Position = "0,2";
+        Lock = Yes;
+        Command = "/System/Tools/openapp SimpleAgenda";
+      },
+      {
+        Forced = No;
+        Name = Terminal.GNUstep;
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,3";
+        Lock = Yes;
+        Command = "/System/Tools/openapp Terminal";
+      },
+      {
+        Forced = No;
+        Name = Ink.GNUstep;
+        DropCommand = "/System/Tools/openapp Ink %d";
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,4";
+        Lock = Yes;
+        PasteCommand = "/System/Tools/openapp Ink %s";
+        Command = "/System/Tools/openapp Ink";
+      },
+      {
+        Forced = No;
+        Name = GNUMail.GNUstep;
+        DropCommand = "/System/Tools/openapp GNUMail %d";
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,5";
+        Lock = Yes;
+        PasteCommand = "/System/Tools/openapp GNUMail %s";
+        Command = "/System/Tools/openapp GNUMail";
+      },
+      {
+        Forced = No;
+        Name = ScreenLock.GNUstep;
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,6";
+        Lock = Yes;
+        PasteCommand = " ";
+        Command = "/System/Tools/openapp ScreenLock";
+      },
+      {
+        Forced = No;
+        Name = Pass.GNUstep;
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,7";
+        Lock = Yes;
+        Command = "/System/Tools/openapp Pass";
+      },
+      {
+        Forced = No;
+        Name = Mixer.GNUstep;
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,8";
+        Lock = Yes;
+        Command = "/System/Tools/openapp Mixer";
+      },
+      {
+        Forced = No;
+        Name = Recycler.GNUstep;
+        DropCommand = "/System/Tools/openapp Recycler %d";
+        BuggyApplication = No;
+        AutoLaunch = Yes;
+        Position = "0,9";
+        Lock = Yes;
+        PasteCommand = "/System/Tools/openapp Recycler %s";
+        Command = "/System/Tools/openapp Recycler";
+      }
+    );
+    Applications1080 = (
+      {
+        Forced = No;
+        Name = Logo.WMDock;
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,0";
+        Lock = Yes;
+        Command = "/usr/bin/WPrefs";
+      },
+      {
+        Forced = No;
+        Name = GWorkspace.GNUstep;
+        DropCommand = "/System/Tools/openapp GWorkspace %d";
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,1";
+        Lock = Yes;
+        PasteCommand = "/System/Tools/openapp GWorkspace %s";
+        Command = "/System/Tools/openapp GWorkspace";
+      },
+      {
+        Forced = No;
+        Name = SimpleAgenda.GNUstep;
+        BuggyApplication = No;
+        AutoLaunch = Yes;
+        Position = "0,2";
+        Lock = Yes;
+        Command = "/System/Tools/openapp SimpleAgenda";
+      },
+      {
+        Forced = No;
+        Name = Terminal.GNUstep;
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,3";
+        Lock = Yes;
+        Command = "/System/Tools/openapp Terminal";
+      },
+      {
+        Forced = No;
+        Name = Ink.GNUstep;
+        DropCommand = "/System/Tools/openapp Ink %d";
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,4";
+        Lock = Yes;
+        PasteCommand = "/System/Tools/openapp Ink %s";
+        Command = "/System/Tools/openapp Ink";
+      },
+      {
+        Forced = No;
+        Name = GNUMail.GNUstep;
+        DropCommand = "/System/Tools/openapp GNUMail %d";
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,5";
+        Lock = Yes;
+        PasteCommand = "/System/Tools/openapp GNUMail %s";
+        Command = "/System/Tools/openapp GNUMail";
+      },
+      {
+        Forced = No;
+        Name = ScreenLock.GNUstep;
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,6";
+        Lock = Yes;
+        PasteCommand = " ";
+        Command = "/System/Tools/openapp ScreenLock";
+      },
+      {
+        Forced = No;
+        Name = Pass.GNUstep;
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,7";
+        Lock = Yes;
+        Command = "/System/Tools/openapp Pass";
+      },
+      {
+        Forced = No;
+        Name = Mixer.GNUstep;
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,8";
+        Lock = Yes;
+        Command = "/System/Tools/openapp Mixer";
+      },
+      {
+        Forced = No;
+        Name = Recycler.GNUstep;
+        DropCommand = "/System/Tools/openapp Recycler %d";
+        BuggyApplication = No;
+        AutoLaunch = Yes;
+        Position = "0,9";
+        Lock = Yes;
+        PasteCommand = "/System/Tools/openapp Recycler %s";
+        Command = "/System/Tools/openapp Recycler";
+      }
+    );
+    Lowered = No;
+    Position = "1856,0";
+  };
+  Clip = {
+    Forced = No;
+    Name = Logo.WMClip;
+    DropCommand = "wmsetbg -u -t %d";
+    BuggyApplication = No;
+    AutoLaunch = No;
+    Position = "626,0";
+    Lock = No;
+    Command = "-";
+  };
+  Applications = ();
+  Drawers = ();
+  Workspaces = (
+    {
+      Clip = {
+        AutoRaiseLower = No;
+        AutoCollapse = No;
+        Applications = (
+          {
+            Forced = No;
+            Name = Meteo.GNUstep;
+            BuggyApplication = No;
+            AutoLaunch = Yes;
+            Position = "1,0";
+            Lock = Yes;
+            Command = "/System/Tools/openapp Meteo";
+            Omnipresent = No;
+          },
+          {
+            Forced = No;
+            Name = AClock.GNUstep;
+            BuggyApplication = No;
+            AutoLaunch = Yes;
+            Position = "2,0";
+            Lock = Yes;
+            Command = "/System/Tools/openapp AClock";
+            Omnipresent = No;
+          },
+          {
+            Forced = No;
+            Name = UpMem.GNUstep;
+            BuggyApplication = No;
+            AutoLaunch = Yes;
+            Position = "3,0";
+            Lock = Yes;
+            Command = "/System/Tools/openapp UpMem";
+            Omnipresent = No;
+          },
+          {
+            Forced = No;
+            Name = TimeMon.GNUstep;
+            BuggyApplication = No;
+            AutoLaunch = Yes;
+            Position = "4,0";
+            Lock = Yes;
+            Command = "/System/Tools/openapp TimeMon";
+            Omnipresent = No;
+          },
+          {
+            Forced = No;
+            Name = wmnd.wmnd;
+            DropCommand = "";
+            BuggyApplication = No;
+            AutoLaunch = Yes;
+            Position = "5,0";
+            Lock = Yes;
+            PasteCommand = "";
+            Command = "wmnd -c '#8686be' -C '#8686be' -L '#d6d6ff'";
+            Omnipresent = No;
+          },
+          {
+            Forced = No;
+            Name = Updater.GNUstep;
+            BuggyApplication = No;
+            AutoLaunch = Yes;
+            Position = "6,0";
+            Lock = Yes;
+            Command = "/System/Tools/openapp Updater";
+            Omnipresent = No;
+          },
+          {
+            Forced = No;
+            Name = Birthday.GNUstep;
+            BuggyApplication = No;
+            AutoLaunch = Yes;
+            Position = "7,0";
+            Lock = Yes;
+            Command = "/System/Tools/openapp Birthday";
+            Omnipresent = No;
+          },
+          {
+            Forced = No;
+            Name = wmudmount.Wmudmount;
+            DropCommand = "wmudmount %d";
+            BuggyApplication = No;
+            AutoLaunch = Yes;
+            Position = "8,0";
+            Lock = Yes;
+            PasteCommand = "wmudmount %s";
+            Command = wmudmount;
+            Omnipresent = No;
+          },
+          {
+            Forced = No;
+            Name = OpenDisk.GNUstep;
+            BuggyApplication = No;
+            AutoLaunch = No;
+            Position = "9,0";
+            Lock = Yes;
+            Command = "/System/Tools/openapp OpenDisk";
+            Omnipresent = No;
+          },
+          {
+            Forced = No;
+            Name = Launcher.GNUstep;
+            BuggyApplication = No;
+            AutoLaunch = No;
+            Position = "10,0";
+            Lock = Yes;
+            Command = "/System/Tools/openapp Launcher";
+            Omnipresent = No;
+          }
+        );
+        Collapsed = No;
+        AutoAttractIcons = No;
+        Lowered = Yes;
+      };
+      Name = Main;
+    }
+  );
+  Workspace = Main;
+}

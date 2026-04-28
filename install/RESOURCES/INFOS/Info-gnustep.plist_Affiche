@@ -1,0 +1,10 @@
+{
+    GSMainMarkupFile = "";
+    NOTE = "Automatically generated, do not edit!";
+    NSExecutable = Affiche;
+    NSIcon = "Affiche.tiff";
+    CFBundleIdentifier = "org.gap.Affiche";
+    NSMainNibFile = "";
+    NSMainStoryboardFile = "";
+    NSPrincipalClass = NSApplication;
+}

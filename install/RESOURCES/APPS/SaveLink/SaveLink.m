@@ -16,36 +16,46 @@
 
 #import "SaveLink.h"
 
-int isDirectoryExists(const char *path)
+@implementation SaveLink
+
+- (instancetype) init
 {
-    struct stat stats;
 
-    stat(path, &stats);
-
-    // Check for file existence
-    if (S_ISDIR(stats.st_mode))
-        return 1;
-
-    return 0;
+if (( self = [super init] )){
+  manager = [NSFileManager defaultManager];
+  }
+return self;
 }
 
-id getFavPath()
+- (BOOL) checkDirectory: (NSString *) dir
+{
+  BOOL isDirectory;
+  BOOL exists = [manager fileExistsAtPath: dir
+                         isDirectory: &isDirectory];
+  if (exists && isDirectory) {
+    return YES;
+  }else{
+    return NO;
+  }
+}
+
+- (NSString *) favPath
 {
  // Retrieving UserName of the current User and then his homeDirectory
   NSString *userName = NSUserName();
   NSString *homeDir = NSHomeDirectoryForUser(userName);
   
-  // LANG ENV?
-  const char *Lang = getenv("LANG");
-  NSString *prefLang = [NSString stringWithFormat:@"%s",Lang];
-  NSLog(@"Preferred Language: %@", prefLang);
-  NSString *shortLG = [prefLang substringToIndex: 2];
-  NSLog(@"Prefix Language: %@", shortLG);
+  // LANG prefix?
+  NSArray *languages = [[NSUserDefaults standardUserDefaults]   
+              stringArrayForKey:@"NSLanguages"];  
+  NSString *firstLanguage = [languages firstObject];  
+  NSString *languagePrefix = [[firstLanguage substringToIndex: 2] lowercaseString];
+  
   // Favorites Folder Name?
   NSString *favFolder;
   NSArray *items;
   items = [NSArray arrayWithObjects: @"fr", @"en", nil];
-  int item = [items indexOfObject: shortLG];
+  NSInteger item = [items indexOfObject: languagePrefix];
   switch (item) {
     case 0:
        favFolder = @"/Favoris/";
@@ -59,8 +69,6 @@ id getFavPath()
    NSString *favPath = [homeDir stringByAppendingString: favFolder];
    return favPath;
 }
-
-@implementation SaveLink
 
 - (void) awakeFromNib
 {
@@ -99,14 +107,13 @@ id getFavPath()
   
   // Setting filePath
   NSString *ext = @".url";
-  NSString *favPath = getFavPath();
+  NSString *favPath = [self favPath];
   NSLog(@"FavPath is: %@", favPath);
    
   // We check Favorites path
-  const char *path = [favPath UTF8String];
-  if (isDirectoryExists(path))
-  {
-  NSString *filePath = [[favPath stringByAppendingString: nameLink] stringByAppendingString: ext];
+  if ([self checkDirectory: favPath]) {
+            NSString *filePath = [[favPath 
+            stringByAppendingString: nameLink] stringByAppendingString: ext];
       
   // Preparing the content to write
   NSString *content = [NSString stringWithFormat: @"[InternetShortcut]\nURL=%@\n", urlLink];

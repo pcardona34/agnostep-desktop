@@ -18,6 +18,8 @@
 ### CHEMAPP must  be set in the top parent script
 ### like: export CHEMAPP="" && findapp MyApp
 
+FIND="YES"
+
 function findapp
 {
 ### VAR: APP is the exact APP_NAME without .app ext.

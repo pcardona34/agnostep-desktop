@@ -1,0 +1,55 @@
+/* TRANSLATORS: Make sure to quote all translated strings if
+   they contain spaces or non-ASCII characters.  */
+
+"Actualiser si m\U00EAme taille" = "Actualiser si m\U00EAme taille";
+"Ignorer les fichiers cach\U00E9s" = "Ignorer les fichiers cach\U00E9s";
+Stop = Stop;
+"Dossiers:" = "Dossiers:";
+Synchroniser = Synchroniser;
+"Pr\U00E9f\U00E9rences..." = "Pr\U00E9f\U00E9rences...";
+"Placer au-dessus" = "Placer au-dessus";
+"Ignorer les dossiers cach\U00E9s" = "Ignorer les dossiers cach\U00E9s";
+0 = 0;
+"Supprimer les items" = "Supprimer les items";
+"\U00C0 propos..." = "\U00C0 propos...";
+"\U00C9diter" = "\U00C9diter";
+"Aide..." = "Aide...";
+"Taille:" = "Taille:";
+Analyser = Analyser;
+Copier = Copier;
+Cacher = Cacher;
+StepSync = StepSync;
+"Fen\U00EAtres" = "Fen\U00EAtres";
+"";
+"Tol\U00E9rance (min)" = "Tol\U00E9rance (min)";
+"Size:
+
+" = "Size:
+
+";
+"D\U00E9finir" = "D\U00E9finir";
+"Ins\U00E9rer les items" = "Ins\U00E9rer les items";
+"Actualiser la source" = "Actualiser la source";
+Coller = Coller;
+Refaire = Refaire;
+Appliquer = Appliquer;
+Source = Source;
+"D\U00E9faire" = "D\U00E9faire";
+"Inclure les dossiers" = "Inclure les dossiers";
+Cible = Cible;
+"Fichiers:" = "Fichiers:";
+Info = Info;
+"Fermer la fen\U00EAtre" = "Fermer la fen\U00EAtre";
+Couper = Couper;
+"Ignor\U00E9s" = "Ignor\U00E9s";
+"Actualiser les items" = "Actualiser les items";
+"Ignorer les vignettes" = "Ignorer les vignettes";
+"Tout s\U00E9lectionner" = "Tout s\U00E9lectionner";
+"Menu principal" = "Menu principal";
+"Fichiers:
+" = "Fichiers:
+";
+Services = Services;
+"R\U00E9duire la fen\U00EAtre" = "R\U00E9duire la fen\U00EAtre";
+Quitter = Quitter;
+"Pr\U00E9f\U00E9rences" = "Pr\U00E9f\U00E9rences";

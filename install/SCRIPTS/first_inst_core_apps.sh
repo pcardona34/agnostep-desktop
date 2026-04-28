@@ -75,39 +75,19 @@ function the_apps
 {
 install_systempreferences
 install_gworkspace
-
 install_aclock
 install_addressmanager
 install_batmon
 install_gnumail_svn
-install_exitsession
+install_helpviewer
 install_ink
 install_innerspace
 install_simpleagenda
 install_terminal
 install_timemon
-install_volumecontrol
 }
+
 the_apps
-
-#############################
-### Wrapper for Agnostep_Manager
-
-function install_AM
-{
-. SCRIPTS/functions_inst_wrappers.sh
-. SCRIPTS/functions_inst_tools.sh
-. SCRIPTS/functions_remove_app.sh
-
-DEP_AM="dialog xterm"
-APPNAME="AgnostepManager"
-CHECK="YES"
-remove_ifx_app "AgnostepManager"
-install_wrapper "AgnostepManager" "${DEP_AM}"
-move_to_tools "AgnostepManager"
-set_conf "xterm"
-}
-install_AM
 
 #############################
 

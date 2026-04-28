@@ -1,0 +1,18 @@
+{
+    ApplicationDescription = "Agnostep Manager for the Agnostep Desktop Project";
+    ApplicationName = AgnostepManager;
+    ApplicationRelease = "0.1";
+    Authors = (
+	"Patrick CARDONA"
+    );
+    Copyright = "Copyright (C) 2026";
+    CopyrightDescription = "Released under GNU General Public License 3.0";
+    FullVersionID = "0.1";
+    NSExecutable = AgnostepManager;
+    NSMainNibFile = ;
+    NSPrincipalClass = NSApplication;
+    NSRole = Application;
+    NSIcon = "AgnostepManager.tiff";
+    GSHelpContentsFile = "AgnostepManager.help";
+    URL = "https://github.com/pcardona34/agnostep-desktop";
+}

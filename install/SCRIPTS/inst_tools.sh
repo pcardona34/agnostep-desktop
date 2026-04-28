@@ -76,22 +76,17 @@ The list below contains the utilities.
 Check (space bar) the Applications you want to (re)install." 20 70 10 \
 "Affiche" "Sticky Notes" off \
 "Calculator" "Calculator from GNUstep Examples" off \
-"Dico" "A French Lookup Dictionary" off \
-"Dictionary" "Dict client" off \
+"Dictionary" "English Dict client" off \
 "FontManager" "Font Previewer and Installer" off \
 "FTP" "FTP Client" off \
 "GSPdf" "PDF Reader" off \
-"HelpViewer" "Help Viewer" off \
 "Installer" "Applications installer not yet finished" off \
 "Librarian" "A clone of NeXT Librarian from GSDE" off \
-"Memory" "A yet not finished Memory Monitor" off \
 "OpenUp" "An Archive Manager from GSDE" off \
-"SaveLink" "An Internet Shortcuts Manager" off \
 "ScanImage" "Scan Client from GSDE" off \
 "ScreenShot" "Screen Grabber from GSDE" off \
 "StepSync" "File Synchronizer" off \
-"TestCuckoo" "A little app to test sound" off \
-"Vindaloo" "PDF Viewer" off \
+"Vindaloo" "Another PDF Viewer" off \
 "Zipper" "An Archive Manager" off 2> $TEMPFILE
 
 clear
@@ -112,10 +107,6 @@ case "$i" in
 	remove_ifx_app "Calculator"
 	install_calculator
 	update_info_plist "Calculator";;
-"Dico")
-    printf "You chose Dico\n"
-    remove_ifx_app "Dico"
-    install_dico;;
 "Dictionary")
 	printf "You chose Dictionary\n"
 	remove_ifx_app "DictionaryReader"
@@ -136,11 +127,6 @@ case "$i" in
 	remove_ifx_app "GSPdf"
 	install_gspdf
 	update_info_plist "GSPdf";;
-"HelpViewer")
-	printf "You chose HelpViewer\n"
-	remove_ifx_app "HelpViewer"
-	install_helpviewer
-	update_info_plist "HelpViewer";;
 "Installer")
 	printf "You chose Installer\n"
 	remove_tool__if_present "Installer"
@@ -151,20 +137,11 @@ case "$i" in
 	remove_ifx_app "Librarian"
 	install_librarian
 	update_info_plist "Librarian";;
-"Memory")
-	printf "You chose Memory\n"
-	remove_ifx_app "Memory"
-	install_memory
-	update_info_plist "Memory";;
 "OpenUp")
 	printf "You chose OpenUp\n"
 	remove_ifx_app "OpenUp"
 	install_openup
 	update_info_plist "OpenUp";;
-"SaveLink")
-    printf "You chose SaveLink\n"
-    remove_ifx_app "SaveLink"
-    install_savelink;;
 "ScanImage")
 	printf "You chose ScanImage\n"
 	remove_ifx_app "ScanImage"
@@ -180,10 +157,6 @@ case "$i" in
 	remove_ifx_app "StepSync"
 	install_stepsync
 	update_info_plist "StepSync";;
-"TestCuckoo")
-    printf "You chose TestCuckoo\n"
-    remove_ifx_app "TestCuckoo"
-    install_testcuckoo;;
 "Vindaloo")
 	printf "You chose Vindaloo\n"
 	remove_ifx_app "ViewPDF"

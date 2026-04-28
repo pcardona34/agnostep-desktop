@@ -1,0 +1,6 @@
+#!/bin/bash
+
+### Notifications
+systemctl --user import-environment DISPLAY
+pgrep dunst || dunst &
+sleep 2 && /usr/local/bin/loading.sh &

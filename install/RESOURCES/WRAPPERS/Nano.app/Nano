@@ -1,16 +1,13 @@
 #!/bin/bash
 
-APP=nano
+APP=/usr/bin/nano
 APPNAME=Nano
 
 if [ $# -eq 2 ] ; then
 	ARG="$2"
-	TITLE="$APPNAME - $ARG"
+    TITLE="$APPNAME - $ARG"
+    xterm -T "$TITLE" -e "$APP $ARG" &
 else
-	ARG=""
-	TITLE="$APPNAME"
+    gopen -a Terminal "$APP" &
 fi
 
-xterm -T "$TITLE" -e "transset -a --dec 0.05;$APP $ARG" &
-PID=$!
-pidwait $PID

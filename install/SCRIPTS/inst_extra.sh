@@ -93,8 +93,7 @@ Check with space bar the Applications you want to install." 20 70 13 \
 "PPC" "PowerPC Emulator" off \
 "Preview" "Image Viewer" off \
 "PRICE" "Image Manipulation" off \
-"TalkSoup" "IRC Client" off \
-"Weather" "A Weather app" off 2> $TEMPFILE
+"TalkSoup" "IRC Client" off 2> $TEMPFILE
 
 clear
 
@@ -174,11 +173,6 @@ case "$i" in
 	remove_ifx_app "TalkSoup"
 	install_talksoup
 	update_info_plist TalkSoup;;
-"Weather")
-	printf "You chose Weather\n"
-	remove_ifx_app "Weather"
-	install_weather
-	update_info_plist Weather;;
 esac
 done
 else exit 0
@@ -211,6 +205,3 @@ ok "\rDone"
 print_size
 
 sleep 2
-
-
-

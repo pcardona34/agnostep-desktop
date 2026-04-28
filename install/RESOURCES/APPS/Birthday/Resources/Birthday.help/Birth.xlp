@@ -1,0 +1,87 @@
+<section name="Introduction">
+
+Do not forget them!
+<br>To help you, AGNoStep provides several tools.
+
+</section>
+
+<section name="1 The Birthdays base">
+
+It is a text file: each line is an event with appropriate syntax:
+
+<ul>
+<li>Birthday syntax: key is 'bd':
+<note>
+Who=dd/mm/yyyy bd
+</note>
+</li>
+<li>Feast syntax: key is 'st':
+<note>
+Who=dd/mm st
+</note>
+</li>
+<li>To comment out a line, just add a sharp at the begining:
+<note>
+#A commented line
+</note>
+<li>
+</ul>
+
+This file must be renamed 'Birthdays' and copied to the 'Documents/Private' folder.
+
+<caution>
+Keep safe the original file in another place.
+</caution>
+
+Now, when you log in, the 'Birthday' app checks if a birthday or a feast is today and it displays abadge if it is.
+
+</section>
+
+<section name="2 Feed the Agenda calendar">
+
+You can export these infos from the Birthdays base into 'SimpleAgenda' and into 'AddressManager'.
+
+<section name="2.1 Birthdays">
+
+In a Terminal shell, execute:
+
+<listing>
+cd Documents/Private
+<br />birth2vcf Birthdays
+</listing>
+
+It will produce a 'bdyyyymmdd.vcf' file.
+
+To import this file in the Address base: select the vcard file and hit ENTER, or:
+
+<listing>
+openpapp AddressManager
+<br />menu: Database / Import...
+</listing>
+
+In the Open Panel, navigate to 'Documents/Private' and choose the 'vcf' file you have created. Thats done.
+
+Then open 'SimpleAgenda' to verify it is able to retrieve the birthdays from the Address base: each birthday will be shown with a violet background.
+
+</section>
+<section name="2.2 Feasts">
+
+In a Terminal shell, execute:
+
+<listing>
+cd Documents/Private
+<br />feast2ics Birthdays
+</listing>
+
+It will produce a 'styyyymmdd.ics' calendar file.
+
+To import in SimpleAgenda:
+
+<listing>
+openapp SimpleAgenda styyyymmdd.ics
+</listing>
+
+That's done. The feasts will be shown now in the agenda with a yellow background in the Day view.
+
+</section>
+</section>

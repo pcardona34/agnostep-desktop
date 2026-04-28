@@ -1,0 +1,18 @@
+{
+    ApplicationDescription = "Printer Manager for the Agnostep Desktop Project";
+    ApplicationName = Printer;
+    ApplicationRelease = "0.1";
+    Authors = (
+	"Patrick CARDONA"
+    );
+    Copyright = "Copyright (C) 2026";
+    CopyrightDescription = "Released under GNU General Public License 3.0";
+    FullVersionID = "0.1";
+    NSExecutable = Printer;
+    NSMainNibFile = ;
+    NSPrincipalClass = NSApplication;
+    NSRole = Application;
+    NSIcon = "Printer.tiff";
+    GSHelpContentsFile = "Printer.help";
+    URL = "https://github.com/pcardona34/agnostep-desktop";
+}

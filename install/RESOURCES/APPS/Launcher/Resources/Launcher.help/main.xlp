@@ -1,0 +1,29 @@
+<document>
+
+<header>
+<title>Launcher User Guide</title>
+</header>
+
+<plain name="Cover">
+
+<center><img src="banniere_Launcher.tiff"></center>
+
+<information>
+Launcher permits to display the Applications Folder and select quickly an app to run. 
+</information>
+
+<caution>
+(c) 2025-2026 Patrick Cardona. This project is a Free Software provided under the GNU Public Licence (GPL).<br>
+It is part of Agnostep Desktop Project.
+</caution>
+
+<note>
+Site: <url>https://github.com/pcardona34/agnostep</url>&nbsp;
+<br />Please, post there any issue.
+</note>
+
+</plain>
+
+<chapter src="Launch.xlp" name="Launching Apps"></chapter>
+
+</document>

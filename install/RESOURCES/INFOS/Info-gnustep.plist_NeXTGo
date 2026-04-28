@@ -1,0 +1,29 @@
+{
+  NOTE = "Automatically generated, do not edit!";
+  NSExecutable = "NeXTGo";
+  NSMainNibFile = "NeXTGo";
+  NSMainStoryboardFile = "";
+  GSMainMarkupFile = "";
+  NSIcon = "NeXTGo.tiff";
+  NSPrincipalClass = "GoApp";
+  NSTypes = (
+	{
+	    NSDocumentClass = SmartGoFile;
+	    NSHumanReadableName = "SmartGo Document";
+	    NSName = mgt;
+	    NSUnixExtensions = (
+		mgt
+	    );
+	    NSIcon = "NeXTGoFile.tiff";
+	},
+           {
+	    NSDocumentClass = NeXTGoFile;
+	    NSHumanReadableName = "NeXTGo Document";
+	    NSName = nextgo;
+	    NSUnixExtensions = (
+		nextgo
+	    );
+               NSIcon = "NeXTGoFile.tiff";
+	}
+    );
+}

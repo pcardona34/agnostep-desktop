@@ -41,7 +41,6 @@ trap "rm -f $FICHTEMP" EXIT
 . SCRIPTS/check_app.sh
 . SCRIPTS/size.sh
 . SCRIPTS/spinner.sh
-. SCRIPTS/functions_inst_tools.sh
 . SCRIPTS/functions_remove_app.sh
 . SCRIPTS/functions_inst_wrappers.sh
 . SCRIPTS/functions_prep.sh
@@ -84,16 +83,14 @@ if [ $? -eq 0 ];then
 fi
 
 DEP_Abiword="abiword"
-DEP_AgnostepManager="dialog xterm"
 DEP_EBookReader="fbreader"
 DEP_Inkscape="inkscape"
 DEP_Nano="nano xterm"
-DEP_Printer="xterm cups cups-client cups-filters hplip printer-driver-hpijs libsane-hpaio"
-DEP_ScreenLock="xtrlock"
 DEP_Scribus="scribus"
-DEP_Upgrade="xterm"
 DEP_Writer="focuswriter"
 DEP_Xpdf="xpdf"
+DEP_LibreOffice="libreoffice"
+
 ################################
 ### Is there a LOCAL APPS Folder?
 
@@ -101,11 +98,6 @@ if ! [ -d $INSTALL_DIR ];then
 	alert "$INSTALL_DIR was not found!"
 	exit 1
 fi
-LG=${LANG:0:2}
-case "$LG" in
-"fr") TOOLS=Utilitaires;;
-"en"|*) TOOLS=Utilities;;
-esac
 
 #################################################
 
@@ -164,19 +156,16 @@ fi
 function other_menu
 {
 # checkbox dialog
-dialog --backtitle "$STR" --title "Other Wrappers" \
+dialog --backtitle "$STR" --title "Wrappers" \
 --ok-label "OK"  \
 --checklist "
-Check the Tools you want to install." 20 60 10 \
+Check the Wrappers you want to install." 20 60 10 \
 "Abiword" "Gnome Office Writer" off \
-"AgnostepManager" "A menu to manage installation" off \
 "EBookReader" "A wrapper for FBReader" off \
 "Inkscape" "A wrapper for Inkscape Vectorial Draw" off \
-"Lock" "Screen Locker" off \
+"Libreoffice" "A wrapper for LibreOffice" off \
 "Nano" "The GNU Nano editor" off \
-"Printer" "Printer Setup" off \
 "Scribus" "Desktop Publishing Scribus" off \
-"Upgrade" "A useful wrapper for Debian upgrade" off \
 "Web" "Web Browser Wrapper" off \
 "Writer" "A wrapper for FocusWriter" off \
 "Xpdf" "A wrapper for Xpdf" off 2> $FICHTEMP
@@ -198,15 +187,6 @@ case "$i" in
 	remove_ifx_app "$WRAP"
 	CHECK="YES"
 	install_wrapper "$WRAP" "$DEP_Abiword";;
-"AgnostepManager")
-	WRAP="AgnostepManager"
-	printf "You chose ${WRAP}\n"
-	remove_ifx_app "$WRAP"
-	CHECK=""
-	install_wrapper "$WRAP" "$DEP_AgnostepManager"
-	move_to_tools "$WRAP"
-	check "$WRAP"
-	set_conf "xterm";;
 "EBookReader")
 	printf "You chose EBookReader.\n"
 	remove_ifx_app "EBookReader"
@@ -217,47 +197,23 @@ case "$i" in
 	remove_ifx_app "Inkscape"
 	CHECK="YES"
 	install_wrapper Inkscape "$DEP_Inkscape";;
-"Lock")
-	printf "You chose Lock\n"
-	remove_ifx_app ScreenLock
-	CHECK=""
-	install_wrapper ScreenLock "${DEP_ScreenLock}"
-	move_to_tools ScreenLock
-	check ScreenLock;;
+"Libreoffice")
+	printf "You chose LibreOffice.\n"
+	remove_ifx_app "LibreOffice"
+	CHECK="YES"
+	install_wrapper LibreOffice "$DEP_LibreOffice";;
 "Nano")
 	printf "You chose Nano\n"
 	remove_ifx_app Nano
-	CHECK=""
+	CHECK="YES"
 	install_wrapper Nano "$DEP_Nano"
-	move_to_tools Nano
-	check Nano
 	set_conf "nano"
-	set_conf "xterm";;
-"Printer")
-	printf "You chose Printer\n"
-	groups | grep -e "lpadmin" &>/dev/null
-	if [ $? -ne 0 ];then
-        	sudo usermod -aG lpadmin $USER
-	fi
-	remove_ifx_app Printer
-	CHECK=""
-	install_wrapper Printer "${DEP_Printer}"
-	move_to_tools Printer
-	check Printer
 	set_conf "xterm";;
 "Scribus")
     printf "You chose Scribus\n"
     remove_ifx_app Scribus
     CHECK="YES"
     install_wrapper Scribus "$DEP_Scribus";;
-"Upgrade")
-	printf "You chose Upgrade\n"
-	remove_ifx_app Upgrade
-	CHECK=""
-	install_wrapper Upgrade "$DEP_Upgrade"
-	move_to_tools Upgrade
-	check Upgrade
-	set_conf "xterm";;
 "Web")
 	printf "You chose Web\n"
 	webb_menu;;
@@ -269,10 +225,8 @@ case "$i" in
 "Xpdf")
     printf "You chose Xpdf\n"
     remove_ifx_app "Xpdf"
-    CHECK=""
-    install_wrapper Xpdf "$DEP_Xpdf"
-    move_to_tools Xpdf
-    check Xpdf;;
+    CHECK="YES"
+    install_wrapper "Xpdf" "$DEP_Xpdf";;
 esac
 done
 else exit 0

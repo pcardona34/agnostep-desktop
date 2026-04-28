@@ -1,7 +1,0 @@
-{
-  NSExecutable = "Printer";
-  NSRole = "Application";
-  NSIcon = "Printer.tiff";
-  CFBundleIdentifier = "org.agnostep.Printer";
-	XAppWrapper = YES;
-}

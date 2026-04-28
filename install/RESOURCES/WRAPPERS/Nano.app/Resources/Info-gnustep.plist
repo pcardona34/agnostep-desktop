@@ -6,20 +6,12 @@
 	XAppWrapper = YES;
   NSTypes = (
     {
-      NSUnixExtensions = ( "sh" );
-      NSIcon = "File_script.tiff";
-    },
-   {
       NSUnixExtensions = ( "md" );
       NSIcon = "File_markdown.tiff";
     },
      {
       NSUnixExtensions = ( "patch" );
       NSIcon = "File_patch.tiff";
-    },
-    {
-      NSUnixExtensions = ( "url" );
-      NSIcon = "File_url.tiff";      
     },
     {
       NSUnixExtensions = ( "st" );

@@ -1,0 +1,30 @@
+<document>
+
+<header>
+<title>OpenDisk</title>
+</header>
+
+<plain name="Cover">
+
+<center><img src="banniere_OpenDisk.tiff"></center>
+
+<left>	
+<information>
+OpenDisk is a helper to open directly media folder where removable disks are mounted.
+</information>
+
+<caution>
+(c) 2025-2026 Patrick Cardona. This project is a Free Software provided under the GNU Public Licence (GPL).
+<br>It is part of Agnostep Desktop project.
+</caution>
+
+<note>
+Site: <url>https://github.com/pcardona34/agnostep</url>&nbsp;
+<br />Please, post there any issue.
+</note>
+</left>
+</plain>
+
+<chapter src="Devices.xlp" name="Managing Removable Devices"></chapter>
+
+</document>

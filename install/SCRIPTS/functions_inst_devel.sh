@@ -13,60 +13,6 @@
 ### Functions for Desktop Devel - GNUstep apps
 ####################################################
 
-function move_to_devel
-{
-APPNAME="$1"
-if [ -z "$APPNAME" ];then
-	exit 1
-fi
-
-APP_DIR=$(gnustep-config --variable=GNUSTEP_LOCAL_APPS)
-if [ -z "$APP_DIR" ];then
-        alert "Your GNUstep System seems misconfigured."
-        exit 1
-fi
-
-LG=${LANG:0:2}
-case "$LG" in
-"fr") DEVEL=Prog;;
-"en"|*) DEVEL=Dev;;
-esac
-
-DEVEL_DIR=${APP_DIR}/${DEVEL}
-
-if [ ! -d ${DEVEL_DIR} ];then
-        sudo mkdir -p ${DEVEL_DIR}
-fi
-
-sudo mv ${APP_DIR}/${APPNAME}.app ${DEVEL_DIR}/
-cd ${APP_DIR}
-cd ../Tools
-sudo ln --force --symbolic ${DEVEL_DIR}/${APPNAME}.app
-sudo ln --force --symbolic ${DEVEL_DIR}/${APPNAME}.app/${APPNAME}
-cd $_PWD
-}
-
-function move_renaissance_tools
-{
-APP_DIR=$(gnustep-config --variable=GNUSTEP_LOCAL_APPS)
-if [ -z "$APP_DIR" ];then
-        alert "Your GNUstep System seems misconfigured."
-        exit 1
-fi
-
-cd $APP_DIR || exit 1
-
-for RENTOOL in GSMarkup*.app
-do
-	if [ -d $RENTOOL ];then
-		APPNAME=${RENTOOL%.app}
-		move_to_devel $APPNAME
-		cd $APP_DIR
-	fi
-done
-
-cd $_PWD
-}
 
 ########################## - E - ##########################
 
@@ -135,7 +81,7 @@ done
 printf "Installing...\n"
 cd nextstep || exit 1
 sudo -E cp -a Emacs.app ${INSTALL_DIR}/
-move_to_devel ${APPNAME}
+#move_to_devel ${APPNAME}
 check $APPNAME
 sleep $SLEEP
 }
@@ -169,10 +115,10 @@ subtitulo
 ok "$APPNAME fetched"
 
 
-CHECK=""
+CHECK="YES"
 _build
-move_to_devel ${APPNAME}
-check $APPNAME
+#move_to_devel ${APPNAME}
+#check $APPNAME
 sleep $SLEEP
 
 }
@@ -205,10 +151,10 @@ clear
 subtitulo
 ok "$APPNAME fetched"
 
-CHECK=""
+CHECK="YES"
 _build
-move_to_devel ${APPNAME}
-check $APPNAME
+#move_to_devel ${APPNAME}
+#check $APPNAME
 sleep $SLEEP
 
 }
@@ -242,10 +188,10 @@ clear
 subtitulo
 ok "$APPNAME fetched"
 
-CHECK=""
+CHECK="YES"
 _build
-move_to_devel ${APPNAME}
-check $APPNAME
+#move_to_devel ${APPNAME}
+#check $APPNAME
 sleep $SLEEP
 
 }
@@ -284,10 +230,10 @@ clear
 subtitulo
 ok "$APPNAME fetched"
 
-CHECK=""
+CHECK="YES"
 _build
-move_to_devel ${APPNAME}
-check $APPNAME
+#move_to_devel ${APPNAME}
+#check $APPNAME
 sleep $SLEEP
 
 }
@@ -322,10 +268,69 @@ clear
 subtitulo
 ok "$APPNAME fetched"
 
-CHECK=""
+CHECK="YES"
 _build
-move_to_devel ${APPNAME}
-check $APPNAME
+#move_to_devel ${APPNAME}
+#check $APPNAME
 sleep $SLEEP
 
+}
+
+###################################
+####### OBSOLETE ###############
+###################################
+
+function move_to_devel
+{
+APPNAME="$1"
+if [ -z "$APPNAME" ];then
+	exit 1
+fi
+
+APP_DIR=$(gnustep-config --variable=GNUSTEP_LOCAL_APPS)
+if [ -z "$APP_DIR" ];then
+        alert "Your GNUstep System seems misconfigured."
+        exit 1
+fi
+
+LG=${LANG:0:2}
+case "$LG" in
+"fr") DEVEL=Prog;;
+"en"|*) DEVEL=Dev;;
+esac
+
+DEVEL_DIR=${APP_DIR}/${DEVEL}
+
+if [ ! -d ${DEVEL_DIR} ];then
+        sudo mkdir -p ${DEVEL_DIR}
+fi
+
+sudo mv ${APP_DIR}/${APPNAME}.app ${DEVEL_DIR}/
+cd ${APP_DIR}
+cd ../Tools
+sudo ln --force --symbolic ${DEVEL_DIR}/${APPNAME}.app
+sudo ln --force --symbolic ${DEVEL_DIR}/${APPNAME}.app/${APPNAME}
+cd $_PWD
+}
+
+function move_renaissance_tools
+{
+APP_DIR=$(gnustep-config --variable=GNUSTEP_LOCAL_APPS)
+if [ -z "$APP_DIR" ];then
+        alert "Your GNUstep System seems misconfigured."
+        exit 1
+fi
+
+cd $APP_DIR || exit 1
+
+for RENTOOL in GSMarkup*.app
+do
+	if [ -d $RENTOOL ];then
+		APPNAME=${RENTOOL%.app}
+		move_to_devel $APPNAME
+		cd $APP_DIR
+	fi
+done
+
+cd $_PWD
 }

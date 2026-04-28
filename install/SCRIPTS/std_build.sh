@@ -15,9 +15,15 @@
 
 function _build()
 {
+SYSTOOLS=$(gnustep-config --variable=GNUSTEP_SYSTEM_TOOLS)
+if [ -z "$SYSTOOLS" ];then
+    alert "Your GNUstep System Path is misconfigured! Aborting."
+    exit 1
+fi
 
 if [ -z ${APPNAME} ];then
-	alert "The application is misconfigured. Aborting!"
+	alert "The Application Name is misconfigured. Aborting!"
+    exit 1
 fi
 
 if [ -f configure ];then
@@ -35,7 +41,7 @@ PID=$!
 spinner
 
 printf "\rInstalling...\n"
-sudo -E make ${INSTALL_ARGS} install &>>$LOG &
+sudo -E env PATH="$PATH:${SYSTOOLS}" make ${INSTALL_ARGS} install &>>$LOG &
 PID=$!
 spinner
 
@@ -109,6 +115,7 @@ function _build_FW()
 
 if [ -z ${FWNAME} ];then
 	alert "The Name of Framework is misconfigured. Aborting!"
+    exit 1
 fi
 
 if [ -f configure ];then
@@ -126,7 +133,7 @@ PID=$!
 spinner
 
 printf "\rInstalling...\n"
-sudo -E make ${INSTALL_ARGS} install &>>$LOG &
+sudo -E env PATH="$PATH:${SYSTOOLS}" make ${INSTALL_ARGS} install &>>$LOG &
 PID=$!
 spinner
 
@@ -158,6 +165,7 @@ function _build_Theme()
 
 if [ -z ${APPNAME} ];then
 	alert "The Name of the THEME is misconfigured. Aborting!"
+    exit 1
 fi
 
 if [ -f configure ];then
@@ -175,8 +183,7 @@ PID=$!
 spinner
 
 printf "\rInstalling...\n"
-sudo -E make ${INSTALL_ARGS} install &>>$LOG &
-
+sudo -E env PATH="$PATH:${SYSTOOLS}" make ${INSTALL_ARGS} install &>>$LOG &
 PID=$!
 spinner
 

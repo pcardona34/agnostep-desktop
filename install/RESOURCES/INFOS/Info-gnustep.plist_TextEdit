@@ -1,0 +1,131 @@
+{
+    ApplicationDescription = "an OpenStep text editor";
+    ApplicationIcon = "Edit.tiff";
+    ApplicationName = TextEdit;
+    ApplicationRelease = 5;
+    Authors = "Ali Ozer, Jiang Jiang, Eric Wasylishen, Jeff Teunissen, Mike Ferris, David Remahl, Jordan Rose";
+    CFBundleIdentifier = "com.apple.TextEdit";
+    CFBundleDocumentTypes = (
+	{
+	    CFBundleTypeExtensions = (
+		rtf
+	    );
+	    CFBundleTypeMIMETypes = (
+		"text/rtf"
+	    );
+	    CFBundleTypeName = "RTF Document";
+	    CFBundleTypeRole = Editor;
+	    LSItemContentTypes = (
+		rtf
+	    );
+	    NSDocumentClass = Document;
+	},
+	{
+	    CFBundleTypeExtensions = (
+		txt
+	    );
+	    CFBundleTypeMIMETypes = (
+		"text/plain"
+	    );
+	    CFBundleTypeName = "Text Document";
+	    CFBundleTypeRole = Editor;
+	    LSItemContentTypes = (
+		text
+	    );
+	    NSDocumentClass = Document;
+	},
+	{
+	    CFBundleTypeExtensions = (
+		rtfd
+	    );
+	    CFBundleTypeName = "RTFD Document";
+	    CFBundleTypeRole = Editor;
+	    LSItemContentTypes = (
+		rtfd
+	    );
+	    LSTypeIsPackage = <*BY>;
+	    NSDocumentClass = Document;
+	}
+    );
+    Copyright = "Copyright 1995-1996 NeXT Software, Inc., 2001-2010 Dusk to Dawn Computing, 1995-2009 by Apple Computer, Inc., all rights reserved.";
+    CopyrightDescription = "You may freely copy, distribute, and reuse the code in this example.";
+    GSMainMarkupFile = "";
+    NOTE = "Automatically generated, do not edit!";
+    NSExecutable = TextEdit;
+    NSIcon = "Edit.tiff";
+    NSMainNibFile = Edit;
+    NSMainStoryboardFile = "";
+    NSPrincipalClass = NSApplication;
+    NSServices = (
+	{
+	    NSMenuItem = {
+		default = "TextEdit/Open Selection";
+	    };
+	    NSMessage = openSelection;
+	    NSPortName = TextEdit;
+	    NSSendTypes = (
+		NSStringPboardType,
+		NSRTFPboardType,
+		NSRTFDPboardType
+	    );
+	},
+	{
+	    NSMenuItem = {
+		default = "TextEdit/Open File";
+	    };
+	    NSMessage = openFile;
+	    NSPortName = TextEdit;
+	    NSSendTypes = (
+		NSStringPboardType,
+		NSFilenamesPboardType
+	    );
+	}
+    );
+    NSTypes = (
+	{
+	    NSDOSExtensions = (
+		rtf
+	    );
+	    NSDocumentClass = Document;
+	    NSHumanReadableName = "RTF Document";
+	    NSIcon = "FileIcon_rtf";
+	    NSMIMETypes = (
+		"text/rtf"
+	    );
+	    NSName = rtf;
+	    NSRole = Editor;
+	    NSUnixExtensions = (
+		rtf
+	    );
+	},
+	{
+	    NSDOSExtensions = (
+		rtfd
+	    );
+	    NSDocumentClass = Document;
+	    NSHumanReadableName = "RTFD Document";
+	    NSIcon = "FileIcon_rtf";
+	    NSName = rtfd;
+	    NSRole = Editor;
+	    NSUnixExtensions = (
+		rtfd
+	    );
+	},
+	{
+	    NSDOSExtensions = (
+		txt
+	    );
+	    NSDocumentClass = Document;
+	    NSHumanReadableName = "Text Document";
+	    NSIcon = "FileIcon_txt";
+	    NSMIMETypes = (
+		"text/plain"
+	    );
+	    NSName = text;
+	    NSRole = Editor;
+	    NSUnixExtensions = (
+		txt
+	    );
+	}
+    );
+}

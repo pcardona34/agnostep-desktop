@@ -1,0 +1,17 @@
+{
+    ApplicationDescription = "AppIcon to display Uptime and Memory Usage";
+    ApplicationName = UpMem;
+    ApplicationRelease = "0.1";
+    Authors = (
+	"Patrick CARDONA"
+    );
+    Copyright = "Copyright (C) 2026";
+    CopyrightDescription = "Released under GNU General Public License 3.0";
+    FullVersionID = "0.1";
+    NSExecutable = Demo;
+    NSMainNibFile = ;
+    NSPrincipalClass = NSApplication;
+    NSIcon = "Memory.tiff";
+    NSRole = Application;
+    URL = "https://github.com/pcardona34/agnostep-desktop";
+}

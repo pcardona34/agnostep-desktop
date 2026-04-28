@@ -57,7 +57,6 @@ function install_addressmanager()
 {
 clear
 APPNAME=AddressManager
-#RELEASE="0.5.0"
 
 STR="$APPNAME"
 subtitulo
@@ -121,41 +120,6 @@ ok "$APPNAME: Fetched"
 
 _build
 
-sleep $SLEEP
-}
-
-#################################################
-## SaveLink
-### Provided by AGNoStep Project
-#################################################
-
-function install_exitsession
-{
-APPNAME=ExitSession
-RELEASE="0.1"
-CONFIG_ARGS=""
-BUILD_ARGS=""
-INSTALL_ARGS=""
-
-STR="$APPNAME $RELEASE"
-subtitulo
-printf "Fetching ${APPNAME}...\n"
-SRC_DIR=RESOURCES/APPS/$APPNAME
-
-echo "Source: $SRC_DIR"
-echo "Ici: `pwd`"
-
-BUILD_DIR=../build
-cp -a ${SRC_DIR} ${BUILD_DIR}/
-cd ${BUILD_DIR}/${APPNAME} || exit 1
-
-ok "$APPNAME fetched"
-
-CHECK=""
-_build
-move_to_tools ${APPNAME}
-check ${APPNAME}
-make clean &>/dev/null
 sleep $SLEEP
 }
 
@@ -232,6 +196,17 @@ TARGET=FSNode/Resources/French.lproj/Localizable.strings
 patch --forward -u $TARGET -i $PATCH
 ok "Done"
 
+### Patch: add GSHelpContentsFile to Info.plist
+printf "Applying a patch for Help implementation...\n"
+PATCH=$_PWD/RESOURCES/PATCHES/GWorkspace_InfoPlist_Help.patch
+TARGET=GWorkspace/GWorkspaceInfo.plist
+patch --forward -u $TARGET -i $PATCH
+ok "Done"
+
+printf "Help bundles...\n"
+cp -r $HOME/SOURCES/agnostep-desktop/install/RESOURCES/HELP/en/GWorkspace.help GWorkspace/Resources/English.lproj/
+cp -r $HOME/SOURCES/agnostep-desktop/install/RESOURCES/HELP/fr/GWorkspace.help GWorkspace/Resources/French.lproj/
+
 _build
 
 #check "Recycler"
@@ -239,6 +214,44 @@ _build
 
 sleep $SLEEP
 }
+
+
+#################################################
+## HelpViewer
+#################################################
+
+function install_helpviewer()
+{
+clear
+APPNAME="HelpViewer"
+HUB="svn://svn.savannah.nongnu.org/gap/trunk/system-apps"
+CONFIG_ARGS=""
+BUILD_ARGS=""
+INSTALL_ARGS=""
+
+cd ../build || exit 1
+
+STR="$APPNAME"
+subtitulo
+
+printf "Fetching...\n"
+if [ -d $APPNAME ];then
+        cd $APPNAME
+        svn update
+else
+	svn co ${HUB}/${APPNAME}
+	cd $APPNAME || exit 1
+fi
+clear
+subtitulo
+ok "$APPNAME fetched"
+sleep 3
+
+CHECK="YES"
+_build
+}
+### End of HelpViewer
+##############################################
 
 ##########################
 ## Ink
@@ -501,7 +514,11 @@ sleep $SLEEP
 }
 
 
+#################################################
+########## OBSOLETE #############################
+
 ###################################################
+## OBSOLETE: see Mixer in the native Agnostep apps
 ## VolumeControl
 ### Repo/Release: Github/Alexmyczko
 ###################################################
@@ -536,9 +553,6 @@ _build
 
 sleep $SLEEP
 }
-
-#################################################
-########## OBSOLETE #############################
 
 #################################################
 ## GNUMail (current / stable tarball)
@@ -631,3 +645,4 @@ _build
 
 sleep $SLEEP
 }
+

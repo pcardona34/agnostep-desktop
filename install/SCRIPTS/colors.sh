@@ -14,6 +14,8 @@
 ### with colors
 ################################
 
+COLORS="YES"
+
 ###########################
 ### Title (yellow-orange)
 ### $1: title text

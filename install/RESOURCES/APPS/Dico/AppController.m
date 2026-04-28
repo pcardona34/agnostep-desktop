@@ -1,69 +1,23 @@
 /* 
-   Project: Dico
+####################################################
+### A G N o S t e p  -  Desktop - by Patrick Cardona
+### (c) 2026 - pcardona34 @ Github
+### Author: Patrick Cardona
+###
+### Thanks for the GNUstep Developers Community.
+### This application is free software.
+### Read complete License in the root directory.
+####################################################
 
-   Author: patrick
-
-   Created: 2026-03-10 20:19:31 +0100 by patrick
-   
-   Application Controller
+####################################################
+### Dico.app
+### A French Dictionary Lookup App and Service
+### Application Controller implementation: AppController.m
+####################################################
 */
 
 #import "AppController.h"
 
 @implementation AppController
-
-+ (void) initialize
-{
-  NSMutableDictionary *defaults = [NSMutableDictionary dictionary];
-
-  /*
-   * Register your app's defaults here by adding objects to the
-   * dictionary, eg
-   *
-   * [defaults setObject:anObject forKey:keyForThatObject];
-   *
-   */
-  
-  [[NSUserDefaults standardUserDefaults] registerDefaults: defaults];
-  [[NSUserDefaults standardUserDefaults] synchronize];
-}
-
-- (id) init
-{
-  if ((self = [super init]))
-    {
-    }
-  return self;
-}
-
-- (void) dealloc
-{
-  [super dealloc];
-}
-
-- (void) applicationDidFinishLaunching: (NSNotification *)aNotif
-{
-// Uncomment if your application is Renaissance-based
-//  [NSBundle loadGSMarkupNamed: @"Main" owner: self];
-}
-
-- (BOOL) applicationShouldTerminate: (id)sender
-{
-  return YES;
-}
-
-- (void) applicationWillTerminate: (NSNotification *)aNotif
-{
-}
-
-- (BOOL) application: (NSApplication *)application
-	    openFile: (NSString *)fileName
-{
-  return NO;
-}
-
-- (IBAction) showPrefPanel: (id)sender
-{
-}
 
 @end

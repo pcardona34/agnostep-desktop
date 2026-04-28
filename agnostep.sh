@@ -56,29 +56,31 @@ fi
 # Main menu
 function main_menu
 {
+. $HOME/.local/etc/release.info
 if [ -z "$DISPLAY" ];then
-	BACK="AGNoStep Manager"
+	BACK="AGNoStep Manager $REL $STATUS"
 else
-	BACK=""
+	BACK="AGNoStep $REL $STATUS"
 fi
 
 dialog --no-shadow --backtitle "${BACK}" \
- --title "Applications Manager" \
+ --title "Applications and Resources Manager" \
  --menu "
 First time: prepare, then install Core, Apps, Settings and DM.
 
-What to do now?" 25 66 20 \
+What to do now?" 21 66 21 \
 "Prep" "Prepare the installation" \
 "Core" "Install Core Desktop" \
 "Apps" "Install Core Apps" \
-"Settings" "User Settings and Theme" \
+"Settings" "Desktop Settings" \
 "DM" "Install Display Manager" \
-"Help" "Install localized Help" \
+"Theming" "Choose a theme" \
 "Devel" "Install Developer Apps" \
 "Extra" "Install more User Apps" \
 "Util" "Utilities" \
 "Games" "Install Games" \
-"Meteo" "Reset Weather Station" \
+"Native" "Install Native Agnostep Apps" \
+"Dockapps" "Install Dockapps" \
 "Wrappers" "Install Wrappers" \
 "Remove" "Remove some App" \
 "Update" "Update AGNoStep" \
@@ -101,13 +103,13 @@ case $i in
 	./5_install_core_apps.sh;;
 "Settings") printf "You chose: Settings\n"
 	cd install || exit 1
-	./6_user_settings.sh;;
+	./6_desktop_settings.sh;;
 "DM") printf "You chose: DM\n"
 	cd install || exit 1
 	./7_install_DM.sh;;
-"Help") printf "You chose help"
-	cd install || exit 1
-	./install_help.sh;;
+"Theming") printf "You chose Theming\n"
+    cd install || exit 1
+    ./theming.sh;;
 "Devel") printf "You chose: Devel\n"
 	cd install || exit 1
 	bash ./SCRIPTS/inst_devel.sh;;
@@ -120,17 +122,12 @@ case $i in
 "Games") printf "You chose Games\n"
 	cd install || exit 1
 	bash ./SCRIPTS/inst_games.sh;;
-"Meteo") printf "You chose Meteo\n"
-	METEO_TOOLS=/usr/local/bin/functions_meteo.sh
-	if [ ! -f $METEO_TOOLS ];then
-		alert "Meteo Tools badly set. Did you run Settings first?"
-		sleep 4
-		exit 1
-	else
-		. $METEO_TOOLS
-		write_meteo_conf
-	fi
-	ok "Meteo has been reset";sleep 2;;
+"Native") printf "You chose Native\n"
+	cd install || exit 1
+	bash ./SCRIPTS/inst_native_agnostep_apps.sh;;
+"Dockapps") printf "You chose Dockapps\n"
+	cd install || exit 1
+	bash ./SCRIPTS/first_inst_dockapps.sh;;
 "Wrappers") printf "You chose Wrappers\n"
 	cd install || exit 1
 	bash ./SCRIPTS/inst_wrappers.sh;;

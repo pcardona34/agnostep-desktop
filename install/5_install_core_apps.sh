@@ -55,6 +55,8 @@ fi
 
 if [ ! -d $APPS_DIR/GWorkspace.app ];then
 	. SCRIPTS/first_inst_core_apps.sh
+    . SCRIPTS/first_inst_native_agnostep_apps.sh
+    . SCRIPTS/first_inst_dockapps.sh
 	. SCRIPTS/inst_wrappers.sh
 else
 	. SCRIPTS/inst_core_apps.sh

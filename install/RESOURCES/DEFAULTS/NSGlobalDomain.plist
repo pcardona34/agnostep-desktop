@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>GSFileBrowserHideDotFiles</key>
+    <string>1</string>
+    <key>GSFirstAlternateKey</key>
+    <string>ISO_Level3_Shift</string>
+    <key>GSFirstCommandKey</key>
+    <string>Alt_L</string>
+    <key>GSFirstControlKey</key>
+    <string>Control_L</string>
+    <key>GSSecondControlKey</key>
+    <string>Control_R</string>
+    <key>GSTheme</key>
+    <string>AGNOSTEP</string>
+    <key>Local Time Zone</key>
+    <string>Europe/Paris</string>
+</dict>
+</plist>

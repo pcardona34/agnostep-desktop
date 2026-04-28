@@ -1,70 +1,98 @@
-- [x]  French Agnostep Help...
-- [ ] Wallpapers: add a third collection
-- [x] Search in PDF document <=> Xpdf wrapper 
+# Agnostep new release target
 
+## New apps and tools
 
-New tests on fresh sd-cards:
-- [x] pi 400
-- [x] pi 500
+- [x] Meteo: new dockable GNUstep Weather app with Wttr.in API, temp and prediction. With a Prefs panel to set the location.
+- [x] UpMem: new dockable GNUstep Uptime and Memory usage.
+- [x] Updater:  complete GNUstep rewriting with badge and progress indicator...
+- [x] Birthday: complete GNUstep rewriting with badge and Event Panel....
+- [x] OpenDisk: mounting removable disk without GWorkspace Desktop background. A companion for wmudmount dockapp.
+- [x] Launcher: open Application Panel.
+- [x] AgnostepManager: embedded as a GNUstep app.
+- [x] Dico: a French Lookup Dictionary and Service too from DVLF of the University of Chicago
+- [x] Mixer: a simplified ALSA compliant mixer, with PCM only. Forked from VolumeControl.
+- [x] Pass: a GNUstep interface to the Unix Password Manager (pass).
+- [x] Printer: Improved Cups interface access.
+- [x] SaveLink: improved code for the Internet Shortcuts Manager.
+- [x] ScreenLock: a screen locker using xtrlock.
+- [x] Sound: help and test about sound  setting.
 
-On:
-- [x] MacBookPro Intel
+## Updating Help (en)
+
+- [ ] Update Documentation/CORE_APPS.md
+- [x] Help of AgnostepManager: some chapters dispatched to relevant apps and tools.
+- [x] Help of GWorkspace: written and implemented.
+- [x] Help of Birthday
+- [x] Help of Launcher
+- [x] Help of OpenDisk
+- [x] Help of Pass 
+- [x] Help of Printer
+- [x] Help of SaveLink
+- [x] Help of ScreenLock
+- [x] Help of Sound
+- |x] Help of Updater
+
+## Installation
+
+- [x] Remove obsolete apps and wrappers from Core Apps...
+- [x] Scripts to install new apps (see above) and Services.
+- [x] New Core Apps scripts: include new apps, update list...
+- [x] Removing subcategories folders (devel, utilities, games...) in each relevant category.
+- [x] Handle better make install command for all GNUstep builds...: namely in std_build.sh
+- [x] New way to write .xsession
+- [x] New defaults: WMState... (without theme)...
+
+## Misc
+
+- [ ] Test Latest PikoPixel release
+- [ ] Spell checking within Ink...: not aspell fr???
+
 ---
 
-- [ ] a better alsa compliant mixer
+## French Help and UI translation
+
+- [x]  French Agnostep Help: updated...
+- [ ] See all new apps.
 
 ---
+
+## Theming
+
+- [x] New release of AGNOSTEP theme
+- [x]  Wallpapers: add a third collection: MALLORCA
+- [x] Search in PDF document <=> Xpdf wrapper
+
+
+## Testing
+
+New tests on fresh sd-cards for new 2.0Beta release:
+- [ ] pi 500
+- [ ] MacBookPro Intel
+
+=================================
 
 - [ ] Ref. Prog objC/GNUstep
 
--[ ] General Wrapper avec menus GS
+=================================
 
-- [x] Service: French Dictionary Lookup (Dico.app): from DVLF of the University of Chicago.
-md => make a book... => pdf
---------------------------------------
-- [ ] Surf Web Browser: cd. sucklesstools => Surf.app ?
-  - [x] Yet used within Dico.app
---------------------------------------
-HLKit: cf. Mail
-- [ ] HighlighterKit and Gemas: cf dossier local GNUstep/Library...
+## Future releases
 
------------------------------------
-Cocotron 2 GNUstep?
-- Comics reader?
-- Bookshelf... vs Librarian?
-------------------------------------
-
-===========================================
-[-] Installer: pkg format?
+- [ ] Installer: pkg format?
 Flat Package Format - The missing documentation
 http://s.sudre.free.fr/Stuff/Ivanhoe/FLAT.html
-===========================================
-[ ] Badge on an AppIcon
-- with Upadater.app
-- with MEMO (Birthday)
-see: http://multixden.blogspot.com/2023/08/gnustep-now-has-badges.html
-===========================================
+- [ ] GNUstep epub reader app
+- [ ] Xembedded Surf VS LadyBird? / - [ ] Surf Web Browser: cf. sucklesstools => Surf.app ?
+- [ ] md 2 epub/pdf editor / convertor
+- [ ] Extending HighlighterKit and Gemas: cf ~/GNUstep/Library...
 
-??? ANOSTEP-theme on Gershwin Desktop?
+-----------------------------------
 
-===========================================
+### Porting apps to GNUstep 
 
-[x] bargraph pour memory... / Voir aussi projet app GNUstep Memory [-] comme DockApp
-
-([ ] Tester ajout AlsaMixer.app)
-[ ] wmpasman
-?[ ] Issue? Brian Nennigan: GridLock (see deb package)
-
+Cocotron 2 GNUstep?
+- [ ] Comics reader?
+- [ ] Bookshelf... vs Librarian?
 ? [ ] TeXShop? cf. https://github.com/TeXShop/TeXShop
 ??? [ ] https://github.com/MaddTheSane/NeXTRisk
 
-_____________________________
 
-Minor issues:
-[ ] Finder: incomplete translation --> see: "Search Results"
-
---------------------------------------------
-
-Publish: SD-cards...
-Publish: VM / Live-ISO
---> Where?

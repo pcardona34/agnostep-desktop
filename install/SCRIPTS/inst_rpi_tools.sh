@@ -27,11 +27,6 @@ GSMAKE=$(gnustep-config --variable=GNUSTEP_MAKEFILES)
 . ${GSMAKE}/GNUstep.sh
 SPIN='/-\|'
 INSTALL_DIR=$(gnustep-config --variable=GNUSTEP_LOCAL_APPS)
-LG={LANG:0:2}
-case "$LG" in
-"fr") TOOLS=Utilitaires;;
-"en"|*) TOOLS=Utilities;;
-esac
 
 ### End of VARS
 ################################

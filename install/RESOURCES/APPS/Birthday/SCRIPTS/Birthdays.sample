@@ -1,0 +1,16 @@
+### Birthdays - Sample Data file for BirthNotif
+### Syntax of a line:
+#### who/what=dd/mm/yyyy <ev>
+#### <ev> can be:
+#### - 'ann': evenment
+#### - 'bd': birthday
+#### - 'st': feast
+###
+### To comment out: add # at the begining of the line
+###  
+Linux Kernel=25/08/1991 ann
+Free Software Foundation=08/10/1985 ann
+Ursula von der Leyen=08/10/1958 bd
+Prise de la Bastille=14/07/1789 ann
+Nathan=07/03 st
+Glinglin=09/10 st

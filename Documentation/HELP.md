@@ -1,15 +1,39 @@
-# AGNoStep - agnostic GNUstep Desktop
-
 ## HELP
 
-The help should be available from each Info menu. But this is not yet implemented as expected.
-Work has been done. Things are in progress.
+Since release 2.0.0, help bundles are provided within the relevant applications. Help is available from the submenu: `Info / Help...` 
 
-In the meanwhile, I provide two User Guides, also translated to French, avaiblable in the home user Help folder:
+- **HelpViewer** application has been installed with Core Apps.
 
-- AGNoStep User Guide.
-- GWorkspace User Guide.
+### Where to find help about some subject?
 
-Note: path of these guides might change in the future.
+#### -A-
 
-You must install **HelpViewer** application to read these guides.
+- Brief tour of Agnostep Desktop: read help from **AgnostepManager.app**.
+- Find quickly an application: read help from **Launcher.app**.
+
+#### -B-
+
+- Setting a **Birthday** database: read help from **Birthday.app**.
+
+#### -I-
+
+- Using or managing **Internet Shortcuts**: read help from **SaveLink.app**. 
+
+#### -M-
+
+- Mounting a **removable disk**: read help from **OpenDisk**.
+
+#### -P-
+
+- Setting the **Passwords** Store: read the help from **Pass.app**.
+- Setting a **printer** or a scanner: read help from **Printer.app**
+
+#### -S-
+
+- Setting **sound** with ALSA: read help from **Sound.app**
+ - Lock and unlock the screen: 
+
+#### -W-
+
+- Using the **Workspace**: read help from **GWorkspace.app**.
+- Setting a **Weather location**: use `Preferences` from **Meteo.app**

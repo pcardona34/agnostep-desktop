@@ -1,0 +1,25 @@
+#!/bin/bash
+
+# Hack to avoid path issues with LightDM
+if [ -f $HOME/.xprofile ];then
+	. $HOME/.xprofile
+fi
+
+# Rotate the wallpaper?
+WPRCONF=$HOME/.config/agnostep/wprotate.conf
+if [ -f $WPRCONF ];then
+	/usr/local/bin/wprotate.sh &
+fi
+
+if [ -f $HOME/.Xresources ];then
+	xrdb -merge $HOME/.Xresources &
+fi
+
+### Agenda, GWorkspace... will be started with WMDock 'autolauch' option
+
+### Window Manager
+/usr/bin/wmaker &
+
+sleep 4
+
+exec /System/Tools/openapp GWorkspace

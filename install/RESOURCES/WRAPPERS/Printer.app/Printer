@@ -1,7 +1,0 @@
-#!/bin/bash
-
-APP=/usr/local/bin/Setup_Printer
-
-xterm -T "Printer Setup" -e "$APP" &
-PID=$!
-pidwait $PID

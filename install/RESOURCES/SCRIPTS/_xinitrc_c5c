@@ -1,0 +1,33 @@
+#!/bin/sh
+
+# $HOME/.xsession
+
+### Xinit starts Xserver...
+PID_XSESSION=$$
+
+/usr/bin/picom -b
+
+### Window Manager
+/usr/bin/wmaker &
+##########################################################
+### See: $HOME/GNUstep/Library/WindowMaker/autostart
+##########################################################
+
+#################################################################
+### Sourcing GNUstep environment:
+### This is done with $HOME/.profile, not here.
+#################################################################
+
+### GWorkspace within a DBus session
+sleep 2
+exec dbus-launch --sh-syntax --exit-with-session /System/Tools/openapp GWorkspace
+
+### This is a secure way in any case Dbus fails to kill the session:
+kill $PID_XSESSION
+
+############ INFO ###############################################
+### DMPS and blanking issues on RPI machine
+### are fixed (xset) within
+### $HOME/GNUstep/Library/WindowMaker/autostart.
+### Not here!
+#################################################################

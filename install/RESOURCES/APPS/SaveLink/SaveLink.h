@@ -23,18 +23,16 @@
 #include <unistd.h>
 #include <sys/stat.h>
 
-int isDirectoryExists (const char *path);
-id getFavPath();
-
-
 @interface SaveLink : NSObject
 {
   IBOutlet id name;
   IBOutlet id link;
   IBOutlet id savebutton;
+  NSFileManager *manager;
   
 }
 
+- (instancetype) init;
 - (void) applicationDidFinishLaunching: (NSNotification *)aNotif;
 - (void) awakeFromNib;
 - (void) textDidChange: (NSNotification *)notification;
@@ -42,6 +40,8 @@ id getFavPath();
 - (IBAction) save: (id)sender;
 - (IBAction) reset: (id)sender;
 - (IBAction) open: (id)sender;
+- (BOOL) checkDirectory: (NSString *) dir;
+- (NSString*) favPath;
 
 @end
 

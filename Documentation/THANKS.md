@@ -21,4 +21,4 @@ I think about:
   - Ondrej Florian for [GSDE](https://github.com/onflapp/gs-desktop)
   - Sergii Stoian for [NEXTSPACE](https://github.com/trunkmaster/nextspace).
 
-  I hope to have mentioned everybody or communities.
+I hope to have mentioned everybody or communities.

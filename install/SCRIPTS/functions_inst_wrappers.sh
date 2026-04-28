@@ -23,6 +23,7 @@ function install_wrapper
 WRAP=$1
 DEP=${2}
 APPNAME=${WRAP}
+INSTALL_DIR=$(gnustep-config --variable=GNUSTEP_LOCAL_APPS)
 
 STR="Installing the wrapper for $APPNAME"
 subtitulo
@@ -47,7 +48,7 @@ cd ${RPI_TOOLS}
 
 for WRAP in *.app
 do
-        APPNAME=${WRAP%.app}
+    APPNAME=${WRAP%.app}
 	STR="Installing the wrapper for $APPNAME"
 	subtitulo
 
@@ -55,12 +56,11 @@ do
 	"Rpi-imager")
 		remove_ifx_app $APPNAME
 		cd ${RPI_TOOLS}
-	        sudo cp -a ${APPNAME}.app $INSTALL_DIR/
-		move_to_tools $APPNAME;;
+	    sudo cp -a ${APPNAME}.app $INSTALL_DIR/;;
 	*)
-	        sudo cp -a ${APPNAME}.app $INSTALL_DIR/;;
+	    sudo cp -a ${APPNAME}.app $INSTALL_DIR/;;
 	esac
-        check $APPNAME
+    check $APPNAME
 done
 cd $_PWD
 }

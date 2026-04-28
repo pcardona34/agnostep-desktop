@@ -26,6 +26,7 @@ If you successflly tested your hardware, let me know.
 
 - ACER 57e **17"** HD: 1080p mode (1920x1080)
 - Apple **15"** monitor: see Laptop above.
+- HP **M22f** monitor HD: 1920x1080. 
 
 ### Printer and scanner
 

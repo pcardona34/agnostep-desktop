@@ -1,0 +1,32 @@
+<document>
+
+<header>
+<title>Pass</title>
+</header>
+
+<plain name="Cover">
+
+<center><img src="banniere_Pass.tiff"></center>
+
+<left>	
+<information>
+Pass provides a frontend to the Unix Password Manager. 
+<br />It provides also this help to set or to migrate your passwords database.
+</information>
+
+<caution>
+(c) 2025-2026 Patrick Cardona. This project is a Free Software provided under the GNU Public Licence (GPL).
+</caution>
+
+<note>
+Site: <url>https://github.com/pcardona34/agnostep</url>&nbsp;
+<br />Please, post there any issue.
+</note>
+</left>
+</plain>
+
+<chapter src="Setting.xlp" name="Setting Your Passwords Store"></chapter>
+<chapter src="Using.xlp" name="Using Pass"></chapter>
+<chapter src="Migrate.xlp" name="How to migrate your Passwords Store"></chapter>
+
+</document>

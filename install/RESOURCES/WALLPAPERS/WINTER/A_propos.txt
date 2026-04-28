@@ -1,0 +1,14 @@
+Wallpapers
+==================
+
+Winter Serie
+========
+
+The winter_*.jpg serie are my own, which are original pictures of my country, placed under CC-By-NC.
+This note must remain within this folder.
+
+Size
+===
+
+All these wallpapers were sized or croped to fit the HD size: 1920x1080
+They serve in the wprotate script.

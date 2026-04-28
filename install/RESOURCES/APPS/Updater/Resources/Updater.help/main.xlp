@@ -1,0 +1,31 @@
+<document>
+
+<header>
+<title>Updater</title>
+</header>
+
+<plain name="Cover">
+
+<center><img src="banniere_Updater.tiff"></center>
+
+<left>	
+<information>
+Updater is a Debian packages Updater.
+<br>It retrieves info about available updates
+<br>and allow the current user to perform the upgrades. 
+</information>
+
+<caution>
+(c) 2026 Patrick Cardona. This project is a Free Software provided under the GNU Public Licence (GPL).<br>It is part of Agnostep Desktop Project.
+</caution>
+
+<note>
+Site: <url>https://github.com/pcardona34/agnostep-desktop</url>&nbsp;
+<br />Please, post there any issue.
+</note>
+</left>
+</plain>
+
+<chapter src="Updater.xlp" name="Debian Updater"></chapter>
+
+</document>

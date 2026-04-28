@@ -18,40 +18,8 @@
 ### Repo/release: svn savannah gap ported-apps Games
 ######################################
 
-function move_to_games
-{
-APPNAME="$1"
-if [ -z "$APPNAME" ];then
-	exit 1
-fi
 
-LG=${LANG:0:2}
-case "$LG" in
-"fr")
-	GAMES=Jeux;;
-"en"|*)
-	GAMES=Games;;
-esac
-
-APP_DIR=$(gnustep-config --variable=GNUSTEP_LOCAL_APPS)
-if [ -z "$APP_DIR" ];then
-	alert "Your GNUstep System seems misconfigured."
-	exit 1
-fi
-
-GAME_DIR=${APP_DIR}/${GAMES}
-
-if [ ! -d ${GAME_DIR} ];then
-	sudo mkdir -p ${GAME_DIR}
-fi
-
-sudo mv ${APP_DIR}/${APPNAME}.app ${GAME_DIR}/
-cd ${APP_DIR}
-cd ../Tools
-sudo ln --force --symbolic ${GAME_DIR}/${APPNAME}.app
-sudo ln --force --symbolic ${GAME_DIR}/${APPNAME}.app/${APPNAME}
-cd $_PWD
-}
+############# - C - ##################################
 
 function install_chess
 {
@@ -77,23 +45,25 @@ clear
 subtitulo
 ok "$APPNAME fetched"
 
-CHECK=""
+CHECK="YES"
 _build
-move_to_games $APPNAME
-check $APPNAME
+#move_to_games $APPNAME
+#check $APPNAME
 sleep $SLEEP
 }
 
+##################### - F - ######################
+
 ##################################################
-## Gomoku
-### Repo/Release: github/pcardona34/Gomoku: 1.2.9
+## Freecell
+### Repo/Release: github/alexmyczko/Freecell.app: 0.1
 ##################################################
 
-function install_gomoku
+function install_freecell
 {
 clear
-APPNAME="Gomoku"
-REL="1.2.9"
+APPNAME="Freecell"
+REL="0.1"
 
 STR="$APPNAME $REL"
 subtitulo
@@ -101,24 +71,27 @@ subtitulo
 cd ../build || exit 1
 
 printf "Fetching...\n"
-if [ -d Gomoku ];then
-	cd Gomoku
+if [ -d Freecell.app ];then
+	cd Freecell.app
 	git pull origin master
 else
-	git clone https://github.com/pcardona34/Gomoku.git
-	cd Gomoku
+	git clone https://github.com/alexmyczko/Freecell.app.git
+	cd Freecell.app
 fi
 clear
 subtitulo
 ok "$APPNAME fetched"
 
-CHECK=""
+CHECK="YES"
 _build
-move_to_games $APPNAME
-check $APPNAME
+#move_to_games $APPNAME
+#check ${APPNAME}
 sleep $SLEEP
 }
 
+
+
+##################### - G - ######################
 
 ##################################################
 ## GHack
@@ -156,59 +129,102 @@ ok "$APPNAME fetched"
 cd ghack/$APPNAME || exit 1
 cp $_PWD/RESOURCES/ICONS/Ghack.tiff ./Resources/
 
-CHECK=""
+CHECK="YES"
 _build
-move_to_games $APPNAME
-check $APPNAME
+#move_to_games $APPNAME
+#check $APPNAME
 sleep $SLEEP
 }
 
+#######################################
+## GMastermind
+### Repo: savannah/gap
+#######################################
 
-##################################
-## LapisPuzzle
-### Repo/Release:
-
-function install_lapis
+function install_gmastermind
 {
 clear
-APPNAME="LapisPuzzle"
-REL="1.2"
+APPNAME="GMastermind"
+#REL=""
 
-STR="$APPNAME $REL"
+STR="$APPNAME"
 subtitulo
 
 cd ../build || exit 1
 
+### Dependency
+### None
+
 printf "Fetching...\n"
-if [ -d LapisPuzzle-1.2 ];then
-	cd LapisPuzzle-1.2
+if [ -d GMastermind ];then
+        cd GMastermind
+        svn update
 else
-	fetch http://mirror.easyname.at/nongnu/gap/LapisPuzzle-1.2.tar.gz
-	gunzip --force LapisPuzzle-1.2.tar.gz
-	tar -xf LapisPuzzle-1.2.tar
-	cd LapisPuzzle-1.2 || exit 1
+        svn co svn://svn.savannah.nongnu.org/gap/trunk/user-apps/Games/GMastermind
+        cd GMastermind
 fi
 clear
 subtitulo
 ok "$APPNAME fetched"
 
-CHECK=""
+CHECK="YES"
 _build
-move_to_games $APPNAME
-check $APPNAME
+#move_to_games $APPNAME
+#check $APPNAME
 sleep $SLEEP
 }
 
-##################################################
-## Freecell
-### Repo/Release: github/alexmyczko/Freecell.app: 0.1
-##################################################
 
-function install_freecell
+
+#######################################
+## GMines
+### Repo: savannah/gap
+#######################################
+
+function install_gmines
 {
 clear
-APPNAME="Freecell"
-REL="0.1"
+APPNAME="GMines"
+#REL=""
+
+STR="$APPNAME"
+subtitulo
+
+cd ../build || exit 1
+
+### Dependency
+### None
+
+printf "Fetching...\n"
+if [ -d GMines ];then
+        cd GMines
+        svn update
+else
+        svn co svn://svn.savannah.nongnu.org/gap/trunk/user-apps/Games/GMines
+        cd GMines || exit 1
+fi
+clear
+subtitulo
+ok "$APPNAME fetched"
+
+CHECK="YES"
+_build
+#move_to_games $APPNAME
+#check $APPNAME
+sleep $SLEEP
+}
+
+
+##################################################
+## Gomoku
+### Repo/Release: github/pcardona34/Gomoku: 1.2.9
+##################################################
+
+function install_gomoku
+{
+clear
+APPNAME="Gomoku"
+REL="1.2.9"
 
 STR="$APPNAME $REL"
 subtitulo
@@ -216,23 +232,24 @@ subtitulo
 cd ../build || exit 1
 
 printf "Fetching...\n"
-if [ -d Freecell.app ];then
-	cd Freecell.app
+if [ -d Gomoku ];then
+	cd Gomoku
 	git pull origin master
 else
-	git clone https://github.com/alexmyczko/Freecell.app.git
-	cd Freecell.app
+	git clone https://github.com/pcardona34/Gomoku.git
+	cd Gomoku
 fi
 clear
 subtitulo
 ok "$APPNAME fetched"
 
-CHECK=""
+CHECK="YES"
 _build
-move_to_games $APPNAME
-check ${APPNAME}
+#move_to_games $APPNAME
+#check $APPNAME
 sleep $SLEEP
 }
+
 
 ######################################
 ## GShisen
@@ -262,12 +279,56 @@ clear
 subtitulo
 ok "$APPNAME fetched"
 
-CHECK=""
+CHECK="YES"
 _build
-move_to_games $APPNAME
-check $APPNAME
+#move_to_games $APPNAME
+#check $APPNAME
 sleep $SLEEP
 }
+
+################### - J - ###################
+
+#######################################
+## Jigsaw
+### Repo: savannah/gap
+#######################################
+
+function install_jigsaw
+{
+clear
+APPNAME="Jigsaw"
+#REL=""
+
+STR="$APPNAME"
+subtitulo
+
+cd ../build || exit 1
+
+### Dependency
+### None
+
+printf "Fetching...\n"
+if [ -d Jigsaw ];then
+        cd Jigsaw
+        svn update
+else
+        svn co svn://svn.savannah.nongnu.org/gap/trunk/user-apps/Games/Jigsaw
+        cd Jigsaw || exit 1
+fi
+clear
+subtitulo
+ok "$APPNAME fetched"
+
+CHECK="YES"
+_build
+#move_to_games $APPNAME
+#check $APPNAME
+sleep $SLEEP
+}
+
+
+################### - L - ###################
+
 
 #######################################
 ## Ladder
@@ -305,164 +366,50 @@ clear
 subtitulo
 ok "$APPNAME fetched"
 
-CHECK=""
+CHECK="YES"
 _build
-move_to_games $APPNAME
-check $APPNAME
+#move_to_games $APPNAME
+#check $APPNAME
 sleep $SLEEP
 }
 
-#######################################
-## Jigsaw
-### Repo: savannah/gap
-#######################################
 
-function install_jigsaw
+##################################
+## LapisPuzzle
+### Repo/Release:
+
+function install_lapis
 {
 clear
-APPNAME="Jigsaw"
-#REL=""
+APPNAME="LapisPuzzle"
+REL="1.2"
 
-STR="$APPNAME"
+STR="$APPNAME $REL"
 subtitulo
 
 cd ../build || exit 1
 
-### Dependency
-### None
-
 printf "Fetching...\n"
-if [ -d Jigsaw ];then
-        cd Jigsaw
-        svn update
+if [ -d LapisPuzzle-1.2 ];then
+	cd LapisPuzzle-1.2
 else
-        svn co svn://svn.savannah.nongnu.org/gap/trunk/user-apps/Games/Jigsaw
-        cd Jigsaw || exit 1
+	fetch http://mirror.easyname.at/nongnu/gap/LapisPuzzle-1.2.tar.gz
+	gunzip --force LapisPuzzle-1.2.tar.gz
+	tar -xf LapisPuzzle-1.2.tar
+	cd LapisPuzzle-1.2 || exit 1
 fi
 clear
 subtitulo
 ok "$APPNAME fetched"
 
-CHECK=""
+CHECK="YES"
 _build
-move_to_games $APPNAME
-check $APPNAME
+#move_to_games $APPNAME
+#check $APPNAME
 sleep $SLEEP
 }
 
-#######################################
-## GMines
-### Repo: savannah/gap
-#######################################
-
-function install_gmines
-{
-clear
-APPNAME="GMines"
-#REL=""
-
-STR="$APPNAME"
-subtitulo
-
-cd ../build || exit 1
-
-### Dependency
-### None
-
-printf "Fetching...\n"
-if [ -d GMines ];then
-        cd GMines
-        svn update
-else
-        svn co svn://svn.savannah.nongnu.org/gap/trunk/user-apps/Games/GMines
-        cd GMines || exit 1
-fi
-clear
-subtitulo
-ok "$APPNAME fetched"
-
-CHECK=""
-_build
-move_to_games $APPNAME
-check $APPNAME
-sleep $SLEEP
-}
-
-#######################################
-## Sudoku
-### Repo: savannah/gap
-#######################################
-
-function install_sudoku
-{
-clear
-APPNAME="Sudoku"
-#REL=""
-
-STR="$APPNAME"
-subtitulo
-
-cd ../build || exit 1
-
-### Dependency
-### None
-
-printf "Fetching...\n"
-if [ -d Sudoku ];then
-        cd Sudoku
-        svn update
-else
-        svn co svn://svn.savannah.nongnu.org/gap/trunk/user-apps/Games/Sudoku
-        cd Sudoku
-fi
-clear
-subtitulo
-ok "$APPNAME fetched"
-
-CHECK=""
-_build
-move_to_games $APPNAME
-check $APPNAME
-sleep $SLEEP
-}
-
-#######################################
-## GMastermind
-### Repo: savannah/gap
-#######################################
-
-function install_gmastermind
-{
-clear
-APPNAME="GMastermind"
-#REL=""
-
-STR="$APPNAME"
-subtitulo
-
-cd ../build || exit 1
-
-### Dependency
-### None
-
-printf "Fetching...\n"
-if [ -d GMastermind ];then
-        cd GMastermind
-        svn update
-else
-        svn co svn://svn.savannah.nongnu.org/gap/trunk/user-apps/Games/GMastermind
-        cd GMastermind
-fi
-clear
-subtitulo
-ok "$APPNAME fetched"
-
-CHECK=""
-_build
-move_to_games $APPNAME
-check $APPNAME
-sleep $SLEEP
-}
+################## - N - #####################
 
 
 #######################################
@@ -497,11 +444,96 @@ ok "$APPNAME fetched"
 ### Updating the GoBan background
 cp -f ${_PWD}/${BG} ./Source/Background.tiff
 
-CHECK=""
+CHECK="YES"
 _build
-move_to_games $APPNAME
-check $APPNAME
+#move_to_games $APPNAME
+#check $APPNAME
 sleep $SLEEP
 }
 
 #############################################
+
+
+################## - S - #####################
+
+
+#######################################
+## Sudoku
+### Repo: savannah/gap
+#######################################
+
+function install_sudoku
+{
+clear
+APPNAME="Sudoku"
+#REL=""
+
+STR="$APPNAME"
+subtitulo
+
+cd ../build || exit 1
+
+### Dependency
+### None
+
+printf "Fetching...\n"
+if [ -d Sudoku ];then
+        cd Sudoku
+        svn update
+else
+        svn co svn://svn.savannah.nongnu.org/gap/trunk/user-apps/Games/Sudoku
+        cd Sudoku
+fi
+clear
+subtitulo
+ok "$APPNAME fetched"
+
+CHECK="YES"
+_build
+#move_to_games $APPNAME
+#check $APPNAME
+sleep $SLEEP
+}
+
+
+
+
+#############################################
+######### OBSOLETE ##########################
+#############################################
+
+function move_to_games
+{
+APPNAME="$1"
+if [ -z "$APPNAME" ];then
+	exit 1
+fi
+
+LG=${LANG:0:2}
+case "$LG" in
+"fr")
+	GAMES=Jeux;;
+"en"|*)
+	GAMES=Games;;
+esac
+
+APP_DIR=$(gnustep-config --variable=GNUSTEP_LOCAL_APPS)
+if [ -z "$APP_DIR" ];then
+	alert "Your GNUstep System seems misconfigured."
+	exit 1
+fi
+
+GAME_DIR=${APP_DIR}/${GAMES}
+
+if [ ! -d ${GAME_DIR} ];then
+	sudo mkdir -p ${GAME_DIR}
+fi
+
+sudo mv ${APP_DIR}/${APPNAME}.app ${GAME_DIR}/
+cd ${APP_DIR}
+cd ../Tools
+sudo ln --force --symbolic ${GAME_DIR}/${APPNAME}.app
+sudo ln --force --symbolic ${GAME_DIR}/${APPNAME}.app/${APPNAME}
+cd $_PWD
+}
+
