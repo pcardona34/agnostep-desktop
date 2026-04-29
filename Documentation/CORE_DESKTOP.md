@@ -24,7 +24,7 @@ Some apps and tools are launched with the 'autostart' script of Window Maker, ot
 - SimpleAgenda
 
 > [!CAUTION]
-> GWorkspace is launched a main xinit process form the `.xinitrc`/`.xsession` script. So the **logout** command is more consistent because GWorkspace send a Terminate message to all the running GNUsstep applications, and then it terminates itself, which ends the X session.
+> GWorkspace is launched aa the main xinit process from the `.xinitrc`/`.xsession` script. So the **logout** command is more consistent because GWorkspace send a *Terminate* message to all the running GNUsstep applications, and then it terminates itself, which ends the X session.
 
 #### Auto-started commands
 
@@ -41,7 +41,7 @@ It only starts:
 ### The Workspace
 
 - In the NeXT/OPENSTEP world, the *Workspace* is the main component: we use **GWorkspace** (release 1.1.0): the GNUstep implementation of the Workspace.  
-It provides a Desktop layer, a FileViewer, a Finder panel, a Recycler, and, wether you choose the Conky flavour, its own Dock.
+It provides a Desktop layer, a FileViewer, a Finder panel, a Recycler.
 
 ### Some apps provided with the Core Desktop
 
