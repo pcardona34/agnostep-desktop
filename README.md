@@ -10,9 +10,9 @@ It provides also a **new** in purpose **Theme** mainly inspired by the [Papirus]
 
 It is provided under the [GNU Public License](LICENSE.txt).
 
-## Screenshots
+## Screenshot
 
-AGNostep-desktop with AGNOSTEP-theme: Next style menu and WORLD wallpapers collection: SimpleAgenda and GWorkspace at launch time.
+AGNostep-desktop with AGNOSTEP theme: i.e., NeXT style menu and MALLORCA wallpapers collection: SimpleAgenda and GWorkspace at launch time. Inside the Clip: the Clip itself, Meteo, AClock, UpMem, TimeMon, wmnd, Updater, Birthday, wmudmount, OpenDisk and Launcher. Inside the Dock, WPrefs, GWorkspace, SimpleAgenda, Terminal, Ink, GNUMail, ScreenLock, Pass, Mixer and the Recycler.
 
 ![AGNoStep-Desktop](Screenshots/Agnostep_2.jpg)
 
@@ -37,7 +37,7 @@ It is like the [Ports Collections](https://www.lpthe.jussieu.fr/~talon/freebsdpo
 
 ## An expandable collection of applications
 
-When the Core Desktop is installed, you can expand it with the ports collections: AGNoStep provides a useful tool, the **AgnostepManager** which will simplify all the installation tasks.  
+When the Core Desktop is installed, you can expand it with the ports collections: AGNoStep provides a useful tool, the **AgnostepManager** (see screenshot below) which will simplify all the installation tasks.  
 It allows to select some ports and to build them easily:
 
 ![AgnostepManager](Screenshots/AgnostepManager.jpg)
