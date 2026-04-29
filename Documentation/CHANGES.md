@@ -19,7 +19,7 @@ This is a **major release** with many changes and improvements.
 - **Settings** stage is more consistent: by example, the *laptop* test has been removed from theming to be executed while setting the X session...
 - Thanks to the enhancements of *HelpViewer*, Help Folder has been removed because now all the help bundles will be installed at compile time for each relevant application: read [HELP](HELP.md) to search a particular help topic. This closes issue #9.
 - Deprecated Subcategories in the Applications folder have been removed. We get back a flat organization which is more efficient with built-in first-letter filter. **Launcher** app is a shortcut to open the Applications folder.
-- Theming has been provided again with the core repo of the project: [agnostep-theme](../../../agnostep-theme) has been simplifed to collect only ARTS backup.
+- Theming has been provided again with the core repo of the project: [agnostep-theme](../../../../agnostep-theme) has been simplifed to collect only ARTS backup.
 - A new collection of wallpapers for the rotate utility has been added: *Mallorca*.
 - Now, the wallpaper will be handled by the Window Manager instead of GWorkspace. This choice permitted namely to fix issue #14, also thanks to the latest code of GWorkspace updated by Riccardo Mottola. 
 
