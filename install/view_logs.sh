@@ -29,17 +29,6 @@ else
 fi
 }
 
-function view_theme_log
-{
-. ../build/agnostep-theme/install/SCRIPTS/log.sh
-if [ -f $LOG ];then
-	clear
-	less $LOG
-else
-	clear;warning "No log available."
-fi
-}
-
 function clear_logs
 {
 for LOG in /var/log/agno*.log
@@ -55,7 +44,6 @@ dialog --no-shadow --backtitle "Agnostep Desktop and Theme Logs" \
  --menu "
  " 12 66 2 \
 "Desktop" "Read Log of the Desktop Installation" \
-"Theme" "Read Log of the Theme Installation" \
 "Clear" "Clear all the logs" 2>> $FICHTEMP
 
 # Answer?
@@ -64,7 +52,6 @@ if [ $? -eq 0 ];then
 	do
 		case $i in
 			"Desktop") view_desktop_log;;
-			"Theme") view_theme_log;;
 			"Clear") clear_logs;;
 		esac
 	done

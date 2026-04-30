@@ -81,7 +81,7 @@ ok "Done"
 ## Build GNUstep base
 function install_base
 {
-STR="Building Fundation: GNUstep Base..."
+STR="Building Foundation: GNUstep Base..."
 subtitulo
 
 cd base || exit 1
@@ -184,7 +184,7 @@ subtitulo
 
 local _COUNT=0
 
-grep -e " Error " $LOG &>/dev/null
+grep -v -e " (ignor" $LOG | grep -e " Error " &>/dev/null
 if [ $? -eq 0 ];then
 	_COUNT=$(( $_COUNT + 1 ))
 fi
@@ -194,7 +194,7 @@ if [ $? -eq 0 ];then
 fi
 
 if [ ${_COUNT} -ne 0 ];then
-	alert "GNUstep installation has generated ${_COUNT} errors: check the logs in your home directory."
+	alert "GNUstep installation has generated ${_COUNT} errors: check the logs."
 	exit 1
 else
 	info "GNUstep installation was successful. You can go forward."
