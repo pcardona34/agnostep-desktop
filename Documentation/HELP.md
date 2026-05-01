@@ -4,7 +4,7 @@ Since release 2.0.0, help bundles are provided within the relevant applications.
 
 - **HelpViewer** application has been installed with Core Apps.
 
-### Where to find help about some subject?
+### Where to find help about some topic?
 
 #### -A-
 
