@@ -23,8 +23,8 @@ Some apps and tools are launched with the 'autostart' script of Window Maker, ot
 - wmudmount
 - SimpleAgenda
 
-> [!CAUTION]
-> GWorkspace is launched aa the main xinit process from the `.xinitrc`/`.xsession` script. So the **logout** command is more consistent because GWorkspace send a *Terminate* message to all the running GNUsstep applications, and then it terminates itself, which ends the X session.
+> [!IMPORTANT]
+> GWorkspace is launched as the main xinit process from the `.xinitrc`/`.xsession` script. So the **logout** command is more consistent because GWorkspace send a *Terminate* message to all the running GNUstep applications, and then it terminates itself, which ends the X session.
 
 #### Auto-started commands
 
