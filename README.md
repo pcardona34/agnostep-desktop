@@ -88,7 +88,7 @@ From the main menu:
 2. Install the **Core Desktop**: item  'Core'.
 1. Install the **Core apps**: item 'Apps'.
 1. Set the X session for the user with **Settings**.
-1. Choose **Theming**if you want to apply another theme that the default GNUstep: until now, only AGNOSTEP theme is available.
+1. Choose **Theming** if you want to apply another theme that the default GNUstep: until now, only AGNOSTEP theme is available.
 
 > [!TIP]
 > If you want to get back the GNUstep default theme, when the question about the default Theme will be asked, answer 'No'.
