@@ -1,5 +1,5 @@
 {
-    ApplicationDescription = "Open the media folder where removable disks are mounted.";
+    ApplicationDescription = "Opens the Applications folder";
     ApplicationName = Launcher;
     ApplicationRelease = "0.1";
     Authors = (

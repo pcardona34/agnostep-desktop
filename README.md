@@ -47,6 +47,10 @@ It allows to select some ports and to build them easily:
 - **Utilities**: see [UTILITIES](Documentation/UTIL.md)
 - GNUstep **Games** collection: see [GAMES List](Documentation/GAMES.md).
 - **Wrappers** to include non native GNUstep to work within the Workspace: see [WRAPPERS List](Documentation/WRAPPERS.md). Among these wrappers, you will find *utilities*:
+
+Below, the **Launcher** utility: just press Shift and type the first letter of an app to move quickly the selector: 
+
+![AgnostepManager](Screenshots/Launcher.png)
  
 ## At the Edge and with consistency
 
