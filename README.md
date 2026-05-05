@@ -81,10 +81,10 @@ Read [INSTALL](Documentation/INSTALL.md) first to understand all the stages.
 Quick way: on a fresh minimal Debian Trixie (13.x) on a computer wired to Internet, clone this repo and then execute:
 
 ```console	
-	./agnostep.sh
+	./agnowiz.sh
 ```
 
-It will show up **AgnostepManager**.
+It will show up **Agnostep Wizard**.
 
 From the main menu:
 
@@ -103,10 +103,10 @@ Then try it with:
 	cd && startx
 ```
 
-If all is right and expected, logout the desktop and run again `AgnostepManager`:
+If all is right and expected, logout the desktop and run again `Agnostep Wizard`:
 
 ```console	
-	./agnostep.sh
+	./agnowiz.sh
 ```
 
 From the main menu, choose **"DM"** item to install the Display Manager.

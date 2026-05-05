@@ -1,0 +1,26 @@
+# dunstrc for agnostep desktop
+
+[global]
+
+origin = top-center
+offset = (0, 80)
+frame_width = 0
+font = "Monospace 10"
+show_age_threshold = -1
+corner_radius = 10
+corners = all
+
+[urgency_low]
+background = "#000000"
+foreground = "#ffff00"
+timeout = 3
+
+[urgency_normal]
+background = "#59597E"
+foreground = "#ffffff"
+timeout = 6
+
+[urgency_critical]
+background = "#ff0000"
+foreground = "#ffffff"
+timeout = 0

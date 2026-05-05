@@ -2,5 +2,5 @@
 
 ### Notifications
 systemctl --user import-environment DISPLAY
-pgrep dunst || dunst &
+pgrep dunst || dunst -conf $HOME/.config/dunstrc &
 sleep 2 && /usr/local/bin/loading.sh &

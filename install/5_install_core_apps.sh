@@ -61,3 +61,6 @@ if [ ! -d $APPS_DIR/GWorkspace.app ];then
 else
 	. SCRIPTS/inst_core_apps.sh
 fi
+
+info "Core Apps have been installed. You should now execute stage 6: Settings"
+

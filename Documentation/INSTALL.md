@@ -5,7 +5,7 @@
 ### CAUTION!
 
 > [!CAUTION]
-> NEVER install any related GNUstep debian package: this would conflict with the GNUstep System built by AGNoStep and break your System. To install something, use ever AgnostepManager.
+> NEVER install any related GNUstep debian package: this would conflict with the GNUstep System built by AGNoStep and break your System. To install something, use ever Agnostep Wizard or Manager.
 > In the console: `./agnostep.sh` or `agnostep --am` (after first install).
 > Within the Desktop: `Applications / AgnostepManager.app`.
 
@@ -55,7 +55,7 @@ Otherwise, add the current user to the 'sudo' group.
 	git clone https://github.com/pcardona34/agnostep-desktop
 ```
 	
-### Start Main AGNoStep menu
+### Start AGNoStep Wizard
 
 ```console
 	cd agnostep-desktop
@@ -70,22 +70,23 @@ Otherwise, add the current user to the 'sudo' group.
 - Now you are ready to execute the main AgnostepManager script:
 
 ```console
-	./agnostep.sh
+	./agnowiz.sh
 ```
 
-The first time, you should run from the above menu these four items in this order:
+The first time, you should run from the above menu these items in this order:
 
 1. Prep: set the locale,update the system, install needed tools.
 1. Core: will install the Core Desktop.
 1. Apps: will install all the Core Apps: the first time, il will install some wrappers too.
 1. Settings: will set and prepare the X session...
+1. Theming: to apply the AGNOSTEP theme. 
 1. DM: will install the Display Manager.
 
-You can view progress and info messages while AGNoStep is installing.
+You can view progress and info messages while AGNoStep Wizard is installing.
 After several minutes, you should be able to start the AGNoStep Desktop:
 
 - With `startx` (after stage 4) 
-- From `Lightdm` graphical Login (after stage 5). 
+- From `Lightdm` graphical Login (after stage 6). 
 
 > [!TIP]
 > After the Display Manager has been set, if you need to use CLI again, use TTY2 to log into the console: `CTRL-ALT-F2`.  
@@ -95,7 +96,7 @@ After several minutes, you should be able to start the AGNoStep Desktop:
 
 ## Theming your Desktop
 
-By default, Agnostep Desktop has been installed with default GNUstep theme. To use the in purpose AGNOSTEP theme, run `AgnostepManager` and select **Theming** item.
+By default, Agnostep Desktop has been installed with default GNUstep theme. To use the in purpose AGNOSTEP theme, run `Agnostep Wizard` from a TTY session and select **Theming** item.
 
 ---
 
@@ -156,7 +157,7 @@ try the following alternative manual stages to be able to note the issue concern
 
 ```console
 	cd ~/SOURCES/agnostep-desktop
-	./agnostep.sh
+	./agnowiz.sh
 ```
 
 - Choose item "Settings" from the menu.
@@ -188,7 +189,7 @@ Logout the Desktop if you want to Change **Core Desktop** or **Settings** compon
 
 Then:
 
-1. From the menu, choose the software category: Core, Extra Apps, Developer, Games, Utilities...
+1. From the menu, choose the software category: **Core** Apps, **Extra** Apps, **Developer** env, **Games**, **Utilities**...
 1. Use then item **theming** to apply the theme to newly installed apps.
 
 > [!TIP]

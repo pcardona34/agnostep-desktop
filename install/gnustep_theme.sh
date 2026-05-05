@@ -77,14 +77,24 @@ cd $_PWD
 ### Setup GWorkspace...
 cat RESOURCES/MINSET/org.gnustep.GWorkspace.template | sed s/patrick/${USER}/g >> RESOURCES/MINSET/org.gnustep.GWorkspace.plist
 mv RESOURCES/MINSET/org.gnustep.GWorkspace.plist $HOME/GNUstep/Defaults/
-defaults write NSGlobalDomain GSTheme GNUstep
-setstyle RESOURCES/STYLES/Tradition.style
 
 ### Removing themed plist of TimeMon and AClock
 for PLIST in org.gap.AClock TimeMon
 do
 	rm --force $HOME/GNUstep/Defaults/${PLIST}.plist
 done
+
+### Defaults
+for DEF in RESOURCES/MINSET/*.plist
+do
+    cp $DEF $HOME/GNUstep/Defaults/
+done
+
+defaults write NSGlobalDomain GSTheme GNUstep
+if [ ! -f $HOME/GNUstep/Defaults/WindowMaker ];then
+    cp RESOURCES/MINSET/WindowMaker $HOME/GNUstep/Defaults/WindowMaker
+fi
+setstyle RESOURCES/STYLES/Tradition.style
 
 ### Retrieving default Clip icon and WMWindowAttributes
 if [ -f $HOME/GNUstep/Library/Icons/clip.tiff ];then
@@ -96,12 +106,17 @@ fi
 if [ -d $HOME/GNUstep/Library/WindowMaker/CachedPixmaps ];then
 	cd $HOME/GNUstep/Library/WindowMaker
 	rm -r CachedPixmaps
-	cd $_PWD/RESOURCES/MINSET
-	cp -r CachedPixmaps $HOME/GNUstep/Library/WindowMaker/
-	cd $_PWD
 fi
 
-### Cleaning theming folders
+if [ ! -d $HOME/GNUstep/Library/WindowMaker ];then
+    mkdir -p $HOME/GNUstep/Library/WindowMaker
+fi
+
+cd $_PWD/RESOURCES/MINSET
+cp -r CachedPixmaps $HOME/GNUstep/Library/WindowMaker/
+cd $_PWD
+
+### Reinitialising themed folders
 LG=${LANG:0:2}
 case "$LG" in
 fr)
@@ -124,15 +139,17 @@ info "The default GNUstep theme will apply.\n"
 sleep $SLEEP
 minimal_setting
 
-
 #######################################
 
-MESSAGE="GNUstep Default Theme has been set."
+if [ -z "$SINGLE_THEME" ];then
 
-info "$MESSAGE"
+    MESSAGE="GNUstep Default Theme has been set."
 
-warning "If you are not using a Display Manager, You need to logout and login again to apply the changes..."
-MSG="Seconds before logout: "
-DELAY=6
-timer
-exec SCRIPTS/lo.sh
+    info "$MESSAGE"
+
+    warning "If you are not using a Display Manager, You need to logout and login again to apply the changes..."
+    MSG="Seconds before logout: "
+    DELAY=6
+    timer
+    exec SCRIPTS/lo.sh
+fi

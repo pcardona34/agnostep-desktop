@@ -9,6 +9,10 @@ fi
 WPRCONF=$HOME/.config/agnostep/wprotate.conf
 if [ -f $WPRCONF ];then
 	/usr/local/bin/wprotate.sh &
+else
+    if [ -f $HOME/GNUstep/Library/WindowMaker/Backgrounds/fond_agnostep.png ];then
+        wmsetbg --smooth -u fond_agnostep.png
+    fi
 fi
 
 if [ -f $HOME/.Xresources ];then
@@ -24,6 +28,6 @@ setxkbmap -model pc105 -layout fr -variant oss &
 ### Window Manager
 /usr/bin/wmaker &
 
-sleep 4
+sleep 5
 
 exec /System/Tools/openapp GWorkspace

@@ -10,9 +10,8 @@
 ####################################################
 
 ################################
-### Agnostep main script and menu
-### To handle applications
-### installation
+### Agnostep install Wizard
+### To handle install, post-install
 ################################
 
 ################################
@@ -58,25 +57,23 @@ function main_menu
 {
 . $HOME/.local/etc/release.info
 if [ -z "$DISPLAY" ];then
-	BACK="AGNoStep Manager $REL $STATUS"
+	BACK="AGNoStep Wizard $REL $STATUS"
 else
-	BACK="AGNoStep $REL $STATUS"
+	BACK="Wizard $REL $STATUS"
 fi
 
 dialog --no-shadow --backtitle "${BACK}" \
- --title "Applications and Resources Manager" \
+ --title "Installation helper" \
  --menu "
+First time: prepare, then install Core, Apps, Settings and DM.
 
 What to do now?" 21 66 21 \
+"Prep" "Prepare the installation" \
+"Core" "Install Core Desktop" \
 "Apps" "Install Core Apps" \
-"Devel" "Install Developer Apps" \
-"Extra" "Install more User Apps" \
-"Util" "Utilities" \
-"Games" "Install Games" \
-"Native" "Install Native Agnostep Apps" \
-"Dockapps" "Install Dockapps" \
-"Wrappers" "Install Wrappers" \
-"Remove" "Remove some App" \
+"Settings" "Desktop Settings" \
+"DM" "Install Display Manager" \
+"Theming" "Choose a theme" \
 "Update" "Update AGNoStep" \
 "Logs" "Desktop and Theme Logs" 2>> $FICHTEMP
 
@@ -86,33 +83,24 @@ then
 for i in `cat $FICHTEMP`
 do
 case $i in
+"Prep") printf "You chose Prep\n"
+	cd install || exit 1
+	./1_prep.sh;;
+"Core") printf "You chose: Core\n"
+	cd install || exit 1
+	./core.sh;;
 "Apps") printf "You chose: Apps\n"
 	cd install || exit 1
 	./5_install_core_apps.sh;;
-"Devel") printf "You chose: Devel\n"
+"Settings") printf "You chose: Settings\n"
 	cd install || exit 1
-	bash ./SCRIPTS/inst_devel.sh;;
-"Extra") printf "You chose Extra\n"
+	./6_desktop_settings.sh;;
+"DM") printf "You chose: DM\n"
 	cd install || exit 1
-	bash ./SCRIPTS/inst_extra.sh;;
-"Util") printf "You chose Util\n"
-	cd install || exit 1
-	bash ./SCRIPTS/inst_tools.sh;;
-"Games") printf "You chose Games\n"
-	cd install || exit 1
-	bash ./SCRIPTS/inst_games.sh;;
-"Native") printf "You chose Native\n"
-	cd install || exit 1
-	bash ./SCRIPTS/inst_native_agnostep_apps.sh;;
-"Dockapps") printf "You chose Dockapps\n"
-	cd install || exit 1
-	bash ./SCRIPTS/first_inst_dockapps.sh;;
-"Wrappers") printf "You chose Wrappers\n"
-	cd install || exit 1
-	bash ./SCRIPTS/inst_wrappers.sh;;
-"Remove") printf "You chose Remove\n"
-	cd install || exit 1
-	./remove_app.sh;;
+	./7_install_DM.sh;;
+"Theming") printf "You chose Theming\n"
+    cd install || exit 1
+    ./theming.sh;;
 "Update") printf "You chose Update\n"
 	dialog --title "Updating AGNoStep" \
 	--yesno "

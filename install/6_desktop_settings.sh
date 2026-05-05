@@ -132,6 +132,13 @@ if [ $RPI -eq 0 ];then
 	FOLDERS="$FOLDERS Bookshelf"
 fi
 
+for FOLD in ${FOLDERS}
+do
+if [ ! -d $HOME/$FOLD ];then
+    mkdir -p $HOME/$FOLD
+fi
+done
+
 ### We manage the case of existing folders in English or in French
 l18n_folder
 
@@ -239,11 +246,22 @@ stop
 STR="Default Desktop State"
 subtitulo
 
+if [ ! -d $HOME/GNUstep/Library/WindowMaker/CachedPixmaps ];then
+    mkdir -p $HOME/GNUstep/Library/WindowMaker/CachedPixmaps
+fi
+if [ ! -d $HOME/GNUstep/Defaults ];then
+    mkdir -p $HOME/GNUstep/Defaults
+fi
+
 cd RESOURCES/MINSET
 for STATE in WMState WMWindowAttributes
 do
 cp --verbose $STATE $HOME/GNUstep/Defaults/
 done
+
+STR="Cached Pixmaps"
+subtitulo
+
 cd CachedPixmaps
 cp --verbose *.xpm $HOME/GNUstep/Library/WindowMaker/CachedPixmaps/
 ok "Done"
@@ -288,36 +306,37 @@ stop
 STR="Home Bash profile"
 subtitulo
 
-cat $HOME/.bash_profile | grep -e "GNUstep.sh" &>/dev/null
-if [ $? -ne 0 ];then
-	cat RESOURCES/MINSET/_profile >> $HOME/.bash_profile
+if [ -f $HOME/.bash_profile ];then
+    cat $HOME/.bash_profile | grep -e "GNUstep.sh" &>/dev/null
+    if [ $? -ne 0 ];then
+    	cat RESOURCES/MINSET/_profile >> $HOME/.bash_profile
+    fi
+else
+	cat RESOURCES/MINSET/_profile > $HOME/.bash_profile
 fi
 ok "Done"
 sleep $SLEEP
 stop
 
 ###########################################
-printf "Loading notification script\n"
-sudo cp -u RESOURCES/SCRIPTS/loading.sh /usr/local/bin/
+STR="Loading notification script"
+subtitulo
+
+## Dunst settings
+cp --verbose RESOURCES/CONF/dunstrc $HOME/.config/dunstrc
+
+sudo cp --verbose RESOURCES/SCRIPTS/loading.sh /usr/local/bin/
 ok "Done"
 sleep $SLEEP
 
 stop
 ###########################################
-
-
-################################################ BEGIN ####
-####################################################
-####################################################
-
 ### Laptop? ###
 
 laptop-detect
 if [ $? -eq 0 ];then
     STR="Laptop detected...";subtitulo
     WMSTATE="WMState_laptop"
-    ### The line below is only relevant to theming, not here.
-    #cp $_PWD/RESOURCES/ICONS/batmon.GNUstep.xpm $HOME/GNUstep/Library/WindowMaker/CachedPixmaps/
 
     cd RESOURCES/DEFAULTS
     if [ ! -f $WMSTATE ];then
@@ -335,10 +354,11 @@ if [ $? -eq 0 ];then
 fi
 
 ####################################################
-####################################################
-################################################ END ####
+### Theming: default theme is GNUstep
+SINGLE_THEME="YES"
+. gnustep_theme.sh
 
-##################################################
+###########################################
 MESSAGE="AGNoStep common Desktop was set."
 
 info "$MESSAGE" | tee -a $LOG
@@ -396,4 +416,3 @@ else
     timer
     exec SCRIPTS/lo.sh
 fi
-

@@ -105,7 +105,7 @@ sudo ldconfig
 
 ########################
 
-info "The System is up to date.\nYou may go on with stage 2."
+info "The System is up to date.\nYou may go on with stage: Core."
 print_size
 sleep 3
 

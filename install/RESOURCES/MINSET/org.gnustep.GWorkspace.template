@@ -39,7 +39,7 @@
     <key>default_sortorder</key>
     <integer>0</integer>
     <key>defaulteditor</key>
-    <string>TextEdit.app</string>
+    <string>Ink.app</string>
     <key>defxterm</key>
     <string>Terminal.app</string>
     <key>desktopinfo</key>

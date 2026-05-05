@@ -76,6 +76,7 @@ STR="Building and installing service ${SERVICE}";subtitulo
 make clean &>/dev/null
 make && ok "Build done"
 sudo -E env PATH="$PATH:/System/Tools" make install && ok "Install done"
+make clean &>/dev/null
 sleep 2
 
 ### Default CSS for surf

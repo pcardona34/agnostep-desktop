@@ -25,10 +25,9 @@ PROTOCOL=$(echo $URL | awk -F: '{print $1}')
 TRURL=$(echo $URL | awk -F: '{print $2}')
 
 echo "Protocol: $PROTOCOL"
-wget --quiet --spider $URL
-RET=$?
+wget --spider $URL
 
-if [ $RET -eq 0 ];then
+if [ $? -eq 0 ];then
 	wget --quiet --progress=bar --show-progress -- $URL
 else
 	case "$PROTOCOL" in
