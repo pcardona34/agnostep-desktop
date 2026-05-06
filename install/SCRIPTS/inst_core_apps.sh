@@ -92,6 +92,7 @@ Check (space bar) the Applications you want to reinstall." 22 70 14 \
 "HelpViewer" "Help Viewer" off \
 "Ink" "Plain text and Rich Text Format Editor" off \
 "InnerSpace" "The GNUstep Screensaver" off \
+"Mixer" "Install complete VolumeControl" off \
 "SimpleAgenda" "A Simple Agenda to manage Events and Tasks" off \
 "SystemPreferences" "Preferences of the GNUstep System" off \
 "Terminal" "The GNUstep Terminal Emulator" off \
@@ -150,6 +151,12 @@ case "$i" in
 	remove_ifx_app "InnerSpace"
 	install_innerspace
 	update_info_plist "InnerSpace";;
+"Mixer")
+	printf "You chose VolumeControl\n"
+	remove_ifx_app "VolumeControl"
+	remove_ifx_app "Mixer"
+	install_volumecontrol
+	update_info_plist "VolumeControl";;
 "SimpleAgenda")
 	printf "You chose SimpleAgenda\n"
 	remove_ifx_app "SimpleAgenda"

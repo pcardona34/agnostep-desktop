@@ -35,6 +35,7 @@ INSTALL_DIR=$(gnustep-config --variable=GNUSTEP_LOCAL_APPS)
 . SCRIPTS/colors.sh
 . SCRIPTS/check_app.sh
 . SCRIPTS/spinner.sh
+. SCRIPTS/functions_prep.sh
 
 ### End of Include functions
 ################################
@@ -57,12 +58,19 @@ if ! [ -d $INSTALL_DIR ];then
 	exit 1
 fi
 
-for NATIVE in AgnostepManager Birthday Dico Launcher Meteo Mixer OpenDisk Pass Printer SaveLink ScreenLock Sound Updater UpMem
+for NATIVE in AgnostepManager Birthday Dico Launcher Meteo OpenDisk Pass Printer SaveLink ScreenLock Sound Updater UpMem
 do
 cd $NATIVE || exit 1
 ./install.sh
 cd ..
 done
+
+is_hw_rpi
+if [ $? -eq 0 ];then
+    cd Mixer
+    ./install.sh
+    cd ..
+fi
 
 cd ${_PWD}
 

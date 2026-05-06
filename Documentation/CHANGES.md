@@ -8,11 +8,15 @@ Do not try nor report any issue until a release is tagged Stable.
 
 ## Changes
 
+### Changes of the Release Beta 2.0.2
+
+- This is an intermediate stage while testing on amd64 laptop, namely MBPro Intel: do not use yet.
+
 ### Changes of the Release Beta 2.0.1
 
 - This release achieves 2.0.0 beta development on pi 500. Tests on amd64 and laptop yet to be done.
 - Fixed several critic install issues on a fresh install.
-- Dispatched agnostep main script to agnowiz.sh (core installation) and to agnostep.sh (applications manager).
+- Dispatched agnostep main script to **agnowiz.sh** (core installation) and to **agnostep.sh** (applications manager).
 - Tested all stages to get a strongest installation process.
 - Updated install documentation.
 

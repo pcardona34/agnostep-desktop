@@ -88,7 +88,7 @@
         AutoLaunch = No;
         Position = "0,8";
         Lock = Yes;
-        Command = "/System/Tools/openapp Mixer";
+        Command = "/System/Tools/openapp VolumeControl";
       },
       {
         Forced = No;
@@ -189,7 +189,7 @@
         AutoLaunch = No;
         Position = "0,8";
         Lock = Yes;
-        Command = "/System/Tools/openapp Mixer";
+        Command = "/System/Tools/openapp VolumeControl";
       },
       {
         Forced = No;

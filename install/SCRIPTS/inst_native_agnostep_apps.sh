@@ -40,6 +40,7 @@ trap "rm -f $FICHTEMP" EXIT
 . SCRIPTS/spinner.sh
 . SCRIPTS/size.sh
 . SCRIPTS/functions_remove_app.sh
+. SCRIPTS/functions_prep.sh
 
 ### End of Include functions
 ################################
@@ -85,7 +86,7 @@ Check the Apps you want to reinstall." 20 60 10 \
 "Dico" "French Dictionary Lookup" off \
 "Launcher" "Diplays Applications Folder" off \
 "Meteo" "A Weather dockapp" off \
-"Mixer" "ALSA simplified Mixer" off \
+"Mixer" "ALSA simplified Mixer (on RPI)" off \
 "OpenDisk" "Content of Removable Disk" off \
 "Pass" "Interface for Unix Password Manager" off \
 "Printer" "Printer settings with CUPS" off \

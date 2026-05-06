@@ -46,6 +46,7 @@ trap "rm -f $TEMPFILE" EXIT
 . SCRIPTS/std_build.sh
 . SCRIPTS/patch_with_quilt.sh
 . SCRIPTS/fetcher.sh
+. SCRIPTS/functions_prep.sh
 . SCRIPTS/functions_inst_core_apps.sh
 
 
@@ -85,6 +86,11 @@ install_innerspace
 install_simpleagenda
 install_terminal
 install_timemon
+
+is_hw_rpi
+if [ $? -ne 0 ];then
+    install_volumecontrol
+fi
 }
 
 the_apps

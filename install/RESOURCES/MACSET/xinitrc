@@ -1,0 +1,36 @@
+#!/bin/bash
+
+# Hack to avoid path issues with LightDM
+if [ -f $HOME/.xprofile ];then
+	. $HOME/.xprofile
+fi
+
+# Rotate the wallpaper?
+WPRCONF=$HOME/.config/agnostep/wprotate.conf
+if [ -f $WPRCONF ];then
+	/usr/local/bin/wprotate.sh &
+else
+    if [ -f $HOME/GNUstep/Library/WindowMaker/Backgrounds/fond_agnostep.png ];then
+        wmsetbg --smooth -u fond_agnostep.png
+    fi
+fi
+
+if [ -f $HOME/.Xresources ];then
+	xrdb -merge $HOME/.Xresources &
+fi
+
+
+### X Keyboard Layout
+setxkbmap -model apple -layout fr -variant mac -option altwin:meta alt"
+
+# restore ALSA
+alsactl restore
+
+### Agenda, GWorkspace... will be started with WMDock 'autolauch' option
+
+### Window Manager
+/usr/bin/wmaker &
+
+sleep 5
+
+exec /System/Tools/openapp GWorkspace

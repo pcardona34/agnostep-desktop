@@ -32,7 +32,7 @@ fi
 
 _PWD=`pwd`
 SPIN='\-/|'
-STOP=0 # Set to 0 to avoid stops; to 1 to make stops for debugging purpose
+STOP=1 # Set to 0 to avoid stops; to 1 to make stops for debugging purpose
 SLEEP=4
 #set -v
 MSG_STOP="Stop: type <Enter> to continue."
@@ -235,8 +235,6 @@ subtitulo
 cp --verbose RESOURCES/MINSET/_autostart $HOME/GNUstep/Library/WindowMaker/autostart && ok "Done"
 sleep $SLEEP
 
-stop
-
 cd $_PWD
 
 stop
@@ -269,6 +267,8 @@ ok "Done"
 cd $_PWD
 sleep $SLEEP
 
+stop
+
 ###########################################
 ### ... agnostep_cli
 
@@ -279,6 +279,8 @@ fi
 install_agnostep_cli
 cd $_PWD
 sleep $SLEEP
+
+stop
 
 ##########################################
 ### Info release
@@ -323,6 +325,9 @@ STR="Loading notification script"
 subtitulo
 
 ## Dunst settings
+if [ ! -d $HOME/.config ];then
+    mkdir -p $HOME/.config
+fi
 cp --verbose RESOURCES/CONF/dunstrc $HOME/.config/dunstrc
 
 sudo cp --verbose RESOURCES/SCRIPTS/loading.sh /usr/local/bin/
@@ -343,20 +348,24 @@ if [ $? -eq 0 ];then
 	    alert "The file $WMSTATE was not found. This is a major issue."
 	    exit 1
     fi
-	cp --force $WMSTATE $HOME_GNUSTEP_DEF/WMState
+	cp --verbose $WMSTATE $HOME/GNUstep/Defaults/WMState
 	### Setting to the user env
-	cat $HOME_GNUSTEP_DEF/WMState | sed -e s#/System/Tools#${GNUSTEP_SYSTEM_TOOLS}#g > $TEMPFILE
-	cat $TEMPFILE > $HOME_GNUSTEP_DEF/WMState
+	cat $HOME/GNUstep/Defaults//WMState | sed -e s#/System/Tools#${GNUSTEP_SYSTEM_TOOLS}#g > $TEMPFILE
+	cat $TEMPFILE > $HOME/GNUstep/Defaults/WMState
     cd $_PWD
     ok "Done"
     sleep $SLEEP
     stop
 fi
 
+stop
+
 ####################################################
 ### Theming: default theme is GNUstep
 SINGLE_THEME="YES"
 . gnustep_theme.sh
+
+stop
 
 ###########################################
 MESSAGE="AGNoStep common Desktop was set."
@@ -373,6 +382,7 @@ info "To install the Graphic Login/Display Manager: after testing the Desktop, l
 cli "./agnostep.sh"
 
 sleep 6
+stop
 
 ##################################################################
 ### RPI 500 Hack
