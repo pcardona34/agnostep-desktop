@@ -13,14 +13,10 @@ else
   echo "Master not found; ensure /etc/asound.conf softvol configured and rebooted."
 fi
 
-# Install/enable pommed config and service
-sudo cp --verbose ./pommed.conf /etc/
-sudo systemctl enable --now pommed
-sudo journalctl -u pommed --no-pager -n 50
+### Setting TLP
+. ./install_tlp.sh
 
 # Xinit
-cp ./xinitrc "$HOME/.xinitrc"
-chmod +x "$HOME/.xinitrc"
+# Will be set separately
 
 echo "Post-reboot setup done."
-

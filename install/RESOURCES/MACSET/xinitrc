@@ -21,7 +21,7 @@ fi
 
 
 ### X Keyboard Layout
-setxkbmap -model apple -layout fr -variant mac -option altwin:meta alt"
+setxkbmap -model apple -layout fr -variant mac
 
 # restore ALSA
 alsactl restore

@@ -105,8 +105,15 @@ sudo ldconfig
 
 ########################
 
-info "The System is up to date.\nYou may go on with stage: Core."
+APPLE=1
+is_hw_apple
+if [ $APPLE -eq 0 ];then
+    warning "Before going on stage: Core, cd to install/RESOURCES/MACSET and read carefully actions to execute."
+    sleep 6
+else
+    info "The System is up to date.\nYou may go on with stage: Core."
+    sleep 3
+fi
 print_size
-sleep 3
 
 cd $THERE

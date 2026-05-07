@@ -8,6 +8,14 @@ Do not try nor report any issue until a release is tagged Stable.
 
 ## Changes
 
+### Changes of the Release Beta 2.0.3
+
+- This release ends the tests cycle on my laptop (MBPRO Intel model:6,2)
+  - Battery plugging / unplugging is ok
+  - Specific installation scripts and resources in RESOURCES/MACSET: keyboard, backlight, sound.
+  - Detection at first stage (prep).
+- Known issue: neither Mixer.app nor VolumeControl.app were able to adjust volume.
+
 ### Changes of the Release Beta 2.0.2
 
 - This is an intermediate stage while testing on amd64 laptop, namely MBPro Intel: do not use yet.

@@ -23,16 +23,9 @@ fi
 
 clear
 
-function stop
-{
-if [ $STOP -ne 0 ];then
-	read -p "$MSG_STOP" R
-fi
-}
-
 _PWD=`pwd`
 SPIN='\-/|'
-STOP=1 # Set to 0 to avoid stops; to 1 to make stops for debugging purpose
+STOP=0 # Set to 0 to avoid stops; to 1 to make stops for debugging purpose
 SLEEP=4
 #set -v
 MSG_STOP="Stop: type <Enter> to continue."
@@ -41,7 +34,6 @@ DEFDIR=RESOURCES/DEFAULTS
 RPI=1 # By default, we assume the hw is not a RPI one. If not, it will be detected.
 TEMPFILE=$(mktemp /tmp/agno-XXXXX)
 trap "rm -f $TEMPFILE" EXIT
-
 LG=${LANG:0:2}
 
 case "$LG" in
@@ -62,6 +54,13 @@ esac
 . SCRIPTS/functions_prep.sh
 . SCRIPTS/functions_misc_folders.sh
 . SCRIPTS/setup_misc_tools.sh
+
+function stop
+{
+if [ $STOP -ne 0 ];then
+	read -p "$MSG_STOP" R
+fi
+}
 
 ####################################################
 ### DO NOT RUN under an existent X session
