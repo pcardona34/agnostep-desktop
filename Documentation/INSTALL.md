@@ -28,7 +28,15 @@ See: <https://www.debian.org/distrib/netinst>
 	sudo -v
 ```
 
-Otherwise, add the current user to the 'sudo' group.
+Otherwise, namaly on Debian Lite, install sudo, then add the current user (by example'patrick' below) to the 'sudo' group:
+
+```console
+   su
+   apt install sudo
+   usermod -aG sudo patrick
+   exit
+   exit
+```
 
 > [!NOTE]
 > Until now, most of the installation scripts are only in English.  

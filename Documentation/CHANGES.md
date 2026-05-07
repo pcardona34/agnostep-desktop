@@ -8,6 +8,11 @@ Do not try nor report any issue until a release is tagged Stable.
 
 ## Changes
 
+### Changes of the Release Candidate 2.0.4
+
+- Tweaking alsa test on pi 500.
+- Updating documentation.
+
 ### Changes of the Release Beta 2.0.3
 
 - This release ends the tests cycle on my laptop (MBPRO Intel model:6,2)

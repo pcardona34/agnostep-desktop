@@ -44,5 +44,5 @@ clear
 
 ok "All done."
 warning "You should log out and back in again to apply the locale changes.\nThen, come back here and run again:"
-cli "./agnostep.sh"
+cli "./agnowiz.sh"
 }

@@ -219,14 +219,15 @@ fi
 
 function is_hw_apple
 {
-VENDOR=$(cat /sys/class/dmi/id/sys_vendor)
-PRODUCT=$(cat /sys/class/dmi/id/product_name)
-if [ -n "$VENDOR" ] && [ "$VENDOR" == "Apple Inc." ] && [ -n "$PRODUCT" ] && [ "$PRODUCT" == "MacBookPro6,2" ];then
-    printf "This is an Apple ${PRODUCT}.\n"
-    APPLE=0
-else
-    printf "Not a known Apple computer.\n"
-    printf "You may help to improve this script: functions_prep.sh\n"
-    APPLE=1
+if [ -f /sys/class/dmi/id/sys_vendor ] && [ -f /sys/class/dmi/id/product_name ];then
+	VENDOR=$(cat /sys/class/dmi/id/sys_vendor)
+	PRODUCT=$(cat /sys/class/dmi/id/product_name)
+	if [ -n "$VENDOR" ] && [ "$VENDOR" == "Apple Inc." ] && [ -n "$PRODUCT" ] && [ "$PRODUCT" == "MacBookPro6,2" ];then
+    		printf "This is an Apple ${PRODUCT}.\n"
+    		APPLE=0
+	else
+    		printf "Not a known Apple computer.\n"
+    		printf "You may help to improve this script: functions_prep.sh\n"
+	fi
 fi
 }
