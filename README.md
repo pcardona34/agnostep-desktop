@@ -2,6 +2,7 @@
 
 - Read [RELEASE](Documentation/RELEASE.md) to know the current status.
 - See [CHANGES](Documentation/CHANGES.md) to read the details of the latest changes.
+- Read [BRIEF](Documentation/BRIEF.md) to get a kind of FAQ about Agnostep.
 
 ## The Goal
 
