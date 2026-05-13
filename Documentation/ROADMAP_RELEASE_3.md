@@ -14,12 +14,14 @@
 
 - [ ] Surf.app - A new Web Browser based on XEmbedded [Surf](https://surf.suckless.org/)
 - [ ] Read.app - A GNUstep epub and comics reader.
-- [ ] Publish.app - A new GNUstep publishing application based on pandoc: edit with markdown (see above) and export to epub/pdf.
+- [ ] Publish.app - A GNUstep publishing application based on pandoc: edit with markdown (see above) and export to epub/pdf.
 
-## Window Manager
+## Window Manager and modern runtime
 
-- [ ] A new Window Manager with better handling of the Key Application. Until now, WindowMaker looses the key app and often displays several menus on top of each other. Maybe a fork of WindowMaker. Maybe another WM?
-- [ ] A new GNUstep publishing application based on pandoc: edit with markdown (see above) and export to epub/pdf.
+- [ ] A new Window Manager with better handling of the Key Application. Until now, WindowMaker looses the key app and often displays several menus on top of each other.
+    - [ ] Maybe a fork of WindowMaker?
+    - [ ] Maybe another WM like [uroswm](https://github.com/AlessandroSangiuliano/uroswm) by Alessandro Sangiuliano? That could involve a radical change on GNUstep runtime (see below).
+- [ ] If needed, a try to build a modern GNUstep with libobjc2 from sources on Debian! 
 
 
 ## Enhancing some apps:
