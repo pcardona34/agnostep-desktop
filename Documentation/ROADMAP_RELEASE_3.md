@@ -5,6 +5,7 @@
 - [ ] Add application: LUserNET
 - [ ] New release of SimpleAgenda: 0.48  
   https://github.com/poroussel/simpleagenda/archive/refs/tags/v0.48.tar.gz
+- [ ] Try to build [Oolite](https://github.com/OoliteProject/oolite) depending on modern runtime: see below.
 
 ## Native applications to create
 
