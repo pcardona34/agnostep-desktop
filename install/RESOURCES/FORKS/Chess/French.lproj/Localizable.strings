@@ -1,0 +1,39 @@
+/* alert panel messages */
+"new_game" = "Commencer une nouvelle partie avec ces pr\U00E9f\U00E9rences ?";
+"no_hint"  = "Aucune suggestion.";
+"no_undo"  = "Aucun coup à annuler.";
+
+"draw_game" = "La partie est nulle.";
+"black_win" = "La partie est termin\U00E9e. Les Noirs ont gagn\U00E9.";
+"white_win" = "La partie est termin\U00E9e.  Les Blancs ont gagn\U00E9.";
+"you_win"   = "La partie est termin\U00E9e. \nF\U00E9licitations, vous avez gagn\U00E9.";
+
+"exit_chess" = "Voulez-vous quitter Chess ?";
+
+/* alert panel buttons */
+"Yes" = "Oui";
+"No" = "Non";
+
+/* window title messages */
+"Chess";
+"Chess:  ";
+"   :   ";
+"1 Undo  " = "1 coup annul\U00E9";
+"%d Undos  " = "%d coups annul\U00E9s  ";
+"1 Hint" = "1 suggestion";
+"%d Hints" = "%d suggestions";
+
+"Illegal move" = "Coup interdit";
+"Black's move" = "Tour des Noirs";
+"White's move" = "Tour des Blancs";
+"Illegal Move!!" = "Coup interdit!!";
+"Ambiguous Move!" = "D\U00E9placement ambigu";
+"Black is in check" = "\U00C9chec aux Noirs";
+"White is in check" = "\U00C9chec aux Blancs";
+
+/* preferences panel messages */
+"%d moves in %d minutes" = "%d coups en %d minutes";
+"%d move in %d minutes" = "%d coup en %d minutes";
+
+/* black/white player */
+"Computer" = "Ordinateur";

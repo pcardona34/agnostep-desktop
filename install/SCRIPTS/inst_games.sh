@@ -100,7 +100,8 @@ case "$i" in
 "Chess")
 	printf "You chose Chess\n"
 	remove_ifx_app "Chess"
-	install_chess
+	#install_chess
+    install_forked "Chess"
 	update_info_plist "Chess";;
 "Freecell")
 	printf "You chose Freecell\n"

@@ -1,0 +1,54 @@
+2008-11-21 01:21-EST Gregory John Casamento <greg_casamento@yahoo.com>
+
+	* Source/Board.m: Slight correction to allow compilation under latest
+	GNUstep.  Removed definition of PSWait.
+
+2007-05-02  Nicola Pero  <nicola.pero@meta-innovation.com>
+
+	* Source/GNUmakefile (GNUSTEP_INSTALLATION_DIR): Do not
+	set GNUSTEP_INSTALLATION_DIR.
+	(GNUSTEP_MAKEFILES): Do not set GNUSTEP_MAKEFILES.
+	(aggregate.make): Do not include aggregate.make
+	* Source/GNUmakefile.preamble: Removed unused/meaningless -I and
+	-L flags.  Removed -g flags that are already used by default.
+	
+2005-11-05 15:27 Gregory John Casamento <greg_casamento@yahoo.com>
+
+	* Source/smartgo.h: Updated declarations.
+
+2005-04-05 20:42 Gregory John Casamento <greg_casamento@yahoo.com>
+
+	* Source/GoApp.m: Correction for crash when selecting a server
+	command.
+
+2005-04-05 20:27 Gregory John Casamento <greg_casamento@yahoo.com>
+
+	* Source/Board.m
+	* Source/ClickCell.m
+	* Source/Controller.m
+	* Source/GameInspectorPanel.m
+	* Source/GoApp.m
+	* Source/godict.c
+	* Source/GoWindow.m
+	* Source/igsglue.m
+	* Source/igssocket.m: Major code cleanup.  Removed any and all
+	warnings, etc.
+
+2005-04-03 15:56 Gregory John Casamento <greg_casamento@yahoo.com>
+
+	* Source/English.lproj/NeXTGo.gorm: Corrected color on a lot
+	of the text fields.
+	* Source/GNUmakefile: Added PRINCIPAL_CLASS
+	* Source/NeXTGo_main.m: Changed to use standard startup.
+
+2005-04-03 15:39 Gregory John Casamento <greg_casamento@yahoo.com>
+
+	* Source/GNUmakefile: Added localized .gorm file.
+	* Source/GoServer.h: Added newline at the end.
+	* Source/NeXTGo_main.m: Cleaned up a little.
+	* Source/English.lproj: Removed.
+	* Source/English.lproj/NeXTGo.gorm: Added new interface.
+
+2005-04-03 15:01 Gregory John Casamento <greg_casamento@yahoo.com>
+
+	* Source/Board.m: Removed all of the debugging information.

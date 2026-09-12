@@ -70,6 +70,20 @@ ok "Done"
 
 printf "\nGNUstep Gui\n"
 git clone $HUB/gnustep/$GUI | tee -a $LOG
+
+### Experimental for WMDock by gcasa
+#cd $GUI
+#git switch issue_927_GSIconManager_protocol_change
+#git pull
+#cd ..
+
+### Reverting to standard libs-gui
+cd $GUI
+git switch master
+git pull
+cd ..
+
+
 ok "Done"
 
 printf "\nGNUstep Back\n"
@@ -84,7 +98,7 @@ function install_base
 STR="Building Foundation: GNUstep Base..."
 subtitulo
 
-cd base || exit 1
+cd $BASE || exit 1
 
 printf "Configuring...\n"
 ./configure &>>$LOG &
@@ -111,7 +125,7 @@ function install_gui
 STR="Building AppKit: GNUstep Gui"
 subtitulo
 
-cd gui || exit 1
+cd $GUI || exit 1
 #dialog --no-shadow --backtitle "Building GNUstep" --title "GUNstep Gui" \
 # --yesno "
 #Experimental branch allow to fix some issue with
@@ -134,9 +148,11 @@ PID=$!
 spinner
 
 printf "\rBuilding...\n"
-make -j8 &>>$LOG &
-PID=$!
-spinner
+#make -j8 &>>$LOG &
+make -j8
+#PID=$!
+#spinner
+sleep 10
 
 printf "\rInstalling...\n"
 sudo -E make install &>>$LOG &
@@ -155,7 +171,7 @@ function install_back
 STR="Building the Backend: GNUstep Back..."
 subtitulo
 
-cd back || exit 1
+cd $BACK || exit 1
 printf "Configuring...\n"
 ./configure &>>$LOG &
 PID=$!

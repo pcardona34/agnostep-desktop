@@ -1,0 +1,41 @@
+{
+    "## Comment" = "Do NOT change this file, Gorm maintains it";
+    FirstResponder = {
+	Actions = (
+	    "orderFrontFontPanel:",
+	    "showHistogram:"
+	);
+	Super = NSObject;
+    };
+    PRCHistogram = {
+	Actions = (
+	    "showHistogram:"
+	);
+	Outlets = (
+	    histoWindow,
+	    histoView
+	);
+	Super = NSObject;
+    };
+    PRCumHisto = {
+	Actions = (
+	);
+	Outlets = (
+	);
+	Super = PRHistogram;
+    };
+    PRHisto = {
+	Actions = (
+	);
+	Outlets = (
+	);
+	Super = PRHistogram;
+    };
+    PRHistogram = {
+	Actions = (
+	);
+	Outlets = (
+	);
+	Super = NSView;
+    };
+}

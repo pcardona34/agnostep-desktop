@@ -145,8 +145,9 @@ case "$i" in
 "ScanImage")
 	printf "You chose ScanImage\n"
 	remove_ifx_app "ScanImage"
-	install_scanimage
-	update_info_plist "ScanImage";;
+	#install_scanimage
+	install_forked "ScanImage"
+    update_info_plist "ScanImage";;
 "ScreenShot")
 	printf "You chose ScreenShot\n"
 	remove_ifx_app "ScreenShot"
@@ -155,7 +156,8 @@ case "$i" in
 "StepSync")
 	printf "You chose StepSync\n"
 	remove_ifx_app "StepSync"
-	install_stepsync
+	#install_stepsync
+    install_forked "StepSync"
 	update_info_plist "StepSync";;
 "Vindaloo")
 	printf "You chose Vindaloo\n"
@@ -193,6 +195,3 @@ ok "\rDone"
 print_size
 
 sleep 2
-
-
-

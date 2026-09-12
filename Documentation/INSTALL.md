@@ -22,18 +22,19 @@ See: <https://www.debian.org/distrib/netinst>
 
 2) Boot with your USB key or SD-card to load the Debian Lite System.
 
-3) Your User account must belongs to the group 'sudo': You must have root privileges:
+3) Your User account must belongs to the group 'sudo': 
+You must have root privileges:
 
 ```console
 	sudo -v
 ```
 
-Otherwise, namaly on Debian Lite, install sudo, then add the current user (by example'patrick' below) to the 'sudo' group:
+Otherwise, namely on Debian Lite, install sudo, then add the current user (by example'patrick' below) to the 'sudo' group:
 
 ```console
    su
    apt install sudo
-   usermod -aG sudo patrick
+   /usr/sbin/usermod -aG sudo patrick
    exit
    exit
 ```

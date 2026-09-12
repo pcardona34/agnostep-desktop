@@ -1,0 +1,420 @@
+This is gnustep-make 2.9.3. Type 'gmake print-gnustep-make-help' for help.
+Running in gnustep-make version 2 strict mode.
+mkdir -p ./obj/gnuchess.subproj
+Making all for app Chess...
+ Creating Chess.app/....
+ Compiling file gnuchess.c ...
+gnuchess.c: In function ‘KingScan’:
+gnuchess.c:2050:6: warning: suggest explicit braces to avoid ambiguous ‘else’ [-Wdangling-else]
+ 2050 |   if (color[u] != c2)                           \
+      |      ^
+gnuchess.c:2068:34: note: in expansion of macro ‘ScoreThreat’
+ 2068 |             if (atk2[u] & ctlBQ) ScoreThreat;
+      |                                  ^~~~~~~~~~~
+gnuchess.c:2050:6: warning: suggest explicit braces to avoid ambiguous ‘else’ [-Wdangling-else]
+ 2050 |   if (color[u] != c2)                           \
+      |      ^
+gnuchess.c:2080:34: note: in expansion of macro ‘ScoreThreat’
+ 2080 |             if (atk2[u] & ctlRQ) ScoreThreat;
+      |                                  ^~~~~~~~~~~
+gnuchess.c:2050:6: warning: suggest explicit braces to avoid ambiguous ‘else’ [-Wdangling-else]
+ 2050 |   if (color[u] != c2)                           \
+      |      ^
+gnuchess.c:2090:32: note: in expansion of macro ‘ScoreThreat’
+ 2090 |           if (atk2[u] & ctlNN) ScoreThreat;
+      |                                ^~~~~~~~~~~
+ Compiling file Board.m ...
+In file included from Board.m:55:
+/Local/Library/Headers/Foundation/NSUtilities.h:27:2: warning: #warning The use of NSUtilities.h is deprecated [-Wcpp]
+   27 | #warning        The use of NSUtilities.h is deprecated
+      |  ^~~~~~~
+Board.m: In function ‘-[Board mouseDown:]’:
+Board.m:357:5: warning: ‘NSApplication’ may not respond to ‘-bothsides’
+  357 |     if ( [NSApp bothsides] ) {
+      |     ^~
+Board.m:357:5: warning: (messages without a matching method signature will be assumed to return ‘id’ and accept ‘...’ as arguments)
+Board.m:360:5: warning: ‘NSApplication’ may not respond to ‘-finished’
+  360 |     else if( [NSApp finished] ) {
+      |     ^~~~
+Board.m:361:9: warning: ‘NSApplication’ may not respond to ‘-finishedAlert’
+  361 |         [NSApp finishedAlert];
+      |         ^
+Board.m:478:17: warning: ‘NSApplication’ may not respond to ‘-makeMoveFrom::to::’
+  478 |                 if( ! [NSApp makeMoveFrom: r : c to: r2 : c2] ) {
+      |                 ^~
+Board.m:453:17: warning: ‘controlGState’ may be used uninitialized [-Wmaybe-uninitialized]
+  453 |                 PScomposite( winP.x, winP.y, backR.size.width,
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  454 |                                          backR.size.height, controlGState, (float)0.0,
+      |                                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  455 |                                          (float)0.0, NSCompositeCopy );
+      |                                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Board.m:379:14: note: ‘controlGState’ was declared here
+  379 |         int  controlGState;
+      |              ^~~~~~~~~~~~~
+ Compiling file Board3D.m ...
+In file included from Board3D.m:55:
+/Local/Library/Headers/Foundation/NSUtilities.h:27:2: warning: #warning The use of NSUtilities.h is deprecated [-Wcpp]
+   27 | #warning        The use of NSUtilities.h is deprecated
+      |  ^~~~~~~
+Board3D.m: In function ‘-[Board3D backgroundBitmap]’:
+Board3D.m:225:1: warning: conflicting types for ‘-(id)backgroundBitmap’
+  225 | {
+      | ^
+In file included from Board3D.m:61:
+Board3D.h:62:1: note: previous declaration of ‘-(NSImage *)backgroundBitmap’
+   62 | - (NSImage *) backgroundBitmap;
+      | ^
+Board3D.m: In function ‘-[Board3D slidePieceFrom::to::]’:
+Board3D.m:306:31: warning: passing argument 3 of ‘squareOrigin’ from incompatible pointer type [-Wincompatible-pointer-types]
+  306 |     squareOrigin( row2, col2, &endP.x, &endP.y );
+      |                               ^~~~~~~
+      |                               |
+      |                               CGFloat * {aka double *}
+Board3D.m:108:48: note: expected ‘float *’ but argument is of type ‘CGFloat *’ {aka ‘double *’}
+  108 | static void squareOrigin( int r, int c, float *x, float *y )
+      |                                         ~~~~~~~^
+Board3D.m:306:40: warning: passing argument 4 of ‘squareOrigin’ from incompatible pointer type [-Wincompatible-pointer-types]
+  306 |     squareOrigin( row2, col2, &endP.x, &endP.y );
+      |                                        ^~~~~~~
+      |                                        |
+      |                                        CGFloat * {aka double *}
+Board3D.m:108:58: note: expected ‘float *’ but argument is of type ‘CGFloat *’ {aka ‘double *’}
+  108 | static void squareOrigin( int r, int c, float *x, float *y )
+      |                                                   ~~~~~~~^
+Board3D.m:312:31: warning: passing argument 3 of ‘squareOrigin’ from incompatible pointer type [-Wincompatible-pointer-types]
+  312 |     squareOrigin( row1, col1, &backP.x, &backP.y );
+      |                               ^~~~~~~~
+      |                               |
+      |                               CGFloat * {aka double *}
+Board3D.m:108:48: note: expected ‘float *’ but argument is of type ‘CGFloat *’ {aka ‘double *’}
+  108 | static void squareOrigin( int r, int c, float *x, float *y )
+      |                                         ~~~~~~~^
+Board3D.m:312:41: warning: passing argument 4 of ‘squareOrigin’ from incompatible pointer type [-Wincompatible-pointer-types]
+  312 |     squareOrigin( row1, col1, &backP.x, &backP.y );
+      |                                         ^~~~~~~~
+      |                                         |
+      |                                         CGFloat * {aka double *}
+Board3D.m:108:58: note: expected ‘float *’ but argument is of type ‘CGFloat *’ {aka ‘double *’}
+  108 | static void squareOrigin( int r, int c, float *x, float *y )
+      |                                                   ~~~~~~~^
+Board3D.m:293:13: warning: variable ‘oldLocation’ set but not used [-Wunused-but-set-variable]
+  293 |     NSRect  oldLocation;
+      |             ^~~~~~~~~~~
+Board3D.m: In function ‘-[Board3D mouseDown:]’:
+Board3D.m:560:5: warning: ‘NSApplication’ may not respond to ‘-bothsides’
+  560 |     if ( [NSApp bothsides] ) {
+      |     ^~
+Board3D.m:560:5: warning: (messages without a matching method signature will be assumed to return ‘id’ and accept ‘...’ as arguments)
+Board3D.m:563:5: warning: ‘NSApplication’ may not respond to ‘-finished’
+  563 |     else if( [NSApp finished] ) {
+      |     ^~~~
+Board3D.m:564:9: warning: ‘NSApplication’ may not respond to ‘-finishedAlert’
+  564 |         [NSApp finishedAlert];
+      |         ^
+Board3D.m:688:25: warning: ‘NSApplication’ may not respond to ‘-makeMoveFrom::to::’
+  688 |                         if( ! [NSApp makeMoveFrom: r : c to: r2 : c2] ) {
+      |                         ^~
+Board3D.m:663:41: warning: ‘controlGState’ may be used uninitialized [-Wmaybe-uninitialized]
+  663 |                                         PScomposite( roundedBackP.x = floor(backP.x), roundedBackP.y = floor(backP.y),
+      |                                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  664 |                                                          BACK_STORE_WIDTH, BACK_STORE_HEIGHT,
+      |                                                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  665 |                              controlGState, (float)0.0, (float)0.0, NSCompositeCopy );
+      |                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Board3D.m:572:18: note: ‘controlGState’ was declared here
+  572 |             int  controlGState;
+      |                  ^~~~~~~~~~~~~
+ Compiling file Chess.m ...
+Chess.m: In function ‘CL_MakeMove’:
+Chess.m:83:17: warning: ‘NSApplication’ may not respond to ‘-undoMove:’
+   83 |                 [NSApp undoMove:NSApp];
+      |                 ^
+Chess.m:83:17: warning: (messages without a matching method signature will be assumed to return ‘id’ and accept ‘...’ as arguments)
+Chess.m:90:17: warning: ‘NSApplication’ may not respond to ‘-makeMoveFrom::to::’
+   90 |                 [NSApp makeMoveFrom: r : c to: r2 : c2];
+      |                 ^
+Chess.m: In function ‘-[Chess renderColors:]’:
+Chess.m:516:17: warning: passing argument 1 of ‘getRed:green:blue:alpha:’ from incompatible pointer type [-Wincompatible-pointer-types]
+  516 |                 [white_color getRed:&red green:&green blue:&blue alpha:&alpha];
+      |                 ^
+      |                 |
+      |                 float *
+Chess.m:516:17: note: expected ‘CGFloat *’ {aka ‘double *’} but argument is of type ‘float *’
+Chess.m:516:17: warning: passing argument 2 of ‘getRed:green:blue:alpha:’ from incompatible pointer type [-Wincompatible-pointer-types]
+  516 |                 [white_color getRed:&red green:&green blue:&blue alpha:&alpha];
+      |                 ^
+      |                 |
+      |                 float *
+Chess.m:516:17: note: expected ‘CGFloat *’ {aka ‘double *’} but argument is of type ‘float *’
+Chess.m:516:17: warning: passing argument 3 of ‘getRed:green:blue:alpha:’ from incompatible pointer type [-Wincompatible-pointer-types]
+  516 |                 [white_color getRed:&red green:&green blue:&blue alpha:&alpha];
+      |                 ^
+      |                 |
+      |                 float *
+Chess.m:516:17: note: expected ‘CGFloat *’ {aka ‘double *’} but argument is of type ‘float *’
+Chess.m:516:17: warning: passing argument 4 of ‘getRed:green:blue:alpha:’ from incompatible pointer type [-Wincompatible-pointer-types]
+  516 |                 [white_color getRed:&red green:&green blue:&blue alpha:&alpha];
+      |                 ^
+      |                 |
+      |                 float *
+Chess.m:516:17: note: expected ‘CGFloat *’ {aka ‘double *’} but argument is of type ‘float *’
+Chess.m:523:17: warning: passing argument 1 of ‘getRed:green:blue:alpha:’ from incompatible pointer type [-Wincompatible-pointer-types]
+  523 |                 [black_color getRed:&red green:&green blue:&blue alpha:&alpha];
+      |                 ^
+      |                 |
+      |                 float *
+Chess.m:523:17: note: expected ‘CGFloat *’ {aka ‘double *’} but argument is of type ‘float *’
+Chess.m:523:17: warning: passing argument 2 of ‘getRed:green:blue:alpha:’ from incompatible pointer type [-Wincompatible-pointer-types]
+  523 |                 [black_color getRed:&red green:&green blue:&blue alpha:&alpha];
+      |                 ^
+      |                 |
+      |                 float *
+Chess.m:523:17: note: expected ‘CGFloat *’ {aka ‘double *’} but argument is of type ‘float *’
+Chess.m:523:17: warning: passing argument 3 of ‘getRed:green:blue:alpha:’ from incompatible pointer type [-Wincompatible-pointer-types]
+  523 |                 [black_color getRed:&red green:&green blue:&blue alpha:&alpha];
+      |                 ^
+      |                 |
+      |                 float *
+Chess.m:523:17: note: expected ‘CGFloat *’ {aka ‘double *’} but argument is of type ‘float *’
+Chess.m:523:17: warning: passing argument 4 of ‘getRed:green:blue:alpha:’ from incompatible pointer type [-Wincompatible-pointer-types]
+  523 |                 [black_color getRed:&red green:&green blue:&blue alpha:&alpha];
+      |                 ^
+      |                 |
+      |                 float *
+Chess.m:523:17: note: expected ‘CGFloat *’ {aka ‘double *’} but argument is of type ‘float *’
+Chess.m: In function ‘-[Chess finishedAlert]’:
+Chess.m:65:96: warning: statement with no effect [-Wunused-value]
+   65 | #define chess_debug(x) if (sCD || (!sCDInit++ && (sCD = getenv("CHESS_DEBUG")))) NSLog x; else 0
+      |                                                                                                ^
+Chess.m:743:5: note: in expansion of macro ‘chess_debug’
+  743 |     chess_debug(( @"finished %d", finished ));
+      |     ^~~~~~~~~~~
+Chess.m: In function ‘-[Chess makeMoveFrom::to::]’:
+Chess.m:65:96: warning: statement with no effect [-Wunused-value]
+   65 | #define chess_debug(x) if (sCD || (!sCDInit++ && (sCD = getenv("CHESS_DEBUG")))) NSLog x; else 0
+      |                                                                                                ^
+Chess.m:775:17: note: in expansion of macro ‘chess_debug’
+  775 |                 chess_debug (( @"pawn becomes queen..." ));
+      |                 ^~~~~~~~~~~
+Chess.m:65:96: warning: statement with no effect [-Wunused-value]
+   65 | #define chess_debug(x) if (sCD || (!sCDInit++ && (sCD = getenv("CHESS_DEBUG")))) NSLog x; else 0
+      |                                                                                                ^
+Chess.m:781:5: note: in expansion of macro ‘chess_debug’
+  781 |     chess_debug(( @"<<< opponent move time %d move %@", move_time(), move ));
+      |     ^~~~~~~~~~~
+Chess.m: In function ‘-[Chess peekAndGetLeftMouseDownEvent]’:
+Chess.m:803:9: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+  803 |     if( event = [NSApp nextEventMatchingMask: NSLeftMouseDownMask untilDate: [NSDate date] inMode: NSEventTrackingRunLoopMode dequeue: NO] ) {
+      |         ^~~~~
+Chess.m: In function ‘-[Chess movePieceFrom::to::]’:
+Chess.m:65:96: warning: statement with no effect [-Wunused-value]
+   65 | #define chess_debug(x) if (sCD || (!sCDInit++ && (sCD = getenv("CHESS_DEBUG")))) NSLog x; else 0
+      |                                                                                                ^
+Chess.m:867:5: note: in expansion of macro ‘chess_debug’
+  867 |     chess_debug( (@">>> computer move time %d move %@", move_time(), move) );
+      |     ^~~~~~~~~~~
+Chess.m:65:96: warning: statement with no effect [-Wunused-value]
+   65 | #define chess_debug(x) if (sCD || (!sCDInit++ && (sCD = getenv("CHESS_DEBUG")))) NSLog x; else 0
+      |                                                                                                ^
+Chess.m:878:17: note: in expansion of macro ‘chess_debug’
+  878 |                 chess_debug (( @"computer pawn becomes queen..." ));
+      |                 ^~~~~~~~~~~
+Chess.m: In function ‘-[Chess application:openFile:withType:]’:
+Chess.m:65:96: warning: statement with no effect [-Wunused-value]
+   65 | #define chess_debug(x) if (sCD || (!sCDInit++ && (sCD = getenv("CHESS_DEBUG")))) NSLog x; else 0
+      |                                                                                                ^
+Chess.m:1087:5: note: in expansion of macro ‘chess_debug’
+ 1087 |     chess_debug( (@"Open file: %@ type: %@", path, type) );
+      |     ^~~~~~~~~~~
+ Compiling file Chess_main.m ...
+Chess_main.m: In function ‘main’:
+Chess_main.m:51:36: warning: passing argument 2 of ‘NSApplicationMain’ from incompatible pointer type [-Wincompatible-pointer-types]
+   51 |     return NSApplicationMain(argc, argv);
+      |                                    ^~~~
+      |                                    |
+      |                                    char **
+In file included from /Local/Library/Headers/AppKit/AppKit.h:57,
+                 from Chess_main.m:47:
+/Local/Library/Headers/AppKit/NSApplication.h:776:42: note: expected ‘const char **’ but argument is of type ‘char **’
+  776 | NSApplicationMain(int argc, const char **argv);
+      |                             ~~~~~~~~~~~~~^~~~
+ Compiling file Clock.m ...
+ Compiling file ResponseMeter.m ...
+ResponseMeter.m: In function ‘-[ResponseMeter drawRect:]’:
+ResponseMeter.m:88:9: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+   88 |     if( res_time = response_time() ) {
+      |         ^~~~~~~~
+ Compiling file Square.m ...
+ Compiling file Square3D.m ...
+ Compiling file gnuglue.m ...
+In file included from gnuglue.m:53:
+gnuchess.h:112:9: warning: "HZ" redefined
+  112 | #define HZ 60
+      |         ^~
+In file included from /usr/lib/linux/uapi/arm64/asm/param.h:22,
+                 from /usr/include/linux/param.h:5,
+                 from /usr/include/aarch64-linux-gnu/bits/param.h:28,
+                 from /usr/include/aarch64-linux-gnu/sys/param.h:31,
+                 from /Local/Library/Headers/GNUstepBase/GSConfig.h:357,
+                 from /Local/Library/Headers/GNUstepBase/GSVersionMacros.h:27,
+                 from /Local/Library/Headers/AppKit/AppKitDefines.h:40,
+                 from /Local/Library/Headers/AppKit/AppKit.h:32,
+                 from gnuglue.m:47:
+/usr/include/asm-generic/param.h:10:9: note: this is the location of the previous definition
+   10 | #define HZ __USER_HZ
+      |         ^~
+gnuglue.m: In function ‘convert_move’:
+gnuglue.m:147:13: warning: ‘NSApplication’ may not respond to ‘-pieceTypeAt::’
+  147 |             type = [NSApp pieceTypeAt: *row1 : *col1];
+      |             ^~~~
+gnuglue.m:147:13: warning: (messages without a matching method signature will be assumed to return ‘id’ and accept ‘...’ as arguments)
+gnuglue.m:147:18: warning: assignment to ‘int’ from ‘id’ makes integer from pointer without a cast [-Wint-conversion]
+  147 |             type = [NSApp pieceTypeAt: *row1 : *col1];
+      |                  ^
+gnuglue.m: In function ‘OutputMove’:
+gnuglue.m:273:9: warning: ‘NSApplication’ may not respond to ‘-setFinished:’
+  273 |         [NSApp setFinished: DRAW_GAME];
+      |         ^
+gnuglue.m:274:5: warning: ‘NSApplication’ may not respond to ‘-fillResponseMeter:’
+  274 |     [NSApp fillResponseMeter: player];
+      |     ^
+gnuglue.m:284:5: warning: ‘NSApplication’ may not respond to ‘-movePieceFrom::to::’
+  284 |     [NSApp movePieceFrom: row1 : col1 to: row2 : col2];
+      |     ^
+gnuglue.m:289:9: warning: ‘NSApplication’ may not respond to ‘-movePieceFrom::to::’
+  289 |         [NSApp movePieceFrom: row1 : 0 to: row2 : 3];
+      |         ^
+gnuglue.m:292:9: warning: ‘NSApplication’ may not respond to ‘-movePieceFrom::to::’
+  292 |         [NSApp movePieceFrom: row1 : 7 to: row2 : 5];
+      |         ^
+gnuglue.m: In function ‘ElapsedTime’:
+gnuglue.m:331:9: warning: ‘NSApplication’ may not respond to ‘-displayResponseMeter:’
+  331 |         [NSApp displayResponseMeter: player];
+      |         ^
+gnuglue.m:359:5: warning: ‘NSApplication’ may not respond to ‘-peekAndGetLeftMouseDownEvent’
+  359 |     [NSApp peekAndGetLeftMouseDownEvent];
+      |     ^
+gnuglue.m: In function ‘GameEnd’:
+gnuglue.m:418:5: warning: ‘NSApplication’ may not respond to ‘-setFinished:’
+  418 |     [NSApp setFinished: gameStatus];
+      |     ^
+gnuglue.m: In function ‘UpdateDisplay’:
+gnuglue.m:435:5: warning: ‘NSApplication’ may not respond to ‘-updateBoard’
+  435 |     [NSApp updateBoard];
+      |     ^
+gnuglue.m: In function ‘show_message’:
+gnuglue.m:541:5: warning: ‘NSApplication’ may not respond to ‘-setTitleMessage:’
+  541 |     [NSApp setTitleMessage: str];
+      |     ^
+gnuglue.m: In function ‘Die’:
+gnuglue.m:559:5: warning: ‘NSApplication’ may not respond to ‘-canFinishGame’
+  559 |     if( [NSApp canFinishGame] ) {
+      |     ^~
+gnuglue.m: In function ‘get_game’:
+gnuglue.m:668:5: warning: ‘NSApplication’ may not respond to ‘-updateBoard’
+  668 |     [NSApp updateBoard];
+      |     ^
+gnuglue.m: In function ‘undo_move’:
+gnuglue.m:830:5: warning: ‘NSApplication’ may not respond to ‘-finished’
+  830 |     if ( [NSApp finished] )
+      |     ^~
+gnuglue.m:831:9: warning: ‘NSApplication’ may not respond to ‘-setFinished:’
+  831 |         [NSApp setFinished: 0];
+      |         ^
+gnuglue.m: In function ‘give_hint’:
+gnuglue.m:846:9: warning: ‘NSApplication’ may not respond to ‘-highlightSquareAt::’
+  846 |         [NSApp highlightSquareAt: (int)(from / 8) : (int)(from % 8)];
+      |         ^
+gnuglue.m:847:9: warning: ‘NSApplication’ may not respond to ‘-highlightSquareAt::’
+  847 |         [NSApp highlightSquareAt: (int)(to   / 8) : (int)(to   % 8)];
+      |         ^
+gnuglue.m: In function ‘run_computer_game’:
+gnuglue.m:903:5: warning: ‘NSApplication’ may not respond to ‘-finished’
+  903 |     while( ! mate && ! quit && ! [NSApp finished] )
+      |     ^~~~~
+gnuglue.m:904:9: warning: ‘NSApplication’ may not respond to ‘-selectMove:iop:’
+  904 |         [NSApp selectMove: player iop: 1];
+      |         ^
+gnuglue.m: In function ‘select_computer_move’:
+gnuglue.m:922:9: warning: ‘NSApplication’ may not respond to ‘-selectMove:iop:’
+  922 |         [NSApp selectMove: computer iop: 1];
+      |         ^
+gnuglue.m: In function ‘OutputMove’:
+gnuglue.m:284:5: warning: ‘row1’ may be used uninitialized [-Wmaybe-uninitialized]
+  284 |     [NSApp movePieceFrom: row1 : col1 to: row2 : col2];
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gnuglue.m:266:10: note: ‘row1’ was declared here
+  266 |     int  row1, col1, row2, col2, castle_flag;
+      |          ^~~~
+gnuglue.m:284:5: warning: ‘col1’ may be used uninitialized [-Wmaybe-uninitialized]
+  284 |     [NSApp movePieceFrom: row1 : col1 to: row2 : col2];
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gnuglue.m:266:16: note: ‘col1’ was declared here
+  266 |     int  row1, col1, row2, col2, castle_flag;
+      |                ^~~~
+gnuglue.m:284:5: warning: ‘row2’ may be used uninitialized [-Wmaybe-uninitialized]
+  284 |     [NSApp movePieceFrom: row1 : col1 to: row2 : col2];
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gnuglue.m:266:22: note: ‘row2’ was declared here
+  266 |     int  row1, col1, row2, col2, castle_flag;
+      |                      ^~~~
+gnuglue.m:284:5: warning: ‘col2’ may be used uninitialized [-Wmaybe-uninitialized]
+  284 |     [NSApp movePieceFrom: row1 : col1 to: row2 : col2];
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gnuglue.m:266:28: note: ‘col2’ was declared here
+  266 |     int  row1, col1, row2, col2, castle_flag;
+      |                            ^~~~
+gnuglue.m:285:5: warning: ‘castle_flag’ may be used uninitialized [-Wmaybe-uninitialized]
+  285 |     switch (castle_flag ) {
+      |     ^~~~~~
+gnuglue.m:266:34: note: ‘castle_flag’ was declared here
+  266 |     int  row1, col1, row2, col2, castle_flag;
+      |                                  ^~~~~~~~~~~
+ Compiling file ChessListener.cp ...
+ChessListener.cp: In member function ‘virtual void CLDebugMoveBuilder::Move(int, const CLCoord&, const CLCoord&, bool, bool)’:
+ChessListener.cp:131:38: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
+  131 |         static char * pieceName[] = {"", "Pawn", "Knight", "Bishop", "Rook", "Queen", "King"};
+      |                                      ^~
+ChessListener.cp:131:42: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
+  131 |         static char * pieceName[] = {"", "Pawn", "Knight", "Bishop", "Rook", "Queen", "King"};
+      |                                          ^~~~~~
+ChessListener.cp:131:50: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
+  131 |         static char * pieceName[] = {"", "Pawn", "Knight", "Bishop", "Rook", "Queen", "King"};
+      |                                                  ^~~~~~~~
+ChessListener.cp:131:60: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
+  131 |         static char * pieceName[] = {"", "Pawn", "Knight", "Bishop", "Rook", "Queen", "King"};
+      |                                                            ^~~~~~~~
+ChessListener.cp:131:70: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
+  131 |         static char * pieceName[] = {"", "Pawn", "Knight", "Bishop", "Rook", "Queen", "King"};
+      |                                                                      ^~~~~~
+ChessListener.cp:131:78: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
+  131 |         static char * pieceName[] = {"", "Pawn", "Knight", "Bishop", "Rook", "Queen", "King"};
+      |                                                                              ^~~~~~~
+ChessListener.cp:131:87: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
+  131 |         static char * pieceName[] = {"", "Pawn", "Knight", "Bishop", "Rook", "Queen", "King"};
+      |                                                                                       ^~~~~~
+ChessListener.cp: In member function ‘bool CLMoveGenerator::TryMove(int, const CLCoord&, const CLCoord&)’:
+ChessListener.cp:571:12: warning: suggest explicit braces to avoid ambiguous ‘else’ [-Wdangling-else]
+  571 |         if (piece == PAWN) // Pawns move straight, capture diagonally
+      |            ^
+ Linking app Chess ...
+ Creating Chess.app/Resources...
+ Creating stamp file...
+ Creating Chess.app/Resources/Info-gnustep.plist...
+ Creating Chess.app/Resources/Chess.desktop...
+ Copying resources into the app wrapper...
+Warning: .//gnuchess.subproj/COPYING not found - ignoring
+Warning: .//gnuchess.subproj/gnuchess.book not found - ignoring
+ Copying localized resources into the app wrapper...
+This is gnustep-make 2.9.3. Type 'gmake print-gnustep-make-help' for help.
+Running in gnustep-make version 2 strict mode.
+mkdir -p ./obj/gnuchess.subproj
+Making all for app Chess...
+gmake[3]: Rien à faire pour « internal-app-compile ».
+ Copying resources into the app wrapper...
+Warning: .//gnuchess.subproj/COPYING not found - ignoring
+Warning: .//gnuchess.subproj/gnuchess.book not found - ignoring
+ Copying localized resources into the app wrapper...
+Making install for app Chess...
+ Installing bundle directory...

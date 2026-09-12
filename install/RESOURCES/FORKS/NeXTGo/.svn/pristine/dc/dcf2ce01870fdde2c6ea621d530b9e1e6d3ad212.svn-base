@@ -1,0 +1,6541 @@
+#########################################################################
+#									#
+#	    	       The Internet Go Dictionary			#
+#									#
+#				 by the					#
+#		       The Internet Go Community			#
+#									#
+#-----------------------------------------------------------------------#
+# File    : champion.dct 						#
+# Purpose : Go related expressions and their translations		#
+# Version : 1.9 						#
+# Modified: 2/27/93 12:03:57						#
+# E-mail  : Jim Yu            (jzy@casbah.acns.nwu.edu)			#
+# E-mail  : Jan van der Steen (jansteen@cwi.nl) 			#
+#########################################################################
+#
+# The Go Dictionary is a joint effort by the Internet Go community.
+# You would help your fellow country men and the Go community as a
+# whole by adding definitions/translations to the list below.
+# Please send them to either:
+#
+#	Jim Yu			jzy@casbah.acns.nwu.edu
+#	Jan van der Steen	jansteen@cwi.nl
+#
+# Explanation of the format of the dictionary:
+#
+# Empty lines and lines starting with a "hash" (like these lines) are ignored.
+# All other lines are expected to have the format:
+#
+#	FIELD=VALUE
+#
+# where:
+#
+#	Field	Meaning
+#	-------------------------
+#	CD	Code (see below)
+#	JP	Japanese
+#	GB	English
+#	CH	Chinese (pinyin)
+#	RK	Republic of Korea
+#	NL	Dutch
+#	GE	German
+#	FR	France
+#	SV	Swedish
+#
+#	Code	Classification
+#	-------------------------
+#	t	(T)echnical
+#	n	(N)ame
+#	c	(C)hampionship
+#	d	(d)igits
+#	p	(p)olite, courtesy phrases
+#
+# Contributions:
+#
+#   Name		E-mail				Language
+#   -------------------------------------------------------------------
+#   Barry Phease	BARRYP@otago.ac.nz		English/various
+#   Jan van der Steen	jansteen@cwi.nl			Dutch/English
+#   Jim Yu		jzy@casbah.acns.nwu.edu		Chinese/English
+#   Joachim Beggerow	job@shusaku.escape.de		German
+#   Kim Juwhan		juwhan@eve.kaist.ac.kr		Korean
+#   Kishiko Shimizu	jansteen@cwi.nl			Japanese
+#   Nate Smith		nates@ll.mit.edu		English
+#   Philippe Bizard	bizard@imag.fr			French
+#   Roy Schmidt		schmidt@usthk.ust.hk		English/various
+#   Ryu Kwangseon	juwhan@eve.kaist.ac.kr		Korean
+#   Yang Wonsuk		osl2@mgt.kaist.ac.kr		Korean
+#   Park Misa		juwhan@eve.kaist.ac.kr		Korean
+#   Peter Smidt		smidt@fy.chalmers.se		Swedish
+#
+# So, all initial target languages now have a name associated with it!
+# 
+
+# Jim Yu:
+# (Note: I also included 1. pinyin without tone number; 2. the "meaning" of
+# each title game, literally; 3. the level of the title match, either 5-game
+# or 7-game.)
+
+CD=c
+RK=Gook-soo 
+GB=Korean top title ("master of go";5-game title match)
+SV=Koreansk m{sterskapstitel, (go-)m{stare ( b{st av 5 partier )
+
+CD=c
+RK=Wang-wee
+GB=Korean top title( 7-game title match)
+SV=Koreansk m{sterskapstitel ( b{st av 7 partier )
+
+CD=c
+RK=Gook-gi
+GB=Korean top title( 5-game title match)
+SV=Koreansk m{sterskapstitel ( b{st av 5 partier )
+
+CD=c
+JP=hon-inbo
+GB=japanese top title ("ancient go family"; 7-game title match)
+CH=ben3 ying fang3 (ben ying fang)
+RK=Pon-in-bang
+NL=japans top toernooi ('honinbo' = oude Japanse familie; best of seven)
+FR=grand titre japonais (en 4 parties gagnantes)
+FR=('honinbo' = l'une des anciennes familles de go japonaises)
+SV=Honinbo, toppstatustitelmatch ( b{st av 7 partier ), ur}ldrigt
+SV=japanskt familjenamn
+
+CD=c
+JP=meijin
+GB=japanese top title ("master of go"; 7-game title match)
+GB=korean top title(7-game title match)
+CH=ming2 ren2 (ming ren)
+RK=Myeong-in
+NL=japans top toernooi ('meijin' = meester; best of seven)
+FR=grand titre japonais ('meijin' = maitre de go ; 4 parties gagnantes)
+SV=(go-)m{stare, japansk m{sterskapstitel ( b{st av 7 partier )
+
+CD=c
+JP=kisei
+GB=japanese top title ("board-game immortal"; 7-game title match)
+GB=korean top title(7-game title match)
+CH=qi2 sheng4 (qi sheng)
+RK=Ki-seong
+NL=japans top toernooi ('ki' = go, 'sei' = heilig persoon; best of seven)
+FR=grand titre japonais (4 parties gagnantes)
+SV=br{dets od|dlige, japansk m{sterskapstitel ( b{st av 7 partier )
+
+CD=c
+JP=judan
+GB=japanese top title ("ten dan"; 5-game title match)
+CH=shi2 duan4 (shi duan)
+RK=Ship-dan
+NL=japans top toernooi ('ju' = 10, dus 10de dan; best of five)
+FR=grand titre japonais ('judan' = 10eme dan ; 3 parties gagnantes)
+SV=10 dan, japansk m{sterskapstitel ( b{st av 5 partier )
+
+CD=c
+JP=tengen
+GB=japanese top title ("sky center"; 5-game title match)
+CH=tian yuan2 (tian yuan)
+RK=Cheon-won
+NL=japans top toernooi ('tengen' = (10,10) punt; best of five)
+FR=grand titre japonais ('tengen' = centre du ciel ; 3 parties gagnantes)
+SV=himmelens mittpunkt, japansk m{sterskapstitel ( b{st av 5 partier )
+
+CD=c
+JP=gosei
+GB=japanese top title ("go immortal"; 5-game title match)
+CH=qi2 sheng4 (xiao3 qi2 sheng4; xiao qi sheng)
+RK=Ki-wang
+NL=japans top toernooi ('sei' = heilig meester; best of five)
+FR=grand titre japonais (3 parties gagnantes)
+SV=od|dlig go, japansk m{sterskapstitel ( b{st av 5 partier )
+
+CD=c
+JP=oza
+GB=japanese top title ("king seat"; 5-game title match)
+CH=wang2 zuo4 (wang zuo)
+RK=Wang-jwa
+NL=japans top toernooi ('oza' = troon; best of five)
+FR=grand titre japonais ('oza' = trone ; 3 parties gagnantes)
+SV=kungstronen, japansk m{sterskapstitel ( b{st av 5 partier )
+
+CD=c
+JP=shinjin-o
+GB=top new comers ("new men king")
+CH=xin ren2 wang2 (xin reng wang)
+RK=Shin-in-wang
+NL=japans toernooi ('shinjin' = nieuwe, 'o' = koning; voor spelers <= 7p)
+FR=titre japonais ("le roi des nouveaux visages")
+SV=(]rets?) b{sta nya spelare
+
+CD=c
+JP=kakusei
+GB=
+CH=
+RK=Hak-seong
+NL=Japan Airlines toernooi ('kaku' = kraanvogel, 'sei' = heilig persoon)
+FR=titre japonais
+SV=heliga tranan, den eviga f}geln, japansk m{sterskapstitel
+
+CD=c
+JP=nec cup
+GB=
+CH=
+RK=NEC-bae
+NL=NEC snelgo toernooi (met publiek)
+FR=Coupe NEC (tournoi japonais) 
+SV=NEC-cupen
+
+CD=c
+JP=nhk cup
+GB=
+CH=
+RK=NHK-bae
+NL=NHK TV snelgo toernooi (wekelijks op TV)
+FR=Coupe NHK (tournoi japonais)
+SV=NHK-cupen
+
+CD=c
+JP=ryusei
+GB=
+CH=
+RK=Yong-seong
+NL=Satelliet TV toernooi
+SV=(satellit-)TV-turnering
+
+CD=c
+JP=fujitsu Cup
+GB=
+CH=
+RK=Fujitsu-bae
+NL=Fujitsu Toernooi
+FR=Coupe Fujitsu
+SV=Fujitsu-cupen
+
+CD=c
+JP=Haya-go senshuken
+GB=
+CH=
+RK=
+NL=Snelgo kampioenshap
+FR=Championnat de blitz
+SV=blixtm{sterskap
+
+CD=c
+JP=O shoki hai
+GB=Ing cup
+CH=
+RK=
+NL=Ing toernooi
+FR=Coupe Ing
+SV=Ing-cupen
+
+#########################################################################
+#									#
+#	    	       The Internet Go Dictionary			#
+#									#
+#				 by the					#
+#		       The Internet Go Community			#
+#									#
+#-----------------------------------------------------------------------#
+# File    : names.dct 						#
+# Purpose : Player names in various languages				#
+# Version : 1.6 						#
+# Modified: 12/24/92 17:48:58						#
+# E-mail  : Jim Yu            (jzy@casbah.acns.nwu.edu)			#
+# E-mail  : Jan van der Steen (jansteen@cwi.nl) 			#
+#########################################################################
+#
+# The Go Dictionary is a joint effort by the Internet Go community.
+# You would help your fellow country men and the Go community as a
+# whole by adding definitions/translations to the list below.
+# Please send them to either:
+#
+#	Jim Yu			jzy@casbah.acns.nwu.edu
+#	Jan van der Steen	jansteen@cwi.nl
+#
+# Explanation of the format of the dictionary:
+#
+# Empty lines and lines starting with a "hash" (like these lines) are ignored.
+# All other lines are expected to have the format:
+#
+#	FIELD=VALUE
+#
+# where:
+#
+#	Field	Meaning
+#	-------------------------
+#	CD	Code (see below)
+#	JP	Japanese
+#	GB	English
+#	CH	Chinese (pinyin)
+#	RK	Republic of Korea
+#	NL	Dutch
+#
+#	Code	Classification
+#	-------------------------
+#	t	(T)echnical
+#	n	(N)ame
+#	c	(C)hampionship
+#	d	(d)igits
+#	p	(p)olite, courtesy phrases
+#
+# Contributions:
+#
+#   Name		E-mail				Language
+#   -------------------------------------------------------------------
+#   Barry Phease	BARRYP@otago.ac.nz		English/various
+#   Jan van der Steen	jansteen@cwi.nl			Dutch/English
+#   Jim Yu		jzy@casbah.acns.nwu.edu		Chinese/English
+#   Joachim Beggerow	job@shusaku.escape.de		German
+#   Kim Juwhan		juwhan@eve.kaist.ac.kr		Korean
+#   Kishiko Shimizu	jansteen@cwi.nl			Japanese
+#   Nate Smith		nates@ll.mit.edu		English
+#   Philippe Bizard	bizard@imag.fr			French
+#   Roy Schmidt		schmidt@usthk.ust.hk		English/various
+#   Ryu Kwangseon	juwhan@eve.kaist.ac.kr		Korean
+#   Yang Wonsuk		osl2@mgt.kaist.ac.kr		Korean
+#   Park Misa		juwhan@eve.kaist.ac.kr		Korean
+#
+# So, all initial target languages now have a name associated with it!
+# 
+
+#
+# Comment
+#
+# * Fujisawa Kuranosuke (Teng2-ze2 Ku4-zhi-zhu4), uncle of Hideyuki
+# (Xiu4-xing2), later changed his name to Hosai (Peng2-zhai).
+# 
+# ** Sometimes these two players are referred as Kobayashi Kouichi
+# and Ohtake Hideo, which are closer to the real Japanese.
+
+CD=n
+JP=Abe Yoshiteru
+CH=An-bei4 Ji4-hui (anbei, an bei ji hui)
+RK=
+
+CD=n
+JP=Awaji Shuzo
+CH=Dan4-lu4 Xiu-san (danlu, dan lu xiu san)
+RK=
+
+CD=n
+JP=Cho Chikun
+CH=Zhao4 Zhi4-xun (zhao zhi xun)
+RK=Cho Chi-hoon
+
+CD=n
+JP=Cho Hunhyun
+CH=Cao2 Xun-xuan2 (cao xun xuan)
+RK=Cho hoon-hyun
+
+CD=n
+JP=Fujisawa Kuranosuke (+1992)
+CH=Teng2-ze2 Ku4-zhi-zhu4 (tengze, teng ze ku zhi zhu)
+RK=
+
+CD=n
+JP=Fujisawa Hosai (+1992)
+CH=Teng2-ze2 Peng2-zhai (tengze, teng ze peng zhai)
+RK=
+
+CD=n
+JP=Fujisawa Hideyuki (or Shuko)
+CH=Teng2-ze2 Xiu4-xing2 (tengze, teng ze xiu xing)
+RK=
+
+CD=n
+JP=Go Seigen
+CH=Wu2 Qing-yuan2 (wu qing yuan)
+RK=
+
+CD=n
+JP=Hashimoto Shoji
+CH=Qiao2-ben3 Chang-er4 (qiaoben, qiao ben chang er)
+RK=
+
+CD=n
+JP=Hashimoto Utaro
+CH=Qiao2-ben3 Yu3-tai4-lang2 (qiaoben, qiao ben yu tai lang)
+RK=Gyo Bon Woo Tae Rang
+
+CD=n
+JP=Honda Kunihisa
+CH=Ben3-tian2 Bang-jiu3 (bentian, ben tian bang jiu)
+RK=
+
+CD=n
+JP=Imamura Toshiya
+CH=Jin-cun Jun4-ye3 (jincun, jin chun jun ye)
+RK=
+
+CD=n
+JP=Ishida Akira
+CH=Shi2-tian2 Zhang (shitian, shi tian zhang)
+RK=
+
+CD=n
+JP=Ishida Yoshio
+CH=Shi2-tian2 Fang-fu (shitian, shi tian fang fu)
+RK=Seok Jeon bang boo
+
+CD=n
+JP=Iwamoto Kaoru
+CH=Yan-Ben3 Xun (yanben, yan ben xun)
+RK=
+
+CD=n
+JP=Kajiwara Takeo
+CH=Wei3-yuan2 Wu3-xiong2 (weiyuan, wei yuan wu xiong)
+RK=
+
+CD=n
+JP=Kataoka Satoshi
+CH=Pian4-gang Cong (piangang, pian gang cong)
+
+CD=n
+JP=Kato Masao
+CH=Jia-teng2 Zheng4-fu (jiateng, jia teng zheng fu)
+RK=Ga deung jeong boo
+
+CD=n
+JP=Kitani Minoru
+CH=Mu4-gu3 Shi2 (mugu, mu gu shi)
+RK=Mok gok sil
+
+CD=n
+JP=Kobayashi Koichi
+CH=Xiao3-lin2 Guang-yi (xiaolin, xiao lin guang yi)
+RK=So-rim kwang il
+
+CD=n
+JP=Kobayashi Satoru
+CH=Xiao3-lin2 Jue2 (xiaolin, xiao lin jue)
+RK=So-rim Gak
+
+CD=n
+JP=Kudo Norio
+CH=Gong-teng2 Ji4-fu (gongteng, gong teng ji fu)
+
+CD=n
+JP=Kusunoki Teruko
+CH=Nan2 Guang-zi3 (nan guang zi)
+
+CD=n
+JP=Miyazawa Goro
+CH=Gong-ze2 Wu3-lang2 (gongze, gong ze wu lang)
+
+CD=n
+JP=Morita Michihiro
+CH=Sen-tian2 Dao4-bo2 (sentian, sen tian dao bo)
+
+CD=n
+JP=O Meien
+CH=Wang2 Ming2-wan3 (wang ming wan)
+RK=Wang myoung-wan
+
+CD=n
+JP=O Rissei
+CH=Wang2 Li4-cheng2 (wang li cheng)
+RK=Wang lip seong
+
+CD=n
+JP=Ogawa Tomoko
+CH=Xiao3-chuan Cheng2-zi3 (xiaochuan, xiao chuan cheng zi)
+
+CD=n
+JP=Ohira Shuzo
+CH=Da4-ping2 Xiu-san (daping, da ping xiu san)
+
+CD=n
+JP=Otake Hideo
+CH=Da4-zhu2 Ying-xiong2 (dazhu, da zhu ying xiong)
+
+CD=n
+JP=Rin Kaiho
+CH=Lin2 Hai3-feng (lin hai feng)
+RK=Seop-wi-pyeong
+
+CD=n
+JP=Sakai Takeshi
+CH=Jiu3-jing3 Meng3 (jiujing, jiu jing meng)
+
+CD=n
+JP=Sakata Eio
+CH=Ban3-tian2 Rong2-nan2 (bantian, ban tian rong nan)
+
+CD=n
+JP=Takagawa (Shu)kaku
+CH=Gao-chuan (Xiu4)-ge2 (gaochuan, gao chuan xiu ge)
+
+CD=n
+JP=Takemiya Masaki
+CH=Wu3-gong Zheng4-shu4 (wugong, wu gong zheng shu)
+RK=Moo goong jeong soo
+
+CD=n
+JP=Yamashiro Hiroshi
+CH=Shan-cheng2 Hong2 (shancheng, shan cheng hong)
+
+CD=n
+JP=Yoda Norimoto
+CH=Yi-tian2 Ji4-ji (yitian, yi tian ji ji)
+
+CD=n
+JP=Zhuge Masaki
+CH=Yu2 Zi3-jian
+
+CD=n
+RK=Cho nam-cheol
+
+CD=n
+RK=Ha chan-seok
+
+CD=n
+RK=Jang soo-young
+
+CD=n
+RK=Jeong hyun-san
+
+CD=n
+RK=Jeong soo-hyun
+
+CD=n
+RK=Kang hoon
+
+CD=n
+RK=Kim in
+
+CD=n
+RK=Kim soo-jang
+
+CD=n
+RK=Kim yong-tae
+
+CD=n
+RK=Lee chang-ho
+
+CD=n
+RK=No young-ha
+
+CD=n
+RK=Ryu chang-hyuk
+
+CD=n
+RK=Ryu si-hoon
+
+CD=n
+RK=Seo bong-soo
+
+CD=n
+RK=Seo neung-wook
+
+CD=n
+RK=Yang jae-ho
+
+CD=n
+RK=Yoon ki-hyun
+
+CD=n
+RK=Do-chaek
+JP=Dosaku
+
+CD=n
+RK=Jang-wha
+JP=Jo-wa
+
+CD=n
+RK=Soo-wha
+JP=Shu-wa
+
+CD=n
+RK=Soo-chaek
+JP=Shushaku
+
+CD=n
+RK=Soo-bo
+JP=shu-bo
+
+CD=n
+RK=Soo-jae
+JP=Shu-sai
+
+#########################################################################
+#									#
+#	    	       The Internet Go Dictionary			#
+#									#
+#				 by the					#
+#		       The Internet Go Community			#
+#									#
+#-----------------------------------------------------------------------#
+# File    : numbers.dct 						#
+# Purpose : Numbers in various languages				#
+# Version : 1.8 						#
+# Modified: 2/27/93 12:03:22						#
+# E-mail  : Jim Yu            (jzy@casbah.acns.nwu.edu)			#
+# E-mail  : Jan van der Steen (jansteen@cwi.nl) 			#
+#########################################################################
+#
+# The Go Dictionary is a joint effort by the Internet Go community.
+# You would help your fellow country men and the Go community as a
+# whole by adding definitions/translations to the list below.
+# Please send them to either:
+#
+#	Jim Yu			jzy@casbah.acns.nwu.edu
+#	Jan van der Steen	jansteen@cwi.nl
+#
+# Explanation of the format of the dictionary:
+#
+# Empty lines and lines starting with a "hash" (like these lines) are ignored.
+# All other lines are expected to have the format:
+#
+#	FIELD=VALUE
+#
+# where:
+#
+#	Field	Meaning
+#	-------------------------
+#	CD	Code (see below)
+#	JP	Japanese
+#	GB	English
+#	CH	Chinese (pinyin)
+#	RK	Republic of Korea
+#	NL	Dutch
+#	GE	German
+#	FR	France
+#	SV	Swedish
+#
+#	Code	Classification
+#	-------------------------
+#	t	(T)echnical
+#	n	(N)ame
+#	c	(C)hampionship
+#	d	(d)igits
+#	p	(p)olite, courtesy phrases
+#
+# Contributions:
+#
+#   Name		E-mail				Language
+#   -------------------------------------------------------------------
+#   Barry Phease	BARRYP@otago.ac.nz		English/various
+#   Jan van der Steen	jansteen@cwi.nl			Dutch/English
+#   Jim Yu		jzy@casbah.acns.nwu.edu		Chinese/English
+#   Joachim Beggerow	job@shusaku.escape.de		German
+#   Kim Juwhan		juwhan@eve.kaist.ac.kr		Korean
+#   Kishiko Shimizu	jansteen@cwi.nl			Japanese
+#   Nate Smith		nates@ll.mit.edu		English
+#   Philippe Bizard	bizard@imag.fr			French
+#   Roy Schmidt		schmidt@usthk.ust.hk		English/various
+#   Ryu Kwangseon	juwhan@eve.kaist.ac.kr		Korean
+#   Yang Wonsuk		osl2@mgt.kaist.ac.kr		Korean
+#   Park Misa		juwhan@eve.kaist.ac.kr		Korean
+#   Peter Smidt		smidt@fy.chalmers.se		Swedish
+#   Peter Smidt		smidt@fy.chalmers.se		Swedish
+#
+# So, all initial target languages now have a name associated with it!
+# 
+
+CD=d(igits)
+JP=ichi
+GB=one
+CH=yi
+NL=een
+RK=il
+FR=un
+SV=ett, en
+
+CD=d
+JP=ni
+GB=two
+CH=er4 (liang3)
+NL=twee
+RK=iee
+FR=deux
+SV=tv}
+
+CD=d
+JP=san
+GB=three
+CH=san
+NL=drie
+RK=sam
+FR=trois
+SV=tre
+
+CD=d
+JP=yon (shi)
+GB=four
+CH=si4
+NL=vier
+RK=sa
+FR=quatre
+SV=fyra
+
+CD=d
+JP=go
+GB=five
+CH=wu3
+NL=vijf
+RK=oh
+FR=cinq
+SV=fem
+
+CD=d
+JP=roku
+GB=six
+CH=liu4
+NL=zes
+RK=yuk
+FR=six
+SV=sex
+
+CD=d
+JP=nana (shichi)
+GB=seven
+CH=qi
+NL=zeven
+RK=chil
+FR=sept
+SV=sju
+
+CD=d
+JP=hachi
+GB=eight
+CH=ba
+NL=acht
+RK=pal
+FR=huit
+SV=}tta
+
+CD=d
+JP=kyu (ku)
+GB=nine
+CH=jiu3
+NL=negen
+RK=goo
+FR=neuf
+SV=nio, sopa
+
+CD=d
+JP=ju
+GB=ten
+CH=shi2
+NL=tien
+RK=ship
+FR=dix
+SV=tio
+
+#########################################################################
+#									#
+#	    	       The Internet Go Dictionary			#
+#									#
+#				 by the					#
+#		       The Internet Go Community			#
+#									#
+#-----------------------------------------------------------------------#
+# File    : polite.dct 						#
+# Purpose : Courtesy phrases in various languages			#
+# Version : 1.8 						#
+# Modified: 2/27/93 12:03:34						#
+# E-mail  : Jim Yu            (jzy@casbah.acns.nwu.edu)			#
+# E-mail  : Jan van der Steen (jansteen@cwi.nl) 			#
+#########################################################################
+#
+# The Go Dictionary is a joint effort by the Internet Go community.
+# You would help your fellow country men and the Go community as a
+# whole by adding definitions/translations to the list below.
+# Please send them to either:
+#
+#	Jim Yu			jzy@casbah.acns.nwu.edu
+#	Jan van der Steen	jansteen@cwi.nl
+#
+# Explanation of the format of the dictionary:
+#
+# Empty lines and lines starting with a "hash" (like these lines) are ignored.
+# All other lines are expected to have the format:
+#
+#	FIELD=VALUE
+#
+# where:
+#
+#	Field	Meaning
+#	-------------------------
+#	CD	Code (see below)
+#	JP	Japanese
+#	GB	English
+#	CH	Chinese (pinyin)
+#	RK	Republic of Korea
+#	NL	Dutch
+#	GE	German
+#	FR	France
+#	SV	Swedish
+#
+#	Code	Classification
+#	-------------------------
+#	t	(T)echnical
+#	n	(N)ame
+#	c	(C)hampionship
+#	d	(d)igits
+#	p	(p)olite, courtesy phrases
+#
+# Contributions:
+#
+#   Name		E-mail				Language
+#   -------------------------------------------------------------------
+#   Barry Phease	BARRYP@otago.ac.nz		English/various
+#   Jan van der Steen	jansteen@cwi.nl			Dutch/English
+#   Jim Yu		jzy@casbah.acns.nwu.edu		Chinese/English
+#   Joachim Beggerow	job@shusaku.escape.de		German
+#   Kim Juwhan		juwhan@eve.kaist.ac.kr		Korean
+#   Kishiko Shimizu	jansteen@cwi.nl			Japanese
+#   Nate Smith		nates@ll.mit.edu		English
+#   Philippe Bizard	bizard@imag.fr			French
+#   Roy Schmidt		schmidt@usthk.ust.hk		English/various
+#   Ryu Kwangseon	juwhan@eve.kaist.ac.kr		Korean
+#   Yang Wonsuk		osl2@mgt.kaist.ac.kr		Korean
+#   Park Misa		juwhan@eve.kaist.ac.kr		Korean
+#   Peter Smidt		smidt@fy.chalmers.se		Swedish
+#
+# So, all initial target languages now have a name associated with it!
+# 
+
+CD=p(olite)
+JP=domo arigato gozaimasu
+CH=xie4 xie4
+GB=thanks
+NL=dank U (je) wel
+RK=Ko-ma-wa-yo.
+FR=merci beaucoup
+SV=tack
+
+CD=p(olite)
+JP=do itashimashite
+CH=bu yong4 xie4 
+GB=you're welcome
+NL=het genoegen is mijnerzijds
+RK=Cheon-man-e-yo.
+FR=je vous en prie (en reponse a 'merci')
+SV=Ta f|r dej d}! G|r som du vill. K{nn dej som hemma.
+
+CD=p
+JP=sayonara
+CH=zai4 jian4
+GB=see you/bye
+NL=tot ziens
+RK=Ahn-nyeong!
+FR=au revoir
+SV=Hej d}!
+
+CD=p
+JP=hajimemashite
+GB=nice to meet you
+CH=hen3 gao xing4 jian4 dao4 ni3
+NL=aangenaam kennis met U te maken
+RK=Man-na-seo pan-ga-wa-yo.
+FR=enchante (de faire votre connaissance)
+SV=Men, vad trevligt att tr{ffa dej! Trevligt att r}kas.
+
+CD=p
+JP=kon'nichiwa (daytime)
+GB=hello,hi
+NL=hallo,hoi
+CH=ni3 hao ma? (chi le ma? :-)
+RK=Ahn-nyeong?
+FR=bonjour
+SV=Hej! Hall}!
+
+CD=p
+JP=ohayo gozaimasu
+GB=good morning
+CH=zao3 shang4 hao3
+NL=goedenmorgen
+RK=Ahn-nyeong? (bap-meok-ut-ni? (^_*))
+FR=bonjour (seulement le matin)
+SV=God morgon!
+
+CD=p
+JP=konbanwa
+GB=good evening
+CH=wan3 shang4 hao3
+NL=goedenavond
+RK=Ahn-nyeong?
+FR=bonsoir (en se rencontrant, pas en se quittant)
+SV=God kv{ll!
+
+CD=p
+JP=onegai dekimasu ka?
+GB=shall we play a game?
+NL=zullen we een partij spelen?
+CH=lai2 yi4 pan2, xing2 ma?
+RK=Han-pan tool-kka-yo?
+FR=voulez-vous jouer ?
+SV=Ska vi spela ett parti?
+
+CD=p
+JP=teai wa doshimasu ka?
+GB=what is the handicap?
+NL=hoeveel voorgift?
+CH=rang4 ji3 (ke) zi3?
+RK=Myeot-jeom kkal-kka-yo?
+FR=quel est le handicap ?
+SV=Hur mycket handikapp? Hur m}nga stenar?
+
+CD=p
+JP=yoroshiku onegaishimasu
+GB=have a nice game
+NL=een prettige partij
+CH=hao3 hao xia4!
+RK=Keon-too-reul pip-ni-da.
+FR=je vous souhaite une bonne partie
+SV=Spela d}! Hoppas det blir en bra match.
+
+CD=p
+JP=dono kurai ouchini narimasu ka?
+GB=what is your strength?
+NL=hoe sterk bent U?
+SV=Vilken ranking har du? Hur bra {r du?
+
+#########################################################################
+#									#
+#	    	       The Internet Go Dictionary			#
+#									#
+#				 by the					#
+#		       The Internet Go Community			#
+#									#
+#-----------------------------------------------------------------------#
+# File    : technical.dct 						#
+# Purpose : Go related expressions and their translations		#
+# Version : 1.20 						#
+# Modified: 2/28/93 11:42:51						#
+# E-mail  : Jim Yu            (jzy@casbah.acns.nwu.edu)			#
+# E-mail  : Jan van der Steen (jansteen@cwi.nl) 			#
+#########################################################################
+#
+# The Go Dictionary is a joint effort by the Internet Go community.
+# You would help your fellow country men and the Go community as a
+# whole by adding definitions/translations to the list below.
+# Please send them to either:
+#
+#	Jim Yu			jzy@casbah.acns.nwu.edu
+#	Jan van der Steen	jansteen@cwi.nl
+#
+# Explanation of the format of the dictionary:
+#
+# Empty lines and lines starting with a "hash" (like these lines) are ignored.
+# All other lines are expected to have the format:
+#
+#	FIELD=VALUE
+#
+# where:
+#
+#	Field	Meaning
+#	-------------------------
+#	CD	Code (see below)
+#	JP	Japanese
+#	GB	English
+#	CH	Chinese (pinyin)
+#	RK	Republic of Korea
+#	NL	Dutch
+#	GE	German
+#	FR	France
+#	SV	Swedish
+#
+#	Code	Classification
+#	-------------------------
+#	t	(T)echnical
+#	n	(N)ame
+#	c	(C)hampionship
+#	d	(d)igits
+#	p	(p)olite, courtesy phrases
+#
+# Contributions:
+#
+#   Name		E-mail				Language
+#   -------------------------------------------------------------------
+#   Barry Phease	BARRYP@otago.ac.nz		English/various
+#   Jan van der Steen	jansteen@cwi.nl			Dutch/English
+#   Jim Yu		jzy@casbah.acns.nwu.edu		Chinese/English
+#   Joachim Beggerow	job@shusaku.escape.de		German
+#   Kim Juwhan		juwhan@eve.kaist.ac.kr		Korean
+#   Kishiko Shimizu	jansteen@cwi.nl			Japanese
+#   Nate Smith		nates@ll.mit.edu		English
+#   Philippe Bizard	bizard@imag.fr			French
+#   Roy Schmidt		schmidt@usthk.ust.hk		English/various
+#   Ryu Kwangseon	juwhan@eve.kaist.ac.kr		Korean
+#   Yang Wonsuk		osl2@mgt.kaist.ac.kr		Korean
+#   Park Misa		juwhan@eve.kaist.ac.kr		Korean
+#   Peter Smidt		smidt@fy.chalmers.se		Swedish
+#
+# So, all initial target languages now have a name associated with it!
+# 
+
+CD=t
+JP=aki sankaku
+GB=(empty triangle)
+GB=Shape of the three stones. Generally bad shape (see 'guzumi')
+CH=yu2 san jiao3
+RK=Bin sam gak
+NL=Lege driehoek. In het algemeen slechte vorm (zie 'guzumi')
+GE=leeres Dreieck - Meistens eine schlechte Form. (Siehe auch guzumi)
+FR=Triangle vide. En general mauvaise forme (voir 'guzumi')
+SV=|ppen triangel, tom triangel
+DG= . . . .
+DG= . # a .
+DG= . # # .
+DG= . . . .
+CP= 
+CP= The three black stones form an empty triangle
+CP= (Since there is no stone at [a])
+
+CD=t
+JP=amashi
+GB=a strategy for white in no-komi games
+GB=in which he lets the opponent take good points
+GB=but as compensation takes territory, aiming to 'outlast' the opponent
+CH=
+RK=
+NL=Een strategie voor wit in partijen zonder komi.
+NL=Wit laat zwart de goede punten bezetten en pakt zelf ondertussen gebied
+GE=Eine Strategie des weiszen Spielers in Spielen ohne Komi.
+GE=Man laeszt den Gegner grosze Punkte besetzen und
+GE=nimmt als Ausgleich Gebiet.
+SV=En strategi i partier utan utj{mningspo{ng, d{r vit l}ter svart f} bra
+SV=positioner samtidigt som vit tar omr}den och inriktar sej p} att
+SV=f|rst|ra svarts blivande omr}den.
+
+CD=t
+JP=ago
+GB=chin
+CH=
+RK=teok
+NL=kin
+SV=(under-)k{ke, haka
+DG= 8 . . . . . . . . . . . . .
+DG= 7 . . . . . . . . . . . . .
+DG= 6 . . . o . . . . . . . . .
+DG= 5 . . . . . . . . . . . . .
+DG= 4 . . o * . # . . . . * . .
+DG= 3 . . . . # . a . . o . . .
+DG= 2 . . . . . . . . . . . . .
+DG= 1 . . . . . . . . . . . . .
+DG=   a b c d e f g h i j k l m
+CP= 
+CP= White [a] would be called 'ago', the chin of the black stones
+CP= (but there are many other cases like this where one could say 'ago')
+
+CD=t
+JP=aji waru
+GB=Bad aji (potential)
+CH=e4 wei4, huai4 wei4
+RK=
+NL=Slechte 'aji'
+FR=Mauvais aji
+SV=d}lig potentiell (utvecklings-)m|jlighet
+
+CD=t
+JP=aji ga aru
+GB=There is some aji (potential) in the situation.
+CH=you3 (yu2) wei4
+RK=mat-i it-da
+NL=Er zijn mogelijkheden in de positie
+FR=Il y a de l'aji. La situation n'est pas definitive.
+SV=m|jligheter finns
+DG=11 . . . . . . . . . . . . . . . . . . .
+DG=10 . . . * . . . . . * . . . . . # . . .
+DG= 9 . . . . . . . . . . . . . . . . . . .
+DG= 8 . . . . . . . . . . . . . . . . . . .
+DG= 7 . . . . . . . . . . . . . . . . . . .
+DG= 6 . . . . . . . . . . . . . . . . . . .
+DG= 5 . . # . . . . . . . . . . . . . . . .
+DG= 4 . . # * . . . . . # . . . . . # . . .
+DG= 3 . a o # # . . . . . . . . . . . b . .
+DG= 2 . . . o . . . . . . . . . . . . . . .
+DG= 1 . . . . . . . . . . . . . . . . . . .
+DG=   a b c d e f g h j k l m n o p q r s t
+CP= 
+CP= Black has an impressive potential in the lower part of the board.
+CP= While thinking about the best way to reduce it, white will realise
+CP= that he has aji at [a] (to live), and [b] (invasion).
+
+CD=t
+JP=aji ga warui
+GB=There is bad aji (potential) in the position.
+CH=you3 e4 wei4
+RK=mat-i na-bbeu-da
+NL=Er zitten nadelige mogelijkheden in de positie
+GE=schlechtes aji
+FR=L'aji qu'il y a dans la situation est mauvais
+SV=utvecklingsm|jligheterna {r d}liga
+
+CD=t
+JP=aji nokori
+GB=aji (potential) left
+CH=liu2 you3 yu2 wei4
+RK=mat-i nam-da
+NL=Er zijn mogelijkheden
+SV=m|jligheter finns kvar, m|jligheter till v{nster
+
+CD=t
+JP=ajiwai ga aru
+GB=tasteful
+CH=
+RK=
+NL=Met smaak
+SV=smakfull
+
+CD=t
+JP=akushu
+GB=bad move
+CH=e4 shou3
+RK=ak-soo
+NL=slechte zet
+FR=mauvais coup
+SV=m|gdrag
+
+CD=t
+JP=amai
+GB='sweet', not severe enough
+CH=huan3
+RK=moo-reu-da
+NL=zoet, niet krachtig genoeg
+GE=(nach)laessig
+FR=gentil
+SV=eftergiven, mjuk, slapph{nt, sl{pph{nt
+
+CD=t
+JP=amari gatachi
+GB=Play where one feels he has made good moves,
+GB=when in fact he has accomplished little
+CH=
+RK=
+NL=Een zettenreeks wat een succes lijkt maar het niet is
+SV=( spela ) impulsiva m|gdrag
+
+CD=t
+JP=ana
+GB=hole
+CH=dong4, lou4 dong4
+RK=
+NL=gat
+SV=h}l
+
+CD=t
+JP=aoru
+GB=to wave
+CH=
+RK=boo-chu-gi-da
+NL=waaieren
+SV=att vinka
+DG= . . . . . . . . . . .
+DG= . . . . . . . # . . .
+DG= . . . . . # . . o . .
+DG= . . . # . . o . . . .
+DG= . . . . o . . . . . .
+DG= . . o . . . . . . . .
+DG= . . . . . . . . . . .
+CP= 
+CP= This is a position where one could call the white moves: 'aoru'.
+CP= White is chasing the black stones with 'aoru' movement.
+
+CD=t
+JP=appaku
+GB=pressing
+CH=bi1
+RK=
+NL=drukken
+FR=presser (les pierres adverses vers un bord)
+SV=att pressa, trycka
+DG= 7 . . . . . . . . . . .
+DG= 6 . . . . . . . . . . .
+DG= 5 . . . o . . . . . . .
+DG= 4 . . o * . a c . . . .
+DG= 3 . . . . # b . . . . .
+DG= 2 . . . . . . . . . . .
+DG= 1 . . . . . . . . . . .
+DG=   a b c d e f g h i j k
+CP= 
+CP= White could decide to play [a], black [b], white [c], ...
+CP= White [a] and [c] would be 'appaku' (pressing).
+
+CD=t
+JP=ashi ga hayai
+GB=one can run quickly
+CH=
+RK=
+NL=Zich snel over het bord bewegend
+SV=att hasta ( |ver br{det )
+DG=19 . . . . . . . . . . . . . . . . . . .
+DG=18 . . . . . . . . . . . . . . . . . . .
+DG=17 . . . o . . . . . . . . . . . . . . .
+DG=16 . . . * . . . . . * . . . o . * # . .
+DG=15 . . . . . . . . . . . . . . . . . . .
+DG=14 . . . . . . . . . . . . . . . # . . .
+DG=13 . . . . . . . . . . . . . . . . . . .
+DG=12 . . . . . . . . . . . . . . . . . . .
+DG=11 . . . . . . . . . . . . . . . . . . .
+DG=10 . . . * . . . . . * . . . . . * . . .
+DG= 9 . . . . . . . . . . . . . . . . . . .
+DG= 8 . . . . . . . . . . . . . . . . . . .
+DG= 7 . . . . . . . . . . . . . . . . . . .
+DG= 6 . . . . . . . . . . . . . . . o . . .
+DG= 5 . . . . . . . . . . . . . . . . . . .
+DG= 4 . . o * # . . . . * . . . . . * . . .
+DG= 3 . . . . . . . . . . . . . . . # . . .
+DG= 2 . . . . . . . . . . . . . . . . . . .
+DG= 1 . . . . . . . . . . . . . . . . . . .
+DG=   a b c d e f g h j k l m n o p q r s t
+CP= 
+CP= A typical 'ashi ga hayai' opening movement.
+CP= Go Seigen - ??? (still have to look up a good example)
+
+CD=t
+JP=ashibaya
+GB=quick movement
+CH=zou3 de kuai4
+RK=
+NL=Snelle beweging
+SV=snabb r|relse
+
+CD=t
+JP=atama ga dete iro
+GB=
+CH=
+RK=meo-ri-reul nae-mil-da
+NL=
+SV= #### (|vers{ttning saknas)
+
+CD=t
+JP=atam o dasu
+GB=to move towards the centre
+CH="ting3 jing4 zhong1 yuan2" :-)
+RK=meo-ri-eo boot-i-da
+NL=Naar het centrum bewegen
+SV=g} mot centrum
+
+CD=t
+JP=ate-tsugi
+GB=The combination of a (single stone) check move and a connection move
+CH=da3 (he2) lian2
+RK=
+NL=De combinatie: 'atari' en verbinding
+FR=atari-connexion (en sequence)
+SV=typ av dragf|ljd; f|rst atari med en ensam sten och sedan f|rbindning
+SV=av den nyligen spelade stenen
+DG= 8 . . . . . . . . . . .
+DG= 7 . . . . . . . . . . .
+DG= 6 . . . . . . . . . . .
+DG= 5 . . . . . a c . . . .
+DG= 4 . . . # b # o . . * .
+DG= 3 . . . . # o d . . . .
+DG= 2 . . . . . . . . . . .
+DG= 1 . . . . . . . . . . .
+DG=   a b c d e f g h j k l
+CP= 
+CP= We are in the middle of a 'hoshi joseki'.
+CP= Two variations starting from here start with 'ate-tsugi':
+CP=    1. White [a], Black [b], White [c]
+CP=    2. White [a], Black [b], White [d]
+
+CD=t
+JP=atsui
+GB=thick, no aji left
+GB=strong formation of stones facing the center or facing along a side
+CH=hou4, hou4 shi2
+RK=doo-teo-um
+NL=Dik, geen zwaktes in de positie
+GE=Staerke / Dicke
+FR=solide (costaud)
+SV=tjocklek utan utvecklingsm|jligheter.
+
+CD=t
+JP=aya
+GB=some possibilities (somehow like 'aji' but used differently)
+CH=
+RK=
+NL=enige mogenlijkheden (practisch hetzelfde als 'aji', maar niet helemaal)
+SV=vissa m|jligheter (n{stan som 'aji', men anv{nds annorlunda)
+
+CD=t
+JP=ban
+GB=board
+CH=pan2
+RK=pan
+NL=bord
+SV=br{de
+
+CD=t
+JP=bango
+GB=match consisting of a set number of games
+CH=fan1 qi2 (shi2 fan1 qi2, qi1 fan1 qi2, etc.)
+RK=
+NL=een match over een vooraf vastgesteld aantal partijen
+NL=zie ook: 'jubango', 'nijubango', 'sanjubango'
+GE=Match, das aus einer bestimmten Anzahl von Spielen besteht.
+FR=Match entre deux joueurs, dont le nombre de parties est fixe a l'avance
+SV=t{vling best}ende av flera partier
+
+CD=t
+JP=bata bata tesuji
+GB=slang for 'oi-otoshi'
+CH=gun3 da3 bao1 shou1
+RK=heol-reong-han soo-dan
+NL=populaire woordkeuze voor 'oi-otoshi'
+SV=slang f|r kl{mdrag
+
+CD=t
+JP=butsukari
+GB=to thrust against an enemy stone
+CH=ding3
+RK=boo-dit-chi-da
+NL=tegen een vijandelijke keten aanlopen
+SV=f|rsvarskontaktdrag, f|rsvarstackling, st|ta
+DG= 8 . . . . . . . . . . . .
+DG= 7 . . . . . . . . . . . .
+DG= 6 . . o . . . . . . . . .
+DG= 5 . # # . . . . . . . . .
+DG= 4 . o # # # . . . . . . .
+DG= 3 . o o o . o c a . . . .
+DG= 2 . . . . b . . . . . . .
+DG= 1 . . . . . . . . . . . .
+DG=   a b c d e f g h j k l
+CP= 
+CP= Black just played [a], aiming at [b].
+CP= White [c], defending against this threat, would be a 'butsukari' move
+
+CD=t
+JP=chosei
+GB=eternal life, part of the rules of Japanese go
+CH=chang2 sheng1
+RK=wan-saeng
+NL=eeuwige leven, onderdeel van de Japanse Go regels
+GE=ewiges Leben - Teil der Japanischen Regeln
+FR=vie eternelle, un cas particulier des regles japonaises (extremement rare)
+SV=evigt liv, spelterm som inneb{r }terkallning av partiet
+DG= 8 . . . . . . . . . . . .
+DG= 7 . . . . . . . . . . . .
+DG= 6 . # . . . . . . . . . .
+DG= 5 . . . . . . . . . . . .
+DG= 4 . # # # # . # . . . . .
+DG= 3 . o o o o # . . . . . .
+DG= 2 o # # # o o # # . . . .
+DG= 1 . # b o . a o . . . . .
+DG=   a b c d e f g h j k l
+CP= 
+CP= Imagine the following sequence of moves:
+CP= 
+CP=    1. Black plays [a], threatening to kill white by playing [b],
+CP=    2. White defends by playing at [b] himself,
+CP=    3. Black captures those two white stones,
+CP=    4. White recaptures at (d,1).
+CP= 
+CP= This sequence would give exactly the same position we had before, making
+CP= this position 'chosei'. This game would become 'no result' according to
+CP= the "Japanese rules of Go".
+
+CD=t
+JP=damatte tsugi
+GB=
+CH=
+RK=
+NL=
+SV=(|vers{ttning saknas)
+
+CD=t
+JP=eguri
+GB=to damage the opponents territory
+CH=sou1 geng1
+RK=jji-reu-da
+NL=het vijandelijke gebied beschadigen
+SV=tentakelinvasion
+
+CD=t
+JP=fuji te
+GB=sealed move
+CH=feng1 qi2, feng1 zi3
+RK=you-il-han bang-beop
+NL=afgegeven/verzegelde zet
+FR=coup scelle
+SV=f|rseglat drag
+
+CD=t
+JP=fukure
+JP=fukurami
+GB=swell outward
+CH=
+RK=
+NL=Naar buiten opzwellen
+SV=expansion ut}t
+DG= 8 . . . . . . . . . . . .
+DG= 7 . . . . . . . . . . . .
+DG= 6 . . o . . . . . . . . .
+DG= 5 . . . a . . . . . . . .
+DG= 4 . . o # . . . . . . . .
+DG= 3 . . o # . . # . . . . .
+DG= 2 . . . . . . . . . . . .
+DG= 1 . . . . . . . . . . . .
+DG=   a b c d e f g h j k l
+CP= 
+CP= White [a] would be 'fukure' (or 'fukurami')
+
+CD=t
+JP=futokoro
+GB=territory
+CH=
+RK=
+NL=gebied
+SV=omr}de
+
+CD=t
+JP=gaisei
+GB=Influence (see 'jitsuri')
+CH=wai4 shi4 
+RK=
+NL=Invloed (zie 'jitsuri')
+GE=Auszeneinflusz
+GE=entsteht, wenn eine gegnerische Gruppe umschlossen ist.
+SV=p}verkan
+DG= 9 . . . . . . . . . . . .
+DG= 8 . . . . o . . . . . . .
+DG= 7 . . . # o . . . . . . .
+DG= 6 . . . # o . . . . . . .
+DG= 5 . . . # # o o . . . . .
+DG= 4 . . # . o # o # . . . .
+DG= 3 . . . . o # o . . . . .
+DG= 2 . . . . # # . . . . . .
+DG= 1 . . . . . . . . . . . .
+DG=   a b c d e f g h j k l
+CP= 
+CP= White has 'gaisei', black has 'jitsuri'
+
+CD=t
+JP=gambaru
+GB=Fighting spirit
+CH=
+RK=beo-ti-da
+NL=Vechtlust
+SV=j{vlar-anamma, kampanda
+
+CD=t
+JP=gacchiri
+GB=solid
+CH=yan2 shi2
+RK=teun-ten-han mo-yang
+NL=stevig
+SV=sammanh{ngande, solid
+
+CD=t
+JP=goban
+GB=go board
+CH=qi2 pan2
+RK=Baduk pan
+NL=Go bord
+GE=Go-Brett
+SV=gobr{de
+
+CD=t
+JP=gomoku nakade
+GB=dead shape with 5 spaces
+CH=hua2 wu3, dao1 ban3 wu3
+RK=
+NL=dode vorm bestaande uit vijf lege punten
+GE=tote Fuenf
+FR=forme en 5 (forme morte)
+SV=kn|lig femma
+DG= 6 . . . . . . . . . . .
+DG= 5 . . . . . . . . . . .
+DG= 4 . . o o o o o o . . .
+DG= 3 . . o # # # # o o . .
+DG= 2 . . o # . . # # o . .
+DG= 1 . . o # . a . # o . .
+CP= 
+CP= The black group is dead when white plays [a]
+
+CD=t
+JP=gozen go
+GB=To play a game of Go in front of an emperor (during the Edo era)
+CH=yu4 qi2 (yu4 for emperial)
+RK=
+NL=Een Go partij spelen voor een heerser (in het Edo tijdperk)
+SV=att sp{nna sej framf|r en kejsar med ett parti go
+
+CD=t
+JP=goken biraki
+GB=Five point extension
+CH=
+RK=
+NL=Vijfpunts uitbreiding
+FR=Extension de 5 intersections
+SV=fempunkts hopp ( expansion )
+
+CD=t
+JP=gote no sente
+GB=Temporary it is 'gote' but the follow up is servere 'sente'
+CH=
+RK=hoo-su-eoi seon-soo
+NL=De zet is tijdelijk nahand, maar de vervolg zet is een krachtige voorhand
+GE=ein Nachhand-Zug, durch den man einen Vorhand-Zug gewinnt.
+SV=tempf|rlustdrag som f|rbereder ett tempovinstdrag
+
+CD=t
+JP=go zengo
+GB=
+CH=
+RK=soo-seup
+NL=
+SV=(|vers{ttning saknas)
+
+CD=t
+JP=gukei
+GB=Bad shape
+CH=yu2 xing2
+RK=eung-hyeong
+NL=Slechte vorm
+GE=schlechte Form
+SV=d}lig form, m|gform
+
+CD=t
+JP=guru guru mawashi
+GB=Capturing an enemy chain using the following combination of techniques:
+GB=    1. stone sacrifice(s)
+GB=    2. squeeze
+GB=    3. ladder
+GB=During this chasing process the enemy chain typically gets heavy in
+GB=the process.
+CH=lian2 huan2 zheng1 zi3
+RK=dol-dol mal-ri-da
+NL=Een keten vangen waarbij gebruik gemaakt wordt van de volgende technieken:
+NL=    1. offersteentjes
+NL=    2. uitknijpen
+NL=    3. ladder
+NL=Tijdens het opjagen van de vijandelijke keten wordt dit typisch
+NL=een log zwaar klompje.
+SV=dragkombination ( f|r att er|vra motst}ndarstenar ) enligt f|ljande;
+SV=inkast, kl{mdrag och slutligen stege
+DG= 9 . . . . . . . . . . . . . . . . . . .
+DG= 8 . . . # . . . . . . . . . . . . . . .
+DG= 7 . . . # . . . . . . . . . . . . . . .
+DG= 6 . . . o # . . . . . . . . . . . . . .
+DG= 5 . . . o # . . . . . . . . . . . . . .
+DG= 4 . o o o # a . . o * . . . . . o . . .
+DG= 3 . # # # o # # # o . # . . . . . . . .
+DG= 2 o o . # o o o o # # . . . . . . . . .
+DG= 1 . . . . . . . . . . . . . . . . . . .
+CP= 
+CP= What will happen after white [a]?
+CP= Continuation: see 'dango'.
+CP= Final result: see 'shicho'.
+
+CD=t
+JP=gyaku yose
+GB=reverse 'sente' ('gote' endgame play where opponent would be 'sente')
+CH=ni4 xian1 shou3
+RK=him-deun jong-ban-jeon
+NL=Nahand eindspel om voorhand eindspel van de tegenstander te voorkomen
+GE=ein Nachhand-Zug, der einen Vorhand-Zug des Gegners verhindert.
+FR='sente' inverse (coup 'gote', mais qui serait 'sente' pour l'adversaire)
+SV=omv{nd tempovinst
+
+CD=t
+JP=guzumi
+GB=an efficient (and thus acceptable) empty triangle (see 'aki san kaku')
+CH=
+RK=bin-sam-gak-eo myo-soo
+NL=Een efficiente (en dus acceptabele) lege driehoek (zie 'aki san kaku')
+GE=Kampf-Dreieck
+FR=Triangle vide, mais dans une situation ou ce n'est pas un mauvais coup
+SV=f|rdelaktig |ppen triangel
+DG= 9 . . . . . . . . . . . . . . . . . . .
+DG= 8 . . o . . . . . . . . . . . . . . . .
+DG= 7 . . . . . . . # . . . . . . . . . . .
+DG= 6 . . . . # . # o o . . . . . . . . . .
+DG= 5 . o o o # . . . o # . . . . . . # . .
+DG= 4 . # # # o o o . . # . . . . . * . . .
+DG= 3 . . . # # o . . . . . . . . . # . . .
+DG= 2 . . . . . . . . . . . . . . . . . . .
+DG= 1 . . . . . . . . . . . . . . . . . . .
+DG=   a b c d e f g h j k l m n o p q r s t
+CP= 
+CP= Many empty diagrams in this example :),
+CP= but the one made by whites last move at j6 is guzumi.
+
+CD=t
+JP=hamari
+GB=to be tricked
+CH=bei4 qi1
+RK=jeok-jeol
+NL=gepoppeld worden (met dank aan Tonny Claasen :)
+SV=att g} p} en fint ( ett trick )
+
+CD=t
+JP=hana yori dango
+GB=Old Japanese saying meaning something like: 
+GB="Fame is nice but cash might be better"
+GB=('hana' = flower, 'dango' = 'Japanese sweet' and 'yori' = 'than')
+CH=
+RK=sil-sok-eul cha-ri-da
+NL=Een oud Japans spreekwoord ongeveer betekenend:
+NL="Roem is prettig maar handje kontantje is misschien beter"
+NL=('hana' = bloem, 'dango' = 'Japans snoepje' en 'yori' = 'dan')
+SV="g{rna guldklocka, men f|rst en rej{l pension/l|n"
+
+CD=t
+JP=hanami ko
+GB=A "flower-viewing" 'ko', i.e. one side has everything to lose,
+GB=while the other stakes almost nothing
+CH=
+RK=Ggot-nol-i pae
+NL=Een "bloemen kijken" 'ko', d.w.z. de ene partij heeft alles te
+NL=verliezen terwijl de andere praktisch niets op het spel zet
+GE=Ein Ko, bei dem eine Seite nichts verlieren kann.
+GE=Die andere Seite riskiert jedoch sehr viel.
+FR=Un ko qu'on peut jouer "en regardant les fleurs", c'est-a-dire qu'on
+FR=n'a presque rien a y perdre, mais l'adversaire beaucoup.
+SV=ensidigt f|rdelaktig ("julafton-")b|ld
+
+CD=t
+JP=hane age (noun)
+JP=hane ageru (verb)
+GB=A special kind of 'hane'
+CH=
+RK=
+NL=Een special soort 'hane'
+SV=inv{ndig b|j
+DG= . . . . . . .
+DG= . . . . . . .
+DG= . . . . . . .
+DG= . . . # a . .
+DG= . . # o . . .
+DG= . . # . . . .
+DG= . . . . . . .
+CP= 
+CP= White [a] would be 'hane age'
+
+CD=t
+JP=hane kaeshi
+GB=Counter 'hane'
+CH=fan3 ban1
+RK=
+NL=Een tegen 'hane'
+SV=utv{ndig b|j
+DG= . . . . . . .
+DG= . . . . . . .
+DG= . . . a . . .
+DG= . . # o . . .
+DG= . . # o . . .
+DG= . . b . . . .
+DG= . . . . . . .
+DG= . . . . . . .
+CP= 
+CP= After black [a] white [b] would be 'hane kaeshi'
+
+CD=t
+JP=hane nobi
+GB=combination of 'hane' and extend (from 'hane' stone)
+CH=ban1 chang2
+RK=
+NL=De combinatie van een 'hane' en verlenging
+FR=Un 'hane' suivi d'un 'nobi' (a partir de la pierre de hane) ! 
+SV=b|j och tillbyggnad p} b|jstenen
+DG= . . . . .
+DG= . # b . .
+DG= . # a c .
+DG= . o . . .
+DG= . . . . .
+CP= 
+CP= The combination white [a] and [c] is a 'hane nobi'
+
+CD=t
+JP=hane tsugi
+GB=combination of 'hane' and connection.
+CH=ban1 lian2
+RK=
+NL=De combinatie va een 'hane' en verbindzet
+FR=Un 'hane' suivi d'une connexion
+SV=b|j och d{refter f|rbindning av b|jstenen
+DG= . . . .
+DG= . b . .
+DG= . # a .
+DG= . o c .
+DG= . . . .
+CP= 
+CP= The combination white [a] and [c] is a 'hane tsugi'
+
+CD=t
+JP=hane dashi
+GB=To answer the opponents 'keima tsuke' move with an "inside" 'hane'
+CH=nei4 ban1
+RK=
+NL=De tegenstanders 'keima tsuke' beantwoorden met een 'hane' "aan de
+NL=binnenkant"
+SV=b|j som sk{r knektdrag
+DG= 8 . . . . . . . . . . . .
+DG= 7 . . . . . . . . . . . .
+DG= 6 . . . . . . . . . . . .
+DG= 5 . . . . . . . . . . . .
+DG= 4 . . . # . # . a b . . .
+DG= 3 . . . . . . . o . # . .
+DG= 2 . . . . . . . . . . . .
+DG= 1 . . . . . . . . . . . .
+CP= 
+CP= After black [a], white [b] would be 'hane dashi'
+
+CD=t
+JP=hane komi
+GB=A move which combines 'hane' and 'warikomi'
+CH=ban1 ru4
+RK=
+NL=Een zet die 'hane' en 'warikomi' combineert
+GE=ein umbiegen zwischen zwei gegnerische Steine
+FR=Coup qui est a la fois un 'hane' et un 'warikomi'
+SV=b|j som sk{r ett enpunktshopp
+DG= 8 . . . . . . . . . . . .
+DG= 7 . . . . . . . . . . . .
+DG= 6 . . . . . . . . . . . .
+DG= 5 . . . . . . . . . . . .
+DG= 4 . . . # . # b a . . . .
+DG= 3 . . . . . . . o . # . .
+DG= 2 . . . . . . . . . . . .
+DG= 1 . . . . . . . . . . . .
+CP= 
+CP= After black [a], white [b] would be 'hane komi'
+
+CD=t
+JP=harazuke
+JP=hara tsuke
+GB=attaching at the belly
+CH=
+RK=
+NL=aanhechten aan de buik
+SV=k{rnf|rbindelse, magf|rbindelse, maganslutning
+DG= 7 . . . . . . .
+DG= 6 . . # . . . .
+DG= 5 . o # . . . .
+DG= 4 . o o # # # .
+DG= 3 . # # o o . .
+DG= 2 . a . . . . .
+DG= 1 . . . . . . .
+DG=   a b c d e f g
+CP= 
+CP= White [a] is 'harazuke'
+
+CD=t
+JP=hasami tsuke
+GB=clamp, a move which pincers and attaches
+CH=jia2
+RK=
+NL=Een inklemzet die tevens aanhecht
+GE=Klemmzug
+SV=kramdrag
+DG= . . . . . . .
+DG= . . . . . . .
+DG= . . o . . . .
+DG= . . o # a . .
+DG= . . . . . . .
+DG= . . . . . . .
+CP= 
+CP= White [a] is 'hasami tsuke'
+
+CD=t
+JP=suberi
+JP=hashiri
+GB=slide, typically with 'keima', or 'ogeima' but not necessarily
+CH=jing4, fei1 jing4
+RK=
+NL=glijzet, i.h.a. met een 'keima' of een 'ogeima' (maar niet noodzakelijk)
+GE=ein Keima das unter eine gegnerische Formation gleitet
+FR=Glissade (par en-dessous les pierres adverses), souvent 'keima' ou 'ogeima'
+SV=glida, g} ner; anv{nds ofta i kombination med knektdrag
+DG=11 . . . . . . . . . . . .
+DG=10 . . # . . . . . . . . .
+DG= 9 . . . . . . . . . . . .
+DG= 8 . . . . . . . . . . . .
+DG= 7 . . . . . . . . . . . .
+DG= 6 . . . # . . . . . . . .
+DG= 5 . . . . . . . . . . . .
+DG= 4 . . # * . o . # . * . .
+DG= 3 . . . . o . . . . . . .
+DG= 2 . . o . . . . a . . . .
+DG= 1 . . . . . . . . . . . .
+DG=   a b c d e f g h j k l
+CP= 
+CP= The white move at (c,2) is a 'keima suberi' (or 'hashiri')
+CP= A white move at [a] would be a 'ogeima suberi' (or 'hashiri')
+
+CD=t
+JP=hen
+GB=Edge
+CH=bian1
+RK=
+NL=Rand
+FR=Bord
+SV=kant
+
+CD=t
+JP=henka
+GB=Variation
+CH=bian4 hua4
+RK=
+NL=Variant
+FR=Variante, variation
+SV=variant
+
+CD=t
+JP=hikkuri kaeshi
+GB=Reversing
+CH=
+RK=
+NL=Omdraaien
+SV=omv{nd, v{nda om
+
+CD=t
+JP=hiraki zume
+GB=Extension + opposition
+CH=chai1 bi1
+RK=
+NL=Uitbreiding + blokkade
+SV=slag; expansion i kombination med angrepp
+DG= 9 . . . . . . . . . . . . . . . . . . .
+DG= 8 . . . . . . . . . . . . . . . . . . .
+DG= 7 . . # . . . . . . . . . . . . . . . .
+DG= 6 . . . o . . . . . . . . . . . . . . .
+DG= 5 . . # o . . . . . . . . . . . . . . .
+DG= 4 . . # * . . . . . * . . . . . o . . .
+DG= 3 . . . . o . . . a . # . . . . . . . .
+DG= 2 . . . . . . . . . . . . . . . . . . .
+DG= 1 . . . . . . . . . . . . . . . . . . .
+DG=   a b c d e f g h j k l m n o p q r s t
+CP= 
+CP= White [a] would be 'hirake zume', both an extension of the white
+CP= position on the left and an opposition of the black stone at (l,3)
+
+CD=t
+JP=hisso no pointo
+JP=hissoten
+GB=keypoint
+CH=yao4 dian3, ji2 suo3
+RK=
+NL=Een zet van groot strategisch belang (keypoint)
+SV=nyckelpunkt
+
+CD=t
+JP=hon ko
+GB=real 'ko'
+CH=zheng1 jie2
+RK=
+NL=een echt 'ko'
+SV={kta b|ld
+
+CD=t
+JP=honte
+GB=Proper move in a given situation, although it may appear slow
+CH=ben3 shou3
+RK=
+NL=Hoewel misschien een beetje traag lijkend, de correcte zet.
+NL=Het effect van een 'honte' zet is slechts merkbaar op de lange termijn,
+NL=dit maakt dit type zet moeilijk te waarderen/evalueren voor een amateur.
+FR=Le coup authentique (dans une position donnee)
+GE=ein Zug, der "angesagt" ist.
+SV=skenbart saktmodigt drag
+
+CD=t
+JP=horikomi
+JP=hori komi
+GB=throw in, a single stone played as a sacrifice
+GB=(For exmaples please refer to 'oi otoshi' or 'uttegaeshi')
+CH=pu1, pu1 jing4
+RK=
+NL=Ingooi, de opoffering van een steen
+NL=(Voor voorbeelden zie 'oi otoshi' of 'uttegaeshi')
+GE=Einwurf
+SV=inkast
+
+CD=t
+JP=hoshi shita
+GB=Below one of the eight 'hoshi' points along the edge
+CH=xing1 xia4
+RK=
+NL=Onder een van de acht 'hoshi' punten aan de rand zoals (4,3) of (10,3)
+FR=Sous un 'hoshi' de bord ou de coin
+SV=under (en) handikappunkt,  utom mittpunkten
+
+CD=t
+JP=ichigo masu
+GB=An 180ml measure cup, carpenter's square
+CH=jin1 gui4 jiao3
+RK=
+NL=Een maatkop van 180ml
+SV=en 180 ml m}ttkopp
+DG= 7 . . . . . . .
+DG= 6 . . . . . . .
+DG= 5 . o o o o . .
+DG= 4 . # # # o . .
+DG= 3 . . . # o . .
+DG= 2 . . . # o . .
+DG= 1 . . . . . . .
+DG=   a b c d e f g
+CP= 
+CP= The corner shape resembles the 'ichigo masu' and thus is called like that
+
+CD=t
+JP=igo
+GB=the game of go
+CH=wei2 qi2
+RK=
+NL=het spel go
+GE=formeller Name fuer GO
+FR=Le jeu de go
+SV=spelet go
+
+CD=t
+JP=ikasu
+GB=1. To force the opponent to make his group alive
+GB=2. To let the opponent live
+CH=bi1 (di2) huo2
+RK=
+NL=1. De tegenstander dwingen zijn groep levend te maken
+NL=2. De tegenstander laten leven
+SV=1. Tvinga motst}ndaren att leva. 2. L}ta motst}ndaren leva.
+
+CD=t
+JP=ikiru
+GB=live
+CH=huo2, zuo4 hou2
+RK=
+NL=leven
+FR=Vivre
+SV=leva
+
+CD=t
+JP=ikken zimari
+JP=ikken shimari
+GB=the 3-4 and 5-4 points
+GB=Strong to the center, rather weak along the edge due to (7,3).
+CH=yi1 jian4 shou3 (xiao3 mu4) jiao3
+RK=
+NL=Een hoekafsluiting met stenen op (3,4) en (5,4).
+NL=De structuur is sterk naar het centrum en een van beide randen,
+NL=maar relatief kwestbaar langs de andere rand.
+FR=Verrou de coin forme en jouant aux points 3-4 et 5-4
+SV=stenar p} 3-4 och 5-4 punkterna; dom anses starka in mot mitten,
+SV=men svaga l{ngs sidorna
+DG= 6 . . . . . . . .
+DG= 5 . . . . . . . .
+DG= 4 . . # * # . . .
+DG= 3 . . . c . . a .
+DG= 2 . . . . b . . .
+DG= 1 . . . . . . . .
+DG=   a b c d e f g h
+CP= 
+CP= This ikken zimari is weak along the lower edge:
+CP= When white has a stone at [a] he can aim at either [b] or [c].
+
+CD=t
+JP=ikken takagakari
+GB=one point high approach move to 3-4 point stone
+CH=yi1 jian4 di4 (xiao3 mu4) jiao3
+RK=
+NL=Een-punts hoge benaderingszet
+FR=Coup d'approche haut d'une pierre en 3-4 (donc en 5-4)
+SV=attack mot en 3-4 sten p} 5-4 punkten.
+DG= 6 . . . . . . . .
+DG= 5 . . . . . . . .
+DG= 4 . . # * a . . .
+DG= 3 . . . . . . . .
+DG= 2 . . . . . . . .
+DG= 1 . . . . . . . .
+DG=   a b c d e f g h
+CP= 
+CP= White [a] is ikken takagakari
+
+CD=t
+JP=insei
+GB=student professional (of a ki-in)
+CH=(wei2 qi2) yuan4 sheng1
+RK=
+NL=Een student professional
+GE=Ein Schueler, der Go lernt um Professional zu werden.
+FR=Eleve professionnel
+SV=professionell studerande
+
+CD=t
+JP=ippoji
+GB=one and only one large territory
+CH=yi1 kuai4 di4 (er2 yi3 :-)
+RK=
+NL=Gebied op een plaats (aan een rand)
+GE=ein einziges groszes Gebiet
+SV=Ett enda (stort) po{ngomr}de
+
+CD=t
+JP=ishi
+GB=stone
+CH=zi3, qi2 zi3
+RK=
+NL=steen
+GE=Stein
+FR=pierre
+SV=sten
+
+CD=t
+JP=isoganai
+GB=not urgent
+CH=bu4 ji2
+RK=
+NL=niet urgent
+SV=icke br}dskande
+
+CD=t
+JP=itte ko
+JP=itte yose ko
+GB=one step 'ko'
+CH=yi1 shou3 jie2
+RK=
+NL=een-staps 'ko'
+SV=enstegsb|ld
+
+CD=t
+JP=jidori go
+GB=Both players are territorily aimed
+CH=zheng1 di4 (shuang1 fang1)
+RK=
+NL=Beide spelers spelen gebieds-georienteerd
+SV=b}da spelarna {r omr}desfixerade
+
+CD=t
+JP=jigo
+GB=tie or drawn game
+CH=he2 ju2
+RK=
+NL=Een go partij die eindigt in remise
+GE=Unentschieden
+FR=Partie nulle, egalite
+SV=oavgjort eller }terkallat parti
+
+CD=t
+JP=jingasa nakade
+GB=dead shape with 4 spaces shaped like a pyramid
+CH=ding1 si4
+RK=
+NL=dode vorm bestaande uit vier lege punten in de vorm van een pyramide
+FR=forme en 4 en T (forme morte)
+SV=|ga med fyra punkter formade som ett T, en d|d form
+DG= 6 . . . . . . . . . . .
+DG= 5 . . . . . . . . . . .
+DG= 4 . . . o o o o o . . .
+DG= 3 . . o o # # # o o . .
+DG= 2 . . o # # . # # o . .
+DG= 1 . . o # . a . # o . .
+CP= 
+CP= The black group is dead when white plays [a]
+
+CD=t
+JP=jitsuri
+GB=visible territory/points (see 'gaisei')
+CH=shi2 li4
+RK=
+NL=Tastbaar gebied (zie ook 'gaisei')
+SV=synliga po{ng, synligt omr}de
+DG= 9 . . . . . . . . . . . .
+DG= 8 . . . . o . . . . . . .
+DG= 7 . . . # o . . . . . . .
+DG= 6 . . . # o . . . . . . .
+DG= 5 . . . # # o o . . . . .
+DG= 4 . . # . o # o # . . . .
+DG= 3 . . . . o # o . . . . .
+DG= 2 . . . . # # . . . . . .
+DG= 1 . . . . . . . . . . . .
+DG=   a b c d e f g h j k l
+CP= 
+CP= White has 'gaisei', black has 'jitsuri'
+
+CD=t
+JP=josen
+GB=black in all games (the handicap for a 2-dan difference)
+CH=chang2 xian1
+RK=
+NL=Zwart in alle partijen (de handicap voor een 2-dan verschil)
+GE=Schwarz in allen Spielen
+GE=die klassische Vorgabe fuer einen Spielstaerkeunterschied von 2 Grad
+FR=Handicap consistant a prendre Noir sans komi (on dit souvent "jouer a sen")
+SV=svart i alla partier ( handikapp f|r 2 stenars skillnad )
+
+CD=t
+JP=jozu
+GB=7th dan (literally 'skillful')
+CH=
+RK=
+NL=zevende dan (letterlijk 'handig')
+GE=Siebter Dan - klassische Bezeichnung, woertlich geschickt
+SV=skicklig, 7 dan
+
+CD=t
+JP=jubango
+GB=a ten-game match
+CH=shi2 fan1 qi2
+RK=
+NL=Een match over tien partijen
+GE=Ein Match, das ueber 10 Partien geht.
+FR=Match de 10 parties entre deux joueurs
+SV=T{vling d{r b{st av 10 partier vinner
+
+CD=t
+JP=nijubango
+GB=a twenty-game match
+CH=er2 shi2 fan1 qi2
+RK=
+NL=Een match over twintig partijen
+GE=Ein Match, das ueber 20 Partien geht.
+FR=Match de 20 parties entre deux joueurs
+SV=T{vling d{r b{st av 20 partier vinner
+
+CD=t
+JP=sanjubango
+GB=a thirty-game match
+CH=san1 shi2 fan1 qi2
+RK=
+NL=Een match over dertig partijen
+GE=Ein Match, das ueber 30 Partien geht.
+FR=Match de 30 parties entre deux joueurs
+SV=T{vling d{r b{st av 30 partier vinner
+
+CD=t
+JP=jun-Meijin
+GB='quasi-Meijin', 8th dan, almost Meijin strength achieved
+CH=zun3 ming2 ren2
+RK=
+NL='quasi-Meijin', achtste dan, bijna van Meijin sterkte
+GE=Achter Dan - klassische Bezeichnung, woertlich 'fast Meijin'
+SV=liten m{stare, 8 dan
+
+CD=t
+JP=junkan ko
+GB=A cyclic 'ko', a "no result" according to the "Japanese rules of Go"
+CH=lian2 huan2 jie2
+RK=
+NL=Een cyclisch 'ko' gevecht.
+NL=Zo'n situatie geeft een "geen resultaat" volgens de "Japanse Go regels".
+FR=Un 'ko' cyclique (d'ou une partie sans resultat en regles japonaises)
+SV=en cyklisk b|ld, partiet }terkallas
+DG= 7 . . . . . . . . . . . .
+DG= 6 . . . . . . . . . . . .
+DG= 5 o o o o o o o o . . . .
+DG= 4 # # # # # # # # o o . .
+DG= 3 a # . . # o o # # o . .
+DG= 2 # o # # o . . o # o . .
+DG= 1 o o o o o o o o # o . .
+DG=   a b c d e f g h i j k l
+CP= 
+CP= While fighting the 'ko' around [a], both players mutually capture
+CP= two stones inside both groups. Under the Japanese 'ko' rule this
+CP= could continue endlessly, therefore the special 'junkan ko' rule.
+
+CD=t
+JP=kadoban
+GB=a game which could lead to a change in handicap or the loss of a series
+CH=
+RK=
+NL=Een partij die ofwel kan leiden tot verandering van de handicap,
+NL=ofwel de match kan verliezen
+GE=Eine Partie, die zum Verlust eines Matches oder
+GE=zum Wechsel des Handicaps fuehren kann.
+GE=(Mit dem Ruecken zur Wand spielen - In die Ecke gegraengt sein)
+SV=Ett parti som kan leda till f|r{ndrat handikapp eller f|rlust
+
+CD=t
+JP=kake me
+GB=False eye
+CH=jia3 yan3
+RK=
+NL=Een vals oog
+GE=Fischauge
+FR=Faux oeil
+SV=falskt |ga
+
+CD=t
+JP=kakutei ji
+GB=Secure territory (100%)
+CH=shi2 di4
+RK=
+NL=Veilig gebied (100%)
+FR=Territoire completement assure
+SV=100 % s{kert omr}de
+
+CD=t
+JP=kamae
+GB=A global shape (like the 'san rensei', or a 'shimari' + extension)
+CH=gou4 xiang3 (quan2 ju2)
+RK=
+NL=Een globale vorm (zoals de 'san rensei', of een 'shimari' + uitbreiding)
+SV=en helbr{desform, form som t{cker hela br{det
+
+CD=t
+JP=kame no ko
+GB=tortoise shell (shape made by the capture of 2 stones)
+CH=gui1 xing2
+RK=
+NL=Schildpad (de vorm na het slaan van twee stenen)
+GE=Schildkroetenpanzer - die Form nach dem Schlagen von zwei Steinen
+FR=Dos de tortue (formation obtenue apres capture de 2 pierres)
+SV=sk|ldpaddsform
+DG= . . . . . .
+DG= . . o o . .
+DG= . o . . o .
+DG= . . o o . .
+DG= . . . . . .
+CP= 
+CP= The shape after capturing two stones resembles a tortoise shell
+
+CD=t
+JP=kame no ko no shippo tsuki
+GB=A tortoise shell with a tail
+CH=
+RK=
+NL=Een schildpad inclusief staart
+SV=sk|ldpaddsform med en svans
+DG= . . . . . . .
+DG= . . o o . . .
+DG= . o . . o o .
+DG= . . o o . . .
+DG= . . . . . . .
+CP= 
+CP= The shape resembles a tortoise shell with a tail
+
+CD=t
+JP=kami tori
+GB=A combination of capture and other damage
+CH=
+RK=
+NL=Een combinatie van vangst en andere schade
+SV=skada som }samkas genom er|vring
+DG= 7 . . . . . . . . .
+DG= 6 . . o . . . . . .
+DG= 5 . . . . . . . o .
+DG= 4 . . . # . o . . .
+DG= 3 . . . . # # . o .
+DG= 2 . . . . # o a . .
+DG= 1 . . . . . . . . .
+DG=   a b c d e f g h i
+CP= 
+CP= Black [a] is 'kami tori' since it captures a stone and
+CP= weakens the white group at the same time
+
+CD=t
+JP=kamo
+GB=Easy opponent (literally, "duck")
+CH="di1 shou3" :-)
+RK=
+NL=Gemakkelijke tegenstander (eitje :)
+SV=sopa
+
+CD=t
+JP=kansho
+GB="Enjoying art"; the pleasure perceived when watching a beautiful Go game
+CH=guan1 shang3
+RK=
+NL="Genieten van kunst"; het genot bij het kijkekn naar een mooie Go partij
+SV=go som underh}llning
+
+CD=t
+JP=karui
+GB=light, i.e. stones with light, flexible shape which can easily be
+GB=looked after, or stones which have served their purpose and can be
+GB=discarded without ill effects
+CH=qing1
+RK=
+NL=Licht, d.w.z. stenen met een lichte, flexibele vorm.
+NL=Een belangrijke eigenschap van lichte vorm is dat een enkele steen
+NL=geofferd kan worden zonder consequenties voor de groep als geheel.
+GE=leicht
+FR=leger (dans le bon sens du terme), souple
+SV=l{tta stenar, stenar som antingen l{tt kan f|rsvaras eller som
+SV=utan problem kan avvaras pga sin l{tthet.
+
+CD=t
+JP=karui katachi
+GB=light shape
+CH=qing1 ling2 zhi xing2
+RK=
+NL=Lichte vorm
+GE=leichte Form
+FR=Forme legere (dans le bon sens du terme)
+SV=l{tt form
+
+CD=t
+JP=kata
+GB=Shoulder
+CH=jian1
+RK=
+NL=Schouder
+GE=Schulter - Die diagonalen Punkte ueber einem Stein
+FR=Epaule
+SV=axel
+
+CD=t
+JP=kata meru
+GB=To make solid
+CH=
+RK=
+NL=Stevig maken
+SV=g|ra sej tjock
+
+CD=t
+JP=kata tsugi
+GB=Solid connection
+CH=shi2 jie1
+RK=
+NL=Solide verbinding
+FR=Connexion definitive
+SV=solid anslutning, fast f|rbindelse
+DG= 7 . . . . . . . . .
+DG= 6 . . . . . . . . .
+DG= 5 . . . . . . . . .
+DG= 4 . . # . o a . . .
+DG= 3 . . . # # o . . .
+DG= 2 . . . . . . . . .
+DG= 1 . . . . . . . . .
+DG=   a b c d e f g h i
+CP= 
+CP= White [a], defending against the cut at [a] is 'kata tsugi'
+
+CD=t
+JP=kaya
+GB=a japanese wood (nutmeg) used for the best quality go boards
+CH=
+RK=
+NL=Een japanse houtsoort (notemuskaat) welke wordt verwerkt
+NL=tot de beste kwaliteit Go borden
+GE=Ein japanisches Holz aus dem sehr gute Go-Bretter hergestellt werden.
+FR=Bois japonais dont on fait les plus beaux goban
+SV=ek, containertr{ f|r att g|ra gobr{den
+
+CD=t
+JP=keima gakari
+JP=keima + kakari
+GB=knight's move approach to a 3-4 stone.
+CH=xiao3 fei1 gua4 (xiao3 mu4) jiao3
+RK=
+NL=Een benadering van een hoek op paardsprong afstand
+FR=Approche en 'keima' (souvent d'une pierre au point 3-4, donc en 5-3)
+SV=ett knektdrag mot en sten p} 3-4 punkten
+DG= 6 . . . . . . .
+DG= 5 . . . . . . .
+DG= 4 . . # * . . .
+DG= 3 . . . . a . .
+DG= 2 . . . . . . .
+DG= 1 . . . . . . .
+DG=   a b c d e f g
+CP= 
+CP= White [a] is a 'keima gakari'
+
+CD=t
+JP=keima tsugi
+GB=A knight-shape connection
+GB=A connection using a knight-jump shape
+CH=fei1 bu3
+RK=
+NL=Een verbinding gebruikmakend van de paardsprong vorm
+FR=Connexion a l'aide d'un 'keima'
+SV=en knektdrags anslutning
+DG= 7 . . . . . . . . . . . .
+DG= 6 . . . . . . . . . . . .
+DG= 5 . . . o . . . . . a . .
+DG= 4 . . o * . o o o b . * .
+DG= 3 . # . . # # . # o . . .
+DG= 2 . . # . . . . # o . . .
+DG= 1 . . . . . . . . . . . .
+DG=   a b c d e f g h i j k l
+CP= 
+CP= White [a], defending the cutting point at [b] is 'keima tsugi'
+
+CD=t
+JP=keima watari
+GB=Knight-move bridge-underneath tesuji, connects seemingly isolated stones
+CH=fei1 du4
+RK=
+NL=Een verbinding met een paardsprong (van twee schijnbaar gesplitste groepen)
+GE=Roesselsprung, der Steine am Rand unter gegenerischen Steinen verbindet
+SV=dykande (glidande) knektdrag som ger f|rbindelse
+DG= 7 . . . . . . . .
+DG= 6 . . o . . . . .
+DG= 5 . . . . . . . .
+DG= 4 . a . # # # . .
+DG= 3 . . b o o # . .
+DG= 2 . . c . o o # .
+DG= 1 . . . . . . . .
+DG=   a b c d e f g h
+CP= 
+CP= White [a] is 'keima watari' (if black [b], white [c])
+
+CD=t
+JP=kibishii
+GB=severe (in the sense of: no compromise)
+CH=yan2 li4
+RK=
+NL=krachtig (in de betekenis van: geen compromis)
+GE=kompromiszlos
+SV=sv}r
+
+CD=t
+JP=kidanme
+GB=
+CH=
+RK=
+NL=
+SV=(|vers{ttning saknas)
+
+CD=t
+JP=kikasare
+GB=To be forced
+CH=
+RK=
+NL=Gedwongen worden
+SV=att tvingas
+
+CD=t
+JP=kiki (noun)
+JP=kiku (verb)
+GB=One side privilege
+CH=quan2 li4 (yi4 fang1)
+RK=
+NL=Een eenzijdig privilege
+SV=ensidigt privilegium
+DG= 7 . . . . . . . . . . .
+DG= 6 . . . o . . . . . . .
+DG= 5 . . . . . # . . . . .
+DG= 4 . . . o . b a . o * .
+DG= 3 . . o . . # . . . . .
+DG= 2 . . . # . . . c # d .
+DG= 1 . . . . . . . . . . .
+DG=   a b c d e f g h i j k
+CP= 
+CP= White [a] is white's privilege ('kiki'), black has to defend at [b].
+CP= Because of [a] white can aim at either [c] or [d].
+
+CD=t
+JP=kimeuchi
+GB=settling (freezing) the shape
+GB=Kobayashi Koichi 9 dan, tends to play 'kimeuchi'
+CH=ding4 xing2
+RK=
+NL=De vorm vastleggen
+NL=Kobayashi Koichi 9e dan, neigt ernaar 'kimeuchi' te spelen
+GE=Eine Form ausspielen.
+SV=skapa slutgiltig form
+
+CD=t
+JP=kirikomi
+GB=A cut inside the enemy territory, normally it will imply a sacrifice
+CH=duan4 ru4
+RK=
+NL=Een knip in het gebied van de tegenstander, normaal gesproken een offer
+SV=en sk{rande sten inom motst}ndaromr}de, vanligtvis ett offer
+DG= 7 . . . . . . . . . . . .
+DG= 6 . . . . . . . . . . . .
+DG= 5 . . . . . o . . . . . .
+DG= 4 . . . o . o # . . # . .
+DG= 3 . . . o # # a b . . . .
+DG= 2 . . . . . . c . . . . .
+DG= 1 . . . . . . . . . . . .
+DG=   a b c d e f g h i j k l
+CP= 
+CP= White [a] (black [b], white [c]) is 'kirikomi', meant as a sacrifice
+CP= promising white various 'sente' moves in the area.
+
+CD=t
+JP=kizu
+GB=damage
+CH=shang1, sun3
+RK=
+NL=schade
+SV=skada
+
+CD=t
+JP=kogeima zimari
+JP=kogeima + shimari
+GB=(small knight's enclosure)
+GB=the 3-4 and 5-3 points, strong towards the corner; weak to the center.
+GB=The 5-5 (high-point) is a weakness
+CH=xiao3 fei1 shou3 jiao3
+RK=
+NL=Een hoekafsluiting met stenen op (3,4) en (5,3).
+NL=Deze vorm is relatief zwak naar het centrum (zwakte op (5,5)).
+FR=Verrou de coin forme par les pierres en 3-4 et 5-3 (en petit 'keima')
+SV=3-4 samt 5-3 punkternas svaghet; 5-5 punkten
+DG= 7 . . . . . . . .
+DG= 6 . . . . . . . .
+DG= 5 . . c . a . . .
+DG= 4 . . # * . . . .
+DG= 3 . . . . # b . .
+DG= 2 . . . . . . . .
+DG= 1 . . . . . . . .
+DG=   a b c d e f g h
+CP= 
+CP= The kogeima shimari has a weakness at (5,5) in the centre:
+CP= A white stone at [a] is aiming at either [b] or [c] next.
+
+CD=t
+JP=moku
+GB=handicap, or (the difference in) points
+GB=(used with a numeral: san-moku means a 3 stone handicap)
+CH=rang1 zi3
+RK=
+NL=handicap, of (het verschil in) punten
+NL=(gebruikt in combinatie met een getal: san-moku is 3 stenen handicap)
+GE=Vorgabe
+GE=(wird mit einer Zahl gebraucht: san-moku bedeutet eine 3 Steine Vorgabe)
+SV=Handikapp, eller skillnaden i po{ng. Med en siffra anges antalet
+SV=handikappstenar, t ex san-muko - 3-stenarshandikapp
+
+CD=t
+JP=myoshu
+GB=An exquisite/brilliant move
+CH=miao4 shou3 (!!!)
+RK=
+NL=Een prachtige/brilliante zet
+GE=ausgezeichneter Zug
+SV=superdrag
+
+CD=t
+JP=nidan
+GB=2 dan
+CH=er4 duan4
+RK=
+NL=Tweede dan
+FR=Deuxieme dan
+SV=2 dan
+
+CD=t
+JP=nidan osae
+GB=A two-step block ('osae')
+CH=lian2 ban1
+RK=
+NL=Een dubbele blokzet ('osae') aan de rand
+SV=ett tv}stenarsstopp
+DG= 7 . . . . . . .
+DG= 6 . . . . . . .
+DG= 5 . . . . . . .
+DG= 4 . . o o . . .
+DG= 3 . . # # a . .
+DG= 2 . . . . b c .
+DG= 1 . . . . . . .
+DG=   a b c d e f g
+CP= 
+CP= The combination white [a], black [b], white [c] is 'nidan osae'
+
+CD=t
+JP=nige (noun)
+JP=nigeru (verb)
+GB=To escape
+CH=tao2
+RK=
+NL=Ontsnappen
+SV=att fly, flykt
+
+CD=t
+JP=nigiri
+GB=draw the colors of the players before the game
+CH=chai1 xian1
+RK=
+NL=De procedure aan het begin van de partij om de kleur te bepalen:
+NL=De sterkere of oudere speler neemt een handvol witte stenen in
+NL=zijn hand en zijn tegenstander kiest oneven of even door een
+NL=respectievelijk twee zwarte stenen op het bord te leggen.
+NL=Bij correcte keuze speelt de laatste met zwart (anders met wit).
+GE=formelles Auslosen der Farbe vor der Partie
+FR=Tirage au sort de la couleur avant la partie : un joueur prend une poignee
+FR=de pierres, l'autre propose 'pair' ou 'impair'.
+SV=att v{lja f{rg
+
+CD=t
+JP=niken zimari
+JP=niken + shimari
+GB=large open corner enclosure 3-4 and 6-4 points.
+CH=er4 jian4 shou3 jiao3
+RK=
+NL=Een hoekafsluiting met stenen op (3,4) en (6,4).
+FR=Grand verrou de coin (points 3-4 et 6-4)
+SV=stenar p} 3-4 och 6-4 punkterna
+DG= 7 . . . . . . . .
+DG= 6 . . . . . . . .
+DG= 5 . . . . . . . .
+DG= 4 . . # * . # . .
+DG= 3 . . . . . . . .
+DG= 2 . . . . . . . .
+DG= 1 . . . . . . . .
+DG=   a b c d e f g h
+CP= 
+CP= The niken shimari
+
+CD=t
+JP=niken takabasami
+GB=2 point high pincer
+CH=er4 jian4 jia2
+RK=
+NL=Een twee-punts hoge inklemzet
+FR=Pince haute 
+SV=tv}punkters h|gt nyp
+DG= 7 . . . . . . . . . . . .
+DG= 6 . . . . . . . . . . . .
+DG= 5 . . . . . . . . . . . .
+DG= 4 . . o * . . . a . * . .
+DG= 3 . . . . # . . . . . . .
+DG= 2 . . . . . . . . . . . .
+DG= 1 . . . . . . . . . . . .
+DG=   a b c d e f g h i j k l
+CP= 
+CP= White [a] is a 'niken takabasami'
+
+CD=t
+JP=nobi dashi
+GB=An extension towards the center
+CH=
+RK=
+NL=Een verlengzet naar het centrum
+SV=expansion mot mitten
+
+CD=t
+JP=nobi kiri
+GB=Extension which finishes the shape
+CH=
+RK=
+NL=Verlengzet die de vorm afmaakt
+SV=expansion som sluter formen
+DG= 7 . . . . . . . . . .
+DG= 6 . . . . . . . . . .
+DG= 5 . . . . . . . . . .
+DG= 4 . . . . o o o a . .
+DG= 3 . . o o # # # . . .
+DG= 2 . . # # . . . . # .
+DG= 1 . . . . . . . . . .
+CP= 
+CP= White [a] is 'nobi kiri'
+
+CD=t
+JP=nuki
+GB=Capture
+CH=ti2
+RK=
+NL=Vangst
+SV=er|vring
+
+CD=t
+JP=ogeima gake
+JP=ogeima + kake
+GB=A move which combines the large knight jump with a "cover"
+CH=
+RK=
+NL=Een zet die een grote paardsprong combineert met een "bedekking"
+SV=stora knektdraget som t{cker |ver n}got
+DG=10 . . . . . . . . . .
+DG= 9 . . . . . . . . . .
+DG= 8 . . . # . . . . . .
+DG= 7 . . . . . . . . . .
+DG= 6 . . . . . . . . . .
+DG= 5 . . . o . . . . . .
+DG= 4 . . . . . . a . . .
+DG= 3 . . . # . . . . . .
+DG= 2 . . . . . . . . . .
+DG= 1 . . . . . . . . . .
+DG=   a b c d e f g h i j
+CP= 
+CP= White [a] combines the large knight jump ('ogeima') and a cover ('kake')
+
+CD=t
+JP=ogeima gakari
+JP=ogeima + kakari
+GB=large knight's move approach to 3-4 stone
+CH=dai4 fei1 gua4 jiao3
+RK=
+NL=Een hoekbenadering op grote paardsprong afstand
+FR=Approche en 'ogeima' (d'une pierre en 3-4, donc en 6-3)
+SV=stort knektdrag fr}n en sten p} 3-4 punkten
+DG= 6 . . . . . . . .
+DG= 5 . . . . . . . .
+DG= 4 . . # * . . . .
+DG= 3 . . . . . a . .
+DG= 2 . . . . . . . .
+DG= 1 . . . . . . . .
+DG=   a b c d e f g h
+CP= 
+CP= White [a] is a 'ogeima gakari'
+
+CD=t
+JP=ogeima zimari
+JP=ogeima + shimari
+GB=the (3,4) and (6,3) points; loosley holds corner
+CH=dai4 fei1 shou3 jiao3
+RK=
+NL=Een hoekafsluiting met stenen op (3,4) en (6,3)
+NL=Deze vorm is erg luchtig en heeft zwaktes in de hoek en in het centrum
+FR=Grand verrou de coin (en forme de grand 'keima')
+SV=sten p} 3-4 och 6-3 punkterna; ett l|st omslutet h|rn.
+DG= 7 . . . . . . . . . .
+DG= 6 . . a . . . . . . .
+DG= 5 . . . . . . . . . .
+DG= 4 . . # * . . . . . .
+DG= 3 . . b e d # . c . .
+DG= 2 . . . . . . . . . .
+DG= 1 . . . . . . . . . .
+DG=   a b c d e f g h
+CP= 
+CP= The ogeima shimari is a light structure:
+CP= A white stone at [a] for example is aiming at [b] next.
+CP= A white stone at [c] would enable a follow up at [d] or [e].
+
+CD=t
+JP=oi-otoshi
+GB=a method to capture where stones are sacrificed to destroy the
+GB=enemy's eye shape (and use shortage of liberties to prevent connection)
+CH=jie1 bu4 gui1
+RK=
+NL=Een vangtechniek waarbij een of meer stenen worden geofferd waarmee
+NL=de tegenstander van zijn oogvorm en vrijheden wordt ontdaan.
+GE=Technik des Fangens indem man Steine einwirft, so dasz der Gegner nach dem
+GE=Schlagen weniger Freiheiten hat.
+SV=En metod f|r att er|vra motst}ndargrupper, varvid stenar offras och
+SV=brist p} friheter utnyttjas.
+DG= 9 . . . . . . . . .
+DG= 8 . . . . . . . . .
+DG= 7 . . # # . . . . .
+DG= 6 . # o . # . . . .
+DG= 5 d # o . . . . . .
+DG= 4 c # o * # # . . .
+DG= 3 # o o . o . # . .
+DG= 2 a # # o . o # . .
+DG= 1 b . o e . . . . .
+DG=   a b c d e f g h i
+CP= 
+CP= After throwing in twice with white [a] and [c], white ensures
+CP= live by connecting at [e]. Black can not save all his stones.
+DG= 5 . . . . . . . .
+DG= 4 . . o o o . . . 
+DG= 3 . o # # o o . .
+DG= 2 . o # . # o # .
+DG= 1 . o o # # # . .
+DG=   a b c d e f g h
+CP= 
+CP= The three black stones at c2, c3 and d3 are captured in 'oi-otoshi'
+
+CD=t
+JP=okashii
+GB=strange, funny
+CH=hao3 xiao4, ke3 xiao4
+RK=
+NL=vreemd, raar
+SV=konstig, lustig
+
+CD=t
+JP=oki go
+GB=handicap go
+CH=rang4 zi3 qi2
+RK=
+NL=handicap go
+FR=go a handicap
+SV=handikappgo
+
+CD=t
+JP=oki
+GB=placement (a stone placed inside an opponent's group)
+CH=dian3
+RK=
+NL=Een "geplaatste" zet, een zet geplaatst op een vitaal punt
+NL=binnen een vijandelijke groep.
+GE=ein Zug auf einen vitalen Punkt
+FR=Placement (d'une pierre a l'interieur d'un groupe adverse)
+SV=placering; i motst}ndaromr}de utan kontakt med andra stenar
+DG= 7 . . . . . . .
+DG= 6 . . . . . . .
+DG= 5 . o o o . . .
+DG= 4 . # # o . o .
+DG= 3 . . . # o . .
+DG= 2 . a . # . . .
+DG= 1 . . . . . . .
+DG=   a b c d e f g
+CP= 
+CP= White [a] is called 'oki'.
+CP= In this example it means the death of the black group,
+CP= but please note that this is not the essence of this move.
+
+CD=t
+JP=omoi
+GB=heavy
+GB=like in: "omoi katachi" (heavy shape)
+CH=zhong4
+RK=
+NL=zwaar
+NL=zoals in: "omoi katachi" (zware, logge vorm)
+GE=schwer
+GE=wie in: "katachi omoi" (schwere Form)
+FR=lourd (utilise par exemple dans 'omoi katachi', forme lourde)
+SV=klumpig, tung
+
+CD=t
+JP=ori kiri (noun)
+JP=ori kiru (verb)
+JP=sagari kiri (noun)
+JP=sagari kiru (verb)
+GB=A descending move while finishing the shape
+CH=xia4 li4
+RK=
+NL=Een afdaalzet die de vorm afmaakt
+SV=nersl{pp; ett kantdrag, som slutputsar formen
+DG=11 . . . . . . . . .
+DG=10 . o . . . . . . .
+DG= 9 . . o o . . . . .
+DG= 8 a o # o . . . . .
+DG= 7 . # # o . . . . .
+DG= 6 . . . # o . . . .
+DG= 5 . o . # o . . . .
+DG= 4 . # # . o . . . .
+DG= 3 . # o . o . . . .
+DG= 2 . # o . . . . . .
+DG= 1 . . . . . . . . .
+DG=   a b c d e f g h j
+CP= 
+CP= White [a] is 'ori kiru'.
+CP= Actually, in this situation it also kills the black group,
+CP= but please note that this is not the essence of this kind of move.
+
+CD=t
+JP=osae komi
+GB=To stop the opponent from moving outward
+CH=dang3
+RK=
+NL=Voorkomen dat de tegenstander naar buiten gaat
+SV=inkapsling
+DG= 7 . . . . . . .
+DG= 6 . . . . . . .
+DG= 5 . o o o . . .
+DG= 4 . # # # o o .
+DG= 3 . . . . # o .
+DG= 2 . . . . # a .
+DG= 1 . . . . . . .
+DG=   a b c d e f g
+CP= 
+CP= White [a] would be 'osae komi'
+
+CD=t
+JP=osamari (noun)
+JP=osamaru (verb)
+GB=Being settled (by having eye shape)
+CH=
+RK=
+NL=Veilig zijn (vanwege het hebben van oogvorm)
+SV=att vara fixerad ( genom att ha |gonform )
+
+CD=t
+JP=oshi age (noun)
+JP=oshi ageru (verb)
+GB=To push up
+CH=bi1 chang2
+RK=
+NL=Omhoog duwen
+SV=sticka upp
+
+CD=t
+JP=oshi tsubushi
+GB=making eye shape by using shortage of liberties to prevent
+GB=the opponent connecting to make a dead (nakade) shape
+CH=zhang4 si3 niu2 (a full-stomached cow :-)
+RK=
+NL=Levende oogvorm maken dankzij gebrek aan vrijheden van de tegenstander
+GE=lebende Form bauen, indem man den Gegner durch damezumari daran hindert
+GE=seine Steine zu einer toten Form zu verbinden.
+SV=skapa levande form ( tv} |gon ) genom att fylla i motst}ndarens n{st
+SV=sista frihet och p} s} s{tt f|rhindra honom fr}n att ansluta sina
+SV=tv} ( numera ) d|da grupper pga frihetsbrist
+DG= 6 . . . . . .
+DG= 5 . . . . . .
+DG= 4 . # # * . .
+DG= 3 o o # . # .
+DG= 2 # o o # . .
+DG= 1 a # o . . .
+DG=   a b c d e f
+CP= 
+CP= White's group is alive since black can not connect
+CP= the two stones at [a] (due to the suicide rule)
+
+CD=t
+JP=oshiro go
+GB=Castle Go (Edo era)
+CH=cheng2 qi2 (zhan4)
+RK=
+NL=Kasteel Go (Edo tijdperk)
+GE=Ein 'castle game',
+GE=das waehrend der Edo-Zeit in der Anwesenheit des Shogun gespielt wurde.
+SV=Slottsgo (under Edoeran); spelades i anslutning till Shogunen
+
+CD=t
+JP=poka
+GB=careless blunder
+CH=sui2 shou3
+RK=
+NL=Onnodige blunder
+GE=Fluechtigkeitsfehler
+FR=Bourde, grosse betise
+SV=klavertramp, tabbe
+
+CD=t
+JP=raku ni
+GB=Easily
+CH=
+RK=
+NL=Gemakkelijk
+SV=l{tt
+
+CD=t
+JP=rengo
+GB=a team game
+GB=(the players in each team take turns without consulting each other)
+CH=lian2 qi2
+RK=
+NL=Een partij tussen twee teams (zonder overleg).
+NL=Iedereen team lid komt om de beurt aan zet.
+GE=Familiengo
+FR=Partie par equipe
+FR=Les joueurs d'une equipe jouent a tour de role, sans se consulter
+SV=lagparti, varje spelare i laget g|r drag alternerande i samma parti,
+SV=men f}r inte prata med n}gon annan om partiet
+
+CD=t
+JP=rokumoku nakade
+JP=hana roku
+GB=Flower-six
+GB=dead shape with 6 spaces (also known as Rabbity six)
+CH=hua1 liu4
+RK=
+NL=dode vorm bestaande uit zes lege punten (klaverblad)
+GE=Haeschensechs - tote Form
+FR=petit lapin (forme en 6 morte)
+SV=kaninsexan, en d|d form
+DG= 7 . . . . . . .
+DG= 6 . . . . . . .
+DG= 5 o o o o . . .
+DG= 4 # # # o o . .
+DG= 3 # . # # o . .
+DG= 2 . a . # o . .
+DG= 1 . . # # o . .
+DG=   a b c d e f g
+CP= 
+CP= The black group is dead when white plays [a]
+
+CD=t
+JP=ryo atari
+GB=double 'atari', a move which places two (or more) enemy chains in check
+CH=shuang1 da3, shuang1 jiao4 chi1
+RK=
+NL=dubbel 'atari', een zet die twee (of meer) vijandelijke ketens schaakt
+GE=Doppelatari
+FR=double 'atari'
+SV=dubbel atari
+
+CD=t
+JP=ryo gote
+GB=Double gote, an (endgame) situation which is gote for both players
+CH=shuang3 fang1 hou4 shou3
+RK=
+NL=Dubbel gote, een (eindspel) situatie die nahand is voor beide spelers
+GE=gote fuer beide Seiten
+FR=Double gote, ou 'gote-gote' : coup (de 'yose') gote pour les deux joueurs
+SV=dubbel tempof|rlust, oavsett vem som spelar f|rst f}r denne tempof|rlust
+DG= 5 . . . . . . . .
+DG= 4 . . . o # . . .
+DG= 3 . . . o # . . .
+DG= 2 . o . o # . # .
+DG= 1 . . . a b . . .
+CP= 
+CP= Both black [a] or white [b] is 'gote', so the situation is 'ryo gote'
+
+CD=t
+JP=ryo jimari
+JP=ryo + shimari
+GB=An opening where one (or both) sides has two corner enclosures ('shimari')
+CH=shuang1 fei1 shou3 jiao3
+RK=
+NL=Een opening waarbij een (of beide) spelers
+NL=twee hoekafsluitingen ('shimari') heeft
+GE=fuseki in dem eine Seite zwei Shimaris macht
+FR=Fuseki dans lequel un (ou les deux) joueur a deux shimari (verrous de coin)
+SV=spelstart d{r b}da spelarna har omslutit tv} h|rn,
+SV=tv} h|rnf|rst{rkningar
+
+CD=t
+JP=ryo gakari
+JP=ryo + kakari
+GB=a double corner approach
+CH=shuang1 gua4 jiao3
+RK=
+NL=Een dubbele hoekbenadering
+FR=Double approche d'une pierre de coin (une approche de chaque cote)
+SV=dubbelt h|rnangrepp
+DG= 8 . . . . . . . .
+DG= 7 . . . . . . . .
+DG= 6 . . . o . . . .
+DG= 5 . . . . . . . .
+DG= 4 . . . # . . . .
+DG= 3 . . . . . o . .
+DG= 2 . . . . . . . .
+DG= 1 . . . . . . . .
+DG=   a b c d e f g h
+CP= 
+CP= A ryo gakari consisting of a 'keima gakari' at (f,3)
+CP= and an 'ikken takagakari' at (d,6)
+
+CD=t
+JP=ryo ko
+GB=Double 'ko', a position with two 'ko' fights where only
+GB=one fight needs to be won
+CH=shuang1 jie2
+RK=
+NL=Dubbel 'ko', een situatie met twee 'ko' gevechten waarvan maar
+NL=een gewonnen hoeft te worden.
+FR=Double 'ko' : deux 'ko' simultanes, ce qui fait qu'il est impossible de
+FR=gagner les deux (et ainsi de tuer un groupe, par exemple)
+SV=typ av dubbelb|ld; b|ld d{r enbart en b|ld beh|ver vinnas
+DG= 7 . . . . . . . .
+DG= 6 . . . . . . . .
+DG= 5 # # # # # # . .
+DG= 4 o o o o o # . .
+DG= 3 a o o . o # . .
+DG= 2 o # # o o # . .
+DG= 1 # # b # o # . .
+DG=   a b c d e f g h
+CP= 
+CP= White is alive with double 'ko', since when black takes the 'ko' at [a],
+CP= white will take the 'ko' at [b] and visa versa.
+CP= The funny thing about this situation is that although black can't capture
+CP= the white group it will give him an unlimited amount of 'ko' threats.
+
+CD=t
+JP=ryo sente
+GB=Double sente, an (endgame) situation which is sente for both players
+CH=shuang1 fan1 xian1 shou3
+RK=
+NL=Dubbel sente, een (eindspel) situatie die voorhand is voor beide spelers
+GE=sente fuer beide Seiten
+FR=Double sente (ou sente-sente) : coup sente pour les 2 joueurs (au 'yose')
+SV=dubbel tempovinst, dvs vem som {n spelar f}r tempovinsten
+DG= 5 . . . . . . . . . . . .
+DG= 4 . . . . . o # . . . . .
+DG= 3 . . . . . o # . . . . .
+DG= 2 . . . . . o # . . . . .
+DG= 1 . . . . . a b . . . . .
+CP= 
+CP= Both black [a] or white [b] is 'sente', so the situation is 'ryo sente'
+
+CD=t
+JP=ryoyoku
+GB=A double wing
+CH=liang3 yi4 (zhang1 kai1)
+RK=
+NL=Een dubbele vleugel
+FR="Double wing"
+SV=dubbelvinge(-formation)
+DG=11 . . . . . . . . . . .
+DG=10 . . o * . . . . . * .
+DG= 9 . . . . . . . . . . .
+DG= 8 . . . . . . . . . . .
+DG= 7 . . . . . . . . . . .
+DG= 6 . . . . . . . . . . .
+DG= 5 . . . . . . . . . . .
+DG= 4 . . o * . . . . . o .
+DG= 3 . . . . o . . . . . .
+DG= 2 . . . . . . . . . . .
+DG= 1 . . . . . . . . . . .
+DG=   a b c d e f g h j k l
+CP= 
+CP= This shape, consisting of a 'keima shimari' plus two extensions
+CP= is considered a special case of 'ryoyoku' called 'kakuyoku'
+CP= (cranebird wings).
+
+CD=t
+JP=ryoyoku no jin
+JP=ryoyoku no jinkei
+GB=Double wing formation (see 'ryoyoku')
+CH=liang3 yi4 xing2
+RK=
+NL=Een dubbele vleugel formatie
+SV=dubbelvingeformation
+
+CD=t
+JP=sahen
+GB=left edge
+CH=zuo3 bian1
+RK=
+NL=linkerrand
+FR=bord gauche (ou bord ouest)
+SV=v{nster kant (av br{det)
+
+CD=t
+JP=saki
+GB=first move
+CH=di4 yi1 shou3
+RK=
+NL=eerste zet
+GE=erster Zug
+SV=f|rsta draget
+
+CD=t
+JP=sanba garasu
+GB=Three crows, a corner enclosure consisting of three diagonal moves
+CH=san1 yu3 niao3, san1 yu3 wu1 ya1
+RK=
+NL=Drie kraaien, een hoekafsluiting bestaande uit drie diagonale zetten
+SV=tre diagonaldrag, som omsluter ett h|rn
+DG= 8 . . . . . . . . . . .
+DG= 7 . . # . . . . . . . .
+DG= 6 . . . . . . . . . . .
+DG= 5 . . c . . . . . . . .
+DG= 4 . . . o . b . . . * .
+DG= 3 . . . . a # . . # . .
+DG= 2 . . . . . . . . . . .
+DG= 1 . . . . . . . . . . .
+DG=   a b c d e f g h j k l
+CP= 
+CP= White [a], black [b], white [c] forms 'sanba garasu'
+
+CD=t
+JP=san ko
+GB=triple 'ko' (causes annulment of game in Japanese rules)
+CH=san1 jie2 lian2 huan2
+RK=
+NL=triple-ko
+NL=De partij wordt dan ongeldig verklaart volgens de Japanese Go regels.
+GE=Tripelko
+FR=Triple 'ko' (d'ou partie nulle en regles japonaises)
+SV=trippelb|ld, spelet }terkallas
+
+CD=t
+JP=sanmoku nakade
+GB=dead shape with 3 spaces
+CH=zhi2 san1
+RK=
+NL=dode vorm bestaande uit 3 lege punten
+FR=forme en 3  (forme morte)
+SV=tre-i-en-rad, d|d form
+DG= 4 . . . . . . . . .
+DG= 2 . o o o o o o o .
+DG= 2 . o # # # # # o .
+DG= 1 . o # . a . # o .
+CP= 
+CP= The black group is dead when white plays [a]
+
+CD=t
+JP=san san fuseki
+GB=fuseki pattern with a stone at 3-3 point
+CH=san1 san1 bu4 ju2
+RK=
+NL=Een opening waarbij een van beide spelers op het (3,3) punt heeft gespeeld
+SV=spelstart med sten p} 3-3 punkten
+
+CD=t
+JP=sandan
+GB=3 dan (or 3 step)
+CH=san1 duan4
+RK=
+NL=3-de dan (of drie staps)
+FR=3eme dan
+SV=3 dan, eller tre niv}er ( steg )
+
+CD=t
+JP=sangen basami
+JP=sangen + hasami
+GB=A three point pincer
+CH=san1 jian4 jia2
+RK=
+NL=Een drie-punts inklemzet
+SV=ett trepunkters nyp(-drag), nyp fr}n tre punkters avst}nd
+DG= 6 . . . . . . . . . . . .
+DG= 5 . . . . . . . . . . . .
+DG= 4 . . o * . . . . . * . .
+DG= 3 . . . . # . . . a . . .
+DG= 2 . . . . . . . . . . . .
+DG= 1 . . . . . . . . . . . .
+DG=   a b c d e f g h i j k l
+CP= 
+CP= White [a] is 'sangen basami'
+
+CD=t
+JP=sankaku
+GB=Triangle
+CH=san1 jiao3, san1 jiao3 xing2
+RK=
+NL=Driehoek
+FR=Triangle
+SV=triangel
+
+CD=t
+JP=saru suberi
+GB=Monkey jump, typical endgame move
+CH=xiao3 fei1 diao4
+RK=
+NL=De zogenaamde "kleine aap", typisch een eindspel zet
+GE=Affensprung
+FR=Petite glissade du singe
+SV=(litet) aphopp
+DG= 6 . . . . . . . . .
+DG= 5 . . . . . o . . .
+DG= 4 . . . # . . . . .
+DG= 3 . . . # o o o . .
+DG= 2 . . . # . . . . .
+DG= 1 . . . . . a . . .
+CP= 
+CP= Black [a] reduces the white territory by jumping in
+CP= with a knight jump.
+
+CD=t
+JP=ozaru suberi
+GB=Big monkey jump, typical endgame move
+CH=da4 fei1 tiao4
+RK=
+NL=De zogenaamde "grote aap", typisch een eindspel zet
+FR=Glissade du singe
+SV=aphopp
+DG= 6 . . . . . . . . .
+DG= 5 . . . . . o . . .
+DG= 4 . . . # . . . . .
+DG= 3 . . . # o o o . .
+DG= 2 . . . # . . . . .
+DG= 1 . . . . . . a . .
+CP= 
+CP= Black [a] reduces the white territory by jumping in
+CP= with a large knight jump.
+
+CD=t
+JP=sebameru
+GB=To make it narrow
+CH=suo1 xiao3
+RK=
+NL=Smal maken
+SV=g|ra avsmalnande
+
+CD=t
+JP=seikai
+GB=Correct answer
+CH=zheng4 jie3
+RK=
+NL=Goede antwoord
+FR=Reponse correcte (a un probleme)
+SV=r{tt svar
+
+CD=t
+JP=seimoku
+GB=Nine stones handicap
+CH=rang4 jiu3 zi3
+RK=
+NL=Negen stenen handicap
+FR=Handicap de 9 pierres
+SV=9-stenars handikapp
+
+CD=t
+JP=seme (noun)
+JP=semeru (verb)
+GB=Attacking
+CH=gong1
+RK=
+NL=Aanvallen
+SV=attackera
+
+CD=t
+JP=semedori
+GB=being forced to add the extra stones necessary to remove a
+GB=captured group from the board
+CH=
+RK=
+NL=Gedwongen zijn een dode groep ook daadwerkelijk van het bord te nemen
+NL=(omdat een van de omsingelende ketens niet leeft).
+GE=man wird gezwungen extra Steine zu investieren
+GE=um eine gefangene Gruppe vom Brett nehmen zu koennen
+SV=att tvingas spela en extra sten f|r att avliva en d|d grupp
+
+CD=t
+JP=sen ai sen
+GB=black-black-white (the handicap for a 1-dan difference)
+CH=xian1 xiang4 xian1
+RK=
+NL=zwart-zwart-wit (handicap voor een 1-dan krachtsverschil)
+GE=Schwarz-Schwarz-Weisz
+GE=(klassische Vorgabe fuer einen Spielstaerkeunterschied von einem Grad)
+SV=svartsvartvit ( handikapp f|r en 1-stenars skillnad )
+
+CD=t
+JP=sen ban
+GB=playing on black (when the handicap is even)
+CH=xian1 fan1, xian1 zhou3
+RK=
+NL=zwart-zwart-wit (handicap voor een 1-dan krachtsverschil)
+GE=bei gleicher Spielstaerke Schwarz zu haben
+SV=spela svart ( som handikapp )
+
+CD=t
+JP=sen ni
+GB=alternating between black and two stones
+GB=(the handicap for a four-dan difference)
+CH=xian1 er4
+RK=
+NL=zwart-twee stenen (de handicap voor een 4-dan krachtsverschil)
+GE=Schwarz-zwei Steine
+GE=(klassische Vorgabe fuer einen Spielstaerkeunterschied von vier Graden)
+SV=v{xla mellan svart och tv} stenars handikapp
+
+CD=t
+JP=sensei
+GB=literally 'teacher'
+GB=Professional go players are usually referred to as sensei
+CH=lao3 shi1, shi1 fu4
+RK=
+NL=leraar
+NL=Een Go professional wordt normaal gesproken met 'sensei' aangesproken
+GE=Lehrer
+FR=Professeur, maitre : utilise pour parler des (et aux) joueurs professionnels
+SV=l{rare, proffsspelare
+
+CD=t
+JP=sen ni sen
+GB=Alternating black-two stones, with this game on black
+CH=xian1 er4 xian1
+RK=
+NL=Afwisselend zwart-twee stenen, waarbij deze partij met zwart
+SV=v{xla mellan svart och tv} stenars handikapp
+
+CD=t
+JP=seri ai
+GB=Dead heat (close competition)
+CH=jing4 zheng1
+RK=
+NL=Een gevecht waarin beide spelers afwisselend voordeel proberen
+NL=te krijgen maar wat steeds ongeveer gelijk blijft.
+SV=d|tt lopp
+
+CD=t
+JP=shi
+GB=stones or handicap stones
+CH=zi3
+RK=
+NL=Stenen of handicap stenen
+SV=(handikapp-)stenar
+
+CD=t
+JP=shime tsuke
+GB=To strangle
+CH=
+RK=
+NL=Wurgen
+SV=att strypa
+DG= 8 . . . . . . . . . . . .
+DG= 7 . . . . . . . . . . . .
+DG= 6 . . o . . c o . g . . .
+DG= 5 . . . . d # o # . . . .
+DG= 4 . . # # # o # f e * . .
+DG= 3 . . . # o o # # o . . .
+DG= 2 . . . . . o o # a . . .
+DG= 1 . . . . . . b . . . . .
+DG=   a b c d e f g h j k l m
+CP= 
+CP= White's stones along the edge are used to strangle black by:
+CP= W[a], B[b], W[c], B[d], W[e], B[f], W[g].
+
+CD=t
+JP=shin fuseki
+GB="new fuseki", based on 4-4 points stressing centre.
+GB=Pioneered by Go Seigen and Kitani Minoru.
+CH=xin1 bu4 ju2
+RK=
+NL="nieuwe fuseki", gebaseerd op o.a. het (4,4) punt. Het nieuwe fuseki
+NL=legde de nadruk op het centrum (in tegenstelling tot de hoeken en randen).
+NL=De fameuze pioniers van het nieuwe fuseki waren Go Seigen en Kitani Minoru.
+GE='Neues Fuseki'
+GE=entwickelt von Go Seigen und Kitani Minoru
+FR="nouveau fuseki", mettant l'accent sur les 'hoshi' de coin ;
+FR=invente par Go Seigen et Kitani Minoru
+SV='ny spelstart', speciell spelstart som g|r anspr}k p} mitten,
+SV=skapad av Go Seigen och Kitani Minoru
+DG=19 . . . . . . . . . . . . . . . . . . .
+DG=18 . . . . . . . . . . . . . . . . . . .
+DG=17 . . . . . . . . . . . . . . . . . . .
+DG=16 . . . * . . . . . * . . . . . # . . .
+DG=15 . . . . . . . . . . . . . . . . . . .
+DG=14 . . . . . . . . . . . . . . . . . . .
+DG=13 . . . . . . . . . . . . . . . . . . .
+DG=12 . . . . . . . . . . . . . . . . . . .
+DG=11 . . . . . . . . . . . . . . . . . . .
+DG=10 . . . * . . . . . # . . . . . * . . .
+DG= 9 . . . . . . . . . . . . . . . . . . .
+DG= 8 . . . . . . . . . . . . . . . . . . .
+DG= 7 . . . . . . . . . . . . . . . . . . .
+DG= 6 . . . . . . . . . . . . . . . . . . .
+DG= 5 . . . . . . . . . . . . . . . . . . .
+DG= 4 . . . * . . . . . * . . . . . * . . .
+DG= 3 . . # . . . . . . . . . . . . . . . .
+DG= 2 . . . . . . . . . . . . . . . . . . .
+DG= 1 . . . . . . . . . . . . . . . . . . .
+DG=   a b c d e f g h j k l m n o p q r s t
+CP= 
+CP= A 'shin fuseki' pattern by Go Seigen (in a game with Kitani Minoru)
+
+CD=t
+JP=shin ogi
+GB=
+CH=
+RK=
+NL=
+SV=(|vers{ttning saknas)
+
+CD=t
+JP=shippai
+GB=failure
+CH=shi1 bai4
+RK=
+NL=
+FR=echec, mauvaise reponse
+SV=d}ligt svar
+
+CD=t
+JP=shita hen
+GB=bottom edge
+CH=xia4 bian1
+RK=
+NL=
+FR=bord inferieur, bord du bas, bord sud
+SV=d}lig kant/sida
+
+CD=t
+JP=shita tsuke
+GB=touch from the bottom
+CH=xia4 peng4
+RK=
+NL=
+FR=Coup au contact, par en-dessous
+SV=ber|ra fr}n bottnen
+
+CD=t
+JP=shobute
+GB=do-or-die move
+CH=sheng4 fu4 shou3
+RK=
+NL=alles of niets
+GE=Alles oder Nichts
+FR=Tout ou rien, le tout pour le tout
+SV=allt eller inget
+
+CD=t
+JP=sogo
+GB=a challenge match (Edo period)
+CH=zheng1 qi2
+RK=
+NL=Een uitdagersmatch
+SV=ett utmaningsparti
+
+CD=t
+JP=shodan
+GB=1 dan
+CH=yi1 duan4
+RK=
+NL=Eerste dan
+GE=erster Dan
+FR=Premier dan
+SV=1 dan
+
+CD=t
+JP=shusaku fuseki
+GB=fuseki strategy for black based on 3 3-4 points.
+CH=xiu4 ce4 liu2 (bu4 ju2)
+RK=
+NL=Een openings patroon ("gepatenteerd" door Honinbo Shusaku)
+GE=ein von Honinbo Shusaku entwickeltes Fuseki
+GE=bei dem drei 3-4 Punkte gespielt werden
+FR=Le fuseki de Shusaku (ou Noir joue 3 fois au point 3-4)
+SV=spelstart f|r svart med tre 3-4 punkter
+DG=19 . . . . . . . . . . . . . . . . . . .
+DG=18 . . . . . . . . . . . . . . . . . . .
+DG=17 . . . 2 . . . . . . . . . . 4 . . . .
+DG=16 . . . * . . . . . * . a . . . * 1 . .
+DG=15 . . . . . . . . . . . . . . . 7 . . .
+DG=14 . . . . . . . . . . . . . . . . . . .
+DG=13 . . . . . . . . . . . . . . . . . . .
+DG=12 . . . . . . . . . . . . . . . . . . .
+DG=11 . . . . . . . . . . . . . . . . . . .
+DG=10 . . . * . . . . . * . . . . . * . . .
+DG= 9 . . . . . . . . . . . . . . . . . . .
+DG= 8 . . . . . . . . . . . . . . . . . . .
+DG= 7 . . . . . . . . . . . . . . . . . . .
+DG= 6 . . . . . . . . . . . . . . . . . . .
+DG= 5 . . . . . . . . . . . . . . . . 6 . .
+DG= 4 . . 5 * . . . . . * . . . . . * . . .
+DG= 3 . . . . . . . . . . . . . . . 3 . . .
+DG= 2 . . . . . . . . . . . . . . . . . . .
+DG= 1 . . . . . . . . . . . . . . . . . . .
+DG=   a b c d e f g h j k l m n o p q r s t
+CP= 
+CP= The 'shusaku fuseki' pattern.
+CP= Black 7 would be considered too slow nowadays (since white receives
+CP= compensation for the fact that black started the game, usually 5 1/2 point).
+CP= A modern professional would play around [a].
+
+CD=t
+JP=soi
+GB=
+CH=
+RK=
+NL=
+SV=(|vers{ttning saknas)
+
+CD=t
+JP=son ko
+GB=ko threat which loses points
+CH=sun3 jie2
+RK=
+NL=Een ko dreiging die punten kost
+GE=eine Ko-Drohung die Punkte verliert
+SV=ett b|ldhot som ger po{ngf|rlust
+
+CD=t
+JP=soto magari
+GB=
+CH=
+RK=
+NL=
+SV=(|vers{ttning saknas)
+
+CD=t
+JP=sumi
+GB=
+CH=
+RK=
+NL=
+SV=(|vers{ttning saknas)
+
+CD=t
+JP=suosuaki
+GB=open at the edge. (Makes an area low value as it is hard to surround)
+CH=bian1 shang4 lou4 feng1
+RK=
+NL=Open langs de rand. (Dit maakt een gebied beduidend minder waard)
+FR=Ouvert (en parlant d'un "territoire") donc facile a reduire a presque rien
+SV=|ppen vid kanten
+DG= 5 . . . . . . . .
+DG= 4 . . o # . . . .
+DG= 3 . . o # . . . #
+DG= 2 . . o . a . . .
+DG= 1 . . . . . . . .
+DG=   a b c d e f g h
+CP= 
+CP= Black's position is open to a white play at [a]. Therefore
+CP= extensions to right are not so valuable.
+
+CD=t
+JP=suru
+GB=
+CH=
+RK=
+NL=
+SV=(|vers{ttning saknas)
+
+CD=t
+JP=sutero
+GB=
+CH=
+RK=
+NL=
+SV=(|vers{ttning saknas)
+
+CD=t
+JP=tagei sen no fuseki
+GB=
+CH=
+RK=
+NL=
+GE=eine Eroeffnung, die man in einer Partie ohne Vorgabe waehlt
+GE=z.B. das Shusaku-Fuseki
+SV=en spelstart som v{ljs n{r ingen kompensationspo{ng ges
+
+CD=t
+JP=taikyoku
+GB=match, game
+CH=dui4 ju2
+RK=
+NL=
+SV=parti
+
+CD=t
+JP=taisha joseki
+GB=joseki, famous and feared for the amount of variations
+CH=da4 xie2 ding4 shi4
+RK=
+NL=een 'joseki' berucht om de grote hoeveelheid varianten
+GE=ein spezielles fuer seine vielen Varianten beruechtigtes Joseki
+FR=Le "taisha", joseki celebre aux variantes compliquees et nombreuses.
+SV=typ av spel|ppning; k{nd och fruktad f|r sin m{ngd av variationer
+DG= 7 . . . . . .
+DG= 6 . . . a . .
+DG= 5 . . . d . .
+DG= 4 . . # c b .
+DG= 3 . . . e o .
+DG= 2 . . . . . .
+DG= 1 . . . . . .
+DG=   a b c d e f
+CP= 
+CP= White [a] next initiates the 'taisha joseki'
+CP= (most complicated follow-up starts with: B[b], W[c], B[d], W[e])
+
+CD=t
+JP=takamoku joseki
+GB=joseki following from an initial stone at the 4-5 point
+CH=gao1 mu4 ding4 shi4
+RK=
+NL=Een 'joseki' in de hoek uitgaand van een (5,4) steen
+FR=joseki a partir d'une pierre au point 5-4 (le 'takamoku')
+SV=typ av spel|ppning; f|ljer p} sten spelad p} 4-5 punkten
+DG= 7 . . . . . . . . . . .
+DG= 6 . . . b . . . . . . .
+DG= 5 . . . . . . . . . . .
+DG= 4 . . a * o . . . . * .
+DG= 3 . . . . . . . . . . .
+DG= 2 . . . . . . . . . . .
+DG= 1 . . . . . . . . . . .
+DG=   a b c d e f g h j k l
+CP= 
+CP= Black [a], white [b] initiates a typical 'takamoku joseki'
+
+CD=t
+JP=take fu
+GB=Bamboo Joint, a connection technique
+CH=shuang1 ("double")
+RK=
+NL=Bamboo, een verbinding techniek
+FR=Noeud de bambou (la connexion assuree)
+SV=bambuled, en f|rbindningsform
+DG= . . . . .
+DG= . # # # .
+DG= . o . a .
+DG= . o . o .
+DG= . # # # .
+DG= . . . . .
+CP= 
+CP= White [a] ensures connection by forming a 'take fu'
+
+CD=t
+JP=tasuki bashio
+GB=
+CH=
+RK=
+NL=
+SV=(|vers{ttning saknas)
+
+CD=t
+JP=tasuki fuseki
+GB=
+CH=
+RK=
+NL=
+SV=(|vers{ttning saknas)
+
+CD=t
+JP=tasuki hoshi
+GB=
+CH=
+RK=
+NL=
+SV=(|vers{ttning saknas)
+
+CD=t
+JP=tedomari
+GB=the last meaningful point in the fuseki or in the endgame
+CH=
+RK=
+NL=De laatste zet van betekenis in de opening of het eindspel
+GE=der letzte wichtige Punkt im Fuseki oder Yose
+SV=den sista betydelsefulla punkten i spelstarten eller
+SV=slutspelet
+
+CD=t
+JP=teire
+GB=repair
+CH=bu3, xiu1 bu3
+RK=
+NL=
+SV=reparera, gottg|ra
+
+CD=t
+JP=tejun
+GB=order, sequence
+CH=ci4 xu4, shou3 shun4
+RK=
+NL=
+SV=ordning, sekvens
+
+CD=t
+JP=tenkai
+GB=extension (see hiraki)
+CH=zhan3 kai1
+RK=
+NL=
+SV=expansion
+
+CD=t
+JP=tetsui
+GB=
+CH=
+RK=
+NL=
+SV=(|vers{ttning saknas)
+
+CD=t
+JP=tochika
+GB=a pillbox enclosure
+CH=
+RK=
+NL=
+DG=12 . . . . . . . . . . . . .
+DG=11 . . . a . . . . . . . . .
+DG=10 . . . * . . . . . . . . .
+DG= 9 . . . . . . . . . . . . .
+DG= 8 . . . . . . . . . . . . .
+DG= 7 . . . . . . . . . . . . .
+DG= 6 . . . . . . . . . . . . .
+DG= 5 . . # . # . . . . . . . .
+DG= 4 . . . * . . . . . * b . . 
+DG= 3 . . . . # . . . . . . . .
+DG= 2 . . . . . . . . . . . . .
+DG= 1 . . . . . . . . . . . . .
+DG=   a b c d e f g h j k l m n
+CP= 
+CP= Three black stones forms a tochika.  From this position, an extension
+CP= to either [a] or [b] would be ideal.
+
+CD=t
+JP=ton
+GB=
+CH=
+RK=
+NL=
+SV=(|vers{ttning saknas)
+
+CD=t
+JP=ton tesuji
+GB=
+CH=
+RK=
+NL=
+SV=(|vers{ttning saknas)
+
+CD=t
+JP=torazu san moku
+GB=
+CH=
+RK=
+NL=
+SV=(|vers{ttning saknas)
+
+CD=t
+JP=tori
+GB=capturing
+CH=ti2 zi3
+RK=
+NL=
+
+CD=t
+JP=tori kaeshi
+GB=capturing back
+CH=fan3 ti2
+RK=
+NL=
+SV=}terer|vra
+
+CD=t
+JP=tozen
+GB=
+CH=
+RK=
+NL=
+SV=(|vers{ttning saknas)
+
+CD=t
+JP=tsuge no itte
+GB=
+CH=
+RK=
+NL=
+SV=(|vers{ttning saknas)
+
+CD=t
+JP=tsuke fukure
+GB=
+CH=
+RK=
+NL=
+SV=(|vers{ttning saknas)
+
+CD=t
+JP=tsuke kaeshi
+GB=
+CH=
+RK=
+NL=
+SV=(|vers{ttning saknas)
+
+CD=t
+JP=tsuke nobi
+GB=attach and extend
+CH=peng4 chang2
+RK=
+NL=De combinatie van een aanhechting en een verlenging
+GE=anlegen und strecken, ein Joseki
+SV=f|rbind och str{ck ut
+
+CD=t
+JP=tsuke nobi joseki
+GB=4-4 point joseki where you attach against the knight's move approach
+GB=and extend when they hane
+CH=kao4 ya1 ding4 shi4
+RK=
+NL=De combinatie van een aanhechting en een verlenging in antwoord op
+NL=een 'keima kakari' van een 'hoshi' steen.
+GE=Anlegejoseki
+SV=vinkel(spel-)|ppning, spelas vid anfall av 4-4 sten p} 6-3 punkten
+DG= 7 . . . . . . . . . . .
+DG= 6 . . . . . . . . . . .
+DG= 5 . . . . . c . . . . .
+DG= 4 . . . # . a b . . * .
+DG= 3 . . . . . o . . . . .
+DG= 2 . . . . . . . . . . .
+DG= 1 . . . . . . . . . . .
+DG=   a b c d e f g h j k l
+CP= 
+CP= Black [a], white [b], black [c] initiates the 'tsuke nobi joseki'
+
+CD=t
+JP=tsuke osae
+GB=attach and block. Used in 4-4 point joseki to take the corner.
+CH=peng4 dang3
+RK=
+NL=Aanhechten en blokkeren.
+SV=attackera och blockera
+DG= 8 . . . . . . . . . . .
+DG= 7 . . . . . . . . . . .
+DG= 6 . . . . . . . . . . .
+DG= 5 . . . . . . . . . . .
+DG= 4 . . . # . a b . . * .
+DG= 3 . . . . c o . . . . .
+DG= 2 . . . . . . . . . . .
+DG= 1 . . . . . . . . . . .
+DG=   a b c d e f g h j k l
+CP= 
+CP= The combination: black [a] and black [c] is 'tsuke osae'
+
+CD=t
+JP=tsuki atari
+GB=thrusting against
+CH=ding3
+RK=
+NL=
+DG= 8 . . . . . . . . . . .
+DG= 7 . . . . . . . . . . .
+DG= 6 . . . o . . . . . . .
+DG= 5 . . . # . . . . . . .
+DG= 4 . . . a o . . . . * .
+DG= 3 . . # o . . . . . . .
+DG= 2 . . . . . . . . . . .
+DG= 1 . . . . . . . . . . .
+DG=   a b c d e f g h j k l
+CP= 
+CP= 'tsuki atari': black [a] is an example
+
+CD=t
+JP=tsuki dashi
+GB=pushing in between two enemy stones.
+CH=chong1
+RK=
+NL=
+DG=12 . . . . . . . . . . .
+DG=11 . . . . . . . . . . .
+DG=10 . . # . . . . . . . .
+DG= 9 . . . . . . . . . . .
+DG= 8 . . . . . . . . . . .
+DG= 7 . . . . . . . . . . .
+DG= 6 . . a # . . . . . . .
+DG= 5 . . # o o . . . . . .
+DG= 4 . . b # . . . . . * .
+DG= 3 . . . . . . . . . . .
+DG= 2 . . . . . . . . . . .
+DG= 1 . . . . . . . . . . .
+DG=   a b c d e f g h j k l
+CP= 
+CP=White [d5] is an example of 'tsuki dashi.'  If black [c5] blocks,
+CP=white can cut next at [a] or [b].
+
+CD=t
+JP=tsuki su
+GB=(tsuki to suppon) "the moon and a mud turtle" an immense difference
+CH=
+RK=
+NL="de maan en een modder schildpad", een enorm verschil
+SV=en avgrund, skillnaden mellan himmel och helvete
+
+CD=t
+JP=tsuppari
+GB=thrust
+CH=
+RK=
+NL=
+GE=Stosz
+SV=st|ta
+
+CD=t
+JP=uchikake
+GB=suspending play during a game
+GB=(it was White's privilege to suspend play on his move)
+CH=da3 gua4
+RK=
+NL=afbreken van een partij (voor de lunch bijvoorbeeld)
+GE=unterbrechen des Spiels waehrend einer Partie
+SV=uppskjuta spelet
+
+CD=t
+JP=uchikiru
+GB=play out
+CH=
+RK=
+NL=uitspelen
+SV=spela ut
+
+CD=t
+JP=uchi kake
+GB=
+CH=
+RK=
+NL=
+
+CD=t
+JP=uchikomu
+GB=1. to invade
+GB=2. to force an opponent to take a handicap (or force him to
+GB=   a higher handicap) by taking a lead of four games (six games
+GB=   at the beginning of the Edo period)
+CH=1. da3 ru4
+CH=2. da3 ru4 (jiang4 ji2)
+RK=
+NL=1. Invaderen
+NL=2. De tegenstander op handicap zetten
+GE=1. invadieren
+GE=2. den Gegner zu einer hoeheren Vorgabe zwingen indem man
+GE=   mit vier Partien (zu Beginn der Edo-Zeit mit sechs Partien)
+GE=   in Fuehrung geht
+FR=Envahir
+SV=1. Invadera
+SV=2. Tvinga motst}ndaren ta handikapp (genom att
+SV=   vinna fyra g}nger i rad, sex g}nger i b|rjan av Edo-eran)
+SV=   eller tvinga honom att ta en handikappsten mera.
+
+CD=t
+JP=uchi suge
+GB=
+CH=
+RK=
+NL=
+
+CD=t
+JP=uchuryu
+GB=
+CH=
+RK=
+NL=
+
+CD=t
+JP=uhen
+GB=right edge
+CH=you4 bian1
+RK=
+NL=rechterrand
+FR=Bord droit, bord est
+SV=h|gra sidan
+
+CD=t
+JP=kahen
+GB=lower edge
+CH=xia4 bian1
+RK=
+NL=onderrand
+FR=Bord inferieur, bord du bas, bord sud
+SV=nedre sidan
+
+CD=t
+JP=johen
+GB=upper edge
+CH=shang4 bian
+RK=
+NL=bovenrand
+FR=Bord superieur, bord du haut, bord nord
+SV=|vre sidan
+
+CD=t
+JP=uki ishi
+GB=
+CH=
+RK=
+NL=
+
+CD=t
+JP=usu aji
+GB=
+CH=
+RK=
+NL=
+
+CD=t
+JP=usui
+GB=
+CH=
+RK=
+NL=
+
+CD=t
+JP=uttegae
+GB=snapback
+CH=dao4 pu1
+RK=
+NL=
+GE=Mausefalle
+SV=snapback, negativ }terverkning ( retur )
+
+CD=t
+JP=uttegaeshi
+GB=A sacrifice manoeuvre
+CH=
+RK=
+NL=Een offer manoeuvre
+SV=ett offer
+
+CD=t
+JP=uwa hane
+GB=
+CH=
+RK=
+NL=
+
+CD=t
+JP=wakare
+GB=
+CH=
+RK=
+NL=
+
+CD=t
+JP=yodan
+GB=4 dan
+CH=si4 duan4
+RK=
+NL=4e dan
+SV=4 dan
+
+CD=t
+JP=yoko tsuke
+GB=
+CH=
+RK=
+NL=
+
+CD=t
+JP=yumi
+GB=
+CH=
+RK=
+NL=
+
+CD=t
+JP=yomi suji
+GB=
+CH=
+RK=
+NL=
+
+CD=t
+JP=yon ken
+GB=
+CH=
+RK=
+NL=
+
+CD=t
+JP=yonmoku nakade
+GB=dead shape with 4 spaces
+CH=fang1 si4
+RK=
+NL=dode vorm bestaande uit vier lege punten
+FR=forme en 4 en carre 
+SV=fyra-i-en-klump, kn|lig fyra, en d|d form
+DG= 6 . . . . . . . . . .
+DG= 5 . . . . . . . . . .
+DG= 4 . . o o o o o o . .
+DG= 3 . . o # # # # o . .
+DG= 2 . . o # . . # o . .
+DG= 1 . . o # . . # o . .
+CP= 
+CP= The black group is dead (even when black is to move)
+
+CD=t
+JP=yongen
+GB=
+CH=
+RK=
+NL=
+
+CD=t
+JP=yorumi
+GB=
+CH=
+RK=
+NL=
+
+CD=t
+JP=yoten
+GB=
+CH=
+RK=
+NL=
+
+CD=t
+JP=yowai
+GB=
+CH=
+RK=
+NL=
+
+CD=t
+JP=yozu
+GB=
+CH=
+RK=
+NL=
+
+CD=t
+JP=yurumi shicho
+GB=loose ladder
+CH=
+RK=
+NL=losse ladder, een ladder waarbij de opgejaagde groep drie vrijheden heeft
+GE=lockere Treppe - i.a. wird der englische Ausdruck benutzt
+SV=l|s stege
+DG= 9 . . . . . . . . . . . .
+DG= 8 . . . . . . . . . . . .
+DG= 7 . . . o o . . . . . . .
+DG= 6 . . . o # . b . . . . .
+DG= 5 . # # o # c a d . . . .
+DG= 4 . . o # o o . . . . * .
+DG= 3 . . o # # o . . . . # .
+DG= 2 . . # . . e . . . . . .
+DG= 1 . . . . . . . . . . . .
+DG=   a b c d e f g h i j k l
+CP= 
+CP= This position arose from a 'hoshi joseki' and it is black's move.
+CP= 
+CP= If black defends his cutting stones with [a], white can capture
+CP= them with a 'yurumi shicho': W[b], B[c], W[d].
+CP= (Please note that this sequence works since white [e] is 'sente'.)
+CP= 
+CP= The correct 'joseki' move therefore is B[f6] instead of B[a].
+
+CD=t
+JP=zoko suji
+GB=
+CH=
+RK=
+NL=
+
+CD=t
+JP=ai
+GB=white
+CH=bai2
+RK=
+NL=wit
+GE=Weisz
+
+CD=t
+JP=aji
+GB=possibilities, potential
+CH=yu2 wei4; jie4 yong4
+RK=
+NL=mogelijkheden
+GE=Moeglichkeiten in einer Stellung
+FR=Possibilites (qui restent dans une situation apparemment bien assise)
+SV=m|jligheter
+
+CD=t
+JP=aji karai
+GB=shape free of weaknesses
+CH=wu2 er4 wei4
+RK=
+NL=goede aji
+GE=gutes Aji
+
+CD=t
+JP=aji keshi
+GB=spoiling possibilities
+CH=xiao1 yu2 wei4
+RK=
+NL=verspelen van andere mogelijkheden
+GE=ein falscher Zug, der vorhandenes Aji zerstoert
+FR=Qui a pour effet de "gacher" des possibilites existantes
+SV=att f|rverka (utvecklings-)m|jligheter
+DG= 8 . . . . . . . . . . . .
+DG= 7 . . . . . . . . . . . .
+DG= 6 . . o . . . . . . . . .
+DG= 5 . # # . . . . . . . . .
+DG= 4 . o # # # . . . . . . .
+DG= 3 . o o o a o . c . . . .
+DG= 2 . . . . b d . . . . . .
+DG= 1 . . . . . . . . . . . .
+DG=   a b c d e f g h j k l
+CP= 
+CP= A well known position after white invaded hoshi
+CP= Exchanging black [a] (forcing white [b]) is aji keshi
+CP= Black will loose the option to play [c] (threatening [d])
+
+CD=t
+JP=aji ga ii
+GB=good aji (no weaknesses)
+CH=hao3 wei4
+RK=
+NL=goede aji
+GE=gutes Aji
+FR=l'aji est bon : il n'y a pas de faiblesses
+SV=goda m|jligheter/strukturer (inga svagheter)
+SV=goda m|jligheter
+
+CD=t
+JP=aji warui
+GB=shape which contains weaknesses
+CH=
+RK=
+NL=slechte aji
+GE=schlechtes Aji
+SV=m|jligheter ( former ) med svagheter
+
+CD=t
+JP=amaii gatachi
+GB=seems a success (but isn't)
+CH=
+RK=
+NL=schijnsucces, een zettenreeks waarbij het lijkt dat er een resultaat
+NL=geboekt is, maar in feite heeft het niets opgeleverd.
+SV=skenbar framg}ng
+
+CD=t
+JP=ate
+JP=atari
+GB=check
+CH=jiao4 chi1
+RK=
+NL=schaak
+GE=einer Formation die vorletzte Freiheit nehmen
+SV=atari, direkthot
+DG=. . . .
+DG=. . o .
+DG=. o # .
+DG=. . o .
+DG=. . . .
+CP= 
+CP= One of the o stones *gave* atari
+CP= The # stone now is *in* atari
+
+CD=t
+JP=ate komi
+GB=playing inside an enemy kosumi
+CH=
+RK=
+NL=een steen gespeeld in een vijandelijke kosumi
+FR=coup joue entre deux pierres adverses en position de 'kosumi'
+SV=spela genom motspelarens diagonaldrag ( varvid motspelaren kan
+SV=spela p} andra sidan av diagonalen, f|r att f} s{ker f|rbindelse )
+DG= 7 . . . . . . . . . . .
+DG= 6 . . . # . . . . . . .
+DG= 5 . . . . . . . . . . .
+DG= 4 . . . # b . . . . * .
+DG= 3 . . o . # o . # . . .
+DG= 2 . . . o a . . . . . .
+DG= 1 . . . . . . . . . . .
+DG=   a b c d e f g h j k l
+CP= 
+CP= We are in the middle of a 'hoshi joseki' (white to move)
+CP= Normal continuations at this point are [a] or [b] ('ate komi')
+
+CD=t
+JP=atsumi
+GB=thickness
+GB=strong formation of stones facing the center or facing along a side
+CH=hou4 shi4
+RK=
+NL=dikte, kracht
+GE=Dicke, Staerke
+SV=tjocklek, tyngd
+
+CD=t
+JP=bane
+JP=hane
+GB=A move on top of an enemy chain
+CH=ban1
+RK=
+NL=Een zet op de kop van een keten
+GE=umbiegen
+FR=Coup en diagonale, contre une pierre adverse
+SV=kr|k ( runt fiendestenar )
+DG= 8 . . . . . . . . . . . .
+DG= 7 . . . . . . . . . . . .
+DG= 6 . . . . . . . . . . . .
+DG= 5 . . o . . . . . . . . .
+DG= 4 . . . . o o o o a . . .
+DG= 3 . . . # # . # # . . . .
+DG= 2 . . . . . . . . . . . .
+DG= 1 . . . . . . . . . . . .
+DG=   a b c d e f g h j k l
+CP= 
+CP= We are in the middle of a 'komoku joseki' (black to move)
+CP= Black can raise his low position by playing at [a] ('bane')
+
+CD=t
+JP=basami
+JP=hasami
+GB=(pincer)
+GB=a play that attacks by preventing the opponent's extension down either side
+CH=jia2
+RK=
+NL=inklemzet
+GE=Klemmzug
+FR=pince (on dit aussi tenaille)
+SV=nyp
+DG= 8 . . . . . . . . . . . .
+DG= 7 . . . . . . . . . . . .
+DG= 6 . . . . . . . . . . . .
+DG= 5 . . . . . . . . . . . .
+DG= 4 . . # * . . b d f * . .
+DG= 3 . . . . o . a c e . . .
+DG= 2 . . . . . . . . . . . .
+DG= 1 . . . . . . . . . . . .
+DG=   a b c d e f g h j k l m
+CP= 
+CP= Black [a]-[f] are all basami/hasami
+
+CD=t
+JP=biraki
+JP=hiraki
+GB=extension
+CH=chai1
+RK=
+NL=uitbreiding
+GE=Ausdehnung
+FR=Extension
+SV=expansion
+DG= 8 . . . . . . . . . . . .
+DG= 7 . . . . . . . . . . . .
+DG= 6 . . . # . . . . . . . .
+DG= 5 . . . . . . . . . . . .
+DG= 4 . . . # . . . . a c e .
+DG= 3 . . . . . o . . b d f .
+DG= 2 . . . . . . . . . . . .
+DG= 1 . . . . . . . . . . . .
+DG=   a b c d e f g h j k l m
+CP= 
+CP= White [a]-[f] are all biraki/hiraki of the white stone
+CP= A sensible choice between these moves
+CP= will be affected by the right side situation
+DG=19 . . . . . . . . . . . . . . . . . . .
+DG=18 . . . . . . . . . . . . . . . . . . .
+DG=17 . . . o . . . . . . . . . . . . . . .
+DG=16 . . . * . . . . . * . . . . # * # . .
+DG=15 . . . . . . . . . . . . . . . . . . .
+DG=14 . . . . . . . . . . . . . . . . . . .
+DG=13 . . . . . . . . . . . . . . . . . . .
+DG=12 . . . . . . . . . . . . . . . . a . .
+DG=11 . . . . . . . . . . . . . . . . . . .
+DG=10 . . . * . . . . . * . . . . . * . . .
+DG= 9 . . . . . . . . . . . . . . . . o . .
+DG= 8 . . . . . . . . . . . . . . . . . . .
+DG= 7 . . . . . . . . . . . . . . . . . . .
+DG= 6 . . . . . . . . . . . . . . . . . . .
+DG= 5 . . . . . . . . . . . . . # . . # . .
+DG= 4 . . # * . . . . . * . . . . . * . . .
+DG= 3 . . . . o . . . c . . . . b . o d . .
+DG= 2 . . . . . . . . . . . . . . . . . . .
+DG= 1 . . . . . . . . . . . . . . . . . . .
+DG=   a b c d e f g h j k l m n o p q r s t
+CP= 
+CP= From the game Go Seigen - ??? (have to check)
+CP= Since the right side is important in this fuseki white decided
+CP= to ignore black's last move at (o,5) and played biraki with [a].
+CP= Black of course attacked the corner stone with [c]. Then white
+CP= again decided to ignore black and played another biraki with [c].
+CP= This interesting fueski exchange finished after black took a
+CP= firmer grip on the corner by adding a stone at [d].
+
+CD=t
+JP=boshi
+GB=playing on top of an enemy stone (a capping move)
+CH=zhen4
+RK=
+NL=zet gespeeld boven een vijandelijke steen
+GE=einen Hut aufsetzen
+GE=klingt im Deutschen foellig bloed!
+GE=BITTE NICHT DIE UEBERSETZUNG BENUTZEN!
+FR=coup qui "chapeaute" l'adversaire
+SV=kv{sa, sk{ppa; spela ovanf|r en motst{ndarsten
+DG=19 . . . . . . . . . . . . . . . . . . .
+DG=18 . # o . . . . . . . . . . . . . . . .
+DG=17 . # # o . . . . . . . . o . o . . . .
+DG=16 . # o o . o . # . * # . . . . * # . .
+DG=15 . . # . . . . . . . . . . . . . . . .
+DG=14 . . . . . . . a . . b . . . . . . . .
+DG=13 . . . . . . . . . . . . . . . o . # .
+DG=12 . . . . . . . . . . c . . . . . . . .
+DG=11 . . . o . . . . . . . . . . . . . . .
+DG=10 . . . * . . . . . * . . . . . * . . .
+DG= 9 . . . . . . . . . . . . . . . . . . .
+DG= 8 . . . . . . . . . . . . . . . . . . .
+DG= 7 . . . . . . . . . . . . . . . . . . .
+DG= 6 . . . . . . . . . . . . . . . . . . .
+DG= 5 . . . . . . . . . . . . . . . . . . .
+DG= 4 . . # * . . . . . * . . . . . o . . .
+DG= 3 . . . . # . . . . . . . . . . . . . .
+DG= 2 . . . . . . . . . . . . . . . . . . .
+DG= 1 . . . . . . . . . . . . . . . . . . .
+DG=   a b c d e f g h j k l m n o p q r s t
+CP= 
+CP= Cho Chikun - Otake Hideo, 7th Meijin title, 29 & 30 September 1982
+CP= White attacked black with: [a] (boshi), [b], and [c] (again boshi)
+
+CD=t
+JP=botsugi
+GB=solid connection of an ikken tobi
+CH=lian2 (bang4)
+RK=
+NL=solide verbinding van een ikken tobi
+GE=die zwei Steine eines ikken tobis verbinden
+SV=f|rbindelse av ett enpunktshopp
+DG= . . . . . . .
+DG= . . o o o . .
+DG= . . . . . . .
+DG= . . # a # . .
+DG= . . . . . . .
+DG= . . o . o . .
+DG= . . . . . . .
+DG= . . . . . . .
+CP= 
+CP= Black [a] (botsugi) prevents white from cutting him there
+
+CD=t
+JP=byo yomi
+GB=(Literally, "seconds-reading" in Japanese, and
+GB="reading-seconds" in Chinese.)
+GB=Overtime. The time given a player (usually 30 seconds or 60 seconds
+GB=per move) to complete his move after his clock time has run out
+CH=du2 miao3
+RK=
+NL=seconden lezen, extra tijd
+GE=zusaetzliche Zeit
+FR=Dans une partie en temps limite, temps supplementaire accorde pour finir
+FR=la partie, quand le temps de base est epuise
+SV=till{ggstid, andra l{sningen
+
+CD=t
+JP=chuban
+GB=middle game
+CH=zhong1 pan2
+RK=
+NL=middenspel
+GE=Mittelspiel
+FR=milieu de partie
+SV=mittspelet
+
+CD=t
+JP=choshi ga ii
+GB=natural flow of moves
+CH=hao3 jie2 zou4, hao3 diao4 zi
+RK=
+NL=natuurlijke stroom van zetten
+GE=natuerlicher Flusz der Steine
+SV=naturligt fl|de av drag
+DG=19 . . . . . . . . . . . . . . . . . . .
+DG=18 . . . . . . . . . . . . . . . . . . .
+DG=17 . . . o . . . . . . . . . . . . . . .
+DG=16 . . . * . . . . . * . . . . # * # . .
+DG=15 . . . . . . . . . . . . . . . . . . .
+DG=14 . . . . . . . . . . . . . . . . . . .
+DG=13 . . . . . . . . . . . . . . . . . . .
+DG=12 . . . . . . . . . . . . . . . . g . .
+DG=11 . . . . . . . . . . . . . . . . . . .
+DG=10 . . . * . . . . . * . . . . . * . . .
+DG= 9 . . . . . . . . . . . . . . . . o . .
+DG= 8 . . . . . . . . . . . . . . . . . . .
+DG= 7 . . . . . . . . . . . . . . f . . . .
+DG= 6 . . . . . . . . . . . . . e d . . . .
+DG= 5 . . . . . . . . . . . . . c b . # . .
+DG= 4 . . # * . . . . . * . . . . a # . . .
+DG= 3 . . . . o . . . . . . . . . o o # # .
+DG= 2 . . . . . . . . . . . . . . . . o . .
+DG= 1 . . . . . . . . . . . . . . . . . . .
+DG=   a b c d e f g h j k l m n o p q r s t
+CP= 
+CP= White (Go Seigen) to play.
+CP= White actually wants to extend his (r,9) stone along the edge.
+CP= By first forcing with [a] up to [f], the extension [g]
+CP= becomes more natural, part of the "flow of moves".
+
+CD=t
+JP=dame
+GB=a neutral point, territory for neither; a liberty
+CH=kong4 mu4; dan1 guan1
+RK=
+NL=een neutraal punt; een vrijheid
+GE=ein neutraler Punkt; eine Freiheit
+FR=point neutre ; liberte
+SV=neutral punkt
+
+CD=t
+JP=dame
+GB=bad
+CH=bu4 hao3
+RK=
+NL=slecht
+FR=mauvais
+SV=d}lig
+
+CD=t
+JP=damezumari
+GB=shortage of liberties
+CH=qi4 jin3
+RK=
+NL=gebrek aan vrijheden
+GE=Mangel an Freiheiten
+FR=manque de libertes
+SV=frihetsbrist
+
+CD=t
+JP=dan
+GB=grade
+CH=duan4
+RK=
+NL=graad
+GE=Meister
+SV=en grad f|r att m{ta spelskicklighet, m{stare
+
+CD=t
+JP=dango
+GB=a solid mass of stones; a very inefficient shape
+CH=yi4 tuan2 (yu1 xing2)
+RK=
+NL=een massieve klomp stenen
+GE=klumpige Form
+FR=gros paquet de pierres (l'horreur, quoi)
+SV=en bedr|vlig klump stenar
+DG= 9 . . . . . . . . . . . . . . . . . . .
+DG= 8 . . . # . . . . . . . . . . . . . . .
+DG= 7 . . . # o o . a . . . . . . . . . . .
+DG= 6 . . . o # # # . . . . . . . . . . . .
+DG= 5 . . . o # # o . . . . . . . . . . . .
+DG= 4 . o o o # # # o o . . . . . . o . . .
+DG= 3 . # # # o # # # o . # . . . . . . . .
+DG= 2 o o . # o o o o # # . . . . . . . . .
+DG= 1 . . . . . . . . . . . . . . . . . . .
+CP= 
+CP= The 11 stone black group only have two liberties, a typical 'dango' shape.
+CP= White [a] next will continue the attack.
+CP= Initial moves: see 'guru guru mawashi'
+CP= Final result: see 'shicho'
+
+CD=t
+JP=de
+GB=a move which pushes between two enemy stones
+CH=chong1 chu1
+RK=
+NL=doorduw zet
+GE=durchstoszen
+SV=genombrott
+
+CD=t
+JP=de giri
+GB=a sequence of two moves which push and cut
+CH=chong1 duan4
+RK=
+NL=Een kombinatie van een doorduw en knipzet
+GE=durchstoszen und schneiden
+SV=tv} drag; genombrytning och d{refter sk{rning
+
+CD=t
+JP=furikawari
+GB=large exchange, swap, trade
+CH=jiao1 huan4
+RK=
+NL=Een grote uitruil van gebied en/of invloed
+GE=Handel, groszer Austausch
+FR=Echange (de grande dimension, entre deux territoires, par exemple)
+SV=( stor ) byte, utv{xling
+
+CD=t
+JP=fuseki
+GB=opening
+CH=bu4 ju2, kai1 ju2
+RK=
+NL=opening
+GE=Eroeffnung
+FR=debut de partie
+SV=spelstart
+
+CD=t
+JP=kakari
+JP=gakari
+GB=corner approach
+CH=gua4 jiao3
+RK=
+NL=Een benaderingszet
+GE=ein Angriffszug gegen einen einzigen Stein in der Ecke
+FR=Approche d'une premiere pierre adverse placee dans un coin
+SV=h|rnangrepp mot en ensam sten
+DG= 8 . . . . . . . . . . . .
+DG= 7 . . . . . . . . . . . .
+DG= 6 . . . . . . . . . . . .
+DG= 5 . . . . . . . . . . . .
+DG= 4 . . # . b d . . . * . .
+DG= 3 . . . . a c . . . . . .
+DG= 2 . . . . . . . . . . . .
+DG= 1 . . . . . . . . . . . .
+DG=   a b c d e f g h j k l m
+CP= 
+CP= White [a]-[d] are all 'gakari' (also 'kakari')
+
+CD=t
+JP=geta
+GB=net
+GB=A method of capturing a enemy stone; a net trap.
+GB=The shape of the stones resembles a wooden clog
+CH=jia1
+RK=
+NL=Een vangnet, een zet die een vijandelijke keten
+NL=vangt door alle ontsnaproutes af te grendelen.
+GE=Netz
+FR=Sabot, ou filet, mais on dit plutot "geta" : facon de capturer des
+FR=pierres adverses, quand la situation s'y prete
+SV=n}t; en metod att f}nga motst}ndarens stenar
+DG= . . . . . . . . . . . . . .
+DG= . . . . . . . . . . . . . .
+DG= . . o . a . . . o . . a . .
+DG= . . o # . . . . o # # . . .
+DG= . . . o o . . . . o o o . .
+DG= . . . . . . . . . . . . . .
+DG= . . . . . . . . . . . . . .
+CP= 
+CP= In both positions the black stones can be captured with [a] (geta)
+
+CD=t
+JP=giri
+JP=kiri
+GB=cut
+CH=duan4
+RK=
+NL=knip
+GE=Schnitt
+FR=Coupe
+SV=sk{rning, sk{rande drag
+
+CD=t
+JP=gote
+GB=a move not requiring an answer
+CH=hou4 shou3
+RK=
+NL=zet zonder dreiging
+GE=Nachhand
+FR=Qui perd l'initiative, auquel l'adversaire ne repond pas
+SV=tempof|rlust, ett drag som inte beh|ver besvaras
+
+CD=t
+JP=hai
+GB=crawl
+CH=pa2
+RK=
+NL=kruipen, kruipzet
+GE=auf der ersten oder zweiten Linie unter gegnerischen Steinen kriechen
+SV=krypa
+
+CD=t
+JP=hamete
+GB=a trick play
+CH=qi1 zhao1
+RK=
+NL=een zet die bij correct tegenspel tot nadeel leidt
+GE=ein Trickzug, der sich bei korrektem Spiel des Gegners nachteilig auswirkt
+FR=Coup d'arnaque, peu risque et difficile a contrer
+SV=trickdrag(-sekvens)
+
+CD=t
+JP=hana zuke
+GB=playing on top of an enemy chain
+CH=ding3
+RK=
+NL=zet gespeeld bovenop een vijandelijke keten
+GE=auf der Nase anlegen (Nasenstueber :-))
+SV=kr|ka ovanp} nosen av en motst}ndarkedja av stenar, spela p}
+SV=toppen/nosen av en motst}ndarkedja av stenar
+
+CD=t
+JP=hane kiri
+GB=hane and then cross-cut
+CH=ban1 duan4
+RK=
+NL=Een combinatie van een 'hane' en een kruisknip
+GE=Kreuzschnitt
+SV=kr|k och sk{rning
+
+CD=t
+JP=haya go
+GB=lightning go
+CH=kuai4 qi2
+RK=
+NL=snelgo
+GE=Blitzgo
+FR=(go en) blitz
+SV=blixtgo
+
+CD=t
+JP=hazama
+GB=
+CH=
+RK=
+NL=
+GE=ein Zug in einen hazama tobi
+SV=ett drag i ett diagonalhopp
+
+CD=t
+JP=hazama tobi
+GB=diagonal jump
+CH=xiang4 bu4 (fei1)
+RK=
+NL=Een-punts diagonale sprong
+GE=einpunktiger Diagonalsprung
+SV=diagonalhopp
+DG= . . . . .
+DG= . . . o .
+DG= . . . . .
+DG= . o . . .
+DG= . . . . .
+CP= 
+CP= The hazama tobi shape
+
+CD=t
+JP=hiki
+GB=pull back
+CH=tui4
+RK=
+NL=terugtrekken
+GE=zurueckziehen
+SV=dra tillbaka
+
+CD=t
+JP=hikuri kaeshi
+GB=
+CH=
+RK=
+NL=
+SV=(|vers{ttning saknas)
+
+CD=t
+JP=hoshi
+GB=star point
+CH=xing1 wei4
+RK=
+NL=voorgiftpunt
+GE=Vorgabepunkt
+SV=handikappunkt
+DG=11 . . . . . . . . . . . . . . . . . . .
+DG=10 . . . + . . . . . x . . . . . + . . .
+DG= 9 . . . . . . . . . . . . . . . . . . .
+DG= 8 . . . . . . . . . . . . . . . . . . .
+DG= 7 . . . . . . . . . . . . . . . . . . .
+DG= 6 . . . . . . . . . . . . . . . . . . .
+DG= 5 . . . . . . . . . . . . . . . . . . .
+DG= 4 . . . * . . . . . + . . . . . * . . .
+DG= 3 . . . . . . . . . . . . . . . . . . .
+DG= 2 . . . . . . . . . . . . . . . . . . .
+DG= 1 . . . . . . . . . . . . . . . . . . .
+DG=   a b c d e f g h j k l m n o p q r s t
+CP= 
+CP= The [*] points are the hoshi points in the corner,
+CP= the [+] points are the hoshi point along the edge,
+CP= the [x] poin is the hoshi point in the center.
+
+CD=t
+JP=iki
+GB=
+CH=(zuo4) huo2
+RK=
+NL=
+GE=Leben
+FR=Vivant
+SV=leva
+
+CD=t
+JP=ikken basami
+GB=one-point pincer
+CH=yi1 jian1 jia2
+RK=
+NL=Een-punts inklemming
+GE=Ein Klemmzug mit einem Punkt Abstand
+FR=Pince rapprochee
+SV=enpunkts nyp
+DG= 8 . . . . . . . . . . . . . . . . . . .
+DG= 7 . . . . . . . . . . . . . . . . . . .
+DG= 6 . . . . . . . . . . . . . . . . . . .
+DG= 5 . . . . . . . . . . . . . . . . . . .
+DG= 4 . . # * . . . . . * . . . . . # . . .
+DG= 3 . . . . o . a . . . . a . o . . . . .
+DG= 2 . . . . . . . . . . . . . . . . . . .
+DG= 1 . . . . . . . . . . . . . . . . . . .
+DG=   a b c d e f g h j k l m n o p q r s t
+CP= 
+CP= In both cases black [a] is 'ikken basami'
+
+CD=t
+JP=ikken taka basami
+GB=one-point high pincer
+CH=yi1 jian1 gao1 jia2
+RK=
+NL=een-punts hoge inklemming
+GE=Ein hoher Klemmzug mit einem Punkt Abstand
+FR=Pince haute rapprochee
+SV=enpunkt h|gt nyp
+DG= 8 . . . . . . . . . . . . . . . . . . .
+DG= 7 . . . . . . . . . . . . . . . . . . .
+DG= 6 . . . . . . . . . . . . . . . . . . .
+DG= 5 . . . . . . . . . . . . . . . . . . .
+DG= 4 . . # * . . a . . * . . a . . . # . .
+DG= 3 . . . . o . . . . . . . . . o . . . .
+DG= 2 . . . . . . . . . . . . . . . . . . .
+DG= 1 . . . . . . . . . . . . . . . . . . .
+DG=   a b c d e f g h j k l m n o p q r s t
+CP= 
+CP= In both cases black [a] is 'ikken taka basami'
+
+CD=t
+JP=ikken tobi
+GB=one-point jump
+CH=yi1 jian4 tiao4
+RK=
+NL=een-puntssprong
+GE=ein Sprung um einen Punkt
+FR=Saut de un
+SV=enpunktshopp
+DG= . . . . .
+DG= . o . o .
+DG= . . . . .
+CP= 
+CP= The ikken tobi shape
+
+CD=t
+JP=ippon michi
+GB=one-way street, i.e. a forced sequence
+CH=dan1 xing2 dao4 (bi4 ran2 ci4 xu4)
+RK=
+NL=zettenreeks waarbij de spelers geen keuze hebben
+GE=Einbahnstrasze, eine erzwungene Sequenz
+FR=Sequence obligee
+SV=enkelriktad v{g, dvs tv}ngsdrag
+
+CD=t
+JP=ishi no shita
+GB=(under the stones)
+GB=Name of a tesuji (see tsume go)
+CH=dao4 tuo1 xue1
+RK=
+NL=een zet op een punt waar reeds eerder een steen gestaan heeft
+GE=(unter den Steinen)
+GE=ein Zug auf einen Punkt der vorher von einem geschlagenen Stein besetzt war
+FR=(litteralement : sous les pierres)
+FR=coup (re)joue la ou se trouvaient des pierres qui ont ete capturees
+SV=under-stenen-fast-hand; ett bra drag som kan spelas n{r egna stenar
+SV=p} br{det {r er|vrade och avl{gsnade av motst}ndaren
+DG= 8 . . . . . . . .
+DG= 7 . . . . . . . .
+DG= 6 . . . . . . . .
+DG= 5 . . . . . . . .
+DG= 4 . # # . . . . .
+DG= 3 . a o # # # . .
+DG= 2 o o # o o # . .
+DG= 1 . o b o o # . .
+DG=   a b c d e f g h
+CP= 
+CP= White to play and live: white [a], black [b], white (d,2) (ishi no shita)
+
+
+CD=t
+JP=itte yose ko
+GB=one-move approach ko
+CH=yi1 qi4 jie2
+RK=
+NL=eenstaps ko
+SV=enstegb|ld
+
+CD=t
+JP=ji
+GB=territory
+CH=shi2 di4
+RK=
+NL=gebied
+GE=Gebiet
+FR=Territoire
+SV=omr}de
+
+CD=t
+JP=jingasa
+GB=massif pyramide shape
+CH=dou3 li4 (yu2 xing2)
+RK=
+NL=masieve pyramide
+SV=massiv pyramidform
+
+CD=t
+JP=joseki
+GB=(established stones)
+GB=standardized local exchange of moves
+GB=known sequences of moves often near the corner which result
+GB=in a near equal position for both sides
+CH=ding4 shi2
+CH=ding4 shi4
+RK=
+NL=een gestandariseerde (locale) zettenreeks die eerlijk is voor beiden
+GE=ausgeglichene Abfolge von Zuegen, nicht nur in der Ecke
+FR=Sequence standard, repertoriee, qui est a peu pres satisfaisante pour
+FR=les deux joueurs
+SV=spel|ppning(-steori)
+
+CD=t
+JP=judan
+GB=japanese top title
+CH=shi2 duan4
+RK=
+NL=tiende dan, japans toptoernooi
+GE=zehnter Dan, japanischer Titel
+SV=10 dan
+
+CD=t
+JP=kado
+GB=corner
+CH=jiao3
+RK=
+NL=hoek, naam van een joseki
+FR=coin
+SV=h|rn
+
+CD=t
+JP=kakae
+GB=A grasping move
+CH=bao4 chi1
+RK=
+NL=een omklemmende zet
+GE=ein Zug der das Fangen eines Steins sichert
+SV=gripdrag, greppdrag, gripande drag, omfamnande drag, gastkramande drag
+DG= 9 . . . . . . . . . .
+DG= 8 . . . . . . . . . .
+DG= 7 . . . . . . . . . .
+DG= 6 . . . a # . . . . .
+DG= 5 . . . o # o . . . .
+DG= 4 . . # # o . o . . *
+DG= 3 . . . . o . # . . .
+DG= 2 . . . . . . . . . .
+DG= 1 . . . . . . . . . .
+DG=   a b c d e f g h j k
+CP= 
+CP= A (3,4) joseki, black [a] next is kakae
+
+CD=t
+JP=kake
+GB=to push down
+CH=ya1
+RK=
+NL=naar beneden drukken
+SV=knuffa ner
+
+CD=t
+JP=kake tsugi
+GB=hanging connection
+CH=hu3
+RK=
+NL=diagonale verbinding
+GE=Tigerrachen
+SV=|ppen ( diagonal ) f|rbindelse
+DG= 9 . . . . . . . . . .
+DG= 8 . . . . . . . . . .
+DG= 7 . . . . . . . . . .
+DG= 6 . . . . . . . . . .
+DG= 5 . . . # # o . . . .
+DG= 4 . . # . o b a . . *
+DG= 3 . . . . . . . . . .
+DG= 2 . . . . . . . . . .
+DG= 1 . . . . . . . . . .
+DG=   a b c d e f g h j k
+CP= 
+CP= A (3,4) 'joseki'
+CP= White [a], defending against the cut at [b] is 'kake tsugi'
+
+CD=t
+JP=kansai kiin
+GB=One of the two Japanese Go Assaciations.
+GB=The Kansai Ki-in is in the Kansai district, established in Osaka.
+CH=guan1-xi1 qi2-yuan4
+RK=
+NL=Een van de twee japanse go bonden.
+NL=De Kansai Ki-in is voor het Kansai district en gevestigd in Osaka.
+GE=Zweitgroeszter japanischer Gobund mit Sitz in Osaka
+SV=n{st st|rsta japanska gof|rbundet
+
+CD=t
+JP=karai
+GB=sharp (clear) move
+CH=
+RK=
+NL=scherp, zie:nurui
+SV=skarpt ( klart ) drag
+
+CD=t
+JP=karami
+GB=attacking two groups simultaneously, a splitting attack
+CH=chan2 rao4 zhan4 shu4
+RK=
+NL=aanval op twee groepen, een 'splitting attack'
+GE=Angriff der zwei gegnerische Gruppen trennt
+GE=i.a. splitting attack genannt
+SV=en delande attack, attack av tv} grupper samtidigt
+
+CD=t
+JP=kata
+GB=(see kata tsuki)
+CH=jian1 (jian1 chong1)
+RK=
+NL=(zie kata tsuki)
+GE=(siehe kata tsuki)
+SV=axeltackling; spel p} en diagonalpunkt till en motst}ndarssten
+
+CD=t
+JP=katachi
+GB=(good) shape of the stones
+CH=hao3 xing2
+RK=
+NL=(goede) vorm van de stenen
+GE=Form, nur im Sinne von guter Form benutzt
+FR=Forme (d'un groupe de pierres)
+SV=( god ) form av stenarna
+
+CD=t
+JP=kata tsugi
+GB=solid connection
+CH=shi2 jie1
+RK=
+NL=solide (harde) verbinding
+GE=feste Verbindung
+FR=Connexion definitive
+SV=fast f|rbindelse
+DG= 9 . . . . . . . . . .
+DG= 8 . . . . . . . . . .
+DG= 7 . . . . . . . . . .
+DG= 6 . . . . . . . . . .
+DG= 5 . . . # # o . . . .
+DG= 4 . . # . o a . . . *
+DG= 3 . . . . . . . . . .
+DG= 2 . . . . . . . . . .
+DG= 1 . . . . . . . . . .
+DG=   a b c d e f g h j k
+CP= 
+CP= A (3,4) joseki
+CP= White [a], defending against the cut at [b] is 'kata tsugi'
+
+CD=t
+JP=kata tsuki
+GB=(shoulder hit)
+GB=a play on a diagonal of the opponent's stone
+CH=jian1 chong1
+RK=
+NL=zet gespeeld op de "schouder" van een vijandelijke steen
+GE=Schulterzug
+FR=Coup a l'epaule (en diagonale d'une pierre adverse, souvent au-dessus)
+SV=axeltackling; spel p} en diagonalpunkt till en motst}ndarssten
+
+CD=t
+JP=keima
+GB=knight jump (knight's move)
+CH=fei1
+RK=
+NL=paardsprong
+GE=Roesselsprung
+FR=Coup joue a partir d'une pierre, comme un "saut de cavalier" (echecs)
+SV=knektdrag, knekthopp
+DG= . . . . .
+DG= . o . . .
+DG= . . . o .
+DG= . . . . .
+CP= 
+CP= The keima shape
+
+CD=t
+JP=keima tsugi
+GB=knight-shape connection
+CH=fei1 jie1
+RK=
+NL=verbinding mbv een paardsprong
+GE=keima Verbindung
+FR=Connexion en 'keima'
+SV=knektdragsf|rbindelse
+
+CD=t
+JP=keshi
+GB=erasing move
+CH=xiao1, qian3 xiao1
+RK=
+NL=radeerzet
+GE=ein Zug der eine Anlage reduziert
+FR=erosion (coup d') d'un territoire potentiel ('moyo') adverse
+SV=utraderande drag
+DG= 8 . . . . . . . . . . . . . . . . . . .
+DG= 7 . . . . . . . . . . . . . . . . . . .
+DG= 6 . . . . . . . . . . . . . . . . . . .
+DG= 5 . . . . . . . . . a . . . . . . . . .
+DG= 4 . . . # . . . . . * . . . . . # . . .
+DG= 3 . . b . . . . . . # . . . . . . c . .
+DG= 2 . . . . . . . . . . . . . . . . . . .
+DG= 1 . . . . . . . . . . . . . . . . . . .
+DG=   a b c d e f g h j k l m n o p q r s t
+CP= 
+CP= Black's moyo on the lower edge has weak points at [a] (keshi), [b] and [c]
+
+CD=t
+JP=kikashi
+GB=a forcing move
+GB=usually made outside the main flow of play.
+GB=often answered, then ignored; to be used later in the game
+CH=bi1 zhao1
+RK=
+NL=dwangzet, de tegenstander moet antwoorden
+GE=Zwischenzug, der beantwortet werden musz
+FR=Coup forcant (en principe :-) une reponse de l'adversaire
+SV=tv}ngsdrag
+DG= 9 . . . . . . . . . . . . . . . . . . .
+DG= 8 . . . . . . . . . . . . . . . . . . .
+DG= 7 . . . . . . . . . . . . . . . . . . .
+DG= 6 . d . # . . . . . . . . . . . o . . .
+DG= 5 . . . . . . . . . . . . . e . . o . .
+DG= 4 . . . # . . . . . * . . o f o o # # .
+DG= 3 . . o # c o . . . . . . . o # # o # .
+DG= 2 . o b o # . . . . . . . . . o # o # .
+DG= 1 . . . a . . . . . . . . . . . . # . .
+DG=   a b c d e f g h j k l m n o p q r s t
+CP= 
+CP= On the left:
+CP=     A (4,4) joseki, black [a] next is 'kikashi'
+CP=     (white [b], black [c] and white [d] will follow).
+CP= On the right:
+CP=     A (5,4) joseki, black [e] next is 'kikashi'
+CP=     (white will connect with [f]).
+
+CD=t
+JP=kiai
+GB="fighting spirit" (not quite)
+CH=gan3 dou4 jing1 shen2
+RK=
+NL=geest (spirit)
+GE=Kampfgeist
+SV=kampanda, kampvilja
+
+CD=t
+JP=kiri chigae
+GB=cross-cut
+CH=niu3 duan4
+RK=
+NL=kruisknip
+GE=Kreuzschnitt
+FR=double coupe
+SV=sk{rning
+DG= . . . .
+DG= . o # .
+DG= . # o .
+DG= . . . .
+CP= 
+CP= The 'kiri chigae' shape
+
+CD=t
+JP=kiri nobi
+GB=cut and extend
+CH=duan4 chang2
+RK=
+NL=knippen en verlengen
+FR=une coupe suivi d'un 'nobi'
+SV=sk{ra och f|rl{nga
+
+CD=t
+JP=ko
+GB=repeating fight for one stone
+CH=jie2
+RK=
+NL=klein, repeterende strijd om een steen
+GE=wiederholtes gegenseitiges Schlagen eines Steines
+FR=situation de prise et reprise d'une seule pierre (voir les regles)
+SV=b|ld
+DG= . . . . . .
+DG= . . o # . .
+DG= . o # . # .
+DG= . . o # . .
+DG= . . . . . .
+CP= 
+CP= The ko shape
+
+CD=t
+JP=ko date
+GB=ko treat
+CH=jie2 cai2
+RK=
+NL=ko dreiging, noodzakelijke onderbreking van een ko gevecht
+GE=Ko-Drohung
+FR=menace de 'ko' (forcant une reponse, de maniere a reprendre ensuite le 'ko')
+SV=b|ldhot
+
+CD=t
+JP=kogeima
+GB=small knight jump
+CH=xiao3 fei1
+RK=
+NL=zie:keima
+GE=siehe keima
+FR=petit 'keima' (ou 'keima') (voir 'ogeima')
+SV=lilla knektdraget
+DG= . . . . .
+DG= . o . . .
+DG= . . . o .
+DG= . . . . .
+CP= 
+CP= The kogeima shape
+
+CD=t
+JP=komi
+GB=compensation given for the right to play the 1st move
+CH=tie1 mu4
+RK=
+NL=kompensatie voor de beginzet (in japan momenteel 5 1/2 punt)
+GE=Ausgleich fuer den Anzugsvorteil
+FR=Compensation (en points) accordee par un joueur pour equilibrer la partie
+SV=kompensationspo{ng ( till vit )
+
+CD=t
+JP=komi dashi
+GB=compensation received for the 1st move
+CH=
+RK=
+NL=de punten die wit ontvangt van zwart
+SV=kompensation f|r f|rsta draget
+
+CD=t
+JP=komoku
+GB=(3,4) point in the corner
+GB=Emphasis on corner and edge
+CH=xiao3 mu4
+RK=
+NL=drie-vier punt in de hoek
+GE=3-4 Punkt
+FR=point 3-4
+SV=3-4 punkten
+DG= 6 . . . . . . .
+DG= 5 . . . . . . .
+DG= 4 . . a * . . .
+DG= 3 . . . a . . .
+DG= 2 . . . . . . .
+DG= 1 . . . . . . .
+DG=   a b c d e f g
+CP= 
+CP= The points [a] are komoku
+
+CD=t
+JP=kosumi
+GB=diagonal move
+CH=xiao3 jian1
+RK=
+NL=diagonale zet
+GE=Diagonalzug
+FR=coup joue en diagonale a partir d'une pierre (de meme couleur)
+SV=diagonaldrag
+DG= . . . . .
+DG= . b . c .
+DG= . . o . .
+DG= . a . d .
+DG= . . . . .
+CP= 
+CP= Any of the white moves [a], [b], [c] and [d] would be kosumi
+
+CD=t
+JP=kosumi tsuke
+GB=A diagonal attaching move
+CH=jian1 ding3
+RK=
+NL=Een diagonale plakzet
+GE=ein diagonaler Zug an einen gegnerischen Stein
+FR=coup qui est a la fois un 'kosumi' et au contact de l'adversaire
+SV=diagonalt f|rbindningsdrag
+
+CD=t
+JP=kuro
+GB=black
+CH=hei1
+RK=
+NL=zwart
+GE=Schwarz
+FR=Noir
+SV=svart
+
+CD=t
+JP=kyusho
+GB=the vital point
+CH=ji1 suo3
+RK=
+NL=het vitale punt
+GE=der vitale Punkt
+FR=point vital
+SV=den vitala punkten
+
+CD=t
+JP=magari
+GB=bend around
+CH=qu3
+RK=
+NL=ombuigzet
+FR= (coup) qui tourne (par rapport aux pierres precedentes)
+SV=kr|ka runt
+
+CD=t
+JP=magari tsuke
+GB=
+CH=
+RK=
+NL=
+SV=(|vers{ttning saknas)
+
+CD=t
+JP=mane go
+GB=mirror go (imitation go)
+CH=muo2 fang3 qi2
+RK=
+NL=spiegelgo, een van beide spelers imiteert de andere
+GE=Imitationsgo
+FR=jeu symetrique
+SV=spegelgo ( dragimitation )
+
+CD=t
+JP=mannen go
+GB="ten-thousend"-year ko
+GB=A ko which both players are reluctant to fight
+GB=since they will stake too much while doing so
+CH=wan4 nian2 jie2
+RK=
+NL="tienduizend" jaren ko
+NL=Een ko wat beide spelers liever niet starten
+NL=omdat ze op dat moment teveel op het spel zetten
+GE=ein Ko das kein Spieler beginnt, weil beide zu viel zu verlieren haben
+FR='ko' de (dix)mille ans ('ko' qu'aucun joueur n'est presse de jouer)
+SV=en tusen}rsb|ld; en b|ld som ingen vill spr{cka
+
+CD=t
+JP=miai
+GB=mutual exchangeable
+GB=two points which accomplish the same value; if deprived of one,
+GB=the other must be played. Also used in a more general way:
+GB="It's miai to connect or to make eyes"
+CH=jian4 he2
+RK=
+NL=twee gelijkwaardige punten waarvan altijd een punt bezet kan worden
+GE=zwei Punkte sind 'miai' (gleichwertig) wenn man den anderen spielen
+GE=musz nachdem der Gegner den einen besetzt hat
+FR=se dit de deux coups possibles dans une situation, tels que
+FR=si un joueur joue l'un quelconque de ces 2 coups, l'autre joueur
+FR=devra jouer l'autre
+SV=tv} utv{gar; tv} punkter som ger (ungef}r) samma resultat
+
+CD=t
+JP=me
+GB=eye
+CH=yan3
+RK=
+NL=oog
+GE=Auge
+FR=oeil
+SV=|ga
+
+CD=t
+JP=me
+GB=liberty
+CH=qi4
+RK=
+NL=vrijheid
+FR=liberte
+SV=frihet
+
+CD=t
+JP=me ari me nashi
+GB=only one side has an eye
+CH=you3 yan3 sha1 xia1 ("one eye kills blind")
+RK=
+NL=de ene partij heeft een oog en de andere niet
+GE=ein semeai in dem eine Seite ein Auge hat und dadurch die andere schlaegt
+FR=de deux groupes pris dans un combat, l'un a un oeil, l'autre pas
+SV="Jag har ett |ga, men det har inte du."
+
+CD=t
+JP=mochi komi
+GB=failed invasion
+GB=loss without compensation
+CH=da3 ru4 shi1 bai4
+RK=
+NL=mislukte invasie
+GE=ein Verlust ohne Ausgleich
+FR=invasion ratee : des pierres perdues sans rien en echange
+SV=misslyckad invasion
+
+CD=t
+JP=modari
+GB=To drop back
+CH=
+RK=
+NL=Terugvallen
+SV=v{nda tillbaka
+
+CD=t
+JP=mokuhazushi
+GB=(3,5) point in the corner
+GB=Emphasis on quick outside development, not on corner profit
+GB=Usually intended to expand along the side
+CH=mu4 wai4
+RK=
+NL=het 3-5 punt in de hoek
+GE=3-5 Punkt
+FR=point 5-3
+SV=3-5 punkten
+DG= 6 . . . . . . .
+DG= 5 . . a . . . .
+DG= 4 . . . * . . .
+DG= 3 . . . . a . .
+DG= 2 . . . . . . .
+DG= 1 . . . . . . .
+DG=   a b c d e f g
+CP= 
+CP= The points [a] are 'mokuhazushi'
+
+CD=t
+JP=moyo
+GB=territorial framework
+CH=muo2 yang4
+RK=
+NL=potentieel gebied
+GE=Gebietsanlage
+FR=territoire potentiel
+SV=stort n}tverk (omr}de) av stenar
+
+CD=t
+JP=mukai komoku
+GB=facing komoku stones
+CH=xiang4 xiao3 mu4
+RK=
+NL=tegenoverliggende komoku stenen
+SV=tv} 3-4 stenar i tv} motst}ende h|rn ( p} samma sida )
+DG= 8 . . . . . . . . . . . . . . . . . . .
+DG= 7 . . . . . . . . . . . . . . . . . . .
+DG= 6 . . . . . . . . . . . . . . . . . . .
+DG= 5 . . . . . . . . . . . . . . . . . . .
+DG= 4 . . # * . . . . . * . . . . . * # . .
+DG= 3 . . . . . . . . . . . . . . . . . . .
+DG= 2 . . . . . . . . . . . . . . . . . . .
+DG= 1 . . . . . . . . . . . . . . . . . . .
+DG=   a b c d e f g h j k l m n o p q r s t
+CP= 
+CP= The two black komoku stones are "facing" each other
+
+CD=t
+JP=nadare
+GB=name of a joseki (avalanche, "snowslide")
+CH=xue3 beng1 (ding4 shi4)
+RK=
+NL=waterval, joseki
+GE=Lawine - ein Joseki
+FR=avalanche (nom d'un celebre joseki : petite avalanche, grande avalanche)
+SV=nadare ( typ av joseki )
+DG=11 . . . . . . . . . . . . . . . . . . .
+DG=10 . . . * . . . . . * . . . . . * . . .
+DG= 9 . . . . . . . . . . . . . . . . . . .
+DG= 8 . . . . . . . . . . . . . . . . . . .
+DG= 7 . . . . . . . . . . . . . . . # . . .
+DG= 6 . . . # . . . . . . . . . . . o # . .
+DG= 5 . . # o . . . . . . . . . . . o # . .
+DG= 4 . . # o . . . . . * . . . . . o # . .
+DG= 3 . . . # o . . . . . . . . . o # . . .
+DG= 2 . . . . . . . . . . . . . . . . . . .
+DG= 1 . . . . . . . . . . . . . . . . . . .
+DG=   a b c d e f g h j k l m n o p q r s t
+CP= 
+CP= Left side is small 'nadare'.
+CP= Right side is large 'nadare' (also called: 'o nadare').
+
+CD=t
+JP=nakade
+GB=large shape that can be reduced to one eye
+GB=leaving the surrounding group dead
+CH=dian3 sha1
+RK=
+NL=klomp stenen die, geslagen, maar een oog oplevert
+GE=tote Form
+FR=grand oeil qui peut etre reduit a un seul petit oeil (d'ou groupe mort)
+SV=stort |ga som kan reduceras till ett litet ( d|tt ) |ga, med
+SV=en d|d grupp som f|ljd
+
+CD=t
+JP=narabi
+GB=An extension from a single stone
+CH=chai1
+RK=
+NL=Een verlenging van een enkele steen
+SV=expansion fr}n en ensam sten
+
+CD=t
+JP=nidan bane
+JP=nidan + hane
+GB=two-step hane
+CH=lian2 ban1
+RK=
+NL=twee achtereenvolgende hane's
+GE=zwei aufeinanderfolgende hanes
+FR=double 'hane'
+SV=tv}stegskr|k, tv} kr|kar p} raken
+
+CD=t
+JP=nihon kiin
+GB=japanese go association
+CH=ri4-ben3 qi2-yuan4
+RK=
+NL=een van de twee japanse go bonden, gevestigd in tokyo
+GE=groeszter japanischer Go-Bund mit Sitz in Tokyo
+FR=principale association japonaise de go
+SV=( stort ) japanskt gof|rbund
+
+CD=t
+JP=niken
+GB=two point
+CH=er4 jian4
+RK=
+NL=tweepunts interval
+FR=intervalle de longueur 2 (intersections)
+SV=tv} punkter
+
+CD=t
+JP=niken biraki
+GB=two point extension
+CH=chai1 er4
+RK=
+NL=twee-punts uitbreiding
+GE=zweipunkte Ausdehnung
+FR=extension de longueur 2 (intersections)
+SV=tv} punkters expansion
+
+CD=t
+JP=niken taka basami
+GB=two point high pincer
+CH=er4 jian4 gao1 jia2
+RK=
+NL=twee-punts hoge inklemming
+GE=hoher Klemmzug mit zwei Punkte Abstand
+FR=pince haute
+SV=tv}punkters h|gt nyp
+DG= 8 . . . . . . . . . . . . . . . . . . .
+DG= 7 . . . . . . . . . . . . . . . . . . .
+DG= 6 . . . . . . . . . . . . . . . . . . .
+DG= 5 . . . . . . . . . . . . . . . . . . .
+DG= 4 . . # * . . . a . * a . . . . # . . .
+DG= 3 . . . . o . . . . . . . . o . . . . .
+DG= 2 . . . . . . . . . . . . . . . . . . .
+DG= 1 . . . . . . . . . . . . . . . . . . .
+DG=   a b c d e f g h j k l m n o p q r s t
+CP= 
+CP= In both cases black [a] is 'niken taka basami'
+
+CD=t
+JP=niken tobi
+GB=two point jump
+CH=er4 jian1 diao4
+RK=
+NL=twee-puntssprong
+GE=Sprung mit zwei Punkte Abstand
+FR=saut de 2 (intersections)
+SV=tv}punkters hopp
+DG= . . . . . .
+DG= . o . . o .
+DG= . . . . . .
+CP= 
+CP= The niken tobi shape
+
+CD=t
+JP=nirensei
+GB=two hoshi stones in a row
+CH=er4 lian2 xing1
+RK=
+NL=fuseki type, twee hoshi punten op een rij bezet
+GE=Fusekiaufbau mit zwei Vorgabepunkten hintereinander auf einer Seite
+FR=au fuseki, deux pierres en ligne sur les hoshi de coin
+SV=Tv} stenar p} motst}ende (h|rn-)handikappunkter i spelstarten
+SV=p} samma sida
+DG=19 . . . . . . . . . . . . . . . . . . .
+DG=18 . . . . . . . . . . . . . . . . . . .
+DG=17 . . . . . . . . . . . . . . . . . . .
+DG=16 . . . * . . . . . * . . . . . # . . .
+DG=15 . . . . . . . . . . . . . . . . . . .
+DG=14 . . . . . . . . . . . . . . . . . . .
+DG=13 . . . . . . . . . . . . . . . . . . .
+DG=12 . . . . . . . . . . . . . . . . . . .
+DG=11 . . . . . . . . . . . . . . . . . . .
+DG=10 . . . * . . . . . * . . . . . * . . .
+DG= 9 . . . . . . . . . . . . . . . . . . .
+DG= 8 . . . . . . . . . . . . . . . . . . .
+DG= 7 . . . . . . . . . . . . . . . . . . .
+DG= 6 . . . . . . . . . . . . . . . . . . .
+DG= 5 . . . . . . . . . . . . . . . . . . .
+DG= 4 . . . * . . . . . * . . . . . # . . .
+DG= 3 . . . . . . . . . . . . . . . . . . .
+DG= 2 . . . . . . . . . . . . . . . . . . .
+DG= 1 . . . . . . . . . . . . . . . . . . .
+DG=   a b c d e f g h j k l m n o p q r s t
+CP= 
+CP= The opening pattern with the two stones is called nirensei
+CP= It's unimportant where exactly white played on the left side
+
+CD=t
+JP=nobi
+GB=solid extension
+CH=chang2
+RK=
+NL=verlengzet
+GE=ein Zug der streckt
+FR=coup joue au contact et dans le prolongement d'un coup precedent
+SV=fast f|rbindelse
+
+CD=t
+JP=nobi komi
+GB=
+CH=
+RK=
+NL=
+SV=(|vers{ttning saknas)
+
+CD=t
+JP=nozoki
+GB=a peeping move which threatens to cut
+CH=ci4; kui1
+RK=
+NL=een zet die dreigt te knippen
+GE=ein Zug der einen Schnitt droht - der Stein guckt in eine Luecke
+GE=i.a. 'peep' genannt
+FR=coup qui menace de couper avec le coup suivant
+SV=ett tittutdrag, som hotar att sk{ra
+
+CD=t
+JP=nuki
+GB=capture
+CH=
+RK=
+NL=vangst
+SV=er|vra
+
+CD=t
+JP=nurui
+GB=move with an unclear objective
+CH=huan3 (zhao1)
+RK=
+NL=vage zet, zie:karai
+GE=ein Zug der den Gegner nicht direkt beeinfluszt
+FR=(coup) vague
+SV=drag med ett oklart m}l
+
+CD=t
+JP=o ba
+GB=big move in the opening stage
+CH=da4 chang3
+RK=
+NL=grote zet in het fuseki
+GE=ein groszer Zug im fuseki (auch im Yose?)
+FR=gros point, coup qui vaut beaucoup de points
+SV=stort drag i spelstarten
+
+CD=t
+JP=odokoro
+GB=area where a large move is to be found
+CH=
+RK=
+NL=Deel van het bord waar grote zetten te vinden zijn
+SV=omr}de d{r ett stort drag kan hittas/spelas
+
+CD=t
+JP=ogeima
+GB=large knight jump
+CH=da4 fei1
+RK=
+NL=grote paardensprong
+GE=groszer Roesselsprung
+FR=grand 'keima', grand saut de cavalier (voir keima)
+SV=stort knektdrag
+DG= . . . . . .
+DG= . o . . . .
+DG= . . . . o .
+DG= . . . . . .
+CP= 
+CP= The ogeima shape
+
+CD=t
+JP=o keima
+GB=large knight jump
+CH=da4 fei1
+RK=
+NL=grote paardensprong
+GE=groszer Roesselsprung
+FR=grand 'keima', grand saut de cavalier (voir keima)
+SV=stort knekthopp
+
+CD=t
+JP=omoi katachi
+GB=heavy shape
+CH=zhong4 (xing2)
+RK=
+NL=zware, onhandige vorm
+GE=schwere (schwerfaellige) Form
+FR=forme lourde
+SV=klumpig, tung form
+
+CD=t
+JP=onadare
+GB=name of a joseki (great avalanche)
+CH=da4 xue3 beng1
+RK=
+NL=grote nadare, zie: nadare
+GE=grosze Lawine - Name eines Josekis
+FR=grande avalanche (voir nadare)
+SV=onadare; en spel|ppning
+
+CD=t
+JP=osae
+GB=to block
+CH=dang3
+RK=
+NL=Een blokzet
+GE=Block
+FR=(coup de) blocage
+SV=att blockera
+
+CD=t
+JP=oshi
+GB=To press
+CH=ya1
+RK=
+NL=drukken, drukzet
+GE=Schupps :-) Stosz
+SV=att trycka
+
+CD=t
+JP=pintsugi
+JP=pin tsugi
+GB=A solid connection of a one point jump
+CH=
+RK=
+NL=solide verbinding van een een-puntssprong
+SV=en fast f|rbindelse till ett enpunktshopp
+
+CD=t
+JP=ponnuki
+GB=shape after one stone capture
+CH=kong1 ti2 yi4 zi3
+RK=
+NL=vorm die overblijft na het slaan van een steen
+GE=Form nachdem ein Stein geschlagen wurde
+FR=forme obtenue apres capture d'une pierre isolee
+SV=formen som kvarst}r n{r en ensam sten har tagits
+DG= . . . . .
+DG= . . o . .
+DG= . o . o .
+DG= . . o . .
+DG= . . . . .
+CP= 
+CP= The ponnuki shape
+
+CD=t
+JP=ryo shimari
+GB=A special 'fuseki', four 'shimari'
+CH=
+RK=
+NL=Een speciaal 'fuseki' type, vier 'shimari'
+SV=en s{rskild typ av spelstart med fyra h|rnf|rst{rkningar
+DG=19 . . . . . . . . . . . . . . . . . . .
+DG=18 . . . . . . . . . . . . . . . . . . .
+DG=17 . . . o . . . . . . . . . . # . . . .
+DG=16 . . . * . . . . . * . . . . . * # . .
+DG=15 . . o . . . . . . . . . . . . . . . .
+DG=14 . . . . . . . . . . . . . . . . . . .
+DG=13 . . . . . . . . . . . . . . . . . . .
+DG=12 . . . . . . . . . . . . . . . . . . .
+DG=11 . . . . . . . . . . . . . . . . . . .
+DG=10 . . . * . . . . . * . . . . . * . . .
+DG= 9 . . . . . . . . . . . . . . . . . . .
+DG= 8 . . . . . . . . . . . . . . . . . . .
+DG= 7 . . . . . . . . . . . . . . . . . . .
+DG= 6 . . . . . . . . . . . . . . . . . . .
+DG= 5 . . . . . . . . . . . . . . . . o . .
+DG= 4 . . # * . . . . . * . . . . . * . . .
+DG= 3 . . . . # . . . . . . . . . . o . . .
+DG= 2 . . . . . . . . . . . . . . . . . . .
+DG= 1 . . . . . . . . . . . . . . . . . . .
+DG=   a b c d e f g h j k l m n o p q r s t
+CP= 
+CP= The ryo shimari opening pattern consisting of four shimari
+CP= Nowadays this kind of play is considered very slow paced
+
+CD=t
+JP=sabaki
+GB=flexible shape
+GB=quick development, technique using light shape for settling a group
+CH=shan3 dian4 zhan4 shu4 ("lightning strategy")
+RK=
+NL=zettenreeks die lichte en flexibele vorm geeft
+GE=Technik die leichte Form nutzt um eine Gruppe zu sichern
+FR=souple (facon de jouer legere et rapide)
+SV=l{tt form, anv{nds f|r att elegant skapa en levande grupp
+
+CD=t
+JP=sagari
+GB=extending downward
+CH=xia4 li4
+RK=
+NL=afdaalzet
+GE=Strecken zum Rand
+SV=expansion ner}t
+
+CD=t
+JP=sangen
+GB=three point
+CH=san1 jian4
+RK=
+NL=driepunts interval
+FR=intervalle de 3 (intersections)
+SV=tre punkter
+
+CD=t
+JP=sangen biraki
+GB=three point extension
+CH=san1 jian4 chai1
+RK=
+NL=drie-punts uitbreiding
+GE=dreipunkte Ausdehnung
+FR=extension de longueur 3 (intersections)
+SV=tre punkters expansion
+
+CD=t
+JP=san san
+GB=(3,3) point
+CH=san1 san1
+RK=
+NL=drie-drie punt in de hoek
+GE=3-3 Punkt
+FR=point 3-3
+SV=3-3 punkten
+DG= 8 . . . . . . . . . . . . . . . . . . .
+DG= 7 . . . . . . . . . . . . . . . . . . .
+DG= 6 . . . . . . . . . . . . . . . . . . .
+DG= 5 . . . . . . . . . . . . . . . . . . .
+DG= 4 . . . * . . . . . * . . . . . * . . .
+DG= 3 . . a . . . . . . . . . . . . . b . .
+DG= 2 . . . . . . . . . . . . . . . . . . .
+DG= 1 . . . . . . . . . . . . . . . . . . .
+DG=   a b c d e f g h j k l m n o p q r s t
+CP= 
+CP= Both [a] and [b] are called san san (totally there are four on the board)
+
+CD=t
+JP=san rensei
+GB=three hoshi stones in a row
+CH=san1 lian2 xing1
+RK=
+NL=fuseki type, drie hoshi stenen op een rij
+GE=Fusekiaufbau bei dem hintereinander auf
+GE=drei Vorgabepunkte in einer Reihe gespielt wird
+FR=au fuseki, trois pierres en ligne sur trois hoshi
+SV=typ av spelstart; spel p} en sidas tre handikappunkter
+DG=19 . . . . . . . . . . . . . . . . . . .
+DG=18 . . . . . . . . . . . . . . . . . . .
+DG=17 . . . . . . . . . . . . . . . . . . .
+DG=16 . . . * . . . . . * . . . . . # . . .
+DG=15 . . . . . . . . . . . . . . . . . . .
+DG=14 . . . . . . . . . . . . . . . . . . .
+DG=13 . . . . . . . . . . . . . . . . . . .
+DG=12 . . . . . . . . . . . . . . . . . . .
+DG=11 . . . . . . . . . . . . . . . . . . .
+DG=10 . . . * . . . . . * . . . . . # . . .
+DG= 9 . . . . . . . . . . . . . . . . . . .
+DG= 8 . . . . . . . . . . . . . . . . . . .
+DG= 7 . . . . . . . . . . . . . . . . . . .
+DG= 6 . . . . . . . . . . . . . . . . . . .
+DG= 5 . . . . . . . . . . . . . . . . . . .
+DG= 4 . . . * . . . . . * . . . . . # . . .
+DG= 3 . . . . . . . . . . . . . . . . . . .
+DG= 2 . . . . . . . . . . . . . . . . . . .
+DG= 1 . . . . . . . . . . . . . . . . . . .
+DG=   a b c d e f g h j k l m n o p q r s t
+CP= 
+CP= The opening pattern with the three stones is called sanrensei
+CP= It's unimportant where exactly white played on the left side
+
+CD=t
+JP=sashi komi
+GB=To stuff in
+CH=ji3
+RK=
+NL=Instoppen
+GE=hineinstechen - ein Zug der drei gegnerische Steine auf einmal beruehrt
+SV=stoppa in ( kontaktdrag med tre stenar )
+
+CD=t
+JP=semeai
+GB=capturing race
+CH=dui4 sha1
+RK=
+NL=vrijheden gevecht
+GE=Wettlauf zweier Gruppen, die sich gegenseitig zu schlagen versuchen
+FR=combat a mort entre deux groupes (ou plus...)
+SV=kappl|ppning mellan tv} svaga ( ej levande ) grupper, en grupp
+SV=kommer att d|
+
+CD=t
+JP=sen
+GB=black
+CH=hei1
+RK=
+NL=zwart
+GE=Schwarz
+SV=svart
+
+CD=t
+JP=sente
+GB=free to play elsewhere
+CH=xian1 shou3
+RK=
+NL=het initiatief
+GE=Vorhand
+SV=tempovinst, drag som motst}ndaren m}ste besvara
+
+CD=t
+JP=seki
+GB=a draw capturing race
+CH=shuang1 huo2
+RK=
+NL=lokale impasse in een semeai
+GE=ein unentschiedenes semeai
+FR=situation d'impasse ou aucun ne peut occuper les libertes de l'autre
+SV=situation med tv} grupper, som b{gge saknar tv} |gon, men ingen
+SV=grupp kan ta den andre gruppen utan att s{tta sej sj{lv i atari.
+DG= 8 . . . . . . . . . . . . .
+DG= 7 . . . . . . . . . . . . .
+DG= 6 . . . . . . . . . . . . .
+DG= 5 . . . . . . . . . . . . .
+DG= 4 . . . . o o o # # . . . .
+DG= 3 . . . . o # # o # . . . .
+DG= 2 . . . . o # . o # . . . .
+DG= 1 . . . . o # . o # . . . .
+CP= 
+CP= The two surrounded chains are 'seki'
+
+CD=t
+JP=shibori
+GB=squeeze
+CH=gun3 da3
+RK=
+NL=uitknijpen
+GE=eine Gruppe zusammendruecken - squeeze
+FR=utiliser des pierres capturees pour renfrogner l'adversaire sur lui-meme
+FR=le verbe "shiboriter" est passe dans la langue
+SV=kl{mma
+
+CD=t
+JP=shicho
+GB=ladder
+GB=The Chinese term gives one the feeling that you have grabbed a goat or
+GB=ox by the horns and are trying to wrestle the animal to the ground,
+GB=only to find yourself whipped about.
+GB=The Japanese term means "ladder" because for some reason they feel the
+GB=shape of the stones suggests that shape, though it looks more like a
+GB=stairway to me :-). (Dr. Roy Schmidt)
+CH=zheng1 chi2
+CH=zheng1 zi3
+RK=
+NL=ladder -- vangtechniek
+GE=Treppe
+FR=(prise en) escalier (dire 'shicho', par exemple dans 'briseur de shicho')
+SV=stege
+DG= 9 . . . . . . . . . . . . . . . . . . .
+DG= 8 . . . # . . . . . . . . . . . . . . .
+DG= 7 . . . # o o o o . . . . . . . . . . .
+DG= 6 . . . o # # # o . . . . . . . . . . .
+DG= 5 . . . o # # # # # a . . . . . . . . .
+DG= 4 . o o o # # # o o . . . . . . o . . .
+DG= 3 . # # # o # # # o . # . . . . . . . .
+DG= 2 o o . # o o o o # # . . . . . . . . .
+DG= 1 . . . . . . . . . . . . . . . . . . .
+CP= (The continuation of the diagram shown under 'dango')
+CP= White [a] captures the black stones in shicho.
+
+CD=t
+JP=shicho atari
+GB=a move which affects a ladder
+CH=ying3 zheng1
+RK=
+NL=ladderbreker
+GE=Treppenbrecher
+FR=briseur de 'shicho'
+SV=drag som p}verkar en stege
+
+CD=t
+JP=shimari
+GB=corner enclosure
+CH=di4 jiao3; shou3 jiao3
+RK=
+NL=hoekafsluiting
+GE=Eckeneinschlusz
+FR=verrou de coin
+SV=h|rnf|rst{rkning
+DG= 6 . . . . . . .
+DG= 5 . . . . . . .
+DG= 4 . . # * . . .
+DG= 3 . . . . # . .
+DG= 2 . . . . . . .
+DG= 1 . . . . . . .
+DG=   a b c d e f g
+CP= 
+CP= An example of a shimari: the keima shimari
+
+CD=t
+JP=shinogi
+GB=technique to deal with weak groups
+CH=zhi4 gu1
+RK=
+NL=de kunst met een zwakke groep om te gaan
+GE=geschicktes Behandeln schwacher Gruppen
+SV=en teknik f|r att "ta hand om" svaga grupper
+
+CD=t
+JP=shiro(i)
+GB=white
+CH=bai2
+RK=
+NL=wit
+GE=Weisz
+FR=Blanc
+SV=vit
+
+CD=t
+JP=shita hane
+GB=hane underneath
+CH=xia4 ban1
+RK=
+NL=van het centrum af blokken
+FR='hane' par en-dessous
+SV=kr|k underifr}n
+DG= 8 . . . . . . . . . . . .
+DG= 7 . . . . . . . . . . . .
+DG= 6 . . . . . . . . . . . .
+DG= 5 . . . . o . o . . . . .
+DG= 4 . . . . . b . . . . . .
+DG= 3 . . . . # a . # . . . .
+DG= 2 . . . . . c . . . . . .
+DG= 1 . . . . . . . . . . . .
+CP= 
+CP= White just entered blacks position by playing [a].
+CP= Blacks possible answer could be [b] (hane dashi) or [c] (shita hane)
+
+CD=t
+JP=shita tsuke
+GB=tsuke underneath
+CH=xia4 peng4
+RK=
+FR=coup au contact et par en-dessous
+SV=f|rbindelse p} undersidan
+
+CD=t
+JP=soto
+GB=outside
+CH=wai4 bian1
+RK=
+NL=buiten
+GE=auszen
+FR=exterieur
+SV=utsidan
+
+CD=t
+JP=shirsaku fuseki
+GB=A special 'fuseki' type
+CH=
+RK=
+NL=Een speciaal 'fuseki' type
+SV=typ av spelstart
+
+CD=t
+JP=suji
+GB=good style/skillful
+CH=hao3 shou3
+RK=
+NL=goede stijl, handig
+GE=guter Stil, geschickt
+SV=god stil; spelskicklighet
+
+CD=t
+JP=tachi
+GB=stand
+CH=li4
+RK=
+NL=staan
+GE=strecken zum Zentrum des Brettes
+SV=h}lla ut, str{cka sej mot br{dets mitt
+
+CD=t
+JP=taisha
+GB=name of a joseki
+CH=da4 xie2 (ding4 shi4)
+RK=
+NL=groot, naam van een joseki
+GE=spezielles joseki, das wegen seiner vielfaeltigen und schwierigen
+GE=Varianten beruehmt ist
+FR=nom d'un celebre joseki
+SV=typ av spel|ppning
+
+CD=t
+JP=tagai sen
+GB=even --- alternating black and white
+CH=hu4 xian1
+RK=
+NL=gelijk op --- afwisselend zwart en wit
+GE=Gleichauf - abwechselnd mit Schwarz und Weisz spielen
+SV=j{mna partier, omv{xlande svart och vit
+
+CD=t
+JP=taka
+GB=high
+CH=gao1
+RK=
+NL=hoog
+GE=hoch
+FR=haut
+SV=h|g
+
+CD=t
+JP=takamoku
+GB=(4,5) point in the corner, emphasis on center
+CH=gao1 mu4
+RK=
+NL=het 4-5 punt in de hoek
+GE=5-4 Punkt
+FR=point 5-4
+SV=4-5 punkten
+DG= 6 . . . . . . .
+DG= 5 . . . a . . .
+DG= 4 . . . * a . .
+DG= 3 . . . . . . .
+DG= 2 . . . . . . .
+DG= 1 . . . . . . .
+DG=   a b c d e f g
+CP= 
+CP= The points [a] are 'takamoku'
+
+CD=t
+JP=tasuki fuseki
+GB=A special 'fuseki' type
+CH=dui4 cheng4 bu4 ju2
+RK=
+NL=Een speciaal 'fuseki' type
+SV=typ av spelstart
+
+CD=t
+JP=teai
+GB=the conditions on which two players play each other, i.e. the handicap
+CH=shou3 he2
+RK=
+NL=De conditie waaronder gespeeld wordt, d.w.z. de handicap
+GE=die Bedingungen unter denen zwei Spieler gegeneinander spielen
+GE=gemeint ist die Vorgabe
+FR=les conditions de jeu entre deux joueurs, c.a.d. le handicap
+SV=spelf|ruts{ttningar map handikapp
+
+CD=t
+JP=tane-ishi
+GB=the pivotal stone(s)
+CH=qi2 jin1
+RK=
+NL=De vitale stenen
+GE=die Steine, die auf die man ein Auge geworfen hat
+SV=den viktiga stenen, dom viktiga stenarna
+
+CD=t
+JP=tengen
+GB=(10,10) point
+CH=tian1 yuan2
+RK=
+NL=het tien-tien punt, middelpunt van het go bord
+GE=Mittelpunkt des Brettes - Himmel
+FR=point central du goban ("centre du ciel")
+SV=Br{dets mittpunkt - Himmelen
+
+CD=t
+JP=tenuki
+GB=play elsewhere
+CH=tuo1 xian1; shou3 ba2
+RK=
+NL=lokaal niet reageren op de laatste zet van de tegenstander
+GE=fernbleiben, woanders spielen, lokal nicht reagieren
+FR=(coup joue) en un autre endoit du goban - "faire tenuki" : jouer ailleurs
+SV=att ignorera motspelarens drag f|r att spela n}gon annanstans
+
+CD=t
+JP=tesuji
+GB=skillful/efficient move
+CH=shou3 jin1
+RK=
+NL=handige zet die optimaal gebruik maakt van de lokaal aanwezige stenen
+FR=coup efficace (localement) en general astucieux (au moins : pas evident)
+SV=fast hand, ett bra drag
+
+CD=t
+JP=tetchu
+GB=(steel post)
+GB=two stones placed in line vertically and near the edge
+CH=yu4 zhu4
+RK=
+NL=Twee (geisoleerde) stenen langs de rand
+GE=Eisenturm
+FR=chaine de deux pierres alignees verticalement, pres du bord
+SV=typ av spelstart; tv} stenar som spelas ovanp} varandra
+SV=vid kanten
+DG= 6 . . . . . . . . . . . . . . . . . . .
+DG= 5 . . . . . . . . . . . . . . . . . . .
+DG= 4 . . . # . . . . . # . . . . . # . . .
+DG= 3 . . . . . . . . . a . . . . . . . . .
+DG= 2 . . . . . . . . . . . . . . . . . . .
+DG= 1 . . . . . . . . . . . . . . . . . . .
+DG=   a b c d e f g h i j k l m n o p q r s
+CP= 
+CP= Black [a] next, would form the 'tetchu' shape.
+
+CD=t
+JP=tewari
+GB=a method of analysis in which one changes the order of moves in a
+GB=sequence and removes superfluous stones in order to evaluate the
+GB=basic structure
+CH=
+RK=
+NL=analyse techniek dmv het verwisselen/verwijderen van zetten
+GE=Analysetechnik bei der man die Reihenfolge der Zuege aendert und
+GE=ueberflueszige Steine entfernt um die grundlegende Struktur zu erkennen
+FR=methode d'analyse d'une situation donnee, consistant a changer l'ordre
+FR=des coups, a eliminer les pierres superflues, pour faire ressortir a quel
+FR=adversaire une sequence a ete profitable
+SV=analysmetod, varvid ordningen p} dragen {ndras och on|diga drag
+SV=avl{gsnas
+
+CD=t
+JP=tobi
+GB=jump
+CH=tiao4; guan1
+RK=
+NL=sprong
+GE=Sprung
+FR=saut
+SV=hopp
+
+CD=t
+JP=tobi dashi
+GB=jump outside
+CH=tiao4 chu1
+RK=
+NL=sprong naar buiten
+GE=Sprung nach auszen
+FR=saut vers l'exterieur
+SV=att hoppa ut
+
+CD=t
+JP=tobi komi
+GB=jump inside
+CH=tiao4 jing4
+RK=
+NL=sprong naar binnen
+GE=Sprung nach innen
+FR=saut vers l'interieur
+SV=att hoppa in
+
+CD=t
+JP=tobi magari
+GB=A jump orthogonal on the previous direction of motion
+CH=
+RK=
+NL=sprong loodrecht op de vorige speelrichting
+SV=ett hopp vinkelr{tt i f|rh}llande till det f|reg}ende draget
+
+CD=t
+JP=tobi tsuke
+GB=A jump + attachment
+CH=tiao4 peng4
+RK=
+NL=sprong + aanhechting
+FR=coup qui est a la fois un saut au contact de l'adversaire
+SV=ett hopp samt f|rbindelse
+
+CD=t
+JP=tsugi
+GB=connection
+CH=nian2
+RK=
+NL=verbinding
+GE=Verbindung
+FR=connexion
+SV=f|rbindelse, anslutning, sammanbindning
+
+CD=t
+JP=tsuke
+GB=To attach to an enemy stone
+CH=peng4
+RK=
+NL=aanhechting aan een vijandelijke steen
+GE=Anlegen an einen gegnerischen Stein
+FR=(coup) au contact d'une pierre adverse
+SV=kontaktdrag ( med motst}ndarsten )
+
+CD=t
+JP=tsuke hiki
+GB=To attach and pull back
+CH=peng4 tui4
+RK=
+NL=aanhechten + terugtrekken
+SV=kontaktdrag och sedan retirering
+
+CD=t
+JP=tsuke giri
+GB=To attach and cut
+CH=peng4 duan4
+RK=
+NL=aanhechten + knippen
+SV=att attackera och sk{ra
+
+CD=t
+JP=tsuke gaeshi
+GB=A counter 'tsuke'
+CH=
+RK=
+NL=een tegen-'tsuke'
+SV=ett motkontaktdrag, kontaktdrag besvarat med kontaktdrag
+
+CD=t
+JP=tsuke koshi
+GB=The proper move to cut a knight jump ('keima')
+CH=kua4 duan4
+RK=
+NL=de goede stijl methode om een paardsprong ('keima') te knippen
+SV=kontaktdrag f|r att sk{ra ett knektdrag
+
+CD=t
+JP=tsuke atari
+GB=To extend against an enemy stone
+CH=tie1 chang2
+RK=
+NL=Verlengen tegen een vijandelijke steen aan
+SV=expansion i kontakt med motst}ndarsten
+
+CD=t
+JP=tsume
+GB=approach
+CH=bi1
+RK=
+NL=benadering
+GE=eine Annaeherung die den Gegner an einer Ausdehnung hindert
+SV=n{rmande
+
+CD=t
+JP=tsume go
+GB=life and dead problem
+CH=si3 huo4 ti2
+RK=
+NL=leven en dood problemen
+GE=Leben und Tot Problem
+FR=probleme de vie et mort
+SV=liv-och-d|d-problem
+DG= 8 . . . . . . . .
+DG= 7 . . . . . . . .
+DG= 6 . . . . . . . .
+DG= 5 . . . . . . . .
+DG= 4 . # # . . . . .
+DG= 3 . . o # # # . .
+DG= 2 o o . o o # . .
+DG= 1 . . . . . # . .
+DG=   a b c d e f g h
+CP= 
+CP= White to play and live (see 'ishi no shita')
+
+CD=t
+JP=uchi
+GB=Inside or inward
+CH=
+RK=
+NL=binnen of binnenwaarts
+SV=insida, in}t
+
+CD=t
+JP=uchikomi
+GB=invasion
+CH=da3 ru4
+RK=
+NL=invasie
+GE=Invasion
+FR=invasion
+SV=invasion
+
+CD=t
+JP=uchi magari
+GB=To bend around inward
+CH=qu3 jing4
+RK=
+NL=binnenwaartse ombuigzet
+SV=att b|ja runt och in}t
+
+CD=t
+JP=uchi tsuke
+GB=To attach inside
+CH=nei4 peng4
+RK=
+NL=binnenwaartse aanhechting
+SV=f|rbinda inuti
+
+CD=t
+JP=utte gaeshi
+GB=snapback
+CH=dao4 pu1
+RK=
+NL=snapback
+GE=snapback - Mausefalle
+FR=prise en retour, snapback
+SV=snapback
+
+CD=t
+JP=usumi
+GB=
+CH=
+RK=
+NL=
+SV=(|vers{ttning saknas)
+
+CD=t
+JP=warikomi
+GB=move between two enemy stones
+CH=qian4 ru4
+RK=
+NL=zet tussen twee vijandelijke stenen
+GE=Zug zwischen zwei gegnerische Steine
+FR=coup joue entre deux pierres de l'adversaire
+SV=drag mellan tv} motst}ndarstenar
+
+CD=t
+JP=warui
+GB=weak move
+CH=huai4 (zhao1)
+RK=
+NL=slap
+FR=(coup) faible (faiblard)
+SV=m|gdrag, svagt drag
+
+CD=t
+JP=watari
+GB=underneath connection
+CH=du4 guo4; du4 hui2
+RK=
+NL=onderlangse verbinding
+GE=untenrum verbinden
+FR=connexion par en-dessous
+SV=anslutning p} undersidan
+
+CD=t
+JP=wariuchi
+GB=a wedging move which has room for expansion in either direction
+CH=feng1 duan4
+RK=
+NL=een invasie waarbij naar twee kanten kan worden uitgebreid
+GE=eine Invasion die Platz zum Ausdehnen in beide Richtungen hat
+SV=ett invasionsdrag som har plats f|r expansion i b}da riktningarna
+
+CD=t
+JP=yonrensei
+GB=four hoshi stones "in a row"
+CH=si4 lian2 xing1
+RK=
+NL=fuseki type, vier hoshi stenen "op een rij"
+GE=Fusekiaufbau mit Steinen auf vier Vorgabepunkten hintereinander
+FR=au fuseki, quatre pierres sur quatre hoshi "en ligne" (consecutifs)
+SV=stenar spelade ( i f|ljd ) p} fyra handikappunkter
+DG=19 . . . . . . . . . . . . . . . . . . .
+DG=18 . . . . . . . . . . . . . . . . . . .
+DG=17 . . . . . . . . . . . . . . . . . . .
+DG=16 . . . * . . . . . a . . . . . # . . .
+DG=15 . . . . . . . . . . . . . . . . . . .
+DG=14 . . . . . . . . . . . . . . . . . . .
+DG=13 . . . . . . . . . . . . . . . . . . .
+DG=12 . . . . . . . . . . . . . . . . . . .
+DG=11 . . . . . . . . . . . . . . . . . . .
+DG=10 . . . * . . . . . * . . . . . # . . .
+DG= 9 . . . . . . . . . . . . . . . . . . .
+DG= 8 . . . . . . . . . . . . . . . . . . .
+DG= 7 . . . . . . . . . . . . . . . . . . .
+DG= 6 . . . . . . . . . . . . . . . . . . .
+DG= 5 . . . . . . . . . . . . . . . . . . .
+DG= 4 . . . * . . . . . b . . . . . # . . .
+DG= 3 . . . . . . . . . . . . . . . . . . .
+DG= 2 . . . . . . . . . . . . . . . . . . .
+DG= 1 . . . . . . . . . . . . . . . . . . .
+DG=   a b c d e f g h j k l m n o p q r s t
+CP= 
+CP= The opening pattern after either black [a] or [b] is 'yonrensei'
+CP= It's unimportant where exactly white played on the left side
+
+CD=t
+JP=yose
+GB=endgame
+CH=guan1 zi3
+RK=
+NL=eindspel
+GE=Endspiel
+FR=phase finale de la partie
+SV=slutspel
+
+CD=t
+JP=yose miru
+GB=move which tests the opponents plans
+CH=shi4 ying4 shou3
+RK=
+NL=zet die de strategie van de tegenstander onderzoekt
+GE=Testzug
+SV=spiondrag, testdrag
+DG= 8 . . . . . . . . . . . . . . . . . . .
+DG= 7 . . . . . . . . . . . . . . . . . . .
+DG= 6 . . . . . . . . . . . . . . . . . . .
+DG= 5 . . # . . . . . . . . . . . . . . . .
+DG= 4 . . . * . . . . . * . . . . . * . . .
+DG= 3 . . b # c . . . . # . . . . . . . . .
+DG= 2 . . . a . . . . . . . . . . . . . . .
+DG= 1 . . . . . . . . . . . . . . . . . . .
+DG=   a b c d e f g h j k l m n o p q r s t
+CP= 
+CP= White [a] asks black  : "do you want the outside or the inside?"
+CP= Black [b] would answer: "the inside!"
+CP= Black [c] would answer: "the outside!"
+CP= White can adapt his strategy depending on blacks strategy
+CP= (thus ensuring optimal efficiency of the stones)
+
+CD=t
+JP=zettai
+GB=
+CH=
+RK=
+NL=
+SV=(|vers{ttning saknas)
+

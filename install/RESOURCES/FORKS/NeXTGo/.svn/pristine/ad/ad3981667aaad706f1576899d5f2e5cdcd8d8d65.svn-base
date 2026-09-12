@@ -1,0 +1,7 @@
+NeXTGo.app:	_always all
+	if [ -d NeXTGo.app ] ; then /bin/rm -r -f NeXTGo.app ; fi
+	mkdir NeXTGo.app
+	strip NeXTGo
+	cp -r *.dct *.nib *.tiff NeXTGo NeXTGo.app
+
+_always:

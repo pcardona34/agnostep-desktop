@@ -1,0 +1,39 @@
+{\rtf0\ansi{\fonttbl\f1\fswiss Helvetica;\f0\fmodern Courier;}
+\paperw11760
+\paperh6540
+\margl120
+\margr120
+\pard\tx1344\tx2688\tx4032\tx5376\tx6720\tx8064\tx9408\tx10752\tx12096\tx13440\f1\b\i0\ul0\qc\fs34 Game of Go\
+
+\fs28 \
+
+\b0\fs24 Version 1.0 (Based on GNU GO Version 1.1)\
+\
+
+\fs22 written by Man L. Li\
+modified by Wayne Iba\
+documented by Bob Webber\
+NeXT version by John Neil\
+
+\ql\fs24 \
+\
+
+\pard\tx723\tx2688\tx4032\tx5376\tx6720\tx8064\tx9408\tx10752\tx12096\tx13440 	Welcome to the game of Go.  To play this game, either against a computer or human opponent, you should first go to the Preferences menu to select the game parameters.  These include who will play the black and white stones and what handicap black will be given at the start of the game.  It is possible to have the computer play itself with whatever handicap you wish.  When you have finished choosing the parameters of the game, click the Set Preferences button at the bottom of the window.  This makes the choices known to the computer.\
+	\
+	You are now ready to play the game.  Choosing New Game from the menu will clear the board and place any handicap stones necessary for the play to begin.  If the computer makes the first move, a message at the bottom of the screen will so indicate.  In that case, pressing the Start button will cause play to begin.  If, on the other hand, a human is to make the first move, clicking on the board where the stone is desired to be played starts the game.  If the computer is playing the other side, then it's moves will follow automatically.\
+	\
+	Play follows by the black side and white side alternately placing stones upon the board.  Human players (like yourself) make moves by clicking on the board where the stone is desired to be played.  The computer makes its moves automatically.  If you click on an empty point but no stone is placed there then one of two things could be true:  either the move is a suicide and is therefore disallowed, or it's the computers turn and you need to press the Start button.\
+	\
+	Play continues until both sides have passed in succession.  To pass your turn, press the Pass button.  At this point you may count up stones and determine the winner.  I cannot currently do that for you (that may be a future modification).\
+	\
+	Any bug reports, modifications, and suggestions should be directed to John Neil at the following address:\
+	\
+		John Neil\
+		Math Department\
+		Portland State University \
+		PO Box 751\
+		Portland, Oregon  97207\
+		e-mail:  neil@math.mth.pdx.edu\
+		\
+
+}

@@ -197,3 +197,34 @@ ok "\rDone"
 check_THEME ${APPNAME}
 
 }
+
+######################################################
+### Install forked apps
+######################################################
+
+function install_forked
+{
+FORKED="$1"
+FORKS=RESOURCES/FORKS
+if [ -n "$1" ];then
+       cd ${FORKS}/${FORKED} || exit 1
+       ./install.sh
+        cd $_PWD
+fi
+}
+
+######################################################
+### Install native agnostep apps
+######################################################
+
+function install_native
+{
+NATIVE="$1"
+APPS=RESOURCES/APPS
+export DEBUG="no" # set to 'no' for a less verbose output, otherwise 'yes'
+
+if [ -n "$1" ];then
+    cd ${APPS}/${NATIVE} || exit 1
+    ./install.sh
+fi
+}

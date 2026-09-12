@@ -1,0 +1,71 @@
+{
+    ApplicationDescription = "Video Player for GNUstep";
+    ApplicationIcon = "icon.tiff";
+    ApplicationName = Player;
+    ApplicationRelease = "0.1";
+    Copyright = "Copyright (C) 2022-2026 - gs-desktop";
+    CopyrightDescription = "Released under the GPL";
+    Authors = ( "Ondrej Florian", "Patrick Cardona (French localization)");
+    FullVersionID = "0.1";
+    NSExecutable = Player;
+    NSIcon = "icon.tiff";
+    NSMainNibFile = "Player.gorm";
+    NSPrincipalClass = NSApplication;
+    NSRole = Application;
+    NSTypes = (
+	{
+	    NSIcon = "file_snd.tiff";
+	    NSUnixExtensions = (
+		snd
+	    );
+	},
+	{
+	    NSIcon = "file_au.tiff";
+	    NSUnixExtensions = (
+		au
+	    );
+	},
+	{
+	    NSIcon = "file_au.tiff";
+	    NSUnixExtensions = (
+		mp3
+	    );
+	},
+	{
+	    NSIcon = "file_au.tiff";
+	    NSUnixExtensions = (
+		pls
+	    );
+	},
+	{
+	    NSIcon = "file_au.tiff";
+	    NSUnixExtensions = (
+		wav
+	    );
+	},
+	{
+	    NSIcon = "file_video.tiff";
+	    NSUnixExtensions = (
+		ogv
+	    );
+	},
+	{
+	    NSIcon = "file_video.tiff";
+	    NSUnixExtensions = (
+		m4v
+	    );
+	},
+	{
+	    NSIcon = "file_video.tiff";
+	    NSUnixExtensions = (
+		mp4
+	    );
+	},
+	{
+	    NSIcon = "file_video.tiff";
+	    NSUnixExtensions = (
+		mkv
+	    );
+	}
+    );
+}

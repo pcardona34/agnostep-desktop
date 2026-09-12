@@ -44,20 +44,20 @@ printf "\033[22;35m /!\ ${1} \033[0m \n\n"
 
 
 ##########################
-### Info (cyan)
+### Info (fg)
 ### $1: message
 function info()
 {
-printf "\n \033[22;36m=== Info ===\033[0m \n"
-printf "\033[22;36m (i) ${1} \033[0m \n\n"
+printf "\n === Info === \n"
+printf "(i) ${1} \n\n"
 }
 
 ##########################
-### cli (cyan)
+### cli (fg)
 ### $1: commande
 function cli()
 {
-printf "\n\t\033[22;36m ${1} \033[0m \n\n"
+printf "\n\t ${1} \n\n"
 }
 
 
@@ -100,16 +100,16 @@ sleep 3
 }
 
 ##########################
-### subtitulo (cyan bold)
+### subtitulo (bold)
 ### you must set before:
 #### STR: the string to show
 #### LOG: the log path
 function subtitulo
 {
 TITLE="*** $STR ***"
-cyanb=`tput bold setaf 6`
+bold=`tput bold`
 reset=`tput sgr 0`
-echo -e "\n${cyanb} $TITLE ${reset}\n"
+echo -e "\n${bold} $TITLE ${reset}\n"
 echo $TITLE >> $LOG
 }
 

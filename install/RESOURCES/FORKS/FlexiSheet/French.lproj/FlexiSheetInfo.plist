@@ -1,0 +1,29 @@
+{
+  ApplicationName = "FlexiSheet";
+  ApplicationDescription = "Un tableur à la manière de Quantrix";
+  ApplicationRelease = "0.5.7";
+  Copyright = "Copyright © 2002 Stefan Leuker,\nTous droits r\U00E9serv\U00E9s";
+  CopyrightDescription = "Ce programme est distribu\U00E9 sous la licence g\U00E9n\U00E9rale publique GNU";
+  Authors = ( "Stefan Leuker" ); 
+  NSIcon = Application;
+  NSTypes = (
+        {
+             NSName = "fsd";
+             NSHumanReadableName = "FlexiSheet Document";
+             NSUnixExtensions = ("fsd");
+             NSDOSExtensions = ("fsd");
+	           NSIcon = Sheet;
+             NSRole = Editor;
+             NSDocumentClass = FSDocument;
+        },
+        {
+             NSName = "quantrix";
+             NSHumanReadableName = "Quantrix Document";
+             NSUnixExtensions = ("quantrix");
+             NSDOSExtensions = ("qtx");
+	           NSIcon = Quantrix;
+             NSRole = Viewer;
+             NSDocumentClass = FSDocument;
+        }
+  );
+}

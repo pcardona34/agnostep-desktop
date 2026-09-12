@@ -111,7 +111,8 @@ case "$i" in
 "Gemas")
 	printf "You chose Gemas\n"
 	remove_ifx_app "Gemas"
-	install_gemas
+	#install_gemas
+    install_forked "Gemas"
 	update_info_plist "Gemas";;
 "Gorm")
 	printf "You chose Gorm\n"

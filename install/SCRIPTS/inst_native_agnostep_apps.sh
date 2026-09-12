@@ -63,17 +63,6 @@ fi
 ################################
 ### local functions
 
-function install_native
-{
-NATIVE="$1"
-APPS=RESOURCES/APPS
-
-if [ -n "$1" ];then
-    cd ${APPS}/${NATIVE} || exit 1
-    ./install.sh
-fi
-}
-
 function menu
 {
 # checkbox dialog

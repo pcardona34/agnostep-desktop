@@ -17,8 +17,11 @@
 Meteo, Mixer, OpenDisk, Pass, Printer, SaveLink, ScreenLock,  
 Sound, Updater, UpMem.
   - [x] Help bundles of the Native Apps  all translated to French.
-  - [ ] FORKED Core Apps: FlexiSheet, Gemas, Grr, HelpViewer, 
-Ink, Innerspace, Player, PRICE, ScanImage, SystemPreferences.
+  - [ ] Several FORKED Core, Extra and Devel Apps: Chess, FlexiSheet,  
+Gemas, Grr, HelpViewer, Ink, Innerspace, NeXTGo, Player, PRICE,  
+ScanImage, StepSync, 
+
+SystemPreferences.
   - [ ] Documentation: namely README, INSTALL translated too.
 
 > [!Note]

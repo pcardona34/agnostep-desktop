@@ -30,14 +30,14 @@ DIR_APP=$(gnustep-config --variable=GNUSTEP_LOCAL_APPS)
 cd $DIR_APP
 find . -name "${APPNAME}.app" -print | xargs sudo rm -r -f
 if [ $? -eq 0 ];then
-	printf "$APPNAME Bundle was removed.\n"
+	printf "\t $APPNAME Bundle was removed.\n"
 fi
 
 cd ../Tools
 find . -name "${APPNAME}*" -print | xargs sudo rm -f
 if [ $? -eq 0 ];then
-	printf "$APPNAME link was removed.\n"
+	printf "\t $APPNAME link was removed.\n"
 fi
-ok "Done"
+ok "- Purge was done"
 cd $_PWD
 }

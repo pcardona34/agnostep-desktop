@@ -1,0 +1,106 @@
+{
+    "## Comment" = "Do NOT change this file, Gorm maintains it";
+    FirstResponder = {
+	Actions = (
+	    "applicationShouldOpenUntitledFile:",
+	    "changeAutosavingDelay:",
+	    "changeBackgroundColor:",
+	    "changeCursorColor:",
+	    "changeEditorHeight:",
+	    "changeEditorWidth:",
+	    "changeFontName:",
+	    "changeFontSize:",
+	    "changeHighlighterTheme:",
+	    "changeIndentation:",
+	    "changeSelectionColor:",
+	    "changeTabConversion:",
+	    "changeTextColor:",
+	    "goToLine:",
+	    "goToLineNumber:",
+	    "insertTab:",
+	    "newProject:",
+	    "newSourceFile:",
+	    "nextParameter:",
+	    "openGoToLinePanel:",
+	    "openPreferences:",
+	    "orderFrontCharacterPalette:",
+	    "restoreDefaults:",
+	    "showInfoPanel:"
+	);
+	Super = NSObject;
+    };
+    GemasController = {
+	Actions = (
+	    "newSourceFile:",
+	    "newProject:",
+	    "openPreferences:",
+	    "openGoToLinePanel:",
+	    "changeIndentation:",
+	    "changeTabConversion:",
+	    "changeBackgroundColor:",
+	    "changeCursorColor:",
+	    "changeTextColor:",
+	    "changeSelectionColor:",
+	    "changeHighlighterTheme:",
+	    "changeFontName:",
+	    "changeFontSize:",
+	    "changeEditorWidth:",
+	    "changeEditorHeight:",
+	    "changeAutosavingDelay:",
+	    "restoreDefaults:",
+	    "goToLine:",
+	    "showInfoPanel:"
+	);
+	Outlets = (
+	    linePanel,
+	    preferencesPanel,
+	    indentation,
+	    tabConversion,
+	    backgroundColor,
+	    cursorColor,
+	    textColor,
+	    selectionColor,
+	    highlighterTheme,
+	    fontName,
+	    fontSize,
+	    fontSizeStepper,
+	    editorWidth,
+	    editorHeight,
+	    autosavingDelay,
+	    autosavingDelaySlider,
+	    preferencesPanel,
+	    indentation,
+	    tabConversion,
+	    backgroundColor,
+	    cursorColor,
+	    textColor,
+	    selectionColor,
+	    highlighterTheme,
+	    fontName,
+	    fontSize,
+	    fontSizeStepper,
+	    editorWidth,
+	    editorHeight,
+	    autosavingDelay,
+	    autosavingDelaySlider
+	);
+	Super = NSObject;
+    };
+    GemasDocument = {
+	Actions = (
+	    "goToLineNumber:"
+	);
+	Outlets = (
+	    textView,
+	    numberLine,
+	    numberColumn
+	);
+	Super = NSDocument;
+    };
+    NSApplication = {
+	Actions = (
+	    "orderFrontCharacterPalette:"
+	);
+	Super = NSResponder;
+    };
+}

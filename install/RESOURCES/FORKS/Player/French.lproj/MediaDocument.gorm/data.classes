@@ -1,0 +1,21 @@
+{
+    "## Comment" = "Do NOT change this file, Gorm maintains it";
+    FirstResponder = {
+	Actions = (
+	    "play:"
+	);
+	Super = NSObject;
+    };
+    MediaDocument = {
+	Actions = (
+	    "play:"
+	);
+	Outlets = (
+	    window,
+	    locationSlider,
+	    statusField,
+	    playButton
+	);
+	Super = NSObject;
+    };
+}

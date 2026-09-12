@@ -1,0 +1,16 @@
+#!/bin/bash
+
+DEV="$1"
+MODE="$2" #Lineart|Gray|Color
+RES="$3"
+FILE="/tmp/image-scan-$$.tiff"
+
+echo "S:started scanning $FILE"
+if [ "$DEV" = "default" ];then
+  echo "L:scanning default device"
+  scanimage --resolution=$RES --format=tiff --mode="$MODE" -o "$FILE"
+else
+  echo "L:scanning $DEV"
+  scanimage -d "$DEV" --resolution=$RES --format=tiff --mode="$MODE" -o "$FILE"
+fi
+echo "E:$FILE"

@@ -1,0 +1,71 @@
+
+               GNU GO - the game of Go (Wei-Chi)
+               Version 1.1   last revised 3-1-89
+       (NeXTGo Version 2.2.1, last revised 12-3-92)
+         Copyright (C) Free Software Foundation, Inc.
+                    written by Man L. Li
+                    modified by Wayne Iba
+                   documented by Bob Webber
+                   NeXT version by John Neil
+
+This program is a port of the GNU GO program by Man L. Li that utilizes the
+window GUI interface of the NeXT computer.  To make moves on the board the
+human player only needs to click the mouse button while the cursor is
+pointed at the appropriate place on the board.
+
+The computer moves are all generated utilizing the basic methodology of
+GNU GO.  However, there is one major addition to the GNU GO system.  This
+addition is an automated scoring algorithm.  These routines remove the
+obviously dead stones from the board and then count the score.  A group is
+considered dead if it surrounds no territory and, if removed, the squares it
+covers would be owned by the opposing color.  There is still room for
+improvement in this algorithm to remove those groups which only have one eye
+and are, therefore, also dead.
+
+This program also allows you to read and generate smart-go files.  This is
+increasingly becoming the standard format for game storage on computer.  It
+is a flexible format which allows for nested variations and can be a valuable
+format for storing educational examples.
+
+This program now also contains a client for the Internet Go Server.  This
+client currently works through sockets and thus requires an actual internet
+connection.  Future plans may include support for connecting via SLIP and/or
+modem.  The client allows you to play on the IGS simply by clicking on the
+board and features a browser for the selection of games to observe.
+
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation - version 1.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License in file COPYING for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+
+Please report any bug/fix, modification, suggestion to
+
+mail address:   Man L. Li
+                Dept. of Computer Science
+                University of Houston
+                4800 Calhoun Road
+                Houston, TX 77004
+
+e-mail address: manli@cs.uh.edu         (Internet)
+                coscgbn@uhvax1.bitnet   (BITNET)
+                70070,404               (CompuServe)
+
+For the NeXT version, please report any bug/fix, modification, suggestion to
+
+mail address:   John Neil
+                Mathematics Department
+                Portland State University
+                PO Box 751
+                Portland, OR  97207
+
+e-mail address: neil@math.mth.pdx.edu  (Internet)
+                neil@psuorvm.bitnet    (BITNET)
+

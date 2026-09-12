@@ -1,0 +1,30 @@
+<document>
+
+<header>
+<title>Aide de StepSync</title>
+</header>
+
+<plain name="Main">
+<p>
+Brève introduction
+</p>
+</plain>
+
+<chapter name="Opération principale">
+
+<section name="Analyse">
+Analyse consiste en...
+</section>
+
+<section name="Synchronisation">
+La synchronisation consiste à ...
+</section>
+
+</chapter>
+
+
+<chapter name="Préférences">
+...
+</chapter>
+
+</document>

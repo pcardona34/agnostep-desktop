@@ -1,0 +1,189 @@
+{
+    "## Comment" = "Do NOT change this file, Gorm maintains it";
+    Controller = {
+	Actions = (
+	    "openGoServer:",
+	    "connect:",
+	    "connectToServer:",
+	    "remove:",
+	    "add:"
+	);
+	Outlets = (
+	    GoApplication,
+	    GoServerSelectionList,
+	    GoServerSelectionPanel,
+	    GoServerName,
+	    LoginDefinition,
+	    ServerLogin,
+	    ServerPassword,
+	    ServerPort
+	);
+	Super = NSObject;
+    };
+    FirstResponder = {
+	Actions = (
+	    "IGSLoadGame:",
+	    "IGSOpenLoadGame:",
+	    "IGSSendCommand:",
+	    "IGSdone:",
+	    "IGSobserve:",
+	    "IGSquit:",
+	    "IGSunobserve:",
+	    "NewGame:",
+	    "SetPreferences:",
+	    "UserPass:",
+	    "add:",
+	    "cellClicked:",
+	    "connect:",
+	    "connectToServer:",
+	    "go:",
+	    "initTranslator:",
+	    "jumpBackSmartGoFile:",
+	    "jumpSmartGoFile:",
+	    "openGoServer:",
+	    "performTranslate:",
+	    "remove:",
+	    "save:",
+	    "sendCommand:",
+	    "setCommandSender:",
+	    "setFormat:",
+	    "showLastMove:",
+	    "startGame:",
+	    "stepBackSmartGoFile:",
+	    "stepSmartGoFile:",
+	    "stopGame:",
+	    "toggleCoords:",
+	    "toggleShowHistFlag:",
+	    "toggleSound:",
+	    "undoLastMove:"
+	);
+	Super = NSObject;
+    };
+    GoApp = {
+	Actions = (
+	    "UserPass:",
+	    "stopGame:",
+	    "startGame:",
+	    "NewGame:",
+	    "SetPreferences:",
+	    "stepSmartGoFile:",
+	    "stepBackSmartGoFile:",
+	    "jumpSmartGoFile:",
+	    "jumpBackSmartGoFile:",
+	    "IGSSendCommand:",
+	    "setCommandSender:",
+	    "open:",
+	    "save:",
+	    "setFormat:",
+	    "initTranslator:",
+	    "performTranslate:",
+	    "IGSOpenLoadGame:",
+	    "IGSLoadGame:",
+	    "IGSobserve:",
+	    "IGSunobserve:",
+	    "IGSdone:",
+	    "IGSquit:",
+	    "cellClicked:",
+	    "sendCommand:",
+	    "hide:",
+	    "terminate:"
+	);
+	Outlets = (
+	    gameWindow,
+	    MainGoView,
+	    handicapSlider,
+	    handicapText,
+	    BlackPlayer,
+	    WhitePlayer,
+	    prefPanel,
+	    savePrefsFlag,
+	    sizeSlider,
+	    sizeText,
+	    smartGoComments,
+	    smartGoPanel,
+	    smartGoNodeName,
+	    smartGoNodeNumber,
+	    smartgoVariants,
+	    stepForwardButton,
+	    stepBackwardButton,
+	    jumpForwardButton,
+	    jumpBackwardButton,
+	    scoringMethod,
+	    scoringType,
+	    AGAscoringMethodFlag,
+	    IGSCommand,
+	    IGSSendButton,
+	    IGSStatus,
+	    IGSobserveNumber,
+	    IGSPanel,
+	    IGSfont,
+	    IGSboldFont,
+	    LoadGameText,
+	    LoadGameWindow,
+	    observeSelPanel,
+	    observeScrollView,
+	    observeMatrix,
+	    observeBox,
+	    observeCell,
+	    loadMenuCell,
+	    observeMenuCell,
+	    unobserveMenuCell,
+	    versionString,
+	    transTypeMISC,
+	    transTypeNAME,
+	    transTypeCHAM,
+	    transTypeTECH,
+	    transTypePOLI,
+	    transTypeDIGI,
+	    transLangJP,
+	    transLangCH,
+	    transLangRK,
+	    transLangGB,
+	    transLangNL,
+	    transLangGE,
+	    transLangFR,
+	    transLangSV,
+	    transLangDG,
+	    transLangCP,
+	    translateWindow,
+	    translateTerm,
+	    translateResults,
+	    translateButton,
+	    formatMatrix,
+	    controller,
+	    gameInspector,
+	    CommandSender,
+	    delegate
+	);
+	Super = NSApplication;
+    };
+    GoView = {
+    };
+    GoWindow = {
+	Actions = (
+	);
+	Outlets = (
+	    ControlPanel,
+	    Receiver
+	);
+	Super = NSWindow;
+    };
+    NSPanel = {
+	Actions = (
+	    "makeKeyAndOrderFront:"
+	);
+	Super = NSWindow;
+    };
+    NSSlider = {
+	Actions = (
+	    "takeIntValueFrom:"
+	);
+	Super = NSControl;
+    };
+    NSTextField = {
+	Actions = (
+	    "takeIntValueFrom:"
+	);
+	Super = NSControl;
+    };
+}

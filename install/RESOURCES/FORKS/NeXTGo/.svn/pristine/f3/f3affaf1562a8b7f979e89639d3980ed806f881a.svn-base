@@ -1,0 +1,24 @@
+This is a new version (3.0) of the NeXTGo program written by Man L. Li, Wayne Iba, Bob Webber and John Neil (see the original READMEs for details). Further there is some gnu-code inside so the GPL applies. 
+
+NeXTGo is a free graphical client for the internet go servers. It's for people (like me) who like to play go on the internet (a rare but growing spezies) and wants to use !!!Openstep!!! (NOT NeXTSTEP) for this purpose (a very rare species I presume). 
+
+This is a port of the version 2.7 to OpenStep, it won't run on NextStep! It has only been ported, and some bugs have been fixed, nothing more. If you use NextStep, NeXTGo.2.7 is the right choice. If you use OpenStep and you are satisfied, don't move. This version ist only useful for people who uses Openstep and want to use a native app (e.g. not to waste memory) to play Go on the internet go servers.
+
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License in file COPYING for more details.
+
+You may reach me at
+
+Olaf Foellinger
+Cottastr. 17
+D-70180 Stuttgart
+e-mail: ergo@merlin.stuttgart.netsurf.de
+http://www1.stuttgart.netsurf.de/~ergo/
+
+

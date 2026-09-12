@@ -16,8 +16,8 @@ See Unstable branch until now.
 bundle if there.  
 Are concerned: AgnostepManager, Birthday, Dico, Launcher, Meteo, 
 Mixer, OpenDisk, Pass, Printer, SaveLink, ScreenLock, Sound, Updater, UpMem.
-- Full French Localization of several Core Apps as forked in purpose.   
-Are concerned: HelpViewer, Ink... (to be completed: see Roadmap of rel. 3)
+- Full French Localization of several Core and Extra Apps as forked in purpose.   
+Are concerned: FlexiSheet, HelpViewer, Ink... (to be completed: see Roadmap of rel. 3)
 
 - AgnostepManager: Misc. in help bundle contents.
 - Pass: release 0.2. Added Edit button and action to the List Panel.

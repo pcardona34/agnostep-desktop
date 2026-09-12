@@ -1,0 +1,119 @@
+{
+    APPCLASS = NSApplication; 
+    FILESTABLE = {
+        CLASSES = (
+            Board.m, 
+            ClickCell.m, 
+            Controller.m, 
+            GameInspectorPanel.m, 
+            GoApp.m, 
+            GoServer.m, 
+            GoWindow.m
+        ); 
+        C_FILES = (); 
+        FRAMEWORKS = (AppKit.framework, Foundation.framework, SoundKit.framework); 
+        FRAMEWORKSEARCH = (
+            "$(NEXT_ROOT)/NextLibrary/Frameworks/Foundation.framework", 
+            "$(NEXT_ROOT)/NextLibrary/Frameworks/AppKit.framework", 
+            "$(NEXT_ROOT)/NextLibrary/Frameworks/SoundKit.framework"
+        ); 
+        HEADERSEARCH = (); 
+        H_FILES = (
+            Board.h, 
+            ClickCell.h, 
+            Controller.h, 
+            GameInspectorPanel.h, 
+            gnugo.h, 
+            GoApp.h, 
+            godict.h, 
+            GoServer.h, 
+            GoWindow.h, 
+            history.h, 
+            igs.h, 
+            patterns.h, 
+            shared.h, 
+            smartgo.h, 
+            smgcom.h
+        ); 
+        IMAGES = (Background.tiff, NeXTGo.tiff, NeXTGoFile.tiff); 
+        INTERFACES = (NeXTGo.nib); 
+        LIBRARYSEARCH = (
+            /NextLibrary/Frameworks/AppKit.framework/AppKit, 
+            /NextLibrary/Frameworks/Foundation.framework/Foundation
+        ); 
+        M_FILES = (); 
+        OTHER_LIBS = (); 
+        OTHER_LINKED = (
+            count.c, 
+            countlib.c, 
+            eval.c, 
+            exambord.c, 
+            findnext.c, 
+            findopen.c, 
+            findpatn.c, 
+            findsavr.c, 
+            findwinr.c, 
+            fioe.c, 
+            genmove.c, 
+            godict.c, 
+            igsparse.c, 
+            initmark.c, 
+            matchpat.c, 
+            opening.c, 
+            openregn.c, 
+            random.c, 
+            score.c, 
+            seed.c, 
+            sethand.c, 
+            smartgoeval.c, 
+            smartgoparse.c, 
+            smartgotree.c, 
+            suicide.c, 
+            igsglue.m, 
+            igssocket.m, 
+            NeXTGo_main.m
+        ); 
+        OTHER_RESOURCES = (
+            intergo.dct, 
+            Makefile, 
+            Makefile.postamble, 
+            "NeXTGo.background-2.0.draw", 
+            NeXTGo.background.draw, 
+            NeXTGoHelp.rtf
+        ); 
+        OTHER_SOURCES = (
+            comment.header, 
+            COPYING, 
+            Documentation.gnugo, 
+            igs.protocol, 
+            README, 
+            README.gnugo
+        ); 
+        PSWM_FILES = (); 
+        PSW_FILES = (); 
+        PUBLIC_HEADERS = (); 
+        SOUNDS = (); 
+        SUBPROJECTS = (); 
+    }; 
+    GENERATEMAIN = YES; 
+    LANGUAGE = English; 
+    LOCALIZABLE_FILES = {NeXTGo.nib = NeXTGo.nib; }; 
+    MAKEFILEDIR = "$(NEXT_ROOT)/NextDeveloper/Makefiles/pb_makefiles"; 
+    NEXTSTEP_APPICON = NeXTGo.tiff; 
+    NEXTSTEP_BUILDTOOL = /bin/gnumake; 
+    NEXTSTEP_DOCUMENTEXTENSIONS = (
+        {Extension = nextgo; Image = NeXTGoFile.tiff; }, 
+        {Extension = mgt; Image = NeXTGoFile.tiff; }
+    ); 
+    NEXTSTEP_INSTALLDIR = "$(HOME)/Apps"; 
+    NEXTSTEP_MAINNIB = NeXTGo; 
+    PDO_UNIX_INSTALLDIR = "$(HOME)/Apps"; 
+    PDO_UNIX_MAINNIB = NeXTGo; 
+    PROJECTNAME = NeXTGo; 
+    PROJECTTYPE = Application; 
+    PROJECTVERSION = 2.6; 
+    SYSTEMEXTENSIONS = (); 
+    WINDOWS_DOCUMENTEXTENSIONS = (); 
+    WINDOWS_INSTALLDIR = "$(HOME)/Apps"; 
+    WINDOWS_MAINNIB = NeXTGo; 
+}

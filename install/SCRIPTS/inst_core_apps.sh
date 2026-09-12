@@ -53,18 +53,6 @@ trap "rm -f $TEMPFILE" EXIT
 . SCRIPTS/fetcher.sh
 . SCRIPTS/functions_inst_core_apps.sh
 
-function install_forked
- {
- FORKED="$1"
- FORKS=RESOURCES/FORKS
-
- if [ -n "$1" ];then
-      cd ${FORKS}/${FORKED} || exit 1
-      ./install.sh
-      cd $_PWD
- fi
- }
-
 ### End of Include functions
 ################################
 
@@ -163,8 +151,9 @@ case "$i" in
 "InnerSpace")
 	printf "You chose InnerSpace\n"
 	remove_ifx_app "InnerSpace"
-	install_innerspace
-	update_info_plist "InnerSpace";;
+	#install_innerspace
+	install_forked "InnerSpace"
+update_info_plist "InnerSpace";;
 "Mixer")
 	printf "You chose VolumeControl\n"
 	remove_ifx_app "VolumeControl"
@@ -217,6 +206,3 @@ ok "\rDone"
 print_size
 
 sleep 2
-
-
-

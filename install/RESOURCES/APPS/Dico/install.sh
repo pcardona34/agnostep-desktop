@@ -16,13 +16,21 @@
 
 ################################
 ### VARS
+if [ -z "$DEBUG" ];then
+     DEBUG="no" # values: "yes" to debug | "no" to use clean output
+     # Should be set in the parent script
+fi
 STR="${PWD##*/}"
 APP="${STR}"
 HERE=`pwd`
 DEP="surf" # Suckless Web Browser
+SPIN='/-\|'
+APPLOG="$APP.log"
 
 ################################
 ### include functions
+
+. ../../../SCRIPTS/spinner.sh
 . ../../../SCRIPTS/colors.sh
 . ../../../SCRIPTS/log.sh
 . ../../../SCRIPTS/find_app.sh
@@ -41,6 +49,9 @@ sudo apt -y install ${DEP}
 sleep 2
 clear
 
+echo "Debug status: $DEBUG"
+sleep 1
+
 STR="Purge old release";subtitulo
 remove_ifx_app ${APP}
 
@@ -48,8 +59,21 @@ STR="Building and installing ${APP}";subtitulo
 cd ${HERE} || exit 1
 
 make clean &>/dev/null
-make && ok "Build done"
-sudo -E env PATH="$PATH:/System/Tools" make install && ok "Install done"
+
+if [ "$DEBUG" == "yes" ];then
+     make && ok "Build done"
+     sudo -E env PATH="$PATH:/System/Tools" make install && ok "Install done"
+else
+     make &> $APPLOG &
+     PID=$!
+     spinner
+     ok "\r- Build done"
+     sleep 2
+     sudo -E env PATH="$PATH:/System/Tools" make install &>> $APPLOG &
+     PID=$!
+     spinner
+     ok "\r- Install done"
+fi
 
 check "${APP}"
 make clean &>/dev/null
@@ -74,8 +98,21 @@ ok "$SERVICE fetched"
 
 STR="Building and installing service ${SERVICE}";subtitulo
 make clean &>/dev/null
-make && ok "Build done"
-sudo -E env PATH="$PATH:/System/Tools" make install && ok "Install done"
+
+if [ "$DEBUG" == "yes" ];then
+     make && ok "Build done"
+     sudo -E env PATH="$PATH:/System/Tools" make install && ok "Install done"
+else
+     make &> $APPLOG &
+     PID=$!
+     spinner
+     ok "\r- Build done"
+     sleep 2
+     sudo -E env PATH="$PATH:/System/Tools" make install &>> $APPLOG &
+     PID=$!
+     spinner
+     ok "\r- Install done"
+fi
 make clean &>/dev/null
 sleep 2
 

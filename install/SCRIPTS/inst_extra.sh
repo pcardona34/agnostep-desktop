@@ -117,7 +117,8 @@ case "$i" in
 "FlexiSheet")
 	printf "You chose FlexiSheet\n"
 	remove_ifx_app "FlexiSheet"
-	install_flexisheet
+	#install_flexisheet
+    install_forked "FlexiSheet"
 	update_info_plist FlexiSheet;;
 "Graphos")
 	printf "You chose Graphos\n"
@@ -127,7 +128,8 @@ case "$i" in
 "Grr")
 	printf "You chose Grr\n"
 	remove_ifx_app "Grr"
-	install_grr
+	#install_grr
+    install_forked "Grr"
 	update_info_plist Grr;;
 "LaternaMagica")
 	printf "You chose LaternaMagica\n"
@@ -152,8 +154,9 @@ case "$i" in
 "Player")
 	printf "You chose Player\n"
 	remove_ifx_app "Player"
-	install_player
-	update_info_plist Player;;
+	#install_player
+	install_forked "Player"
+update_info_plist Player;;
 "PowerPaint")
 	printf "You chose PowerPaint\n"
 	remove_ifx_app "PowerPaint"
@@ -172,7 +175,8 @@ case "$i" in
 "PRICE")
 	printf "You chose PRICE\n"
 	remove_ifx_app "PRICE"
-	install_price
+	#install_price
+    install_forked "PRICE"
 	update_info_plist PRICE;;
 "TalkSoup")
 	printf "You chose TalkSoup\n"

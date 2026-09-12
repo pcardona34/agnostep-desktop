@@ -1,0 +1,44 @@
+{
+    "## Comment" = "Do NOT change this file, Gorm maintains it";
+    FirstResponder = {
+	Actions = (
+	    "play:"
+	);
+	Super = NSObject;
+    };
+    MediaDocument = {
+	Actions = (
+	    "play:"
+	);
+	Outlets = (
+	    window,
+	    playButton
+	);
+	Super = NSObject;
+    };
+    VideoDocument = {
+	Actions = (
+	);
+	Outlets = (
+	    videoView,
+	    locationSlider,
+	    volumeSilder,
+	    statusField
+	);
+	Super = MediaDocument;
+    };
+    VideoView = {
+	Actions = (
+	);
+	Outlets = (
+	);
+	Super = XEmbeddedView;
+    };
+    XEmbeddedView = {
+	Actions = (
+	);
+	Outlets = (
+	);
+	Super = NSView;
+    };
+}

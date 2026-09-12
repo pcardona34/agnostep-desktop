@@ -1,0 +1,4 @@
+/* Localized versions of Info.plist keys */
+
+CFBundleName = "FlexiSheet";
+NSHumanReadableCopyright = "Copyright © 2002 Stefan Leuker,\nTous droits r\U00E9serv\U00E9s.";

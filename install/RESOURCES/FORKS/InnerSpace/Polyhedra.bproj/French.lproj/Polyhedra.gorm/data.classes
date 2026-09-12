@@ -1,0 +1,21 @@
+{
+    "## Comment" = "Do NOT change this file, Gorm maintains it";
+    FirstResponder = {
+	Actions = (
+	    "orderFrontFontPanel:",
+	    "kickIt:",
+	    "setSelectedIndex:"
+	);
+	Super = NSObject;
+    };
+    PolyhedraView = {
+	Actions = (
+	    "kickIt:",
+	    "setSelectedIndex:"
+	);
+	Outlets = (
+	    inspectorPanel
+	);
+	Super = NSView;
+    };
+}

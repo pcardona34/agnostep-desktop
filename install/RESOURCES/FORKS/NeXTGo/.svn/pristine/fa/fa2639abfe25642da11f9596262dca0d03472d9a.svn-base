@@ -1,0 +1,1062 @@
+Archive-name: games/go-faq
+
+                             rec.games.go 
+                      Frequently Asked Questions 
+
+                           by Adrian Mariano
+                      adrian@bsdserver.ucsf.edu
+
+What has changed in the FAQ recently
+
+Nov 22:
+Moved the table of contents up to the top.  Added information about
+Kiseido.  I put some HTML tables into the HTML version of the FAQ.
+(Comments anyone?  I've never done tables before.)  Updated the
+sections on Computer Go.  I've revised section 11 which lists the go
+file viewers.  It now contains a table of programs.  
+
+
+Table of Contents
+
+1 Go resources.  Where to get the FAQ.  What is the archive site? 
+2 What is go? 
+3 What do those words mean?
+4 What books should I read? 
+5 Where can I get go equipment, books, etc?  
+6 How does the ranking system work?
+7 Is there a go club in...?
+8 What is the IGS?  NNGS?  How do I use them?
+9 How do I play games by computer? 
+10 What are the different game record formats and how can I display them? 
+11 What programs can I get to display go game records? 
+12 What are the differences between different rules?
+13 What public domain programs can I get to play go? 
+14 What commercial programs can I get to play go? 
+15 How strong are the commercial programs?  
+16 What computer go tournaments exist?  What are the prizes? 
+
+
+
+
+1. Go resources.  Where to get the FAQ.  What is the archive site? 
+
+Many FAQs, including this one, are available on the archive site
+rtfm.mit.edu in the directory pub/usenet/news.answers.  The name under
+which a FAQ is archived appears in the Archive-name line at the top of
+the article.  This FAQ is archived as games/go-faq.  Note that FAQs
+are available at this site, but NOTHING ELSE.  This is not the general
+Go archive site which is described below.  FAQs are also available by
+WWW using ¬http://www.smartpages.com/faqs/.
+
+If you do not have ftp, you can request messages from rtfm by using
+the local mail server.  Send mail to mail-server@rtfm.mit.edu
+containing the line "send usenet/news.answers/games/go-faq" to get
+this file.  Send a message containing "help" to get general
+information about the mail server.  The rtfm mail server can ONLY be
+used to obtain FAQs.  It cannot be used to get files from the go archive
+site.  
+
+This FAQ is also available on the go archive site:  bsdserver.ucsf.edu
+                                                    (128.218.80.68)
+
+The go archive site (bsdserver.ucsf.edu) has several megabytes of go
+releated materials, some of which are mentioned below.
+You can log into the archive site with the username 'ftp' and any
+password using the 'ftp' command.  The files are in various
+subdirectories under Go.  The file Go/README (posted on the first of
+each month to rec.games.go) contains a description of all files.
+Filenames which appear below are relative to the Go directory.
+
+The archive site maybe be accessed through WWW at
+¬http://bsdserver.ucsf.edu/go/ftpindex/top.html which gives the
+contents of the Go/README file.  This includes a list of which files
+have been added to the archive site over the past three months.  
+
+If you don't have ftp, send a message to ftpmail@decwrl.dec.com
+containing the single line "help" to get information about ftping by
+mail.  This server allows you to connect to any ftp site and request
+files by mail.  Be sure to tell it to connect to bsdserver.ucsf.edu if
+you want to get go files.  If you absolutely cannot get the mail
+server to work, send an email request to adrian@bsdserver.ucsf.edu and
+I will mail you the files.  When making such a request, be sure to
+explain why you can't use the mailserver or you will receive a form
+letter.  
+
+The following mirror sites are available:
+    ¬ftp://ftp.pasteur.fr/pub/Go
+    ¬ftp://rzis1.rz.tu-bs.de/pub/go
+    ¬ftp://igs.nuri.net/Go
+    ¬ftp://imageek.york.cuny.edu/nngs/Go
+    ¬ftp://ftp.fh-wuerzburg.de/pub/go
+
+Gopher is an alternative to ftp.  If you have gopher installed, you
+can connect to ¬gopher://philosophy.cwis.uci.edu:7016, possibly by
+typing
+    gopher philosophy.cwis.uci.edu 7016
+at a prompt.  This is the UCI Philosophy Gopher.  If you follow the
+menus 
+    The World of Philosophy
+      Recreation
+        Games by wire
+          Go 
+you will reach the go options, which include access to this FAQ, as
+well as access to the archive site.
+
+There are many WWW go sites out there.  This list includes just a few
+sites.  Ken's page is an excellent index of many other Go sites.  
+  Ken Warkentyne's page: ¬http://ltiwww.epfl.ch/~warkent/go/ 
+  Jan van der Steen's page: ¬http://www.cwi.nl/~jansteen/go/go.html
+
+Questions, comments, and corrections should be sent to 
+adrian@bsdserver.ucsf.edu.
+
+
+
+
+
+2. What is go? 
+
+Go is a two player strategy board game.  Players take turns putting 
+black and white pieces (called stones) on a board.  Stones are placed 
+on the intersection of the lines on the board, and can be placed on 
+the edge or in the corner.  Once played a stone can not be moved, but 
+may be captured by the other player.  A player can pass at any time.  
+Go is generally played on a 19 by 19 board, but smaller boards such as 
+9 by 9 or 13 by 13 are used by beginners or for shorter games. 
+
+The object of the game is to surround territory and/or your opponent's 
+stones.  The game ends when both players pass.  Under Japanese rules, 
+each intersection surrounded and each prisoner counts as a point.  The 
+player with the most points wins. 
+
+An empty intersection adjacent to a stone (orthogonally) is called a 
+liberty.  For example, a single stone in the middle of the board has 4 
+liberties.  Stones that are adjacent form groups.  Every group must 
+have at least one liberty.  When a group's last liberty is filled it 
+is captured and removed from the board.  
+
+
+     . . . . . .             . . . . . . . .         . . . . . . . .
+     . . . . . .             . . . . . . . .         . . . . . . . .
+     . . . . . .             . . . O O . . .         . . . O O . . .
+     . . # # . .             . . O # # O . .         . . O . . O . .
+     . . . # . .             . . . . # O . .         . . . O . O . .
+     . . . . . .             . . . . O . . .         . . . . O . . .
+     . . . . . .             . . . . . . . .         . . . . . . . .
+    
+    The stones in           Now the black (#)       With one move, 
+    this group have         group has only          white captures the
+    seven liberties.        one liberty.            black stones.
+
+It is illegal to make a move which recreates a preceding board
+position with the same person to play (to prevent loops).  The
+simplest repeating position is called a ko.
+
+  . . . . . .  
+  . . . . . .   This is an example of a ko.  One of the White (O) stones
+  . . # O . .   can be captured by black.  When a stone can be captured 
+  . # O . O .   it is said to be 'in atari'.  If we didn't have the ko  
+  . . # O . .   rule, then Black and White could repeatedly capture one 
+  . . . . . .   stone in this situation, creating a loop.               
+
+When a group of stones can never be captured, it is 'alive'.  Stones
+can live either with two eyes or in seki.  
+
+     . . . . . . . . . . .            . . . . . . . . . . . . . 
+     . . . . . . . . . . .            . . . . . . . . . . . . . 
+     . . # # # # # # # . .            . . O O O O O O O O O . . 
+     . . # O O O O O # . .            . . O # # # # # # # O . . 
+     . . # O . O . O # . .            . . O # . O O O . # O . . 
+    
+     The white (O) group in         This is a seki situation.  
+     this diagram is at the         If either Black (#) or white (O)
+     edge of the board.  It         plays in one of the two open 
+     has two holes or 'eyes'        spaces, then the other player can
+     inside, and therefore          capture.  Therefore, neither 
+     cannot be captured.            player will play here.
+
+It is advantageous to make the first move in a game.  To offset this
+advantage, extra points are usually subtracted from black's score.
+These points are called the 'komi'.  The komi is often set at 5.5
+points, which makes tie games impossible.
+
+More detailed introductions to the game are available from the archive
+site in postscript (RULES.PS.Z) and in Smart-Go format (RULES.SG).
+Beginners can also get comp/igo.zip from the archive site.  This is a
+stripped down version of Many Faces of Go for the IBM PC which
+includes play on the 9 by 9 board and some instructional material.
+
+
+
+3. What do those words mean?
+
+Go discussion in English typically uses many japanese go terms.  The
+most common ones are:
+
+joseki:  An established, or standard, sequence that ends in a more or
+	 less even result locally.  Usually appears in a corner, but
+         occasionally on a side or in the center.  Literal translation is
+	 "established stone(s)"
+
+tesuji:  A particularly clever local move.  Usually makes possible
+         something no other move would accomplish.  
+
+sente:   Initiative, ability to go elsewhere.  Opposite of gote.
+
+gote:    Forced to answer.  Opposite of sente.  
+
+atari:   A group which has one liberty left and hence is about to be
+         captured is in atari. 
+
+aji:     Potential.  Something that does not work, but may come to
+         work in the course of the game.  Literally "taste".  
+
+A much longer list can be found on the archive site in info/definitions.Z.
+
+A massive dictionary which translates between Japanese, English,
+Chinese (pinyin), Korean, Dutch, German, French, Swedish and Italian
+can also be found on the archive site in prog/intergo-1.11.tar.Z. 
+
+
+
+4. What books should I read? 
+
+Beginners may want to start with "The Magic of Go" by Cho Chikun or
+"The Second Book of Go".  The four book series "Graded Go Problems for
+Beginners" is good, as is the Elementary Go Series.
+
+A lengthy list of books is on the archive site:  info/books.Z 
+
+
+
+5. Where can I get go equipment, books, etc?  
+
+      Ishi Press International         Ishi Press International
+      1702-H Meridian Avenue, #193     PO Box 3288
+      San Jose, CA  95125              London England NW5 1RQ
+      Tel: (408)271-0415               Tel:  +44(0) 171 284 4898
+      FAX: (408)271-0416               FAX:  +44(0) 171 284 4899
+      Toll Free: (800)859-2086         gb@ishi-uk.demon.co.uk
+
+      Ishi Press
+      CPI Box 2126
+      Tokyo Japan
+      fax: +81-467-57-3069
+      SGT00076@niftyserve.or.jp}
+
+The email address ishius@ishius.com has been used for communication
+with Ishi but has been inactive for several months as of 21 March
+1996.  I am told that they plan to start reading mail there "soon".
+
+      Kiseido Publishing Company (Japan) 
+      CPO Box 2126
+      Tokyo, Japan
+      Fax: +81-467-57-3069
+      E-mail: (temporarily) SGT00076@niftyserve.or.jp
+
+      Kiseido (USA)
+      454 Las Gallinas Ave., #255
+      San Rafael, CA 94903-3618
+      E-mail: kiseido@crl.com
+      Phone/Fax: 415-499-1543 
+      Via fax/modem: 415-499-1543,,,,,,*51
+      
+      European distributor:
+      Schaak en Gowinkel het Paard
+      Haarlemmerdjik 147
+      1013 KH Amsterdam, Holland
+      Tel: +31-20-624-1171
+      Fax: +31-20-627-0885
+      E-mail: zandveld@mep.tno.nl
+
+According to Bill Franke, president of Kiseido (USA), the Kiseido
+Publishing Company in Japan has replaced Ishi Press (Japan) which is
+"essentially out of business".  Kiseido Publishing Company publishes
+Go books in English.  It sells software and equipment.  Kiseido has
+reprinted two of the Ishi Press Elementary Go series: K10 In the
+Beginning and K12 Tesuji.  
+
+Go World is now published by Kiseido and distributed in the USA by
+Kiseido.  Franke says that people with Go World subscriptions through
+Ishi should contact Kiseido and their subscriptions will be honored.
+Go World is US$20 for 4 issues in North America.  In Europe, new
+subscriptions and renewals are handled by the European distributor.
+Old subscriptions are still handled by Ishi UK.
+
+Another source for go equipment is 
+
+     Yutopian
+     2255 29th Street
+     Suite 3
+     Santa Monica, CA 90405
+     USA     
+     Phone: (310)392-7988
+             800-YUTOGO-3
+     FAX:   (310)392-7598
+     email: yutopian@netcom.com, yutopian@aol.com
+     ¬http://www.webwind.co
+
+Yutopian carries boards, stones, English video tapes, computer
+programs and books in Chinese and English.  
+
+They publish The American Go Extra ($5 for 4 issues).
+Books published: Killer of Go by Sakata, A Compendium of Trick Plays,
+Nie Weiping on Go, and Fighting Ko.
+
+
+Good Move Press is published a series entitled "Learn To Play Go".
+Two books are presently available.  The first book comes with a punch
+out go set.  Sample pages the tables of contents are available on
+their web site. 
+
+     Good Move Press
+     105 Duane Street #38B
+     New York, NY 10007-3611
+     Tel: (800) 600-4373
+     Fax: (201) 385-1361
+     ¬http://www.edge.net/~gmpress
+
+Products from Ishi, Kiseido, Yutopian and Good Move Press can be
+ordered from ¬http://www.portal.com/~rww/top_go.html.
+
+Crystalline Creations (formerly Toyogo) sells some books and a pamphlet
+called Instant Go Volume 1.
+     Crystalline Creations
+     P.O. Box 8289
+     N. Brattleboro, VT 05304
+     800-869-6469  
+     802-896-6121
+     802-896-9449 FAX
+     nemesis.go@applelink.apple.com
+
+
+Four foot teaching boards with magnetic stones are available from GMI.
+Contact rondoc@rain.org for more information. 
+
+
+
+6. How does the ranking system work?
+
+The ranks are "kyu" and "dan".  Kyu means pupil and dan means master,
+but there is no qualitative difference.  The ranks are like positive
+and negative numbers (with no zero).  A beginner starts out with a
+high kyu rank (20-30 kyu) and advances to the strongest kyu rank of 1
+kyu.  The next rank above 1 kyu is 1 dan (shodan), and the dan ranks
+proceed upward to 7 dan.  On the 19x19 board, the number of handicap
+stones is the difference between the ranks.  A 3 kyu gives seven
+stones to a 10 kyu.  A 2 dan gives 2 stones to a 1 kyu.  The
+professional go players have a separate dan scale which goes from 1
+dan to 9 dan.  The professional scale has finer gradations than the
+amateur scale: the difference between 9 dan and 1 dan is about 2
+stones.
+
+You can determine your strength only by playing aginast others with
+known strength.  There are books like "Test Your Rating", but those
+tests are very unreliable. 
+
+On a 13x13 board, if the rank difference is "diff", then the following
+table gives the handicap and komi:
+
+diff   Handicap  Komi     diff   Handicap  Komi     diff   Handicap  Komi
+  0        0      8.5       7        3      5.5      14        5      2.5
+  1        0      5.5       8        3      2.5      15        5     -0.5
+  2        0      2.5       9        3     -0.5      16        6      5.5
+  3        0     -0.5      10        4      5.5      17        6      2.5
+  4        2      5.5      11        4      2.5      18        6     -0.5
+  5        2      2.5      12        4     -0.5      19        6     -3.5
+  6        2     -0.5      13        5      5.5      20        6     -6.5
+
+Instead of trying to remember the table, you can use this formula to
+calculate these numbers: Let d be the difference in rank.  Pick r so
+that (d + r) is a multiple of three.  The number of handicap stones is
+(d + r)/3.  The number of komi points is 3r - 0.5.
+
+On a full sized board, a handicap of 2 stones is about 15 points.  The
+third stone is worth 11 more, and each additional stone is worth one
+point more than the last.  Hence a five stone handicap is worth 15 +
+11 + 12 + 13 = 51 points.  A 9 stone handicap is thus worth 113
+points.
+
+This is a chart showing  
+the number of handicap   Amateur |        Professional Rank
+stones needed for a        rank  |------------------------------------
+real (non-teaching)       (dan)  |  1 - 3 dan   4 - 6 dan   7 - 9 dan
+game between amateur     ---------------------------------------------
+dan players and             1    |  8 - 9         -           -
+professionals.  Max         2    |  7 - 8       8 - 9         -
+Golem who posted this       3    |  6 - 7       7 - 8       8 - 9
+chart to rec.games.go       4    |  5 - 6       6 - 7       7 - 8
+says, "If you want to       5    |  4 - 5       5 - 6       6 - 7
+find out how strong a       6    |  3 - 4       4 - 5       5 - 6
+pro really is, play him     7    |  <= 3        <= 4        <= 5
+for money!"
+
+
+
+7. Is there a go club in...?
+
+Before asking the net, you should consult the appropriate lists of Go
+clubs which are on the archive site.  All of the lists except the AGA
+list are in the info directory.  They are:
+
+        aga/clubs.94            Clubs affiliated with the AGA
+        clubs.german.Z          Clubs in Germany
+        clubs.ishi.Z            Clubs on Ishi's mailing list
+        clubs.british.Z         Clubs in Britain
+        clubs.australia.Z       Clubs in Australia
+        clubs.sweden.Z          Clubs in Sweden
+        clubs.canada.Z          Clubs in Canada
+        clubs.chile.Z           Clubs in Chile
+
+
+
+8. What is the IGS?  NNGS?  How do I use them?
+
+The IGS is operating from:   igs.nuri.net 6969
+                            (203.255.112.3 6969)
+
+The NNGS is operating from:  ra.york.cuny.edu 9696 
+                                (198.61.17.11 9696)
+
+The European Go Server is operating from:
+                            grizu.uni-regensburg.de 9696
+                               (132.199.208.131 9696)
+
+Chinese Go server:          bbs.ncic.ac.cn 9696
+                            (159.226.43.26 9696)
+
+Internet go servers are the most popular way of playing realtime
+interactive go games by computer.  The first and largest server is the
+Internet Go Server (IGS).  If you can't find a go club then you can
+use these servers as electronic clubs.
+
+You can connect to a server and look for opponents to play or just
+watch a game.  To connect directly to the IGS from a unix machine,
+type "telnet igs.nuri.net 6969".  The IP number is 203.255.112.3.
+When you connect for the first time, log in as "guest".  In order to
+gain full access to the IGS you will have to register for an account.
+Type "help register" to get information about registering.  When
+connecting to the IGS, you must connect to telnet port 6969.  Be SURE
+to use the port number 6969.  Please be ABSOLUTELY sure to use the
+port number 6969.  If you are on a VMS system, the port is specified
+with "/port=6969" after the tenet command.  The IGS is also run on a
+site in France: flamingo.pasteur.fr (157.99.64.12).
+
+Once connected to the IGS, you will need to use the help command to
+learn how to use the interface.  There is NO other accurate
+information about the IGS available.  Ancient (and hence innacurate)
+LaTeX and Postscript versions of the server's help files are available
+from the archive site as igs/igs.ps.Z and igs/igs.tex.Z.  A more
+recent (but still outdated) copy of the IGS helpfiles is in
+igs/helpfiles.Z.
+
+New users should read the file Etiquette on the archive site which
+explains how to behave when using the IGS, and when playing Go.  
+
+The server interface is quite awkward, so several client programs are
+available to ease your interaction with the server.  They are
+all available on the archive site in the Go/clients directory:
+
+igc0751.sh.Z            ASCII client for Unix
+xigc_v3.92.tar.Z        X11 client
+xgospel-1.10d.tar.Z     X11 client
+kgo11.tar.Z             X11 client
+kgo_vms_v11.tar         X11 VMS client
+cgoban-1.4.2.tar.gz      X11 client
+pcigc51x.exe            IBM PC client WITH MODEM
+tgigc35.zip             IBM PC client for EGA/VGA WITH MODEM
+igc075.zip	        IBM PC, ethernet with Clarkson packet drivers
+jiango20.zip            IBM PC client
+gs1.46.sea.hqx          Macintosh client
+macgo.35.hqx            Macintosh client
+macgo.35.ppc.hqx        Macintosh client for powermac
+stigcbin-1.9.zoo        Atari ST client
+nextgo-NIHS.tar.Z       NeXT client
+amigaigc077.lha         Amiga client
+winigc69.zip		MS Windows, modem or Winsock
+wigc1_4.zip             MS Windows with Winsock (without modem)
+haicli10.zip            Win32s client with Winsock
+
+DOS users may wish to consult clients/help.dos for information on
+using either tgigc or pcigc.  
+
+Linux users may wish to use a utility called term which provides
+pseudo TCP/IP.  This program is available from the linux archives.
+
+Xgospel binaries for various machines are available from 
+¬ftp://ftp.ifi.uio.no:/pub/obh/xgospel.  
+
+To access IGS or NNGS from Compuserve, download compuserve's WinCIM.
+With this package, the Compuserve Internet Dialer will be used together
+with an IGS client.  To access a server dial Compuserve using
+the internet dialer.  When connected, start a client (like WIGC). 
+
+In order to use the IGS, you must be able to use telnet.  You can pay
+to get this capability through Holonet.  To find your closest number
+for a free demo, conneect by modem to 1-800-NET-HOLO.  For more
+information, send email to info@holonet.mailer.net.  Another service
+that provides telnet ability is Delphi.  Call 1-800-695-4005 for more
+information.
+
+For more help see ¬http://www.well.com/user/mmcadams/igs.howto.html.
+
+If you are interseted in running your own Go server, the source code
+for the NNGS is available at ¬ftp://imageek.york.cuny.edu/nngs/src/.
+
+
+
+
+9. How do I play games by computer? 
+
+Since computers make poor opponents, we use them to connect us to
+other humans.  There are two types of computer games: email, and
+interactive.  Email games can be handled manually, by creating a board
+in an editor, or only exchanging move coordinates.  The other option
+is the use the unix program 'mailgo' which is included with mgt
+(mgt/mgt231.sh.Z).  It sends Smart-Go records of your game back and
+forth, and invokes mgt for moves.
+
+There are several ways to play interactive games.  Probably the most
+popular is the Internet Go Server (IGS) which was described in the
+previous section.  Another interactive options is the internet go
+program, available on the archive site as prog/inetgo72.sh.Z, which
+allows BSD Unix users to play interactive games with ascii text
+screens.  The xgosh program (prog/xgosh17.sh.Z on the archive site)
+allows people with X-Windows to play interactive games with a
+graphical board.  The two interactive programs are NOT compatible.  A
+third program XMango (prog/xmango10.tar.Z) also permits interactive
+play with X.  Windigo (prog/windigo0.zip) for MS Windows permits play
+over a LAN.
+
+To help find suitable opponents, check out the go players email
+address list, available on the archive site as go-players, and also
+posted monthly. 
+
+There is a standard go modem protocol which is used by go programs for
+modem play.  It is implemented in Many Faces of Go, Nemesis, Smart
+Game Board and Telego (a shareware go modem program for the IBM PC).
+The protocol spec and sample code are available from the archive site
+as prog/protocol.Z.
+
+Fotland's program, Many Faces of Go for X Windows on HP machines
+supports two players on two screens.
+
+The Imagination Network provides on line game players for IBM-PC
+owners with a modem.  They have Go, Chess, Checkers, Othello, bridge,
+Cribbage, Hearts, as well as a Dungeon game and a multiplayer flight
+simulator.  Graphics are pretty good, software is free.  Connect
+charge is $12.95 per month for 30 hours.  Call 1-800-SIERRA1 to sign
+up.
+
+An electronic Go club is present on NovaNet, a Computer-Aided Learning
+system that is installed in schools.  NovaNet uses a special terminal
+program, with color graphics, mouse and sound support.  To find out
+more, contact Dietrich Schuschel at schuschel-dialup@nova.novanet.org
+or schuschel/dialup/nova.  NovaNet accounts are available from Bill
+Strutz, (217) 244-4300.  Cost is $2.50/hour usage and $10 for the
+terminal program (spec Mac, IBM, Sun, X format).  The lesson name is
+goclub.
+
+
+
+10. What are the different game record formats and how can I display them? 
+
+There are several different formats for game records.  The two most 
+popular formats are Smart-Go and Ishi "Standard" Format.  Definitions 
+for these two formats are on the archive site in info/smartgo.def.Z and 
+prog/standard.sh.Z respectively. 
+
+The Liberty format is a binary format which is not common.  Many of 
+the files on the archive site are presently in this format.  They can 
+be converted to other formats with prog/convert.tar.Z. 
+
+There is a program prog/sg2ishi05.sh.Z or prog/sg2ishi05.zip on the
+archive site which attempts to convert Smart-Go to Ishi format.  It
+cannot handle variations, and has problems with the short form of
+Smart-Go.  A second option is the SG2GO program contained in the
+prog/gobase20.zip utilities.  This is available as C source or as an
+IBM PC executable and does handle variations.
+
+
+
+11. What programs can I get to display go game records? 
+
+The program mgt will display game records under Unix (either ascii or
+X11), MSDOS, MS-Windows, Atari ST or RISCOS.  The Unix and MSDOS
+versions do not use graphics, however.  The mgt program was created
+originally by Greg Hale at the request of rec.games.go readers who
+wanted an interactive program that would read a series of tutorial
+files posted to the net.  The program was expanded by Adrian Mariano
+to edit and save game records. The purpose of mgt is to display and
+edit game records in Smart-Go format.  It can be used to display a
+game board.  Pieces can be placed and removed, and games can be
+scored.  Mgt is in mgt/mgt231.sh.Z (Unix ascii), mgt/xmgt231.tar.Z
+(Unix X11), mgt/mgt231.zip (MSDOS) mgt/stmgt.zoo (Atari ST),
+mgt/winmgt60.zip (MS WINDOWS), mgt/arcmgt101 (Acorn Archimedes).
+
+Many other programs have been written to display and edit these
+formats:
+
+ Program    OS    formats   edit?  Where can I get it?
+mgt        many    sgf       yes    mgt/
+wingo      win     sgf        ?     prog/wingo1.zip
+yago       win     sgf,ishi  no     prog/yago07.zip
+sgview     dos     sgf        ?     prog/sgview11.zip
+gorecord   dos     sgf       yes    prog/record12.exe
+telego     dos     ishi      no     prog/telego44.zip
+tgigc      dos     ishi      no     clients/tgigc35.zip
+goscribe   dos     ishi      yes    Ishi press ($60)
+xgoban     X11     sgf       yes    prog/xgoban-1.0.sh.Z
+xsgfedit   X11     sgf       yes    prog/xsgfedit-1.01.tar.Z
+cgoban     X11     sgf       yes    prog/cgoban-1.4.2.tar.gz
+"go"       unix    ishi       ?     prog/go.sh.Z
+NeXTGo     NeXT    sgf        ?     clients/nextgo-NIHS.tar.Z
+Pon Nuki   mac     sgf,ishi  yes    prog/ponnuki10.hqx
+smart go   mac     sgf       yes    prog/smartgo41.hqx
+gob        os/2    sgf,ishi   ?     prog/gob12.zip
+
+The xgoban program is also available compiled for linux as
+prog/xgoban-linux.tar.Z.  In addition to displaying Smart Go, this
+program can communicate with wally to provide a graphical interface.
+
+Go Record can display chinese comments.  The program sgview is written
+in German with both German documentation and German program text.
+
+
+
+
+12. What are the differences between different rules?
+
+Several minor variations in the rules can change the game slightly.  
+
+Scoring
+
+  Under Japanese rules, the score is calculating by counting points of
+  territory and subtracting the number of captured stones.  Points in
+  seki are not counted, even if they are completely surrounded by one
+  player.  
+
+  Under Chinese rules, the score is calculating by counting points of
+  territory and stones left on the board.  The number of captures is
+  not counted.  Points surrounded in seki are counted as territory and
+  points shared in seki are counted as 1/2 point for each player.
+  Because the sum of the scores is always 361, only one color needs to
+  be counted.  
+
+  The komi for Japanese scoring is a number of points to subtract from
+  black's score.  With Chinese counting, the komi is a number of extra
+  white stones to place in black's territory.  Placing a white stone
+  in black's territory gives white one point and deprives black of one
+  point, so the total value is 2 points.  A 2.75 stone komi
+  corresponds to a 5.5 point komi.
+
+  In handicap games, the Japanese system makes no adjustment, but the
+  Chinese system deducts half of the handicap from black's score and
+  adds it to white's.
+
+  In the absence of sekis, and assuming that white plays last, these
+  two scoring systems will produce the same score difference.  
+
+  The big difference between the systems is that under the Japanese
+  system, players are penalized for playing inside their own
+  territory.  This makes it difficult to resolve disputes about the
+  life status of groups on the board at the end of the game.  Until
+  recently, the Japanese rules handled this by enumerating cases at
+  great length.  
+
+  A famous example is the "bent four in the corner".  
+
+  # # . O # . .  What is the status of the white group?  If black (#)
+  # O O O # . .  plays inside, then white must capture.  Then black 
+  . O # # # . .  can start a ko fight.  Only black can start the fight.
+  O O # . # . .  If white plays, the white stones are dead.  Therefore,
+  # # # # . # .  black will not start the fight until the end of the 
+  . . . # # # .  game after black has removed enough of white's ko 
+  . . . . . . .  threats so that black will win the fight.  
+
+  Under the old Japanese rules, the white group would have been ruled
+  unconditionally dead.  Under Chinese counting, the status of the
+  group depends on the number of ko threats.  If white has unremovable
+  ko threats, the white group may live.  A seki can provide an
+  unremovable ko threat.
+
+  The Nihon Ki-in adopted new rules in 1989 which remove the special
+  rulings like the bent four ruling.  The new rules say that to
+  resolve life and death questions at the end of the game, you play
+  them out on a different board.  While playing these disputes, the ko
+  rule is altered: the only legal ko "threat" is "pass".  This means
+  that direct ko fights are automatically won by the first player to
+  capture.  With this new rule, the bent four is still unconditionally
+  dead.
+
+  The GOE rules use Chinese counting.  Before 1991, these rules had a
+  more complex way of counting shared points in seki.  Instead of
+  dividing them equally, they were divided in proportion to the number
+  of stones each player had around the disputed point.
+
+  . . . . .  With the pre-1991 GOE rules, this situation would have   
+  . # # # #  split the left point 2/3 for white (O) and 1/3 for black.
+  . # O O O  The right point would have been divided evenly.           
+  # # O # O  So black would get 5/6 points and white would get 7/6.   
+  # O O # O  This method was abandoned because dealing with the various
+  # O . # .  fractions was annoying.  
+
+Suicide
+
+  Suicide is playing a stone which does not capture an enemy group,
+  but does remove the last liberty of one of your own groups.  Since
+  your group has no liberties, it is immediately removed from the
+  board.  It is possible to use suicide to make ko threats available
+  sooner.  There are even situations where suicide plays a direct role
+  in life and death problems.  
+
+   . . . . . . . . . 
+   . . . . . . . . . 
+   O O O O O . . . . If suicide is legal, black lives in seki.  If  
+   # # # # O . . . . suicide is forbidden, all the black stones die.
+   . . . # O . . . .                                                
+   O O O # O O O . . See games/suicide.sgf on the archive site for  
+   # . O # # # O . . details.                                       
+   # # O # . # O . . 
+
+Ko
+  
+  The purpose of the ko rule is to prevent infinite loops in the game.
+  The simplest way to do this is to forbid repeating a board position.
+  This is generally called the "superko" rule.  
+
+  The Japanese rules only prohibit immediate repetitions.  If the
+  players managed to form a longer loop, which can happen with three
+  simple kos on the board, then the game is is replayed.  This triple
+  ko situation has arisen in professional games.
+  
+  The GOE rules specify a very complicated ko rule involving a
+  distinction between "fighting" kos and "disturbing" kos.  
+  See info/ing.ko.rule.Z for some discussion of this rule.
+
+Handicap stones
+
+  Japanese rules dictate that the handicap stones be placed on the
+  star points in fixed patterns.  Other rule sets simply give black
+  free moves without restriction.  
+
+Pass stones
+
+  In order to bring Japanese counting and Chinese counting into
+  agreement, the AGA rules dictate that whenever a player passes, that
+  player must give a prisoner to the other player.  This stone is a
+  captured stone and will be counted as such if Japanese counting is
+  used.  AGA rules also require that white make the last move.  
+  This allows life and death disputes to be played out on the board
+  without changing the score, even though Japanese counting is used.  
+  Note also that AGA rules do award points for surrounded territory in
+  seki.  
+
+The full statement of the current GOE rules is on the archive site as
+igs/goe.rules.Z.  The AGA rules are in aga/aga.rules.Z.  
+
+
+
+13. What public domain programs can I get to play go? 
+
+Very few public domain programs exist.  Those that do are extremely
+weak. On the archive site, you will find comp/wally.sh.Z, which can be
+compiled anywhere.  If you think wally is too strong, you can get the
+even weaker gnugo from prep.ai.mit.edu in pub/gnu/gnugo-1.1.tar.gz.
+If you have X11, you can get xgoban from the archive site
+(prog/xgoban-1.0.sh.Z) to act as a graphical interface to either wally
+or gnugo.  A compiled version for linux is in prog/xgoban-linux.tar.Z.
+Macintosh users can try MacGo or Dragon Go (available on the archive
+site), though these programs are incompatible with some macs.  Amiga
+users can get Amigo (comp/amigo.lzh on the archive site).  Amigo has
+been ported to X11 (comp/xamigo.sh.Z) and to GEM atari
+(comp/gemamigo.zip).  If you have access to an HP9000 either 680x0
+based or HP-PA risc based, you can get Many Faces of Go for X11 from
+the archive site in comp/hp-xgo.tar.Z.  Many Faces of Go is available
+commercially for other platforms and is one of the strongest Go
+programs.  A restricted version of Many Faces of Go for the IBM PC
+which can play only on a nine by nine board is available from the
+archive site (comp/igo.zip).  This program makes a good introduction
+to the game.  EGO is a strong Go program which is distributed as
+shareware.  The restricted version EZ-GO is at comp/ez-go.zip and can
+play on a full board but only with unbalanced playing styles.  
+
+
+
+14. What commercial programs can I get to play go? 
+
+The information in this section may be somewhat out of date. Prices or
+version numbers may be wrong.
+
+  Program        Ver   Price  Platforms           Supplier
+Many Faces of Go 9.0    $59  dos               Ishi
+Star of Poland   3.1   $110  ?                 OPENetwork
+Nemesis          5      $69  mac, dos, win     Crystalline Creations
+Go Intellect     5.0    $59  mac               Yutopian
+Explorer                $25  mac               Anders Kierulf
+Handtalk         94.10  $59  dos               Yutopian
+Goliath                 $60  mac               Ishi
+Ego                     $25  dos               Bruce Wilcox
+GoTools          1.03   $59  dos               Yutopian (USA), Thomas Wolf
+Encyc Life/Death 1      $60  dos               Kiseido
+
+A demo version of Many Faces of Go which plays only on the 9x9 board
+is available free (comp/igo.zip).  Many Faces comes in a Basic version
+which has play on 19x19 board, move explanations, suggestions, hints,
+200 beginner problems, some commented pro games and go lessons from
+Zhu Jiu Jiang.  For an additional $60 you can get the Deluxe version
+which adds a joseki tutor, game editor, problem solver, modem play,
+conversion from Smart Go format to Ishi format, and over 100
+professional games.  
+
+Demo versions of Nemesis which only allow computer vs. computer play
+are available for mac, DOS and MS Windows on the archive site.
+(comp/nem-dos.zip, comp/nem-win.zip, comp/nemesis-mac.sea.hqx.)
+Nemesis Go Master Delux includes a Joseki tutor and a life and death
+analyzer.  It costs $139 from Crystalline Creations.  
+
+A restricted version of Ego is available at comp/ez-go.zip.  The
+restricted version plays on a full sized board but with unbalanced
+playing styles.  The full version can be ordered directly from Bruce
+Wilcox for $25.
+
+Explorer by Marin Mueller is shareware.  It is available from its home
+site ¬ftp://ftp.icsi.berkeley.edu/pub/theory/mmueller/Explorer.sit.hqx
+or it can be obtained from the archive site in comp/explorer.sit.hqx.
+
+Contact information for Ishi Press, Kiseido Yutopian and Crystalline
+Creations appears in section 5.
+
+OPENetwork 
+215 Berkeley Pl. 
+Brooklyn, NY 11217 
+(718) 638-2266 
+
+Anders Kierulf 
+Smart Game Board 
+P.O. Box 7751 
+Menlo Park, CA  94026-7751 
+
+Bruce Wilcox
+8249 Shelter Creek Lane
+San Bruno, CA 94066
+wilcox@slip.net
+
+
+GoTools by Thomas Wolf only does life and death problems.  The program
+comes with 10000 problems, it can create new problems, and solve
+problems posed by the user.  For an additional $39 you can get 12000
+more problems and support for LaTeX printing of Go diagrams.  Outside
+of the US, the program can be ordered directly from the author for 39
+pounds.  See the WWW page below for more information on this program.
+
+Thomas Wolf
+30 Ernald Avenue
+East Ham
+London E6 4NS
+UK
+Tel: (+44)(0) 171 975 5493 daytime
+     (+44)(0) 181 470 6862 evening
+email: T.Wolf@qmw.ac.uk
+¬http://www.eng.ox.ac.uk/people/Harry.Fearnley/go/t.wolf.html
+
+
+
+15. How strong are the commercial programs?  
+
+(Much of this section is taken from posts by David Fotland, the author
+of Many Faces of Go.)
+
+It is difficult to rank the programs because they are all very 
+inconsistent in their play.  They may play a sequence of moves that 
+look dan level, or solve a dan level problem during play, but then a 
+few moves later they will make a move that a 20 kyu would never make.  
+Since none of the current programs can learn from their own mistakes, 
+when the same situation comes up they will make the same bad move 
+again. 
+
+A few years ago, the top program in the world (Goliath) claimed to be
+around 8 or 10 Kyu. Many Faces of Go and Nemesis claim to be 13 Kyu.
+Poka claims to be about 17 Kyu, and Dragon Go is about 17 kyu as well.
+These claims are generally based on games that are the first game the
+human has played against a computer.  Nemesis has played in AGA rated
+tournaments for its rating.
+
+At the 1995 FOST tournament a pro observed the games of the top
+programs and played against them.  Based on this, Handtalk was awarded
+a 5 Kyu diploma, Go4++ a 7 Kyu diploma, and Many Faces of Go an 8 Kyu
+diploma.
+
+David Fotland says, "I know someone who was having trouble beating
+Many Faces at 13 stones until I suggested he could beat it at 29
+stones.  He spent a few weeks trying odd moves and found some
+weaknesses, and now he has no trouble beating it at 29 stones. Each of
+the programs has different weaknesses, but they all tend to collapse
+tactically in a complicated position, so if attach and crosscut a lot
+you can usually win big."
+
+1995 World Computer Go Congress Results
+
+This year's competition had a smaller than usual field of 10 programs.
+Since there were only 10 programs, and the results of the first 3 places
+were clear after 5 rounds, the sixth round was not played.
+
+The top programs are still fairly close.  Handtalk won all its games,
+but only beat Go Intellect and Go4++ by 9 points each.  Go4++ beat
+Go Intellect by 15 points, and in 3 additional friendship games after
+the tournament, Go intellect won two (by 35 and 23 points), and Go4++
+beat Go Intellect again by 60 points.  Many Faces and Go4++ were not
+paired in the tournament, but in 3 friendly games afterwards, Go4++ won
+two and Many Faces won one.
+
+Handtalk won NT$200,000 for first place, then went on to
+challenge 3 human experts at 15 stone handicap.  The 15 stone prize has
+been attempted 4 times before (by Goliath, Handtalk, and Go Intellect)
+without success.  This year, the human experts were 3 youth champions,
+9 or 10 years old.  They were given a few minutes to practice, then
+the games began.  Handtalk looked like it was doing very well, then
+around move 100, a reporter stepped on the main power cord and all the
+computers shut down.
+
+All 3 games were started from the beginning, and Handtalk went on to
+win 2 of the three games, losing to the 9 year old, and winning
+another 100,000 NT dollars.  Handtalk immediately challenged at the
+13 stone handicap and won 2 of three again, for another 133,333
+NT dollars.  Next year the Human challenge will be at 11 stones
+handicap.
+
+1st, 5 wins, Handtalk, by Chen ZhiXing
+2nd, 4 wins, Go4++, by Michael Reiss
+3rd, 3 wins, Go Intellect, by Ken Chen
+4th, 3 wins, Many Faces of Go, by David Fotland
+5th, 3 wins, Stone, by Kao Kuo Yuan and Chih-wen Hsueh
+6th, 2 wins, Explorer, by Martin Muller
+7th, 2 wins, Sason, by Chang Ho Lee
+8th, 2 wins, Big Stone, by Dong Chul Lee
+9th, 1 win,  Rex 95, by Han Jung Kim
+10th, 0 wins, Right Thought, by Min Ho Kwak
+
+Summary of results of computer go competitions:
+
+This competition takes place every November, with a prize of about
+US$6,000 for first place.  The top program gets to play a match
+against people at a handicap, for prizes from about US$6,000 to US$1.6
+Million.
+
+I include all programs that have participated more than once, or that
+finished in the top 4 places.  Programs are listed in order of long
+term relative strength, with recent results weighted slightly higher.
+
+87 - Ing, Taipei, Taiwan
+88 - Ing, Taipei, Taiwan
+89 - Ing, Taipei, Taiwan
+89o - 1st Computer Olympiad, London, England
+90 - Ing, Beijing, China
+91 - Ing, Singapore
+92 - Ing, Tokyo Japan
+93 - Ing, Chendu, China
+94 - Ing, Taipei, Taiwan
+95F - 1st FOST Cup, Tokyo, Japan
+95 - Ing, Seoul, Korea
+
+                                   87 88 89o 89 90 91 92 93 94 95F 95  rating
+ZhiXing Chen      Handtalk                          6  2  1  3  1   1   2.3
+Ken Chen          Go Intellect         5  4   3  2  2  1  3  1  4   3   2.8
+Michael Reiss     Go4++            10                           2   2   3.4
+David Fotland     Many Faces of Go  4  8      7    10  6  4  2  3   4   4.2
+Janusz Kraszek    Star Of Poland    9  4  3   6  3  5  5  2  4          4.5
+Mark Boon         Goliath           7  3  2   1  1  1  3                4.8
+Kao Kuo Yuan      Stone                7  5  10     7     6  5      5   5.7
+Dong-Yue Liu      Dragon            2  2  8  12  4  3                   6.1
+Japanese team     GOG                                  4                6.3
+Alfred Knoepfle   Modgo                   6         8     5  6          6.7
+Anders Kierulf/   Explorer                1   4  7 13     8         6   6.8
+Martin Mueller
+Toshikazu Sato    TY '96                                     9  5       7.0
+Noriaki Sanechica Igo                 10      5  6  4                   7.1
+Chung Ho Lee      Sason                             9    10  7      7   7.8
+Bruce Wilcox      Nemesis           5 11      2  5 11  7                9.0
+T. Yoshikawa      Dai Honinbo                    9 14  8 13    11      11.1
+K. Hayashi        Codan                1
+Loh-Tsi Wang      Friday            1
+Kaihu Chen        Peanut            3
+Allan Scarf       Microgo 2         6 13  7
+
+Rating is a weighted average of results, with each year weighted
+2/3 of year after it.  For years where a program did not participate,
+results are interpolated.  A program that has not participated recently
+is penalized one rank per year from its most recent result.
+
+
+
+If you are interested in computer go you may want to join the moderated
+computer-go mailing list.  The computer-go mailing was established in
+Feb 93 to discuss programming computers to play go.  The volume of
+mail on this list is rather low, but sometimes goes up in bursts.  To
+join the list, send a request to
+    listproc@listproc.anu.edu.au
+consisting of the line
+   SUBSCRIBE COMPUTER-GO <first_name> <last_name>
+To post to the list, send a message to 
+   computer-go@listproc.anu.edu.au
+Please do not post to the whole list your request to join or leave the
+list.  An archive of the mailing list is on the archive site in the
+files comp/compgo-mail-*.Z.  An automatically generated archive of all
+recent messages sent to the list is available from 
+¬ftp://ftp.comlab.ox.ac.uk/pub/Documents/computer-go/mail-archive.
+
+
+
+16. What computer go tournaments exist?  What are the prizes? 
+
+There is a North American Championship every year at the Go Congress
+the first week of August.  Plaques and the title of North American
+Computer Go Champion are the prizes.  There is a similar competition
+at the European Go Congress.  The Usenix conference used have a
+computer go competition every year, and may still - no prizes.
+
+The World Computer Go Congress, sponsored by Ing Chang Chi and several
+other companies including Hangul and Computer Company, has been an
+annual event since 1987.  They have a preliminary competition every
+August (formerly held in Europe, USA, and Japan, but now held in
+Taipei with programs that are mailed in by their authors).  If you do
+well in the preliminary (defined as beating two of 3 benchmark
+programs -- in 1994 the benchmarks were Handtalk, Stone and Modgo) you
+will be reimbursed for 1/2 of your air fare to the Congress.  If you
+beat last year's champ you travel for free.  The congress is held in
+November in various places.  It has been in Beijing (1990), Singapore
+(1991), Tokyo (1992), Chengdu in the Chinese province of Szechuan
+(1993), Taipai (1994), and in Seoul (1995).
+
+First prize for the best computer program is NT$200,000 (about
+US$8,000).  Second is about $1,000 and 3rd is about $500.  The winning
+computer program plays a 3 game series against three local kids and
+gets another $6000 if it wins.  This prize went unclaimed for five
+years, but in 1991 Goliath beat all three human challengers, so the
+handicap has been decreased to 14 moves.  The top prize for winning a
+7 game series against a professional (of unspecified rank) is about
+$1.6 Million.  The contest only runs through the year 2000 so the top
+prizes will go unclaimed.
+
+The Foundation for the Fusion of Science and Technology (FOST) is a
+non-profit organization, founded in June, 1994, to sponsor research on
+gaming and simulation as well as projects that bring together basic
+science and technology.  The FOST competition is held every September
+in Japan with a prize of 2,000,000 Yen (about US$20,000) for first
+place.
+
+
+
+17. What are the dimensions of a go board?  How do I make my own board?
+
+The official size according to Nihon Ki-in is 45.45 x 42.42 (cm).
+Measurements of an Ishi board indicate that the lines are 0.8 mm
+thick and the hoshi points are 3 mm in diameter.
+
+Stones are supposed to be 20-21 mm in diameter.  
+
+Net discussions about making your own board are on the archive site 
+in info/board.Z.  
+
+
+

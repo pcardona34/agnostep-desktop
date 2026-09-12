@@ -1,0 +1,88 @@
+{
+    "## Comment" = "Do NOT change this file, Gorm maintains it";
+    FSController = {
+	Actions = (
+	    "showSplash:",
+	    "showFunctionHelp:",
+	    "showInspector:",
+	    "removeTableFromTableBrowser:",
+	    "showInfoPanel:"
+	);
+	Outlets = (
+	    inspector,
+	    docBrowser,
+	    docOutline,
+	    inspector,
+	    docBrowser,
+	    docOutline
+	);
+	Super = NSDocumentController;
+    };
+    FSInspector = {
+	Actions = (
+	    "showInspector:"
+	);
+	Outlets = (
+	);
+	Super = NSObject;
+    };
+    FSPreferences = {
+	Actions = (
+	    "showPreferences:",
+	    "toggleShowBrowser:",
+	    "toggleSaveCompressed:"
+	);
+	Outlets = (
+	    tabView,
+	    showBrowserSwitch,
+	    saveCompressedSwitch,
+	    prefPanel
+	);
+	Super = NSObject;
+    };
+    FirstResponder = {
+	Actions = (
+	    "addDimension:",
+	    "addFormula:",
+	    "closeDocument:",
+	    "copyAsGraphic:",
+	    "copyStyle:",
+	    "exportTable:",
+	    "groupItems:",
+	    "hideItems:",
+	    "importTable:",
+	    "insertItem:",
+	    "moveItemDown:",
+	    "moveItemUp:",
+	    "newChartView:",
+	    "newTable:",
+	    "newTableView:",
+	    "openViewFromTableBrowser:",
+	    "orderFrontStylesPanel:",
+	    "orderFrontTableBrowser:",
+	    "pasteStyle:",
+	    "recalculate:",
+	    "removeTableFromTableBrowser:",
+	    "showFunctionHelp:",
+	    "showInfoPanel:",
+	    "showInspector:",
+	    "showItems:",
+	    "showPreferences:",
+	    "showSplash:",
+	    "sortItems:",
+	    "toggleAutoCalculation:",
+	    "toggleFormulaArea:",
+	    "toggleSaveCompressed:",
+	    "toggleShowBrowser:",
+	    "ungroupItems:"
+	);
+	Super = NSObject;
+    };
+    SLOutlineView = {
+	Actions = (
+	);
+	Outlets = (
+	);
+	Super = NSOutlineView;
+    };
+}
