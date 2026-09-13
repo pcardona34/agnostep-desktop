@@ -22,7 +22,7 @@ Searching_PRINCIPAL_CLASS = SearchingComponent
 Searching_LANGUAGES = English French German
 
 Searching_LOCALIZED_RESOURCE_FILES = \
-	Localizable.strings \
+	Localizable.strings
 
 
 ADDITIONAL_OBJCFLAGS = -Wall -Wno-import

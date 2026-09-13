@@ -11,33 +11,26 @@ add comments above this one
 /* Flag: unmatched */
 /* File: ArticleOpsToolbarDelegate.m:22 */
 /* Flag: unmatched */
-"View in WWW" = "Voir dans le navigateur Web";
+"View in WWW" = "View in WWW";
 
 /* File: FeedOpsToolbarDelegate.m:22 */
 /* Flag: unmatched */
 /* File: FeedOpsToolbarDelegate.m:51 */
 /* Flag: unmatched */
-"Fetch feed" = "Actualiser la source";
+"Fetch feed" = "Fetch feed";
 
 /* File: FeedOpsToolbarDelegate.m:28 */
 /* Flag: unmatched */
 /* File: FeedOpsToolbarDelegate.m:56 */
 /* Flag: unmatched */
-"Fetch all" = "Tout actualiser";
+"Fetch all" = "Fetch all";
 
 /* File: FeedOpsToolbarDelegate.m:35 */
 /* Flag: unmatched */
 /* File: FeedOpsToolbarDelegate.m:45 */
 /* Flag: unmatched */
-"Delete feed" = "Supprimer cette source";
-"Subscribe" = "S'abonner";
-"Subscribe to URL..." = "S'abonner à une source"; 
-"Delete" = "Supprimer";
-"New category" = "Nouvelle cat\U00E9gorie";
-"Feeds" = "Sources";
-"Headline" = "En-tête";
-"Rating" = "Popularit\U00E9";
-"Search" = "Chercher";
+"Delete feed" = "Delete feed";
+
 
 /*** Unmatched/untranslated keys ***/
 
@@ -49,4 +42,4 @@ add comments above this one
 /* File: FeedOpsToolbarDelegate.m:72 */
 /* Comment: The name of the Feed menu entry. It's important that this is the same name as in the Gorm file, otherwise the menu will not be filled. */
 /* Flag: unmatched */
-"Feed" = "Source d'information";
+"Feed" = "Feed";

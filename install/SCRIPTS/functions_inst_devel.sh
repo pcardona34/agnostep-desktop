@@ -96,6 +96,7 @@ function install_gorm()
 clear
 APPNAME=Gorm
 RELEASE="1.5.0"
+HUB="https://github.com"
 
 STR="$APPNAME $RELEASE"
 subtitulo
@@ -103,17 +104,23 @@ subtitulo
 cd ../build || exit 1
 
 printf "Fetching...\n"
-if [ -d apps-gorm ];then
-        cd apps-gorm
-        git pull origin master &>/dev/null
-else
-        git clone --branch=master "https://github.com/gnustep/apps-gorm" &>/dev/null
-        cd apps-gorm
-fi
+#if [ -d apps-gorm ];then
+#        cd apps-gorm
+#        git pull origin master &>/dev/null
+#else
+#        git clone --branch=master "https://github.com/gnustep/apps-gorm" &>/dev/null
+#        cd apps-gorm
+#fi
+fetch $HUB/gnustep/apps-gorm/archive/refs/tags/gorm-1_5_0.tar.gz
+gunzip --force gorm-1_5_0.tar.gz
+tar -xf gorm-1_5_0.tar && rm gorm-1_5_0.tar
+mv apps-gorm-gorm-1_5_0 gorm
+
 clear
 subtitulo
 ok "$APPNAME fetched"
 
+cd gorm
 
 CHECK="YES"
 _build
@@ -133,23 +140,30 @@ function install_pc()
 clear
 APPNAME=ProjectCenter
 RELEASE="0.7.0"
-
+HUB="https://github.com"
 STR="$APPNAME $RELEASE"
 subtitulo
 
 cd ../build || exit 1
 
 printf "Fetching...\n"
-if [ -d apps-projectcenter ];then
-        cd apps-projectcenter
-        git pull origin master
-else
-        git clone --branch=master "https://github.com/gnustep/apps-projectcenter"
-        cd apps-projectcenter
-fi
+#if [ -d apps-projectcenter ];then
+#        cd apps-projectcenter
+#        git pull origin master
+#else
+#        git clone --branch=master "https://github.com/gnustep/apps-projectcenter"
+#        cd apps-projectcenter
+#fi
+fetch $HUB/gnustep/apps-projectcenter/releases/download/projectcenter-0_7_0/ProjectCenter-0.7.0.tar.gz
+gunzip --force ProjectCenter-0.7.0.tar.gz
+tar -xvf ProjectCenter-0.7.0.tar && rm ProjectCenter-0.7.0.tar
+mv ProjectCenter-0.7.0 projectcenter
+
 clear
 subtitulo
 ok "$APPNAME fetched"
+
+cd projectcenter || exit 1
 
 CHECK="YES"
 _build

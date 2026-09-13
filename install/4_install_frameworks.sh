@@ -80,7 +80,7 @@ install_performance
 install_webservices
 install_steptalk
 install_dbuskit
-install_popplerkit
+#install_popplerkit #Buggy:do not install
 
 ####################################
 

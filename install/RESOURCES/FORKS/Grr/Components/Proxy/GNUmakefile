@@ -19,7 +19,7 @@ Proxy_PRINCIPAL_CLASS = ProxyComponent
 Proxy_LANGUAGES = English French German
 
 Proxy_LOCALIZED_RESOURCE_FILES = \
-	ProxyComponent.gorm \
+	ProxyComponent.gorm
 
 
 ADDITIONAL_OBJCFLAGS = -Wall -Wno-import

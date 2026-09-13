@@ -19,7 +19,7 @@ SubscriptionPanel_LANGUAGES = English French German
 
 SubscriptionPanel_LOCALIZED_RESOURCE_FILES = \
 	SubscriptionPanel.gorm \
-	Localizable.strings \
+	Localizable.strings
 
 
 ADDITIONAL_OBJCFLAGS = -Wall -Wno-import

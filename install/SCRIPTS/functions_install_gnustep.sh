@@ -61,15 +61,29 @@ GUI=gui
 BACK=back
 
 printf "\nGNUstep Tools Make\n"
-git clone $HUB/gnustep/$GSMAKE | tee -a $LOG
+#git clone $HUB/gnustep/$GSMAKE | tee -a $LOG
+fetch $HUB/gnustep/tools-make/releases/download/make-2_9_3/gnustep-make-2.9.3.tar.gz
+gunzip --force gnustep-make-2.9.3.tar.gz
+tar -xf gnustep-make-2.9.3.tar && rm gnustep-make-2.9.3.tar
+mv gnustep-make-2.9.3 make
+
 ok "Done"
 
 printf "\nGNUstep Base\n"
-git clone $HUB/gnustep/$BASE | tee -a $LOG
+#git clone $HUB/gnustep/$BASE | tee -a $LOG
+fetch $HUB/gnustep/libs-base/releases/download/base-1_31_1/gnustep-base-1.31.1.tar.gz
+gunzip --force gnustep-base-1.31.1.tar.gz
+tar -xf gnustep-base-1.31.1.tar && rm gnustep-base-1.31.1.tar
+mv gnustep-base-1.31.1 base
+
 ok "Done"
 
 printf "\nGNUstep Gui\n"
-git clone $HUB/gnustep/$GUI | tee -a $LOG
+#git clone $HUB/gnustep/$GUI | tee -a $LOG
+fetch $HUB/gnustep/libs-gui/releases/download/gui-0_32_0/gnustep-gui-0.32.0.tar.gz
+gunzip --force gnustep-gui-0.32.0.tar.gz
+tar -xf gnustep-gui-0.32.0.tar && rm gnustep-gui-0.32.0.tar
+mv gnustep-gui-0.32.0 gui
 
 ### Experimental for WMDock by gcasa
 #cd $GUI
@@ -78,16 +92,21 @@ git clone $HUB/gnustep/$GUI | tee -a $LOG
 #cd ..
 
 ### Reverting to standard libs-gui
-cd $GUI
-git switch master
-git pull
-cd ..
-
+#cd $GUI
+#git switch master
+#git pull
+#cd ..
 
 ok "Done"
 
 printf "\nGNUstep Back\n"
-git clone $HUB/gnustep/$BACK | tee -a $LOG
+#git clone $HUB/gnustep/$BACK | tee -a $LOG
+fetch $HUB/gnustep/libs-back/releases/download/back-0_32_0/gnustep-back-0.32.0.tar.gz
+gunzip --force gnustep-back-0.32.0.tar.gz
+tar -xf gnustep-back-0.32.0.tar && rm gnustep-back-0.32.0.tar
+mv gnustep-back-0.32.0 back
+
+
 ok "Done"
 }
 
@@ -148,11 +167,10 @@ PID=$!
 spinner
 
 printf "\rBuilding...\n"
-#make -j8 &>>$LOG &
-make -j8
-#PID=$!
-#spinner
-sleep 10
+make -j8 &>>$LOG &
+#make -j8
+PID=$!
+spinner
 
 printf "\rInstalling...\n"
 sudo -E make install &>>$LOG &
@@ -195,7 +213,8 @@ sudo ldconfig
 
 function is_gnustep_ok
 {
-STR="Checking GNUstep installation..."
+PART="$1"
+STR="Checking $PART installation..."
 subtitulo
 
 local _COUNT=0
@@ -210,10 +229,10 @@ if [ $? -eq 0 ];then
 fi
 
 if [ ${_COUNT} -ne 0 ];then
-	alert "GNUstep installation has generated ${_COUNT} errors: check the logs."
+	alert "$PART installation has generated ${_COUNT} errors: check the logs."
 	exit 1
 else
-	info "GNUstep installation was successful. You can go forward."
+	info "$PART installation was successful. You can go forward."
 	sleep 5
 fi
 }

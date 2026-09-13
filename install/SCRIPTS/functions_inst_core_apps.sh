@@ -166,6 +166,7 @@ sleep $SLEEP
 function install_gworkspace()
 {
 clear
+HUB="https://github.com"
 APPNAME=GWorkspace
 RELEASE="1.1.0"
 CONFIG_ARGS="--with-inotify --enable-gwmetadata"
@@ -178,16 +179,24 @@ subtitulo
 cd ../build || exit 1
 
 printf "Fetching...\n"
-if [ -d apps-gworkspace ];then
-	cd apps-gworkspace
-	git pull
-else
-	git clone --branch=master "https://github.com/gnustep/apps-gworkspace"
-	cd apps-gworkspace
-fi
+fetch $HUB/gnustep/apps-gworkspace/releases/download/gworkspace-1_0_0/gworkspace-1.1.0.tar.gz
+gunzip --force gworkspace-1.1.0.tar.gz
+tar -xf gworkspace-1.1.0.tar && rm gworkspace-1.1.0.tar
+mv gworkspace-1.1.0 gworkspace
+
+#if [ -d apps-gworkspace ];then
+#	cd apps-gworkspace
+#	git pull
+#else
+#	git clone --branch=master "https://github.com/gnustep/apps-gworkspace"
+#	cd apps-gworkspace
+#fi
+
 clear
 subtitulo
 ok "$APPNAME: Fetched"
+
+cd gworkspace || exit 1
 
 ### Patch: fix 'Downloads' L18N in FSNode
 printf "Applying a L18N patch...\n"
@@ -418,27 +427,33 @@ function install_systempreferences()
 {
 clear
 APPNAME="SystemPreferences"
-RELEASE="1.2.0"
+RELEASE="1.2.1"
 CONFIG_ARGS=""
 BUILD_ARGS=""
 INSTALL_ARGS=""
-
+HUB="https://github.com"
 STR="$APPNAME $RELEASE"
 subtitulo
 
 cd ../build || exit 1
 
 printf "Fetching...\n"
-if [ -d apps-systempreferences ];then
-	cd apps-systempreferences
-	git pull
-else
-	git clone --branch=master https://github.com/gnustep/apps-systempreferences
-	cd apps-systempreferences || exit 1
-fi
-clear
+#if [ -d apps-systempreferences ];then
+#	cd apps-systempreferences
+#	git pull
+#else
+#	git clone --branch=master https://github.com/gnustep/apps-systempreferences
+#	cd apps-systempreferences || exit 1
+#fi
+#clear
+fetch $HUB/gnustep/apps-systempreferences/releases/download/systempreferences-1_2_1/SystemPreferences-1.2.1.tar.gz
+gunzip --force SystemPreferences-1.2.1.tar.gz
+tar -xf SystemPreferences-1.2.1.tar && rm SystemPreferences-1.2.1.tar
+mv SystemPreferences-1.2.1 SystemPreferences
 subtitulo
 ok "$APPNAME: Fetched"
+
+cd SystemPreferences || exit 1
 
 _build
 

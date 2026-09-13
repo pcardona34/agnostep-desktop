@@ -18,8 +18,7 @@ ArticleOperations_PRINCIPAL_CLASS = ArticleOperationsComponent
 ArticleOperations_LANGUAGES = English French German
 
 ArticleOperations_LOCALIZED_RESOURCE_FILES = \
-	Localizable.strings \
-
+	Localizable.strings
 
 ADDITIONAL_OBJCFLAGS = -Wall -Wno-import
 

@@ -39,6 +39,7 @@ GSBUILD="../build/GNUstep_Build"
 . SCRIPTS/colors.sh
 . SCRIPTS/spinner.sh
 . SCRIPTS/functions_prep.sh
+. SCRIPTS/fetcher.sh
 . SCRIPTS/functions_install_gnustep.sh
 
 ### End of include functions
@@ -104,31 +105,34 @@ install_base
 sudo ldconfig
 . $GS_SCRIPT
 
+# Checking...
+cd $THERE
+is_gnustep_ok "$BASE" || exit 1
+
 #################################################
 ## Build GNUstep GUI
 
-cd ${THERE}
 cd ${GSBUILD} || exit 1
 install_gui
 
 sudo ldconfig
 . $GS_SCRIPT
 
+# Checking...
+cd $THERE
+is_gnustep_ok "$GUI" || exit 1
+
 #################################################
 ## Build GNUstep back
 
-cd ${THERE}
 cd ${GSBUILD} || exit 1
 install_back
 
 sudo ldconfig
 . $GS_SCRIPT
 
-info "Building of GNUstep is done."
-
-#################################################
-### Checking...
-
+# Checking...
 cd $THERE
-is_gnustep_ok || exit 1
+is_gnustep_ok "BACK" || exit 1
 
+ok "Building of GNUstep was successfully done."

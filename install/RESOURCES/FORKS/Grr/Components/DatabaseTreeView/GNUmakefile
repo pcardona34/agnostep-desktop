@@ -18,7 +18,7 @@ DatabaseTreeView_PRINCIPAL_CLASS = DatabaseTreeViewController
 DatabaseTreeView_LANGUAGES = English French German
 
 DatabaseTreeView_LOCALIZED_RESOURCE_FILES = \
-	DatabaseTreeViewController.gorm \
+	DatabaseTreeViewController.gorm
 
 
 ADDITIONAL_OBJCFLAGS = -Wall -Wno-import

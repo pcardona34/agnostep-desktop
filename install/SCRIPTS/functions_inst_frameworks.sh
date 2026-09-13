@@ -544,7 +544,8 @@ sleep $SLEEP
 ###############################
 
 ###############################
-### PopplerKit
+### PopplerKit: buggy!!!
+### Do not install
 
 function install_popplerkit
 {

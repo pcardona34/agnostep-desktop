@@ -21,8 +21,8 @@
 
 #import <AppKit/AppKit.h>
 
-#import "../../../../build/apps-gworkspace/GWMetadata/MDFinder/MDFinder.h"
-#import "../../../../build/apps-gworkspace/GWorkspace/GWorkspace.h"
+#import "../../../../build/gworkspace/GWMetadata/MDFinder/MDFinder.h"
+#import "../../../../build/gworkspace/GWorkspace/GWorkspace.h"
 
 #import "MyDelegate.h"
 

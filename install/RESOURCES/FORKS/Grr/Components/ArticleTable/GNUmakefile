@@ -18,7 +18,7 @@ ArticleTable_PRINCIPAL_CLASS = ArticleTablePlugin
 ArticleTable_LANGUAGES = English French German
 
 ArticleTable_LOCALIZED_RESOURCE_FILES = \
-	ArticleTablePlugin.gorm \
+	ArticleTablePlugin.gorm
 
 
 ADDITIONAL_OBJCFLAGS = -Wall -Wno-import

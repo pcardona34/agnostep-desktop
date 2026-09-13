@@ -22,7 +22,6 @@ HERE=`pwd`
 DEST=/usr/local/bin
 DEPS="dialog xterm"
 SPIN='/-\|'
-APPLOG="$APP.log"
 
 ################################
 ### include functions
@@ -74,12 +73,12 @@ if [ "$DEBUG" == "yes" ];then
      make && ok "Build done"
      sudo -E env PATH="$PATH:/System/Tools" make install && ok "Install done"
 else
-     make &> $APPLOG &
+     make &> $LOG &
      PID=$!
      spinner
      ok "\r- Build done"
      sleep 2
-     sudo -E env PATH="$PATH:/System/Tools" make install &>> $APPLOG &
+     sudo -E env PATH="$PATH:/System/Tools" make install &>> $LOG &
      PID=$!
      spinner
      ok "\r- Install done"

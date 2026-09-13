@@ -97,7 +97,8 @@ Resources/UI/arrowDown.tiff \
 Resources/Data/HTML-Entities.plist \
 
  
-Grr_LANGUAGES = English French German \
+Grr_LANGUAGES = \
+English French German
 
 Grr_LOCALIZED_RESOURCE_FILES = \
 Grr.gorm \
@@ -107,8 +108,6 @@ GrrInfo.plist
 Grr_LOCALIZED_RESOURCE_FILES += Localizable.strings
 
 Grr_MAIN_MODEL_FILE = Grr.gorm
-
-
 
 # The usual makefile inclusion code
 -include GNUmakefile.preamble

@@ -18,6 +18,7 @@
 FICHTEMP=$(mktemp /tmp/agno-XXXXX)
 trap "rm -f $FICHTEMP" EXIT
 
+####### Functions #############
 function view_desktop_log
 {
 . SCRIPTS/log.sh
@@ -39,19 +40,29 @@ printf "All the logs were truncated.\n"
 ok "Done"
 }
 
+function view_errors
+{
+    . SCRIPTS/log.sh
+    cat $LOG | grep -B 1 -A 2 -i -e " error"
+}
+
+########################
+
 dialog --no-shadow --backtitle "Agnostep Desktop and Theme Logs" \
  --title "Actions on Logs" \
  --menu "
- " 12 66 2 \
+ " 12 66 3 \
 "Desktop" "Read Log of the Desktop Installation" \
+"Errors" "Search and show errors" \
 "Clear" "Clear all the logs" 2>> $FICHTEMP
 
 # Answer?
 if [ $? -eq 0 ];then
 	for i in `cat $FICHTEMP`
 	do
-		case $i in
+		case "$i" in
 			"Desktop") view_desktop_log;;
+            "Errors") view_errors;;
 			"Clear") clear_logs;;
 		esac
 	done

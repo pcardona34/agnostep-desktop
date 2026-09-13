@@ -40,7 +40,7 @@
 	Actions = (
 	);
 	Outlets = (
-	    "_view"
+	    _view
 	);
 	Super = Component;
     };

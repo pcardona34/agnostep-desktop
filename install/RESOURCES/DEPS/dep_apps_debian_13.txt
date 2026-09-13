@@ -17,7 +17,7 @@
 alsa-utils
 dunst
 #compton " removed in favour of picom within agnostep-theme
-conky-all
+#conky-all
 
 ### Printer & scanner: see also Setup_Printer script
 ### cups already done

@@ -24,7 +24,7 @@ Fonts_LOCALIZED_RESOURCE_FILES = \
 	Localizable.strings
 
 Fonts_RESOURCE_FILES = \
-	Resources/Fonts.tiff \
+	Resources/Fonts.tiff
 
 ADDITIONAL_OBJCFLAGS = -Wall -Wno-import
 

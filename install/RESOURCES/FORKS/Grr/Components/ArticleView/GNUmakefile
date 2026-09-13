@@ -21,7 +21,7 @@ ArticleView_LANGUAGES = English French German
 
 ArticleView_LOCALIZED_RESOURCE_FILES = \
 	ArticleTextViewPlugin.gorm \
-	Localizable.strings \
+	Localizable.strings
 
 
 ADDITIONAL_OBJCFLAGS = -Wall -Wno-import
