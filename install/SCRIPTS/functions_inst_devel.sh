@@ -13,6 +13,8 @@
 ### Functions for Desktop Devel - GNUstep apps
 ####################################################
 
+### Up to date or more conservative?
+export UTD="${UTD:u}"
 
 ########################## - E - ##########################
 
@@ -104,28 +106,30 @@ subtitulo
 cd ../build || exit 1
 
 printf "Fetching...\n"
-#if [ -d apps-gorm ];then
-#        cd apps-gorm
-#        git pull origin master &>/dev/null
-#else
-#        git clone --branch=master "https://github.com/gnustep/apps-gorm" &>/dev/null
-#        cd apps-gorm
-#fi
-fetch $HUB/gnustep/apps-gorm/archive/refs/tags/gorm-1_5_0.tar.gz
-gunzip --force gorm-1_5_0.tar.gz
-tar -xf gorm-1_5_0.tar && rm gorm-1_5_0.tar
-mv apps-gorm-gorm-1_5_0 gorm
+if [ "$UTD" == "u" ];then
+    if [ -d gorm ];then
+        cd gorm
+        git pull
+        cd ..
+    else
+        git clone --branch=master "https://github.com/gnustep/apps-gorm" &>/dev/null
+        mv apps-gorm gorm
+    fi
+else
+    fetch $HUB/gnustep/apps-gorm/archive/refs/tags/gorm-1_5_0.tar.gz
+    gunzip --force gorm-1_5_0.tar.gz
+    tar -xf gorm-1_5_0.tar && rm gorm-1_5_0.tar
+    mv apps-gorm-gorm-1_5_0 gorm
+fi
 
 clear
 subtitulo
 ok "$APPNAME fetched"
 
-cd gorm
+cd gorm || exit 1
 
 CHECK="YES"
 _build
-#move_to_devel ${APPNAME}
-#check $APPNAME
 sleep $SLEEP
 
 }

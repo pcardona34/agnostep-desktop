@@ -15,7 +15,7 @@ clear
 dialog --no-shadow --backtitle "AGNoStep Desktop" \
 --title "Core Installer" \
 --sleep 5 --infobox "
-Welcome to an  AGNoStep World!
+Welcome to an AGNoStep World!
 
 CORE installer script will start soon..." 8 50
 

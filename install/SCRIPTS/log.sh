@@ -21,3 +21,33 @@ if [ ! -f $LOG ];then
 fi
 
 date >> $LOG
+
+######################################
+### is_log_ok
+######################################
+
+function is_log_ok
+{
+PART="$1"
+STR="Checking $PART installation..."
+subtitulo
+
+local _COUNT=0
+
+grep -v -e " (ignor" $LOG | grep -e " Error " &>/dev/null
+if [ $? -eq 0 ];then
+	_COUNT=$(( $_COUNT + 1 ))
+fi
+grep -v -e " error: nil" $LOG | grep -v -e " error: &" | grep -e " error: " &>/dev/null
+if [ $? -eq 0 ];then
+	_COUNT=$(( $_COUNT + 1 ))
+fi
+
+if [ ${_COUNT} -ne 0 ];then
+	alert "$PART installation has generated ${_COUNT} errors: check the logs."
+	exit 1
+else
+	info "$PART installation was successful. You can go forward."
+	sleep 5
+fi
+}

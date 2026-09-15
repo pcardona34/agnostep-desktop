@@ -456,11 +456,11 @@ fi
 
 cd libs-dbuskit-0.1.1 || exit 1
 
-### To avoid the config.guess type error:
-### We must update config.guess... and  config.sub
+echo "To avoid the config.guess type error:"
+echo "We must update config.guess... and  config.sub"
 
-wget --quiet -O config.guess 'https://git.savannah.gnu.org/gitweb/?p=config.git;a=blob_plain;f=config.guess;hb=HEAD'
-wget --quiet -O config.sub 'https://git.savannah.gnu.org/gitweb/?p=config.git;a=blob_plain;f=config.sub;hb=HEAD'
+wget -O config.guess 'https://git.savannah.gnu.org/gitweb/?p=config.git;a=blob_plain;f=config.guess;hb=HEAD'
+wget -O config.sub 'https://git.savannah.gnu.org/gitweb/?p=config.git;a=blob_plain;f=config.sub;hb=HEAD'
 
 STR="$FWNAME"
 clear;subtitulo

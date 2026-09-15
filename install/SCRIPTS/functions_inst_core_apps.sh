@@ -18,6 +18,10 @@
 ### of the desktop
 #############################################
 
+### Up to date or more stable?
+### By default, it is <u>p to date;otherwise,  it has been set to 's'.
+export UTD="${UTD:u}"
+
 function install_aclock
 {
 clear
@@ -179,18 +183,21 @@ subtitulo
 cd ../build || exit 1
 
 printf "Fetching...\n"
-fetch $HUB/gnustep/apps-gworkspace/releases/download/gworkspace-1_0_0/gworkspace-1.1.0.tar.gz
-gunzip --force gworkspace-1.1.0.tar.gz
-tar -xf gworkspace-1.1.0.tar && rm gworkspace-1.1.0.tar
-mv gworkspace-1.1.0 gworkspace
-
-#if [ -d apps-gworkspace ];then
-#	cd apps-gworkspace
-#	git pull
-#else
-#	git clone --branch=master "https://github.com/gnustep/apps-gworkspace"
-#	cd apps-gworkspace
-#fi
+if [ "$UTD" == "u" ];then
+    if [ -d gworkspace ];then
+    	cd gworkspace
+    	git pull
+        cd ..
+    else
+    	git clone --branch=master "https://github.com/gnustep/apps-gworkspace"
+    	mv apps-gworkspace gworkspace
+    fi
+else
+    fetch $HUB/gnustep/apps-gworkspace/releases/download/gworkspace-1_0_0/gworkspace-1.1.0.tar.gz
+    gunzip --force gworkspace-1.1.0.tar.gz
+    tar -xf gworkspace-1.1.0.tar && rm gworkspace-1.1.0.tar
+    mv gworkspace-1.1.0 gworkspace
+fi
 
 clear
 subtitulo

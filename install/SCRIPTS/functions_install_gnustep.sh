@@ -19,6 +19,88 @@
 ### to recommend GNU Runtime
 #################################################
 
+### Up to date release set by def. to 'u';otherwise, it has been set to 's'
+### in the parent script
+UTD="${UTD:u}"
+THERE=`pwd`
+
+#################################################
+# Checkout sources
+
+function fetch_sources
+{
+STR="Checking out Sources..."
+subtitulo
+
+HUB="https://github.com/"
+GSMAKE="make"
+BASE=base
+GUI=gui
+BACK=back
+
+printf "\nGNUstep Tools Make\n"
+
+if [ "$UTD" == "u"  ];then
+    ### The more up to date
+    git clone $HUB/gnustep/$GSMAKE | tee -a $LOG
+else
+    ### This is a more conservative choice
+    fetch $HUB/gnustep/tools-make/releases/download/make-2_9_3/gnustep-make-2.9.3.tar.gz
+    gunzip --force gnustep-make-2.9.3.tar.gz
+    tar -xf gnustep-make-2.9.3.tar && rm gnustep-make-2.9.3.tar
+    mv gnustep-make-2.9.3 "make"
+fi
+
+ok "Done"
+
+printf "\nGNUstep Base\n"
+
+if [ "$UTD" == "u" ];then
+    ### The more up to date
+    git clone $HUB/gnustep/$BASE | tee -a $LOG
+else
+    ### This is a more conservative choice
+    fetch $HUB/gnustep/libs-base/releases/download/base-1_31_1/gnustep-base-1.31.1.tar.gz
+    gunzip --force gnustep-base-1.31.1.tar.gz
+    tar -xf gnustep-base-1.31.1.tar && rm gnustep-base-1.31.1.tar
+    mv gnustep-base-1.31.1 base
+fi
+
+ok "Done"
+
+printf "\nGNUstep Gui\n"
+if [ "$UTD" == "u" ];then
+    ### The more up to date
+    git clone $HUB/gnustep/$GUI | tee -a $LOG
+else
+    ### This is a more conservative choice
+    fetch $HUB/gnustep/libs-gui/releases/download/gui-0_32_0/gnustep-gui-0.32.0.tar.gz
+    gunzip --force gnustep-gui-0.32.0.tar.gz
+    tar -xf gnustep-gui-0.32.0.tar && rm gnustep-gui-0.32.0.tar
+    mv gnustep-gui-0.32.0 gui
+fi
+
+ok "Done"
+
+printf "\nGNUstep Back\n"
+if [ "$UTD" == "u" ];then
+    ### The more up to date
+    git clone $HUB/gnustep/$BACK | tee -a $LOG
+else
+    ### This is a more conservative choice
+    fetch $HUB/gnustep/libs-back/releases/download/back-0_32_0/gnustep-back-0.32.0.tar.gz
+    gunzip --force gnustep-back-0.32.0.tar.gz
+    tar -xf gnustep-back-0.32.0.tar && rm gnustep-back-0.32.0.tar
+    mv gnustep-back-0.32.0 back
+fi
+
+ok "Done"
+}
+#################################################
+
+#################################################
+### Tools make installation
+#################################################
 function install_make
 {
 STR="Building GNUstep-make..."
@@ -48,70 +130,9 @@ sudo ldconfig
 ################################################
 
 #################################################
-# Checkout sources
-function fetch_sources
-{
-STR="Checking out Sources..."
-subtitulo
-
-HUB=https://github.com/
-GSMAKE=make
-BASE=base
-GUI=gui
-BACK=back
-
-printf "\nGNUstep Tools Make\n"
-#git clone $HUB/gnustep/$GSMAKE | tee -a $LOG
-fetch $HUB/gnustep/tools-make/releases/download/make-2_9_3/gnustep-make-2.9.3.tar.gz
-gunzip --force gnustep-make-2.9.3.tar.gz
-tar -xf gnustep-make-2.9.3.tar && rm gnustep-make-2.9.3.tar
-mv gnustep-make-2.9.3 make
-
-ok "Done"
-
-printf "\nGNUstep Base\n"
-#git clone $HUB/gnustep/$BASE | tee -a $LOG
-fetch $HUB/gnustep/libs-base/releases/download/base-1_31_1/gnustep-base-1.31.1.tar.gz
-gunzip --force gnustep-base-1.31.1.tar.gz
-tar -xf gnustep-base-1.31.1.tar && rm gnustep-base-1.31.1.tar
-mv gnustep-base-1.31.1 base
-
-ok "Done"
-
-printf "\nGNUstep Gui\n"
-#git clone $HUB/gnustep/$GUI | tee -a $LOG
-fetch $HUB/gnustep/libs-gui/releases/download/gui-0_32_0/gnustep-gui-0.32.0.tar.gz
-gunzip --force gnustep-gui-0.32.0.tar.gz
-tar -xf gnustep-gui-0.32.0.tar && rm gnustep-gui-0.32.0.tar
-mv gnustep-gui-0.32.0 gui
-
-### Experimental for WMDock by gcasa
-#cd $GUI
-#git switch issue_927_GSIconManager_protocol_change
-#git pull
-#cd ..
-
-### Reverting to standard libs-gui
-#cd $GUI
-#git switch master
-#git pull
-#cd ..
-
-ok "Done"
-
-printf "\nGNUstep Back\n"
-#git clone $HUB/gnustep/$BACK | tee -a $LOG
-fetch $HUB/gnustep/libs-back/releases/download/back-0_32_0/gnustep-back-0.32.0.tar.gz
-gunzip --force gnustep-back-0.32.0.tar.gz
-tar -xf gnustep-back-0.32.0.tar && rm gnustep-back-0.32.0.tar
-mv gnustep-back-0.32.0 back
-
-
-ok "Done"
-}
-
-#################################################
 ## Build GNUstep base
+#################################################
+
 function install_base
 {
 STR="Building Foundation: GNUstep Base..."
@@ -139,27 +160,34 @@ sudo ldconfig
 
 #################################################
 ## Build GNUstep GUI
+#################################################
+
 function install_gui
 {
 STR="Building AppKit: GNUstep Gui"
 subtitulo
 
 cd $GUI || exit 1
-#dialog --no-shadow --backtitle "Building GNUstep" --title "GUNstep Gui" \
-# --yesno "
-#Experimental branch allow to fix some issue with
-#openURL Service.
 
-#Do you want to include experimental branch
-#app-wrapper-open-url?" 14 50
+if [ "$UTD" = "u" ];then
+    BRANCH="issue_927_GSIconManager_protocol_change"
+    PURPOSE="test DockWM by gcasa"
 
-#clear
+    dialog --no-shadow --backtitle "Building GNUstep" --title "GUNstep Gui" \
+    --yesno "
+    Experimental branch allows to ${PURPOSE}.
 
-#if [ $? -eq 0 ];then
-	### Try to fix 'open URL' issue
-#	printf "\nSwitching to app-wrapper-open-url branch"
-#	git switch app-wrapper-open-url
-#fi
+    Do you want to include the experimental branch
+    ${BRANCH}?" 14 50
+
+    if [ $? -eq 0 ];then
+        clear;printf "\nSwitching to ${BRANCH}"
+	    git switch ${BRANCH}
+    else
+        git switch master
+    fi
+    git pull
+fi
 
 printf "Configuring...\n"
 ./configure &>>$LOG &
@@ -168,7 +196,6 @@ spinner
 
 printf "\rBuilding...\n"
 make -j8 &>>$LOG &
-#make -j8
 PID=$!
 spinner
 
@@ -208,35 +235,6 @@ sudo ldconfig
 }
 ###############################################
 
-######################################
-### is_gnustep_ok
-
-function is_gnustep_ok
-{
-PART="$1"
-STR="Checking $PART installation..."
-subtitulo
-
-local _COUNT=0
-
-grep -v -e " (ignor" $LOG | grep -e " Error " &>/dev/null
-if [ $? -eq 0 ];then
-	_COUNT=$(( $_COUNT + 1 ))
-fi
-grep -v -e " error: nil" $LOG | grep -v -e " error: &" | grep -e " error: " &>/dev/null
-if [ $? -eq 0 ];then
-	_COUNT=$(( $_COUNT + 1 ))
-fi
-
-if [ ${_COUNT} -ne 0 ];then
-	alert "$PART installation has generated ${_COUNT} errors: check the logs."
-	exit 1
-else
-	info "$PART installation was successful. You can go forward."
-	sleep 5
-fi
-}
 ########################################
-
 ### Enf of functions
 ########################################

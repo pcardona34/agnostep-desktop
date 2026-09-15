@@ -90,5 +90,3 @@ MSG="All was done for the Frameworks. \nThe Core Desktop has been set. \n\nIt is
 echo "$MSG" >>$LOG
 info "$MSG"
 sleep 2
-
-

@@ -71,10 +71,14 @@ if ! [ -d $INSTALL_DIR ];then
 	exit 1
 fi
 
-function the_apps
+function the_apps_begin
 {
 install_systempreferences
 install_gworkspace
+}
+
+function the_apps_follow
+{
 install_aclock
 install_addressmanager
 install_batmon
@@ -95,7 +99,10 @@ if [ $? -ne 0 ];then
 fi
 }
 
-the_apps
+the_apps_begin
+is_log_ok "Core apps begin: SystemPreferences and GWorkspace" || exit 1
+
+the_apps_follow
 
 #############################
 

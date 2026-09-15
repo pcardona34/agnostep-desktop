@@ -27,6 +27,10 @@ SPIN='/-\|'
 GS_ERRORS=0
 . /etc/os-release
 GSBUILD="../build/GNUstep_Build"
+GS_SCRIPT=/System/Library/Makefiles/GNUstep.sh
+SYSTEM=/System
+LOCAL=/Local
+
 #set -v #For debugging the script only
 
 ### End of vars
@@ -45,8 +49,6 @@ GSBUILD="../build/GNUstep_Build"
 ### End of include functions
 ####################################################
 
-#not_again || exit 1
-
 clear
 STR="Prepare the GNUstep installation"
 titulo
@@ -58,29 +60,55 @@ cd $THERE
 LIST="gnustep" && install_deps
 
 ################################
-### VARS
-GS_SCRIPT=/System/Library/Makefiles/GNUstep.sh
-
-################################
 
 STR="Installing all GNUstep libs and Tools"
 titulo
 
+STR="Sweep out previous installation"
+subtitulo
+
+for GS_DIR in $SYSTEM $LOCAL
+do
+    if [ -d $GS_DIR ];then
+        echo -e "\tDeleting $GS_DIR..." && sudo rm -fR $GS_DIR
+    fi
+done
+
+ok "Sweep out done"
+
 # Create build directory
 
 cd ${THERE}
+
 sudo rm -fR ${GSBUILD}
 mkdir -p ${GSBUILD}
-cd ${GSBUILD} || exit 1
+
+#################################################
+# What stability?
+STR="Stable or Up to date?";subtitulo
+
+echo -n "Do you want a <s>table old release or one more <u>p to date? "
+read UTD
+if [ -z "$UTD" ] || [ "$UTD" == "u" ];then
+    export UTD="u"
+else
+    export UTD="s"
+fi
 
 #################################################
 # Checkout sources
+export GSBUILD
+
+cd ${GSBUILD} || exit 1
 fetch_sources
+cd ${THERE}
 
 #################################################
 ### Install Make (1)
 
+cd ${GSBUILD} || exit 1
 install_make
+cd ${THERE}
 
 if [ -f $GS_SCRIPT ];then
 	. $GS_SCRIPT
@@ -98,41 +126,43 @@ fi
 #################################################
 ## Build GNUstep base
 
-cd ${THERE}
-cd ${GSBUILD} || exit 1
-install_base
-
-sudo ldconfig
 . $GS_SCRIPT
 
-# Checking...
+cd ${GSBUILD} || exit 1
+install_base
 cd $THERE
-is_gnustep_ok "$BASE" || exit 1
+
+sudo ldconfig
+
+# Checking...
+is_log_ok "$BASE" || exit 1
 
 #################################################
 ## Build GNUstep GUI
 
-cd ${GSBUILD} || exit 1
-install_gui
-
-sudo ldconfig
 . $GS_SCRIPT
 
-# Checking...
+cd ${GSBUILD} || exit 1
+install_gui
 cd $THERE
-is_gnustep_ok "$GUI" || exit 1
+
+sudo ldconfig
+
+# Checking...
+is_log_ok "$GUI" || exit 1
 
 #################################################
 ## Build GNUstep back
 
-cd ${GSBUILD} || exit 1
-install_back
-
-sudo ldconfig
 . $GS_SCRIPT
 
-# Checking...
+cd ${GSBUILD} || exit 1
+install_back
 cd $THERE
-is_gnustep_ok "BACK" || exit 1
+
+sudo ldconfig
+
+# Checking...
+is_log_ok "BACK" || exit 1
 
 ok "Building of GNUstep was successfully done."
