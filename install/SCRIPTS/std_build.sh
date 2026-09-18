@@ -15,6 +15,7 @@
 
 function _build()
 {
+DEBUG=${DEBUG:no}
 SYSTOOLS=$(gnustep-config --variable=GNUSTEP_SYSTEM_TOOLS)
 if [ -z "$SYSTOOLS" ];then
     alert "Your GNUstep System Path is misconfigured! Aborting."
@@ -36,22 +37,35 @@ else
         printf "Building...\n"
 fi
 
-make ${BUILD_ARGS} &>>$LOG &
-PID=$!
-spinner
+if [ "$DEBUG" == "yes" ];then
+    if [ -z "$DLOG" ];then
+        make ${BUILD_ARGS} || exit 1
+    else
+        printf "Look at ${DLOG}...in `pwd`\n\n"
+        make ${BUILD_ARGS} &>$DLOG || exit 1
+    fi
+else
+    make ${BUILD_ARGS} &>>$LOG &
+    PID=$!
+    spinner
+fi
 
 printf "\rInstalling...\n"
-sudo -E env PATH="$PATH:${SYSTOOLS}" make ${INSTALL_ARGS} install &>>$LOG &
-PID=$!
-spinner
-
-#make_services
+if [ "$DEBUG" == "yes" ];then
+   sudo LD_LIBRARY_PATH="$LD_LIBRARY_PATH" PATH="$PATH" -E make messages=yes ${INSTALL_ARGS} install
+    ok "Done"
+else
+    sudo LD_LIBRARY_PATH="$LD_LIBRARY_PATH" PATH="$PATH" -E make messages=yes ${INSTALL_ARGS} install &>>$LOG &
+    #env PATH="$PATH:${SYSTOOLS}"
+    PID=$!
+    spinner
+    ok "\rDone"
+fi
 
 ### Cleaning
 sudo chown -fR $USER:$USER . &>/dev/null
 make clean &>/dev/null
 
-ok "\rDone"
 cd $_PWD
 
 if [ "$CHECK" == "YES" ];then

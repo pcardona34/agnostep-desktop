@@ -99,6 +99,14 @@ if [ $? -ne 0 ];then
 fi
 }
 
+echo -n "Do you want <s>table old releases or more <u>p to date ones? "
+read REP
+if [ "$REP" == "u" ];then
+    export UTD=u
+else
+    export UTD=s
+fi
+
 the_apps_begin
 is_log_ok "Core apps begin: SystemPreferences and GWorkspace" || exit 1
 

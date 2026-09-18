@@ -183,15 +183,14 @@ subtitulo
 cd ../build || exit 1
 
 printf "Fetching...\n"
+### We do not know if it was up2date or stable old release
+if [ -d gworkspace ];then
+    rm -fR gworkspace
+fi
+
 if [ "$UTD" == "u" ];then
-    if [ -d gworkspace ];then
-    	cd gworkspace
-    	git pull
-        cd ..
-    else
-    	git clone --branch=master "https://github.com/gnustep/apps-gworkspace"
-    	mv apps-gworkspace gworkspace
-    fi
+   	git clone --branch=master "https://github.com/gnustep/apps-gworkspace"
+   	mv apps-gworkspace gworkspace
 else
     fetch $HUB/gnustep/apps-gworkspace/releases/download/gworkspace-1_0_0/gworkspace-1.1.0.tar.gz
     gunzip --force gworkspace-1.1.0.tar.gz
@@ -205,23 +204,27 @@ ok "$APPNAME: Fetched"
 
 cd gworkspace || exit 1
 
-### Patch: fix 'Downloads' L18N in FSNode
-printf "Applying a L18N patch...\n"
-PATCH=$_PWD/RESOURCES/PATCHES/GWorkspace_FSNode_L18n.patch
-TARGET=FSNode/Resources/French.lproj/Localizable.strings
-patch --forward -u $TARGET -i $PATCH
-ok "Done"
+if [ "$UTD" == "s" ];then
+    ### Patch: fix 'Downloads' L18N in FSNode
+    printf "Applying a L18N patch...\n"
+    PATCH=$_PWD/RESOURCES/PATCHES/GWorkspace_FSNode_L18n.patch
+    TARGET=FSNode/Resources/French.lproj/Localizable.strings
+    patch --forward -u $TARGET -i $PATCH
+    ok "Done"
+fi
 
 ### Patch: add GSHelpContentsFile to Info.plist
-printf "Applying a patch for Help implementation...\n"
-PATCH=$_PWD/RESOURCES/PATCHES/GWorkspace_InfoPlist_Help.patch
-TARGET=GWorkspace/GWorkspaceInfo.plist
-patch --forward -u $TARGET -i $PATCH
-ok "Done"
+if [ "$HELP_BUNDLE" == "YES" ];then
+    printf "Applying a patch for Help implementation...\n"
+    PATCH=$_PWD/RESOURCES/PATCHES/GWorkspace_InfoPlist_Help.patch
+    TARGET=GWorkspace/GWorkspaceInfo.plist
+    patch --forward -u $TARGET -i $PATCH
+    ok "Done"
 
-printf "Help bundles...\n"
-cp -r $HOME/SOURCES/agnostep-desktop/install/RESOURCES/HELP/en/GWorkspace.help GWorkspace/Resources/English.lproj/
-cp -r $HOME/SOURCES/agnostep-desktop/install/RESOURCES/HELP/fr/GWorkspace.help GWorkspace/Resources/French.lproj/
+    printf "Help bundles...\n"
+    cp -r $HOME/SOURCES/agnostep-desktop/install/RESOURCES/HELP/en/GWorkspace.help GWorkspace/Resources/English.lproj/
+    cp -r $HOME/SOURCES/agnostep-desktop/install/RESOURCES/HELP/fr/GWorkspace.help GWorkspace/Resources/French.lproj/
+fi
 
 _build
 
@@ -327,7 +330,7 @@ INSTALL_ARGS=""
 PATCH="spordefs.patch"
 TARGET="spordefs.m"
 PROJ="SporView.bproj"
-#PATCH2="InnerSpace_GNUMakefile.patch"
+PATCH2="InnerSpace_GNUMakefile.patch"
 TARGET2="GNUMakefile"
 STR="$APPNAME $RELEASE"
 subtitulo
@@ -369,10 +372,10 @@ done
 
 printf "Building Main InnerSpace...\n"
 ### PATCH
-#cp $_PWD/RESOURCES/PATCHES/$PATCH2 ./
-#printf "\tA patch must be applied...\n"
-#patch --forward -u ${TARGET2} -i ${PATCH2} | tee -a $LOG
-#ok "\tPatch applied"
+cp $_PWD/RESOURCES/PATCHES/$PATCH2 ./
+printf "\tA patch must be applied...\n"
+patch --forward -u ${TARGET2} -i ${PATCH2} | tee -a $LOG
+ok "\tPatch applied"
 
 _build
 
@@ -445,18 +448,22 @@ subtitulo
 cd ../build || exit 1
 
 printf "Fetching...\n"
-#if [ -d apps-systempreferences ];then
-#	cd apps-systempreferences
-#	git pull
-#else
-#	git clone --branch=master https://github.com/gnustep/apps-systempreferences
-#	cd apps-systempreferences || exit 1
-#fi
-#clear
-fetch $HUB/gnustep/apps-systempreferences/releases/download/systempreferences-1_2_1/SystemPreferences-1.2.1.tar.gz
-gunzip --force SystemPreferences-1.2.1.tar.gz
-tar -xf SystemPreferences-1.2.1.tar && rm SystemPreferences-1.2.1.tar
-mv SystemPreferences-1.2.1 SystemPreferences
+if [ "$UTD" == "u" ];then
+    if [ -d SystemPreferences ];then
+    	cd SystemPreferences
+    	git pull
+        cd ..
+    else
+    	git clone --branch=master https://github.com/gnustep/apps-systempreferences
+    	mv apps-systempreferences SystemPreferences
+    fi
+else
+    fetch $HUB/gnustep/apps-systempreferences/releases/download/systempreferences-1_2_1/SystemPreferences-1.2.1.tar.gz
+    gunzip --force SystemPreferences-1.2.1.tar.gz
+    tar -xf SystemPreferences-1.2.1.tar && rm SystemPreferences-1.2.1.tar
+    mv SystemPreferences-1.2.1 SystemPreferences
+fi
+
 subtitulo
 ok "$APPNAME: Fetched"
 

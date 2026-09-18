@@ -106,15 +106,15 @@ subtitulo
 cd ../build || exit 1
 
 printf "Fetching...\n"
+### We must sweep out because we do not know 
+### if it was up2date or stable rel.
+if [ -d gorm ];then
+    rm -fR gorm
+fi
+
 if [ "$UTD" == "u" ];then
-    if [ -d gorm ];then
-        cd gorm
-        git pull
-        cd ..
-    else
-        git clone --branch=master "https://github.com/gnustep/apps-gorm" &>/dev/null
-        mv apps-gorm gorm
-    fi
+    git clone --branch=master "https://github.com/gnustep/apps-gorm" &>/dev/null
+    mv apps-gorm gorm
 else
     fetch $HUB/gnustep/apps-gorm/archive/refs/tags/gorm-1_5_0.tar.gz
     gunzip --force gorm-1_5_0.tar.gz
@@ -151,17 +151,21 @@ subtitulo
 cd ../build || exit 1
 
 printf "Fetching...\n"
-#if [ -d apps-projectcenter ];then
-#        cd apps-projectcenter
-#        git pull origin master
-#else
-#        git clone --branch=master "https://github.com/gnustep/apps-projectcenter"
-#        cd apps-projectcenter
-#fi
-fetch $HUB/gnustep/apps-projectcenter/releases/download/projectcenter-0_7_0/ProjectCenter-0.7.0.tar.gz
-gunzip --force ProjectCenter-0.7.0.tar.gz
-tar -xvf ProjectCenter-0.7.0.tar && rm ProjectCenter-0.7.0.tar
-mv ProjectCenter-0.7.0 projectcenter
+### We must sweep out because we do not know 
+### if it was up2date or stable rel.
+if [ -d projectcenter ];then
+    rm -fR projectcenter
+fi
+
+if [ "$UTD" = "u" ];then
+    git clone --branch=master "https://github.com/gnustep/apps-projectcenter"
+    mv apps-projectcenter projectcenter
+else
+    fetch $HUB/gnustep/apps-projectcenter/releases/download/projectcenter-0_7_0/ProjectCenter-0.7.0.tar.gz
+    gunzip --force ProjectCenter-0.7.0.tar.gz
+    tar -xvf ProjectCenter-0.7.0.tar && rm ProjectCenter-0.7.0.tar
+    mv ProjectCenter-0.7.0 projectcenter
+fi
 
 clear
 subtitulo
@@ -171,10 +175,8 @@ cd projectcenter || exit 1
 
 CHECK="YES"
 _build
-#move_to_devel ${APPNAME}
-#check $APPNAME
-sleep $SLEEP
 
+sleep $SLEEP
 }
 
 ########################################

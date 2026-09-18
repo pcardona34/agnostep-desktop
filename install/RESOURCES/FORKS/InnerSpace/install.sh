@@ -62,7 +62,7 @@ else
     spinner
     ok "\r- Build done"
     sleep 2
-    sudo -E env PATH="$PATH:/System/Tools" make install &>> $LOG &
+    sudo LD_LIBRARY_PATH="$LD_LIBRARY_PATH" PATH="$PATH" -E make messages=yes install &>> $LOG &
     PID=$!
     spinner
     ok "\r- Install done"

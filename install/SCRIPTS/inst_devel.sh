@@ -136,6 +136,13 @@ fi
 }
 #################################################
 
+echo -n "Do you want old <s>table or more <u>p to date devel apps? "
+read REP
+if [ "$REP" == "u" ];then
+    export UTD=u
+else
+    export UTD=s
+fi
 devel_apps_menu
 
 #################################################

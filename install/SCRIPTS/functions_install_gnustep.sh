@@ -121,7 +121,9 @@ make -j8 &>>$LOG &
 PID=$!
 spinner
 printf "\rInstalling\n"
-sudo -E make install &>>$LOG &
+### The command below was modified according to issue 925 of libs-gui
+### and the comment by rfm
+sudo LD_LIBRARY_PATH="$LD_LIBRARY_PATH" PATH="$PATH" -E make messages=yes install &>>$LOG &
 PID=$!
 spinner
 ok "\rDone"
@@ -149,7 +151,10 @@ make -j8 &>>$LOG &
 PID=$!
 spinner
 printf "\rInstalling...\n"
-sudo -E make install &>>$LOG &
+### The command below was modified according to issue 925 of libs-gui
+### and the comment by rfm
+sudo LD_LIBRARY_PATH="$LD_LIBRARY_PATH" PATH="$PATH" -E make messages=yes install &>>$LOG &
+#sudo -E make install &>>$LOG &
 PID=$!
 spinner
 ok "\rDone"
@@ -200,7 +205,10 @@ PID=$!
 spinner
 
 printf "\rInstalling...\n"
-sudo -E make install &>>$LOG &
+### The command below was modified according to issue 925 of libs-gui
+### and the comment by rfm
+sudo LD_LIBRARY_PATH="$LD_LIBRARY_PATH" PATH="$PATH" -E make messages=yes install &>>$LOG &
+#sudo -E make install &>>$LOG &
 PID=$!
 spinner
 ok "\rDone"
@@ -226,7 +234,10 @@ make &>>$LOG &
 PID=$!
 spinner
 printf "\rInstalling...\n"
-sudo -E make install &>>$LOG &
+### The command below was modified according to issue 925 of libs-gui
+### and the comment by rfm
+sudo LD_LIBRARY_PATH="$LD_LIBRARY_PATH" PATH="$PATH" -E make messages=yes install &>>$LOG &
+#sudo -E make install &>>$LOG &
 PID=$!
 spinner
 ok "\rDone"

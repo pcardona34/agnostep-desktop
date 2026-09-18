@@ -623,27 +623,38 @@ cd ../build || exit 1
 APPNAME="PRICE"
 RELEASE="1.3.0"
 EXT=".tar.gz"
-HUB=https://master.dl.sourceforge.net/project/price/1.3.0
+HUB="https://master.dl.sourceforge.net/project/price/1.3.0"
 TARGET="${APPLICATIONS}"
 CONFIG_ARGS=""
 INSTALL_ARGS=""
-
+SVN="https://svn.code.sf.net/p/price/code-svn/"
 STR="$APPNAME $RELEASE"
 subtitulo
 
 printf "Fetching...\n"
-if [ -d ${APPNAME}-${RELEASE} ];then
-	cd ${APPNAME}-${RELEASE}
-else
-	fetch ${HUB}/${APPNAME}-${RELEASE}${EXT}
-	gunzip ${APPNAME}-${RELEASE}${EXT}
-	tar -xf ${APPNAME}-${RELEASE}.tar
-	cd ${APPNAME}-${RELEASE} || exit 1
+### We do not know if it was up2date or more stable
+### so weeping out
+if [ -d price ];then
+    rm -fR price
 fi
+
+if [ "$UTD" == "u" ];then
+    ### svn
+    svn checkout ${SVN} price-code-svn
+    mv price-code-svn price
+else
+    ### release
+	fetch ${HUB}/${APPNAME}-${RELEASE}${EXT}
+	gunzip --force ${APPNAME}-${RELEASE}${EXT}
+	tar -xf ${APPNAME}-${RELEASE}.tar && rm ${APPNAME}-${RELEASE}.tar
+	mv ${APPNAME}-${RELEASE} price
+fi
+
 clear
 subtitulo
 ok "$APPNAME fetched"
 
+cd price/trunk || exit 1
 _build
 sleep $SLEEP
 }

@@ -52,7 +52,7 @@ sleep 1
 STR="Purge old release";subtitulo
 remove_ifx_app ${APP}
 
-STR="Building and installing ${PWD##*/}";subtitulo
+STR="Building and installing ${APP}";subtitulo
 cd ${HERE} || exit 1
 
 make clean &>/dev/null

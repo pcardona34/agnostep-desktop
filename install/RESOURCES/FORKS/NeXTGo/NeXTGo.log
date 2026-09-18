@@ -1,0 +1,212 @@
+[H[J[3J
+[1m[33m === NeXTGo === [0;10m
+
+Debug status: yes
+
+[1m *** Purge old release *** [0;10m
+
+	 NeXTGo Bundle was removed.
+	 NeXTGo link was removed.
+[22;32m- Purge was done[0m.
+
+[1m *** Building and installing NeXTGo *** [0;10m
+
+This is gnustep-make 2.9.3. Type 'gmake print-gnustep-make-help' for help.
+Running in gnustep-make version 2 strict mode.
+Making all in Source ...
+Making all for app NeXTGo...
+ Creating NeXTGo.app/....
+ Compiling file count.c ...
+ Compiling file countlib.c ...
+ Compiling file eval.c ...
+ Compiling file exambord.c ...
+ Compiling file findnext.c ...
+findnext.c: In function ‘findnextmove’:
+findnext.c:100:6: warning: suggest explicit braces to avoid ambiguous ‘else’ [-Wdangling-else]
+  100 |   if (m != 0)
+      |      ^
+findnext.c:128:6: warning: suggest explicit braces to avoid ambiguous ‘else’ [-Wdangling-else]
+  128 |   if (m != MAXY - 1)
+      |      ^
+findnext.c:156:6: warning: suggest explicit braces to avoid ambiguous ‘else’ [-Wdangling-else]
+  156 |   if (n != 0)
+      |      ^
+findnext.c:184:6: warning: suggest explicit braces to avoid ambiguous ‘else’ [-Wdangling-else]
+  184 |   if (n != MAXX - 1)
+      |      ^
+ Compiling file findopen.c ...
+ Compiling file findpatn.c ...
+ Compiling file findsavr.c ...
+ Compiling file findwinr.c ...
+ Compiling file fioe.c ...
+fioe.c: In function ‘fioe’:
+fioe.c:94:6: warning: suggest explicit braces to avoid ambiguous ‘else’ [-Wdangling-else]
+   94 |   if (j == 0)
+      |      ^
+fioe.c:101:6: warning: suggest explicit braces to avoid ambiguous ‘else’ [-Wdangling-else]
+  101 |   if (j == MAXY - 1)
+      |      ^
+ Compiling file genmove.c ...
+ Compiling file godict.c ...
+ Compiling file igsparse.c ...
+igsparse.c: In function ‘getmessage’:
+igsparse.c:154:25: error: too many arguments to function ‘getpassword’
+  154 |                 sendstr(getpassword(repeatpass++));
+      |                         ^~~~~~~~~~~
+igsparse.c:76:14: note: declared here
+   76 | extern char *getpassword();
+      |              ^~~~~~~~~~~
+igsparse.c:168:49: error: too many arguments to function ‘getloginname’
+  168 |                                         sendstr(getloginname(repeatlogin++));
+      |                                                 ^~~~~~~~~~~~
+igsparse.c:75:14: note: declared here
+   75 | extern char *getloginname();
+      |              ^~~~~~~~~~~~
+igsparse.c:174:33: warning: this ‘if’ clause does not guard... [-Wmisleading-indentation]
+  174 |                                 if (ret < 0)
+      |                                 ^~
+igsparse.c:176:41: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+  176 |                                         if (!strncmp(mesg, "Password:", 9)
+      |                                         ^~
+igsparse.c:186:25: error: too many arguments to function ‘getpassword’
+  186 |                 sendstr(getpassword(repeatpass++));
+      |                         ^~~~~~~~~~~
+igsparse.c:76:14: note: declared here
+   76 | extern char *getpassword();
+      |              ^~~~~~~~~~~
+igsparse.c:194:49: error: too many arguments to function ‘getpassword’
+  194 |                                         sendstr(getpassword(repeatpass++));
+      |                                                 ^~~~~~~~~~~
+igsparse.c:76:14: note: declared here
+   76 | extern char *getpassword();
+      |              ^~~~~~~~~~~
+igsparse.c:277:29: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+  277 |                         if (ret = parseundo(textpart, &(mess->gamenum))) {
+      |                             ^~~
+igsparse.c:315:29: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+  315 |                         if (ret = parseinfo(textpart, mess))
+      |                             ^~~
+igsparse.c:314:17: warning: this ‘if’ clause does not guard... [-Wmisleading-indentation]
+  314 |                 if (mess->id == INFO)
+      |                 ^~
+igsparse.c:317:25: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+  317 |                         return 1;
+      |                         ^~~~~~
+igsparse.c: In function ‘parsescore’:
+igsparse.c:367:21: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+  367 |                 if (bd = strchr(s, '|')) {
+      |                     ^~
+igsparse.c:366:9: warning: this ‘else’ clause does not guard... [-Wmisleading-indentation]
+  366 |         else
+      |         ^~~~
+igsparse.c:398:17: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘else’
+  398 |                 if (bd = strstr(s, "Captured by #"))
+      |                 ^~
+igsparse.c:398:21: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+  398 |                 if (bd = strstr(s, "Captured by #"))
+      |                     ^~
+igsparse.c:400:21: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+  400 |                 if (bd = strstr(s, "Captured by O"))
+      |                     ^~
+igsparse.c: In function ‘parsegame’:
+igsparse.c:451:15: warning: operation on ‘*(br + 5)’ may be undefined [-Wsequence-point]
+  451 |         br[5] = br[5] = 0;
+      |         ~~~~~~^~~~~~~~~~~
+igsparse.c: In function ‘parseinfo’:
+igsparse.c:489:9: warning: this ‘if’ clause does not guard... [-Wmisleading-indentation]
+  489 |         if (col > 'I')
+      |         ^~
+igsparse.c:491:17: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+  491 |                 mess->x = col - 'A';
+      |                 ^~~~
+gmake[4]: *** [/System/Library/Makefiles/rules.make:528: obj/NeXTGo.obj/igsparse.c.o] Error 1
+gmake[3]: *** [/System/Library/Makefiles/Instance/application.make:145: internal-app-run-compile-submake] Error 2
+gmake[2]: *** [/System/Library/Makefiles/Master/rules.make:297: NeXTGo.all.app.variables] Error 2
+gmake[1]: *** [/System/Library/Makefiles/Master/application.make:38: internal-all] Error 2
+make: *** [/System/Library/Makefiles/Master/serial-subdirectories.make:53: internal-all] Error 2
+This is gnustep-make 2.9.3. Type 'gmake print-gnustep-make-help' for help.
+Running in gnustep-make version 2 strict mode.
+Making all in Source ...
+Making all for app NeXTGo...
+ Compiling file igsparse.c ...
+igsparse.c: In function ‘getmessage’:
+igsparse.c:154:25: error: too many arguments to function ‘getpassword’
+  154 |                 sendstr(getpassword(repeatpass++));
+      |                         ^~~~~~~~~~~
+igsparse.c:76:14: note: declared here
+   76 | extern char *getpassword();
+      |              ^~~~~~~~~~~
+igsparse.c:168:49: error: too many arguments to function ‘getloginname’
+  168 |                                         sendstr(getloginname(repeatlogin++));
+      |                                                 ^~~~~~~~~~~~
+igsparse.c:75:14: note: declared here
+   75 | extern char *getloginname();
+      |              ^~~~~~~~~~~~
+igsparse.c:174:33: warning: this ‘if’ clause does not guard... [-Wmisleading-indentation]
+  174 |                                 if (ret < 0)
+      |                                 ^~
+igsparse.c:176:41: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+  176 |                                         if (!strncmp(mesg, "Password:", 9)
+      |                                         ^~
+igsparse.c:186:25: error: too many arguments to function ‘getpassword’
+  186 |                 sendstr(getpassword(repeatpass++));
+      |                         ^~~~~~~~~~~
+igsparse.c:76:14: note: declared here
+   76 | extern char *getpassword();
+      |              ^~~~~~~~~~~
+igsparse.c:194:49: error: too many arguments to function ‘getpassword’
+  194 |                                         sendstr(getpassword(repeatpass++));
+      |                                                 ^~~~~~~~~~~
+igsparse.c:76:14: note: declared here
+   76 | extern char *getpassword();
+      |              ^~~~~~~~~~~
+igsparse.c:277:29: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+  277 |                         if (ret = parseundo(textpart, &(mess->gamenum))) {
+      |                             ^~~
+igsparse.c:315:29: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+  315 |                         if (ret = parseinfo(textpart, mess))
+      |                             ^~~
+igsparse.c:314:17: warning: this ‘if’ clause does not guard... [-Wmisleading-indentation]
+  314 |                 if (mess->id == INFO)
+      |                 ^~
+igsparse.c:317:25: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+  317 |                         return 1;
+      |                         ^~~~~~
+igsparse.c: In function ‘parsescore’:
+igsparse.c:367:21: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+  367 |                 if (bd = strchr(s, '|')) {
+      |                     ^~
+igsparse.c:366:9: warning: this ‘else’ clause does not guard... [-Wmisleading-indentation]
+  366 |         else
+      |         ^~~~
+igsparse.c:398:17: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘else’
+  398 |                 if (bd = strstr(s, "Captured by #"))
+      |                 ^~
+igsparse.c:398:21: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+  398 |                 if (bd = strstr(s, "Captured by #"))
+      |                     ^~
+igsparse.c:400:21: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+  400 |                 if (bd = strstr(s, "Captured by O"))
+      |                     ^~
+igsparse.c: In function ‘parsegame’:
+igsparse.c:451:15: warning: operation on ‘*(br + 5)’ may be undefined [-Wsequence-point]
+  451 |         br[5] = br[5] = 0;
+      |         ~~~~~~^~~~~~~~~~~
+igsparse.c: In function ‘parseinfo’:
+igsparse.c:489:9: warning: this ‘if’ clause does not guard... [-Wmisleading-indentation]
+  489 |         if (col > 'I')
+      |         ^~
+igsparse.c:491:17: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+  491 |                 mess->x = col - 'A';
+      |                 ^~~~
+gmake[4]: *** [/System/Library/Makefiles/rules.make:528: obj/NeXTGo.obj/igsparse.c.o] Error 1
+gmake[3]: *** [/System/Library/Makefiles/Instance/application.make:145: internal-app-run-compile-submake] Error 2
+gmake[2]: *** [/System/Library/Makefiles/Master/rules.make:297: NeXTGo.all.app.variables] Error 2
+gmake[1]: *** [/System/Library/Makefiles/Master/application.make:38: internal-all] Error 2
+make: *** [/System/Library/Makefiles/Master/serial-subdirectories.make:53: internal-all] Error 2
+
+ [22;31m=== Alert! ===[0m 
+[22;31m [E] ERROR! The application NeXTGo was not found in /Local/Applications.
+Please, report this issue at:
+https://github.com/pcardona34/agnostep-desktop/issues [0m 
+

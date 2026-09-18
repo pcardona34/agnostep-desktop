@@ -151,8 +151,8 @@ case "$i" in
 "InnerSpace")
 	printf "You chose InnerSpace\n"
 	remove_ifx_app "InnerSpace"
-	#install_innerspace
-	install_forked "InnerSpace"
+	install_innerspace
+	#install_forked "InnerSpace" # Forked not building
 update_info_plist "InnerSpace";;
 "Mixer")
 	printf "You chose VolumeControl\n"
@@ -186,6 +186,15 @@ else exit 0
 fi
 }
 #########################################
+
+echo -n "Do you want <s>table old releases or more <u>p to date ones? "
+read REP
+
+if [ "$REP" == "u" ];then
+    export UTD=u
+else
+    export UTD=s
+fi
 
 core_apps_menu
 

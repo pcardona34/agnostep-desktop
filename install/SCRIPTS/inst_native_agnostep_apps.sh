@@ -41,6 +41,7 @@ trap "rm -f $FICHTEMP" EXIT
 . SCRIPTS/size.sh
 . SCRIPTS/functions_remove_app.sh
 . SCRIPTS/functions_prep.sh
+. SCRIPTS/std_build.sh
 
 ### End of Include functions
 ################################

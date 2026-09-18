@@ -1,0 +1,8 @@
+libxcb1-dev
+libxcb1
+libxcb-xfixes0
+libxcb-icccm4
+libxcb-icccm4-dev
+libxcb-cursor-dev
+libxcb-shape0-dev
+libxcb-randr0-dev

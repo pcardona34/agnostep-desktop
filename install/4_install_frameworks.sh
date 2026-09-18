@@ -77,10 +77,10 @@ install_hlkit
 install_hkthemes
 install_renaissance
 install_performance
-install_webservices
+#install_webservices # Excluded: build issue
 install_steptalk
 install_dbuskit
-#install_popplerkit #Buggy:do not install
+#install_popplerkit # Buggy too :do not install
 
 ####################################
 

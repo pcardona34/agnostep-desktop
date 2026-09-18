@@ -117,8 +117,8 @@ case "$i" in
 "FlexiSheet")
 	printf "You chose FlexiSheet\n"
 	remove_ifx_app "FlexiSheet"
-	#install_flexisheet
-    install_forked "FlexiSheet"
+	install_flexisheet
+    #install_forked "FlexiSheet"
 	update_info_plist FlexiSheet;;
 "Graphos")
 	printf "You chose Graphos\n"
@@ -175,8 +175,8 @@ update_info_plist Player;;
 "PRICE")
 	printf "You chose PRICE\n"
 	remove_ifx_app "PRICE"
-	#install_price
-    install_forked "PRICE"
+	install_price
+    #install_forked "PRICE"
 	update_info_plist PRICE;;
 "TalkSoup")
 	printf "You chose TalkSoup\n"
@@ -190,6 +190,13 @@ fi
 }
 #################################################
 
+echo -n "Do you want old <s>table releases or more <u>p to date ones? "
+read REP
+if [ "$REP" == "u" ];then
+    export UTD=u
+else
+    export UTD=s
+fi
 extra_apps_menu
 
 ################################################
