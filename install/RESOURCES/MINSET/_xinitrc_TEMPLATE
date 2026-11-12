@@ -6,24 +6,45 @@ if [ -f $HOME/.xprofile ];then
 fi
 
 # Rotate the wallpaper?
-WPRCONF=$HOME/.config/agnostep/wprotate.conf
-if [ -f $WPRCONF ];then
-	/usr/local/bin/wprotate.sh &
-else
-    if [ -f $HOME/GNUstep/Library/WindowMaker/Backgrounds/fond_agnostep.png ];then
-        wmsetbg --smooth -u fond_agnostep.png
-    fi
-fi
+#WPRCONF=$HOME/.config/agnostep/wprotate.conf
+#if [ -f $WPRCONF ];then
+#	/usr/local/bin/wprotate.sh &
+#else
+#    if [ -f $HOME/GNUstep/Library/WindowMaker/Backgrounds/fond_agnostep.png ];then
+#        wmsetbg --smooth -u fond_agnostep.png
+#    fi
+#fi
 
+### X resources
 if [ -f $HOME/.Xresources ];then
 	xrdb -merge $HOME/.Xresources &
+fi
+
+### Keyboard
+SETKB=$HOME/.local/bin/set_kb.sh
+if [ -f ${SETKB} ];then
+    . ${SETKB}
 fi
 
 ### Agenda, GWorkspace... will be started with WMDock 'autolauch' option
 
 ### Window Manager
-/usr/bin/wmaker &
+USER_APPS=$(gnustep-config --variable=GNUSTEP_USER_APPS)
+MODERN=${USER_APPS}/WindowManager.app
+if [ -d ${MODERN} ];then
+    export WINDOWMANAGER=${MODERN}
+else
+    export WINDOWMANAGER=/usr/bin/wmaker
+fi
 
-sleep 5
+eval ${WINDOWMANAGER} &
+sleep 2
 
-exec /System/Tools/openapp GWorkspace
+### Modern Dock
+LOCAL_APPS=$(gnustep-config --variable=GNUSTEP_LOCAL_APPS)
+if [ -d ${MODERN} ] && [ -d ${LOCAL_APPS}/DockWM.app ];then
+    openapp DockWM &
+    sleep 3
+fi
+
+exec openapp GWorkspace

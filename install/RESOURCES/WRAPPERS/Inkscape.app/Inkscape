@@ -1,9 +1,0 @@
-#!/bin/sh
-
-APP=inkscape
-
-if [ $# -eq 2 ] ; then
-  $APP "$2" &
-else
-  $APP &
-fi

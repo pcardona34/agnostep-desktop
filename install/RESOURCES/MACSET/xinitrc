@@ -33,4 +33,4 @@ alsactl restore
 
 sleep 5
 
-exec /System/Tools/openapp GWorkspace
+exec openapp GWorkspace

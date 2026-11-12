@@ -24,13 +24,14 @@
 #############################################
 ### Dependencies on a debian system
 #############################################
-function wm_deps
+function gswm_deps
 {
 STR="Dependencies";titulo
 
 ### Checking if GNUstep base is already set
 STR="Checking GNUstep base";subtitulo
-GSBASE=/Local/Library/Libraries/libgnustep-base.so
+LOCAL_LIBS=$(gnustep-config --variable=GNUSTEP_LOCAL_LIBRARIES)
+GSBASE=${LOCAL_LIBS}/libgnustep-base.so
 
 if [ ! -f ${GSBASE} ];then
     alert "GNUstep libs-base was not found! You must install GNUstep system first."
@@ -40,48 +41,87 @@ else
     sleep 2
 fi
 STR="XCBKit";subtitulo
-THERE=${_PWD}
-LIST="wm" && install_deps
-ok "Done"
+pushd .
+LIST="gswm" && install_deps
 sleep 2
 clear
+popd
 }
 
 #############################################
 ### Fetching
 #############################################
 
-function install_wm
+function install_gswm
 {
 clear
+pushd .
+if [ -f SCRIPTS/env_modern.sh ];then
+    echo "We use the modern GNUstep ABI"
+else
+    warning "You should not try to build with Legacy GNUstep! Use instead Window Maker."
+    exit 1
+fi
+
 cd ../build || exit 1
 
+CHECK=NO
 HUB="https://github.com"
 OWNER="pcardona34" # We use a fork of pkgdemon's.
-APPNAME="gnustep-windowmanager"
+REPO="gnustep-windowmanager"
+APPNAME="WindowManager"
 CONFIG_ARGS=""
 INSTALL_ARGS=""
-BRANCH="with-gnustep-legacy"
-
 STR="$APPNAME"
+
 subtitulo
 
 printf "Fetching...\n"
-if [ -d $APPNAME ];then
-	cd $APPNAME
-    git pull
-else
-	git clone ${HUB}/${OWNER}/${APPNAME}
-	cd $APPNAME || exit 1
+if [ ! -d $REPO ];then
+	git clone ${HUB}/${OWNER}/${REPO}
 fi
+
+cd ${REPO} || exit 1
 
 clear
 subtitulo
 ok "${APPNAME}: Fetched"
 
-printf "Switching to devel branch: ${BRANCH}"
-git switch ${BRANCH}
+git switch master
+git pull
 
-_build
+printf "Building\n"
+make &>>$LOG &
+PID=$!
+spinner
+ok "\rDone"
 sleep 2
+if [ -d WindowManager/WindowManager.app ];then
+    info "Window Manager was successfully built."
+    printf "Installing...\n"
+    cd WindowManager
+    TARGET=$(gnustep-config --variable=GNUSTEP_LOCAL_APPS)
+    if [ ! -d ${TARGET} ];then
+        sudo mkdir -p ${TARGET}
+    fi
+    sudo cp -a -v WindowManager.app ${TARGET}/
+    if [ $? -ne 0 ];then
+        alert "Installation of Window Manager failed!"
+        exit 1
+    else
+        ok "Done"
+    fi
+    printf "\nUpdating services...\n"
+    make_services
+    ok "Done"
+else
+    alert "Window Manager building was not successful."
+    exit 1
+fi
+
+ok "All was done for WindowManager."
+sleep 2
+
+popd
+
 }

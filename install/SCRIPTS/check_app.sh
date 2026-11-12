@@ -20,18 +20,15 @@ fi
 ### Check if the app is ok
 ### $1: the name of the installed App.
 #########################################
-function check()
+function check
 {
 ### VARS ENV
 __PWD=`pwd`
-echo $PATH | grep -e "/System/Tools" &>/dev/null
-if [ $? -ne 0 ];then
-	export PATH=$PATH:/System/Tools
-fi
+
 if [ -z "$INSTALL_DIR" ];then
 	INSTALL_DIR=$(gnustep-config --variable=GNUSTEP_LOCAL_APPS)
 fi
-ISSUES=https://github.com/pcardona34/agnostep-desktop/issues
+ISSUES="https://github.com/pcardona34/agnostep-desktop/issues"
 
 if ! [ -d $INSTALL_DIR ];then
 	alert "$INSTALL_DIR was not found!"
@@ -64,7 +61,7 @@ cd $__PWD
 ### $1: the name of the installed FW.
 #########################################
 
-function check_FW()
+function check_FW
 {
 ### VARS ENV
 __PWD=`pwd`
@@ -99,44 +96,81 @@ cd $__PWD
 }
 
 #####################################
-### Case of Renaissance, Performance
-function check_LIB()
+### Case of Renaissance
+function check_REN
 {
 ### VARS ENV
-LIB="$1"
 __PWD=`pwd`
 ISSUES=https://github.com/pcardona34/agnostep-desktop/issues
 
+LOCAL_APPS=$(gnustep-config --variable=GNUSTEP_LOCAL_APPS)
+RENAPP="GSMarkupBrowser.app"
+LOCAL_LIBS=$(gnustep-config --variable=GNUSTEP_LOCAL_LIBRARIES)
+RENLIB="libRenaissance.so"
 
-if [ -z "$LIB_DIR" ];then
-	LIB_DIR=$(gnustep-config --variable=GNUSTEP_LOCAL_LIBRARY)
-	LIB_DIR=${LIB_DIR}/Libraries
-fi
-
-cd ${LIB_DIR} || exit 1
-if [ -f "lib${LIB}.so" ];then
-	info "The lib ${LIB} has been found: ok."
+if [ -d "${LOCAL_APPS}/${RENAPP}" ] && [ -f "${LOCAL_LIBS}/${RENLIB}" ];then
+	info "The lib Renaissance and its tools were found: ok."
 else
-	alert "ERROR! The lib ${LIB} was not found in ${LIB_DIR}.\nPlease, report this issue at:\n${ISSUES}"
+	alert "ERROR! The lib Renaissance was not found.\nPlease, report this issue at:\n${ISSUES}"
 	exit 1
 fi
 
 cd $__PWD
 }
 
+#####################################
+### Case of Performance
+function check_PER
+{
+### VARS ENV
+__PWD=`pwd`
+ISSUES="https://github.com/pcardona34/agnostep-desktop/issues"
+
+LOCAL_LIB=$(gnustep-config --variable=GNUSTEP_LOCAL_LIBRARIES)
+LIBPER="libPerformance.so"
+
+if [ -f "${LOCAL_LIB}/${LIBPER}" ];then
+	info "The lib Performance was found: ok."
+else
+	alert "ERROR! The lib Performance was not found.\nPlease, report this issue at:\n${ISSUES}"
+	exit 1
+fi
+
+cd $__PWD
+}
+
+#####################################
+### Case of WebServices
+function check_WEB()
+{
+### VARS ENV
+__PWD=`pwd`
+ISSUES="https://github.com/pcardona34/agnostep-desktop/issues"
+
+LOCAL_LIB=$(gnustep-config --variable=GNUSTEP_LOCAL_LIBRARIES)
+LIBWEB="libWebServices.so"
+
+if [ -f "${LOCAL_LIB}/${LIBWEB}" ];then
+	info "The lib WebServices was found: ok."
+else
+	alert "ERROR! The lib WebServices was not found.\nPlease, report this issue at:\n${ISSUES}"
+	exit 1
+fi
+
+cd $__PWD
+}
 
 #########################################
 ### Check if the THEME is ok
 ### $1: the name of the installed THEME.
 #########################################
 
-function check_THEME()
+function check_USER_THEME
 {
 ### VARS ENV
 __PWD=`pwd`
 INSTALL_DIR=$(gnustep-config --variable=GNUSTEP_USER_LIBRARY)
 GNUSTEP_THEMES_DIR=$INSTALL_DIR/Themes
-ISSUES=https://github.com/pcardona34/agnostep-desktop/issues
 
 if ! [ -d $GNUSTEP_THEMES_DIR ];then
 	sudo mkdir -p $GNUSTEP_THEMES_DIR
@@ -155,13 +189,49 @@ cd $GNUSTEP_THEMES_DIR || exit 1
 if [ -d "${APP}" ] || [ -d "${APP}.theme" ];then
 	info "The Theme ${APP} has been found: ok."
 else
-	alert "ERROR! The Theme ${APP} was not found in ${GNUSTEP_THEMES_DIR}.\nPlease, report this issue at:\n${ISSUES}"
-	exit 1
+    exit 1
 fi
 
 cd $__PWD
 }
 
+function check_GLOBAL_THEME
+{
+### VARS ENV
+__PWD=`pwd`
+INSTALL_DIR=$(gnustep-config --variable=GNUSTEP_LOCAL_LIBRARY)
+GNUSTEP_THEMES_DIR=$INSTALL_DIR/Themes
+
+if [ -n "$1" ];then
+	APP="$1"
+else
+	alert "The THEME name is empty."
+	printf "Use:"
+	cli "$0 <THEME_NAME>"
+	exit 1
+fi
+
+cd $GNUSTEP_THEMES_DIR || exit 1
+if [ -d "${APP}" ] || [ -d "${APP}.theme" ];then
+	info "The Theme ${APP} has been found: ok."
+else
+    exit 1
+fi
+
+cd $__PWD
+}
+
+function check_THEME
+{
+ISSUES="https://github.com/pcardona34/agnostep-desktop/issues"
+
+    export APP="$1"
+    if check_GLOBAL_THEME ${APP} || check_USER_THEME ${APP};then
+        echo "All is ok for theme ${APP}."
+    else
+        alert "The theme ${APP} was not found. \nReport the issue at \n${ISSUES}"
+    fi
+}
 
 ############################################"
 

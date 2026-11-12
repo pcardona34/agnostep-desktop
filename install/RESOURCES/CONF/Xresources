@@ -1,7 +1,7 @@
 ! xdefaults
 
 XTerm*foreground: white
-XTerm*background: DARKGRAY
+XTerm*background: black
 XTerm*scrollBar: false
 XTerm*faceName: DejaVuSansMono 
 XTerm*faceSize: 10

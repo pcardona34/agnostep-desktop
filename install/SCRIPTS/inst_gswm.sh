@@ -17,12 +17,9 @@
 ################################
 ### ENV
 
-_PWD=`pwd`
-CHECK=NO
-echo $PATH | grep -e "/System/Tools" &>/dev/null
-if [ $? -ne 0 ];then
-	export PATH=/System/Tools:$PATH
-fi
+### We keep working directory
+pushd .
+
 GSMAKE=$(gnustep-config --variable=GNUSTEP_MAKEFILES)
 . ${GSMAKE}/GNUstep.sh
 SPIN='/-\|'
@@ -30,7 +27,6 @@ INSTALL_DIR=$(gnustep-config --variable=GNUSTEP_LOCAL_APPS)
 TEMPFILE=$(mktemp /tmp/agno-XXXXX)
 trap "rm -f $TEMPFILE" EXIT
 
-#INSTALL_ARGS="GNUSTEP_INSTALLATION_DOMAIN=LOCAL"
 ### End of VARS
 ################################
 
@@ -69,28 +65,11 @@ if ! [ -d $INSTALL_DIR ];then
 fi
 ###########################################
 
-wm_deps || exit 1
-export DEBUG=yes
+#export DEBUG=yes
+
+gswm_deps || exit 1
+
 #export DLOG="./Debug_gs_wm.log"
-#install_wm
+install_gswm
 
-#########################################
-
-if [ "$DEBUG" == "yes" ];then
-    printf "\nNot linking too..."
-else
-    printf "Linking: wait please...\n"
-    sudo ldconfig &>/dev/null &
-    PID=$!
-    spinner
-    ok "\rDone"
-
-    printf "\nUpdating Services: wait please...\n"
-    make_services &>/dev/null &
-    PID=$!
-    spinner
-    ok "\rDone"
-
-    print_size
-fi
-sleep 2
+popd

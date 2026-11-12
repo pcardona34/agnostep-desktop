@@ -19,11 +19,9 @@
 ################################
 ### ENV
 
-_PWD=`pwd`
-echo $PATH | grep -e "/System/Tools" &>/dev/null
-if [ $? -ne 0 ];then
-	export PATH=/System/Tools:$PATH
-fi
+### We keep working directory
+pushd .
+
 GSMAKE=$(gnustep-config --variable=GNUSTEP_MAKEFILES)
 . ${GSMAKE}/GNUstep.sh
 SPIN='/-\|'
@@ -79,36 +77,24 @@ install_gworkspace
 
 function the_apps_follow
 {
-install_aclock
-install_addressmanager
-install_batmon
-install_gnumail_svn
-install_forked "HelpViewer"
-#install_helpviewer
-install_forked "Ink"
-#install_ink
-install_forked "InnerSpace"
-#install_innerspace
-install_simpleagenda
 install_terminal
-install_timemon
-
-is_hw_rpi
-if [ $? -ne 0 ];then
-    install_volumecontrol
-fi
 }
 
-echo -n "Do you want <s>table old releases or more <u>p to date ones? "
-read REP
-if [ "$REP" == "u" ];then
-    export UTD=u
-else
-    export UTD=s
-fi
+#echo -n "Do you want <s>table old releases or more <u>p to date ones? "
+#read REP
+#if [ "$REP" == "u" ];then
+#    export UTD=u
+#else
+#    export UTD=s
+#fi
+
+clear_logs
+reset_log
+echo "$0" >> $LOG
 
 the_apps_begin
-is_log_ok "Core apps begin: SystemPreferences and GWorkspace" || exit 1
+is_log_ok "Core apps begin: SystemPreferences and GWorkspace"
+sleep 4
 
 the_apps_follow
 
@@ -121,7 +107,7 @@ spinner
 ok "\rDone"
 
 printf "Updating services: please wait...\n"
-make_services &>/dev/null &
-PID=$!
-spinner
-ok "\rDone"
+make_services
+ok "Done"
+
+popd

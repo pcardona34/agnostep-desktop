@@ -31,20 +31,6 @@ else
 	exit 1
 fi
 }
-#############################################
-### Is GNUstep already built ?
-function not_again
-{
-### We should not reinstall GNUstep
-### To avoid side effects...
-GSPATH=/System
-if [ -d $GSPATH ];then
-	alert "GNUstep has been already built. DO NOT build again."
-	info "To install apps, use instead the script:"
-	cli "./5_install_AGNOSTEP.sh"
-	exit 1
-fi
-}
 
 #############################################
 ### Debian update
@@ -73,6 +59,7 @@ clear
 ### and Window Maker Desktop
 ### Use: LIST="name" && install_deps
 ### See in RESOURCES available lists of deps
+
 function install_deps
 {
 REF="${LIST:-build}"
@@ -84,7 +71,7 @@ subtitulo
 prefix="#"
 local STATUS=0
 
-FILE="${THERE}/RESOURCES/DEPS/dep_${REF}_debian_${VERSION_ID}.txt"
+FILE="RESOURCES/DEPS/dep_${REF}_debian_${VERSION_ID}.txt"
 if ! [ -f $FILE ];then
 	alert "The file ${FILE} was not found."
 	exit 1
@@ -121,68 +108,6 @@ else
 fi
 
 }
-
-#############################################
-### A more up to date CMAKE
-function install_cmake
-{
-
-TARGET=$HOME/.local
-BUILD=../build
-
-for DIR in $TARGET $BUILD
-do
-	if ! [ -d $DIR ];then
-		mkdir -p $DIR
-	fi
-done
-
-cd ../build || exit 1
-
-if ! [ -f cmake-4.0.2-linux-aarch64.sh ];then
-	printf "\nfetching: CMake-4.0.2...\n"
-	fetch https://github.com/Kitware/CMake/releases/download/v4.0.2/cmake-4.0.2-linux-aarch64.sh
-	if [ ! -f cmake-4.0.2-linux-aarch64.sh ];then
-		exit 1
-	fi
-fi
-
-printf "Installing...\n"
-bash ./cmake-4.0.2-linux-aarch64.sh --skip-license --exclude-subdir --prefix="$TARGET" &>/dev/null &
-PID=$!
-spinner
-
-ok "\rDone"
-}
-### End of up to date CMake
-#############################################
-
-################################
-### test of CMake release
-################################
-
-function test_cmake
-{
-CMV=`cmake --version | grep -e "version"`
-MAJOR=`echo $CMV | awk '{print $3}' | awk -F. '{print $1}'`
-if [ $MAJOR -eq 4 ];then
-	info "Cmake version is ok:\n `cmake --version`"
-else
-	warning "Cmake is too old. Maybe a path issue..."
-	sleep 1
-	echo $PATH | grep -e ".local/bin" &>/dev/null
-	if ! [ $? -eq 0 ];then
-		export PATH=$HOME/.local/bin:$PATH
-		### recursive call
-		testcmake
-	else
-		alert "Cmake version could not been solved. Aborting. Please report this issue."
-		exit 1
-	fi
-fi
-
-}
-#############################################
 
 #############################################
 ### SPEC Raspberry Pi

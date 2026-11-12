@@ -24,13 +24,13 @@
     <key>GSWorkspaceApplication</key>
     <string>GWorkspace</string>
     <key>NSWindow Frame finder</key>
-    <string>461 477 484 285 0 0  1920 1080 </string>
+    <string>460 500 486 286 0 0  1920 1080 </string>
     <key>NSWindow Frame fopinfo</key>
     <string>300 300 282 102 0 0  1920 1080 </string>
     <key>NSWindow Frame inspector</key>
-    <string>634 353 278 418 0 0  1920 1080 </string>
+    <string>633 376 278 418 0 0  1920 1080 </string>
     <key>NSWindow Frame preferencesWin</key>
-    <string>890 494 396 310 0 0  1920 1080 </string>
+    <string>530 580 398 327 0 0  1920 1080 </string>
     <key>applications</key>
     <dict>
     </dict>
@@ -93,13 +93,15 @@
     <array>
     </array>
     <key>no_desktop</key>
-    <true/>
+    <false/>
     <key>root_viewer</key>
     <dict>
 	<key>fsn_info_type</key>
 	<integer>0</integer>
 	<key>geometry</key>
-	<string>1114 315 450 488 0 0  1920 1080 </string>
+	<string>1237 297 450 488 0 0  1920 1080 </string>
+	<key>hligh_table_col</key>
+	<integer>1</integer>
 	<key>iconposition</key>
 	<integer>5</integer>
 	<key>iconsize</key>
@@ -110,6 +112,53 @@
 	<array>
 	    <string>/home/patrick</string>
 	</array>
+	<key>list_view_columns</key>
+	<dict>
+	    <key>0</key>
+	    <dict>
+		<key>identifier</key>
+		<integer>0</integer>
+		<key>minwidth</key>
+		<real>80</real>
+		<key>position</key>
+		<integer>0</integer>
+		<key>width</key>
+		<real>291</real>
+	    </dict>
+	    <key>1</key>
+	    <dict>
+		<key>identifier</key>
+		<integer>1</integer>
+		<key>minwidth</key>
+		<real>80</real>
+		<key>position</key>
+		<integer>3</integer>
+		<key>width</key>
+		<real>131</real>
+	    </dict>
+	    <key>2</key>
+	    <dict>
+		<key>identifier</key>
+		<integer>2</integer>
+		<key>minwidth</key>
+		<real>80</real>
+		<key>position</key>
+		<integer>1</integer>
+		<key>width</key>
+		<real>90</real>
+	    </dict>
+	    <key>3</key>
+	    <dict>
+		<key>identifier</key>
+		<integer>3</integer>
+		<key>minwidth</key>
+		<real>50</real>
+		<key>position</key>
+		<integer>2</integer>
+		<key>width</key>
+		<real>50</real>
+	    </dict>
+	</dict>
 	<key>shelfdicts</key>
 	<array>
 	    <dict>

@@ -34,7 +34,8 @@ dict-wn
 #fbreader #managed by the wrappers installer
 #focuswriter #idem
 
-### Emacs doc
+### Emacs doc and some Frameworks
+texlive
 texinfo
 
 #### Audio and Video - Player & Cynthiune

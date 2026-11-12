@@ -15,11 +15,14 @@
 
 ###############################################################
 ### Vars
-THERE=`pwd`
 SPIN='/-\|'
 STATUS=0
+### Setting required OS and required version
 CONF=RESOURCES/CONF/AGNOSTEP.conf
-RPI=1
+RPI=1 # We assume no Raspberry Pi by default
+
+### We keep working directory
+pushd .
 
 ### End of Vars
 ###############################################################
@@ -40,8 +43,7 @@ RPI=1
 
 ### Here it really begins...
 
-echo "AGNoStep Desktop: init log" >> $LOG
-date >> $LOG
+reset_log
 
 clear
 
@@ -54,17 +56,19 @@ sanity_check || exit 1
 debian_update || exit 1
 sudo apt autoremove -y &>/dev/null
 
+### First dependencies
+######################
 LIST="build" && install_deps
 
+### Console
 #######################
-
 sudo dpkg-reconfigure console-setup
 
 clear
 
 titulo
 
-### Getting infos
+### Getting infos...
 # Timezone
 if [ -f /etc/timezone ];then
 	TZ=$(cat /etc/timezone)
@@ -100,15 +104,15 @@ fi
 test_sound
 
 #######################
-
+### Syncing libs
 sudo ldconfig
 
 ########################
 
-APPLE=1
+APPLE=1 # We assume not an Apple computer by default
 is_hw_apple
 if [ $APPLE -eq 0 ];then
-    warning "Before going on stage: Core, cd to install/RESOURCES/MACSET and read carefully actions to execute."
+    warning "Before going on stage: 'Core', cd to install/RESOURCES/MACSET and read carefully actions to execute."
     sleep 6
 else
     info "The System is up to date.\nYou may go on with stage: Core."
@@ -116,4 +120,4 @@ else
 fi
 print_size
 
-cd $THERE
+popd

@@ -16,13 +16,8 @@
 ################################
 ### VARS
 
-echo $PATH | grep -e "/System/Tools" &>/dev/null
-if [ $? -ne 0 ];then
-	export PATH=/System/Tools:$PATH
-fi
-
-THERE=`pwd`
-_PWD=`pwd`
+### We keep working directory
+pushd .
 SPIN='/-\|'
 . /etc/os-release
 GSMAKE=$(gnustep-config --variable=GNUSTEP_MAKEFILES)
@@ -33,6 +28,10 @@ INSTALL_DIR=${INSTALL_DIR}/Frameworks
 
 if [ ! -d $INSTALL_DIR ];then
 	sudo mkdir -p $INSTALL_DIR
+fi
+
+if [ -f ../SCRIPTS/env_modern.sh ];then
+    POPPLER=YES
 fi
 
 ################################
@@ -50,22 +49,24 @@ fi
 
 ### End of Include functions
 ################################
-################################
-### Deps
-################################
 
 clear
 STR="Frameworks"
 titulo
 
+################################
+### Deps
+################################
+pushd .
 LIST="apps" && install_deps || exit 1
-ok "$STR Dependencies: done"
 sleep $SLEEP;clear
-
+popd
 
 if ! [ -d ../build ];then
 	mkdir -p ../build
 fi
+
+export DEBUG=${DEBUG:no}
 
 install_pdfkit
 install_fw_addresses
@@ -76,17 +77,28 @@ install_rsskit
 install_hlkit
 install_hkthemes
 install_renaissance
-install_performance
-#install_webservices # Excluded: build issue
 install_steptalk
 install_dbuskit
-#install_popplerkit # Buggy too :do not install
+install_performance
+install_webservices
+
+### PopplerKit only with modern env
+if [ "$POPPLER" == "YES" ];then
+    install_popplerkit
+fi
+
+### Forked from gs-desktop: useful for MountUp
+install_systemkit
+install_desktopkit
 
 ####################################
 
 sudo ldconfig
 
 MSG="All was done for the Frameworks. \nThe Core Desktop has been set. \n\nIt is time to install Core Apps..."
+check_log "Frameworks" || exit 1
+
 echo "$MSG" >>$LOG
 info "$MSG"
 sleep 2
+popd

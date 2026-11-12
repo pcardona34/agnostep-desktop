@@ -14,13 +14,13 @@
       {
         Forced = No;
         Name = GWorkspace.GNUstep;
-        DropCommand = "/System/Tools/openapp GWorkspace %d";
+        DropCommand = "";
         BuggyApplication = No;
         AutoLaunch = No;
         Position = "0,1";
         Lock = Yes;
-        PasteCommand = "/System/Tools/openapp GWorkspace %s";
-        Command = "/System/Tools/openapp GWorkspace";
+        PasteCommand = "";
+        Command = "openapp GWorkspace";
       },
       {
         Forced = No;
@@ -29,7 +29,7 @@
         AutoLaunch = Yes;
         Position = "0,2";
         Lock = Yes;
-        Command = "/System/Tools/openapp SimpleAgenda";
+        Command = "openapp SimpleAgenda";
       },
       {
         Forced = No;
@@ -38,29 +38,29 @@
         AutoLaunch = No;
         Position = "0,3";
         Lock = Yes;
-        Command = "/System/Tools/openapp Terminal";
+        Command = "openapp Terminal";
       },
       {
         Forced = No;
         Name = Ink.GNUstep;
-        DropCommand = "/System/Tools/openapp Ink %d";
+        DropCommand = "openapp Ink %d";
         BuggyApplication = No;
         AutoLaunch = No;
         Position = "0,4";
         Lock = Yes;
-        PasteCommand = "/System/Tools/openapp Ink %s";
-        Command = "/System/Tools/openapp Ink";
+        PasteCommand = "openapp Ink %s";
+        Command = "openapp Ink";
       },
       {
         Forced = No;
         Name = GNUMail.GNUstep;
-        DropCommand = "/System/Tools/openapp GNUMail %d";
+        DropCommand = "openapp GNUMail %d";
         BuggyApplication = No;
         AutoLaunch = No;
         Position = "0,5";
         Lock = Yes;
-        PasteCommand = "/System/Tools/openapp GNUMail %s";
-        Command = "/System/Tools/openapp GNUMail";
+        PasteCommand = "openapp GNUMail %s";
+        Command = "openapp GNUMail";
       },
       {
         Forced = No;
@@ -70,7 +70,7 @@
         Position = "0,6";
         Lock = Yes;
         PasteCommand = " ";
-        Command = "/System/Tools/openapp ScreenLock";
+        Command = "openapp ScreenLock";
       },
       {
         Forced = No;
@@ -79,7 +79,7 @@
         AutoLaunch = No;
         Position = "0,7";
         Lock = Yes;
-        Command = "/System/Tools/openapp Pass";
+        Command = "openapp Pass";
       },
       {
         Forced = No;
@@ -88,18 +88,18 @@
         AutoLaunch = No;
         Position = "0,8";
         Lock = Yes;
-        Command = "/System/Tools/openapp Mixer";
+        Command = "openapp Mixer";
       },
       {
         Forced = No;
         Name = Recycler.GNUstep;
-        DropCommand = "/System/Tools/openapp Recycler %d";
+        DropCommand = "openapp Recycler %d";
         BuggyApplication = No;
         AutoLaunch = Yes;
         Position = "0,9";
         Lock = Yes;
-        PasteCommand = "/System/Tools/openapp Recycler %s";
-        Command = "/System/Tools/openapp Recycler";
+        PasteCommand = "openapp Recycler %s";
+        Command = "openapp Recycler";
       }
     );
     Applications1080 = (
@@ -115,13 +115,13 @@
       {
         Forced = No;
         Name = GWorkspace.GNUstep;
-        DropCommand = "/System/Tools/openapp GWorkspace %d";
+        DropCommand = "openapp GWorkspace %d";
         BuggyApplication = No;
         AutoLaunch = No;
         Position = "0,1";
         Lock = Yes;
-        PasteCommand = "/System/Tools/openapp GWorkspace %s";
-        Command = "/System/Tools/openapp GWorkspace";
+        PasteCommand = "openapp GWorkspace %s";
+        Command = "openapp GWorkspace";
       },
       {
         Forced = No;
@@ -130,7 +130,7 @@
         AutoLaunch = Yes;
         Position = "0,2";
         Lock = Yes;
-        Command = "/System/Tools/openapp SimpleAgenda";
+        Command = "openapp SimpleAgenda";
       },
       {
         Forced = No;
@@ -139,29 +139,29 @@
         AutoLaunch = No;
         Position = "0,3";
         Lock = Yes;
-        Command = "/System/Tools/openapp Terminal";
+        Command = "openapp Terminal";
       },
       {
         Forced = No;
         Name = Ink.GNUstep;
-        DropCommand = "/System/Tools/openapp Ink %d";
+        DropCommand = "openapp Ink %d";
         BuggyApplication = No;
         AutoLaunch = No;
         Position = "0,4";
         Lock = Yes;
-        PasteCommand = "/System/Tools/openapp Ink %s";
-        Command = "/System/Tools/openapp Ink";
+        PasteCommand = "openapp Ink %s";
+        Command = "openapp Ink";
       },
       {
         Forced = No;
         Name = GNUMail.GNUstep;
-        DropCommand = "/System/Tools/openapp GNUMail %d";
+        DropCommand = "openapp GNUMail %d";
         BuggyApplication = No;
         AutoLaunch = No;
         Position = "0,5";
         Lock = Yes;
-        PasteCommand = "/System/Tools/openapp GNUMail %s";
-        Command = "/System/Tools/openapp GNUMail";
+        PasteCommand = "openapp GNUMail %s";
+        Command = "openapp GNUMail";
       },
       {
         Forced = No;
@@ -171,7 +171,7 @@
         Position = "0,6";
         Lock = Yes;
         PasteCommand = " ";
-        Command = "/System/Tools/openapp ScreenLock";
+        Command = "openapp ScreenLock";
       },
       {
         Forced = No;
@@ -180,7 +180,7 @@
         AutoLaunch = No;
         Position = "0,7";
         Lock = Yes;
-        Command = "/System/Tools/openapp Pass";
+        Command = "openapp Pass";
       },
       {
         Forced = No;
@@ -189,18 +189,18 @@
         AutoLaunch = No;
         Position = "0,8";
         Lock = Yes;
-        Command = "/System/Tools/openapp Mixer";
+        Command = "openapp Mixer";
       },
       {
         Forced = No;
         Name = Recycler.GNUstep;
-        DropCommand = "/System/Tools/openapp Recycler %d";
+        DropCommand = "openapp Recycler %d";
         BuggyApplication = No;
         AutoLaunch = Yes;
         Position = "0,9";
         Lock = Yes;
-        PasteCommand = "/System/Tools/openapp Recycler %s";
-        Command = "/System/Tools/openapp Recycler";
+        PasteCommand = "openapp Recycler %s";
+        Command = "openapp Recycler";
       }
     );
     Lowered = No;
@@ -231,7 +231,7 @@
             AutoLaunch = Yes;
             Position = "1,0";
             Lock = Yes;
-            Command = "/System/Tools/openapp Meteo";
+            Command = "openapp Meteo";
             Omnipresent = No;
           },
           {
@@ -241,7 +241,7 @@
             AutoLaunch = Yes;
             Position = "2,0";
             Lock = Yes;
-            Command = "/System/Tools/openapp AClock";
+            Command = "openapp AClock";
             Omnipresent = No;
           },
           {
@@ -251,7 +251,7 @@
             AutoLaunch = Yes;
             Position = "3,0";
             Lock = Yes;
-            Command = "/System/Tools/openapp UpMem";
+            Command = "openapp UpMem";
             Omnipresent = No;
           },
           {
@@ -261,7 +261,7 @@
             AutoLaunch = Yes;
             Position = "4,0";
             Lock = Yes;
-            Command = "/System/Tools/openapp TimeMon";
+            Command = "openapp TimeMon";
             Omnipresent = No;
           },
           {
@@ -283,7 +283,7 @@
             AutoLaunch = Yes;
             Position = "6,0";
             Lock = Yes;
-            Command = "/System/Tools/openapp Updater";
+            Command = "openapp Updater";
             Omnipresent = No;
           },
           {
@@ -293,7 +293,7 @@
             AutoLaunch = Yes;
             Position = "7,0";
             Lock = Yes;
-            Command = "/System/Tools/openapp Birthday";
+            Command = "openapp Birthday";
             Omnipresent = No;
           },
           {
@@ -315,7 +315,7 @@
             AutoLaunch = No;
             Position = "9,0";
             Lock = Yes;
-            Command = "/System/Tools/openapp OpenDisk";
+            Command = "openapp OpenDisk";
             Omnipresent = No;
           },
           {
@@ -325,7 +325,7 @@
             AutoLaunch = No;
             Position = "10,0";
             Lock = Yes;
-            Command = "/System/Tools/openapp Launcher";
+            Command = "openapp Launcher";
             Omnipresent = No;
           }
         );

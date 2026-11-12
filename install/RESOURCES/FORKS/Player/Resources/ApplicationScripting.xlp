@@ -1,7 +1,0 @@
-- currentDocument -> MediaDocument
-- documents -> array
-
-MediaDocument
-- isPlaying
-- stop
-- play

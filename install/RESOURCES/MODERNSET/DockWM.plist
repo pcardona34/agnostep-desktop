@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>DockApplications</key>
+    <array>
+	<string>/lib/GNUstep/Applications/Terminal.app</string>
+    </array>
+    <key>DockBackgroundColor</key>
+    <dict>
+	<key>Alpha</key>
+	<real>1</real>
+	<key>Blue</key>
+	<real>0.3294117647058823</real>
+	<key>Green</key>
+	<real>0.2274509803921569</real>
+	<key>Red</key>
+	<real>0.2274509803921569</real>
+    </dict>
+    <key>DockCellSizeMode</key>
+    <integer>1</integer>
+    <key>DockMagnifiesHoveredIcons</key>
+    <true/>
+    <key>DockOpenAtLoginApplications</key>
+    <array>
+    </array>
+    <key>DockPlacement</key>
+    <integer>5</integer>
+    <key>DockWindowAlpha</key>
+    <real>0.8417085</real>
+    <key>GSSuppressAppIcon</key>
+    <true/>
+</dict>
+</plist>

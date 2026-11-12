@@ -1,0 +1,3 @@
+### GNUstep env
+export GNUSTEP_MAKEFILES=$(gnustep-config --variable=GNUSTEP_MAKEFILES)
+. ${GNUSTEP_MAKEFILES}/GNUstep.sh

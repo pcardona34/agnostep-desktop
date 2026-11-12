@@ -9,9 +9,6 @@
 ### Read License in the root directory.
 ####################################################
 
-### Banniere
-clear
-#cat RESOURCES/logo.txt
 dialog --no-shadow --backtitle "AGNoStep Desktop" \
 --title "Core Installer" \
 --sleep 5 --infobox "
@@ -53,10 +50,10 @@ echo "AGNOSTEP: Begining of script $0 at: $BEG" > $LOG
 ### Install steps
 ####################################################
 
-./2_install_wmaker.sh || exit 1
+./2_install_gnustep.sh || exit 1
 
 cd ${THERE}
-./3_install_gnustep.sh || exit 1
+./3_install_window_manager.sh || exit 1
 
 cd ${THERE}
 ./4_install_frameworks.sh || exit 1

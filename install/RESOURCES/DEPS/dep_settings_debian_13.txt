@@ -1,0 +1,7 @@
+laptop-detect
+dialog
+### Do not remove dunst here, because even we removed conky flavour,
+### dunst will ever be useful like in loading notification and xinit/xsession scripts
+dunst
+### Wallpaper default manager
+feh

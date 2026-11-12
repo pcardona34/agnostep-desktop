@@ -13,6 +13,133 @@
 ### Functions for Install Frameworks
 ################################
 
+UTD=${UTD:-u}
+
+############## - D - ########################
+
+##########################################################################
+## DBusKit
+function install_dbuskit
+{
+clear
+AQUI=$(pwd)
+FWNAME="DbusKit"
+HUB="https://github.com"
+OWNER="gnustep"
+TARBALL="0.1.1.tar.gz"
+TARPATH="libs-dbuskit/archive/refs/tags"
+REPO="libs-dbuskit"
+PATCH_DIR=$_PWD/RESOURCES/PATCHES
+PATCH=no-gc-macros.patch
+
+STR="$FWNAME"
+subtitulo
+
+######################################################
+### Dependencies
+STR="Dependencies"
+subtitulo
+
+sudo apt -y install libdbus-1-dev libdbus-1-3
+ok "Done"
+sleep 2
+clear
+
+cd ../build || exit 1
+
+subtitulo
+printf "Fetching...\n"
+
+if [ "$UTD" == "u" ];then
+    if [ -d ${REPO} ];then
+        rm -fR ${REPO}
+    fi
+    git clone ${HUB}/${OWNER}/${REPO}
+    cd ${REPO} || exit 1
+else
+    if [ ! -d libs-dbuskit-0.1.1 ];then
+        fetch https://github.com/gnustep/libs-dbuskit/archive/refs/tags/0.1.1.tar.gz
+        gunzip --force 0.1.1.tar.gz
+        tar xf 0.1.1.tar && rm 0.1.1.tar && rm 0.1.1.tar
+    fi
+
+    cd libs-dbuskit-0.1.1 || exit 1
+
+    echo "To avoid the config.guess type error:"
+    echo "We must update config.guess... and  config.sub"
+
+    wget -O config.guess 'https://git.savannah.gnu.org/gitweb/?p=config.git;a=blob_plain;f=config.guess;hb=HEAD'
+    wget -O config.sub 'https://git.savannah.gnu.org/gitweb/?p=config.git;a=blob_plain;f=config.sub;hb=HEAD'
+fi
+
+STR="$FWNAME"
+clear;subtitulo
+ok "${FWNAME}: fetched"
+
+### Configuring
+printf "Configuring\n"
+chmod +x configure
+
+if [ -f ${AQUI}/SCRIPTS/env_modern.txt ];then
+    ./configure --disable-libclang &>>$LOG &
+else
+    . ${AQUI}/SCRIPTS/env_modern.sh || exit 1
+    ./configure &>>$LOG &
+fi
+PID=$!
+spinner
+ok "\rDone"
+
+if [ ! "$UTD" == "u" ];then
+    ### A patch must be applied (thanks to Yavor Doganov, Debian GNUstep maintainer)
+
+    cd Source
+    if [ ! -f $PATCH_DIR/$PATCH ];then
+        fetch https://sources.debian.org/data/main/d/dbuskit/0.1.1-14/debian/patches/no-gc-macros.patch
+    else
+        cp $PATCH_DIR/$PATCH ./
+    fi
+    patch --forward -u DKNotificationCenter.m --input=no-gc-macros.patch
+    cd ..
+
+    ok "Done"
+fi
+
+### Building
+printf "Building\n"
+make nonstrict=yes &>>$LOG &
+PID=$!
+spinner
+ok "\rDone"
+
+### Installing
+printf "Installing\n"
+if [ "$DEBUG" == "yes" ];then
+   sudo LD_LIBRARY_PATH="$LD_LIBRARY_PATH" PATH="$PATH" -E make messages=yes ${INSTALL_ARGS} install
+    ok "Done"
+else
+    sudo LD_LIBRARY_PATH="$LD_LIBRARY_PATH" PATH="$PATH" -E make messages=yes ${INSTALL_ARGS} install &>>$LOG &
+    PID=$!
+    spinner
+    ok "\rDone"
+fi
+
+PATH_LIBS=$(gnustep-config --variable=GNUSTEP_LOCAL_LIBRARIES)
+if [ -f ${PATH_LIBS}/libDBusKit.so ];then
+	sudo ldconfig
+	info "The Framework DBusKit was successfully installed."
+else
+	alert "Please check the installation of DBusKit!"
+fi
+sleep 3
+
+cd $_PWD
+}
+
+### End of DbusKit
+###############################
+
+
 ##################################
 ## PDFKit
 function install_pdfkit
@@ -40,7 +167,7 @@ clear;subtitulo
 ok "${FWNAME}: fetched"
 
 _build_FW
-sleep $SLEEP
+sleep ${SLEEP:-2}
 }
 ### End of PDFKit
 ################################
@@ -73,7 +200,7 @@ FWNAME="Addresses"
 cd Addresses
 
 _build_FW
-sleep $SLEEP
+sleep ${SLEEP:-2}
 }
 ### End of Addresses
 ################################
@@ -106,7 +233,7 @@ clear;subtitulo
 ok "${FWNAME}: fetched"
 
 _build_FW
-sleep $SLEEP
+sleep ${SLEEP:-2}
 }
 ### End of Addresses
 ################################
@@ -137,7 +264,7 @@ clear;subtitulo
 ok "${FWNAME}: fetched"
 
 _build_FW
-sleep $SLEEP
+sleep ${SLEEP:-2}
 }
 ### End of Pantomime
 ###############################
@@ -167,7 +294,7 @@ clear;subtitulo
 ok "${FWNAME}: fetched"
 
 _build_FW
-sleep $SLEEP
+sleep ${SLEEP:-2}
 
 }
 ### End of SWK
@@ -200,7 +327,7 @@ clear;subtitulo
 ok "${FWNAME}: fetched"
 
 _build_FW
-sleep $SLEEP
+sleep ${SLEEP:-2}
 
 }
 ### End of HighLighterKit
@@ -239,7 +366,7 @@ cp --recursive "Glow.definition" ${HOME}/GNUstep/Library/HKThemes/
 
 ok "Done"
 cd $_PWD
-sleep $SLEEP
+sleep ${SLEEP:-2}
 
 }
 ### End of Themes for HLKit
@@ -259,7 +386,7 @@ subtitulo
 printf "Fetching...\n"
 if [ -d libs-renaissance ];then
 	cd libs-renaissance
-	git pull origin master
+	git pull
 else
 	git clone https://github.com/gnustep/libs-renaissance.git
 	cd libs-renaissance || exit 1
@@ -268,73 +395,14 @@ fi
 clear;subtitulo
 ok "${FWNAME}: fetched"
 
+#export DEBUG=yes
 _build_FW
-sleep $SLEEP
+sleep ${SLEEP:-2}
 
 }
 ### End of Renaissance
 ##############################
 
-##############################
-## Performance
-function install_performance()
-{
-clear
-cd ../build || exit 1
-
-FWNAME="Performance"
-STR="Performance"
-subtitulo
-
-printf "Fetching...\n"
-if [ -d libs-performance ];then
-        cd libs-performance
-        git pull origin master
-else
-        git clone https://github.com/gnustep/libs-performance.git
-        cd libs-performance || exit 1
-fi
-
-clear;subtitulo
-ok "${FWNAME}: fetched"
-
-_build_FW
-sleep $SLEEP
-
-}
-### End of Performances
-###############################
-
-###############################
-## WebServices
-function install_webservices()
-{
-clear
-cd ../build || exit 1
-
-FWNAME="WebServices"
-STR="$FWNAME"
-subtitulo
-
-printf "Fetching...\n"
-if [ -d WebServices-0.9.0 ];then
-	cd WebServices-0.9.0
-else
-	ftp ftp://ftp.gnustep.org/pub/gnustep/libs/WebServices-0.9.0.tar.gz
-	gunzip --force WebServices-0.9.0.tar.gz
-	tar -xf WebServices-0.9.0.tar && rm WebServices-0.9.0.tar
-	cd WebServices-0.9.0 || exit 1
-fi
-
-clear;subtitulo
-ok "${FWNAME}: fetched"
-
-_build_FW
-sleep $SLEEP
-
-}
-### End of WebServices
-###############################
 
 ##############################################
 ### libs-steptalk
@@ -360,7 +428,7 @@ clear;subtitulo
 ok "${FWNAME}: fetched"
 
 _build_FW
-sleep $SLEEP
+sleep ${SLEEP:-2}
 
 STR="Installing StShell";subtitulo
 
@@ -379,7 +447,8 @@ PID=$!
 spinner
 ok "\rDone"
 
-if [ -f /Local/Tools/stshell ];then
+TOOLS_PATH=$(gnustep-config --variable=GNUSTEP_LOCAL_TOOLS)
+if [ -f ${TOOLS_PATH}/stshell ];then
 	info "The tool stshell has been found."
 else
 	alert "The tool stshell was not found."
@@ -387,7 +456,7 @@ else
 fi
 
 cd $_PWD
-sleep $SLEEP
+sleep ${SLEEP:-2}
 
 }
 ### End of StepTalk
@@ -417,101 +486,12 @@ clear;subtitulo
 ok "${FWNAME}: fetched"
 
 _build_FW
-sleep $SLEEP
+sleep ${SLEEP:-2}
 
 }
 ### End of RSSKit
 ###############################
 
-##########################################################################
-## DBusKit
-function install_dbuskit
-{
-clear
-FWNAME="DbusKit"
-PATCH_DIR=$_PWD/RESOURCES/PATCHES
-PATCH=no-gc-macros.patch
-STR="$FWNAME"
-subtitulo
-
-######################################################
-### Dependencies
-STR="Dependencies"
-subtitulo
-
-sudo apt -y install libdbus-1-dev libdbus-1-3
-ok "Done"
-sleep 2
-clear
-
-cd ../build || exit 1
-
-subtitulo
-printf "Fetching...\n"
-if [ ! -d libs-dbuskit-0.1.1 ];then
-	fetch https://github.com/gnustep/libs-dbuskit/archive/refs/tags/0.1.1.tar.gz
-	gunzip --force 0.1.1.tar.gz
-	tar xf 0.1.1.tar && rm 0.1.1.tar
-fi
-
-cd libs-dbuskit-0.1.1 || exit 1
-
-echo "To avoid the config.guess type error:"
-echo "We must update config.guess... and  config.sub"
-
-wget -O config.guess 'https://git.savannah.gnu.org/gitweb/?p=config.git;a=blob_plain;f=config.guess;hb=HEAD'
-wget -O config.sub 'https://git.savannah.gnu.org/gitweb/?p=config.git;a=blob_plain;f=config.sub;hb=HEAD'
-
-STR="$FWNAME"
-clear;subtitulo
-ok "${FWNAME}: fetched"
-
-### Configuring
-printf "Configuring\n"
-./configure --disable-libclang &>>$LOG &
-PID=$!
-spinner
-ok "\rDone"
-
-### A patch must be applied (thanks to Yavor Doganov, Debian GNUstep maintainer)
-cd Source
-if [ -f $PATCH_DIR/$PATCH ];then
-	 fetch https://sources.debian.org/data/main/d/dbuskit/0.1.1-14/debian/patches/no-gc-macros.patch
-else
-	cp $PATCH_DIR/$PATCH ./
-fi
-
-patch --forward -u DKNotificationCenter.m --input=no-gc-macros.patch
-cd ..
-ok "Done"
-
-### Building
-printf "Building\n"
-make nonstrict=yes &>>$LOG &
-PID=$!
-spinner
-ok "\rDone"
-
-### Installing
-printf "Installing\n"
-sudo -E make install &>>$LOG &
-PID=$!
-spinner
-ok "\rDone"
-
-if [ -f /Local/Library/Libraries/libDBusKit.so ];then
-	sudo ldconfig
-	info "The Framework DBusKit was successfully installed."
-else
-	alert "Please check the installation of DBusKit!"
-fi
-sleep $SLEEP
-
-cd $_PWD
-}
-
-### End of DbusKit
-###############################
 
 ###############################
 ## NetClasses
@@ -525,6 +505,7 @@ subtitulo
 cd ../build || exit 1
 
 printf "Fetching...\n"
+
 if [ -d $FWNAME ];then
 	cd $FWNAME
 	svn update
@@ -537,15 +518,15 @@ clear;subtitulo
 ok "${FWNAME}: fetched"
 
 _build_FW
-sleep $SLEEP
+sleep ${SLEEP:-2}
 
 }
 ### End of NetClasses
 ###############################
 
 ###############################
-### PopplerKit: buggy!!!
-### Do not install
+### PopplerKit: may be buggy!!!
+### If so, uncomment DEBUG statement before install
 
 function install_popplerkit
 {
@@ -554,6 +535,9 @@ FWNAME=PopplerKit
 STR="$FWNAME";subtitulo
 DIR=popplerkit
 HUB=https://salsa.debian.org/gnustep-team/popplerkit.git
+
+### Deps
+LIST="poppler" && install_deps
 
 cd ../build || exit 1
 
@@ -574,7 +558,152 @@ is_quilt
 set_quilt
 quilt push -a
 
+#export DEBUG=yes
 _build_FW
-sleep $SLEEP
+sleep ${SLEEP:-2}
 
 }
+
+
+##############################
+## Performance
+function install_performance()
+{
+clear
+cd ../build || exit 1
+
+FWNAME="Performance"
+STR="Performance"
+subtitulo
+
+printf "Fetching...\n"
+if [ -d libs-performance ];then
+        cd libs-performance
+        git pull origin master
+else
+        git clone https://github.com/gnustep/libs-performance.git
+        cd libs-performance || exit 1
+fi
+
+clear;subtitulo
+ok "${FWNAME}: fetched"
+
+_build_FW
+sleep ${SLEEP:-2}
+
+}
+### End of Performances
+###############################
+
+###############################
+## WebServices
+function install_webservices()
+{
+clear
+cd ../build || exit 1
+
+HUB="https://github.com"
+OWNER=gnustep
+REPO="libs-webservices"
+FWNAME="WebServices"
+STR="$FWNAME"
+subtitulo
+
+printf "Fetching...\n"
+if [ -d ${REPO} ];then
+	cd ${REPO}
+    git pull
+else
+	git clone ${HUB}/${OWNER}/${REPO}
+	cd ${REPO} || exit 1
+fi
+
+clear;subtitulo
+ok "${FWNAME}: fetched"
+
+_build_FW
+sleep ${SLEEP:-2}
+
+}
+### End of WebServices
+###############################
+
+###############################
+###############################
+### Frameworks forked from gs-desktop by Ondrej Florian
+###############################
+###############################
+
+###############################
+### SystemKit
+###############################
+
+function install_systemkit
+{
+clear
+FWNAME="SystemKit"
+STR="$FWNAME";subtitulo
+
+LIST="systemkit" && install_deps
+
+printf "Fetching...\n"
+cd RESOURCES/FORKS/FW/${FWNAME} || exit 1
+ok "$FWNAME was fetched."
+
+printf "Building...\n"
+make clean &>/dev/null
+make &>>$LOG &
+PID=$!
+spinner
+ok "\rDone"
+printf "Installing...\n"
+sudo LD_LIBRARY_PATH="$LD_LIBRARY_PATH" PATH="$PATH" -E make messages=yes ${INSTALL_ARGS} install &>>$LOG &
+PID=$!
+spinner
+ok "\rDone"
+
+check_FW $FWNAME
+cd $_PWD
+sleep ${SLEEP:-2}
+}
+
+###############################
+### DesktopKit
+###############################
+
+function install_desktopkit
+{
+clear
+FWNAME="DesktopKit"
+STR="$FWNAME";subtitulo
+
+LIST="desktopkit" && install_deps
+
+printf "Fetching...\n"
+cd RESOURCES/FORKS/FW/${FWNAME} || exit 1
+ok "$FWNAME was fetched."
+
+printf "Building...\n"
+make clean &>/dev/null
+make &>>$LOG &
+PID=$!
+spinner
+ok "\rDone"
+printf "Installing...\n"
+sudo LD_LIBRARY_PATH="$LD_LIBRARY_PATH" PATH="$PATH" -E make messages=yes ${INSTALL_ARGS} install &>>$LOG &
+PID=$!
+spinner
+ok "\rDone"
+
+check_FW $FWNAME
+cd $_PWD
+sleep ${SLEEP:-2}
+}
+
+############################
+############################
+### Removed from Agnostep
+############################
+############################
+
+### Empty list: ;-)

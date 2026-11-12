@@ -14,6 +14,12 @@
 ### To handle install, post-install
 ################################
 
+pushd .
+cd install
+. SCRIPTS/splash.sh
+popd
+clear
+
 ################################
 ### Include functions
 
@@ -26,7 +32,7 @@
 ### Vars
 
 DEPS="dialog"
-FICHTEMP=$(mktemp /tmp/agno-XXXXX)
+FICHTEMP=$( mktemp /tmp/agno-XXXXX )
 trap "rm -f $FICHTEMP" EXIT
 
 ###############################
@@ -73,7 +79,6 @@ What to do now?" 21 66 21 \
 "Apps" "Install Core Apps" \
 "Settings" "Desktop Settings" \
 "DM" "Install Display Manager" \
-"Theming" "Choose a theme" \
 "Update" "Update AGNoStep" \
 "Logs" "Desktop and Theme Logs" 2>> $FICHTEMP
 
@@ -98,9 +103,6 @@ case $i in
 "DM") printf "You chose: DM\n"
 	cd install || exit 1
 	./7_install_DM.sh;;
-"Theming") printf "You chose Theming\n"
-    cd install || exit 1
-    ./theming.sh;;
 "Update") printf "You chose Update\n"
 	dialog --title "Updating AGNoStep" \
 	--yesno "

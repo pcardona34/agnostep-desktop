@@ -4,7 +4,7 @@
      CopyrightDescription = "Released under the GNU General Public License 2.0 or later";
      NSIcon = "FileManager.tiff";
      NSRole = "Viewer";
-+    GSHelpContentsFile = "GWorkspaceInfo.plist";
++    GSHelpContentsFile = "GWorkspace.help";
      NSServices = (
        {
          NSMenuItem = {

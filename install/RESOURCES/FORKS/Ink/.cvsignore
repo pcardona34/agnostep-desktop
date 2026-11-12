@@ -1,6 +1,0 @@
-*.app
-*.debug
-*.profile
-*obj
-GNUmakefile.local
-.gdbinit

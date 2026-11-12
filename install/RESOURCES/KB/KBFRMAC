@@ -1,0 +1,4 @@
+#!/bin/bash
+
+### X Keyboard Layout for MacBook
+setxkbmap -model apple -layout fr -variant mac

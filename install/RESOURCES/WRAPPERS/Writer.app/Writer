@@ -1,9 +1,0 @@
-#!/bin/sh
-
-APP=focuswriter
-
-if [ $# -eq 2 ] ; then
-  $APP "$2" &
-else
-  $APP &
-fi

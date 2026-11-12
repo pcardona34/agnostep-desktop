@@ -20,12 +20,10 @@
 ################################
 ### ENV
 
-_PWD=`pwd`
+### We keep working directory
+pushd .
+
 CHECK=YES
-echo $PATH | grep -e "/System/Tools" &>/dev/null
-if [ $? -ne 0 ];then
-	export PATH=/System/Tools:$PATH
-fi
 GSMAKE=$(gnustep-config --variable=GNUSTEP_MAKEFILES)
 . ${GSMAKE}/GNUstep.sh
 SPIN='/-\|'
@@ -33,7 +31,6 @@ INSTALL_DIR=$(gnustep-config --variable=GNUSTEP_LOCAL_APPS)
 TEMPFILE=$(mktemp /tmp/agno-XXXXX)
 trap "rm -f $TEMPFILE" EXIT
 
-#INSTALL_ARGS="GNUSTEP_INSTALLATION_DOMAIN=LOCAL"
 ### End of VARS
 ################################
 
@@ -55,6 +52,10 @@ trap "rm -f $TEMPFILE" EXIT
 
 ### End of Include functions
 ################################
+
+clear_logs
+reset_log
+echo "$0" >>$LOG
 
 clear
 STR="A G N o S t e p  -  Main applications and Tools"
@@ -83,20 +84,11 @@ dialog --no-shadow --backtitle "${STR:0:15}" --title "${STR:20:27}" \
 --checklist "
 The list below contains the core apps.
 
-Check (space bar) the Applications you want to reinstall." 22 70 14 \
-"AClock" "Analogic Clock for the Classic Flavour" off \
-"AddressManager" "Manage the Persons: email, birthdate..." off \
-"BatMon" "Monitoring the Battery on Laptops" off \
-"GNUMail" "The GNUstep Mail User Agent" off \
+Check (space bar) the Main Applications you want to reinstall." 22 70 14 \
+"Finder" "A FileViewer alternative" off \
 "GWorkspace" "The NeXT like Workspace Manager" off \
-"HelpViewer" "Help Viewer" off \
-"Ink" "Plain text and Rich Text Format Editor" off \
-"InnerSpace" "The GNUstep Screensaver" off \
-"Mixer" "Install complete VolumeControl" off \
-"SimpleAgenda" "A Simple Agenda to manage Events and Tasks" off \
 "SystemPreferences" "Preferences of the GNUstep System" off \
-"Terminal" "The GNUstep Terminal Emulator" off \
-"TimeMon" "The CPU Load Monitor ported from OPENSTEP" off 2> $TEMPFILE
+"Terminal" "The GNUstep Terminal Emulator" off 2> $TEMPFILE
 
 # 0 if [OK] button was pushed;
 # otherwise, exit the script.
@@ -107,64 +99,20 @@ if [ $? = 0 ];then
 for i in `cat $TEMPFILE`
 do
 case "$i" in
-"AClock")
-	printf "You chose AClock\n"
-	remove_ifx_app "AClock"
-	install_aclock
-	update_info_plist "AClock";;
-"AddressManager")
-	printf "You chose AddressManager\n"
-	remove_ifx_app "AddressManager"
-	install_addressmanager
-	update_info_plist "AddressManager";;
-"BatMon")
-	printf "You chose BatMon\n"
-	remove_ifx_app "batmon"
-	install_batmon
-	update_info_plist "batmon";;
-"GNUMail")
-	printf "You chose GNUMail\n"
-	remove_ifx_app "GNUMail"
-	install_gnumail_svn
-	update_info_plist "GNUMail";;
+"Finder")
+	printf "You chose Finder FileViewer\n"
+	remove_ifx_app "FileViewer"
+	install_finder
+	update_info_plist "FileViewer";;
 "GWorkspace")
 	printf "You chose GWorkspace\n"
 	if [ $DISPLAY ];then
-		alert "You must logout and update GWorkspace within a TTY console.";exit
+		alert "You must logout and update GWorkspace within a TTY console.";sleep 10;exit
 	fi
 	remove_ifx_app "GWorkspace"
-	remove_ifx_app "MDFinder"
+	#remove_ifx_app "MDFinder"
 	install_gworkspace
 	update_info_plist "GWorkspace";;
-"HelpViewer")
-    printf "You chose HelpViewer\n"
-    remove_ifx_app "HelpViewer"
-    #install_helpviewer
-    install_forked "HelpViewer"
-    update_info_plist "HelpViewer";;
-"Ink")
-	printf "You chose Ink\n"
-	remove_ifx_app "Ink"
-	#install_ink
-    install_forked "Ink"
-	update_info_plist "Ink";;
-"InnerSpace")
-	printf "You chose InnerSpace\n"
-	remove_ifx_app "InnerSpace"
-	install_innerspace
-	#install_forked "InnerSpace" # Forked not building
-update_info_plist "InnerSpace";;
-"Mixer")
-	printf "You chose VolumeControl\n"
-	remove_ifx_app "VolumeControl"
-	remove_ifx_app "Mixer"
-	install_volumecontrol
-	update_info_plist "VolumeControl";;
-"SimpleAgenda")
-	printf "You chose SimpleAgenda\n"
-	remove_ifx_app "SimpleAgenda"
-	install_simpleagenda
-	update_info_plist "SimpleAgenda";;
 "SystemPreferences")
 	printf "You chose SystemPreferences\n"
 	remove_ifx_app "SystemPreferences"
@@ -175,11 +123,6 @@ update_info_plist "InnerSpace";;
 	remove_ifx_app "Terminal"
 	install_terminal
 	update_info_plist "Terminal";;
-"TimeMon")
-	printf "You chose TimeMon\n"
-	remove_ifx_app "TimeMon"
-	install_timemon
-	update_info_plist "TimeMon";;
 esac
 done
 else exit 0
@@ -187,14 +130,14 @@ fi
 }
 #########################################
 
-echo -n "Do you want <s>table old releases or more <u>p to date ones? "
-read REP
-
-if [ "$REP" == "u" ];then
-    export UTD=u
-else
-    export UTD=s
-fi
+#echo -n "Do you want <s>table old releases or more <u>p to date ones? "
+#read REP
+#
+#if [ "$REP" == "u" ];then
+#    export UTD=u
+#else
+#    export UTD=s
+#fi
 
 core_apps_menu
 
@@ -206,12 +149,11 @@ PID=$!
 spinner
 ok "\rDone"
 
-printf "\nUpdating Services: wait please...\n"
-make_services &>/dev/null &
-PID=$!
-spinner
-ok "\rDone"
+printf "Updating the services...\n"
+make_services
+ok "Done"
 
 print_size
-
 sleep 2
+
+popd

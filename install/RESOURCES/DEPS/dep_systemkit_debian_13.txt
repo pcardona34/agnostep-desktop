@@ -1,0 +1,7 @@
+# Deps for SystemKit
+# OS: debian 13.x
+
+libupower-glib-dev
+libxkbfile-dev
+libinput-dev
+

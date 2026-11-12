@@ -10,16 +10,18 @@
 ####################################################
 
 ####################################################
-### Install core apps and wrappers
+### Install core apps
+### List renewed and simplified
+### since release 3.x
 ####################################################
 
 ####################################################
 ### Vars
 
-_PWD=`pwd`
-RPI=1
+### We keep working directory
+pushd .
 CHECK=YES
-SLEEP=2
+export SLEEP=2
 
 ### End of vars
 ####################################################
@@ -30,11 +32,7 @@ SLEEP=2
 . SCRIPTS/colors.sh
 . SCRIPTS/functions_prep.sh
 . SCRIPTS/size.sh
-
-echo $PATH | grep -e "/System/Tools" &>/dev/null
-if [ $? -ne 0 ];then
-	export PATH=/System/Tools:$PATH
-fi
+. SCRIPTS/functions_remove_app.sh
 
 GSMAKE=$(gnustep-config --variable=GNUSTEP_MAKEFILES)
 . ${GSMAKE}/GNUstep.sh
@@ -44,23 +42,13 @@ APPS_DIR=$(gnustep-config --variable=GNUSTEP_LOCAL_APPS)
 clear
 
 ###############################
-### RPI case?
-is_hw_rpi
-if [ $RPI -eq 0 ];then
-	. SCRIPTS/inst_rpi_tools.sh
-fi
-
-###############################
 ### First time?
 
 if [ ! -d $APPS_DIR/GWorkspace.app ];then
 	. SCRIPTS/first_inst_core_apps.sh
-    . SCRIPTS/first_inst_native_agnostep_apps.sh
-    . SCRIPTS/first_inst_dockapps.sh
-	. SCRIPTS/inst_wrappers.sh
 else
 	. SCRIPTS/inst_core_apps.sh
 fi
 
 info "Core Apps have been installed. You should now execute next stage: Settings"
-
+popd

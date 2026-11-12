@@ -29,10 +29,15 @@ fi
 
 if [ -f configure ];then
         printf "Configuring...\n"
-        ./configure ${CONFIG_ARGS} &>>$LOG &
-        PID=$!
-        spinner
-        printf "\rBuilding...\n"
+        if [ "$DEBUG" == "yes" ];then
+            ./configure ${CONFIG_ARGS}
+            printf "Building...\n"
+        else
+            ./configure ${CONFIG_ARGS} &>>$LOG &
+            PID=$!
+            spinner
+            printf "\rBuilding...\n"
+        fi
 else
         printf "Building...\n"
 fi
@@ -133,48 +138,66 @@ if [ -z ${FWNAME} ];then
 fi
 
 if [ -f configure ];then
-        printf "Configuring...\n"
+    printf "Configuring...\n"
+
+    if [ "$DEBUG" == "yes" ];then
+        ./configure ${CONFIG_ARGS}
+        printf "Building...\n"
+    else
         ./configure ${CONFIG_ARGS} &>>$LOG &
         PID=$!
         spinner
         printf "\rBuilding...\n"
+    fi
 else
         printf "Building...\n"
 fi
 
-make &>>$LOG &
-PID=$!
-spinner
+if [ "$DEBUG" == "yes" ];then
+    make
+    printf "Installing...\n"
+else
+    make &>>$LOG &
+    PID=$!
+    spinner
+    printf "\rInstalling...\n"
+fi
 
-printf "\rInstalling...\n"
-sudo -E env PATH="$PATH:${SYSTOOLS}" make ${INSTALL_ARGS} install &>>$LOG &
-PID=$!
-spinner
+if [ "$DEBUG" == "yes" ];then
+    sudo LD_LIBRARY_PATH="$LD_LIBRARY_PATH" PATH="$PATH" -E make messages=yes ${INSTALL_ARGS} install
+else
+    sudo LD_LIBRARY_PATH="$LD_LIBRARY_PATH" PATH="$PATH" -E make messages=yes ${INSTALL_ARGS} install &>>$LOG &
+    PID=$!
+    spinner
+fi
 
 ### Cleaning
 sudo chown -fR $USER:$USER . &>/dev/null
 make clean &>/dev/null
 
-sudo ldconfig
-
 cd $_PWD
 
 ok "\rDone"
 
+case "${FWNAME}" in
+"Performance")
+    check_PER;;
+"Renaissance")
+	check_REN;;
+"WebServices")
+    check_WEB;;
+*)
+    check_FW ${FWNAME}
+esac
 
-if [ "${FWNAME}" == "Renaissance" ] || [ "${FWNAME}" == "Performance" ] || [ "${FWNAME}" == "WebServices" ];then
-	check_LIB ${FWNAME}
-else
-	check_FW ${FWNAME}
-fi
-
+sudo ldconfig
 }
 
 ###################################################
 ### Building Themes
 ###################################################
 
-function _build_Theme()
+function _build_Theme
 {
 
 if [ -z ${APPNAME} ];then
@@ -197,16 +220,16 @@ PID=$!
 spinner
 
 printf "\rInstalling...\n"
-sudo -E env PATH="$PATH:${SYSTOOLS}" make ${INSTALL_ARGS} install &>>$LOG &
+sudo LD_LIBRARY_PATH="$LD_LIBRARY_PATH" PATH="$PATH" -E make messages=yes ${INSTALL_ARGS} install &>>$LOG &
 PID=$!
 spinner
 
 ### Cleaning
 make clean &>/dev/null
 
-cd $_PWD
-
 ok "\rDone"
+
+cd $_PWD
 
 check_THEME ${APPNAME}
 
@@ -242,3 +265,6 @@ if [ -n "$1" ];then
     ./install.sh
 fi
 }
+
+#sudo LD_LIBRARY_PATH="$LD_LIBRARY_PATH" PATH="$PATH" -E make messages=yes ${INSTALL_ARGS} install
+

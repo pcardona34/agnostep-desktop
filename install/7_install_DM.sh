@@ -19,6 +19,7 @@ clear
 
 . SCRIPTS/log.sh
 . SCRIPTS/colors.sh
+. SCRIPTS/spinner.sh
 . SCRIPTS/functions_prep.sh
 
 ####################################################
@@ -42,13 +43,22 @@ cd RESOURCES/CONF || exit 1
 ### Config
 sudo cp ${CONF} /etc/lightdm/
 
-cp $HOME/.xinitrc $HOME/.xsession
+if [ ! -f $HOME/.xsession ];then
+    cp $HOME/.xinitrc $HOME/.xsession
+fi
+
+info "The Display Manager ${DM} has been set."
 
 cd
 
-sudo systemctl set-default graphical.target
-info "The Display Manager ${DM} has been set."
-
-warning "The System will reboot in 5 seconds to apply the changes..."
-sleep 5
-sudo reboot
+### Default Runlevel
+DEFAULT=$(systemctl get-default)
+if [ "$DEFAULT" == "graphical.target" ];then
+    info "The Default Runlevel Target has already been set."
+    sleep 2
+else
+    sudo systemctl set-default graphical.target
+    MSG="The System will reboot to apply the changes..."
+    timer
+    sudo reboot
+fi

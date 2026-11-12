@@ -41,7 +41,7 @@ if [ -n "$1" ];then
         FWTOINST="$1"
         printf "$FWTOINST\n"
 else
-        info "You must give the name of the frameworks (only small caps) as argument."
+        info "You must give the name of the frameworks orlib (only small caps) as argument."
         cli "$0 <fw_name>"
         exit 1
 fi
@@ -49,10 +49,6 @@ fi
 
 #echo "PATH (0) is: $PATH";sleep 5
 
-echo $PATH | grep -e "/System/Tools" &>/dev/null
-if [ $? -ne 0 ];then
-	export PATH=/System/Tools:$PATH
-fi
 THERE=`pwd`
 _PWD=`pwd`
 SPIN='/-\|'
@@ -72,7 +68,7 @@ fi
 ################################
 
 clear
-STR="Frameworks";titulo
+STR="Frameworks and libs";titulo
 
 LIST="apps" && install_deps || exit 1
 sleep 2;clear
@@ -106,7 +102,7 @@ fi
 install_${FWTOINST}
 sudo ldconfig
 
-MSG="All is done for the Frameworks ${FWTOINST}."
+MSG="All is done for the Framework or lib ${FWTOINST}."
 echo "$MSG" >>$LOG
 info "$MSG"
 sleep 1

@@ -9,6 +9,7 @@ font = "Monospace 10"
 show_age_threshold = -1
 corner_radius = 10
 corners = all
+stack_duplicates = no
 
 [urgency_low]
 background = "#000000"

@@ -1,0 +1,10 @@
+clang
+lld
+cmake
+autoconf
+automake
+libtool
+make
+pkg-config
+libbsd-dev
+libblocksruntime-dev

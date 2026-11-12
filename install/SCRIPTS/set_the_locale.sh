@@ -45,4 +45,10 @@ clear
 ok "All done."
 warning "You should log out and back in again to apply the locale changes.\nThen, come back here and run again:"
 cli "./agnowiz.sh"
+
+DELAY=10
+timer
+. SCRIPTS/lo.sh
+
 }
+

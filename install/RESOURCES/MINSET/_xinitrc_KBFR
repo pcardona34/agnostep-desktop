@@ -30,4 +30,4 @@ setxkbmap -model pc105 -layout fr -variant oss &
 
 sleep 5
 
-exec /System/Tools/openapp GWorkspace
+exec openapp GWorkspace

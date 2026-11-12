@@ -82,7 +82,7 @@ set historylog
 # set jumpyscrolling
 
 ## Display line numbers to the left (and any anchors in the margin).
-set linenumbers
+#set linenumbers
 
 ## Enable vim-style lock-files.  This is just to let a vim user know you
 ## are editing a file [s]he is trying to edit and vice versa.  There are

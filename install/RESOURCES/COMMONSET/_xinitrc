@@ -1,0 +1,130 @@
+#!/bin/bash
+
+# Hack to avoid path issues with LightDM
+# It namely sources GNUstep.sh via .bash_profile
+if [ -f $HOME/.xprofile ];then
+	. $HOME/.xprofile
+fi
+
+systemctl --user import-environment DISPLAY
+pgrep dunst || dunst &
+while ! pgrep dunst
+do
+    sleep 0.1
+done
+
+### First loading notification
+NOTY=$(dunstify "Agnostep" "Loading Desktop Components..." -u normal -h int:value:0 -p)
+sleep 0.3
+dunstify -r ${NOTY} "Agnostep" "Dunst has been launched." -h int:value:10
+sleep 0.3
+
+pgrep gdnc || /usr/bin/gdnc &
+while ! pgrep gdnc
+do
+    sleep 0.1
+done
+### Notify Gdnc started
+dunstify -r ${NOTY} "Agnostep" "GNU Distributed Notification Center was started." -h int:value:20
+sleep 0.3
+
+### We want a new Pastboard server instance
+pgrep gpbs
+if [ $? -eq 0 ];then
+    pkill gpbs
+fi
+sleep 0.3
+
+/usr/bin/gpbs &
+while ! pgrep gpbs
+do
+    sleep 0.1
+done
+### Notify Gpbs started
+dunstify -r ${NOTY} "Agnostep" "GNUstep Pastboard Server was started." -h int:value:30
+sleep 0.3
+
+# Rotate the wallpaper?
+WPRCONF=$HOME/.config/agnostep/wprotate.conf
+if [ -f $WPRCONF ];then
+	/usr/local/bin/wprotate.sh &
+else
+    if [ -f $HOME/GNUstep/Library/Wallpapers/fond_agnostep.jpg ];then
+        cp $HOME/GNUstep/Library/Wallpapers/fond_agnostep.jpg $HOME/GNUstep/Library/Wallpapers/current.jpg
+    fi
+fi
+dunstify -r ${NOTY} "Agnostep" "Wallpaper was set." -h int:value:40
+sleep 0.3
+
+### X resources
+if [ -f $HOME/.Xresources ];then
+	xrdb -merge $HOME/.Xresources &
+fi
+dunstify -r ${NOTY} "Agnostep" "Xressources were merged." -h int:value:50
+sleep 0.3
+
+
+### Keyboard
+SETKB=$HOME/.local/bin/set_kb.sh
+if [ -f ${SETKB} ];then
+    . ${SETKB}
+    dunstify -r ${NOTY} "Agnostep" "Clavier français." -h int:value:60
+fi
+sleep 0.3
+
+### Window Manager
+LOCAL_APPS=$(gnustep-config --variable=GNUSTEP_LOCAL_APPS)
+MODERN=${LOCAL_APPS}/WindowManager.app
+
+if [ -d ${MODERN} ];then
+    export URSCompositingEnabled=YES
+    openapp WindowManager.app &
+    WM=WindowManager
+else
+    /usr/bin/wmaker &
+    WM=wmaker
+fi
+while ! pgrep ${WM}
+do
+    sleep 0.3
+done
+dunstify -r ${NOTY} "Agnostep" "Window Manager was launched." -h int:value:70
+sleep 2
+
+### Modern Dock
+if [ -d ${MODERN} ] && [ -d ${LOCAL_APPS}/DockWM.app ];then
+    dunstify -r ${NOTY} "Agnostep" "Launching Modern Dock..." -h int:value:80
+    openapp DockWM &
+    while ! pgrep DockWM
+    do
+        sleep 0.3
+    done
+    dunstify -r ${NOTY} "Agnostep" "Dock is launched." -h int:value:90
+fi
+sleep 4 # Extend this delay depending of Apps to  autostart from the Dock
+
+dunstify -r ${NOTY} "Agnostep" "Launching the Workspace Manager..." -h int:value:100 -t 1000
+
+### Wallpaper: not working with gnustep-windowmanager?
+BG=/home/patrick/GNUstep/Library/Wallpapers/fond_agnostep.jpg
+ALTERNATE_BG=/home/patrick/GNUstep/Library/Wallpapers/current.jpg
+if [ -f ${ALTERNATE_BG} ];then
+    SELECTED=${ALTERNATE_BG}
+else
+    if [ -f ${BG} ];then
+        SELECTED=${BG}
+    fi
+fi
+if [ -n "${SELECTED}" ];then
+    feh --bg-fill ${SELECTED} &
+fi
+
+openapp --find FileViewer &>/dev/null
+if [ $? -eq 0 ];then
+    WORKSPACE_APP=FileViewer
+else
+    WORKSPACE_APP=GWorkspace
+fi
+
+defaults write NSGlobalDomain GSWorkspaceApplication ${WORKSPACE_APP}
+exec openapp ${WORKSPACE_APP}

@@ -1,0 +1,4 @@
+#!/bin/bash
+
+### X Keyboard Layout
+setxkbmap -model pc105 -layout fr -variant oss &

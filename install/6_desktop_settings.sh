@@ -23,12 +23,10 @@ fi
 
 clear
 
-_PWD=`pwd`
 SPIN='\-/|'
 STOP=0 # Set to 0 to avoid stops; to 1 to make stops for debugging purpose
-SLEEP=4
-#set -v
-MSG_STOP="Stop: type <Enter> to continue."
+export SLEEP=2
+#set -v # uncomment only to debug the main script
 GWDEF="org.gnustep.GWorkspace"
 DEFDIR=RESOURCES/DEFAULTS
 RPI=1 # By default, we assume the hw is not a RPI one. If not, it will be detected.
@@ -36,6 +34,7 @@ TEMPFILE=$(mktemp /tmp/agno-XXXXX)
 trap "rm -f $TEMPFILE" EXIT
 LG=${LANG:0:2}
 
+### Non standard folders localization
 case "$LG" in
 "fr")
 	SAMPLE_FOLDER="Exemples"
@@ -51,16 +50,13 @@ esac
 . SCRIPTS/log.sh
 . SCRIPTS/colors.sh
 . SCRIPTS/spinner.sh
+. SCRIPTS/stop.sh
 . SCRIPTS/functions_prep.sh
 . SCRIPTS/functions_misc_folders.sh
 . SCRIPTS/setup_misc_tools.sh
 
-function stop
-{
-if [ $STOP -ne 0 ];then
-	read -p "$MSG_STOP" R
-fi
-}
+### End of functions
+####################################################
 
 ####################################################
 ### DO NOT RUN under an existent X session
@@ -92,24 +88,18 @@ echo $PATH | grep -e "${GNUSTEP_SYSTEM_TOOLS}" &>/dev/null
 if [ $? -ne 0 ];then
 	export PATH=${GNUSTEP_SYSTEM_TOOLS}:$PATH
 fi
-
-### End of functions
-####################################################
+###################################################
+### Here it begins...
 
 STR="Installing AGNOSTEP Desktop Common Tools"
 titulo
 
 ####################################################
 ### Dependencies
-STR="Dependencies"
-subtitulo
-
-### Do not remove dunst here, because even we removed conky flavour,
-### dunst is still useful like in loading.sh
-DEPS="laptop-detect dialog dunst"
-sudo apt -y install ${DEPS}
-ok "Done"
-sleep $SLEEP;clear
+pushd .
+LIST="settings" && install_deps
+sleep 2;clear
+popd
 
 ####################################################
 ### Subfolders of the User Home Directory
@@ -125,7 +115,6 @@ case "$LG" in
 esac
 
 ### Bookshelf on RPI's
-RPI=1
 is_hw_rpi
 if [ $RPI -eq 0 ];then
 	FOLDERS="$FOLDERS Bookshelf"
@@ -150,13 +139,14 @@ if [ ! -d $HOME/$SAMPLE_FOLDER ];then
 	mkdir -p $HOME/$SAMPLE_FOLDER
 fi
 
+pushd .
 cd RESOURCES || exit 1
 cp -u Samples.tar.gz $HOME/$SAMPLE_FOLDER/
 cd $HOME/$SAMPLE_FOLDER
 gunzip --force Samples.tar.gz
 tar -xf Samples.tar && rm Samples.tar
+popd
 
-cd $_PWD
 ok "Done"
 
 stop
@@ -170,71 +160,83 @@ if [ ! -d $HOME/$FAVORITE_FOLDER ];then
 	mkdir -p $HOME/$FAVORITE_FOLDER
 fi
 
+pushd .
 cd RESOURCES/FAVORITES || exit 1
 for FAV in *.url
 do
 cp --verbose $FAV $HOME/$FAVORITE_FOLDER/
 done
+popd
 
-cd $_PWD
 ok "Done"
 
 stop
 
 ###################################################
 ### Screenshots folder
+### Only for wmaker
+###################################################
+USER_APPS=$(gnustep-config --variable=GNUSTEP_USER_APPS)
+if [ -d ${USER_APPS}/WindowManager.app ];then
+    echo "Window Manager is not Window Maker."
+else
+    STR="Screenshots subdirectory link for wmaker built-in"
+    subtitulo
 
-STR="Screenshots subdirectory link for wmaker built-in"
-subtitulo
+    pushd .
+    cd $HOME/Images || exit 1
+    SHOTS=$HOME/GNUstep/Library/WindowMaker/Screenshots
+    if [ ! -d $SHOTS ];then
+	    mkdir -p $SHOTS
+    fi
+    if [ ! -h Screenshots ];then
+	    ln -s $SHOTS
+    fi
+    popd
+fi
 
-cd $HOME/Images || exit 1
-SHOTS=$HOME/GNUstep/Library/WindowMaker/Screenshots
-if [ ! -d $SHOTS ];then
-	mkdir -p $SHOTS
-fi
-if [ ! -h Screenshots ];then
-	ln -s $SHOTS
-fi
 ok "Done"
-sleep $SLEEP
-cd $_PWD
+sleep ${SLEEP:-2}
 
 ###############################################
-### Autostart, Xinitrc / Xsession, meteo config...
-STR="Autostart, Xsession..."
+### Keyboard
+STR="Keyboard..."
 titulo
 
-. SCRIPTS/user_conf_gen.sh || exit 1
-
 ### French User Keyb Layout?
+pushd .
+. SCRIPTS/setting_kb.sh || exit 1
 set_french_layout
+popd
 
-cd $_PWD
-
+##############################################
+### X session
 clear
 STR="Xinitrc and Xsession"
 subtitulo
 
-if [ ! -f RESOURCES/MINSET/_xinitrc ];then
-    cp RESOURCES/MINSET/_xinitrc_TEMPLATE RESOURCES/MINSET/_xinitrc
+if [ -f RESOURCES/COMMONSET/_xinitrc ];then
+    cp --verbose RESOURCES/COMMONSET/_xinitrc $HOME/.xinitrc
+    cp --verbose $HOME/.xinitrc $HOME/.xsession
+else
+    alert "The X session template was not found."
+    exit 1
+fi
+if [ -f RESOURCES/SCRIPTS/xprofile ];then
+    cp --verbose RESOURCES/SCRIPTS/xprofile $HOME/.xprofile
 fi
 
-cp --verbose RESOURCES/MINSET/_xinitrc $HOME/.xinitrc
-cp --verbose $HOME/.xinitrc $HOME/.xsession
-cp --verbose RESOURCES/SCRIPTS/xprofile $HOME/.xprofile
-
-rm RESOURCES/MINSET/_xinitrc
-
 ok "Done"
-sleep $SLEEP
+sleep ${SLEEP:-2}
 
-STR="Autostart"
-subtitulo
-
-cp --verbose RESOURCES/MINSET/_autostart $HOME/GNUstep/Library/WindowMaker/autostart && ok "Done"
-sleep $SLEEP
-
-cd $_PWD
+### This is obsolete and will be removed
+#if [ ! -f SCRIPTS/env_modern.sh ];then
+#    STR="Autostart"
+#    subtitulo
+#
+#    cp --verbose RESOURCES/MINSET/_autostart $HOME/GNUstep/Library/WindowMaker/autostart && ok "Done"
+#    sleep ${SLEEP:-2}
+#fi
 
 stop
 
@@ -243,28 +245,47 @@ stop
 STR="Default Desktop State"
 subtitulo
 
-if [ ! -d $HOME/GNUstep/Library/WindowMaker/CachedPixmaps ];then
-    mkdir -p $HOME/GNUstep/Library/WindowMaker/CachedPixmaps
+if [ ! -f SCRIPTS/env_modern.sh ];then
+    if [ ! -d $HOME/GNUstep/Library/WindowMaker/CachedPixmaps ];then
+        mkdir -p $HOME/GNUstep/Library/WindowMaker/CachedPixmaps
+    fi
 fi
+
 if [ ! -d $HOME/GNUstep/Defaults ];then
     mkdir -p $HOME/GNUstep/Defaults
 fi
 
-cd RESOURCES/MINSET
-for STATE in WMState WMWindowAttributes
-do
-cp --verbose $STATE $HOME/GNUstep/Defaults/
-done
+if [ -f SCRIPTS/env_modern.sh ];then
+    pushd .
+    cd RESOURCES/MODERNSET || exit 1
+    cat org.gnustep.GWorkspace.TEMPLATE | sed s/patrick/${USER}/g > org.gnustep.GWorkspace.plist
+    echo "GWorkspace Template was updated."
+    cp --verbose --force DockWM.plist NSGlobalDomain.plist org.gnustep.GWorkspace.plist $HOME/GNUstep/Defaults/
+    rm org.gnustep.GWorkspace.plist
+    popd
+else
+    pushd .
+    cd RESOURCES/MINSET || exit 1
+    for STATE in WMState WMWindowAttributes
+    do
+        if [ -f $STATE ];then
+            cp --verbose --update $STATE $HOME/GNUstep/Defaults/
+        fi
+    done
+    popd
+fi
 
-STR="Cached Pixmaps"
-subtitulo
+if [ ! -f SCRIPTS/env_modern.sh ];then
+    STR="Cached Pixmaps"
+    subtitulo
+    pushd .
+    cd RESOURCES/MINSET/CachedPixmaps || exit 1
+    cp --verbose *.xpm $HOME/GNUstep/Library/WindowMaker/CachedPixmaps/
+    ok "Done"
+    popd
+fi
 
-cd CachedPixmaps
-cp --verbose *.xpm $HOME/GNUstep/Library/WindowMaker/CachedPixmaps/
-ok "Done"
-
-cd $_PWD
-sleep $SLEEP
+sleep ${SLEEP:-2}
 
 stop
 
@@ -275,9 +296,10 @@ if [ ! -d /usr/local/bin ];then
 	sudo mkdir -p /usr/local/bin
 fi
 
+pushd .
 install_agnostep_cli
-cd $_PWD
-sleep $SLEEP
+popd
+sleep ${SLEEP:-2}
 
 stop
 
@@ -299,7 +321,7 @@ STATUS=$STATUS
 ENDOF
 
 ok "Done"
-sleep $SLEEP
+sleep ${SLEEP:-2}
 stop
 
 ######################################################
@@ -308,15 +330,28 @@ STR="Home Bash profile"
 subtitulo
 
 if [ -f $HOME/.bash_profile ];then
-    cat $HOME/.bash_profile | grep -e "GNUstep.sh" &>/dev/null
-    if [ $? -ne 0 ];then
-    	cat RESOURCES/MINSET/_profile >> $HOME/.bash_profile
+    rm $HOME/.bash_profile
+fi
+
+if [ -f SCRIPTS/env_modern.sh ];then
+    if [ -f RESOURCES/MODERNSET/_bash_profile ];then
+        cp --verbose RESOURCES/MODERNSET/_bash_profile $HOME/.bash_profile
+    else
+        alert "MODERNSET Bash profile template was not found."
+        exit 1
     fi
 else
-	cat RESOURCES/MINSET/_profile > $HOME/.bash_profile
+    if [ -f RESOURCES/MINSET/_profile ];then
+	    cp --verbose RESOURCES/MINSET/_profile $HOME/.bash_profile
+    else
+        alert "MINSET Bash profile template was not found."
+        exit 1
+    fi
 fi
+
 ok "Done"
-sleep $SLEEP
+sleep ${SLEEP:-2}
+
 stop
 
 ###########################################
@@ -329,45 +364,16 @@ if [ ! -d $HOME/.config ];then
 fi
 cp --verbose RESOURCES/CONF/dunstrc $HOME/.config/dunstrc
 
-sudo cp --verbose RESOURCES/SCRIPTS/loading.sh /usr/local/bin/
+### We do not install anymore loading.sh: see new .xinitrc/.xsession
+#sudo cp --verbose RESOURCES/SCRIPTS/loading.sh /usr/local/bin/
+
 ok "Done"
-sleep $SLEEP
-
-stop
-###########################################
-### Laptop? ###
-
-laptop-detect
-if [ $? -eq 0 ];then
-    STR="Laptop detected...";subtitulo
-    WMSTATE="WMState_laptop"
-
-    cd RESOURCES/DEFAULTS
-    if [ ! -f $WMSTATE ];then
-	    alert "The file $WMSTATE was not found. This is a major issue."
-	    exit 1
-    fi
-	cp --verbose $WMSTATE $HOME/GNUstep/Defaults/WMState
-	### Setting to the user env
-	cat $HOME/GNUstep/Defaults//WMState | sed -e s#/System/Tools#${GNUSTEP_SYSTEM_TOOLS}#g > $TEMPFILE
-	cat $TEMPFILE > $HOME/GNUstep/Defaults/WMState
-    cd $_PWD
-    ok "Done"
-    sleep $SLEEP
-    stop
-fi
+sleep ${SLEEP:-2}
 
 stop
 
 ####################################################
-### Theming: default theme is GNUstep
-SINGLE_THEME="YES"
-. gnustep_theme.sh
-
-stop
-
-###########################################
-MESSAGE="AGNoStep common Desktop was set."
+MESSAGE="AGNoStep common Desktop was set.\nDefault theme is GNUstep."
 
 info "$MESSAGE" | tee -a $LOG
 date >> $LOG
@@ -377,8 +383,8 @@ MESSAGE="AGNoStep Desktop is ready to use now."
 
 info "$MESSAGE"
 
-info "To install the Graphic Login/Display Manager: after testing the Desktop, log out, back in, execute AgnostepManager and select DM item:"
-cli "./agnostep.sh"
+info "To install the Graphic Login/Display Manager: after testing the Desktop, log out, back in, execute Agnostep Wizard and select DM item:"
+cli "./agnowiz.sh"
 
 sleep 6
 stop
@@ -425,3 +431,4 @@ else
     timer
     exec SCRIPTS/lo.sh
 fi
+

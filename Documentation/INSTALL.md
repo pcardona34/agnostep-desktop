@@ -1,13 +1,13 @@
-# A G N o S t e p
+# AGNoStep - agnostep-desktop
 
 ## I. How to install the Core Desktop (from SOURCES)
 
 ### CAUTION!
 
 > [!CAUTION]
-> NEVER install any related GNUstep debian package: this would conflict with the GNUstep System built by AGNoStep and break your System. To install something, use ever Agnostep Wizard or Manager.
-> In the console: `./agnostep.sh` or `agnostep --am` (after first install).
-> Within the Desktop: `Applications / AgnostepManager.app`.
+> NEVER install any related GNUstep Debian or Redhat package: this would conflict with the GNUstep System built by AGNoStep and break your System. To install the Desktop, use ever AGNoStep Wizard.
+> In the console: `./agnowiz.sh`
+> Then, to add more applications, install [AGNoStep-Apps-Manager](../../../../agnostep-apps-manager).
 
 ### Lite OS expected
 
@@ -76,7 +76,7 @@ Otherwise, namely on Debian Lite, install sudo, then add the current user (by ex
 	git pull
 ```
 
-- Now you are ready to execute the main AgnostepManager script:
+- Now you are ready to execute the main Agnostep Wizard script:
 
 ```console
 	./agnowiz.sh
@@ -86,27 +86,20 @@ The first time, you should run from the above menu these items in this order:
 
 1. Prep: set the locale,update the system, install needed tools.
 1. Core: will install the Core Desktop.
-1. Apps: will install all the Core Apps: the first time, il will install some wrappers too.
+1. Apps: will install all the Core Apps.
 1. Settings: will set and prepare the X session...
-1. Theming: to apply the AGNOSTEP theme. 
 1. DM: will install the Display Manager.
 
 You can view progress and info messages while AGNoStep Wizard is installing.
 After several minutes, you should be able to start the AGNoStep Desktop:
 
 - With `startx` (after stage 4) 
-- From `Lightdm` graphical Login (after stage 6). 
+- From `Lightdm` graphical Login (after stage 5). 
 
 > [!TIP]
 > After the Display Manager has been set, if you need to use CLI again, use TTY2 to log into the console: `CTRL-ALT-F2`.  
 > Then go back to the graphical environment with: `CTRL-ALT-F7`.
 	
----
-
-## Theming your Desktop
-
-By default, Agnostep Desktop has been installed with default GNUstep theme. To use the in purpose AGNOSTEP theme, run `Agnostep Wizard` from a TTY session and select **Theming** item.
-
 ---
 
 ## If something inexpected happens
@@ -162,7 +155,7 @@ try the following alternative manual stages to be able to note the issue concern
 ```
 
 > [!Note]
-> If you want to regenerate your default user's setting or change the theme, log out the Desktop, log in a tty console and do the following:
+> If you want to regenerate your default user's setting, log out the Desktop, log in a tty console and do the following:
 
 ```console
 	cd ~/SOURCES/agnostep-desktop
@@ -177,60 +170,26 @@ try the following alternative manual stages to be able to note the issue concern
 	./7_install_DM.sh
 ```
 
-#### A-8) Choose a theme
+## II. Theming your Desktop
 
-```console
-	./theming.sh
-```
+By default, Agnostep Desktop has been installed with default GNUstep theme. To use the in purpose AGNOSTEP theme, 
+or another theme, get it from its repo: [agnostep-theme](../../../../agnostep-theme).
 
-## II. How to install more apps?
+## III. How to install more apps?
 
-Logout the Desktop if you want to Change **Core Desktop** or **Settings** components. Otherwise, you can open a Terminal window.
-
-- Run the AnostepManager:
-
-```console
-	agnostep --am
-```
-
-> [!TIP]
-> Within the Desktop, use `Applications / AgnostepManager.app`.
-
-Then:
-
-1. From the menu, choose the software category: **Core** Apps, **Extra** Apps, **Developer** env, **Games**, **Utilities**...
-1. Use then item **theming** to apply the theme to newly installed apps.
-
-> [!TIP]
-> DO NOT forget the 'theming' stage to apply correctly the theme to the app just installed if you note if was not applied.
-
-## III. How to remove some app?
-
-1. Run the `AnostepManager` tool...
-1. Then choose the item **Remove** and follow the Assistant to select and remove the App.
-
-> [!TIP]
-> Alternative method: open a new shell in `Terminal.app`.
-> Then execute, *mutatis mutandis*:
-
-```console
-   cd /Local/Applications
-   sudo rm -R MyApp.app
-   make_services
-```
+You must install and use [AGNoStep-Apps-Manager](../../../../agnostep-apps-manager).
 
 ## IV. How to reinstall/update Core Desktop after an udpate of the project repo
 
-```console
-	agnostep --am
-```
+- Log in a TTY session.
+- Run again Agnostep Wizard.
 - Then, choose item: **Update**.
 
-> [!TIP]
-> Once installed, `AgnostepManager.app` has an auto-repair feature. If you accidently removed the `~/SOURCES` folder or the repo `agnostep-desktop`, it will fetch it again for you.
-
-From the main menu, execute these tasks:
+Then, from the main menu:
 
 1. Core
 2. Apps
 3. Settings
+
+> [!CAUTION]
+> You will rebuild all!

@@ -10,28 +10,30 @@
 ####################################################
 
 ################################
-### Spinner
+### Spinner & Timer
 ################################
 
 #############################################
-### Howto
+
+#############################################
+### Spinner
+#############################################
+###                 Howto
+#############################################
 ### To use this function, you need to set
 ### some vars in the caller script:
 ### global: SPIN='/-\|'
 ### before any call: put the long process to bg
 ### with '&' and then set PID=$!
-###
-### Example:
-# SPIN='/-\|'
-# command &
-# PID=$!
-# spinner
-
-
+#############################################
+###               Example
+#############################################
+#   SPIN='/-\|'
+#   command &
+#   PID=$!
+#   spinner
 #############################################
 
-#############################################
-### Spinner
 function spinner()
 {
 i=1
@@ -42,24 +44,25 @@ do
 	printf "\b${SPIN:i++%${#SPIN}:1}"
 done
 }
+
 ### End of Spinner
 #############################################
 
 
 #############################################
 ### Timer
+#############################################
 ### set: DELAY=x
 ### default: DELAY=5
 ### MSG="a message"
+#############################################
+
 function timer
 {
-if [ $DELAY ];then
-	i=$DELAY
-else
-	i=5
-fi
+i=${DELAY:-5}
+THIS_MSG=${MSG:-Message was not set.}
 
-printf "$MSG "
+printf " ${THIS_MSG} "
 while [ $i -gt 0 ]
 do
 	sleep 1
@@ -69,3 +72,5 @@ done
 printf "\nGo!\n"
 
 }
+### End of Timer
+##############################################
