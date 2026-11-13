@@ -1,7 +1,7 @@
 # AGNoStep: agnostep-desktop
 
-This is the core component of [AGNoStep](https://github.com/pcardona34/agnostep/README.md) project: its Desktop. It is provided under the [MIT License](LICENSE).
-To understand the whole project and how the components work together, read [AGNoStep Main Documentation](https://github.com/pcardona34/agnostep/Documentation), mainly its [Overwiew](https://github.com/pcardona34/agnostep/Documentation/OVERVIEW.md).
+This is the core component of [AGNoStep](../../../agnostep) project: its Desktop. It is provided under the [MIT License](LICENSE).
+To understand the whole project and how the components work together, read [AGNoStep Main Documentation](../../../Documentation), mainly its [Overwiew](../../../Documentation/OVERVIEW.md).
 
 - Read [RELEASE](Documentation/RELEASE.md) to know the current status.
 - See [CHANGES](Documentation/CHANGES.md) to read the details of the latest changes.
