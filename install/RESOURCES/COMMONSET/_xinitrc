@@ -105,18 +105,23 @@ sleep 4 # Extend this delay depending of Apps to  autostart from the Dock
 
 dunstify -r ${NOTY} "Agnostep" "Launching the Workspace Manager..." -h int:value:100 -t 1000
 
-### Wallpaper: not working with gnustep-windowmanager?
-BG=/home/patrick/GNUstep/Library/Wallpapers/fond_agnostep.jpg
+### Wallpaper
+BG=/home/patrick/GNUstep/Library/Wallpapers/fixed.jpg
 ALTERNATE_BG=/home/patrick/GNUstep/Library/Wallpapers/current.jpg
 if [ -f ${ALTERNATE_BG} ];then
+    # Wallpaper set from a collection
     SELECTED=${ALTERNATE_BG}
 else
     if [ -f ${BG} ];then
+        # Default fixed wallpaper
         SELECTED=${BG}
     fi
 fi
 if [ -n "${SELECTED}" ];then
     feh --bg-fill ${SELECTED} &
+else
+    # Fallback
+    xsetroot -solid "#4F4F74"
 fi
 
 openapp --find FileViewer &>/dev/null
