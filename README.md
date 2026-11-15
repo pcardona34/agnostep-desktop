@@ -14,7 +14,7 @@ AGNostep-desktop Classic with defaults GNUstep theme. This Third Release is mini
 
 ## Components
 
-This Third release provide a choice between _Classic_ and _Modern_ Desktop.
+This Third release provides a choice between _Classic_ and _Modern_ Desktop.
 
 ### Of the Classic Desktop
 
