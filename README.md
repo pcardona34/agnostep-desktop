@@ -1,4 +1,4 @@
-# AGNoStep: agnostep-desktop
+# agnostep-desktop
 
 This is the core component of [AGNoStep](../../../agnostep) project: its Desktop. It is provided under the [MIT License](LICENSE).
 To understand the whole project and how the components work together, read [AGNoStep Main Documentation](../../../agnostep/blob/main/Documentation), mainly its [Overwiew](../../../agnostep/blob/main/Documentation/OVERVIEW.md).
@@ -14,13 +14,13 @@ AGNostep-desktop Classic with defaults GNUstep theme. This Third Release is mini
 
 ## Components
 
-This Third release provide a choice between Classic and Modern Desktop.
+This Third release provide a choice between _Classic_ and _Modern_ Desktop.
 
 ### Of the Classic Desktop
 
 This Core Desktop provides:
 
-- The Legacy GNUstep System built from latest commits with the GNU Compiler: GCC.
+- The **Legacy** GNUstep System built from latest commits with the GNU Compiler: GCC.
 - Window Manager: Window Maker.
 - Workspace: GWorkspace built from the latest commits.
 - Dock: Window Maker own Dock.
@@ -31,7 +31,7 @@ This Core Desktop provides:
 This Core Desktop provides:
 
 - Grand Central Dispatch.
-- The Modern GNUstep System (libobjc2) built from latest commits with the Clang compiler.
+- The **Modern** GNUstep System (**libobjc2**) built from latest commits with the **Clang** compiler.
 - Window Manager: gnustep-window-manager by Joseph Maloney.
 - Workspace: *Finder* (FileViewer) by Greg Casamento.
 - Dock: WMDock by Greg Casamento.
