@@ -269,7 +269,8 @@ else
     for STATE in WMState WMWindowAttributes
     do
         if [ -f $STATE ];then
-            cp --verbose --update $STATE $HOME/GNUstep/Defaults/
+            rm -f $HOME/GNUstep/Defaults/${STATE}
+            cp --verbose $STATE $HOME/GNUstep/Defaults/
         fi
     done
     popd
@@ -292,16 +293,16 @@ stop
 ###########################################
 ### ... agnostep_cli
 
-if [ ! -d /usr/local/bin ];then
-	sudo mkdir -p /usr/local/bin
-fi
-
-pushd .
-install_agnostep_cli
-popd
-sleep ${SLEEP:-2}
-
-stop
+#if [ ! -d /usr/local/bin ];then
+#	sudo mkdir -p /usr/local/bin
+#fi
+#
+#pushd .
+#install_agnostep_cli
+#popd
+#sleep ${SLEEP:-2}
+#
+#stop
 
 ##########################################
 ### Info release
