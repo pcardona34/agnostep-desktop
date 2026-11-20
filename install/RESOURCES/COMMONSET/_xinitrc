@@ -82,6 +82,7 @@ if [ -d ${MODERN} ];then
     WM=WindowManager
 else
     /usr/bin/wmaker &
+    wm_pid=$!
     WM=wmaker
 fi
 while ! pgrep ${WM}
@@ -132,4 +133,10 @@ else
 fi
 
 defaults write NSGlobalDomain GSWorkspaceApplication ${WORKSPACE_APP}
-exec openapp ${WORKSPACE_APP}
+# For a safe end of session, do not use exec
+openapp ${WORKSPACE_APP}
+
+# For a clean wmaker session ending
+if [ $wm_pid -ne 0 ];then
+    wait $wm_pid
+fi
